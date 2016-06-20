@@ -1,0 +1,28 @@
+namespace UnityGMClient
+{
+
+    public enum EGetAttendenceDataResult
+    {
+        EGET_ATTENDENCE_DATA_RESULT_SUCCESS = 0,
+        EGET_ATTENDENCE_DATA_RESULT_FAIL = 1,
+        EGET_ATTENDENCE_DATA_RESULT_PRIZE_TABLE_ERROR,
+    };
+
+    public enum EAttendenceSignInResult
+    {
+        EATTENDENCE_SIGN_IN_RESULT_SUCCESS = 0,
+        EATTENDENCE_SIGN_IN_RESULT_FAIL,
+        EATTENDENCE_SIGN_IN_RESULT_ALREADY_SIGN_IN,
+    };
+
+    public enum EDrawCardResult
+    {
+        EDRAW_CARD_RESULT_SUCCESS = 0,
+        EDRAW_CARD_RESULT_FAIL,
+        EDRAW_CARD_RESULT_ERROR_TYPE,
+        EDRAW_CARD_RESULT_ERROR_COUNT,
+        EDRAW_CARD_RESULT_NOT_ENOUGH_GOLD,
+        EDRAW_CARD_RESULT_NOT_ENOUGH_DIAMOND,
+    };
+
+};

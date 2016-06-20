@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{455257F2-C05D-4DB9-A74D-F3A37822BDCC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UnityGMClient</RootNamespace>
+    <AssemblyName>UnityGMClient</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\lib\CSLib\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\..\..\lib\CSLib\Debug\UnityGMClient.XML</DocumentationFile>
+    <GenerateSerializationAssemblies>On</GenerateSerializationAssemblies>
+    <NoWarn>1591 1573 1572</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\lib\Client\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>..\..\..\lib\CSLib\Debug\UnityGMClient.XML</DocumentationFile>
+    <NoWarn>1591 1573 1572</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <GenerateSerializationAssemblies>On</GenerateSerializationAssemblies>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AchieveSystem\CAchieveData.cs" />
+    <Compile Include="AchieveSystem\CAchieveItem.cs" />
+    <Compile Include="AchieveSystem\CAchieveSystem.cs" />
+    <Compile Include="AchieveSystem\CAchieveSystemProtocol.cs" />
+    <Compile Include="AchieveSystem\InterfaceAchieveSystem.cs" />
+    <Compile Include="AchieveSystem\MsgAchieveSystem.cs" />
+    <Compile Include="ActivitySystem\ActivitySystemData.cs" />
+    <Compile Include="ActivitySystem\ActivitySystemDefine.cs" />
+    <Compile Include="ActivitySystem\ActivitySystemError.cs" />
+    <Compile Include="ActivitySystem\ActivitySystemMsgNumID.cs" />
+    <Compile Include="ActivitySystem\ActivitySystemProtocol.cs" />
+    <Compile Include="ActivitySystem\CActivitySystem.cs" />
+    <Compile Include="ActivitySystem\InterfaceActivitySystem.cs" />
+    <Compile Include="ActivitySystem\MsgActivitySystemGC.cs" />
+    <Compile Include="ActivitySystem\MsgActivitySystemGM.cs" />
+    <Compile Include="CGameClient.cs" />
+    <Compile Include="CClientCore.cs" />
+    <Compile Include="ChatSystem\CChatSystem.cs" />
+    <Compile Include="ChatSystem\ChatContent.cs" />
+    <Compile Include="ChatSystem\ChatSystemData.cs" />
+    <Compile Include="ChatSystem\ChatSystemDefine.cs" />
+    <Compile Include="ChatSystem\ChatSystemError.cs" />
+    <Compile Include="ChatSystem\ChatSystemProtocol.cs" />
+    <Compile Include="ChatSystem\InterfaceChatSystem.cs" />
+    <Compile Include="ChatSystem\MsgChatSystem.cs" />
+    <Compile Include="EquipSystem\CConditionData.cs" />
+    <Compile Include="EquipSystem\CEquipData.cs" />
+    <Compile Include="EquipSystem\CGem.cs" />
+    <Compile Include="EquipSystem\CEquipItem.cs" />
+    <Compile Include="EquipSystem\CEquipSystem.cs" />
+    <Compile Include="EquipSystem\CEquipSystemProtocol.cs" />
+    <Compile Include="EquipSystem\EquipSystemDefine.cs" />
+    <Compile Include="EquipSystem\EquipSystemError.cs" />
+    <Compile Include="EquipSystem\InterfaceEquipSystem.cs" />
+    <Compile Include="EquipSystem\MsgEquipSystem.cs" />
+    <Compile Include="FriendSystem\CFriendSystemProtocol.cs" />
+    <Compile Include="FriendSystem\InterfaceFriendSystem.cs" />
+    <Compile Include="FriendSystem\msgFriendSystem.cs" />
+    <Compile Include="ItemSystem\CPrizeItem.cs" />
+    <Compile Include="ItemSystem\ItemSystemDefine.cs" />
+    <Compile Include="LoginSystem\InterfaceLoginSystem.cs" />
+    <Compile Include="MailSystem\CMail.cs" />
+    <Compile Include="MailSystem\CMailSystemProtocol.cs" />
+    <Compile Include="MailSystem\InterfaceMailSystem.cs" />
+    <Compile Include="MailSystem\MsgMailSystem.cs" />
+    <Compile Include="PetSystem\CHotSpring.cs" />
+    <Compile Include="PetSystem\CPetBaseInfor.cs" />
+    <Compile Include="PetSystem\CPetData.cs" />
+    <Compile Include="PetSystem\CPetItem.cs" />
+    <Compile Include="PetSystem\CPetSystem.cs" />
+    <Compile Include="PetSystem\CPetSystemProtocol.cs" />
+    <Compile Include="PetSystem\CHotSpringTaskData.cs" />
+    <Compile Include="PetSystem\CPetUnlockData.cs" />
+    <Compile Include="PetSystem\CPetUnlockItem.cs" />
+    <Compile Include="PetSystem\CSendItem.cs" />
+    <Compile Include="PetSystem\CTalkAnswer.cs" />
+    <Compile Include="PetSystem\CTalkItem.cs" />
+    <Compile Include="PetSystem\CTalkQuestion.cs" />
+    <Compile Include="PetSystem\InterfacePetSystem.cs" />
+    <Compile Include="PetSystem\MsgPetSystem.cs" />
+    <Compile Include="PetSystem\PetSystemDefine.cs" />
+    <Compile Include="PetSystem\PetSystemError.cs" />
+    <Compile Include="PlayerSystem\CBagData.cs" />
+    <Compile Include="PlayerSystem\CBagItem.cs" />
+    <Compile Include="PlayerSystem\CBattleAttribute.cs" />
+    <Compile Include="PlayerSystem\CPlayerData.cs" />
+    <Compile Include="PlayerSystem\CRole.cs" />
+    <Compile Include="LoginSystem\CLoginSystemProtocol.cs" />
+    <Compile Include="LoginSystem\CLoginSystem.cs" />
+    <Compile Include="Message\CMsgFactory.cs" />
+    <Compile Include="Network\CClientLink.cs" />
+    <Compile Include="Message\EFuncType.cs" />
+    <Compile Include="LoginSystem\MsgLoginSystem.cs" />
+    <Compile Include="Message\EServerType.cs" />
+    <Compile Include="PlayerSystem\CPlayerSystem.cs" />
+    <Compile Include="PlayerSystem\CPlayerSystemProtocol.cs" />
+    <Compile Include="PlayerSystem\CRoleBaseInfo.cs" />
+    <Compile Include="PlayerSystem\CVitalityData.cs" />
+    <Compile Include="PlayerSystem\InterfacePlayerSystem.cs" />
+    <Compile Include="PlayerSystem\MsgPlayerSystem.cs" />
+    <Compile Include="PlayerSystem\CPrize.cs" />
+    <Compile Include="PlayerSystem\PlayerSystemDefine.cs" />
+    <Compile Include="PlayerSystem\PlayerSystemError.cs" />
+    <Compile Include="PrizeSystem\InterfacePrizeSystem.cs" />
+    <Compile Include="PrizeSystem\prize.proto.cs" />
+    <Compile Include="PrizeSystem\prize.proto.partial.cs" />
+    <Compile Include="PrizeSystem\PrizeSystemProtocol.cs" />
+    <Compile Include="PrizeSystem\shop.proto.partial.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RankSystem\CRankSystem.cs" />
+    <Compile Include="RankSystem\InterfaceRankSystem.cs" />
+    <Compile Include="RankSystem\MsgRankSystemGC.cs" />
+    <Compile Include="RankSystem\MsgRankSystemGM.cs" />
+    <Compile Include="RankSystem\RankData.cs" />
+    <Compile Include="RankSystem\RankSystemDefine.cs" />
+    <Compile Include="RankSystem\RankSystemError.cs" />
+    <Compile Include="RankSystem\RankSystemMsgNumID.cs" />
+    <Compile Include="RankSystem\RankSystemProtocol.cs" />
+    <Compile Include="SceneSystem\ArenaChallengeRecord.cs" />
+    <Compile Include="SceneSystem\ArenaChallengeeData.cs" />
+    <Compile Include="SceneSystem\ArenaChallengingRoleData.cs" />
+    <Compile Include="SceneSystem\RoleArenaData.cs" />
+    <Compile Include="SceneSystem\CSceneSystem.cs" />
+    <Compile Include="SceneSystem\InterfaceSceneSystem.cs" />
+    <Compile Include="SceneSystem\MsgSceneSystemGC.cs" />
+    <Compile Include="SceneSystem\MsgSceneSystemGM.cs" />
+    <Compile Include="SceneSystem\SceneSystemData.cs" />
+    <Compile Include="SceneSystem\sceneSystemDefine.cs" />
+    <Compile Include="SceneSystem\SceneSystemError.cs" />
+    <Compile Include="SceneSystem\SceneSystemMsgNumID.cs" />
+    <Compile Include="SceneSystem\SceneSystemProtocol.cs" />
+    <Compile Include="SDataDef.cs" />
+    <Compile Include="ShopSystem\CShopSystemProtocol.cs" />
+    <Compile Include="ShopSystem\InterfaceShopSystem.cs" />
+    <Compile Include="ShopSystem\msgShopSystem.cs" />
+    <Compile Include="ShopSystem\shop.proto.cs" />
+    <Compile Include="SkillSystem\CSkill.cs" />
+    <Compile Include="SkillSystem\CSkillSystem.cs" />
+    <Compile Include="SkillSystem\CSkillSystemProtocol.cs" />
+    <Compile Include="SkillSystem\InterfaceSkillSystem.cs" />
+    <Compile Include="SkillSystem\MsgSkillSystem.cs" />
+    <Compile Include="SkillSystem\SkillSystemError.cs" />
+    <Compile Include="TaskSystem\CTaskSystem.cs" />
+    <Compile Include="TaskSystem\InterfaceTaskSystem.cs" />
+    <Compile Include="TaskSystem\MsgTaskSystemGC.cs" />
+    <Compile Include="TaskSystem\MsgTaskSystemGM.cs" />
+    <Compile Include="TaskSystem\TaskData.cs" />
+    <Compile Include="TaskSystem\TaskSystemDefine.cs" />
+    <Compile Include="TaskSystem\TaskSystemError.cs" />
+    <Compile Include="TaskSystem\TaskSystemMsgNumID.cs" />
+    <Compile Include="TaskSystem\TaskSystemProtocol.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\CSLib\UnityFrame\UnityFrame_2008.csproj">
+      <Project>{3D27BAC5-2E17-4186-8AC3-5EAD72471547}</Project>
+      <Name>UnityFrame_2008</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CSLib\UnityNetwork\UnityNetwork_2008.csproj">
+      <Project>{14DFD02E-6EFE-49BA-958B-BBA2F6BCF8F9}</Project>
+      <Name>UnityNetwork_2008</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CSLib\UnityUtility\UnityUtility_2008.csproj">
+      <Project>{6DF6894B-1F86-4E76-8499-5FBFD77C9AC6}</Project>
+      <Name>UnityUtility_2008</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

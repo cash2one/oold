@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="GBK" ?>
+<fsms>
+  <fsm name="daQuanCollegeInstance1" id="200001" init="" >
+    <state type="FSMBTState" name="init" start="true" enter="" leave="" btname="" />
+    <state type="FSMBTState" name="wait"  enter="" leave="" fsmname="" />
+    <jump type="FSMScriptCondition" from="init" to="wait" expression="" />
+  </fsm>
+</fsms>

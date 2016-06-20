@@ -1,0 +1,49 @@
+//////////////////////////////////////////////////////////////////////
+//	created:	2014/07/22
+//	filename: 	GSLib\dbSystem\msgNumIDDBSystem.h
+//	author:		mazhejiang
+//	
+//	purpose:	
+//////////////////////////////////////////////////////////////////////
+#ifndef __GSLIB_DBSYSTEM_MSGNUMIDDBSYSTEM_H__
+#define __GSLIB_DBSYSTEM_MSGNUMIDDBSYSTEM_H__
+
+#include <GFLib/commonServer/message/message.h>
+#include <GSLib/funType.h>
+#include <GSLib/serverType.h>
+#include <GSLib/baseDef.h>
+#include <GSLib/dbTableID.h>
+
+namespace GSLib
+{
+
+namespace DBSystem
+{
+
+enum EMsgNumIDDBSystem
+{
+	EMSGNUMID_DBSYSTEM_XS2DB_REQ_SELECT_TABLE_DATA = 1,
+	EMSGNUMID_DBSYSTEM_DB2XS_ACK_SELECT_TABLE_DATA = 2,
+
+	EMSGNUMID_DBSYSTEM_XS2DB_NTF_UPDATE_TABLE_DATA = 3,
+	EMSGNUMID_DBSYSTEM_XS2DB_NTF_SAVE_TABLE_DATA = 4,
+	EMSGNUMID_DBSYSTEM_XS2DB_NTF_REMOVE_TABLE_DATA = 5,
+	EMSGNUMID_DBSYSTEM_XS2DB_NTF_CLOSE_TABLE_DATA = 6,
+
+	EMSGNUMID_DBSYSTEM_GM2DB_REQ_SELECT_ACCOUNT_INIT_TABLE_DATA = 7,
+	EMSGNUMID_DBSYSTEM_DB2GM_ACK_SELECT_ACCOUNT_INIT_TABLE_DATA = 8,
+
+    EMSGNUMID_DBSYSTEM_XS2DB_REQ_SELECT_GLOBAL_TABLE_DATA = 9,
+    EMSGNUMID_DBSYSTEM_DB2XS_ACK_SELECT_GLOBAL_TABLE_DATA = 10,
+
+    EMSGNUMID_DBSYSTEM_XS2DB_REQ_SELECT_GLOBAL_MULTI_TABLE_DATA = 11,
+    EMSGNUMID_DBSYSTEM_DB2XS_ACK_SELECT_GLOBAL_MULTI_TABLE_DATA = 12,
+
+	EMSGNUMID_DBSYSTEM_CH2DB_NTF_CHARGE = 15,
+};
+
+}//DBSystem
+
+}//GSLib
+
+#endif//__GSLIB_DBSYSTEM_MSGNUMIDDBSYSTEM_H__

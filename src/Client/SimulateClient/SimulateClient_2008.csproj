@@ -1,0 +1,311 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CB83B1BA-D8B9-4A71-A656-96C0F3A3B530}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SimulateClient</RootNamespace>
+    <AssemblyName>SimulateClient</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\..\Bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.DirectX, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="Microsoft.DirectX.Direct3D, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="Microsoft.DirectX.Direct3DX, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CIniFile.cs" />
+    <Compile Include="CHelper.cs" />
+    <Compile Include="CItemMgr.cs" />
+    <Compile Include="CPlayer.cs" />
+    <Compile Include="CCmdMgr.cs" />
+    <Compile Include="CServerMgr.cs" />
+    <Compile Include="FormActivity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormActivity.Designer.cs">
+      <DependentUpon>FormActivity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormArena.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormArena.Designer.cs">
+      <DependentUpon>FormArena.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormChat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormChat.Designer.cs">
+      <DependentUpon>FormChat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEquip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEquip.Designer.cs">
+      <DependentUpon>FormEquip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormFriend.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFriend.Designer.cs">
+      <DependentUpon>FormFriend.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPet.Designer.cs">
+      <DependentUpon>FormPet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRank.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRank.Designer.cs">
+      <DependentUpon>FormRank.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRoleData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRoleData.Designer.cs">
+      <DependentUpon>FormRoleData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSelectZone.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSelectZone.Designer.cs">
+      <DependentUpon>FormSelectZone.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormShop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormShop.Designer.cs">
+      <DependentUpon>FormShop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSkill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSkill.Designer.cs">
+      <DependentUpon>FormSkill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormInstance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInstance.Designer.cs">
+      <DependentUpon>FormInstance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCreateRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCreateRole.Designer.cs">
+      <DependentUpon>FormCreateRole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBag.Designer.cs">
+      <DependentUpon>FormBag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTask.Designer.cs">
+      <DependentUpon>FormTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CLog.cs">
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormActivity.resx">
+      <DependentUpon>FormActivity.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormArena.resx">
+      <DependentUpon>FormArena.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormChat.resx">
+      <DependentUpon>FormChat.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEquip.resx">
+      <DependentUpon>FormEquip.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormFriend.resx">
+      <DependentUpon>FormFriend.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPet.resx">
+      <DependentUpon>FormPet.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRank.resx">
+      <DependentUpon>FormRank.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRoleData.resx">
+      <DependentUpon>FormRoleData.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSelectZone.resx">
+      <DependentUpon>FormSelectZone.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormShop.resx">
+      <DependentUpon>FormShop.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSkill.resx">
+      <DependentUpon>FormSkill.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormInstance.resx">
+      <DependentUpon>FormInstance.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCreateRole.resx">
+      <DependentUpon>FormCreateRole.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBag.resx">
+      <DependentUpon>FormBag.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTask.resx">
+      <DependentUpon>FormTask.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSelectRole.resx">
+      <DependentUpon>FormSelectRole.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\DataSources\GC.CCmd.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="FormSelectRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSelectRole.Designer.cs">
+      <DependentUpon>FormSelectRole.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\CSLib\UnityFrame\UnityFrame_2008.csproj">
+      <Project>{3D27BAC5-2E17-4186-8AC3-5EAD72471547}</Project>
+      <Name>UnityFrame_2008</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CSLib\UnityNetwork\UnityNetwork_2008.csproj">
+      <Project>{14DFD02E-6EFE-49BA-958B-BBA2F6BCF8F9}</Project>
+      <Name>UnityNetwork_2008</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CSLib\UnityUtility\UnityUtility_2008.csproj">
+      <Project>{6DF6894B-1F86-4E76-8499-5FBFD77C9AC6}</Project>
+      <Name>UnityUtility_2008</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UnityGMClient\UnityGMClient_2008.csproj">
+      <Project>{455257F2-C05D-4DB9-A74D-F3A37822BDCC}</Project>
+      <Name>UnityGMClient_2008</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

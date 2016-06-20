@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{8145C444-88A8-4135-90C3-AD61ECDBF33D}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>CommonServer</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>..\..\..\lib\GFLib\win-x86-32\$(Configuration)</OutDir>
+    <IntDir>$(TempOutDir)\GFLibOut\$(ProjectName)\$(Configuration)</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>..\..\..\lib\GFLib\win-x86-32\$(Configuration)</OutDir>
+    <IntDir>$(TempOutDir)\GFLibOut\$(ProjectName)\$(Configuration)</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\..\src\GFLib\commonServer;..\..\..\inc</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\..\src\GFLib\commonServer;..\..\..\inc</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\inc\GFLib\commonServer\baseDef.h" />
+    <ClInclude Include="..\..\..\inc\GFLib\commonServer\clientMgr.h" />
+    <ClInclude Include="..\..\..\inc\GFLib\commonServer\commonClient.h" />
+    <ClInclude Include="..\..\..\inc\GFLib\commonServer\commonServer.h" />
+    <ClInclude Include="..\..\..\inc\GFLib\commonServer\message\funcType.h" />
+    <ClInclude Include="..\..\..\inc\GFLib\commonServer\message\message.h" />
+    <ClInclude Include="..\..\..\inc\GFLib\commonServer\message\msgLabel.h" />
+    <ClInclude Include="..\..\..\inc\GFLib\commonServer\message\msgLocalServer.h" />
+    <ClInclude Include="..\..\..\inc\GFLib\commonServer\message\msgServerLink.h" />
+    <ClInclude Include="..\..\..\inc\GFLib\commonServer\message\msgSystemChannel.h" />
+    <ClInclude Include="..\..\..\inc\GFLib\commonServer\serverTypeMgr.h" />
+    <ClInclude Include="..\..\..\inc\GFLib\commonServer\service.h" />
+    <ClInclude Include="..\..\..\inc\GFLib\commonServer\serviceMgr.h" />
+    <ClInclude Include="..\..\..\inc\GFLib\commonServer\stub.h" />
+    <ClInclude Include="..\..\..\inc\GFLib\commonServer\stubMgr.h" />
+    <ClInclude Include="..\..\..\inc\GFLib\commonServer\sysChannelMgr.h" />
+    <ClInclude Include="..\..\..\inc\GFLib\commonServer\tracer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\GFLib\commonServer\clientMgr.cpp" />
+    <ClCompile Include="..\..\..\src\GFLib\commonServer\commonClient.cpp" />
+    <ClCompile Include="..\..\..\src\GFLib\commonServer\commonServer.cpp" />
+    <ClCompile Include="..\..\..\src\GFLib\commonServer\serverTypeMgr.cpp" />
+    <ClCompile Include="..\..\..\src\GFLib\commonServer\service.cpp" />
+    <ClCompile Include="..\..\..\src\GFLib\commonServer\serviceMgr.cpp" />
+    <ClCompile Include="..\..\..\src\GFLib\commonServer\stub.cpp" />
+    <ClCompile Include="..\..\..\src\GFLib\commonServer\stubMgr.cpp" />
+    <ClCompile Include="..\..\..\src\GFLib\commonServer\sysChannelMgr.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

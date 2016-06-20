@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="GBK" ?>
+<revives>
+	<revive f_revive_count="1" f_cost_diamond="1"/>
+	<revive f_revive_count="2" f_cost_diamond="2"/>
+	<revive f_revive_count="3" f_cost_diamond="3"/>
+	<revive f_revive_count="4" f_cost_diamond="4"/>
+	<revive f_revive_count="5" f_cost_diamond="5"/>
+	<revive f_revive_count="6" f_cost_diamond="6"/>
+	<revive f_revive_count="7" f_cost_diamond="7"/>
+	<revive f_revive_count="8" f_cost_diamond="8"/>
+	<revive f_revive_count="9" f_cost_diamond="9"/>
+</revives>

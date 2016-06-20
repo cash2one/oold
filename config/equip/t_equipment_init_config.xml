@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+    <item f_id="100400000" f_level="1" f_typeid="0" f_gem1_level="1" f_gem1_count="0" f_gem2_level="1" f_gem2_count="0" f_gem3_level="1" f_gem3_count="0" f_gem4_level="1" f_gem4_count="0" f_desc="装备1" />
+    <item f_id="100400001" f_level="1" f_typeid="1" f_gem1_level="1" f_gem1_count="0" f_gem2_level="1" f_gem2_count="0" f_gem3_level="1" f_gem3_count="0" f_gem4_level="1" f_gem4_count="0" f_desc="装备2" />
+    <item f_id="100400002" f_level="1" f_typeid="2" f_gem1_level="1" f_gem1_count="0" f_gem2_level="1" f_gem2_count="0" f_gem3_level="1" f_gem3_count="0" f_gem4_level="1" f_gem4_count="0" f_desc="装备3" />
+    <item f_id="100400003" f_level="1" f_typeid="3" f_gem1_level="1" f_gem1_count="0" f_gem2_level="1" f_gem2_count="0" f_gem3_level="1" f_gem3_count="0" f_gem4_level="1" f_gem4_count="0" f_desc="装备4" />
+    <item f_id="100400004" f_level="1" f_typeid="4" f_gem1_level="1" f_gem1_count="0" f_gem2_level="1" f_gem2_count="0" f_gem3_level="1" f_gem3_count="0" f_gem4_level="1" f_gem4_count="0" f_desc="装备5" />
+    <item f_id="100400005" f_level="1" f_typeid="5" f_gem1_level="1" f_gem1_count="0" f_gem2_level="1" f_gem2_count="0" f_gem3_level="1" f_gem3_count="0" f_gem4_level="1" f_gem4_count="0" f_desc="装备6" />
+</root>

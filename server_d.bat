@@ -1,0 +1,1 @@
+start ./bin/Server_d.exe -k 11

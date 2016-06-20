@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="GBK" ?>
+<behaviors>
+  <behavior name="daQuanCollege" id="100001">
+     <node id="1" type="Sequence">
+     </node>
+  </behavior>
+</behaviors>

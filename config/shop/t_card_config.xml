@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+    <item f_id="1" f_free_gold="5" f_free_gold_cd="600" f_gold1_cost="3000" f_gold10_cost="90000" f_free_diamond="2" f_free_diamond_cd="600" f_diamond1_cost="100" f_diamond10_cost="1000" f_event="" f_prize="" />
+    <item f_id="2" f_free_gold="5" f_free_gold_cd="600" f_gold1_cost="3000" f_gold10_cost="90000" f_free_diamond="2" f_free_diamond_cd="600" f_diamond1_cost="100" f_diamond10_cost="1000" f_event="1_10|2_10|3_10|4_10|5_10|6_10||7_10|8_10" f_prize="20005_10|20011_10|20017_10" />
+</root>

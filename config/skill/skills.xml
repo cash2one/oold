@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="GBK" ?>
+<skills>
+	<skill f_id="1" f_name="光子力学" f_profession="1" f_cd="0" f_skill_buff="" />
+	<skill f_id="2" f_name="暗黑光能" f_profession="2" f_cd="1" f_skill_buff="" />
+	<skill f_id="3" f_name="暗黑光能" f_profession="3" f_cd="2" f_skill_buff="" />
+</skills>

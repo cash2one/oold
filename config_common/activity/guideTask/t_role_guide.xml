@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+    <item f_id="1" f_desc="0" f_type="1" f_guide_type="1" f_task_id="0" f_requre_level="0" />
+    <item f_id="2" f_desc="0" f_type="2" f_guide_type="1" f_task_id="0" f_requre_level="2" />
+    <item f_id="3" f_desc="0" f_type="2" f_guide_type="1" f_task_id="10002" f_requre_level="0" />
+    <item f_id="4" f_desc="0" f_type="2" f_guide_type="1" f_task_id="10004" f_requre_level="0" />
+    <item f_id="5" f_desc="0" f_type="2" f_guide_type="1" f_task_id="10005" f_requre_level="0" />
+    <item f_id="6" f_desc="0" f_type="2" f_guide_type="1" f_task_id="10006" f_requre_level="0" />
+    <item f_id="7" f_desc="0" f_type="2" f_guide_type="1" f_task_id="10006" f_requre_level="0" />
+    <item f_id="8" f_desc="0" f_type="2" f_guide_type="1" f_task_id="10009" f_requre_level="0" />
+    <item f_id="9" f_desc="0" f_type="2" f_guide_type="1" f_task_id="10010" f_requre_level="0" />
+    <item f_id="10" f_desc="0" f_type="2" f_guide_type="1" f_task_id="10011" f_requre_level="0" />
+    <item f_id="11" f_desc="0" f_type="2" f_guide_type="1" f_task_id="10015" f_requre_level="0" />
+    <item f_id="12" f_desc="0" f_type="3" f_guide_type="2" f_task_id="0" f_requre_level="2" />
+    <item f_id="13" f_desc="0" f_type="3" f_guide_type="2" f_task_id="10002" f_requre_level="0" />
+    <item f_id="14" f_desc="0" f_type="3" f_guide_type="2" f_task_id="10004" f_requre_level="0" />
+    <item f_id="15" f_desc="0" f_type="3" f_guide_type="2" f_task_id="10005" f_requre_level="0" />
+    <item f_id="16" f_desc="0" f_type="3" f_guide_type="1" f_task_id="10006" f_requre_level="0" />
+    <item f_id="17" f_desc="0" f_type="3" f_guide_type="2" f_task_id="10008" f_requre_level="0" />
+    <item f_id="18" f_desc="0" f_type="3" f_guide_type="2" f_task_id="10009" f_requre_level="0" />
+    <item f_id="19" f_desc="0" f_type="3" f_guide_type="2" f_task_id="10010" f_requre_level="0" />
+    <item f_id="20" f_desc="0" f_type="3" f_guide_type="1" f_task_id="10011" f_requre_level="0" />
+    <item f_id="21" f_desc="0" f_type="3" f_guide_type="2" f_task_id="10011" f_requre_level="0" />
+    <item f_id="22" f_desc="0" f_type="3" f_guide_type="2" f_task_id="10015" f_requre_level="0" />
+</root>

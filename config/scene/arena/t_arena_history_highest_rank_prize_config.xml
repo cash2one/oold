@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+    <item f_end_rank="1" f_gold="100" f_diamond="10" f_pvp_coin="16" />
+    <item f_end_rank="2" f_gold="19" f_diamond="9" f_pvp_coin="15" />
+    <item f_end_rank="3" f_gold="18" f_diamond="8" f_pvp_coin="12" />
+    <item f_end_rank="10" f_gold="17" f_diamond="7" f_pvp_coin="10" />
+    <item f_end_rank="100" f_gold="997" f_diamond="995" f_pvp_coin="500" />
+</root>

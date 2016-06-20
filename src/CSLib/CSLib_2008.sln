@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityUtility_2008", "UnityUtility\UnityUtility_2008.csproj", "{6DF6894B-1F86-4E76-8499-5FBFD77C9AC6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityNetwork_2008", "UnityNetwork\UnityNetwork_2008.csproj", "{14DFD02E-6EFE-49BA-958B-BBA2F6BCF8F9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6DF6894B-1F86-4E76-8499-5FBFD77C9AC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DF6894B-1F86-4E76-8499-5FBFD77C9AC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DF6894B-1F86-4E76-8499-5FBFD77C9AC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DF6894B-1F86-4E76-8499-5FBFD77C9AC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14DFD02E-6EFE-49BA-958B-BBA2F6BCF8F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14DFD02E-6EFE-49BA-958B-BBA2F6BCF8F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14DFD02E-6EFE-49BA-958B-BBA2F6BCF8F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14DFD02E-6EFE-49BA-958B-BBA2F6BCF8F9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

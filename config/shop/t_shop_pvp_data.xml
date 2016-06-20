@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+    <item f_id="1" f_item_type="0" f_item_id="100100001" f_item_no="1" f_pay_type="105" f_price="1" f_limit_num="1" f_discount="100" f_probability="1500" f_flag="1" />
+    <item f_id="2" f_item_type="0" f_item_id="100100002" f_item_no="1" f_pay_type="105" f_price="1" f_limit_num="1" f_discount="100" f_probability="1500" f_flag="0" />
+    <item f_id="3" f_item_type="0" f_item_id="100100003" f_item_no="1" f_pay_type="105" f_price="1" f_limit_num="1" f_discount="100" f_probability="1000" f_flag="0" />
+    <item f_id="4" f_item_type="0" f_item_id="100100004" f_item_no="1" f_pay_type="105" f_price="1" f_limit_num="1" f_discount="100" f_probability="1500" f_flag="1" />
+</root>

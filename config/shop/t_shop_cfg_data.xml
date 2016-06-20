@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+    <item f_id="1" f_shop_path="t_shop_prop_data" f_show_num="0" f_refresh_period="0" f_manual_refresh="0" f_pay_type="0" f_price="0" f_vip="1_99|10_75" />
+    <item f_id="2" f_shop_path="t_shop_pvp_data" f_show_num="4" f_refresh_period="60" f_manual_refresh="1" f_pay_type="102" f_price="1" f_vip="0" />
+    <item f_id="3" f_shop_path="t_shop_daily_data" f_show_num="0" f_refresh_period="0" f_manual_refresh="0" f_pay_type="0" f_price="0" f_vip="0" />
+</root>

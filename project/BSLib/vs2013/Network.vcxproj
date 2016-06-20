@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{A7ADAAD2-EF83-4544-9166-7AA3B28D8362}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Network</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>..\..\..\lib\BSLib\win-x86-32\$(Configuration)</OutDir>
+    <IntDir>$(TempOutDir)\BSLibOut\$(ProjectName)\$(Configuration)</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>..\..\..\lib\BSLib\win-x86-32\$(Configuration)</OutDir>
+    <IntDir>$(TempOutDir)\BSLibOut\$(ProjectName)\$(Configuration)</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\..\src\BSLib\network;..\..\..\inc;..\..\..\inc\TDLib</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Lib>
+      <AdditionalDependencies>ws2_32.lib;UDM.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\lib\BSLib\win-x86-32\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\..\src\BSLib\network;..\..\..\inc;..\..\..\inc\TDLib</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Lib>
+      <AdditionalDependencies>ws2_32.lib;UDM.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\lib\BSLib\win-x86-32\Release</AdditionalLibraryDirectories>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\inc\BSLib\network\baseDef.h" />
+    <ClInclude Include="..\..\..\inc\BSLib\network\netAcceptor.h" />
+    <ClInclude Include="..\..\..\inc\BSLib\network\netClient.h" />
+    <ClInclude Include="..\..\..\inc\BSLib\network\netConnection.h" />
+    <ClInclude Include="..\..\..\inc\BSLib\network\netConnectionMgr.h" />
+    <ClInclude Include="..\..\..\inc\BSLib\network\netServer.h" />
+    <ClInclude Include="..\..\..\inc\BSLib\network\netStub.h" />
+    <ClInclude Include="..\..\..\inc\BSLib\network\netStubMgr.h" />
+    <ClInclude Include="..\..\..\inc\BSLib\network\sockAddr.h" />
+    <ClInclude Include="..\..\..\inc\BSLib\network\tcpAcceptor.h" />
+    <ClInclude Include="..\..\..\inc\BSLib\network\tcpConnection.h" />
+    <ClInclude Include="..\..\..\inc\BSLib\network\tcpConnectionMgr.h" />
+    <ClInclude Include="..\..\..\inc\BSLib\network\udpAcceptor.h" />
+    <ClInclude Include="..\..\..\inc\BSLib\network\udpConnection.h" />
+    <ClInclude Include="..\..\..\inc\BSLib\network\udpConnectionMgr.h" />
+    <ClInclude Include="..\..\..\src\BSLib\network\epoll.h" />
+    <ClInclude Include="..\..\..\src\BSLib\network\iocp.h" />
+    <ClInclude Include="..\..\..\src\BSLib\network\netinit.h" />
+    <ClInclude Include="..\..\..\src\BSLib\network\netStubPool.h" />
+    <ClInclude Include="..\..\..\src\BSLib\network\netStubThread.h" />
+    <ClInclude Include="..\..\..\src\BSLib\network\sockEvent.hpp" />
+    <ClInclude Include="..\..\..\src\BSLib\network\tcpEpoll.h" />
+    <ClInclude Include="..\..\..\src\BSLib\network\tcpStubThread.h" />
+    <ClInclude Include="..\..\..\src\BSLib\network\udpStubThread.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\BSLib\network\netAcceptor.cpp" />
+    <ClCompile Include="..\..\..\src\BSLib\network\netClient.cpp" />
+    <ClCompile Include="..\..\..\src\BSLib\network\netConnection.cpp" />
+    <ClCompile Include="..\..\..\src\BSLib\network\netConnectionMgr.cpp" />
+    <ClCompile Include="..\..\..\src\BSLib\network\netinit.cpp" />
+    <ClCompile Include="..\..\..\src\BSLib\network\netServer.cpp" />
+    <ClCompile Include="..\..\..\src\BSLib\network\netStub.cpp" />
+    <ClCompile Include="..\..\..\src\BSLib\network\netStubMgr.cpp" />
+    <ClCompile Include="..\..\..\src\BSLib\network\netStubPool.cpp" />
+    <ClCompile Include="..\..\..\src\BSLib\network\netStubThread.cpp" />
+    <ClCompile Include="..\..\..\src\BSLib\network\sockAddr.cpp" />
+    <ClCompile Include="..\..\..\src\BSLib\network\tcpAcceptor.cpp" />
+    <ClCompile Include="..\..\..\src\BSLib\network\tcpConnection.cpp" />
+    <ClCompile Include="..\..\..\src\BSLib\network\tcpConnectionMgr.cpp" />
+    <ClCompile Include="..\..\..\src\BSLib\network\tcpEpoll.cpp" />
+    <ClCompile Include="..\..\..\src\BSLib\network\tcpStubThread.cpp" />
+    <ClCompile Include="..\..\..\src\BSLib\network\udpAcceptor.cpp" />
+    <ClCompile Include="..\..\..\src\BSLib\network\udpConnection.cpp" />
+    <ClCompile Include="..\..\..\src\BSLib\network\udpConnectionMgr.cpp" />
+    <ClCompile Include="..\..\..\src\BSLib\network\udpStubThread.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

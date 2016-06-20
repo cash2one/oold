@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--f_role_diamond:角色宝石-->
+<!--f_role_exp:角色经验-->
+<!--f_role_gold:角色金币-->
+<!--f_role_level:角色等级-->
+<!--f_role_pop:角色人气-->
+<!--f_role_pvepower:角色经验-->
+<!--f_role_pvpcoin:角色PVP币-->
+<!--f_role_skillpoint:角色技能点-->
+<root>
+	<item f_role_diamond="0" f_role_exp="0" f_role_level="1" f_role_gold="0" f_role_pop="0" f_role_vitality="200"  f_role_pvpcoin="0" f_role_skillpoint="0" />
+</root>

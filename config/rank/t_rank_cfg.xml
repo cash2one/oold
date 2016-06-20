@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+    <item f_id="0" f_sender="系统" f_title="竞技场奖励" f_content="你竞技场排行第*" f_list_size="100" f_prize_size="100" />
+    <item f_id="1" f_sender="系统" f_title="试炼空间奖励" f_content="试炼空间积分排行第*" f_list_size="100" f_prize_size="100" />
+    <item f_id="2" f_sender="系统" f_title="用户活跃度奖励" f_content="用户活跃度一周累计第*" f_list_size="100" f_prize_size="100" />
+    <item f_id="3" f_sender="" f_title="" f_content="" f_list_size="100" f_prize_size="0" />
+    <item f_id="4" f_sender="" f_title="" f_content="" f_list_size="100" f_prize_size="0" />
+</root>

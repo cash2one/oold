@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="GBK" ?>
+<fsms>
+  <include>fsmDaQuanCollegeInstance1.xml</include>
+</fsms>

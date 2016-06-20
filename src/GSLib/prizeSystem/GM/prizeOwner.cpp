@@ -1,0 +1,23 @@
+//////////////////////////////////////////////////////////////////////
+//	created:	2014/09/11
+//	filename: 	src\GSLib\prizeSystem\GM\prizeOwner.cpp
+//	author:		mazhejiang
+//	
+//	purpose:	
+//////////////////////////////////////////////////////////////////////
+
+namespace GSLib
+{
+
+namespace PrizeSystem
+{
+
+namespace GM
+{
+
+
+} // GM
+	
+} // PrizeSystem
+
+} // GSLib

@@ -1,0 +1,72 @@
+//////////////////////////////////////////////////////////////////////
+//	created:	2014/09/13
+//	filename: 	GSLib\skillSystem\GM\roleSkillModule.h
+//	author:		mazhejiang
+//	
+//	purpose:	
+//////////////////////////////////////////////////////////////////////
+#ifndef __GSLIB_SKILLSYSTEM_GM_ROLESKILLMODULE_H__
+#define __GSLIB_SKILLSYSTEM_GM_ROLESKILLMODULE_H__
+
+#include <GSLib/playerSystem/GM/roleModuleGM.h>
+#include <GSLib/skillSystem/GM/skillError.h>
+
+namespace GSLib
+{
+
+namespace SkillSystem
+{
+
+namespace GM
+{
+	const int SKILL_BOTTON_CONT = 4;
+
+class CSkill;
+
+class CRoleSkillModule : public GSLib::PlayerSystem::GM::CRoleModuleGM
+{
+public:
+	CRoleSkillModule(GSLib::PlayerSystem::GM::CRoleGM* a_roleGM, EModuleType a_moduleType);
+	virtual ~CRoleSkillModule();
+
+	virtual void init(bool isFirst);
+	virtual void initToClient();
+	virtual void final();
+
+	virtual void initMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr);
+	virtual void freeMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr);
+
+	virtual void updateDataToDB();
+	virtual void cbSelectTableData(BSLib::uint32 a_sessionID, EDBTableID a_tableID, BSLib::Utility::CStream& a_stream);
+private:
+<<<<<<< .mine
+	void _OnMsgSkillSystemGC2GMReqLearnSkill(BSLib::Framework::SMsgLabel* a_msgLabel,BSLib::Framework::SMessage* a_msg);
+	void _OnMsgSkillSystemGC2GMReqUpgradeSkill(BSLib::Framework::SMsgLabel* a_msgLabel,BSLib::Framework::SMessage* a_msg);
+=======
+	void _OnMsgSkillSystemGC2GMReqLearnSkill(BSLib::Framework::SMsgLabel* a_msgLabel,BSLib::Framework::SMessage* a_msg);
+	void _OnMsgSkillSystemGC2GMReqUpgradeSkill(BSLib::Framework::SMsgLabel* a_msgLabel,BSLib::Framework::SMessage* a_msg);
+	void _OnMsgSkillSystemGC2GMReqSetSkillButton(BSLib::Framework::SMsgLabel* a_msgLabel,BSLib::Framework::SMessage* a_msg);
+>>>>>>> .r295
+public:
+	void getSkill(SkillTPID a_skillID, SkillLevel skillLevel = 1);
+	void setSkillButton(SkillTPID a_skillTPID, BSLib::uint8 a_skillButtonIndex);
+private:
+	ELearnSkillError _learnSkill(SkillTPID a_skillID);
+	EUpgradeSkillError _upgradeSkill(SkillTPID a_skillID);
+
+private:
+	ELearnSkillError _canLearnSkill(SkillTPID a_skillTPID) /*const*/;
+	EUpgradeSkillError _canUpgradeSkill(SkillTPID a_skillTPID) /*const*/;
+	ESetSkillButtonError _canSetSkillButton(SkillTPID a_skillTPID, BSLib::uint8 a_skillButtonIndex) const;
+private:
+	BSLib::Utility::CHashMap<SkillTPID, CSkill*>	m_skills;
+	SkillTPID m_skillButton[SKILL_BOTTON_CONT];
+};
+
+}//GM
+
+}//SkillSystem
+
+}//GSLib
+
+#endif//__GSLIB_SKILLSYSTEM_GM_ROLESKILLMODULE_H__

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="GBK" ?>
+<skills>
+	<skill f_id="4" f_name="被动技能1" f_profession="1" f_skill_buff="" />
+	<skill f_id="5" f_name="被动技能2" f_profession="2" f_skill_buff="" />
+	<skill f_id="6" f_name="被动技能3" f_profession="3" f_skill_buff="" />
+</skills>

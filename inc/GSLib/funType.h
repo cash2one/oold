@@ -1,0 +1,43 @@
+//////////////////////////////////////////////////////////////////////
+//	created:	2014/07/19
+//	filename:	GSLib\funType.h
+//	author:		mazhejiang
+//	
+///	purpose:	
+//////////////////////////////////////////////////////////////////////
+#ifndef __GSLIB_FUNCTYPE_H__
+#define __GSLIB_FUNCTYPE_H__
+
+#include <GFLib/commonServer/message/funcType.h>
+
+namespace GSLib
+{
+
+enum EFuncType
+{
+	EFUNCTYPE_LOGINSYSTEM = GFLib::EFUNCTYPE_GFLIB_EXTEND,//8
+	EFUNCTYPE_DBSYSTEM = 9,
+	EFUNCTYPE_PLAYERSYSTEM = 10,
+	EFUNCTYPE_SCENESYSTEM = 11,
+	EFUNCTYPE_EQUIPSYSTEM = 12,
+	EFUNCTYPE_ITEMSYSTEM = 13,
+	EFUNCTYPE_SKILLPSYSTEM = 14,
+	EFUNCTYPE_NPCSYSTEM = 15,
+	EFUNCTYPE_PETSYSTEM = 16,
+	EFUNCTYPE_PRIZESYSTEM= 17,
+	EFUNCTYPE_TASKSYSTEM= 18,
+	EFUNCTYPE_CHATSYSTEM= 19,
+	EFUNCTYPE_MAILSYSTEM= 20,
+	EFUNCTYPE_RANKSYSTEM= 21,
+	EFUNCTYPE_SHOPSYSTEM = 22,
+	EFUNCTYPE_FRIENDSYSTEM = 23,
+	EFUNCTYPE_ACTIVITYSYSTEM = 24,
+	EFUNCTYPE_ACHIEVESYSTEM = 25,
+	EFUNCTYPE_MASTERSYSTEM	= 26,
+
+	EFUNCTYPE_MAX,
+};
+
+}//GFLib
+
+#endif//__SERVER_COMMON_FUNCTYPE_H__

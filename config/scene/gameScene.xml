@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="GBK" ?>
+<!-- id表示一般ID -->
+<!-- type表示场景类型 1-主城 2-普通副本 3-竞技场 -->
+<scenes>
+  <scene id="1" name="daQuanCollege"  type="1" maxPlayers="50" birth="1,1,1" enterCondition="[AND $Player.VIP GE 5]" autoLearnSkillID="" server=""/>
+  <scene id="2" name="daQuanCollegeInstance1"  type="2"  maxPlayers="4" birth="1,1,1" enterCondition="[]" autoLearnSkillID="1" server=""/>
+  <scene id="1001" name="arena"  type="1"  maxPlayers="1" birth="1,1,1" enterCondition="[]" autoLearnSkillID="" server=""/>
+</scenes>
