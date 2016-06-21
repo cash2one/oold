@@ -193,36 +193,6 @@ bool CNetStubPool::addStub(CNetStubPtr& stubPtr)
 	return false;
 }
 
-// void CNetStubPool::getBytesStubInfor(SNetStubsCollectInfor& a_netCollectInfor)
-// {
-// // 	*a_recvBytesCount = 0;
-// // 	*a_sendBytesCount = 0;
-// // 	*a_recvBytesPerSMax = 0;
-// // 	*a_sendBytesPerSMax = 0;
-// 
-// 	for (uint32 i=0;  i<m_threadArray.getSize(); ++i){
-// 		BSLib::Utility::CThreadPtr& netThreadPtr = m_threadArray[i];
-// 		CNetStubThread* netStubThread = (CNetStubThread*)netThreadPtr;
-// 		if (netStubThread != NULL) {
-// 			BSLib::uint64 recvBytesCount = 0;
-// 			BSLib::uint64 sendBytesCount = 0;
-// 			BSLib::uint32 recvBytesPerSMax = 0;
-// 			BSLib::uint32 sendBytesPerSMax = 0;
-// 
-// 			netStubThread->getBytesStubInfor(&recvBytesCount, &sendBytesCount, &recvBytesPerSMax, &sendBytesPerSMax);
-// 
-// // 			*a_recvBytesCount += recvBytesCount;
-// // 			*a_sendBytesCount += sendBytesCount;
-// // 			if (*a_recvBytesPerSMax < recvBytesPerSMax) {
-// // 				*a_recvBytesPerSMax = recvBytesPerSMax;
-// // 			}
-// // 			if (*a_sendBytesPerSMax < sendBytesPerSMax) {
-// // 				*a_sendBytesPerSMax = sendBytesPerSMax;
-// // 			}
-// 		}
-// 	}
-// }
-
 
 bool CNetStubPool::_addStub(CNetStubPtr& stubPtr)
 {

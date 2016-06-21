@@ -10,7 +10,7 @@ namespace Network
 class CNetClientCb : public BSLib::Network::CNetConnectionCallback
 {
 public:
-	CNetClientCb(CNetClient* netClient) : m_netClient(netClient)
+	CNetClientCb(INetClient* netClient) : m_netClient(netClient)
 	{
 		;
 	}
@@ -21,7 +21,7 @@ public:
 			if (recvSize == 0){
 				return true;
 			}
-			if (!m_netClient->_cbParseMsg((void*)m_stream.readPtr(), m_stream.readSize())) {
+			if (!m_netClient->_INetClient_cbParseMsg((void*)m_stream.readPtr(), m_stream.readSize())) {
 				m_stream.reset();
 				return false;
 			}
@@ -32,37 +32,37 @@ public:
 
 	virtual void terminate(BSLib::Network::CNetConnectionPtr& connection)
 	{
-		m_netClient->close();
-		m_netClient->_cbTerminate();
+		m_netClient->INetClient_close();
+		m_netClient->_INetClient_cbTerminate();
 	}
 
 private:
-	CNetClient* m_netClient;
+	INetClient* m_netClient;
 	BSLib::Utility::CStream m_stream;
 };
 
 //////////////////////////////////////////////////////////////////////////
 // CNetClient
 //////////////////////////////////////////////////////////////////////////
-CNetClient::CNetClient()
+INetClient::INetClient()
 : m_netConnectionPtr(NULL)
 {
 	;
 }
 
-CNetClient::~CNetClient()
+INetClient::~INetClient()
 {
 	m_netConnectionPtr = NULL;
 }
 
-void CNetClient::close()
+void INetClient::INetClient_close()
 {
 	if (m_netConnectionPtr != NULL){
 		m_netConnectionPtr->close();
 	}
 }
 
-int CNetClient::send(BSLib::Utility::CStream& stream, bool useBuff)
+int INetClient::send(BSLib::Utility::CStream& stream, bool useBuff)
 {
 	if (m_netConnectionPtr == NULL){
 		return -1;
@@ -73,7 +73,7 @@ int CNetClient::send(BSLib::Utility::CStream& stream, bool useBuff)
 	return m_netConnectionPtr->send(stream, useBuff);
 }
 
-int CNetClient::send(const void* msgBuff, unsigned int buffSize, bool useBuff)
+int INetClient::send(const void* msgBuff, unsigned int buffSize, bool useBuff)
 {
 	if (m_netConnectionPtr == NULL){
 		return -1;
@@ -84,7 +84,7 @@ int CNetClient::send(const void* msgBuff, unsigned int buffSize, bool useBuff)
 	return m_netConnectionPtr->send(msgBuff, buffSize, useBuff);
 }
 
-int CNetClient::recv(BSLib::Utility::CStream& stream)
+int INetClient::recv(BSLib::Utility::CStream& stream)
 {
 	if (m_netConnectionPtr == NULL){
 		return -1;
@@ -92,7 +92,7 @@ int CNetClient::recv(BSLib::Utility::CStream& stream)
 	return m_netConnectionPtr->recv(stream);
 }
 
-int CNetClient::recvBlock(BSLib::Utility::CStream& stream)
+int INetClient::recvBlock(BSLib::Utility::CStream& stream)
 {
 	if (m_netConnectionPtr == NULL){
 		return -1;
@@ -115,7 +115,7 @@ CTcpClient::~CTcpClient()
 	m_tcpClientCb = NULL;
 }
 
-bool CTcpClient::connect(const char* serverIP, uint16 serverPort)
+bool CTcpClient::INetClient_connect(const char* serverIP, uint16 serverPort)
 {
 	if (m_tcpConnectionMgr == NULL) {
 		return false;
@@ -145,7 +145,7 @@ bool CTcpClient::connect(const char* serverIP, uint16 serverPort)
 	return true;
 }
 
-void CTcpClient::close()
+void CTcpClient::INetClient_close()
 {
 	if (m_netConnectionPtr == NULL || m_tcpConnectionMgr == NULL) {
 		return ;
@@ -154,7 +154,7 @@ void CTcpClient::close()
 		return ;
 	}
 	m_tcpConnectionMgr->delConnection(m_netConnectionPtr->getSockect());
-	CNetClient::close();
+	INetClient::INetClient_close();
 }
 
 //////////////////////////////////////////////////////////////////////////
@@ -171,7 +171,7 @@ CUdpClient::~CUdpClient()
 	m_udpClientCb = NULL;
 }
 
-bool CUdpClient::connect(const char* serverIP, uint16 serverPort)
+bool CUdpClient::INetClient_connect(const char* serverIP, uint16 serverPort)
 {
 	if (m_udpConnectionMgr == NULL) {
 		return false;
@@ -231,7 +231,7 @@ bool CUdpClient::connect(CSockAddr& addrLocal, CSockAddr& addrServer)
 	return true;
 }
 
-void CUdpClient::close()
+void CUdpClient::INetClient_close()
 {
 	if (m_netConnectionPtr == NULL || m_udpConnectionMgr == NULL) {
 		return ;
@@ -240,7 +240,7 @@ void CUdpClient::close()
 		return ;
 	}
 	m_udpConnectionMgr->delConnection(m_netConnectionPtr->getSockect());
-	CNetClient::close();
+	INetClient::INetClient_close();
 }
 
 }//Network

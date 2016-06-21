@@ -17,14 +17,14 @@ class CNetClientCb;
 //////////////////////////////////////////////////////////////////////////
 // CNetClient
 //////////////////////////////////////////////////////////////////////////
-class  BSLIB_NETWORK_API CNetClient
+class  BSLIB_NETWORK_API INetClient
 {
 public:
-	CNetClient();
-	virtual ~CNetClient();
+	INetClient();
+	virtual ~INetClient();
 
-	virtual bool connect(const char* serverIP, uint16 serverPort) = 0;
-	virtual void close();
+	virtual bool INetClient_connect(const char* serverIP, uint16 serverPort) = 0;
+	virtual void INetClient_close();
 
 	CNetConnectionPtr getNetConnection() { return m_netConnectionPtr; }
 
@@ -34,20 +34,20 @@ public:
 	int recvBlock(BSLib::Utility::CStream& stream);
 
 protected:
-	virtual bool _cbParseMsg(void* msgBuff, uint32 msgSize) = 0;
-	virtual void _cbTerminate() = 0;
+	virtual bool _INetClient_cbParseMsg(void* msgBuff, uint32 msgSize) = 0;
+	virtual void _INetClient_cbTerminate() = 0;
 
 protected:
 	CNetConnectionPtr m_netConnectionPtr;
 
 	friend class CNetClientCb;
 };
-typedef BSLib::Utility::CPointer<CNetClient> CNetClientPtr;
+typedef BSLib::Utility::CPointer<INetClient> CNetClientPtr;
 
 //////////////////////////////////////////////////////////////////////////
 // CTcpClient
 //////////////////////////////////////////////////////////////////////////
-class BSLIB_NETWORK_API CTcpClient : public CNetClient 
+class BSLIB_NETWORK_API CTcpClient : public INetClient
 {
 public:
 	CTcpClient();
@@ -55,8 +55,8 @@ public:
 
 	void setTcpConnectionMgr(CTcpConnectionMgr* tcpConnectionMgr) { m_tcpConnectionMgr = tcpConnectionMgr; }
 
-	virtual bool connect(const char* serverIP, uint16 serverPort);
-	virtual void close();
+	virtual bool INetClient_connect(const char* serverIP, uint16 serverPort);
+	virtual void INetClient_close();
 
 private:
 	BSLib::Network::CTcpConnectionMgr* m_tcpConnectionMgr;
@@ -68,7 +68,7 @@ typedef BSLib::Utility::CPointer<CTcpClient> CTcpClientPtr;
 //////////////////////////////////////////////////////////////////////////
 // CUdpClient
 //////////////////////////////////////////////////////////////////////////
-class BSLIB_NETWORK_API CUdpClient : public CNetClient 
+class BSLIB_NETWORK_API CUdpClient : public INetClient
 {
 public:
 	CUdpClient();
@@ -76,9 +76,9 @@ public:
 
 	void setUdpConnectionMgr(BSLib::Network::CUdpConnectionMgr* udpConnectionMgr) { m_udpConnectionMgr = udpConnectionMgr; }
 
-	virtual bool connect(const char* serverIP, uint16 serverPort);
+	virtual bool INetClient_connect(const char* serverIP, uint16 serverPort);
 
-	virtual void close();
+	virtual void INetClient_close();
 
 	bool connect(CSockAddr& addrLocal, CSockAddr& addrServer);
 

@@ -16,7 +16,7 @@ namespace CommonServer
 
 struct SAcceptorIPAndPort;
 
-class GFLIB_COMMONSERVER_API CCommonServer : public BSLib::Framework::CMainThread, public BSLib::Network::CNetServer//, public CClientCreator
+class GFLIB_COMMONSERVER_API CCommonServer : public BSLib::Framework::CMainThread, public BSLib::Network::CNetServer
 {
 public:
 	CCommonServer();
