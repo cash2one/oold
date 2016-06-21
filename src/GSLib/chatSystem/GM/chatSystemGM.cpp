@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/10/09
-//	filename: 	src\GSLib\chatSystem\GM\chatSystemGM.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/playerSystem/GM/roleModuleGMMgr.h>
 #include <GSLib/chatSystem/GM/chatSystemGM.h>
 #include <GSLib/chatSystem/GM/roleChatModule.h>
@@ -103,3 +96,4 @@ void CChatSystemGM::sendAnnounce(const std::string &a_content) const
 }//ChatSystem
 
 }//GSLib
+

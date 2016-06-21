@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/09/18
-//	filename:	GFLib\commonServer\commonClient.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GFLIB_COMMONSERVER_COMMONCLIENT_H__
 #define __GFLIB_COMMONSERVER_COMMONCLIENT_H__
 
@@ -88,4 +81,5 @@ typedef BSLib::Utility::CPointer<CCommonClient> CCommonClientPtr;
 }//GFLib
 
 #endif//__GFLIB_COMMONSERVER_COMMONCLIENT_H__
+
 

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2013/06/09
-//	filename:	src\Server\server\mainServer.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/utility/fileTracer.h>
 #include <BSLib/framework/sysConfig.h>
 #include "channelMgr.h"
@@ -64,5 +57,6 @@ int CMainServer::_final()
 	CChannelMgr::singleton().final();
 	return BSLib::Framework::CMainThread::_final();
 }
+
 
 

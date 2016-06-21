@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/11/24
-//	filename: 	GSLib\taskSystem\GM\taskSystemError.h
-//	author:		zhangming
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef	__GSLIB_TASKSYSTEM_GM_TASKSYSTEM_ERROR_H__
 #define __GSLIB_TASKSYSTEM_GM_TASKSYSTEM_ERROR_H__
 
@@ -101,3 +94,4 @@ enum EGetPetTaskPrizeResult
 }//GSLib
 
 #endif//__GSLIB_TASKSYSTEM_GM_TASKDATAMGR_H__
+

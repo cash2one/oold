@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/11/12
-//	filename: 	GSLib\chatSystem\GM\chatContent.cpp
-//	author:		zhangming
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/chatSystem/GM/chatContent.h>
 
 namespace GSLib
@@ -45,4 +38,5 @@ void CChatContent::serializeTo(BSLib::Utility::CStream & a_stream) const
 }//ChatSystem
 
 }//GSLib
+
 

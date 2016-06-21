@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/08/20
-//	filename:	src\BSLib\udm\udmAcceptor.cpp
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include "udmAcceptor.h"
 #include "udpThreadMgr.h"
 #include "udmMgr.h"
@@ -98,6 +91,7 @@ int CUdmAcceptor::close()
 }//UDM
 
 }//BSLib
+
 
 
 

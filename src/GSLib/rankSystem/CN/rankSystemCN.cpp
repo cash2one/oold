@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/10/23
-//	filename: 	src\GSLib\rankSystem\CN\rankSystemCN.cpp
-//	author:		zhangming
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/tracer.h>
 #include <GSLib/rankSystem/msgRankSystem.h>
 #include <GSLib/rankSystem/CN/rankSystemCN.h>
@@ -416,3 +409,4 @@ bool CRankSystemCN::_cbSelectKeyTableData(const GSLib::SRoleKey& a_roleKey, DBSy
 }//RankSystem
 
 }//GSLib
+

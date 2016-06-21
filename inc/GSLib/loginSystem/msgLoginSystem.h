@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/19
-//	filename:	GSLib\loginSystem\msgLoginSystem.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_LOGINSYSTEM_MSGLOGINSYSTEM_H__
 #define __GSLIB_LOGINSYSTEM_MSGLOGINSYSTEM_H__
 
@@ -17,6 +10,7 @@
 #include <GSLib/loginSystem/msgLoginSystemGC.h>
 
 #endif //__GSLIB_LOGINSYSTEM_MSGLOGINSYSTEM_H__
+
 
 
 

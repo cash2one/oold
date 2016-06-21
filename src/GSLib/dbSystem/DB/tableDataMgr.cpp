@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/08/30
-//	filename: 	src\GSLib\dbSystem\DB\tableDataMgr.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GFLib/commonServer/commonServer.h>
 #include <GSLib/tracer.h>
 #include <GSLib/dbSystem/DB/dbSystemDB.h>
@@ -755,3 +748,4 @@ void CTableDataMgr::_saveAllKeyIndexTable(const std::string& a_key, const std::s
 }//LoginSystem
 
 }//GSLib
+

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/08/19
-//	filename: 	src\GSLib\sceneSystem\GM\sceneScriptEnv.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/tracer.h>
 #include <GSLib/sceneSystem/GM/sceneScriptEnv.h>
 #include <GSLib/sceneSystem/GM/sceneScriptGM.h>
@@ -71,3 +64,4 @@ void CSceneScriptEnv::_intiFunctionIndex()
 }//SceneSystem
 
 }//GSLib
+

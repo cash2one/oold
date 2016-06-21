@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/07/09
-//	filename:	src\BSLib\utility\memory\memPage.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include "memory/memPool.h"
 
 namespace BSLib
@@ -32,3 +25,4 @@ SMemHead* CMemPool::pop()
 }//Utility
 
 }//BSLib
+

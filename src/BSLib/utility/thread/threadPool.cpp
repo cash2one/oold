@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2015/04/01
-//	filename: 	src\BSLib\utility\thread\threadPool.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/utility/thread/threadPool.h>
 #include <BSLib/utility/ptrQueue.h>
 #include <BSLib/utility/thread/event.h>

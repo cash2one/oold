@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/08/19
-//	filename: 	GSLib\sceneSystem\GM\entityGM.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_SCENESYSTEM_GM_ENTITYGM_H__
 #define __GSLIB_SCENESYSTEM_GM_ENTITYGM_H__ 
 
@@ -46,3 +39,4 @@ public:
 }//GSLib
 
 #endif//__GSLIB_SCENESYSTEM_GM_ENTITYGM_H__
+

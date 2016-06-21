@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2015/1/21
-//	filename: 	GSLib\activitySystem\GM\activitySystemDefine.h
-//	author:		zhangming
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 
 #ifndef		__GSLIB_ACTIVITYSYSTEM_GM_ACTIVITY_SYSTEM_DEFINE_H__
 #define		__GSLIB_ACTIVITYSYSTEM_GM_ACTIVITY_SYSTEM_DEFINE_H__
@@ -53,5 +46,6 @@ namespace GM
 
 
 #endif
+
 
 

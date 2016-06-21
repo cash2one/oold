@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/09/06
-//	filename:	src\BSLib\dateBSLib\mysqlConnection.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/utility/tracer.h>
 #include "mysqlConnection.h"
 #include "mysqlReader.h"
@@ -1240,4 +1233,5 @@ bool CMysqlConnection::_executeDelete(BSLib::Utility::CStringA& a_sqlCommand, co
 }//Database
 
 }//BSLib
+
 

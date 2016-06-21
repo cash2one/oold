@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/17
-//	filename:	src\Server\gateServer\gateServer.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __SERVER_GATESERVER_GATESERVER_H__
 #define __SERVER_GATESERVER_GATESERVER_H__
 
@@ -45,3 +38,4 @@ private:
 };
 
 #endif//__SERVER_GATESERVER_GATESERVER_H__
+

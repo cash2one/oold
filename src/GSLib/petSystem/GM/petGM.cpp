@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/27
-//	filename: 	src\GSLib\petSystem\GM\petSystemGM.cpp
-//	author:		zhangping
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/tracer.h>
 #include <GSLib/petSystem/GM/petGM.h>
 #include "petConfigGMMgr.h"
@@ -495,3 +488,4 @@ bool CPetGM::getBaseInfor(BSLib::Utility::CStream& stream) const
 }//PetSystem
 
 }//GSLib
+

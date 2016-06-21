@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2013/06/09
-//	filename:	GFLib\commonServer\message\msgSysChannel.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GAMESERVER_MESSAGE_MSGSYSCHANNEL_H__
 #define __GAMESERVER_MESSAGE_MSGSYSCHANNEL_H__
 
@@ -81,6 +74,7 @@ struct SMsgSysChannelLC2LCNtfCommand: public GFLib::SMessage
 }//GFLib
 
 #endif//__GAMESERVER_MESSAGE_MSGSYSCHANNEL_H__
+
 
 
 

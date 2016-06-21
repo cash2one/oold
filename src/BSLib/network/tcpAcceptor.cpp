@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/07/28
-//	filename:	src\BSLib\network\tcpAcceptors.cpp
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifdef WIN32
 
 #include "sockEvent.hpp"
@@ -301,4 +294,5 @@ void CTcpAcceptor::_terminateScoket(SOCKET tcpSocket)
 }//Network
 
 }//BSLib
+
 

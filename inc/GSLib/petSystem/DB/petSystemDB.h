@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/09/26
-//	filename: 	GSLib\petSystem\DB\petSystemDB.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_PETSYSTEM_DB_PETSYSTEMDB_H__
 #define __GSLIB_PETSYSTEM_DB_PETSYSTEMDB_H__
 
@@ -47,3 +40,4 @@ public:
 }//GSLib
 
 #endif//__GSLIB_PETSYSTEM_DB_PETSYSTEMDB_H__
+

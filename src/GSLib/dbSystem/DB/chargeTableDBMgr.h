@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/08/30
-//	filename: 	src\GSLib\dbSystem\DB\chargeTableDBMgr.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 
 #ifndef __GSLIB_DBSYSTEM_DB_CHARGETABLEDBMGR_H__
 #define __GSLIB_DBSYSTEM_DB_CHARGETABLEDBMGR_H__

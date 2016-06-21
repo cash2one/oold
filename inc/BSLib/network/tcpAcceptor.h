@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/07/31
-//	filename: 	BSLib\network\tcpAcceptors.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_NETWORK_TCPACCEPTOR_H__
 #define __BSLIB_NETWORK_TCPACCEPTOR_H__
 
@@ -69,3 +62,4 @@ private:
 }//BSLib
 
 #endif//__BSLIB_NETWORK_TCPACCEPTOR_H__
+

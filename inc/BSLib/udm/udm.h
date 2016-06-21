@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/08/20
-//	filename:	BSLib\udm\udm.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_UDM_UDM_H__
 #define __BSLIB_UDM_UDM_H__
 
@@ -51,3 +44,4 @@ BSLIB_UDM_API int epollRelease(const int eid);
 }//BSLib
 
 #endif//__BSLIB_UDM_UDM_H__
+

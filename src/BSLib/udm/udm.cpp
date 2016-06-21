@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/08/20
-//	filename:	src\BSLib\udm\udm.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/udm/udm.h>
 #include "udmMgr.h"
 #include "udmEpollMgr.h"
@@ -120,4 +113,5 @@ int epollRelease(const int eid)
 }//UDM
 
 }//BSLib
+
 

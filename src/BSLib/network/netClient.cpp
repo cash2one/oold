@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/09/16
-//	filename:	src\BSLib\network\netClient.cpp
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/network/netClient.h>
 
 namespace BSLib
@@ -253,4 +246,5 @@ void CUdpClient::close()
 }//Network
 
 }//BSLib
+
 

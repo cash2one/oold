@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/09/13
-//	filename:	src\BSLib\network\netStubPool.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_NETWORK_NETSTUBPOOL_H__
 #define __BSLIB_NETWORK_NETSTUBPOOL_H__
 
@@ -58,4 +51,5 @@ private:
 }//BSLib
 
 #endif//__BSLIB_NETWORK_NETSTUBPOOL_H__
+
 

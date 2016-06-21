@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/19
-//	filename:	GSLib\loginSystem\GT\loginSystemGT.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_LOGINSYSTEM_GT_LOGINSYSTEMGT_H__
 #define __GSLIB_LOGINSYSTEM_GT_LOGINSYSTEMGT_H__
 
@@ -78,3 +71,4 @@ private:
 }//GSLib
 
 #endif//__GSLIB_LOGINSYSTEM_GT_LOGINSYSTEMGT_H__
+

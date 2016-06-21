@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/09/04
-//	filename:	BSLib\dateBSLib\dbReader.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_DATEBSLIB_DBREADER__
 #define __BSLIB_DATEBSLIB_DBREADER__
 
@@ -73,5 +66,6 @@ typedef BSLib::Utility::CPointer<CDbReader> CDbReaderPtr;
 }//BSLib
 
 #endif//__BSLIB_DATEBSLIB_DBREADER__
+
 
 

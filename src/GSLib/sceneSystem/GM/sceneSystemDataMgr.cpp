@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/08/10
-//	filename: 	GSLib\sceneSystem\GM\sceneSystemDataMgr.cpp
-//	author:		zhangming
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/sceneSystem/GM/sceneSystemDataMgr.h>
 #include <GSLib/sceneSystem/GM/reviveItem.h>
 #include <BSLib/utility/string.h>
@@ -1108,6 +1101,7 @@ void CSceneSystemDataMgr::_addTemplateStage(CStageTemplate * a_stageTemplate)
 }//SceneSystem
 
 }//GSLib
+
 
 
 

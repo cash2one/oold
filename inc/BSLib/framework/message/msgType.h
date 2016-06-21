@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/09/09
-//	filename: 	BSLib\framework\message\msgType.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_FRAMEWORK_MESSAGE_MSGTYPE_H__
 #define __BSLIB_FRAMEWORK_MESSAGE_MSGTYPE_H__
 
@@ -36,4 +29,5 @@ enum EMsgType
 	new (static_cast<void*>(para)) type();
 
 #endif//__BSLIB_FRAMEWORK_MESSAGE_MSGTYPE_H__
+
 

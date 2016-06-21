@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2013/01/13
-//	filename: 	BSLib\utility\timerServer.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_UTILITY_TIMERSERVER_H__
 #define __BSLIB_UTILITY_TIMERSERVER_H__
 
@@ -107,4 +100,5 @@ private:
 }//BSLib
 
 #endif//__BSLIB_UTILITY_TIMERSERVER_H__
+
 

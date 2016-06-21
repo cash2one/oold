@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/10/20
-//	filename:	BSLib\behaviorTree\btDecoratorNode.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_BEHAVIORTREE_BTDECORATORNODE_H__
 #define __BSLIB_BEHAVIORTREE_BTDECORATORNODE_H__
 
@@ -61,3 +54,4 @@ protected:
 }//BSLib
 
 #endif//__BSLIB_BEHAVIORTREE_BTDECORATORNODE_H__
+

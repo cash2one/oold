@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/09/26
-//	filename: 	GSLib\equipSystem\DB\tableEquipDB.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_EQUIPSYSTEM_DB_TABLEEQUIPDB_H__
 #define __GSLIB_EQUIPSYSTEM_DB_TABLEEQUIPDB_H__
 
@@ -261,3 +254,4 @@ public:
 }//GSLib
 
 #endif//__GSLIB_EQUIPSYSTEM_DB_TABLEEQUIPDB_H__
+

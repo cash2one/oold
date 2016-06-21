@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/08/05
-//	filename: 	GFLib\commonServer\message\msgServerLink.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GFLIB_COMMONSERVER_MESSAGE_MSGSERVERLINK_H__
 #define __GFLIB_COMMONSERVER_MESSAGE_MSGSERVERLINK_H__
 
@@ -125,5 +118,6 @@ struct SMsgServerLinkXX2XXNtfTransfer: public SMessage
 }//GFLib
 
 #endif//__GFLIB_COMMONSERVER_MESSAGE_MSGSERVERLINK_H__
+
 
 

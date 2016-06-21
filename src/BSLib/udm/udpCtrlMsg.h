@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/08/21
-//	filename:	src\BSLib\udm\udpCtrlMsg.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_UDM_UDPCTRLMSG_H__
 #define __BSLIB_UDM_UDPCTRLMSG_H__
 
@@ -185,5 +178,6 @@ public:
 }//BSLib
 
 #endif//__BSLIB_UDM_UDPCTRLMSG_H__
+
 
 

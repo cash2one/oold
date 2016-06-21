@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/09/12
-//	filename: 	GSLib\skillSystem\GM\skillAttr.h
-//	author:		zhangming
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef		__GSLIB_SKILLSYSTEM_GM_SKILLATTR_H__
 #define		__GSLIB_SKILLSYSTEM_GM_SKILLATTR_H__
 
@@ -57,4 +50,5 @@ public:
 
 
 #endif	//__SKILLATTR_H__
+
 

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/08/05
-//	filename: 	GFLib\commonServer\message\msgLabel.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GFLIB_COMMONSERVER_MESSAGE_MSGLABEL_H__
 #define __GFLIB_COMMONSERVER_MESSAGE_MSGLABEL_H__
 
@@ -36,5 +29,6 @@ public:
 }//GFLib
 
 #endif//__GFLIB_COMMONSERVER_MESSAGE_MSGLABEL_H__
+
 
 

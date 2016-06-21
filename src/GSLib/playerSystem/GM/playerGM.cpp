@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/27
-//	filename: 	src\GSLib\playerSystem\GM\playerSystemGM.cpp
-//	author:		zhangping
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/tracer.h>
 
 #include <GSLib/playerSystem/GM/playerGM.h>
@@ -1352,3 +1345,4 @@ bool CPlayerGM::_setRole(RoleIndex a_roleIndex,CRoleGM* a_role)
 }//PlayerSystem
 
 }//GSLib
+

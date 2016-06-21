@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/10/10
-//	filename: 	src\GSLib\chatSystem\CN\chatSystemCN.cpp
-//	author:		zhangming
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/tracer.h>
 #include <GSLib/chatSystem/msgChatSystem.h>
 #include <GSLib/chatSystem/CN/chatSystemCN.h>
@@ -118,3 +111,4 @@ void CChatSystemCN::_onMsgChatSystemGM2CNReqPrivateChat(BSLib::Framework::SMsgLa
 }//ChatSystem
 
 }//GSLib
+

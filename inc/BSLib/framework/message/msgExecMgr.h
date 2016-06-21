@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/07/20
-//	filename: 	BSLib\framework\message\msgExecMgr.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_FRAMEWORK_MESSAGE_MSGEXECMGR_H__
 #define __BSLIB_FRAMEWORK_MESSAGE_MSGEXECMGR_H__
 
@@ -140,3 +133,4 @@ private:
 }//BSLib
 
 #endif // __BSLIB_FRAMEWORK_MESSAGE_MSGEXECMGR_H__
+

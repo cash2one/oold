@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/12/10
-//	filename: 	src\Server\superServer\superStub.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/loginSystem/msgLoginSystem.h>
 #include <GSLib/loginSystem/LG/loginSystemLG.h>
 #include "gmStub.h"
@@ -178,4 +171,5 @@ void CGMStub::_onCMsgMasterSystemXX2XSReqOnlineZone(BSLib::Framework::SMsgLabel*
 	}
 	sendMsg(ack);
 }
+
 

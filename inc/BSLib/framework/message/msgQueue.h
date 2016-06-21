@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/07/20
-//	filename: 	BSLib\framework\message\msgQueue.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_FRAMEWORK_MESSAGE_MSGQUEUE_H__
 #define __BSLIB_FRAMEWORK_MESSAGE_MSGQUEUE_H__
 
@@ -163,4 +156,5 @@ const MsgQueueHandle INVALID_MSGQUEUEHANDLE = 0;
 }//BSLib
 
 #endif//__BSLIB_FRAMEWORK_MESSAGE_MSGQUEUE_H__
+
 

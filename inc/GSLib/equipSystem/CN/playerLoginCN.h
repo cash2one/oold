@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/25
-//	filename: 	GSLib\playerSystem\CN\playerLoginCN.h
-//	author:		zhangping
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_PLAYERSYSTEM_CN_PLAYERLOGINCN_H__
 #define __GSLIB_PLAYERSYSTEM_CN_PLAYERLOGINCN_H__
 
@@ -46,3 +39,4 @@ public:
 }//GSLib
 
 #endif//__GSLIB_PLAYERSYSTEM_CN_PLAYERLOGINCN_H__
+

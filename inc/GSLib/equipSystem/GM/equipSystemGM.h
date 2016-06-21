@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/25
-//	filename: 	GSLib\equipSystem\GM\equipSystemGM.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_EQUIPSYSTEM_GM_EQUIPSYSTEMGM_H__
 #define __GSLIB_EQUIPSYSTEM_GM_EQUIPSYSTEMGM_H__
 
@@ -48,3 +41,4 @@ protected:
 }//GSLib
 
 #endif//__GSLIB_EQUIPSYSTEM_GM_EQUIPSYSTEMGM_H__
+

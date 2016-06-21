@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/09/15
-//	filename:	src\BSLib\network\udpStubThread.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_NETWORK_UDPSTUBTHREAD_H__
 #define __BSLIB_NETWORK_UDPSTUBTHREAD_H__
 
@@ -36,5 +29,6 @@ protected:
 }//BSLib
 
 #endif//__BSLIB_NETWORK_UDPSTUBTHREAD_H__
+
 
 

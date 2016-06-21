@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/17
-//	filename: 	src\Server\centerServer\centerServer.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __SERVER_CENTERSERVER_CENTERSERVER_H__
 #define __SERVER_CENTERSERVER_CENTERSERVER_H__
 
@@ -41,3 +34,4 @@ protected:
 };
 
 #endif//__SERVER_CENTERSERVER_CENTERSERVER_H__
+

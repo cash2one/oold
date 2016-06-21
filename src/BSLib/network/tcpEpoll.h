@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/07/28
-//	filename:	src\BSLib\network\tcpEpoll.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_NETWORK_TCPEPOLL_H__
 #define __BSLIB_NETWORK_TCPEPOLL_H__
 
@@ -93,3 +86,4 @@ private:
 }//BSLib
 
 #endif//__BSLIB_NETWORK_TCPEPOLL_H__
+

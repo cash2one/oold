@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/25
-//	filename: 	src\GSLib\petSystem\GM\petGMMgr.cpp
-//	author:		zhangping
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <math.h>
 #include <GSLib/petSystem/msgPetSystemGC.h>
 #include <GSLib/petSystem/msgPetSystem.h>
@@ -506,3 +499,4 @@ bool CPetConfigGMMgr::_addHotSpringTask(CHotSpringTask* a_task)
 }//PetSystem
 
 }//GSLib
+

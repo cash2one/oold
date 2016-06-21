@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/08/28
-//	filename: 	src\GSLib\dbSystem\DB\playerDBMgr.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_DBSYSTEM_DB_PLAYERLOGINDB_H__
 #define __GSLIB_DBSYSTEM_DB_PLAYERLOGINDB_H__
 
@@ -51,3 +44,4 @@ private:
 }//GSLib
 
 #endif//__GSLIB_DBSYSTEM_DB_PLAYERLOGINDB_H__
+

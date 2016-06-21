@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/08/06
-//	filename:	src\BSLib\utility\file\dirInfo.cpp
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #if defined(WIN32)
 
 	#include <direct.h>
@@ -366,3 +359,4 @@ std::string CDirInfo::getExeFile()
 }//Utility
 
 }//BSLib
+

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/25
-//	filename:	GSLib\equipSystem\msgNumIDEquipSystem.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_EQUIPSYSTEM_MSGNUMIDEQUIPSYSTEM_H__
 #define __GSLIB_EQUIPSYSTEM_MSGNUMIDEQUIPSYSTEM_H__
 
@@ -216,3 +209,4 @@ enum EResetEquipType
 }//GSLib
 
 #endif//__GSLIB_EQUIPSYSTEM_MSGNUMIDEQUIPSYSTEM_H__
+

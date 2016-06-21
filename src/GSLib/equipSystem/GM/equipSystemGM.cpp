@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/25
-//	filename: 	src\GSLib\equipSystem\GM\equipSystemGM.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/framework/message/msgExecMgr.h>
 #include <GSLib/equipSystem/GM/equipSystemGM.h>
 #include <GFLib/commonServer/commonSystem.h>
@@ -82,3 +75,4 @@ void CEquipSystemGM::_cbServerLeave(const GFLib::SServerID& a_serverID, const st
 }//EquipSystem
 
 }//GSLib
+

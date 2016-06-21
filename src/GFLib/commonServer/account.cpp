@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/31
-//	filename: 	src\GFLib\commonServer\account.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GFLib/commonServer/account.h>
 #include <GFLib/commonServer/message/msgServerLink.h>
 #include <GFLib/commonServer/commonServer.h>

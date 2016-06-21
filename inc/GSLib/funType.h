@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/19
-//	filename:	GSLib\funType.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_FUNCTYPE_H__
 #define __GSLIB_FUNCTYPE_H__
 
@@ -41,3 +34,4 @@ enum EFuncType
 }//GFLib
 
 #endif//__SERVER_COMMON_FUNCTYPE_H__
+

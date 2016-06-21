@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/22
-//	filename: 	GSLib\loginSystem\LG\msgLoginSystemLG.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_LOGINSYSTEM_LG_MSGLOGINSYSTEMLG_H__
 #define __GSLIB_LOGINSYSTEM_LG_MSGLOGINSYSTEMLG_H__
 
@@ -293,3 +286,4 @@ public:
 }//GSLib
 
 #endif//__GSLIB_LOGINSYSTEM_LG_MSGLOGINSYSTEMLG_H__
+

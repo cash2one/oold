@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/08/04
-//	filename: 	GFLib\commonServer\serverTypeMgr.cpp
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/utility/string.h>
 #include <GFLib/commonServer/serverTypeMgr.h>
 
@@ -134,5 +127,6 @@ void CServerTypeMgr::setServerType(ServerType type, const std::string& text, con
 }//CommonServer
 
 }//GFLib
+
 
 

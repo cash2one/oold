@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/08/18
-//	filename: 	src\BSLib\behaviorTree\btScriptCondition.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_BEHAVIORTREE_BTSCRIPTCONDITION_H__
 #define __BSLIB_BEHAVIORTREE_BTSCRIPTCONDITION_H__
 
@@ -40,3 +33,4 @@ private:
 }//BSLib
 
 #endif//__BSLIB_BEHAVIORTREE_BTSCRIPTCONDITION_H__
+

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/09/10
-//	filename: 	src\GSLib\prizeSystem\GM\prizeSystemGM.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/utility/file/dirInfo.h>
 #include <GSLib/playerSystem/GM/roleModuleGMMgr.h>
 #include <GSLib/prizeSystem/GM/prizeSystemGM.h>
@@ -119,3 +112,4 @@ void CPrizeSystemGM::cb(BSLib::uint32 a_id)
 }//PrizeSystem
 
 }//GSLib
+

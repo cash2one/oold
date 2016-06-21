@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2015/07/03
-//	filename: 	src\BSLib\utility\file\gameData.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/utility/file/gameData.h>
 #include <BSLib/utility/stream.h>
 #include <BSLib/utility/file/binFile.h>
@@ -126,3 +119,4 @@ bool CGameDataMgr::loadBINFile(const std::string& a_filePath)
 }//Utility
 
 }//BSLib
+

@@ -1,7 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<root>
-    <item f_id="1" f_item_type="0" f_item_id="100110001" f_item_no="1" f_pay_type="102" f_price="100" f_limit_num="5" f_discount="75" />
-    <item f_id="2" f_item_type="0" f_item_id="100110002" f_item_no="1" f_pay_type="102" f_price="100" f_limit_num="5" f_discount="70" />
-    <item f_id="3" f_item_type="0" f_item_id="100110003" f_item_no="1" f_pay_type="102" f_price="100" f_limit_num="5" f_discount="80" />
-    <item f_id="4" f_item_type="0" f_item_id="100110004" f_item_no="1" f_pay_type="102" f_price="100" f_limit_num="5" f_discount="100" />
-</root>

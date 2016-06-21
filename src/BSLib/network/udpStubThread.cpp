@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/09/15
-//	filename:	src\BSLib\network\udpStubThread.cpp
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include "udpStubThread.h"
 
 namespace BSLib
@@ -69,4 +62,5 @@ void CUdpStubThread::_leaveRun()
 }//Network
 
 }//BSLib
+
 

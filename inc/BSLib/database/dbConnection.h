@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/09/04
-//	filename:	BSLib\dateBSLib\dbConnection.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_DATEBSLIB_DBCONNECTION__
 #define __BSLIB_DATEBSLIB_DBCONNECTION__
 
@@ -153,5 +146,6 @@ private:
 }//BSLib
 
 #endif//__BSLIB_DATEBSLIB_DBCONNECTION__
+
 
 

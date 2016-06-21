@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/08/22
-//	filename: 	src\GSLib\sceneSystem\GM\fsm\fsmScripCondition.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/utility/tracer.h>
 #include "fsmScripCondition.h"
 
@@ -58,3 +51,4 @@ bool CFSMScriptCondition::parseProperties(BSLib::Utility::CScriptObject* a_objec
 }//FSM
 
 }//BSLib
+

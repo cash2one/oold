@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/10/29
-//	filename: 	GSLib\dbSystem\keyTable.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_DBSYSTEM_KEYTABLE_H__
 #define __GSLIB_DBSYSTEM_KEYTABLE_H__
 
@@ -45,4 +38,5 @@ typedef BSLib::Utility::CPointer<CKeyTable> CKeyTablePtr;
 }//GSLib
 
 #endif//__GSLIB_DBSYSTEM_KEYTABLE_H__
+
 

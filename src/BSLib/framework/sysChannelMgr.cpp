@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2013/06/06
-//	filename:	src\BSLib\framework\sysChannelMgr.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/utility/random.h>
 #include <BSLib/utility/thread/thdMsgQueue.h>
 #include <BSLib/utility/tracer.h>
@@ -623,5 +616,6 @@ int CSysChannelMgr::_run(void* a_para)
 
 
 }//BSLib
+
 
 

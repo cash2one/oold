@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/21
-//	filename: 	src\GSLib\loginSystem\CN\gateInforMgr.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_LOGINSYSTEM_CN_GATEINFORMGR_H__
 #define __GSLIB_LOGINSYSTEM_CN_GATEINFORMGR_H__
 

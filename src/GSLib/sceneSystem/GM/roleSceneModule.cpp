@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/09/22
-//	filename: 	src\GSLib\skillSystem\GM\roleSceneModule.cpp
-//	author:		zhangming
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/database/dbTableRow.h>
 #include <BSLib/utility/random.h>
 #include <GSLib/sceneSystem/GM/roleSceneModule.h>
@@ -2140,5 +2133,6 @@ BSLib::uint32 CRoleSceneModule::getMaxPurchaseArenaTicketCount() const
 }//SceneSystem
 
 }//GSLib
+
 
 

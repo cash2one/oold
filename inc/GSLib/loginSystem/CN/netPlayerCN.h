@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/28
-//	filename: 	GSLib\loginSystem\CN\netPlayerCN.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_LOGINSYSTEM_CN_NETPLAYERCN_H__
 #define __GSLIB_LOGINSYSTEM_CN_NETPLAYERCN_H__
 
@@ -75,3 +68,4 @@ private:
 }//GSLib
 
 #endif//__GSLIB_LOGINSYSTEM_CN_NETPLAYERCN_H__
+

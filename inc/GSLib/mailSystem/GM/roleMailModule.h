@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/10/09
-//	filename: 	GSLib\mailSystem\GM\roleMailModule.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_MAILSYSTEM_GM_ROLEMAILMODULE_H__
 #define __GSLIB_MAILSYSTEM_GM_ROLEMAILMODULE_H__
 

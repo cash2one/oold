@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/11/6
-//	filename: 	GSLib\sceneSystem\DB\sceneSystemDB.h
-//	author:		zhangming
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_SCENESYSTEM_DB_SCENESYSTEMDB_H__
 #define __GSLIB_SCENESYSTEM_DB_SCENESYSTEMDB_H__
 
@@ -47,3 +40,4 @@ public:
 }//GSLib
 
 #endif//__GSLIB_SKILLSYSTEM_DB_SKILLSYSTEMDB_H__
+

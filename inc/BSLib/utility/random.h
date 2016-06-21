@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/10/22
-//	filename:	BSLib\utility\random.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_UTILITY_RANDOM_H__
 #define __BSLIB_UTILITY_RANDOM_H__
 
@@ -81,3 +74,4 @@ public:
 }//BSLib
 
 #endif // __BSLIB_UTILITY_BUFFER_H__
+

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/10/23
-//	filename: 	GSLib\chatSystem\msgChatSystemGC.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_RANKSYSTEM_MSGRANKSYSTEMGC_H__
 #define __GSLIB_RANKSYSTEM_MSGRANKSYSTEMGC_H__
 
@@ -57,3 +50,4 @@ public:
 }//GSLib
 
 #endif//__GSLIB_RANKSYSTEM_MSGRANKSYSTEMGC_H__
+

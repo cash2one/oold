@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/19
-//	filename:	src\GSLib\loginSystem\GM\loginSystemGM.cpp
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GFLib/commonServer/serviceMgr.h>
 #include <GFLib/commonServer/accountMgr.h>
 #include <GSLib/tracer.h>
@@ -188,3 +181,4 @@ void CLoginSystemGM::_onMsgLoginSystemCN2GMReqAccountFinal(BSLib::Framework::SMs
 }//LoginSystem
 
 }//GSLib
+

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2013/02/05
-//	filename: 	BSLib\utility\memory\memory.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_UTILITY_MEMORY_MEMORY_H__
 #define __BSLIB_UTILITY_MEMORY_MEMORY_H__
 
@@ -50,4 +43,5 @@ private:
 }//BSLib
 
 #endif//__BSLIB_UTILITY_MEMORY_MEMORY_H__
+
 

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/10/22
-//	filename:	src\BSLib\utility\random.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <time.h>
 #include <stdlib.h>
 #include <BSLib/utility/random.h>
@@ -50,3 +43,4 @@ bool CRandom::selectByOdds(BSLib::uint32 upNum, BSLib::uint32 downNum)
 }//Utility
 
 }//BSLib
+

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/25
-//	filename: 	src\GSLib\equipSystem\GM\equipGMMgr.cpp
-//	author:		zhangping
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 
 #include <GSLib/equipSystem/msgEquipSystemGC.h>
 #include <GSLib/equipSystem/msgEquipSystem.h>
@@ -374,3 +367,4 @@ void CRoleConfigGMMgr::_removeSkillInitConfig()
 }//EquipSystem
 
 }//GSLib
+

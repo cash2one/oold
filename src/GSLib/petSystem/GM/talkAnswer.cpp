@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/29
-//	filename: 	src\GSLib\petSystem\GM\hotSpringTask.cpp
-//	author:	    zhangping	
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include "GSLib/petSystem/GM/talkAnswer.h"
 #include <GSLib/tracer.h>
 #include <GSLib/petSystem/GM/talkItem.h>
@@ -197,3 +190,4 @@ BSLib::uint32 CTalkAnswer::getFriendlyValue() const
 }//PlayerSystem
 
 }//GSLib
+

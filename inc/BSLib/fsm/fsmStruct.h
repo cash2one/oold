@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/08/18
-//	filename: 	BSLib\fsm\fsmStruct.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_FSM_FSMSTRUCT_H__
 #define __BSLIB_FSM_FSMSTRUCT_H__
 
@@ -165,3 +158,4 @@ private:
 }//BSLib
 
 #endif //__BSLIB_FSM_FSMSTRUCT_H__
+

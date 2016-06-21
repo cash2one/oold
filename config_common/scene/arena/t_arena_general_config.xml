@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="GBK" ?>
-<!-- f_max_role_hp_num_times 最大hp倍数-->
-<arena>
-	<config f_max_role_hp_extend_times="2" />	
-</arena>

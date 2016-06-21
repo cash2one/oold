@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/08/20
-//	filename:	src\BSLib\udm\udmSocket.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_UDM_UDMSOCKET_H__
 #define __BSLIB_UDM_UDMSOCKET_H__
 
@@ -78,5 +71,6 @@ private:
 }//BSLib
 
 #endif//__BSLIB_UDM_UDMSOCKET_H__
+
 
 

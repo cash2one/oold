@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/09/09
-//	filename: 	src\GSLib\itemSystem\GM\itemSystemGM.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/itemSystem/GM/itemSystemGM.h>
 #include <GSLib/itemSystem/GM/itemGMMgr.h>
 namespace GSLib
@@ -72,3 +65,4 @@ void CItemSystemGM::_cbServerLeave(const GFLib::SServerID& a_serverID, const std
 }//ItemSystem
 
 }//GSLib
+

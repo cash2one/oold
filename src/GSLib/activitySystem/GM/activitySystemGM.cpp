@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/12/5
-//	filename: 	GSLib\activitySystem\GM\activitySystemGM.cpp
-//	author:		zhangming
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/playerSystem/GM/roleModuleGMMgr.h>
 #include <GSLib/activitySystem/GM/activitySystemGM.h>
 #include <GSLib/playerSystem/GM/playerGMMgr.h>
@@ -147,3 +140,4 @@ void CActivitySystemGM::_setDailyResetTime(BSLib::int32 & a_lastRestTime, BSLib:
 }
 
 }//GSLib
+

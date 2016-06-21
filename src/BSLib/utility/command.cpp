@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/07/08
-//	filename:	src\BSLib\utility\command.cpp
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/utility/command.h>
 
 namespace BSLib
@@ -156,4 +149,5 @@ int CCommand::_split(const std::string& cmdLine, std::vector<std::string>& subCm
 }//Utility
 
 }//BSLib
+
 

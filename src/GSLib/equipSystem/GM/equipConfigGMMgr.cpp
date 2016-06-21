@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/25
-//	filename: 	src\GSLib\equipSystem\GM\equipGMMgr.cpp
-//	author:		zhangping
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 
 #include <GSLib/equipSystem/msgEquipSystemGC.h>
 #include <GSLib/equipSystem/msgEquipSystem.h>
@@ -1473,3 +1466,4 @@ BSLib::uint32 CEquipConfigGMMgr::_getEquipPointB(BSLib::uint32 a_pointA,BSLib::u
 }//EquipSystem
 
 }//GSLib
+

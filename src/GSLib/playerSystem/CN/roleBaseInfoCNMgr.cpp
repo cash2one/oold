@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/25
-//	filename: 	src\GSLib\playerSystem\CN\playerCNMgr.cpp
-//	author:		zhangping
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/playerSystem/CN/roleBaseInfoCNMgr.h>
 #include "GSLib/playerSystem/CN/roleBaseInfoCN.h"
 #include <GSLib/tracer.h>
@@ -115,3 +108,4 @@ void CRoleBaseInfoCNMgr::removeAllPlayer()
 }//PlayerSystem
 
 }//GSLib
+

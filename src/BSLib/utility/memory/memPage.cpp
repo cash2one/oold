@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/07/09
-//	filename:	src\BSLib\utility\memory\memPage.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include "memory/memPage.h"
 
 namespace BSLib
@@ -84,3 +77,4 @@ void CMemPage::free(CMemPool* memPool)
 }//Utility
 
 }//BSLib
+

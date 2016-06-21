@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/09/10
-//	filename: 	GSLib\prizeSystem\msgPrizeSystemGC.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_PRIZESYSTEM_MSGPRIZESYSTEMGC_H__
 #define __GSLIB_PRIZESYSTEM_MSGPRIZESYSTEMGC_H__
 
@@ -21,3 +14,4 @@ namespace PrizeSystem
 }//GSLib
 
 #endif//__GSLIB_PRIZESYSTEM_MSGPRIZESYSTEMGC_H__
+

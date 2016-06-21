@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2013/02/05
-//	filename: 	BSLib\utility\memory\new.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_UTILITY_MEMORY_NEW_H__
 #define __BSLIB_UTILITY_MEMORY_NEW_H__
 /*
@@ -44,4 +37,5 @@ BSLIB_UTILITY_API void operator delete[](void* a_data, const char* fileName, int
 	new (static_cast<void*>(para)) type();
 
 #endif//__BSLIB_UTILITY_MEMORY_NEW_H__
+
 

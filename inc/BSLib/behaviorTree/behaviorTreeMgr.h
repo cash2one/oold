@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/10/22
-//	filename:	BSLib\behaviorTree\behaviorTreeMgr.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_BEHAVIORTREE_BEHAVIORTREEMGR_H__
 #define __BSLIB_BEHAVIORTREE_BEHAVIORTREEMGR_H__
 
@@ -95,3 +88,4 @@ private:
 }//BSLib
 
 #endif//__BSLIB_BEHAVIORTREE_BEHAVIORTREEMGR_H__
+

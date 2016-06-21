@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/19
-//	filename:	src\GSLib\loginSystem\DB\loginSystemDB.cpp
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GFLib/commonServer/message/msgLabel.h>
 #include <GFLib/commonServer/accountMgr.h>
 #include <GFLib/commonServer/serviceMgr.h>
@@ -202,3 +195,4 @@ void CLoginSystemDB::_onMsgLoginSystemCN2DBReqAccountFinal(BSLib::Framework::SMs
 }//LoginSystem
 
 }//GSLib
+

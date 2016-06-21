@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2015/03/31
-//	filename: 	src\BSLib\database\mysqlConnectionPool.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/utility/thread/mutex.h>
 #include "mysqlConnectionPool.h"
 #include "dbThreadTask.h"

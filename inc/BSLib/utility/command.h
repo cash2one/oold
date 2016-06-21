@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/07/08
-//	filename: 	BSLib\utility\command.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_UTILITY_COMMAND_H__
 #define __BSLIB_UTILITY_COMMAND_H__
 
@@ -58,4 +51,5 @@ private:
 }//BSLib
 
 #endif//__BSLIB_UTILITY_COMMAND_H__
+
 

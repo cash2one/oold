@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/07/20
-//	filename: 	BSLib\framework\message\msgDebug.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_FRAMEWORK_MESSAGE_MSGDEBUG_H__
 #define __BSLIB_FRAMEWORK_MESSAGE_MSGDEBUG_H__
 
@@ -57,3 +50,4 @@ private:
 
 
 #endif // __BSLIB_FRAMEWORK_MESSAGE_MSGDEBUG_H__
+

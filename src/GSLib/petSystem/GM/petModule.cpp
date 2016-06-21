@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/27
-//	filename: 	src\GSLib\petSystem\GM\rolePetModule.cpp
-//	author:		zhangping
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <stdarg.h>
 #include <BSLib/utility/random.h>
 #include <GFLib/commonServer/eventMgr.h>
@@ -1227,3 +1220,4 @@ BSLib::uint32 CPetModule::getPetCount() const
 }//PetSystem
 
 }//GSLib
+

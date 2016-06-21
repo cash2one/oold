@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/08/05
-//	filename: 	src\GFLib\commonServer\commonClient.cpp
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/framework/message/msgDebug.h>
 #include <BSLib/utility/thread/threadData.h>
 #include <BSLib/framework/message/msgDebug.h>
@@ -384,5 +377,6 @@ void CCommonClient::_afterMsgHandlerCommonClient(BSLib::Framework::CMsgExecMgr* 
 }//CommonServer
 
 }//GFLib
+
 
 

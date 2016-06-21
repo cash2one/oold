@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/09
-//	filename:	src\Server\dataServer\dataServer.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __SERVER_DATASERVER_DATASERVER_H__
 #define __SERVER_DATASERVER_DATASERVER_H__
 
@@ -36,3 +29,4 @@ protected:
 };
 
 #endif//__SERVER_DATASERVER_DATASERVER_H__
+

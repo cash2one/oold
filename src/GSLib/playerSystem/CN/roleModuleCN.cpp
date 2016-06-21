@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/25
-//	filename: 	src\GSLib\playerSystem\CN\roleModuleCN.cpp
-//	author:		zhangping
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/tracer.h>
 #include <GSLib/playerSystem/CN/playerCNMgr.h>
 #include <GSLib/playerSystem/CN/playerCN.h>
@@ -154,3 +147,4 @@ bool CRoleModuleCN::sendMsgToGameServer(GFLib::CMessage& msg)
 }//PlayerSystem
 
 }//GSLib
+

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/28
-//	filename: 	GSLib\loginSystem\GM\netPlayerGMMgr.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_EQUIPSYSTEM_GM_EQUIPATTRIBUTEGMMGR_H__
 #define __GSLIB_EQUIPSYSTEM_GM_EQUIPATTRIBUTEGMMGR_H__
 

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/10/13
-//	filename: 	src\GSLib\prizeSystem\GM\prizeConfig.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_PRIZESYSTEM_GM_PRIZECONFIG_H__
 #define __GSLIB_PRIZESYSTEM_GM_PRIZECONFIG_H__
 

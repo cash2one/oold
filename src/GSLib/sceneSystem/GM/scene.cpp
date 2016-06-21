@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2015/1/8
-//	filename: 	src\GSLib\sceneSystem\GM\scene.cpp
-//	author:		zhangming
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/sceneSystem/GM/scene.h>
 #include <GSLib/sceneSystem/GM/roleSceneModule.h>
 #include <GSLib/playerSystem/GM/roleGM.h>
@@ -416,3 +409,4 @@ void CScene::_genRandomStageMonster(CRoleSceneModule * a_sceneRole)
 }//SceneSystem
 
 }//GSLib
+

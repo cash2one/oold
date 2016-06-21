@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/10/09
-//	filename: 	GSLib\mailSystem\DB\tableMailDB.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_MAILSYSTEM_DB_TABLEMAILDB_H__
 #define __GSLIB_MAILSYSTEM_DB_TABLEMAILDB_H__
 
@@ -192,3 +185,4 @@ struct SRoleMailConfigData
 }//GSLib
 
 #endif//__GSLIB_MAILSYSTEM_DB_TABLEMAILDB_H__
+

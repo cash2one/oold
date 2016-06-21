@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/11/19
-//	filename: 	GSLib\taskSystem\GM\taskData.h
-//	author:		zhangming
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef	__GSLIB_TASKSYSTEM_GM_TASKDATA_H__
 #define __GSLIB_TASKSYSTEM_GM_TASKDATA_H__
 
@@ -296,3 +289,4 @@ public:
 }//GSLib
 
 #endif//__GSLIB_TASKSYSTEM_GM_TASKDATAMGR_H__
+

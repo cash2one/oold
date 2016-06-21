@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/08/20
-//	filename:	src\BSLib\udm\udmSocket.cpp
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include "udmSocket.h"
 #include "udpThreadMgr.h"
 
@@ -198,4 +191,5 @@ bool CUdmSocket::_sendMsg(SUdpCtrlMsg* msg, int msgSize)
 }//UDM
 
 }//BSLib
+
 

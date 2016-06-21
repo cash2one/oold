@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/09/12
-//	filename:	src\BSLib\network\netStubMgr.cpp
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/network/netStubMgr.h>
 
 namespace BSLib
@@ -92,4 +85,5 @@ bool CNetStubMgr::checkUniqueID(StubID a_stubID)
 }//Network
 
 }//BSLib
+
 

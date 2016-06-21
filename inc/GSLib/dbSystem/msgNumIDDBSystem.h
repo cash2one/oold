@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/22
-//	filename: 	GSLib\dbSystem\msgNumIDDBSystem.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_DBSYSTEM_MSGNUMIDDBSYSTEM_H__
 #define __GSLIB_DBSYSTEM_MSGNUMIDDBSYSTEM_H__
 
@@ -47,3 +40,4 @@ enum EMsgNumIDDBSystem
 }//GSLib
 
 #endif//__GSLIB_DBSYSTEM_MSGNUMIDDBSYSTEM_H__
+

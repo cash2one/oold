@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/09/09
-//	filename: 	BSLib\framework\message\msgFramework.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_FRAMEWORK_MESSAGE_MSGFRAMEWORK_H__
 #define __BSLIB_FRAMEWORK_MESSAGE_MSGFRAMEWORK_H__
 
@@ -45,3 +38,4 @@ struct SMsgFrameworkNtfTerminate: public SMessage
 }//BSLib
 
 #endif//__BSLIB_FRAMEWORK_MESSAGE_MSGFRAMEWORK_H__
+

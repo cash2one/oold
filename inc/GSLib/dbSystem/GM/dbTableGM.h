@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/08/05
-//	filename: 	GSLib\dbSystem\GM\dbTableGM.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_DBSYSTEM_GM_DBTABLEGM_H__
 #define __GSLIB_DBSYSTEM_GM_DBTABLEGM_H__
 
@@ -167,3 +160,4 @@ struct SRoleModuleBase
 }//GSLib
 
 #endif//__GSLIB_DBSYSTEM_GM_DBTABLEGM_H__
+

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/10/23
-//	filename: 	GSLib\rankSystem\msgNumIDRankSystem.h
-//	author:		zhangming
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_RANKSYSTEM_MSGNUMIDRANKSYSTEM_H__
 #define __GSLIB_RANKSYSTEM_MSGNUMIDRANKSYSTEM_H__
 
@@ -33,3 +26,4 @@ enum EMsgNumIDRankSystem
 }//GSLib
 
 #endif//__GSLIB_RANKSYSTEM_MSGNUMIDRANKSYSTEM_H__
+

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/07/20
-//	filename:	src\BSLib\framework\message\msgDebug.cpp
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/framework/message/msgDebug.h>
 
 namespace BSLib
@@ -53,4 +46,5 @@ const std::string& CMsgDebug::getPrompt(CMessage* message)
 }//Framework
 
 }//BSLib
+
 

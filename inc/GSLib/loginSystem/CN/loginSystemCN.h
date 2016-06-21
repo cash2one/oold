@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/19
-//	filename:	GSLib\loginSystem\CN\loginSystemCN.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_LOGINSYSTEM_CN_LOGINSYSTEMCN_H__
 #define __GSLIB_LOGINSYSTEM_CN_LOGINSYSTEMCN_H__
 
@@ -85,3 +78,4 @@ private:
 }//GSLib
 
 #endif//__GSLIB_LOGINSYSTEM_CN_LOGINSYSTEMCN_H__
+

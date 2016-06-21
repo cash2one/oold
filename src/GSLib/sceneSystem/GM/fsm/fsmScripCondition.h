@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/08/22
-//	filename: 	src\GSLib\sceneSystem\GM\fsm\fsmScripCondition.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef ___GSLIB_SCENESYSTEM_GM_FSM_FSMSCRIPCONDITION_H__
 #define ___GSLIB_SCENESYSTEM_GM_FSM_FSMSCRIPCONDITION_H__
 

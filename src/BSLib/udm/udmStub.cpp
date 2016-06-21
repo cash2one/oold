@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/08/22
-//	filename:	src\BSLib\udm\udmStub.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include "udmStub.h"
 #include "udpThreadMgr.h"
 
@@ -174,4 +167,5 @@ void CUdmStub::tickMsg(BSLib::Utility::CRealTime& realTime)
 }//UDM
 
 }//BSLib
+
 

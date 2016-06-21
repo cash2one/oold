@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/12/13
-//	filename: 	GSLib\loginSystem\SP\loginSystemSP.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_LOGINSYSTEM_SP_LOGINSYSTEMSP_H__
 #define __GSLIB_LOGINSYSTEM_SP_LOGINSYSTEMSP_H__
 

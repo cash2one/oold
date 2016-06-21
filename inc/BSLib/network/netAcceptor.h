@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/07/28
-//	filename: 	BSLib\network\netAcceptor.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_NETWORK_NETACCEPTOR_H__
 #define __BSLIB_NETWORK_NETACCEPTOR_H__
 
@@ -63,3 +56,4 @@ typedef BSLib::Utility::CPointer<CNetAcceptor> CNetAcceptorsPtr;
 }//BSLib
 
 #endif//__BSLIB_NETWORK_NETACCEPTOR_H__
+

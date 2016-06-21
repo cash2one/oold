@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/07/20
-//	filename:	src\BSLib\framework\message\message.cpp
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/utility/tracer.h>
 #include <BSLib/framework/message/message.h>
 
@@ -86,3 +79,4 @@ bool CMessage::serializeFrom(const SMessage* msg, int size)
 }//Framework
 
 }//BSLib
+

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/10/24
-//	filename: 	src\BSLib\database\dbKeyTable.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/utility/tracer.h>
 #include <BSLib/database/dbKeyTable.h>
 #include "mysqlConnectionPool.h"
@@ -726,3 +719,4 @@ void CDBKeyTable::_resetTableRowState(EDBTableRowState a_tableRowState)
 }//Database
 
 }//BSLib
+

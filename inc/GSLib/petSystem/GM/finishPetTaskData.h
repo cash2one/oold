@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2015/03/05
-//	filename: 	GSLib\petSystem\GM\finishPetTaskData.h
-//	author:		zhangping
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_PETSYSTEM_GM_FINISHHOTSPRINGTASKDATA_H__
 #define __GSLIB_PETSYSTEM_GM_FINISHHOTSPRINGTASKDATA_H__
 
@@ -61,3 +54,4 @@ private:
 
 }//GSLib
 #endif// __GSLIB_PETSYSTEM_GM_FINISHHOTSPRINGTASKDATA_H__
+

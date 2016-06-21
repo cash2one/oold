@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/09/22
-//	filename: 	src\GSLib\skillSystem\GM\roleSceneModule.cpp
-//	author:		zhangming
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/database/dbTableRow.h>
 #include <BSLib/utility/random.h>
 #include <GSLib/sceneSystem/sceneSystemDefine.h>
@@ -380,5 +373,6 @@ void CRoleSceneModuleCN::_updateChallengeRecord(const CArenaChallengeRecord & a_
 }//SceneSystem
 
 }//GSLib
+
 
 

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/20
-//	filename:	src\GSLib\loginSystem\LG\accountLoginLGInforMgr.cpp
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GFLib/commonServer/stubMgr.h>
 #include <GSLib/tracer.h>
 #include <GSLib/loginSystem/msgLoginSystem.h>
@@ -145,3 +138,4 @@ bool CAccountTokenInforMgr::checkAccountTokenInfor(SAccountTokenInfor& a_account
 }//LoginSystem
 
 }//GSLib
+

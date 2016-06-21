@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/08/22
-//	filename: 	GSLib\sceneSystem\GM\fsm\fsmBTState.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/tracer.h>
 #include "GM/fsm/fsmBTState.h"
 #include <GSLib/sceneSystem/GM/sceneScriptEnv.h>
@@ -96,5 +89,6 @@ bool CFSMBTState::parseProperties(BSLib::Utility::CScriptObject* a_object, BSLib
 }//SceneSystem
 
 }//GSLib
+
 
 

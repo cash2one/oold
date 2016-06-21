@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/11/19
-//	filename: 	GSLib\taskSystem\GM\taskSystemDefine.h
-//	author:		zhangming
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef	__GSLIB_TASKSYSTEM_GM_TASKSYSTEM_DEFINE__
 #define __GSLIB_TASKSYSTEM_GM_TASKSYSTEM_DEFINE__
 
@@ -77,3 +70,4 @@ namespace GM
 }//GSLib
 
 #endif//__GSLIB_TASKSYSTEM_GM_TASKSYSTEM_DEFINE__
+

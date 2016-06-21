@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/19
-//	filename:	src\GSLib\loginSystem\GT\loginSystemGT.cpp
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GFLib/commonServer/serviceMgr.h>
 #include <GSLib/tracer.h>
 #include <GSLib/loginSystem/GT/loginSystemGT.h>
@@ -286,3 +279,4 @@ bool CLoginSystemGT::_cbTimerAccountLogin(BSLib::uint64 a_para1, void* a_para2)
 }//LoginSystem
 
 }//GSLib
+

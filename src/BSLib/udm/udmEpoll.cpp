@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/08/20
-//	filename:	src\BSLib\udm\udmEpoll.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include "udmEpoll.h"
 #include "udmMgr.h"
 #include "udmSocket.h"
@@ -248,5 +241,6 @@ int CUdmEpoll::createEpollEventQueue(SUdmSocketInfor* udmSocketInfor)
 }//UDM
 
 }//BSLib
+
 
 

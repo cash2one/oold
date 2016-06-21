@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/10/23
-//	filename: 	src\GSLib\rankSystem\GM\rankSystemGM.cpp
-//	author:		zhangming
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/rankSystem/GM/rankSystemGM.h>
 #include <GSLib/playerSystem/GM/roleModuleGMMgr.h>
 #include <GSLib/rankSystem/GM/roleRankModule.h>
@@ -77,3 +70,4 @@ void CRankSystemGM::_cbServerLeave(const GFLib::SServerID& a_serverID, const std
 }//RankSystem
 
 }//GSLib
+

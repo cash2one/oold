@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/06/26
-//	filename:	src\BSLib\utility\thread\mutex.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/utility/tracer.h>
 #include <BSLib/utility/string.h>
 #include <BSLib/utility/thread/mutex.h>
@@ -375,3 +368,4 @@ void CRWLock::writeUnlock()
 }//Utility
 
 }//BSLib
+

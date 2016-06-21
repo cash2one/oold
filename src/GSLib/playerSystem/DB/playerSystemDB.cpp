@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/25
-//	filename: 	src\GSLib\playerSystem\DB\playerSystemDB.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/playerSystem/DB/playerSystemDB.h>
 #include <GSLib/dbSystem/DB/dbSystemDB.h>
 #include <GSLib/playerSystem/DB/tablePlayerDB.h>
@@ -78,3 +71,4 @@ void CPlayerSystemDB::_cbServerLeave(const GFLib::SServerID& a_serverID, const s
 }//PlayerSystem
 
 }//GSLib
+

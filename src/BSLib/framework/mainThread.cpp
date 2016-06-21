@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/07/21
-//	filename:	src\BSLib\framework\mainThread.cpp
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/utility/file/dirInfo.h>
 #include <BSLib/utility/file/fileInfo.h>
 #include <BSLib/framework/mainThread.h>
@@ -148,4 +141,5 @@ bool CMainThread::_init()
 }//Framework
 
 }//BSLib
+
 

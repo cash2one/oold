@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/09/12
-//	filename:	src\BSLib\network\netStub.cpp
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/utility/tracer.h>
 #include <BSLib/utility/thread/thread.h>
 #include <BSLib/network/netStub.h>
@@ -153,5 +146,6 @@ void CNetStub::_setTimerServer(BSLib::Utility::CTimerServer* a_timerServer)
 }//Network
 
 }//BSLib
+
 
 

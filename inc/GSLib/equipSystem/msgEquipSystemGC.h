@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/25
-//	filename: 	GSLib\equipSystem\msgEquipSystemGC.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_EQUIPSYSTEM_MSGEQUIPSYSTEMGC_H__
 #define __GSLIB_EQUIPSYSTEM_MSGEQUIPSYSTEMGC_H__
 
@@ -355,3 +348,4 @@ public:
 }//GSLib
 
 #endif//__GSLIB_EQUIPSYSTEM_MSGEQUIPSYSTEMGC_H__
+

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2015/03/6
-//	filename: 	GSLib\sceneSystem\GM\arenaChallengeeData.h
-//	author:		zhangming
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef		__GSLIB_SCENESYSTEM_SCENESYSTEMCOMMONDATA_H__
 #define		__GSLIB_SCENESYSTEM_SCENESYSTEMCOMMONDATA_H__
 
@@ -106,6 +99,7 @@ public:
 
 
 #endif
+
 
 
 

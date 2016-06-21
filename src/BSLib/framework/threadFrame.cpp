@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/07/22
-//	filename:	src\BSLib\framework\threadFrame.cpp
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/utility/tracer.h>
 #include <BSLib/framework/threadFrame.h>
 #include <BSLib/framework/message/msgFramework.h>
@@ -237,4 +230,5 @@ void CThreadFrame::_onMsgNtfTerminate(SMsgLabel* lable, SMessage* msg)
 }//Framework
 
 }//BSLib
+
 

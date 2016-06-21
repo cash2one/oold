@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/09/12
-//	filename: 	GSLib\skillSystem\GM\skillAttrMgr.cpp
-//	author:		zhangming
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/skillSystem/GM/skillAttrMgr.h>
 #include <GSLib/skillSystem/GM/skillAttr.h>
 #include <BSLib/utility/file/dirInfo.h>
@@ -122,6 +115,7 @@ bool CSkillDataMgr::_loadSkillAttrs(const std::string &a_configPath)
 }//SKillSystem
 
 }//GSLib
+
 
 
 

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/10/09
-//	filename: 	GSLib\mailSystem\DB\MailSystemDB.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_MAILSYSTEM_DB_MAILSYSTEMDB_H__
 #define __GSLIB_MAILSYSTEM_DB_MAILSYSTEMDB_H__
 
@@ -47,3 +40,4 @@ public:
 }//GSLib
 
 #endif//__GSLIB_MAILSYSTEM_DB_MAILSYSTEMDB_H__
+

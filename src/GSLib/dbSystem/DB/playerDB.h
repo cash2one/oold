@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/08/28
-//	filename: 	src\GSLib\dbSystem\DB\playerDB.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_DBSYSTEM_DB_PLAYERDB_H__
 #define __GSLIB_DBSYSTEM_DB_PLAYERDB_H__
 
@@ -44,3 +37,4 @@ protected:
 }//GSLib
 
 #endif//__GSLIB_DBSYSTEM_DB_PLAYERDB_H__
+

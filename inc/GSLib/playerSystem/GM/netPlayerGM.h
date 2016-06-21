@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/28
-//	filename: 	GSLib\loginSystem\GM\netPlayerGM.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_LOGINSYSTEM_GM_NETPLAYERGM_H__
 #define __GSLIB_LOGINSYSTEM_GM_NETPLAYERGM_H__
 

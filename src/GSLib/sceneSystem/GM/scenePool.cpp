@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2015/1/8
-//	filename: 	src\GSLib\sceneSystem\GM\scenePool.cpp
-//	author:		zhangming
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/sceneSystem/GM/scenePool.h>
 #include <GSLib/sceneSystem/GM/scene.h>
 #include <GSLib/sceneSystem/GM/roleSceneModule.h>
@@ -127,3 +120,4 @@ CScene * CScenePool::createScene(ESceneType a_sceneType, BSLib::uint32 a_sceneTP
 }//SceneSystem
 
 }//GSLib
+

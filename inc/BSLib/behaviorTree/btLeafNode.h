@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/10/20
-//	filename:	BSLib\behaviorTree\btLeafNode.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_BEHAVIORTREE_BTLEAFNODE_H__
 #define __BSLIB_BEHAVIORTREE_BTLEAFNODE_H__
 
@@ -87,3 +80,4 @@ public:
 }//BSLib
 
 #endif//__BSLIB_BEHAVIORTREE_BTLEAFNODE_H__
+

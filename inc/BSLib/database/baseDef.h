@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/09/04
-//	filename:	e:\dev\mazj\inc\BSLib\dateBSLib\baseDef.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_DATEBSLIB_BASEDEF__
 #define __BSLIB_DATEBSLIB_BASEDEF__
 
@@ -32,4 +25,5 @@ const HDbConnection INVALID_HDBCONNECTION = -1;
 }//BSLib
 
 #endif//__BSLIB_DATEBSLIB_BASEDEF__
+
 

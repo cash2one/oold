@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/07/27
-//	filename:	src\BSLib\network\netConnectionMgr.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/utility/dateTime.h>
 #include <BSLib/network/netConnectionMgr.h>
 
@@ -178,6 +171,7 @@ void CNetConnectionMgr::_clearAllConnection()
 }//Network
 
 }//BSLib
+
 
 
 

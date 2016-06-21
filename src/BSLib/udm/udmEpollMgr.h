@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/08/20
-//	filename:	src\BSLib\udm\udmEpollMgr.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_UDM_UDMEPOLLMGR_H__
 #define __BSLIB_UDM_UDMEPOLLMGR_H__
 
@@ -45,6 +38,7 @@ private:
 }//BSLib
 
 #endif//__BSLIB_UDM_UDMEPOLLMGR_H__
+
 
 
 

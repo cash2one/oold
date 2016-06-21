@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/11/12
-//	filename: 	GSLib\chatSystem\GM\chatContent.h
-//	author:		zhangming
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef	__GSLIB_CHATSYSTEM_GM_CHATCONTENT_H__
 #define __GSLIB_CHATSYSTEM_GM_CHATCONTENT_H__
 
@@ -44,3 +37,4 @@ public:
 }//GSLib
 
 #endif//__GSLIB_CHATSYSTEM_GM_CHATCONTENT_H__
+

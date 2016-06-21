@@ -1,11 +1,4 @@
 //////////////////////////////////////////////////////////////////////
-//	created:	2011/10/24
-//	filename:	BSLib\utility\function.h
-//	author:		mazhejiang
-//
-///	@brief
-///
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_UTILITY_FUNCTION_H__
 #define __BSLIB_UTILITY_FUNCTION_H__
 
@@ -279,3 +272,4 @@ template <typename R, typename C, typename T1, typename T2, typename T3, typenam
 }//BSLib
 
 #endif//__BSLIB_UTILITY_FUNCTION_H__
+

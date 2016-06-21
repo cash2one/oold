@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/27
-//	filename: 	src\GSLib\playerSystem\CN\playerCN.cpp
-//	author:		zhangping
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/tracer.h>
 #include <GSLib/playerSystem/msgPlayerSystem.h>
 #include <GSLib/playerSystem/CN/playerSystemCN.h>
@@ -472,3 +465,4 @@ bool CPlayerCN::_cbTableInitRoleEnd()
 }//PlayerSystem
 
 }//GSLib
+

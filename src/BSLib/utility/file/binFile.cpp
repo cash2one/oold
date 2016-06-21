@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/11/12
-//	filename: 	src\BSLib\utility\file\binFile.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <stdlib.h>
 #include <BSLib/utility/file/fileInfo.h>
 #include <BSLib/utility/file/binFile.h>

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/09/13
-//	filename: 	src\GSLib\skillSystem\GM\roleSkillModule.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/skillSystem/GM/roleSkillModule.h>
 #include <GSLib/skillSystem/GM/skill.h>
 #include <GSLib/playerSystem/GM/roleGM.h>
@@ -459,5 +452,6 @@ ESetSkillButtonError CRoleSkillModule::_canSetSkillButton(SkillTPID a_skillTPID,
 }//SkillSystem
 
 }//GSLib
+
 
 

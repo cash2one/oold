@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/07/24
-//	filename:	BSLib\network\sockAddr.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_NETWOKD_SOCKADDR_H__
 #define __BSLIB_NETWOKD_SOCKADDR_H__
 
@@ -60,3 +53,4 @@ protected:
 }//BSLib
 
 #endif//__BSLIB_NETWOKD_SOCKADDR_H__
+

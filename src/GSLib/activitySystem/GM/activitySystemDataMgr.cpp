@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/12/5
-//	filename: 	GSLib\activitySystem\GM\activitySystemDataMgr.cpp
-//	author:		zhangming
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/utility/file/dirInfo.h>
 #include <GSLib/activitySystem/GM/activityData.h>
 #include <GSLib/activitySystem/GM/activitySystemDataMgr.h>
@@ -266,3 +259,4 @@ const BSLib::Utility::CHashMap<BSLib::uint32, CPetCardInfo> & CActivitySystemDat
 } //ActivitySystem
 
 } //GSLib
+

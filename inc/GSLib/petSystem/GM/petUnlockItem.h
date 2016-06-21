@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2015/03/05
-//	filename: 	GSLib\petSystem\GM\PetUnlockItem.h
-//	author:		zhangping
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_PETSYSTEM_GM_PETUNLOCKITEM_H__
 #define __GSLIB_PETSYSTEM_GM_PETUNLOCKITEM_H__
 #include <BSLib/utility/table.h>
@@ -46,3 +39,4 @@ private:
 }//petSystem
 }//GSLib
 #endif// __GSLIB_PETSYSTEM_GM_PETUNLOCKITEM_H__
+

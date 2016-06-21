@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/09/06
-//	filename:	src\BSLib\dateBSLib\mysqlConnection.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_DATEBSLIB_MYSQLCONNECTION__
 #define __BSLIB_DATEBSLIB_MYSQLCONNECTION__
 
@@ -71,4 +64,5 @@ private:
 }//BSLib
 
 #endif//__BSLIB_DATEBSLIB_CONNECTION__
+
 

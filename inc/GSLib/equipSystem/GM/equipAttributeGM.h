@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/29
-//	filename: 	GSLib\equipSystem\GM\equipAttributeGM.h
-//	author:		zhangping
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_EQUIPSYSTEM_GM_EQUIPATTRIBUTEGM_H__
 #define __GSLIB_EQUIPSYSTEM_GM_EQUIPATTRIBUTEGM_H__
 
@@ -115,3 +108,4 @@ public:
 
 }//GSLib
 #endif// __GSLIB_EQUIPSYSTEM_GM_EQUIPATTRIBUTEGM_H__
+

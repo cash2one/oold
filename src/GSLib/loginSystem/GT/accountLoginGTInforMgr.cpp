@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/21
-//	filename: 	src\GSLib\loginSystem\GT\accountLoginGTInforMgr.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/framework/message/msgDebug.h>
 #include <GFLib/commonServer/stubMgr.h>
 #include <GFLib/commonServer/serviceMgr.h>
@@ -631,3 +624,4 @@ void CAccountLoginGTInforMgr::_finishFinal(SAccountLoginGTInfor* a_infor, bool a
 }//LoginSystem
 
 }//GSLib
+

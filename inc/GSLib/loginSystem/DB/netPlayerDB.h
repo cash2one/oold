@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/30
-//	filename: 	GSLib\loginSystem\DB\netPlayerDB.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_LOGINSYSTEM_DB_NETPLAYERDB_H__
 #define __GSLIB_LOGINSYSTEM_DB_NETPLAYERDB_H__
 

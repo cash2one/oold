@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2013/02/13
-//	filename:	src\BSLib\utility\memory\memory.cpp
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/utility/memory/memory.h>
 #include <BSLib/utility/thread/threadData.h>
 
@@ -175,4 +168,5 @@ void CMemory::_addThreadMemory(CMemory* a_memory)
 }//Utility
 
 }//BSLib
+
 

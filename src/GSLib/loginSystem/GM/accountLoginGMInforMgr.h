@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/08/15
-//	filename: 	src\GSLib\loginSystem\GM\accountLoginGMInforMgr.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_LOGINSYSTEM_GM_ACCOUNTLOGINGMINFORMGR_H__
 #define __GSLIB_LOGINSYSTEM_GM_ACCOUNTLOGINGMINFORMGR_H__
 

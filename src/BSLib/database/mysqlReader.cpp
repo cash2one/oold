@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/09/06
-//	filename:	src\BSLib\dateBSLib\mysqlReader.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/utility/convert.h>
 #include "mysqlReader.h"
 
@@ -328,5 +321,6 @@ bool CMysqlReader::getValue(const std::string& columnLable, BSLib::Utility::CStr
 }//Database
 
 }//BSLib
+
 
 

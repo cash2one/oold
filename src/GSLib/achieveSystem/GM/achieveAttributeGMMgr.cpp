@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/29
-//	filename: 	src\GSLib\itemSystem\GM\itemAttributeGMMgr.cpp
-//	author:	    zhangping	
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 /*
 #include <GSLib/itemSystem/GM/itemAttributeGMMgr.h>
 #include <GSLib/tracer.h>

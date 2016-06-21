@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/07/23
-//	filename:	src\BSLib\network\tcpEpoll.cpp
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifdef WIN32
 
 #include <WinSock2.h>
@@ -577,3 +570,4 @@ void CTcpEpoll::setAcceptSocketFun(BSLib::Utility::CFunction<bool, SOCKET&, SOCK
 }//Network
 
 }//BSLib
+

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/09/25
-//	filename: 	src\Server\gatewayServer\gatewayServer.cpp
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/utility/random.h>
 #include <GFLib/commonServer/serviceMgr.h>
 #include <GFLib/commonServer/stubMgr.h>
@@ -157,3 +150,4 @@ BSLib::Network::CNetStubPtr CDataServer::_cbNewTcpStub(BSLib::Network::CNetConne
 	}
 	return netStubPtr;
 }
+

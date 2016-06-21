@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/10/09
-//	filename: 	GSLib\taskSystem\msgTaskSystemGC.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_TASKSYSTEM_MSGTASKSYSTEMGC_H__
 #define __GSLIB_TASKSYSTEM_MSGTASKSYSTEMGC_H__
 
@@ -267,3 +260,4 @@ public:
 }//GSLib
 
 #endif//__GSLIB_TASKSYSTEM_MSGTASKSYSTEMGC_H__
+

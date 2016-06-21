@@ -1,10 +1,3 @@
-////////////////////////////////////////////////////////////////////////////////
-//
-//  Visual Leak Detector - Import Library Header
-//  Copyright (c) 2005-2013 VLD Team
-//
-//  This library is free software; you can redistribute it and/or
-//  modify it under the terms of the GNU Lesser General Public
 //  License as published by the Free Software Foundation; either
 //  version 2.1 of the License, or (at your option) any later version.
 //
@@ -43,3 +36,4 @@
 #define VLD_RPTHOOK_REMOVE   1
 
 typedef int (__cdecl * VLD_REPORT_HOOK)(int reportType, wchar_t *message, int *returnValue);
+

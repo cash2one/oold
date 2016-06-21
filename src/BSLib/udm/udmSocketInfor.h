@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/08/20
-//	filename:	src\BSLib\udm\udmSocketInfor.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_UDM_UDMSOCKETINFOR_H__
 #define __BSLIB_UDM_UDMSOCKETINFOR_H__
 
@@ -59,4 +52,5 @@ enum EUdmSocketType
 }//BSLib
 
 #endif//__BSLIB_UDM_UDMSOCKETINFOR_H__
+
 

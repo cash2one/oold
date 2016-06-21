@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/11/10
-//	filename: 	GFLib\commonServer\uniqueIDMgr.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GFLIB_COMMONSERVER_UNIQUEIDMGR_H__
 #define __GFLIB_COMMONSERVER_UNIQUEIDMGR_H__
 
@@ -52,4 +45,5 @@ private:
 }//GFLib
 
 #endif//__GFLIB_COMMONSERVER_SYSCHANNELMGR_H__
+
 

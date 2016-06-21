@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/08/05
-//	filename: 	src\GSLib\dbSystem\DB\playerDBMgr.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/tracer.h>
 #include "DB/playerDBMgr.h"
 
@@ -92,3 +85,4 @@ void CPlayerDBMgr::removeNetPlayerDB(const GFLib::SAccountKey& a_accountKey)
 }//DBSystem
 
 }//GSLib
+

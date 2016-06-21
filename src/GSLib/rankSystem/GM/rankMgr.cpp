@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/11/3
-//	filename: 	src\GSLib\rankSystem\GM\rankMgr.cpp
-//	author:		zhangming
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/rankSystem/GM/rankMgr.h>
 #include <GSLib/playerSystem/GM/roleGM.h>
 #include <GSLib/playerSystem/GM/playerGMMgr.h>
@@ -99,3 +92,4 @@ void CRankMgr::onArenaRankChanged(BSLib::uint32 a_pos1, BSLib::uint32 a_pos2)
 }//RankSystem
 
 }//GSLib
+

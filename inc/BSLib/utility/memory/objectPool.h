@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2013/02/04
-//	filename: 	BSLib\utility\memory\objectPool.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 
 #ifndef __BSLIB_UTILITY_MEMORY_OBJECTPOOL_H__
 #define __BSLIB_UTILITY_MEMORY_OBJECTPOOL_H__
@@ -150,3 +143,4 @@ private:
 }//BSLib
 
 #endif // __BSLIB_UTILITY_MEMORY_OBJECTPOOL_H__
+

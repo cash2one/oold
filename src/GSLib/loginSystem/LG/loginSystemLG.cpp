@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/19
-//	filename:	src\GSLib\loginSystem\LG\loginSystemLG.cpp
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/utility/uuid.h>
 #include <GSLib/tracer.h>
 #include <GSLib/serverType.h>
@@ -876,3 +869,4 @@ bool CLoginSystemLG::_registerFastAccountToDB(const std::string& a_uniqueID, con
 }//LoginSystem
 
 }//GSLib
+

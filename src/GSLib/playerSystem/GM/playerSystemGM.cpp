@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/25
-//	filename: 	src\GSLib\playerSystem\GM\playerSystemGM.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/framework/message/msgExecMgr.h>
 #include <GSLib/tracer.h>
 #include <GSLib/playerSystem/GM/playerSystemGM.h>
@@ -480,3 +473,4 @@ void CPlayerSystemGM::_onEventAchieveUpdate(BSLib::Utility::EventID& a_eventID, 
 }//PlayerSystem
 
 }//GSLib
+

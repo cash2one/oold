@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/07/25
-//	filename:	BSLib\network\netConnectionMgr.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_NETWOEK_NETCONNECTIONMGR_H__
 #define __BSLIB_NETWOEK_NETCONNECTIONMGR_H__
 
@@ -86,3 +79,4 @@ private:
 }//BSLib
 
 #endif//__BSLIB_NETWOEK_NETCONNECTIONMGR_H__
+

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/20
-//	filename:	BSLib\utility\memory\objectMgr.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_UTILITY_MEMORY_OBJECTMGR_H__
 #define __BSLIB_UTILITY_MEMORY_OBJECTMGR_H__
 
@@ -597,3 +590,4 @@
 	};
 
 #endif//__BSLIB_UTILITY_MEMORY_OBJECTMGR_H__
+

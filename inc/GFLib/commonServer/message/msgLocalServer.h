@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2013/10/27
-//	filename:	GFLib\commonServer\message\msgLocalServer.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GAMESERVER_MESSAGE_MSGLOCALSERVER_H__
 #define __GAMESERVER_MESSAGE_MSGLOCALSERVER_H__
 
@@ -101,6 +94,7 @@ public:
 }//GFLib
 
 #endif//__GAMESERVER_MESSAGE_MSGLOCALSERVER_H__
+
 
 
 

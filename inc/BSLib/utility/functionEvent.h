@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2013/01/05
-//	filename: 	BSLib\utility\functionEvent.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_UTILITY_FUNCTIONEVENT_H__
 #define __BSLIB_UTILITY_FUNCTIONEVENT_H__
 
@@ -576,5 +569,6 @@ template<typename R, typename T1, typename T2, typename T3, typename T4, typenam
 }//BSLib
 
 #endif//__BSLIB_UTILITY_FUNCTIONEVENT_H__
+
 
 

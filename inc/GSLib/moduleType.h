@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/09/13
-//	filename: 	GSLib\moduleType.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_MODULETYPE_H__
 #define __GSLIB_MODULETYPE_H__
 
@@ -54,3 +47,4 @@ namespace __gnu_cxx
 #endif
 
 #endif//__GSLIB_MODULETYPE_H__
+

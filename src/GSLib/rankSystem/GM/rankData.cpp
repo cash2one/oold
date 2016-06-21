@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/10/23
-//	filename: 	src\GSLib\rankSystem\GM\rankData.cpp
-//	author:		zhangming
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/rankSystem/GM/rankData.h>
 
 namespace GSLib
@@ -43,3 +36,4 @@ void CRankData::serializeTo(BSLib::Utility::CStream & a_stream) const
 }//RankSystem
 
 }//GSLib
+

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/09/12
-//	filename:	src\BSLib\network\netServer.cpp
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/utility/tracer.h>
 #include <BSLib/network/tcpAcceptor.h>
 #include <BSLib/network/udpAcceptor.h>
@@ -300,5 +293,6 @@ int CNetServer::_udpAcceptorThread(void* para)
 }//Network
 
 }//BSLib
+
 
 

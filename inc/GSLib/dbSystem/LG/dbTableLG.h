@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/08/05
-//	filename: 	GSLib\dbSystem\LG\dbTableLG.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_DBSYSTEM_LG_DBTABLELG_H__
 #define __GSLIB_DBSYSTEM_LG_DBTABLELG_H__
 
@@ -115,3 +108,4 @@ struct SActivationCodeData
 }//GSLib
 
 #endif//__GSLIB_DBSYSTEM_LG_DBTABLELG_H__
+

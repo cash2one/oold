@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/09/22
-//	filename: 	src\GSLib\sceneSystem\GM\roleSceneModule.cpp
-//	author:		zhangming
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_SCENESYSTEM_CN_ROLESCENEMODULECN_H__
 #define __GSLIB_SCENESYSTEM_CN_ROLESCENEMODULECN_H__
 

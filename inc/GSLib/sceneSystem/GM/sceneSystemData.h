@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/12/19
-//	filename: 	GSLib\sceneSystem\GM\sceneSystemData.h
-//	author:		zhangming
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_SCENESYSTEM_GM_SCENESYSTEMDATA_H__
 #define __GSLIB_SCENESYSTEM_GM_SCENESYSTEMDATA_H__ 
 
@@ -610,3 +603,4 @@ public:
 
 
 #endif
+

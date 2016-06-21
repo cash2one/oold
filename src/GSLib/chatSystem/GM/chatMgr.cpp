@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/11/12
-//	filename: 	GSLib\chatSystem\GM\chatMgr.cpp
-//	author:		zhangming
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/chatSystem/GM/chatMgr.h>
 #include <GSLib/chatSystem/chatSystemDefine.h>
 
@@ -59,4 +52,5 @@ const std::list<CChatContent>& CChatMgr::getAnnounceContent()
 }//ChatSystem
 
 }//GSLib
+
 

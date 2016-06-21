@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/10/09
-//	filename: 	src\GSLib\taskSystem\GM\taskSystemGM.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/playerSystem/GM/roleModuleGMMgr.h>
 #include <GSLib/taskSystem/GM/taskSystemGM.h>
 #include <GSLib/taskSystem/GM/roleTaskModule.h>
@@ -148,3 +141,4 @@ bool CTaskSystemGM::_taskSystemTimerCallBack(BSLib::uint64, void*)
 }//TaskSystem
 
 }//GSLib
+

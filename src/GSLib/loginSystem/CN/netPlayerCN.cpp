@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/28
-//	filename: 	GSLib\loginSystem\CN\netPlayerCN.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GFLib/commonServer/serviceMgr.h>
 #include <GSLib/loginSystem/CN/netPlayerCN.h>
 #include <GSLib/tracer.h>
@@ -180,4 +173,5 @@ bool CNetPlayerCN::_transferMsg(const GFLib::ServerType& a_serverType, GFLib::SM
 }//LoginSystem
 
 }//GSLib
+
 

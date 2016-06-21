@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2015/03/31
-//	filename: 	src\BSLib\database\mysqlConnectionPool.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_DATEBSLIB_MYSQLCONNECTIONPOOL__
 #define __BSLIB_DATEBSLIB_MYSQLCONNECTIONPOOL__
 

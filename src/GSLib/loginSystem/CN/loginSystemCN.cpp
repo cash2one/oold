@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/19
-//	filename:	src\GSLib\loginSystem\CN\loginSystemCN.cpp
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/tracer.h>
 #include <GSLib/loginSystem/CN/loginSystemCN.h>
 #include "CN/gateInforMgr.h"
@@ -483,3 +476,4 @@ bool CLoginSystemCN::_cbTimerAccountOfflineTimeout(BSLib::uint64 a_para1, void* 
 }//LoginSystem
 
 }//GSLib
+

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/10/23
-//	filename: 	src\BSLib\database\dbTableHead.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/database/dbTableHead.h>
 
 namespace BSLib
@@ -403,3 +396,4 @@ bool CDBTableHead::_getStrWhere(CDbConnection* a_dbConnection, EDbParamFlag a_pa
 }//Database
 
 }//BSLib
+

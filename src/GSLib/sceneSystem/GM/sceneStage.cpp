@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2015/1/13
-//	filename: 	src\GSLib\sceneSystem\GM\sceneCity.cpp
-//	author:		zhangming
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 /*#include <GSLib/sceneSystem/GM/sceneStage.h>
 #include <GSLib/sceneSystem/GM/roleSceneModule.h>
 #include <GSLib/sceneSystem/GM/sceneSystemDataMgr.h>
@@ -94,3 +87,4 @@ void CSceneStage::_exitScene(CRoleSceneModule * a_sceneRole)
 
 }//GSLib
 */
+

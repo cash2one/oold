@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/09
-//	filename:	src\Server\gameServer\gameServer.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __SERVER_GAMESERVER_GAMESERVER_H__
 #define __SERVER_GAMESERVER_GAMESERVER_H__
 
@@ -45,3 +38,4 @@ private:
 };
 
 #endif//__SERVER_GAMESERVER_GAMESERVER_H__
+

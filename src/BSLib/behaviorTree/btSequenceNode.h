@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/10/20
-//	filename:	src\BSLib\behaviorTree\btSequenceNode.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_BEHAVIORTREE_BTSEQUENCENODE_H__
 #define __BSLIB_BEHAVIORTREE_BTSEQUENCENODE_H__
 
@@ -54,3 +47,4 @@ protected:
 }//BSLib
 
 #endif//__BSLIB_BEHAVIORTREE_BTSEQUENCENODE_H__
+

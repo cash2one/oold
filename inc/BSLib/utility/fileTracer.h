@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/08/06
-//	filename: 	BSLib\utility\fileTracer.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_UTILITY_FILETRACER_H__
 #define __BSLIB_UTILITY_FILETRACER_H__
 
@@ -108,3 +101,4 @@ private:
 }//BSLib
 
 #endif//__BSLIB_UTILITY_FILETRACER_H__
+

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/08/18
-//	filename: 	BSLib\fsm\fsmMgr.hpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/utility/tracer.h>
 #include <BSLib/fsm/fsmMgr.h>
 #include "fsmFile.h"
@@ -411,3 +404,4 @@ bool CFSMMgr::checkUniqueID(FSMID id)
 }//FSM
 
 }//BSLib
+

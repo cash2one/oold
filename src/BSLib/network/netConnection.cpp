@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/07/24
-//	filename:	src\BSLib\network\netConnection.cpp
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/utility/thread/thread.h>
 #include <BSLib/network/netConnection.h>
 #include <BSLib/network/tcpConnectionMgr.h>
@@ -363,4 +356,5 @@ void CNetConnection::_clearBuff()
 }//Network
 
 }//BSLib
+
 

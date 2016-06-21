@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/10/23
-//	filename: 	BSLib\database\dbTableHead.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_DATEBSLIB_DBTABLEHEAD__
 #define __BSLIB_DATEBSLIB_DBTABLEHEAD__
 
@@ -69,3 +62,4 @@ private:
 }//BSLib
 
 #endif//__BSLIB_DATEBSLIB_DBTABLEHEAD__
+

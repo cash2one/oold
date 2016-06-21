@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/09/04
-//	filename:	BSLib\dateBSLib\dbParam.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_DATEBSLIB_DBPARAM__
 #define __BSLIB_DATEBSLIB_DBPARAM__
 
@@ -58,4 +51,5 @@ struct SDbColumn
 }//BSLib
 
 #endif//__BSLIB_DATEBSLIB_DBPARAM__
+
 

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/12/13
-//	filename: 	src\GSLib\loginSystem\SP\loginSystemSP.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/tracer.h>
 #include <GSLib/serverType.h>
 #include <GSLib/loginSystem/SP/loginSystemSP.h>
@@ -181,3 +174,4 @@ void CLoginSystemSP::_onMsgLoginSystemAC2SPAckCheckToken(BSLib::Framework::SMsgL
 }//LoginSystem
 
 }//GSLib
+

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/08/11
-//	filename:	BSLib\network\udpAcceptor.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_NETWORK_UDPACCEPTOR_H__
 #define __BSLIB_NETWORK_UDPACCEPTOR_H__
 
@@ -46,4 +39,5 @@ private:
 }//BSLib
 
 #endif//__BSLIB_NETWORK_UDPACCEPTOR_H__
+
 

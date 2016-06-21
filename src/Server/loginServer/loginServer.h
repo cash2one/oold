@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/09
-//	filename:	\src\Server\loginServer\loginServer.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __SERVER_LOGINSERVER_LOGINSERVER_H__
 #define __SERVER_LOGINSERVER_LOGINSERVER_H__
 
@@ -45,3 +38,4 @@ private:
 };
 
 #endif//__SERVER_LOGINSERVER_LOGINSERVER_H__
+

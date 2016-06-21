@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/09/26
-//	filename: 	src\GSLib\skillSystem\DB\skillSystemDB.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/skillSystem/DB/skillSystemDB.h>
 #include <GSLib/dbSystem/DB/dbSystemDB.h>
 #include <GSLib/skillSystem/DB/tableSkillDB.h>
@@ -72,3 +65,4 @@ void CSkillSystemDB::_cbServerLeave(const GFLib::SServerID& a_serverID, const st
 }//SkillSystem
 
 }//GSLib
+

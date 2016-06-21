@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/25
-//	filename: 	src\GSLib\playerSystem\GM\roleModuleGM.cpp
-//	author:		zhangping
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/tracer.h>
 #include <GSLib/playerSystem/GM/playerGMMgr.h>
 #include <GSLib/playerSystem/GM/playerGM.h>
@@ -160,3 +153,4 @@ bool CRoleModuleGM::sendMsgToCenterServer(GFLib::CMessage& msg)
 }//PlayerSystem
 
 }//GSLib
+

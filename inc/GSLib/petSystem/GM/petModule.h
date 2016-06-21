@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/25
-//	filename: 	GSLib\petSystem\GM\CPetModule.h
-//	author:	     zhangping	
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_PETSYSTEM_GM_PETMODULE_H__
 #define __GSLIB_PETSYSTEM_GM_PETMODULE_H__
 
@@ -158,3 +151,4 @@ private:
 }//GSLib
 
 #endif//__GSLIB_PETSYSTEM_GM_PETMODULE_H__
+

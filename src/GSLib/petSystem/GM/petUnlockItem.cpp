@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2015/07/29
-//	filename: 	src\GSLib\petSystem\GM\bossTaskData.cpp
-//	author:	    zhangping	
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/petSystem/GM/petUnlockItem.h>
 namespace GSLib
 {
@@ -82,3 +75,4 @@ const std::vector<SPetUnlockItem>& CPetUnlockData::getItemArray() const
 }//petSystem
 
 }//GSLib
+

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/09/15
-//	filename:	src\BSLib\network\tcpStubThread.cpp
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include "tcpStubThread.h"
 
 namespace BSLib
@@ -69,5 +62,6 @@ void CTcpStubThread::_leaveRun()
 }//Network
 
 }//BSLib
+
 
 

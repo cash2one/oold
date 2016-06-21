@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/08/20
-//	filename:	src\BSLib\udm\udmMgr.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/utility/thread/threadData.h>
 #include "udmMgr.h"
 #include "udmError.h"
@@ -533,5 +526,6 @@ void CUdmMgr::_cleanUp()
 }//UDM
 
 }//BSLib
+
 
 

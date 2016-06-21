@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/09/26
-//	filename: 	GSLib\ACHIEVESYSTEM\DB\ACHIEVESYSTEMDB.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_ACHIEVESYSTEM_DB_ACHIEVESYSTEMDB_H__
 #define __GSLIB_ACHIEVESYSTEM_DB_ACHIEVESYSTEMDB_H__
 
@@ -47,3 +40,4 @@ public:
 }//GSLib
 
 #endif//__GSLIB_ACHIEVESYSTEM_DB_ACHIEVESYSTEMDB_H__
+

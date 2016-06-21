@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/10/13
-//	filename: 	src\GSLib\prizeSystem\GM\prizeConfig.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/utility/file/xmlFile.h>
 #include <GSLib/tracer.h>
 #include <GSLib/prizeSystem/GM/prizeConfig.h>
@@ -321,3 +314,4 @@ bool CPrizeConfig::getPrize(BSLib::int32 a_prizeID, SPrizeItemInfo*& a_prizeItem
 }//PrizeSystem
 
 }//GSLib
+

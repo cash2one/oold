@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/10/27
-//	filename: 	GSLib\sceneSystem\GM\arenaData.h
-//	author:		zhangming
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef		__GSLIB_SCENESYSTEM_GM_ROLEARENADATA_H__
 #define		__GSLIB_SCENESYSTEM_GM_ROLEARENADATA_H__
 
@@ -96,6 +89,7 @@ public:
 
 
 #endif
+
 
 
 

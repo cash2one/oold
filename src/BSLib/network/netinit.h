@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/07/24
-//	filename:	src\BSLib\network\netinit.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_NETWORK_NETINIT_H__
 #define __BSLIB_NETWORK_NETINIT_H__
 
@@ -51,3 +44,4 @@ public:
 #endif//WIN32
 
 #endif//__BSLIB_NETWORK_NETINIT_H__
+

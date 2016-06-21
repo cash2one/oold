@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/08/02
-//	filename:	src\BSLib\network\epoll.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_NETWORK_EPOLL_H__
 #define __BSLIB_NETWORK_EPOLL_H__
 
@@ -169,3 +162,4 @@ private:
 }//BSLib
 
 #endif//__BSLIB_NETWORK_EPOLL_H__
+

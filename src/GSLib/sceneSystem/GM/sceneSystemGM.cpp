@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/25
-//	filename: 	src\GSLib\sceneSystem\GM\sceneSystemGM.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/tracer.h>
 #include <GSLib/playerSystem/GM/roleModuleGMMgr.h>
 #include <GSLib/sceneSystem/GM//roleSceneModule.h>
@@ -310,3 +303,4 @@ bool CSceneSystemGM::_onInstanceStageResetCallback(BSLib::uint64 a_num, void* a_
 }//SceneSystem
 
 }//GSLib
+

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/25
-//	filename: 	src\GSLib\sceneSystem\CN\sceneSystemCN.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/tracer.h>
 #include <GSLib/sceneSystem/CN/sceneSystemCN.h>
 #include <GSLib/sceneSystem/CN/roleSceneModuleCN.h>
@@ -71,3 +64,4 @@ void CSceneSystemCN::_cbServerLeave(const GFLib::SServerID& a_serverID, const st
 }//SceneSystem
 
 }//GSLib
+

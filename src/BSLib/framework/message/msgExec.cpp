@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/07/20
-//	filename:	src\BSLib\framework\message\msgExec.cpp
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/framework/message/msgExec.h>
 
 namespace BSLib
@@ -45,4 +38,5 @@ void CMsgExec::executeMessage(SMsgLabel* msgLabel, SMessage* msg)
 }//Framework
 
 }//BSLib
+
 

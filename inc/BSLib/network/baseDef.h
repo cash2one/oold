@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/07/20
-//	filename:	BSLib\network\baseDef.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_NETWORK_BASEDEF_H__
 #define __BSLIB_NETWORK_BASEDEF_H__
 
@@ -52,6 +45,7 @@ enum ENetType
 }//BSLib
 
 #endif //__BSLIB_NETWORK_BASEDEF_H__
+
 
 
 

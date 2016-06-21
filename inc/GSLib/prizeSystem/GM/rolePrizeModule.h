@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/09/13
-//	filename: 	GSLib\prizeSystem\GM\rolePrizeModule.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_PRIZESYSTEM_GM_ROLEPRIZEMODULE_H__
 #define __GSLIB_PRIZESYSTEM_GM_ROLEPRIZEMODULE_H__
 

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/10/09
-//	filename: src\GSLib\taskSystem\DB\taskSystemDB.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/taskSystem/DB/taskSystemDB.h>
 #include <GSLib/dbSystem/DB/dbSystemDB.h>
 #include <GSLib/taskSystem/DB/tableTaskDB.h>
@@ -76,3 +69,4 @@ void CTaskSystemDB::_cbServerLeave(const GFLib::SServerID& a_serverID, const std
 }//TaskSystem
 
 }//GSLib
+

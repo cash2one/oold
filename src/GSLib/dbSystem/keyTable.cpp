@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/10/29
-//	filename: 	src\GSLib\dbSystem\keyTable.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/dbSystem/keyTable.h>
 namespace GSLib
 {
@@ -77,5 +70,6 @@ bool CKeyTable::closeTableDataToDB(const std::string& a_key)
 }//DBSystem
 
 }//GSLib
+
 
 

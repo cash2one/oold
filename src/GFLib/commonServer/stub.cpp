@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/09/17
-//	filename: 	src\GFLib\commonServer\stub.cpp
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/framework/message/msgDebug.h>
 #include <GFLib/commonServer/message/msgServerLink.h>
 #include <GFLib/commonServer/message/msgLocalServer.h>
@@ -206,5 +199,6 @@ void CStub::_afterMsgHandlerStub(BSLib::Framework::CMsgExecMgr* msgExecMgr, BSLi
 }//CommonServer
 
 }//GFLib
+
 
 

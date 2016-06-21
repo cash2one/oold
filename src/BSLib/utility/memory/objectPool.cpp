@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2013/02/04
-//	filename:	src\BSLib\utility\memory\objectPool.cpp
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/utility/memory/objectPool.h>
 
 namespace BSLib
@@ -138,4 +131,5 @@ void CUnitPool::_freeBuff()
 }//Utility
 
 }//BSLib
+
 

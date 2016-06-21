@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/09/26
-//	filename: 	GSLib\itemSystem\DB\itemSystemDB.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_ITEMSYSTEM_DB_ITEMSYSTEMDB_H__
 #define __GSLIB_ITEMSYSTEM_DB_ITEMSYSTEMDB_H__
 
@@ -47,3 +40,4 @@ public:
 }//GSLib
 
 #endif//__GSLIB_ITEMSYSTEM_DB_ITEMSYSTEMDB_H__
+

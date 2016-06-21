@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/08/08
-//	filename: 	BSLib\utility\thread\event.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_UTLITY_THREAD_EVENT_H__
 #define __BSLIB_UTLITY_THREAD_EVENT_H__
 
@@ -44,3 +37,4 @@ private:
 }//BSLib
 
 #endif//__BSLIB_UTLITY_THREAD_EVENT_H__
+

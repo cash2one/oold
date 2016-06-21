@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/10/09
-//	filename: 	GSLib\taskSystem\msgNumIDTaskSystem.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_TASKSYSTEM_MSGNUMIDTASKSYSTEM_H__
 #define __GSLIB_TASKSYSTEM_MSGNUMIDTASKSYSTEM_H__
 
@@ -57,3 +50,4 @@ enum EMsgNumIDTestSystem
 }//GSLib
 
 #endif//__GSLIB_TASKSYSTEM_MSGNUMIDTASKSYSTEM_H__
+

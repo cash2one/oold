@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/07/27
-//	filename:	BSLib\network\tcpConnectionMgr.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_NETWOEK_TCPCONNECTIONMGR_H__
 #define __BSLIB_NETWOEK_TCPCONNECTIONMGR_H__
 
@@ -45,3 +38,4 @@ private:
 }//BSLib
 
 #endif//__BSLIB_NETWOEK_TCPCONNECTIONMGR_H__
+

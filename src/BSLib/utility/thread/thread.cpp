@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/06/30
-//	filename:	src\BSLib\utility\thread\thread.cpp
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/utility/thread/thread.h>
 
 namespace BSLib
@@ -505,3 +498,4 @@ CThreadPtr& CThreadArray::operator [](uint32 index)
 }//Utility
 
 }//BSLib
+

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2015/08/25
-//	filename: 	src\GSLib\dbSystem\DB\chargeTableDBMgr.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GFLib/commonServer/commonServer.h>
 #include <GSLib/dbSystem/dbCommonSystem.h>
 #include <GSLib/tracer.h>

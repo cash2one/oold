@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/09/12
-//	filename: 	GSLib\skillSystem\GM\skillAttr.cpp
-//	author:		zhangming
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/skillSystem/GM/skillAttr.h>
 #include <GSLib/skillSystem/GM/skillLevel.h>
 
@@ -60,6 +53,7 @@ BSLib::uint32 CSkillAttr::getRequiredGold(BSLib::uint32 a_requireLeve, BSLib::ui
 }//SKillSystem
 
 }//GSLib
+
 
 
 

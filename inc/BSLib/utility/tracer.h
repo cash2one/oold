@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/08/06
-//	filename: 	BSLib\utility\tracer.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_UTILITY_TRACER_H__
 #define __BSLIB_UTILITY_TRACER_H__
 
@@ -189,3 +182,4 @@ private:
 	} while(false);
 
 #endif//__BSLIB_UTILITY_TRACER_H__
+

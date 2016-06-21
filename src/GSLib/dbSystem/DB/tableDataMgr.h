@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/08/30
-//	filename: 	src\GSLib\dbSystem\DB\tableDataMgr.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 
 #ifndef __GSLIB_DBSYSTEM_DB_TABLEDATAMGR_H__
 #define __GSLIB_DBSYSTEM_DB_TABLEDATAMGR_H__
@@ -98,3 +91,4 @@ private:
 }//GSLib
 
 #endif//__GSLIB_DBSYSTEM_DB_TABLEDATAMGR_H__
+

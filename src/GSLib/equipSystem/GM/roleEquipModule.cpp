@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/27
-//	filename: 	src\GSLib\equipSystem\GM\roleEquipModule.cpp
-//	author:		zhangping
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <stdarg.h>
 #include <GSLib/tracer.h>
 #include <GSLib/equipSystem/GM/roleEquipModule.h>
@@ -2176,3 +2169,4 @@ void CRoleEquipModule::_checkExpiredEquip()
 }//EquipSystem
 
 }//GSLib
+

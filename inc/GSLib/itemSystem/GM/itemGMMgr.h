@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/08/03
-//	filename:	GSLib\itemSystem\GM\itemGMMgr.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 
 #ifndef __GSLIB_ITEMSYSTEM_GM_ITEMGMMGR_H__
 #define __GSLIB_ITEMSYSTEM_GM_ITEMGMMGR_H__
@@ -103,3 +96,4 @@ private:
 }//GSLib
 
 #endif//__GSLIB_ITEMSYSTEM_GM_ITEMGMMGR_H__
+

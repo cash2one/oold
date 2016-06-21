@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/10/25
-//	filename:	src\BSLib\behaviorTree\filters\untilFailsLimitedFilter.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/utility/string.h>
 #include "untilFailsLimitedFilter.h"
 
@@ -59,3 +52,4 @@ EDecoratorStatus CUntilFailsLimitedFilter::_decorator(ENodeStatus& a_result)
 }//BehaviorTree
 
 }//BSLib
+

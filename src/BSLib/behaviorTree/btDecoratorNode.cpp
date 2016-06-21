@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/10/20
-//	filename:	src\BSLib\behaviorTree\btDecoratorNode.cpp
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/behaviorTree/behaviorTree.h>
 #include <BSLib/behaviorTree/btDecoratorNode.h>
 
@@ -66,3 +59,4 @@ void CBTDecoratorNode::_execute()
 }// BehaviorTree
 
 }//BSLib
+

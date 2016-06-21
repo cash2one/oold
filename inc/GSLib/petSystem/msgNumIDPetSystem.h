@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/09/10
-//	filename: 	GSLib\petSystem\msgNumIDPetSystem.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_PETSYSTEM_MSGNUMIDPETSYSTEM_H__
 #define __GSLIB_PETSYSTEM_MSGNUMIDPETSYSTEM_H__
 
@@ -254,3 +247,4 @@ enum EGetPetBaseInforListResult
 }//GSLib
 
 #endif//__GSLIB_PETSYSTEM_MSGNUMIDPETSYSTEM_H__
+

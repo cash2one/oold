@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/10/22
-//	filename: 	GSLib\sceneSystem\GM\arenaDailyPrize.h
-//	author:		zhangming
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef		__GSLIB_SCENESYSTEM_GM_ARENAPRIZE_H__
 #define		__GSLIB_SCENESYSTEM_GM_ARENAPRIZE_H__
 
@@ -38,4 +31,5 @@ public:
 
 
 #endif
+
 

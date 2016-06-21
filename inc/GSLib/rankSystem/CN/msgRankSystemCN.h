@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/10/23
-//	filename: 	GSLib\rankSystem\CN\msgRankSystemCN.h
-//	author:		zhangming
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_RANKSYSTEM_CN_MSGRANKSYSTEMCN_H__
 #define __GSLIB_RANKSYSTEM_CN_MSGRANKSYSTEMCN_H__
 
@@ -113,3 +106,4 @@ protected:
 }//GSLib
 
 #endif//__GSLIB_RANKSYSTEM_CN_MSGRANKSYSTEMCN_H__
+

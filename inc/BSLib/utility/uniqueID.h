@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/08/20
-//	filename:	BSLib\utility\uniqueID.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_UTILITY_UNIQUEID_H__
 #define __BSLIB_UTILITY_UNIQUEID_H__
 
@@ -124,3 +117,4 @@ typedef CUniqueID<uint64> CUniqueID64;
 }//BSLib
 
 #endif//__BSLIB_UTILITY_UNIQUEID_H__
+

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/10/20
-//	filename:	BSLib\behaviorTree\baseDef.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_BEHAVIORTREE_BASEDEF_H__
 #define __BSLIB_BEHAVIORTREE_BASEDEF_H__
 
@@ -19,4 +12,5 @@
 #endif
 
 #endif //__BSLIB_BEHAVIORTREE_BASEDEF_H__
+
 

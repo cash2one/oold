@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/09/29
-//	filename: 	GSLib\sceneSystem\GM\reviveItem.h
-//	author:		zhangming
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef		__GSLIB_SCENESYSTEM_GM_REVIVEITEM_H__
 #define		__GSLIB_SCENESYSTEM_GM_REVIVEITEM_H__
 
@@ -49,6 +42,7 @@ private:
 
 
 #endif
+
 
 
 

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/09/26
-//	filename: 	src\GSLib\petSystem\DB\tablePetDB.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/petSystem/DB/tablePetDB.h>
 #include <GSLib/tracer.h>
 #include <GSLib/petSystem/baseDef.h>
@@ -131,3 +124,4 @@ bool CRolePetData::_serializeFrom(BSLib::Utility::CStream& stream)
 }//PetSystem
 
 }//GSLib
+

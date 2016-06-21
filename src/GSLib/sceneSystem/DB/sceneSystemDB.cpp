@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/11/6
-//	filename: 	src\GSLib\sceneSystem\DB\sceneSystemDB.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/sceneSystem/DB/sceneSystemDB.h>
 #include <GSLib/dbSystem/DB/dbSystemDB.h>
 #include <GSLib/sceneSystem/DB/tableSceneDB.h>
@@ -84,3 +77,4 @@ void CSceneSystemDB::_cbServerLeave(const GFLib::SServerID& a_serverID, const st
 }//SceneSystem
 
 }//GSLib
+

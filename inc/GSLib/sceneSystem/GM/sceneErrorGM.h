@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/09/29
-//	filename: 	GSLib\sceneSystem\GM\sceneError.h
-//	author:		zhangming
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef		__GSLIB_SCENESYSTEM_GM_SCENEERRORGM_H__
 #define		__GSLIB_SCENESYSTEM_GM_SCENEERRORGM_H__
 
@@ -260,3 +253,4 @@ namespace GM
 
 
 #endif
+

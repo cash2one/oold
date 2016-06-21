@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/22
-//	filename: 	GSLib\loginSystem\msgNumIDLoginSystem.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_LOGINSYSTEM_MSGNUMIDLOGINSYSTEM_H__
 #define __GSLIB_LOGINSYSTEM_MSGNUMIDLOGINSYSTEM_H__
 
@@ -193,3 +186,4 @@ enum EMsgNumIDLoginSystem
 }//GSLib
 
 #endif//__GSLIB_LOGINSYSTEM_MSGNUMIDLOGINSYSTEM_H__
+

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/07/25
-//	filename:	BSLib\network\tcpConnection.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_NETWOEK_TCPCONNECTION_H__
 #define __BSLIB_NETWOEK_TCPCONNECTION_H__
 
@@ -71,3 +64,4 @@ private:
 }//BSLib
 
 #endif//__BSLIB_NETWOEK_TCPCONNECTION_H__
+

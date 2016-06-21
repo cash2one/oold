@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/10/09
-//	filename: 	GSLib\rankSystem\GM\rankSystemGM.h
-//	author:		zhangming
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_RANKSYSTEM_GM_RANKSYSTEMGM_H__
 #define __GSLIB_RANKSYSTEM_GM_RANKSYSTEMGM_H__
 
@@ -50,3 +43,4 @@ public:
 }//GSLib
 
 #endif//__GSLIB_RANKSYSTEM_GM_RANKSYSTEMGM_H__
+

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/08/11
-//	filename:	src\BSLib\network\udpAcceptor.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/udm/udm.h>
 #include <BSLib/network/udpAcceptor.h>
 
@@ -126,4 +119,5 @@ void CUdpAcceptor::_terminateScoket(int udpSocket)
 }//Network
 
 }//BSLib
+
 

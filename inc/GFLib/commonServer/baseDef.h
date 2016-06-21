@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/08/04
-//	filename: 	GFLib\commonServer\baseDef.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GFLIB_COMMONSERVER_BASEDEF_H__
 #define __GFLIB_COMMONSERVER_BASEDEF_H__
 
@@ -266,5 +259,6 @@ size_t hash_value(const GFLib::SAccountKey & v);
 #endif//__GNUC__
 
 #endif //__GFLIB_COMMONSERVER_BASEDEF_H__
+
 
 

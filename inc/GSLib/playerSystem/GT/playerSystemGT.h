@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/25
-//	filename: 	GSLib\playerSystem\GT\playerSystemGT.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_PLAYERSYSTEM_GT_PLAYERSYSTEMGT_H__
 #define __GSLIB_PLAYERSYSTEM_GT_PLAYERSYSTEMGT_H__
 
@@ -47,3 +40,4 @@ public:
 }//GSLib
 
 #endif//__GSLIB_PLAYERSYSTEM_GT_PLAYERSYSTEMGT_H__
+

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/10/09
-//	filename: 	src\GSLib\mailSystem\GM\mailSystemGM.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/playerSystem/GM/roleModuleGMMgr.h>
 #include <GSLib/mailSystem/GM/mailSystemGM.h>
 #include <GSLib/mailSystem/GM/roleMailModule.h>
@@ -379,3 +372,4 @@ bool CMailSystemGM::exec(const std::string& a_key, BSLib::Database::CDBTableRow*
 }//MailSystem
 
 }//GSLib
+

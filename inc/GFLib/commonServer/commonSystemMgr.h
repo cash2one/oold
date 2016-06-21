@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/19
-//	filename:	GFLib\commonServer\commonSystemMgr.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GFLIB_COMMONSERVER_COMMONSYSTEMMGR_H__
 #define __GFLIB_COMMONSERVER_COMMONSYSTEMMGR_H__
 

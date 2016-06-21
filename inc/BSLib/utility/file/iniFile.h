@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/07/20
-//	filename:	BSLib\utility\file\iniFile.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_UTILITY_INIFILE_H__
 #define __BSLIB_UTILITY_INIFILE_H__
 
@@ -49,3 +42,4 @@ private:
 }//BSLib
 
 #endif//__BSLIB_UTILITY_INIFILE_H__
+

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/08/17
-//	filename:	BSLib\fsm\fsmFile.hpp
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/utility/tracer.h>
 #include "fsmFile.h"
 
@@ -310,3 +303,4 @@ SFSMConditionInfor* CFSMFile::_readFSMConditionNode(BSLib::Utility::CXmlFile* a_
 }//FSM
 
 }//BSLib
+

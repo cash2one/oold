@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/08/03
-//	filename:	GSLib\equipSystem\GM\playerGMMgr.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 
 #ifndef __GSLIB_EQUIPSYSTEM_GM_EQUIPGMMGR_H__
 #define __GSLIB_EQUIPSYSTEM_GM_EQUIPGMMGR_H__
@@ -157,3 +150,4 @@ private:
 }//GSLib
 
 #endif//__GSLIB_EQUIPSYSTEM_GM_EQUIPGMMGR_H__
+

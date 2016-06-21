@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2013/06/05
-//	filename:	BSLib\utility\memory\shareMemory.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_UTILITY_SHAREMEMORY_H__
 #define __BSLIB_UTILITY_SHAREMEMORY_H__
 
@@ -54,5 +47,6 @@ private:
 }//BSLib
 
 #endif//__BSLIB_UTILITY_SHAREMEMORY_H__
+
 
 

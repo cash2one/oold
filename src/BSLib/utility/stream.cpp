@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////////
-//	created:	2013/06/22
-//	filename:	src\BSLib\utility\stream.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////////
 #include <BSLib/utility/stream.h>
 
 namespace BSLib
@@ -103,3 +96,4 @@ CStream& CStream::operator =(const CStream& a_stream)
 }//Utility
 
 }//BSLib
+

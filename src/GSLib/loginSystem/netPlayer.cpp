@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/08/04
-//	filename: 	src\GSLib\loginSystem\netPlayer.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <stdarg.h>
 #include <GSLib/loginSystem/netPlayer.h>
 #include <GFLib/commonServer/serviceMgr.h>

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/09/13
-//	filename: src\GSLib\playerSystem\CN\roleModuleCNMgr.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/playerSystem/CN/roleModuleCNMgr.h>
 
 namespace GSLib
@@ -67,3 +60,4 @@ bool CRoleModuleCNMgr::addCreateRoleModuleFun(EModuleType a_moduleType, const BS
 }//PlayerSystem
 
 }//GSLib
+

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/10/05
-//	filename: 	src\GFLib\commonServer\clientMgr.cpp
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GFLib/commonServer/clientMgr.h>
 
 namespace GFLib
@@ -76,5 +69,6 @@ void CClientMgr::final()
 }//CommonServer
 
 }//GFLib
+
 
 

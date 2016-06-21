@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/08/05
-//	filename: 	GFLib\commonServer\service.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GFLIB_COMMONSERVER_SERVICE_H__
 #define __GFLIB_COMMONSERVER_SERVICE_H__
 
@@ -67,6 +60,7 @@ typedef BSLib::Utility::CPointer<CService> CServicePtr;
 }//GFLib
 
 #endif//__GFLIB_COMMONSERVER_SERVICE_H__
+
 
 
 

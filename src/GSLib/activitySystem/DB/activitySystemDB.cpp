@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/12/5
-//	filename: 	GSLib\activitySystem\DB\activitySystemDB.cpp
-//	author:		zhangming
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/activitySystem/DB/activitySystemDB.h>
 #include <GSLib/dbSystem/DB/dbSystemDB.h>
 #include <GSLib/activitySystem/DB/tableActivityDB.h>
@@ -80,3 +73,4 @@ void CActivitySystemDB::_cbServerLeave(const GFLib::SServerID& a_serverID, const
 }
 
 }//GSLib
+

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/10/09
-//	filename: 	src\GSLib\mailSystem\DB\mailSystemDB.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/mailSystem/DB/mailSystemDB.h>
 #include <GSLib/dbSystem/DB/dbSystemDB.h>
 #include <GSLib/mailSystem/DB/tableMailDB.h>
@@ -85,3 +78,4 @@ void CMailSystemDB::_cbServerLeave(const GFLib::SServerID& a_serverID, const std
 }//TaskSystem
 
 }//GSLib
+

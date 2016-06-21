@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/09/23
-//	filename: 	src\GFLib\commonServer\serviceMgr.cpp
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/utility/file/xmlFile.h>
 #include <BSLib/framework/message/msgType.h>
 #include <GFLib/commonServer/tracer.h>
@@ -653,4 +646,5 @@ bool CServiceMgr::_initServiceInfor()
 }//CommonServer
 
 }//GFLib
+
 

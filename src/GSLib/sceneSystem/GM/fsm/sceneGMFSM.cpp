@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/08/19
-//	filename: 	src\GSLib\sceneSystem\GM\fsm\sceneGMFSMMgr.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/tracer.h>
 #include "GM/fsm/sceneGMFSM.h"
 #include <GSLib/sceneSystem/GM/sceneScriptEnv.h>
@@ -78,3 +71,4 @@ bool CSceneGMFSM::parseProperties(BSLib::Utility::CProperties* a_properties)
 }//SceneSystem
 
 }//GSLib
+

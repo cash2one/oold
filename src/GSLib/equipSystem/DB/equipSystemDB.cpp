@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/09/26
-//	filename: 	src\GSLib\equipSystem\DB\equipSystemDB.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/equipSystem/DB/equipSystemDB.h>
 #include <GSLib/dbSystem/DB/dbSystemDB.h>
 #include <GSLib/equipSystem/DB/tableEquipDB.h>
@@ -73,3 +66,4 @@ void CEquipSystemDB::_cbServerLeave(const GFLib::SServerID& a_serverID, const st
 }//EquipSystem
 
 }//GSLib
+

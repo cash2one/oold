@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/09/17
-//	filename: 	GFLib\commonServer\stubMgr.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GFLIB_COMMONSERVER_STUBMGR_H__
 #define __GFLIB_COMMONSERVER_STUBMGR_H__
 
@@ -36,3 +29,4 @@ public:
 }//GFLib
 
 #endif//__GFLIB_COMMONSERVER_STUB_H__
+

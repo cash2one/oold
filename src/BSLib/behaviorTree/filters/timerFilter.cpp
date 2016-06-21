@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/10/25
-//	filename:	src\BSLib\behaviorTree\filters\timerFilter.cpp
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/utility/string.h>
 #include <BSLib/behaviorTree/behaviorTree.h>
 #include "timerFilter.h"

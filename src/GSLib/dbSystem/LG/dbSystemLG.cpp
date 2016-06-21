@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/22
-//	filename: 	src\GSLib\dbSystem\LG\dbSystemLG.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/framework/sysConfig.h>
 #include <GFLib/commonServer/commonServer.h>
 #include <GSLib/tracer.h>
@@ -199,3 +192,4 @@ void CDBSystemLG::_cbServerLeave(const GFLib::SServerID& a_serverID, const std::
 }//DBSystem
 
 }//GSLib
+

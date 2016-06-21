@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/12/19
-//	filename: 	GSLib\sceneSystem\GM\sceneSystemData.cpp
-//	author:		zhangming
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <algorithm>
 #include <BSLib/utility/stream.h>
 #include <GSLib/sceneSystem/GM/sceneSystemData.h>
@@ -1259,3 +1252,4 @@ void CChallengeInfo::reset()
 
 
 }//GSLib
+

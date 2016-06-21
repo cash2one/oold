@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/10/28
-//	filename: 	GSLib\dbSystem\dbCommonSystem.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_DBSYSTEM_DBCOMMONSYSTEM_H__
 #define __GSLIB_DBSYSTEM_DBCOMMONSYSTEM_H__
 
@@ -279,3 +272,4 @@ private:
 }//GSLib
 
 #endif//__GSLIB_DBSYSTEM_DBCOMMONSYSTEM_H__
+

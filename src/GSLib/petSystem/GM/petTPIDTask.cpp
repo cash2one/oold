@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/29
-//	filename: 	src\GSLib\petSystem\GM\petTPIDTask.cpp
-//	author:	    zhangping	
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/tracer.h>
 #include "petTPIDTask.h"
 
@@ -36,3 +29,4 @@ bool CPetTPIDTask::addTask(BSLib::uint32 a_taskID){
 }//PlayerSystem
 
 }//GSLib
+

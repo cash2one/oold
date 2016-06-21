@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/08/21
-//	filename: 	src\GSLib\sceneSystem\GM\sceneEntityGM.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 /*
 #include <GSLib/sceneSystem/GM/SceneEntityGM.h>
 #include <GSLib/sceneSystem/GM/sceneData.h>

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/06/30
-//	filename: 	BSLib\utility\thread\thread.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_UTILITY_THREAD_THREAD_H__
 #define __BSLIB_UTILITY_THREAD_THREAD_H__
 
@@ -144,3 +137,4 @@ private:
 }//BSLib
 
 #endif//__BSLIB_UTILITY_THREAD_THREAD_H__
+

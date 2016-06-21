@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/06/30
-//	filename: 	BSLib\utility\thread\thdMsgQueue.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_UTILITY_THREAD_MSGQUEUETHD_H__
 #define __BSLIB_UTILITY_THREAD_MSGQUEUETHD_H__
 
@@ -50,3 +43,4 @@ public:
 }//BSLib
 
 #endif//__BSLIB_UTILITY_THREAD_MSGQUEUETHD_H__
+

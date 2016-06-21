@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/07/20
-//	filename:	src\BSLib\framework\sysConfig.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <stdio.h>
 #include <BSLib/utility/string.h>
 #include <BSLib/framework/sysConfig.h>
@@ -137,3 +130,4 @@ void CSysConfig::_initCmd(std::vector<std::string>& cmdList)
 }//Framework
 
 }//BSLib
+

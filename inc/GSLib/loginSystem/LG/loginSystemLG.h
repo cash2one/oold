@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/19
-//	filename:	GSLib\loginSystem\LG\loginSystemLG.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_LOGINSYSTEM_LG_LOGINSYSTEMLG_H__
 #define __GSLIB_LOGINSYSTEM_LG_LOGINSYSTEMLG_H__
 

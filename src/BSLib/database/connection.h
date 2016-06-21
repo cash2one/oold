@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/09/06
-//	filename:	src\BSLib\dateBSLib\connection.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_DATEBSLIB_CONNECTION__
 #define __BSLIB_DATEBSLIB_CONNECTION__
 
@@ -82,4 +75,5 @@ public:
 }//BSLib
 
 #endif//__BSLIB_DATEBSLIB_CONNECTION__
+
 

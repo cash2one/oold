@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/09/09
-//	filename: 	src\GSLib\skillSystem\GM\skillSystemGM.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/playerSystem/GM/roleModuleGMMgr.h>
 #include <GSLib/skillSystem/GM/skillSystemGM.h>
 #include <GSLib/skillSystem/GM/skillAttrMgr.h>
@@ -76,3 +69,4 @@ void CSkillSystemGM::_cbServerLeave(const GFLib::SServerID& a_serverID, const st
 }//SkillSystem
 
 }//GSLib
+

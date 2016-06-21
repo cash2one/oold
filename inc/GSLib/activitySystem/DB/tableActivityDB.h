@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/12/5
-//	filename: 	GSLib\activitySystem\DB\tableActivityDB.h
-//	author:		zhangming
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_ACTIVITYSYSTEM_DB_TABLEACTIVITYDB_H__
 #define __GSLIB_ACTIVITYSYSTEM_DB_TABLEACTIVITYDB_H__
 
@@ -91,3 +84,4 @@ public:
 }//GSLib
 
 #endif
+

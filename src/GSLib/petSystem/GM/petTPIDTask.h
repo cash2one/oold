@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2015/03/05
-//	filename: 	GSLib\petSystem\GM\petTPIDLevelTask.h
-//	author:		zhangping
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_PETSYSTEM_GM_PETTPIDLEVELTASKDATA_H__
 #define __GSLIB_PETSYSTEM_GM_PETTPIDLEVELTASKDATA_H__
 
@@ -37,3 +30,4 @@ public:
 
 }//GSLib
 #endif// __GSLIB_PETSYSTEM_GM_PETTPIDLEVELTASKDATA_H__
+

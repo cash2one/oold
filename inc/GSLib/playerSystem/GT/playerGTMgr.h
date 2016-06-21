@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/08/03
-//	filename:	GSLib\playerSystem\GT\playerGTMgr.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 
 #ifndef __GSLIB_PLAYERSYSTEM_GT_PLAYERGTMGR_H__
 #define __GSLIB_PLAYERSYSTEM_GT_PLAYERGTMGR_H__
@@ -56,3 +49,4 @@ private:
 }//GSLib
 
 #endif//__GSLIB_PLAYERSYSTEM_GT_PLAYERGTMGR_H__
+

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/12/10
-//	filename: 	src\Server\superServer\superStub.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/loginSystem/msgLoginSystem.h>
 #include <GSLib/loginSystem/LG/loginSystemLG.h>
 #include "superStub.h"
@@ -154,4 +147,5 @@ void CSuperStub::_cbTerminate()
 // 	ackAccountLogin.m_state = result;
 // 	GFLib::CommonServer::CStub::sendMsg(ackAccountLogin);
 // }
+
 

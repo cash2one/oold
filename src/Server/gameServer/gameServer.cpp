@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/09
-//	filename:	src\Server\gameServer\gameServer.cpp
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/utility/random.h>
 #include <GFLib/commonServer/serviceMgr.h>
 #include <GFLib/commonServer/stubMgr.h>
@@ -214,3 +207,4 @@ BSLib::Network::CNetStubPtr CGameServer::_cbNewTcpStub(BSLib::Network::CNetConne
 	}
 	return netStubPtr;
 }
+

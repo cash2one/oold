@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/09/12
-//	filename: 	BSLib\network\netStub.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_NETWORK_NETSTUB_H__
 #define __BSLIB_NETWORK_NETSTUB_H__
 
@@ -104,5 +97,6 @@ typedef BSLib::Utility::CPointer<CNetStub> CNetStubPtr;
 }//BSLib
 
 #endif//__BSLIB_NETWORK_NETSTUB_H__
+
 
 

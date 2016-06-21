@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/07/08
-//	filename:	src\BSLib\utility\convert.cpp
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef _WIN32
 
 #include <stdlib.h>
@@ -709,3 +702,4 @@ double CConvert::toDouble(const std::wstring& str)
 }//Utility
 
 }//BSLib
+

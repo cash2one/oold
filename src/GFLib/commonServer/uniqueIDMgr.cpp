@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/11/12
-//	filename: 	src\GFLib\commonServer\uniqueIDMgr.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/utility/file/binFile.h>
 #include <BSLib/utility/file/dirInfo.h>
 #include <BSLib/utility/file/fileInfo.h>

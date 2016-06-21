@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/08/05
-//	filename: 	src\GSLib\dbSystem\GM\dbSystemGM.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GFLib/commonServer/serviceMgr.h>
 #include <GFLib/commonServer/commonSystemMgr.h>
 #include <GSLib/tracer.h>
@@ -252,3 +245,4 @@ void CDBSystemGM::_onMsgDBSystemDB2XSAckSelectGlobalMultiTableData(BSLib::Framew
 }//DBSystem
 
 }//GSLib
+

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/09/12
-//	filename: 	GSLib\skillSystem\GM\skill.cpp
-//	author:		zhangming
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/skillSystem/GM/skill.h>
 
 
@@ -60,6 +53,7 @@ void CSkill::setSkillLevel(SkillLevel skillLevel)
 }//GM
 }//SKillSystem
 }//GSLib
+
 
 
 

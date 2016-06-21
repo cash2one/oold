@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/11/14
-//	filename:	src\BSLib\behaviorTree\btFunction.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/utility/string.h>
 #include <BSLib/utility/tracer.h>
 #include <BSLib/behaviorTree/behaviorTree.h>
@@ -102,3 +95,4 @@ ENodeStatus CBTScriptAction::_step()
 }// BehaviorTree
 
 }//BSLib
+

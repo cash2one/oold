@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/20
-//	filename:	src\Server\loginServer\loginStub.cpp
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 
 #include <GSLib/loginSystem/msgLoginSystem.h>
 #include <GSLib/loginSystem/LG/loginSystemLG.h>
@@ -194,4 +187,5 @@ void CLoginStub::_notifyGetAccountTokenResult(GSLib::LoginSystem::EGetAccountTok
     ackAccountLogin.m_state = result;
     GFLib::CommonServer::CStub::sendMsg(ackAccountLogin);
 }
+
 

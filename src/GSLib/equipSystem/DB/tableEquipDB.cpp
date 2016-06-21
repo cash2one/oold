@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/09/26
-//	filename: 	src\GSLib\equipSystem\DB\tableEquipDB.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/equipSystem/DB/tableEquipDB.h>
 #include <GSLib/tracer.h>
 #include <GSLib/equipSystem/baseDef.h>

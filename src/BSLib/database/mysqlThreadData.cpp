@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2015/04/06
-//	filename:	src\BSLib\database\mysqlThreadData.cpp
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include "mysqlConnectionPool.h"
 #include "mysqlConnection.h"
 #include "mysqlThreadData.h"

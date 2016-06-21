@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/10/20
-//	filename:	BSLib\behaviorTree\btNode.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_BEHAVIORTREE_BTNODE_H__
 #define __BSLIB_BEHAVIORTREE_BTNODE_H__
 
@@ -210,3 +203,4 @@ private:
 }//BSLib
 
 #endif//__BSLIB_BEHAVIORTREE_BTNODE_H__
+

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/25
-//	filename: 	src\GSLib\playerSystem\GT\playerGTMgr.cpp
-//	author:		zhangping
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/playerSystem/GT/playerGTMgr.h>
 #include <GSLib/playerSystem/GT/playerGT.h>
 #include <GSLib/tracer.h>
@@ -112,3 +105,4 @@ void CPlayerGTMgr::removeAllPlayer()
 }//PlayerSystem
 
 }//GSLib
+

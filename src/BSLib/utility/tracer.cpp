@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/08/06
-//	filename:	src\BSLib\utility\tracer.cpp
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <string.h>
 #include <stdarg.h>
 #include <BSLib/utility/string.h>
@@ -270,4 +263,5 @@ void CTracer::sysFatal(uint16 type, const char* file, int line, const char* form
 }//Utility
 
 }//BSLib
+
 

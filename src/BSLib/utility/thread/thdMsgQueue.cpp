@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/06/30
-//	filename:	src\BSLib\utility\thread\thdMsgQueue.cpp
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef WIN32
 
 #include <sys/types.h>
@@ -232,3 +225,4 @@ bool CThdMsgQueue::send(HndThdMsgQueue queHandle, uint32 para1, uint16 para2, vo
 }//Utility
 
 }//BSLib
+

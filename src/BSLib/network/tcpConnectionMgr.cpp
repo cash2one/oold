@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/07/28
-//	filename:	src\BSLib\network\tcpConnectionMgr.cpp
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/network/tcpConnection.h>
 #include <BSLib/network/tcpConnectionMgr.h>
 #include "netinit.h"
@@ -159,3 +152,4 @@ void CTcpConnectionMgr::_terminateScoket(SOCKET& tcpSocket, void* data)
 }//Network
 
 }//BSLib
+

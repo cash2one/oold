@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2015/07/02
-//	filename: 	BSLib\utility\file\gameData.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_UTILITY_GAMEDATA_H__
 #define __BSLIB_UTILITY_GAMEDATA_H__
 
@@ -46,3 +39,4 @@ protected:
 }//BSLib
 
 #endif//__BSLIB_UTILITY_GAMEDATA_H__
+

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2015/1/8
-//	filename: 	src\GSLib\sceneSystem\GM\sceneMgr.cpp
-//	author:		zhangming
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/sceneSystem/GM/sceneMgr.h>
 #include <GSLib/sceneSystem/GM/scene.h>
 #include <GSLib/sceneSystem/GM/sceneSystemData.h>
@@ -66,3 +59,4 @@ CScene * CSceneMgr::allocateScene(ESceneType a_sceneType, BSLib::uint32 a_sceneT
 }//SceneSystem
 
 }//GSLib
+

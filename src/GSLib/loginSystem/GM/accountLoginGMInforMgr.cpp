@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/20
-//	filename:	src\GSLib\loginSystem\LG\accountLoginLGInforMgr.cpp
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GFLib/commonServer/stubMgr.h>
 #include <GFLib/commonServer/serviceMgr.h>
 #include <GFLib/commonServer/accountMgr.h>
@@ -336,3 +329,4 @@ bool CAccountLoginGMInforMgr::_notifyExit(SAccountLoginGMInfor* a_infor, bool a_
 }//LoginSystem
 
 }//GSLib
+

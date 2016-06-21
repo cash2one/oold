@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/21
-//	filename: 	src\Server\gateServer\gateStub.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GFLib/commonServer/accountMgr.h>
 #include <GSLib/loginSystem/msgLoginSystem.h>
 #include <GSLib/loginSystem/GT/loginSystemGT.h>
@@ -119,3 +112,4 @@ void CGateStub::_afterMsgHandlerGameStub(BSLib::Framework::CMsgExecMgr* msgExecM
 {
 	msgExecMgr->delMsgExecPtr(msg->getType(), msg->getID());
 }
+

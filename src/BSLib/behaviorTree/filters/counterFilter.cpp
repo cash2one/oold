@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/10/25
-//	filename:	src\BSLib\behaviorTree\filters\counterFilter.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/utility/string.h>
 #include "counterFilter.h"
 
@@ -62,3 +55,4 @@ void  CCounterFilter::_reset()
 }//BehaviorTree
 
 }//BSLib
+

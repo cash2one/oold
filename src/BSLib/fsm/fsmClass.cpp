@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/08/18
-//	filename: 	BSLib\fsm\fsmClass.hpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/utility/hashMap.h>
 #include <BSLib/fsm/fsmClass.h>
 
@@ -107,4 +100,5 @@ bool CFSM::parseProperties(BSLib::Utility::CProperties* a_properties)
 }//FSM
 
 }//BSLib
+
 

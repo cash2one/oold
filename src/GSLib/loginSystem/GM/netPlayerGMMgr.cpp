@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/28
-//	filename: 	GSLib\loginSystem\GM\netPlayerGMMgr.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/loginSystem/GM/netPlayerGMMgr.h>
 
 namespace GSLib
@@ -33,3 +26,4 @@ CNetPlayerGMMgr::~CNetPlayerGMMgr()
 }//LoginSystem
 
 }//GSLib
+

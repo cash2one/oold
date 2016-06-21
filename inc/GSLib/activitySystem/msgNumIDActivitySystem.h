@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/12/5
-//	filename: 	msgNumIDActivitySystem.h
-//	author:		zhangming
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_ACTIVITYSYSTEM_MSGNUMIDACTIVITYSYSTEM_H__
 #define __GSLIB_ACTIVITYSYSTEM_MSGNUMIDACTIVITYSYSTEM_H__
 
@@ -42,3 +35,4 @@ enum EMsgNumIDActivitySystem
 }//GSLib
 
 #endif
+

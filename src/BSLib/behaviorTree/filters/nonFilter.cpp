@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/10/25
-//	filename:	src\BSLib\behaviorTree\filters\nonFilter.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include "nonFilter.h"
 
 namespace BSLib
@@ -31,3 +24,4 @@ EDecoratorStatus CNonFilter::_decorator(ENodeStatus& a_result)
 }// BehaviorTree
 
 }//BSLib
+

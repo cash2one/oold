@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/19
-//	filename:	src\GFLib\commonServer\commonSystem.cpp
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GFLib/commonServer/commonSystemMgr.h>
 #include <GFLib/commonServer/tracer.h>
 
@@ -212,3 +205,4 @@ bool CCommonSystemMgr::_postStartSystem()
 }//CommonServer
 
 }//GFLib
+

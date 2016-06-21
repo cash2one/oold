@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/29
-//	filename: 	src\GSLib\playerSystem\GT\roleGT.cpp
-//	author:	    zhangping	
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/playerSystem/GT/roleGT.h>
 
 
@@ -45,3 +38,4 @@ void CRoleGT::_final()
 }//PlayerSystem
 
 }//GSLib
+

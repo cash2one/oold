@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/08/18
-//	filename: 	src\GSLib\sceneSystem\GM\originalSceneMgr.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_SCENESYSTEM_GM_ORIGINALSCENEMGR_H__
 #define __GSLIB_SCENESYSTEM_GM_ORIGINALSCENEMGR_H__ 
 

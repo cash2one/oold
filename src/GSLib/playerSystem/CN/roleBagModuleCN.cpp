@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/08/29
-//	filename: 	src\GSLib\playerSystem\CN\roleBagModule.cpp
-//	author:	    zhangping	
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/playerSystem/CN/playerSystemCN.h>
 #include <GSLib/playerSystem/CN/roleBagModuleCN.h>
 #include <GSLib/playerSystem/msgPlayerSystem.h>

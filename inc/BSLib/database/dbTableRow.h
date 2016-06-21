@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/10/21
-//	filename: 	BSLib\database\dbTableRow.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_DATEBSLIB_DBTABLEROW__
 #define __BSLIB_DATEBSLIB_DBTABLEROW__
 
@@ -81,3 +74,4 @@ private:
 }//BSLib
 
 #endif//__BSLIB_DATEBSLIB_DBTABLEROW__
+

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/08/19
-//	filename: 	src\GSLib\sceneSystem\GM\fsm\sceneGMFSM.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_SCENESYSTEM_GM_FSM_SCENEGMFSM_H__
 #define __GSLIB_SCENESYSTEM_GM_FSM_SCENEGMFSM_H__ 
 

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/28
-//	filename: 	GSLib\loginSystem\GM\netPlayerGMMgr.h
-//	author:		zhangping
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_PLAYERSYSTEM_GM_ROLEATTRIBUTEGMMGR_H__
 #define __GSLIB_PLAYERSYSTEM_GM_ROLEATTRIBUTEGMMGR_H__
 

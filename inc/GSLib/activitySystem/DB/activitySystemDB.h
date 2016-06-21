@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/12/5
-//	filename: 	GSLib\activitySystem\DB\activitySystemDB.h
-//	author:		zhangming
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_ACTIVITYSYSTEM_DB_ACTIVITYSYSTEMDB_H__
 #define __GSLIB_ACTIVITYSYSTEM_DB_ACTIVITYSYSTEMDB_H__
 
@@ -45,3 +38,4 @@ public:
 }//GSLib
 
 #endif
+

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/08/18
-//	filename: 	BSLib\fsm\fsmClass.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_FSM_FSMCLASS_H__
 #define __BSLIB_FSM_FSMCLASS_H__
 
@@ -112,3 +105,4 @@ private:
 }//BSLib
 
 #endif //__BSLIB_FSM_FSMCLASS_H__
+

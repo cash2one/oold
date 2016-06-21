@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/06/26
-//	filename: 	BSLib\utility\thread\mutex.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_UTILITY_THREAD_MUTEX_H__
 #define __BSLIB_UTILITY_THREAD_MUTEX_H__
 
@@ -141,4 +134,5 @@ private:
 }//BSLib
 
 #endif//__BSLIB_UTILITY_THREAD_MUTEX_H__
+
 

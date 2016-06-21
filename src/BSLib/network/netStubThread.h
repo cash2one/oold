@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/09/15
-//	filename:	src\BSLib\network\netStubThread.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_NETWORK_NETSTUBTHREAD_H__
 #define __BSLIB_NETWORK_NETSTUBTHREAD_H__
 
@@ -262,3 +255,4 @@ private:
 }//BSLib
 
 #endif//__BSLIB_NETWORK_NETSTUBTHREAD_H__
+

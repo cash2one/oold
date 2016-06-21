@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/29
-//	filename: 	GSLib\playerSystem\GT\role.h
-//	author:		zhangping
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_PLAYERSYSTEM_GT_ROLE_H__
 #define __GSLIB_PLAYERSYSTEM_GT_ROLE_H__
 
@@ -44,3 +37,4 @@ public:
 }//GSLib
 
 #endif//__GSLIB_PLAYERSYSTEM_GT_ROLE_H__
+

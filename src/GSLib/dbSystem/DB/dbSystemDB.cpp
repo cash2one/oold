@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/22
-//	filename: 	src\GSLib\dbSystem\DB\dbSystemDB.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GFLib/commonServer/commonServer.h>
 #include <GFLib/commonServer/serviceMgr.h>
 #include <GSLib/tracer.h>
@@ -802,3 +795,4 @@ void CDBSystemDB::_onMsgDBSystemCH2DBNtfCharge(BSLib::Framework::SMsgLabel* a_ms
 }//DBSystem
 
 }//GSLib
+

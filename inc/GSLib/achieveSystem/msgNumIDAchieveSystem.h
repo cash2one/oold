@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/09/09
-//	filename: 	GSLib\ACHIEVESYSTEM\msgNumIDAchieveSystem.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_ACHIEVESYSTEM_MSGNUMIDACHIEVESYSTEM_H__
 #define __GSLIB_ACHIEVESYSTEM_MSGNUMIDACHIEVESYSTEM_H__
 
@@ -52,3 +45,4 @@ namespace AchieveSystem
 }//GSLib
 
 #endif//__GSLIB_ACHIEVESYSTEM_MSGNUMIDACHIEVESYSTEM_H__
+

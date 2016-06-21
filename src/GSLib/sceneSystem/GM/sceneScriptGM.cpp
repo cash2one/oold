@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/08/19
-//	filename: 	src\GSLib\sceneSystem\GM\sceneGMController.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/tracer.h>
 #include "GM/originalScene.h"
 #include "GM/fsm/sceneGMFSMMgr.h"
@@ -157,3 +150,4 @@ bool CSceneScriptGM::_executeFunctionSceneSetVariation(std::vector<BSLib::Utilit
 }//SceneSystem
 
 }//GSLib
+

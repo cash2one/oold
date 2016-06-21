@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/06/23
-//	filename: 	BSLib\utility\baseDef.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_UTILITY_BASEDEF_H__
 #define __BSLIB_UTILITY_BASEDEF_H__
 
@@ -120,6 +113,7 @@ typedef unsigned char      uint8;
 #endif
 
 #endif //__BSLIB_UTILITY_BASEDEF_H__
+
 
 
 

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/10/09
-//	filename: 	src\GSLib\taskSystem\GM\roleTaskModule.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <vector>
 #include <GSLib/taskSystem/GM/roleTaskModule.h>
 #include <GSLib/taskSystem/DB/tableTaskDB.h>

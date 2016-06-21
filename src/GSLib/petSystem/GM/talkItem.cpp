@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/29
-//	filename: 	src\GSLib\petSystem\GM\hotSpringTask.cpp
-//	author:	    zhangping	
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include "GSLib/petSystem/GM/talkItem.h"
 #include <GSLib/tracer.h>
 
@@ -118,3 +111,4 @@ bool CTalkItem::initTalkItem(std::string& a_item)
 }//PlayerSystem
 
 }//GSLib
+

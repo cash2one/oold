@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/08/22
-//	filename: 	src\GSLib\sceneSystem\GM\fsm\fsmScripCondition.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/tracer.h>
 #include "GM/fsm/fsmScripCondition.h"
 #include <GSLib/sceneSystem/GM/sceneScriptEnv.h>

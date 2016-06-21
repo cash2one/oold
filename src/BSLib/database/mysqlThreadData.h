@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2015/04/06
-//	filename:	src\BSLib\database\mysqlThreadData.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_DATEBSLIB_MYSQLTHREADDATA_H__
 #define __BSLIB_DATEBSLIB_MYSQLTHREADDATA_H__
 

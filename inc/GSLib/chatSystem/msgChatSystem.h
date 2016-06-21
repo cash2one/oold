@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/10/09
-//	filename: 	GSLib\chatSystem\msgChatSystem.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_CHATSYSTEM_MSGCHATSYSTEM_H__
 #define __GSLIB_CHATSYSTEM_MSGCHATSYSTEM_H__
 
@@ -13,3 +6,4 @@
 #include <GSLib/chatSystem/msgChatSystemGC.h>
 
 #endif//__GSLIB_CHATSYSTEM_MSGCHATSYSTEM_H__
+

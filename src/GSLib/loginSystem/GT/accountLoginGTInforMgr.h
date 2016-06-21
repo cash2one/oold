@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/21
-//	filename: 	src\GSLib\loginSystem\GT\accountLoginGTInforMgr.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_LOGINSYSTEM_GT_ACCOUNTLOGINGTINFORMGR_H__
 #define __GSLIB_LOGINSYSTEM_GT_ACCOUNTLOGINGTINFORMGR_H__
 
@@ -128,3 +121,4 @@ private:
 
 
 #endif//__GSLIB_LOGINSYSTEM_GT_ACCOUNTLOGINGTINFORMGR_H__
+

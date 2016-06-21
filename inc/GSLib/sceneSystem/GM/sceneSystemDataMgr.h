@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/08/10
-//	filename: 	GSLib\sceneSystem\GM\sceneSystemDataMgr.h
-//	author:		zhangming
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef		__GSLIB_SCENESYSTEM_GM_SCENESYSTEMDATAMGR_H__
 #define		__GSLIB_SCENESYSTEM_GM_SCENESYSTEMDATAMGR_H__
 
@@ -133,3 +126,4 @@ private:
 
 
 #endif
+

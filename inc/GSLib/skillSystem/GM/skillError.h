@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/09/12
-//	filename: 	GSLib\skillSystem\GM\skillError.h
-//	author:		zhangming
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 
 #ifndef		__GSLIB_SKILLSYSTEM_GM_SKILLERROR_H__
 #define		__GSLIB_SKILLSYSTEM_GM_SKILLERROR_H__
@@ -58,3 +51,4 @@ enum ESetSkillButtonError
 
 
 #endif
+

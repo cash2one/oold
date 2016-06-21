@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/10/25
-//	filename:	src\BSLib\behaviorTree\filters\untilFailsLimitedFilter.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_BEHAVIORTREE_FILTERS_UNTILFAILSLIMITEDFILTER_H__
 #define __BSLIB_BEHAVIORTREE_FILTERS_UNTILFAILSLIMITEDFILTER_H__
 
@@ -58,3 +51,4 @@ private:
 }//BSLib
 
 #endif//__BSLIB_BEHAVIORTREE_FILTERS_UNTILFAILSLIMITEDFILTER_H__
+

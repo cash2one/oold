@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/18
-//	filename: 	BSLib\framework\message\msgFactory.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_FRAMEWORK_MESSAGE_MSGFACTORY_H__
 #define __BSLIB_FRAMEWORK_MESSAGE_MSGFACTORY_H__
 

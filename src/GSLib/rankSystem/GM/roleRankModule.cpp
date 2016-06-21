@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/10/09
-//	filename: 	src\GSLib\rankSystem\GM\roleRankModule.cpp
-//	author:		zhangming
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/rankSystem/GM/roleRankModule.h>
 #include <GSLib/rankSystem/msgRankSystem.h>
 #include <GFLib/commonServer/serviceMgr.h>

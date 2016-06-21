@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/29
-//	filename: 	src\GSLib\achieveSystem\GM\itemAttributeGM.cpp
-//	author:	    zhangping	
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include "GSLib/achieveSystem/GM/achieveAttributeGM.h"
 #include <GSLib/tracer.h>
 
@@ -41,3 +34,4 @@ void CAchieveItem::serializeTo(BSLib::Utility::CStream& stream) const
 }//PlayerSystem
 
 }//GSLib
+

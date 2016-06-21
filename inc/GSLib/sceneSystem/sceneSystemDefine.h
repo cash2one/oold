@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2015/03/02
-//	filename: 	GSLib\sceneSystem\sceneSystemDefine.h
-//	author:		zhangming
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_SCENESYSTEM_SCENESYSTEMDEFINE_H__
 #define __GSLIB_SCENESYSTEM_SCENESYSTEMDEFINE_H__
 
@@ -35,3 +28,4 @@ namespace SceneSystem
 }//GSLib
 
 #endif//__GSLIB_SCENESYSTEM_MSGNUMIDSCENESYSTEM_H__
+

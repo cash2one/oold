@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/25
-//	filename: 	src\GSLib\playerSystem\CN\playerCNMgr.cpp
-//	author:		zhangping
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/playerSystem/CN/playerCNMgr.h>
 #include "GSLib/playerSystem/CN/playerCN.h"
 #include <GSLib/tracer.h>
@@ -148,3 +141,4 @@ void CPlayerCNMgr::removeAllPlayer()
 }//PlayerSystem
 
 }//GSLib
+

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/07/20
-//	filename:	src\BSLib\framework\message\msgExecMgr.cpp
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/framework/message/msgExecMgr.h>
 
 namespace BSLib
@@ -290,4 +283,5 @@ void CMsgExecMgr::clear()
 }//Framework
 
 }//BSLib
+
 

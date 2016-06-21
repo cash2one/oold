@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/09/10
-//	filename: 	src\GSLib\npcSystem\GM\npcSystemGM.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/npcSystem/GM/npcSystemGM.h>
 
 namespace GSLib
@@ -73,3 +66,4 @@ void CNPCSystemGM::_cbServerLeave(const GFLib::SServerID& a_serverID, const std:
 }//NPCSystem
 
 }//GSLib
+

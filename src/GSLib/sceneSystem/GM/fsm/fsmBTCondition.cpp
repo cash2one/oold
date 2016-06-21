@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/08/22
-//	filename: 	src\GSLib\sceneSystem\GM\fsm\fsmBTCondition.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/tracer.h>
 #include "GM/fsm/fsmBTCondition.h"
 #include <GSLib/sceneSystem/GM/sceneScriptEnv.h>
@@ -56,3 +49,4 @@ bool CFSMBTCondition::parseProperties(BSLib::Utility::CScriptObject* a_object, B
 }//SceneSystem
 
 }//GSLib
+

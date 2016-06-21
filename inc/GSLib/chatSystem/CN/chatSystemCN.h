@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/10/10
-//	filename: 	GSLib\chatSystem\CN\chatSystemCN.h
-//	author:		zhangming
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_CHATSYSTEM_CN_CHATSYSTEMCN_H__
 #define __GSLIB_CHATSYSTEM_CN_CHATSYSTEMCN_H__
 
@@ -49,3 +42,4 @@ private:
 }//GSLib
 
 #endif//__GSLIB_CHATSYSTEM_CN_CHATSYSTEMCN_H__
+

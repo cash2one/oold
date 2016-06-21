@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/08/06
-//	filename:	src\BSLib\utility\fileTracer.cpp
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <stdarg.h>
 #include <time.h>
 #include <BSLib/utility/fileTracer.h>
@@ -759,3 +752,4 @@ void CFileTracer::_writeToConsole()
 }//Utility
 
 }//BSLib
+

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/07/28
-//	filename:	src\BSLib\network\sockEvent.hpp
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_NETWORK_SOCKEVENT_H__
 #define __BSLIB_NETWORK_SOCKEVENT_H__
 
@@ -194,3 +187,4 @@ private:
 #endif//WIN32
 
 #endif//__BSLIB_NETWORK_SOCKEVENT_H__
+

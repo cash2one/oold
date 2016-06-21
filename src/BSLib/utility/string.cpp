@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/07/20
-//	filename:	src\BSLib\utility\string.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <algorithm>
 #include <stdarg.h>
 #include <BSLib/utility/string.h>
@@ -772,3 +765,4 @@ const CStringW& CStringW::operator >>(float& data) const
 }//Utility
 
 }//BSLib
+

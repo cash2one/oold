@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/08/31
-//	filename:	src\BSLib\network\udpConnectionMgr.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/udm/udm.h>
 #include <BSLib/network/udpConnectionMgr.h>
 
@@ -158,4 +151,5 @@ void CUdpConnectionMgr::_terminateScoket(int& udmSocket, void* data)
 }//Network
 
 }//BSLib
+
 

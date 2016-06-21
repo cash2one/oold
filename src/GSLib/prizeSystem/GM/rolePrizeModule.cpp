@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/09/13
-//	filename: 	src\GSLib\prizeSystem\GM\rolePrizeModule.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/prizeSystem/GM/rolePrizeModule.h>
 #include <GSLib/tracer.h>
 #include <GSLib/mailSystem/GM/mailSystemGM.h>

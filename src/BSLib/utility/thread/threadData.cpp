@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/06/25
-//	filename:	src\BSLib\utility\thread\threadData.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/utility/thread/threadData.h>
 
 namespace BSLib
@@ -91,3 +84,4 @@ void* CThreadData::get()
 }//Utility
 
 }//BSLib
+

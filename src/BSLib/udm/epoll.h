@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/08/30
-//	filename:	src\BSLib\udm\epoll.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_UDM_EPOLL_H__
 #define __BSLIB_UDM_EPOLL_H__
 
@@ -169,3 +162,4 @@ private:
 }//BSLib
 
 #endif//__BSLIB_UDM_EPOLL_H__
+

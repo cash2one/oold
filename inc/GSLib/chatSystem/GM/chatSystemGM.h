@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/10/09
-//	filename: 	GSLib\chatSystem\GM\chatSystemGM.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_CHATSYSTEM_GM_CHATSYSTEMGM_H__
 #define __GSLIB_CHATSYSTEM_GM_CHATSYSTEMGM_H__
 
@@ -55,3 +48,4 @@ public:
 }//GSLib
 
 #endif//__GSLIB_CHATSYSTEM_GM_CHATSYSTEMGM_H__
+

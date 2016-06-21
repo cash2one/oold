@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/08/19
-//	filename: 	src\GSLib\sceneSystem\GM\btree\sceneGMBTMgr.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_SCENESYSTEM_GM_FSM_SCENEGMBTMGR_H__
 #define __GSLIB_SCENESYSTEM_GM_FSM_SCENEGMBTMGR_H__ 
 

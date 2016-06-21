@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/07/28
-//	filename:	src\BSLib\network\netAcceptor.cpp
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/network/netAcceptor.h>
 
 namespace BSLib
@@ -61,3 +54,4 @@ bool CNetAcceptor::delAcceptor(CSockAddr& addrAcceptor)
 }//Network
 
 }//BSLib
+

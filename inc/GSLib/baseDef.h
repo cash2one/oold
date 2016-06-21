@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/19
-//	filename:	GSLib\baseDef.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_BASEDEF_H__
 #define __GSLIB_BASEDEF_H__
 
@@ -822,3 +815,4 @@ static std::string toMailString(const std::string& a_string)
     return outUTF8String;
 }
 #endif//__GSLIB_BASEDEF_H__
+

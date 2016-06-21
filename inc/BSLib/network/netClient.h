@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/09/16
-//	filename: 	BSLib\network\netClient.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_NETWORK_NETCLIENT_H__
 #define __BSLIB_NETWORK_NETCLIENT_H__
 
@@ -101,4 +94,5 @@ typedef BSLib::Utility::CPointer<CUdpClient> CUdpClientPtr;
 }//BSLib
 
 #endif//__BSLIB_NETWORK_NETCLIENT_H__
+
 

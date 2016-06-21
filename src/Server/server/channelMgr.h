@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2013/06/09
-//	filename:	src\Server\server\channelMgr.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __SERVER_SERVER_CHANNELMGR_H__
 #define __SERVER_SERVER_CHANNELMGR_H__
 
@@ -53,3 +46,4 @@ private:
 };
 
 #endif//__SERVER_SERVER_CHANNELMGR_H__
+

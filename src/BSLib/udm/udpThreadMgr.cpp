@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/08/21
-//	filename:	src\BSLib\udm\udpThreadMgr.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include "udpThreadMgr.h"
 
 namespace BSLib
@@ -142,4 +135,5 @@ void CUdpThreadMgr::clearAll()
 }//UDM
 
 }//BSLib
+
 

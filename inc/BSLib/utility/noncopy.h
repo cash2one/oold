@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/06/30
-//	filename: 	BSLib\utility\noncopy.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_UTILITY_NONCOPYABLE_H__
 #define __BSLIB_UTILITY_NONCOPYABLE_H__
 
@@ -32,3 +25,4 @@ protected:
 }//BSLib
 
 #endif//__BSLIB_UTILITY_NONCOPYABLE_H__
+

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/20
-//	filename:	src\GSLib\loginSystem\LG\accountLoginLGInforMgr.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_LOGINSYSTEM_LG_ACCOUNTLOGINLGINFORMGR_H__
 #define __GSLIB_LOGINSYSTEM_LG_ACCOUNTLOGINLGINFORMGR_H__
 

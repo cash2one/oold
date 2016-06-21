@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/10/09
-//	filename: 	GSLib\chatSystem\GM\roleChatModule.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_CHATSYSTEM_GM_ROLECHATMODULE_H__
 #define __GSLIB_CHATSYSTEM_GM_ROLECHATMODULE_H__
 

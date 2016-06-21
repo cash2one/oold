@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<root>
-    <item f_pet_id="1001" f_level="1" f_pet_weight="100" f_pet_piece_id="100110001" f_pet_piece_count="10" f_pet_piece_weight="500" />
-    <item f_pet_id="1002" f_level="1" f_pet_weight="100" f_pet_piece_id="100110002" f_pet_piece_count="10" f_pet_piece_weight="500" />
-    <item f_pet_id="1003" f_level="2" f_pet_weight="100" f_pet_piece_id="100110003" f_pet_piece_count="10" f_pet_piece_weight="500" />
-    <item f_pet_id="1004" f_level="2" f_pet_weight="100" f_pet_piece_id="100110004" f_pet_piece_count="10" f_pet_piece_weight="500" />
-    <item f_pet_id="1005" f_level="3" f_pet_weight="100" f_pet_piece_id="100110005" f_pet_piece_count="10" f_pet_piece_weight="500" />
-    <item f_pet_id="1006" f_level="3" f_pet_weight="100" f_pet_piece_id="100110006" f_pet_piece_count="10" f_pet_piece_weight="500" />
-</root>

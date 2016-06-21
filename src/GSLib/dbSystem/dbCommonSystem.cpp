@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/10/28
-//	filename: 	src\GSLib\dbSystem\dbCommonSystem.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GFLib/commonServer/serviceMgr.h>
 #include <GFLib/commonServer/commonServer.h>
 #include <GSLib/tracer.h>
@@ -523,4 +516,5 @@ bool CDBCommonSystem::_cbSelectGlobalMultiTableData(const GSLib::SRoleKey& a_src
 }//DBSystem
 
 }//GSLib
+
 

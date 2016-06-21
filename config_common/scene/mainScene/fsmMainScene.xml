@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="GBK" ?>
-<fsms>
-  <fsm name="mainScene" id="200000" init="" >
-    <state type="btState" name="init" start="true" enter="" leave="" btname="" />
-    <state type="fsmState" name="wait"  enter="" leave="" fsmname="" />
-    <jump type="script" from="init" to="wait" script="" />
-  </fsm>
-</fsms>

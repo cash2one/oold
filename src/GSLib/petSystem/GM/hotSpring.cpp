@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/29
-//	filename: 	src\GSLib\petSystem\GM\hotSpring.cpp
-//	author:	    zhangping	
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/tracer.h>
 #include "GSLib/petSystem/GM/hotSpring.h"
 #include <GSLib/petSystem/GM/petSystemGM.h>
@@ -336,3 +329,4 @@ bool CHotSpring::final()
 }//PlayerSystem
 
 }//GSLib
+

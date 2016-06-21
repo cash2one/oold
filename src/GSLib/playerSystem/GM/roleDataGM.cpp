@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/27
-//	filename: 	src\GSLib\equipSystem\GM\equipDataGM.cpp
-//	author:		zhangping
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/tracer.h>
 #include <GSLib/equipSystem/msgEquipSystem.h>
 #include <GSLib/dbSystem/GM/dbSystemGM.h>
@@ -25,3 +18,4 @@ namespace GM
 }//EquipSystem
 
 }//GSLib
+

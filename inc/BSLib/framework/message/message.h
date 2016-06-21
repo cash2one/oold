@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/07/20
-//	filename: 	BSLib\framework\message\message.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_FRAMEWORK_MESSAGE_MESSAGE_H__
 #define __BSLIB_FRAMEWORK_MESSAGE_MESSAGE_H__
 
@@ -88,3 +81,4 @@ protected:
 }//BSLib
 
 #endif//__BSLIB_FRAMEWORK_MESSAGE_MESSAGE_H__
+

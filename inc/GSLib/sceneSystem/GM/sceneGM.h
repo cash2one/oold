@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/08/18
-//	filename: 	GSLib\sceneSystem\GM\sceneGM.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_SCENESYSTEM_GM_SCENEGM_H__
 #define __GSLIB_SCENESYSTEM_GM_SCENEGM_H__ 
 
@@ -109,3 +102,4 @@ private:
 }//GSLib
 
 #endif//__GSLIB_SCENESYSTEM_GM_SCENEGM_H__
+

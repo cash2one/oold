@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/12/5
-//	filename: 	GSLib\activitySystem\GM\roleActivityModule.h
-//	author:		zhangming
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_ACTIVITYSYSTEM_GM_ROLEACTIVITYMODULE_H__
 #define __GSLIB_ACTIVITYSYSTEM_GM_ROLEACTIVITYMODULE_H__
 

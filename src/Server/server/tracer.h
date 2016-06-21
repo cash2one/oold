@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/09/10
-//	filename: 	GFLib\managerServer\tracer.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GFLIB_MANAGERSERVER_TRACER_H__
 #define __GFLIB_MANAGERSERVER_TRACER_H__
 
@@ -22,6 +15,7 @@ enum EManagerTraceType
 }//GFLib
 
 #endif//__GFLIB_MANAGERSERVER_TRACER_H__
+
 
 
 

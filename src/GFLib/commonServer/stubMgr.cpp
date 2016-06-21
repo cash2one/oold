@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/09/18
-//	filename:	src\GFLib\commonServer\stubMgr.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GFLib/commonServer/stubMgr.h>
 
 namespace GFLib
@@ -35,4 +28,5 @@ CStubPtr CStubMgr::getCommonStubByStubID(StubID a_stubID)
 }//CommonServer
 
 }//GFLib
+
 

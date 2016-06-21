@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/08/17
-//	filename:	src\BSLib\utility\script.cpp
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/utility/string.h>
 #include <BSLib/utility/script.h>
 #include <BSLib/utility/convert.h>
@@ -1208,4 +1201,5 @@ bool CScriptEnvironment::_executeFunctionSetGlobalData(std::vector<CScriptData>&
 }//Utility
 
 }//BSLib
+
 

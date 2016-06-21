@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/10/09
-//	filename: 	GSLib\chatSystem\msgNumIDChatSystem.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_CHATSYSTEM_MSGNUMIDCHATSYSTEM_H__
 #define __GSLIB_CHATSYSTEM_MSGNUMIDCHATSYSTEM_H__
 
@@ -35,3 +28,4 @@ enum EMsgNumIDTestSystem
 }//GSLib
 
 #endif//__GSLIB_CHATSYSTEM_MSGNUMIDCHATSYSTEM_H__
+

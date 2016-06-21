@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<root>
-    <item f_end_rank="1" f_gold="1000" f_diamond="1000" f_pvp_coin="500" />
-    <item f_end_rank="2" f_gold="500" f_diamond="500" f_pvp_coin="300" />
-    <item f_end_rank="3" f_gold="400" f_diamond="300" f_pvp_coin="250" />
-    <item f_end_rank="10" f_gold="100" f_diamond="100" f_pvp_coin="80" />
-    <item f_end_rank="100" f_gold="50" f_diamond="80" f_pvp_coin="60" />
-    <item f_end_rank="10000" f_gold="20" f_diamond="50" f_pvp_coin="40" />
-</root>

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/29
-//	filename: 	GSLib\achieveSystem\GM\itemAttributeGM.h
-//	author:		zhangping
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_ACHIEVESYSTEM_GM_ITEMATTRIBUTEGM_H__
 #define __GSLIB_ACHIEVESYSTEM_GM_ITEMATTRIBUTEGM_H__
 
@@ -38,3 +31,4 @@ public:
 
 }//GSLib
 #endif// __GSLIB_ACHIEVESYSTEM_GM_ITEMATTRIBUTEGM_H__
+

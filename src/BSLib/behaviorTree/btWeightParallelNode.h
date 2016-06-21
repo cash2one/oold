@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/10/21
-//	filename:	src\BSLib\behaviorTree\btWeightParallelNode.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_BEHAVIORTREE_BTWEIGHTPARALLELNODE_H__
 #define __BSLIB_BEHAVIORTREE_BTWEIGHTPARALLELNODE_H__
 
@@ -60,3 +53,4 @@ private:
 }//BSLib
 
 #endif//__BSLIB_BEHAVIORTREE_BTWEIGHTPARALLELNODE_H__
+

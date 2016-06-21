@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/08/20
-//	filename:	src\BSLib\udm\udmClient.cpp
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include "udmClient.h"
 #include "udpThreadMgr.h"
 
@@ -234,6 +227,7 @@ void CUdmClient::tickMsg(BSLib::Utility::CRealTime& realTime)
 }//UDM
 
 }//BSLib
+
 
 
 

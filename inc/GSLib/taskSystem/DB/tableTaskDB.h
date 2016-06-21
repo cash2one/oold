@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/09/26
-//	filename: 	GSLib\itemSystem\DB\tableItemDB.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_ITEMSYSTEM_DB_TABLETASKDB_H__
 #define __GSLIB_ITEMSYSTEM_DB_TABLETASKDB_H__
 
@@ -154,3 +147,4 @@ public:
 }//GSLib
 
 #endif//__GSLIB_ITEMSYSTEM_DB_TABLETASKDB_H__
+

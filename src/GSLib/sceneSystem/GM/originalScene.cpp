@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/08/19
-//	filename: 	src\GSLib\sceneSystem\GM\originalScene.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/sceneSystem/GM/sceneGMMgr.h>
 #include <BSLib/math/vector3.h>
 #include "GM/originalScene.h"
@@ -158,3 +151,4 @@ bool COriginalScene::canMove(const BSLib::Math::CVector3 & a_newPlace) const
 }//SceneSystem
 
 }//GSLib
+

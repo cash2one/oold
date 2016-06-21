@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2013/01/13
-//	filename:	src\BSLib\utility\timerServer.cpp
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/utility/tracer.h>
 #include <BSLib/utility/timerServer.h>
 
@@ -504,4 +497,5 @@ void  CTimerServer::_clear()
 }//Utility
 
 }//BSLib
+
 

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/25
-//	filename: 	GSLib\petSystem\GM\CPetGM.h
-//	author:	     zhangping	
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_PETSYSTEM_GM_PETDATA_H__
 #define __GSLIB_PETSYSTEM_GM_PETDATA_H__
 
@@ -42,3 +35,4 @@ public:
 }//GSLib
 
 #endif//__GSLIB_PETSYSTEM_GM_PETDATA_H__
+

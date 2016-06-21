@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/12/11
-//	filename: 	GSLib\activitySystem\GM\activitySystemError.h
-//	author:		zhangming
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 
 #ifndef		__GSLIB_ACTIVITYSYSTEM_GM_ACTIVITYSYSTEMERROR_H__
 #define		__GSLIB_ACTIVITYSYSTEM_GM_ACTIVITYSYSTEMERROR_H__
@@ -50,3 +43,4 @@ enum EDrawCardResult
 }	// GSLIB
 
 #endif
+

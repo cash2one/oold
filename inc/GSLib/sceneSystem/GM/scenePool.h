@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2015/1/8
-//	filename: 	GSLib\sceneSystem\GM\scenePool.h
-//	author:		zhangming
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_SCENESYSTEM_GM_SCENE_POOL_H__
 #define __GSLIB_SCENESYSTEM_GM_SCENE_POOL_H__ 
 
@@ -48,3 +41,4 @@ public:
 }//GSLib
 
 #endif//__GSLIB_SCENESYSTEM_GM_SCENE_H__
+

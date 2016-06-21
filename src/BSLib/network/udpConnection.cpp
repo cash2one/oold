@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/08/16
-//	filename:	src\BSLib\network\udpConnection.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include "netinit.h"
 #include <BSLib/udm/udm.h>
 #include <BSLib/utility/thread/thread.h>
@@ -259,5 +252,6 @@ void CUdpConnection::_setConnectionAddr(int sock)
 }//Network
 
 }//BSLib
+
 
 

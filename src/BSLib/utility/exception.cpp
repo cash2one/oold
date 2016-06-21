@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2015/04/09
-//	filename: 	BSLib\utility\exception.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/utility/exception.h>
 
 namespace BSLib
@@ -65,3 +58,4 @@ const char* CException::what() const throw()
 }//Utility
 
 }//BSLib
+

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/25
-//	filename: 	GSLib\playerSystem\msgPlayerSystemGC.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_PLAYERSYSTEM_MSGPLAYERSYSTEMGC_H__
 #define __GSLIB_PLAYERSYSTEM_MSGPLAYERSYSTEMGC_H__
 
@@ -690,3 +683,4 @@ public:
 }//GSLib
 
 #endif//__GSLIB_PLAYERSYSTEM_MSGPLAYERSYSTEMGC_H__
+

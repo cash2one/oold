@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/07/20
-//	filename: 	BSLib\utility\buffer.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_UTILITY_BUFFER_H__
 #define __BSLIB_UTILITY_BUFFER_H__
 
@@ -199,3 +192,4 @@ inline bool CBufferInt8::writeReserve(uint32 reserveSize)
 }//BSLib
 
 #endif // __BSLIB_UTILITY_BUFFER_H__
+

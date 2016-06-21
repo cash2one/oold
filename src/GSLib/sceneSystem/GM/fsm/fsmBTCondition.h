@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/08/22
-//	filename: 	src\GSLib\sceneSystem\GM\fsm\fsmBTCondition.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef ___GSLIB_SCENESYSTEM_GM_FSM_FSMBTCONDITION_H__
 #define ___GSLIB_SCENESYSTEM_GM_FSM_FSMBTCONDITION_H__
 

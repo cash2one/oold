@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/29
-//	filename: 	src\GSLib\petSystem\GM\finishPetTaskData.cpp
-//	author:	    zhangping	
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include "GSLib/petSystem/GM/finishPetTaskData.h"
 #include <GSLib/tracer.h>
 
@@ -100,3 +93,4 @@ bool CFinishBossTaskData::serializeTo(BSLib::Utility::CStream& stream) const
 }//PlayerSystem
 
 }//GSLib
+

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/08/18
-//	filename: 	BSLib\fsm\fsmStruct.hpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/fsm/fsmStruct.h>
 
 namespace BSLib
@@ -316,3 +309,4 @@ bool SFSM::addJumpCondition(const std::string& a_fromStateName, const std::strin
 }//FSM
 
 }//BSLib
+

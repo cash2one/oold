@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/08/18
-//	filename: 	src\BSLib\behaviorTree\btScriptAction.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_BEHAVIORTREE_BTSCRIPTACTION_H__
 #define __BSLIB_BEHAVIORTREE_BTSCRIPTACTION_H__
 
@@ -39,4 +32,5 @@ private:
 }//BSLib
 
 #endif//__BSLIB_BEHAVIORTREE_BTSCRIPTACTION_H__
+
 

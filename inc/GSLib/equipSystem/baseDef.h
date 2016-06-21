@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/08/20
-//	filename:	GSLib\inc\baseDef.h
-//	author:		zhangping
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_EQUIPSYSTEM_BASEDEF_H__
 #define __GSLIB_EQUIPSYSTEM_BASEDEF_H__
 #define EQUIP_ATTRIBUTE_TYPE(attributeID) (BSLIB_LO_SHIFT(attributeID, 24)& 0X000000FF)

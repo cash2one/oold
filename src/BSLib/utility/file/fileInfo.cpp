@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/08/06
-//	filename:	src\BSLib\utility\file\fileInfo.cpp
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #if defined(WIN32)
 
 #include <direct.h>
@@ -321,3 +314,4 @@ bool CFileInfo::deleteFile(const std::string& fileName)
 }//Utility
 
 }//BSLib
+

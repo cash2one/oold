@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/12/18
-//	filename: 	src\GSLib\loginSystem\SP\accountTokenInforMgr.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_LOGINSYSTEM_SP_ACCOUNTTOKENINFORMGR_H__
 #define __GSLIB_LOGINSYSTEM_SP_ACCOUNTTOKENINFORMGR_H__
 

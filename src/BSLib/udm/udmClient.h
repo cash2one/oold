@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/08/20
-//	filename:	src\BSLib\udm\udmClient.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_UDM_UDMCLIENT_H__
 #define __BSLIB_UDM_UDMCLIENT_H__
 
@@ -44,5 +37,6 @@ private:
 }//BSLib
 
 #endif//__BSLIB_UDM_UDMCLIENT_H__
+
 
 

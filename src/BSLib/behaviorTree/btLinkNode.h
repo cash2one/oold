@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/11/07
-//	filename:	src\BSLib\behaviorTree\btLinkNode.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_BEHAVIORTREE_BTLINKNODE_H__
 #define __BSLIB_BEHAVIORTREE_BTLINKNODE_H__
 
@@ -61,4 +54,5 @@ private:
 }//BSLib
 
 #endif//__BSLIB_BEHAVIORTREE_BTLINKNODE_H__
+
 

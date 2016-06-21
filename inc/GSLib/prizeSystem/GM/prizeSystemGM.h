@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/09/10
-//	filename: 	GSLib\prizeSystem\GM\prizeSystemGM.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_PRIZESYSTEM_GM_PRIZESYSTEMGM_H__
 #define __GSLIB_PRIZESYSTEM_GM_PRIZESYSTEMGM_H__
 
@@ -55,3 +48,4 @@ private:
 }//GSLib
 
 #endif//__GSLIB_PRIZESYSTEM_GM_PRIZESYSTEMGM_H__
+

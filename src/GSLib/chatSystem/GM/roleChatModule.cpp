@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/10/09
-//	filename: 	src\GSLib\chatSystem\GM\roleChatModule.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/chatSystem/GM/roleChatModule.h>
 #include <GSLib/chatSystem/msgChatSystem.h>
 #include <GSLib/playerSystem/GM/playerGMMgr.h>

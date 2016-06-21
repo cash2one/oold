@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/12/6
-//	filename: 	GSLib\activitySystem\GM\activityData.h
-//	author:		zhangming
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 
 #ifndef		__GSLIB_ACTIVITYSYSTEM_GM_ACTIVITYDATA_H__
 #define		__GSLIB_ACTIVITYSYSTEM_GM_ACTIVITYDATA_H__
@@ -146,5 +139,6 @@ public:
 
 
 #endif
+
 
 

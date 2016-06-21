@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/08/05
-//	filename: 	src\GFLib\commonServer\commonServer.cpp
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/utility/file/fileInfo.h>
 #include <BSLib/utility/file/dirInfo.h>
 #include <BSLib/utility/fileTracer.h>
@@ -704,5 +697,6 @@ void CCommonServer::_onMsgServerLocalLC2LCNtfCommand(BSLib::Framework::SMsgLabel
 }//CommonServer
 
 }//GFLib
+
 
 

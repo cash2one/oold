@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/19
-//	filename:	GSLib\loginSystem\DB\loginSystemDB.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_LOGINSYSTEM_DB_LOGINSYSTEMDB_H__
 #define __GSLIB_LOGINSYSTEM_DB_LOGINSYSTEMDB_H__
 
@@ -60,3 +53,4 @@ private:
 }//GSLib
 
 #endif//__GSLIB_LOGINSYSTEM_DB_LOGINSYSTEMDB_H__
+

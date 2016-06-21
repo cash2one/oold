@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/17
-//	filename: 	src\Server\gateServer\gateServer.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 
 #include <BSLib/utility/random.h>
 #include <GFLib/commonServer/serviceMgr.h>
@@ -180,3 +173,4 @@ BSLib::Network::CNetStubPtr CGateServer::_cbNewTcpStub(BSLib::Network::CNetConne
 	}
 	return netStubPtr;
 }
+

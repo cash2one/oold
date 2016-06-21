@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/09/06
-//	filename:	src\BSLib\dateBSLib\mysqlReader.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_DATEBSLIB_MYSQLREADER__
 #define __BSLIB_DATEBSLIB_MYSQLREADER__
 
@@ -78,4 +71,5 @@ typedef BSLib::Utility::CPointer<CDbReader> CDbReaderPtr;
 }//BSLib
 
 #endif//__BSLIB_DATEBSLIB_MYSQLREADER__
+
 

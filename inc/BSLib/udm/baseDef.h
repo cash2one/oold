@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/08/20
-//	filename:	BSLib\udm\baseDef.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_UDM_BASEDEF_H__
 #define __BSLIB_UDM_BASEDEF_H__
 
@@ -88,3 +81,4 @@ struct SEpollEvent
 }//BSLib
 
 #endif//__BSLIB_UDM_BASEDEF_H__
+

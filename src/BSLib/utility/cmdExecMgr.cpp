@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2013/06/09
-//	filename:	src\BSLib\utility\cmdExecMgr.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/utility/string.h>
 #include <BSLib/utility/cmdExecMgr.h>
 
@@ -136,4 +129,5 @@ void CCmdExecMgr::_remove()
 }//Utility
 
 }//BSLib
+
 

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2015/7/2
-//	filename: 	GSLib\chatSystem\GM\chatSystemData.cpp
-//	author:		zhangming
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 
 #include <GSLib/chatSystem/GM/chatSystemData.h>
 #include <BSLib/utility/stream.h>
@@ -41,6 +34,7 @@ void CChatEquipID::serializeFrom(BSLib::Utility::CStream& stream) const
 }//ChatSystem
 
 }//GSLib
+
 
 
 

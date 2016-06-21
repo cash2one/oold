@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/09/09
-//	filename: 	GSLib\skillSystem\msgNumIDSkillSystem.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_SKILLSYSTEM_MSGNUMIDSKILLSYSTEM_H__
 #define __GSLIB_SKILLSYSTEM_MSGNUMIDSKILLSYSTEM_H__
 
@@ -37,3 +30,4 @@ enum EMsgNumIDSkillSystem
 }//GSLib
 
 #endif//__GSLIB_SKILLSYSTEM_MSGNUMIDSKILLSYSTEM_H__
+

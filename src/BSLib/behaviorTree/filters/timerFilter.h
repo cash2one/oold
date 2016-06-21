@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/10/25
-//	filename:	src\BSLib\behaviorTree\filters\timerFilter.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_BEHAVIORTREE_FILTERS_TIMERFILTER_H__
 #define __BSLIB_BEHAVIORTREE_FILTERS_TIMERFILTER_H__
 
@@ -65,3 +58,4 @@ protected:
 }//BSLib
 
 #endif//__BSLIB_BEHAVIORTREE_FILTERS_TIMERFILTER_H__
+

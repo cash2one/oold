@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/25
-//	filename: 	GSLib\playerSystem\LG\playerSystemLG.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_PLAYERSYSTEM_LG_PLAYERSYSTEMLG_H__
 #define __GSLIB_PLAYERSYSTEM_LG_PLAYERSYSTEMLG_H__
 
@@ -45,3 +38,4 @@ public:
 }//GSLib
 
 #endif//__GSLIB_PLAYERSYSTEM_LG_PLAYERSYSTEMLG_H__
+

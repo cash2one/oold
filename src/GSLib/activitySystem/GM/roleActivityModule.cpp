@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/12/5
-//	filename: 	GSLib\activitySystem\GM\roleActivityModule.cpp
-//	author:		zhangming
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/activitySystem/GM/roleActivityModule.h>
 #include <GSLib/activitySystem/msgActivitySystem.h>
 #include <GSLib/prizeSystem/GM/rolePrizeModule.h>
@@ -488,3 +481,4 @@ void CRoleActivityModule::_addRolledItem(const CRolledItem & a_rolledItem)
 }
 
 }//GSLib
+

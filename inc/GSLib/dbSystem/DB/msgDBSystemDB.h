@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/22
-//	filename: 	GSLib\dbSystem\DB\msgDBSystemDB.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_DBSYSTEM_DB_MSGDBSYSTEMDB_H__
 #define __GSLIB_DBSYSTEM_DB_MSGDBSYSTEMDB_H__
 
@@ -345,3 +338,4 @@ public:
 }//GSLib
 
 #endif//__GSLIB_DBSYSTEM_DB_MSGDBSYSTEMDB_H__
+

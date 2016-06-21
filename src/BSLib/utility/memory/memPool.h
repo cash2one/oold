@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/07/09
-//	filename:	src\BSLib\utility\memory\memPool.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_UTILITY_MEMORY_MEMPOOL_H__
 #define __BSLIB_UTILITY_MEMORY_MEMPOOL_H__
 
@@ -52,4 +45,5 @@ private:
 }//BSLib
 
 #endif//__BSLIB_UTILITY_MEMORY_MEMPOOL_H__
+
 

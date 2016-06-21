@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/09/09
-//	filename: 	GSLib\skillSystem\GM\skillSystemGM.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_SKILLSYSTEM_GM_SKILLSYSTEMGM_H__
 #define __GSLIB_SKILLSYSTEM_GM_SKILLSYSTEMGM_H__
 
@@ -48,3 +41,4 @@ public:
 }//GSLib
 
 #endif//__GSLIB_SKILLSYSTEM_GM_SKILLSYSTEMGM_H__
+

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2013/06/09
-//	filename:	src\GFLib\commonServer\sysChannelMgr.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GFLib/commonServer/commonServer.h>
 #include <GFLib/commonServer/serviceMgr.h>
 #include <GFLib/commonServer/sysChannelMgr.h>
@@ -67,5 +60,6 @@ void CSysChannelMgr::_onSysMsgTerminate()
 }//CommonServer
 
 }//GFLib
+
 
 

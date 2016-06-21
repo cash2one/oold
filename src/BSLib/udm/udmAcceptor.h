@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/08/20
-//	filename:	src\BSLib\udm\udmAcceptor.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_UDM_UDMACCEPTOR_H__
 #define __BSLIB_UDM_UDMACCEPTOR_H__
 
@@ -40,5 +33,6 @@ private:
 }//BSLib
 
 #endif//__BSLIB_UDM_UDMACCEPTOR_H__
+
 
 

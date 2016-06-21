@@ -1,11 +1,4 @@
 //////////////////////////////////////////////////////////////////////
-//	created:	2011/04/12
-//	filename:	BSLib\utility\singleton.h
-//	author:		mazhejiang
-//
-///	@brief
-///
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_UTILITY_SINGLETON_H__
 #define __BSLIB_UTILITY_SINGLETON_H__
 
@@ -22,3 +15,4 @@
 	}\
 
 #endif//__BSLIB_UTILITY_SINGLETON_H__
+

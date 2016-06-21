@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/10/09
-//	filename: 	GSLib\taskSystem\GM\roleTaskModule.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_TASKSYSTEM_GM_ROLETASKMODULE_H__
 #define __GSLIB_TASKSYSTEM_GM_ROLETASKMODULE_H__
 

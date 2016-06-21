@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2015/1/13
-//	filename: 	GSLib\sceneSystem\GM\sceneStage.h
-//	author:		zhangming
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_SCENESYSTEM_GM_SCENE_IMPL_H__
 #define __GSLIB_SCENESYSTEM_GM_SCENE_IMPL_H__ 
 
@@ -133,3 +126,4 @@ private:
 }//GSLib
 
 #endif//__GSLIB_SCENESYSTEM_GM_SCENE_H__
+

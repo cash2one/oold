@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/07/24
-//	filename:	src\BSLib\network\sockAddr.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/network/sockAddr.h>
 
 #ifndef _WIN32
@@ -173,4 +166,5 @@ int CSockAddr::getLocalIP(std::vector<uint32>& ipList)
 }//Network
 
 }//BSLib
+
 

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/08/06
-//	filename: 	BSLib\utility\file\fileInfo.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_UTILITY_FILE_FILEINFO_H__
 #define __BSLIB_UTILITY_FILE_FILEINFO_H__
 
@@ -117,3 +110,4 @@ private:
 }//BSLib
 
 #endif//__BSLIB_UTILITY_FILE_FILEINFO_H__
+

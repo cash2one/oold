@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<root>
-    <reset f_daily_task_reset_hour="3" f_daily_task_reset_minute="0" />
-    <first_main_task taksTPID="1001" />
-</root>

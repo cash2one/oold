@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/09/12
-//	filename: 	GSLib\skillSystem\GM\skillLevel.cpp
-//	author:		zhangming
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/skillSystem/GM/skillLevel.h>
 
 namespace GSLib
@@ -60,6 +53,7 @@ BSLib::uint32 CSkillLevel::getRequireSkillPoint() const
 }//SKillSystem
 
 }//GSLib
+
 
 
 

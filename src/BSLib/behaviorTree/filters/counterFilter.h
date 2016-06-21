@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/10/25
-//	filename:	src\BSLib\behaviorTree\filters\counterFilter.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_BEHAVIORTREE_FILTERS_COUNTERFILTER_H__
 #define __BSLIB_BEHAVIORTREE_FILTERS_COUNTERFILTER_H__
 
@@ -67,3 +60,4 @@ protected:
 }//BSLib
 
 #endif//__BSLIB_BEHAVIORTREE_FILTERS_COUNTERFILTER_H__
+

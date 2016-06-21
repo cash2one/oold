@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/10/09
-//	filename: 	GSLib\mailSystem\GM\mailSystemGM.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_MAILSYSTEM_GM_MAILSYSTEMGM_H__
 #define __GSLIB_MAILSYSTEM_GM_MAILSYSTEMGM_H__
 
@@ -101,3 +94,4 @@ private:
 }//GSLib
 
 #endif//__GSLIB_MAILSYSTEM_GM_MAILSYSTEMGM_H__
+

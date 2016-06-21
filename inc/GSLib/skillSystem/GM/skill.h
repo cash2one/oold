@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/09/12
-//	filename: 	GSLib\skillSystem\GM\skill.h
-//	author:		zhangming
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef		__GSLIB_SKILLSYSTEM_GM_SKILL_H__
 #define		__GSLIB_SKILLSYSTEM_GM_SKILL_H__
 
@@ -47,4 +40,5 @@ private:
 
 
 #endif
+
 

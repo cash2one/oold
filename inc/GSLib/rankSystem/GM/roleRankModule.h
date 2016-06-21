@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/10/09
-//	filename: 	GSLib\rankSystem\GM\roleRankModule.h
-//	author:		zhangming
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_RANKSYSTEM_GM_ROLERANKMODULE_H__
 #define __GSLIB_RANKSYSTEM_GM_ROLERANKMODULE_H__
 

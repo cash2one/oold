@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/09/09
-//	filename: 	src\GSLib\achieveSystem\GM\achieveSystemGM.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/achieveSystem/GM/achieveSystemGM.h>
 #include <GSLib/achieveSystem/GM/achieveDataGMMgr.h>
 #include <GSLib/playerSystem/GM/roleModuleGMMgr.h>
@@ -75,3 +68,4 @@ void CAchieveSystemGM::_cbServerLeave(const GFLib::SServerID& a_serverID, const 
 }//AchieveSystem
 
 }//GSLib
+

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/25
-//	filename: 	GSLib\sceneSystem\CN\sceneSystemCN.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_SCENESYSTEM_CN_SCENESYSTEMCN_H__
 #define __GSLIB_SCENESYSTEM_CN_SCENESYSTEMCN_H__
 
@@ -48,3 +41,4 @@ public:
 }//GSLib
 
 #endif//__GSLIB_SCENESYSTEM_CN_SCENESYSTEMCN_H__
+

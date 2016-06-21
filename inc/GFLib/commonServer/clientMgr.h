@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/10/05
-//	filename: 	GFLib\commonServer\clientMgr.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GFLIB_COMMONSERVER_CLIENTTHREAD_H__
 #define __GFLIB_COMMONSERVER_CLIENTTHREAD_H__
 
@@ -41,5 +34,6 @@ private:
 }//GFLib
 
 #endif//__GFLIB_COMMONSERVER_CLIENTTHREAD_H__
+
 
 

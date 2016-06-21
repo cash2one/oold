@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/25
-//	filename: 	GSLib\ACHIEVESYSTEM\GM\CItemGM.h
-//	author:	     zhangping	
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_ACHIEVESYSTEM_GM_ITEMDATAGM_H__
 #define __GSLIB_ACHIEVESYSTEM_GM_ITEMDATAGM_H__
 
@@ -208,3 +201,4 @@ private:
 }//GSLib
 
 #endif//__GSLIB_ACHIEVESYSTEM_GM_ACHIEVESYSTEMGM_H__
+

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/11/07
-//	filename:	src\BSLib\behaviorTree\btLinkNode.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/utility/string.h>
 #include "btLinkNode.h"
 
@@ -76,4 +69,5 @@ void CBTLinkNode::_reset()
 }// BehaviorTree
 
 }//BSLib
+
 

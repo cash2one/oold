@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/07/20
-//	filename:	BSLib\framework\sysConfig.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_FRAMEWORK_SYSCONFIG_H__
 #define __BSLIB_FRAMEWORK_SYSCONFIG_H__
 
@@ -44,3 +37,4 @@ private:
 }//BSLib
 
 #endif //__BSLIB_FRAMEWORK_SYSCONFIG_H__
+

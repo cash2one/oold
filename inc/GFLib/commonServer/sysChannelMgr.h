@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2013/06/09
-//	filename:	GFLib\commonServer\sysChannelMgr.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GFLIB_COMMONSERVER_SYSCHANNELMGR_H__
 #define __GFLIB_COMMONSERVER_SYSCHANNELMGR_H__
 
@@ -41,4 +34,5 @@ private:
 }//GFLib
 
 #endif//__GFLIB_COMMONSERVER_SYSCHANNELMGR_H__
+
 

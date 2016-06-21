@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/12/5
-//	filename: 	GSLib\activitySystem\GM\activitySystemDataMgr.h
-//	author:		zhangming
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef		__GSLIB_ACTIVITYSYSTEM_GM_ACTIVITYSYSTEMDATAMGR_H__	
 #define		__GSLIB_ACTIVITYSYSTEM_GM_ACTIVITYSYSTEMDATAMGR_H__		
 
@@ -60,5 +53,6 @@ private:
 
 
 #endif
+
 
 

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/27
-//	filename: 	src\GSLib\achieveSystem\GM\roleEquipModule.cpp
-//	author:		zhangping
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/tracer.h>
 #include <GSLib/achieveSystem/GM/achieveModule.h>
 #include <GSLib/achieveSystem/msgAchieveSystem.h>
@@ -721,3 +714,4 @@ DB::SAchieveItem* CAchieveModule::_getAchieveByAchieveID(AchieveID a_achieveID) 
 }//AchieveSystem
 
 }//GSLib
+

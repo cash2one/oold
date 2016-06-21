@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/10/21
-//	filename:	src\BSLib\behaviorTree\btWeightSequenceNode.cpp
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/utility/string.h>
 #include <BSLib/behaviorTree/behaviorTree.h>
 #include "btWeightSequenceNode.h"

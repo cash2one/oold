@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/09/09
-//	filename: 	GSLib\achieveSystem\msgAchieveSystemGC.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_ACHIEVESYSTEM_MSGACHIEVESYSTEMGC_H__
 #define __GSLIB_ACHIEVESYSTEM_MSGACHIEVESYSTEMGC_H__
 
@@ -112,3 +105,4 @@ public:
 }//GSLib
 
 #endif//__GSLIB_ACHIEVESYSTEM_MSGACHIEVESYSTEMGC_H__
+

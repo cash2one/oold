@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/10/21
-//	filename:	src\BSLib\behaviorTree\btParallelNode.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_BEHAVIORTREE_BTPARALLELNODE_H__
 #define __BSLIB_BEHAVIORTREE_BTPARALLELNODE_H__
 
@@ -61,3 +54,4 @@ private:
 }//BSLib
 
 #endif//__BSLIB_BEHAVIORTREE_BTPARALLELNODE_H__
+

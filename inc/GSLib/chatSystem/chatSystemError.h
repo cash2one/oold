@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/10/11
-//	filename: 	GSLib\chatSystem\chatSystemError.h
-//	author:		zhangming
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_CHATSYSTEM_CHATSYSTEMERROR_H__
 #define __GSLIB_CHATSYSTEM_CHATSYSTEMERROR_H__
 
@@ -37,3 +30,4 @@ enum EChatResult
 }//GSLib
 
 #endif//__GSLIB_CHATSYSTEM_MSGNUMIDCHATSYSTEM_H__
+

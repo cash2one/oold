@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/27
-//	filename: 	src\GSLib\equipSystem\GM\equipSystemGM.cpp
-//	author:		zhangping
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/tracer.h>
 #include <GSLib/equipSystem/GM/roleEquipGM.h>
 #include "equipConfigGMMgr.h"
@@ -792,3 +785,4 @@ void CRoleEquipGM::_updateCombat()
 }//EquipSystem
 
 }//GSLib
+

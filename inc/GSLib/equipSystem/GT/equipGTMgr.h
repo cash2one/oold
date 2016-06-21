@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/08/03
-//	filename:	GSLib\playerSystem\GT\playerGTMgr.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 
 #ifndef __GSLIB_PLAYERSYSTEM_GT_PLAYERGTMGR_H__
 #define __GSLIB_PLAYERSYSTEM_GT_PLAYERGTMGR_H__
@@ -49,3 +42,4 @@ class CPlayerGTMgr: public BSLib::Utility::CObjectKey2Mgr<BSLib::uint64, GFLib::
 }//GSLib
 
 #endif//__GSLIB_PLAYERSYSTEM_GT_PLAYERGTMGR_H__
+

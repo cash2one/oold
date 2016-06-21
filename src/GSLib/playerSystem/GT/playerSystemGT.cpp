@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/25
-//	filename: 	src\GSLib\playerSystem\GT\playerSystemGT.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/playerSystem/GT/playerSystemGT.h>
 #include <GSLib/playerSystem/GT/playerGTMgr.h>
 
@@ -71,3 +64,4 @@ void CPlayerSystemGT::_cbServerLeave(const GFLib::SServerID& a_serverID, const s
 }//PlayerSystem
 
 }//GSLib
+

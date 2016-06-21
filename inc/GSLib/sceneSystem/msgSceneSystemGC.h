@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/25
-//	filename: 	GSLib\sceneSystem\msgSceneSystemGC.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_SCENESYSTEM_MSGSCENESYSTEMGC_H__
 #define __GSLIB_SCENESYSTEM_MSGSCENESYSTEMGC_H__
 
@@ -696,3 +689,4 @@ namespace SceneSystem
 }//GSLib
 
 #endif//__GSLIB_SCENESYSTEM_MSGSCENESYSTEMGC_H__
+

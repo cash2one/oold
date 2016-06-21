@@ -1,11 +1,4 @@
 //////////////////////////////////////////////////////////////////////
-//	created:	2011/04/12
-//	filename:	BSLib\utility\hashMap.h
-//	author:		mazhejiang
-//
-///	@brief
-///
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_UTILITY_HASHMAP_H__
 #define __BSLIB_UTILITY_HASHMAP_H__
 
@@ -456,3 +449,4 @@ public:
 }//BSLib
 
 #endif//__BSLIB_UTILITY_HASHMAP_H__
+

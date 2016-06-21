@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/07/20
-//	filename: 	BSLib\framework\message\msgLabel.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_FRAMEWORK_MESSAGE_MSGLABEL_H__
 #define __BSLIB_FRAMEWORK_MESSAGE_MSGLABEL_H__
 
@@ -79,3 +72,4 @@ public:
 }//BSLib
 
 #endif//__BSLIB_FRAMEWORK_MESSAGE_MSGLABEL_H__
+

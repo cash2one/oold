@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/10/25
-//	filename:	src\BSLib\behaviorTree\filters\untilFailsFilter.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_BEHAVIORTREE_FILTERS_UNTILFAILSFILTER_H__
 #define __BSLIB_BEHAVIORTREE_FILTERS_UNTILFAILSFILTER_H__
 
@@ -40,3 +33,4 @@ protected:
 }//BSLib
 
 #endif//__BSLIB_BEHAVIORTREE_FILTERS_UNTILFAILSFILTER_H__
+

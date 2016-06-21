@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/28
-//	filename: 	GSLib\loginSystem\GT\netPlayerGTMgr.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_LOGINSYSTEM_GT_NETPLAYERGTMGR_H__
 #define __GSLIB_LOGINSYSTEM_GT_NETPLAYERGTMGR_H__
 
@@ -43,3 +36,4 @@ private:
 }//GSLib
 
 #endif//__GSLIB_LOGINSYSTEM_GT_NETPLAYERGTMGR_H__
+

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2013/06/06
-//	filename:	BSLib\framework\sysChannelMgr.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_FRAMEWORK_SYSCHANNELMGR_H__
 #define __BSLIB_FRAMEWORK_SYSCHANNELMGR_H__
 
@@ -87,6 +80,7 @@ private:
 }//BSLib
 
 #endif//__BSLIB_FRAMEWORK_SYSCHANNELMGR_H__
+
 
 
 

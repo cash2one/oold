@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/07/25
-//	filename:	src\BSLib\network\tcpConnection.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifdef WIN32
 
 #include <WinSock2.h>
@@ -449,4 +442,5 @@ int CTcpConnection::_writeToBuff(const void* data, unsigned int len, unsigned in
 }//Network
 
 }//BSLib
+
 

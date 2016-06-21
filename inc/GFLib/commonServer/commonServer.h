@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/08/05
-//	filename: 	GFLib\commonServer\commonServer.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GFLIB_COMMONSERVER_COMMONSERVER_H__
 #define __GFLIB_COMMONSERVER_COMMONSERVER_H__
 
@@ -110,6 +103,7 @@ private:
 }//GFLib
 
 #endif//__GFLIB_COMMONSERVER_COMMONSERVER_H__
+
 
 
 

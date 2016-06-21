@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/09/10
-//	filename: 	GFLib\commonServer\tracer.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GFLIB_COMMONSERVER_TRACER_H__
 #define __GFLIB_COMMONSERVER_TRACER_H__
 
@@ -23,6 +16,7 @@ enum ECommonTraceType
 }//GFLib
 
 #endif//__GFLIB_COMMONSERVER_TRACER_H__
+
 
 
 

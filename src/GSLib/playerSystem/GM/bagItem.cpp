@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/08/29
-//	filename: 	src\GSLib\playerSystem\GM\roleBagModule.cpp
-//	author:	    zhangping	
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/playerSystem/GM/bagItem.h>
 #include <GSLib/itemSystem/GM/itemGMMgr.h>
 namespace GSLib

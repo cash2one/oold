@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2013/06/05
-//	filename:	src\BSLib\utility\memory\shareMemory.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/utility/memory/shareMemory.h>
 #include <BSLib/utility/string.h>
 
@@ -164,3 +157,4 @@ void CShareMemory::close()
 }//Utility
 
 }//BSLib
+

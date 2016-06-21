@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/08/22
-//	filename:	src\BSLib\udm\sockEvent.hpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_UDM_SOCKEVENT_H__
 #define __BSLIB_UDM_SOCKEVENT_H__
 
@@ -194,5 +187,6 @@ private:
 #endif//WIN32
 
 #endif//__BSLIB_UDM_SOCKEVENT_H__
+
 
 

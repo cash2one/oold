@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/08/10
-//	filename: 	GSLib\sceneSystem\GM\scenePrize.h
-//	author:		zhangming
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef		__GSLIB_SCENESYSTEM_GM_SCENEPRIZE_H__
 #define		__GSLIB_SCENESYSTEM_GM_SCENEPRIZE_H__
 
@@ -39,4 +32,5 @@ private:
 
 
 #endif
+
 

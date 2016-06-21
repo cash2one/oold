@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/09/26
-//	filename: 	GSLib\playerSystem\DB\tablePlayerDB.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_PLAYERSYSTEM_DB_TABLEPLAYERDB_H__
 #define __GSLIB_PLAYERSYSTEM_DB_TABLEPLAYERDB_H__
 
@@ -534,3 +527,4 @@ public:
 }//GSLib
 
 #endif//__GSLIB_PLAYERSYSTEM_DB_TABLEPLAYERDB_H__
+

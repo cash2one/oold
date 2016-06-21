@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2015/7/2
-//	filename: 	GSLib\chatSystem\GM\chatSystemData.h
-//	author:		zhangming
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/utility/baseDef.h>
 
 #ifndef		__GSLIB_CHATSYSTEM_CHATSYSTEMDATA_H__
@@ -49,6 +42,7 @@ public:
 }//GSLib
 
 #endif
+
 
 
 

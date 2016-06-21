@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/08/05
-//	filename: 	GSLib\dbSystem\CN\dbSystemCN.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_DBSYSTEM_CN_DBSYSTEMCN_H__
 #define __GSLIB_DBSYSTEM_CN_DBSYSTEMCN_H__
 
@@ -55,3 +48,4 @@ private:
 }//GSLib
 
 #endif//__GSLIB_DBSYSTEM_CN_DBSYSTEMXS_H__
+

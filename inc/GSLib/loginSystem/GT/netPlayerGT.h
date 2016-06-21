@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/28
-//	filename: 	GSLib\loginSystem\GT\netPlayerGT.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_LOGINSYSTEM_GT_NETPLAYERGT_H__
 #define __GSLIB_LOGINSYSTEM_GT_NETPLAYERGT_H__
 

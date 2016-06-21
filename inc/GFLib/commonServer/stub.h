@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/09/17
-//	filename: 	GFLib\commonServer\stub.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GFLIB_COMMONSERVER_STUB_H__
 #define __GFLIB_COMMONSERVER_STUB_H__
 
@@ -54,4 +47,5 @@ typedef BSLib::Utility::CPointer<CStub> CStubPtr;
 }//GFLib
 
 #endif//__GFLIB_COMMONSERVER_STUB_H__
+
 

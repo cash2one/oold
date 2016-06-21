@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/25
-//	filename: 	src\GSLib\playerSystem\LG\playerSystemLG.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/playerSystem/LG/playerSystemLG.h>
 
 
@@ -69,3 +62,4 @@ void CPlayerSystemLG::_cbServerLeave(const GFLib::SServerID& a_serverID, const s
 }//PlayerSystem
 
 }//GSLib
+

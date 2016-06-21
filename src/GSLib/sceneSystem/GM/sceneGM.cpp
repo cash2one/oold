@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/08/19
-//	filename: 	src\GSLib\sceneSystem\GM\sceneGM.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/sceneSystem/GM/sceneGM.h>
 #include <GSLib/sceneSystem/GM/roleSceneModule.h>
 #include <BSLib/framework/message/message.h>
@@ -251,3 +244,4 @@ void CSceneGM::roleMove(CRoleSceneModule* a_sceneEntity, CMsgSceneSystemGC2GMReq
 }//SceneSystem
 
 }//GSLib
+

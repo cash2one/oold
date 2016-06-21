@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/08/04
-//	filename: 	GFLib\commonServer\serverTypeMgr.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GFLIB_COMMONSERVER_SERVERTYPEMGR_H__
 #define __GFLIB_COMMONSERVER_SERVERTYPEMGR_H__
 
@@ -41,5 +34,6 @@ public:
 }//GFLib
 
 #endif//__GFLIB_COMMONSERVER_SERVERTYPEMGR_H__
+
 
 

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/08/05
-//	filename: 	rc\GSLib\dbSystem\DB\playerDB.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GFLib/commonServer/serviceMgr.h>
 #include <GSLib/tracer.h>
 #include <GSLib/dbSystem/DB/dbSystemDB.h>
@@ -84,3 +77,4 @@ void CPlayerDB::_cbPlayerOffline()
 }//DBSystem
 
 }//GSLib
+

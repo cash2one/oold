@@ -1,11 +1,4 @@
 //////////////////////////////////////////////////////////////////////
-//	created:	2011/06/03
-//	filename:	src\BSLib\utility\io\iniFile.cpp
-//	author:		mazhejiang
-//
-///	@brief
-///
-//////////////////////////////////////////////////////////////////////
 #include <stdlib.h>
 #include <BSLib/utility/tracer.h>
 #include <BSLib/utility/file/iniFile.h>
@@ -184,3 +177,4 @@ void CIniFile::showAll()
 }//Utility
 
 }//BSLib
+

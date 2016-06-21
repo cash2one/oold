@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2011/06/04
-//	filename:	src\BSLib\src\network\netinit.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <stdio.h>
 #include "netinit.h"
 
@@ -34,4 +27,5 @@ CNetInit::~CNetInit()
 }//BSLib
 
 #endif//WIN32
+
 

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/08/22
-//	filename: 	src\GSLib\sceneSystem\GM\fsm\fsmScripState.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/utility/tracer.h>
 #include "fsmScripState.h"
 
@@ -94,4 +87,5 @@ bool CFSMScriptState::parseProperties(BSLib::Utility::CScriptObject* a_object, B
 }//FSM
 
 }//BSLib
+
 

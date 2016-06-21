@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/21
-//	filename: 	src\GSLib\loginSystem\CN\accountLoginCNInforMgr.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GFLib/commonServer/serviceMgr.h>
 #include <GFLib/commonServer/accountMgr.h>
 #include <GSLib/tracer.h>
@@ -1195,3 +1188,4 @@ void CAccountLoginCNInforMgr::_notifyExit(SAccountLoginCNInfor* a_infor)
 }//LoginSystem
 
 }//GSLib
+

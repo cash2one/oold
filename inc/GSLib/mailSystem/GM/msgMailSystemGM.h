@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/10/09
-//	filename:   GSLib\mailSystem\GM\msgMailSystemGM.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_MAILSYSTEM_MSGMAILSYSTEMGM_H__
 #define __GSLIB_MAILSYSTEM_MSGMAILSYSTEMGM_H__
 
@@ -176,3 +169,4 @@ namespace MailSystem
 }//GSLib
 
 #endif//__GSLIB_MAILSYSTEM_MSGMAILSYSTEMGM_H__
+

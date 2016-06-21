@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/29
-//	filename: 	src\GSLib\playerSystem\GM\roleResource.cpp
-//	author:	    zhangping	
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/playerSystem/GM/roleResource.h>
 
 namespace GSLib
@@ -186,3 +179,4 @@ BSLib::uint32 SRoleResource::getLightPower() const
 }//PlayerSystem
 
 }//GSLib
+

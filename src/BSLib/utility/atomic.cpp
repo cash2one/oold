@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/06/29
-//	filename:	src\BSLib\utility\atomic.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/utility/atomic.h>
 
 #ifdef _LINUX
@@ -57,3 +50,4 @@ int32 CAtomic::decrement(volatile int32& data)
 }//Utility
 
 }//BSLib
+

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/08/05
-//	filename: 	src\GSLib\dbSystem\GT\dbSystemGT.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GFLib/commonServer/commonSystemMgr.h>
 #include <GSLib/tracer.h>
 #include <GSLib/dbSystem/GT/dbSystemGT.h>
@@ -145,3 +138,4 @@ void CDBSystemGT::_onMsgDBSystemDB2XSAckSelectTableData(BSLib::Framework::SMsgLa
 }//DBSystem
 
 }//GSLib
+

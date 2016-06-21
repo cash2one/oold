@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/09/13
-//	filename: 	GSLib\skillSystem\GM\roleSkillModule.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_SKILLSYSTEM_GM_ROLESKILLMODULE_H__
 #define __GSLIB_SKILLSYSTEM_GM_ROLESKILLMODULE_H__
 

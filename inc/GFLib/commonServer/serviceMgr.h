@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/09/17
-//	filename: 	GFLib\commonServer\serviceMgr.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GFLIB_COMMONSERVER_SERVICEMGR_H__
 #define __GFLIB_COMMONSERVER_SERVICEMGR_H__
 
@@ -109,6 +102,7 @@ private:
 }//GFLib
 
 #endif//__GFLIB_COMMONSERVER_SERVICEMGR_H__
+
 
 
 

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/09/09
-//	filename: 	GSLib\itemSystem\msgNumIDItemSystem.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_ITEMSYSTEM_MSGNUMIDITEMSYSTEM_H__
 #define __GSLIB_ITEMSYSTEM_MSGNUMIDITEMSYSTEM_H__
 
@@ -25,3 +18,4 @@ namespace ItemSystem
 }//GSLib
 
 #endif//__GSLIB_ITEMSYSTEM_MSGNUMIDITEMSYSTEM_H__
+

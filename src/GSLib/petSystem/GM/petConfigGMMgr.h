@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/08/03
-//	filename:	GSLib\petSystem\GM\playerGMMgr.h
-//	author:	    zhangping	
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 
 #ifndef __GSLIB_PETSYSTEM_GM_PETGMMGR_H__
 #define __GSLIB_PETSYSTEM_GM_PETGMMGR_H__
@@ -109,3 +102,4 @@ private:
 }//GSLib
 
 #endif//__GSLIB_PETSYSTEM_GM_PETGMMGR_H__
+

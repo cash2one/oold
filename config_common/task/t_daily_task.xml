@@ -1,5 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<root>
-    <item f_id="1001" f_task_name="测试任务1" f_type="1" f_para_1="0" f_para_2="0" f_target_count="3" f_min_level="1" f_max_level="10" f_icon="test_icon1" f_desc="挑战3次竞技场" f_jump_id="1" f_prize_id_1="100210005" f_prize_count_1="100" f_prize_id_2="0" f_prize_count_2="0" f_prize_id_3="0" f_prize_count_3="0" f_prize_id_4="0" f_prize_count_4="1" f_prize_id_5="1" f_prize_count_5="1" />
-    <item f_id="1002" f_task_name="测试任务2" f_type="3" f_para_1="0" f_para_2="0" f_target_count="3" f_min_level="1" f_max_level="10" f_icon="test_icon2" f_desc="技能强化3次" f_jump_id="2" f_prize_id_1="100210005" f_prize_count_1="100" f_prize_id_2="0" f_prize_count_2="0" f_prize_id_3="0" f_prize_count_3="0" f_prize_id_4="0" f_prize_count_4="0" f_prize_id_5="0" f_prize_count_5="0" />
-</root>

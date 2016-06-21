@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/08/06
-//	filename: 	BSLib\utility\file\xmlFile.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_UTILITY_FILE_XMLFILE_H__
 #define __BSLIB_UTILITY_FILE_XMLFILE_H__
 
@@ -221,3 +214,4 @@ private:
 }//BSLib
 
 #endif//__BSLIB_UTILITY_FILE_XMLFILE_H__
+

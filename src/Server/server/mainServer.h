@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2013/06/09
-//	filename:	src\Server\server\mainServer.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __SERVER_SERVER_MAINSERVER_H__
 #define __SERVER_SERVER_MAINSERVER_H__
 
@@ -30,6 +23,7 @@ private:
 };
 
 #endif//__SERVER_SERVER_MAINSERVER_H__
+
 
 
 

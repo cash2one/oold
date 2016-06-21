@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/10/09
-//	filename: 	src\GSLib\mailSystem\GM\roleMailModule.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/mailSystem/GM/roleMailModule.h>
 #include <GSLib/mailSystem/msgMailSystem.h>
 #include <GSLib/tracer.h>

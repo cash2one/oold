@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/10/23
-//	filename:	src\BSLib\behaviorTree\behaviorTreeMgr.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/utility/string.h>
 #include <BSLib/utility/file/xmlFile.h>
 #include <BSLib/utility/file/fileInfo.h>
@@ -628,4 +621,5 @@ BTID CBehaviorTreeMgr::_allocateBTID()
 }// CBehaviorTree
 
 }//BSLib
+
 

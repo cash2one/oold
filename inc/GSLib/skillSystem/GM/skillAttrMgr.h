@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/09/12
-//	filename: 	GSLib\skillSystem\GM\skillDataMgr.h
-//	author:		zhangming
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 
 #ifndef		__GSLIB_SKILLSYSTEM_GM_SKILLATTRMGR_H__
 #define		__GSLIB_SKILLSYSTEM_GM_SKILLATTRMGR_H__
@@ -50,3 +43,4 @@ private:
 }//GSLib
 
 #endif
+

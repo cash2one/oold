@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2013/06/09
-//	filename:	src\Server\server\channelMgr.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/framework/sysConfig.h>
 #include <BSLib/framework/message/msgDebug.h>
 #include "channelMgr.h"

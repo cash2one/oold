@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/25
-//	filename: 	src\GSLib\achieveSystem\GM\itemGMMgr.cpp
-//	author:		zhangping
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 
 #include <GSLib/achieveSystem/msgAchieveSystemGC.h>
 #include <GSLib/achieveSystem/msgAchieveSystem.h>
@@ -194,3 +187,4 @@ SAchieveConfig* CAchieveConfigDataGMMgr::getAchieveByAchieveID(AchieveID a_achie
 }//AchieveSystem
 
 }//GSLib
+

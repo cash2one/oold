@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/10/24
-//	filename: 	src\BSLib\database\dbKeyIndexTable.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/utility/tracer.h>
 #include <BSLib/database/dbKeyIndexTable.h>
 #include "mysqlConnectionPool.h"
@@ -986,4 +979,5 @@ void CDBKeyIndexTable::_resetTableRowState(BSLib::Utility::CHashMap<std::string,
 }//Database
 
 }//BSLib
+
 

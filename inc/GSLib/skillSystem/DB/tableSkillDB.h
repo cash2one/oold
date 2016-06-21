@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/09/26
-//	filename: 	GSLib\skillSystem\DB\tableSkillDB.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_SKILLSYSTEM_DB_TABLESKILLDB_H__
 #define __GSLIB_SKILLSYSTEM_DB_TABLESKILLDB_H__
 
@@ -50,3 +43,4 @@ public:
 }//GSLib
 
 #endif//__GSLIB_SKILLSYSTEM_DB_TABLESKILLDB_H__
+

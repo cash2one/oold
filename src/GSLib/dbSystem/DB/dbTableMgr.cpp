@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/08/30
-//	filename: 	src\GSLib\dbSystem\DB\dbTableMgr.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GFLib/commonServer/commonServer.h>
 #include <GSLib/tracer.h>
 #include <GSLib/dbSystem/GM/dbTableGM.h>
@@ -124,3 +117,4 @@ void CDBTableMgr::_closeDBTableInfor()
 }//LoginSystem
 
 }//GSLib
+

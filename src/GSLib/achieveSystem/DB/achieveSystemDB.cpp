@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/09/26
-//	filename: 	src\GSLib\achieveSystem\DB\achieveSystemDB.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/achieveSystem/DB/achieveSystemDB.h>
 #include <GSLib/dbSystem/DB/dbSystemDB.h>
 #include <GSLib/achieveSystem/DB/tableAchieveDB.h>
@@ -72,3 +65,4 @@ void CAchieveSystemDB::_cbServerLeave(const GFLib::SServerID& a_serverID, const 
 }//AchieveSystem
 
 }//GSLib
+

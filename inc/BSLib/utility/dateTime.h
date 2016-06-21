@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/06/24
-//	filename: 	BSLib\utility\dateTime.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_UTILITY_DATETIME_H__
 #define __BSLIB_UTILITY_DATETIME_H__
 
@@ -220,3 +213,4 @@ private:
 }//BSLib
 
 #endif//__BSLIB_UTILITY_DATETIME_H__
+

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/27
-//	filename: 	src\GSLib\petSystem\GM\petData.cpp
-//	author:		zhangping
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/tracer.h>
 #include <GSLib/petSystem/GM/petData.h>
 
@@ -49,3 +42,4 @@ bool CPetData::serializeTo(BSLib::Utility::CStream& stream) const
 }//PetSystem
 
 }//GSLib
+

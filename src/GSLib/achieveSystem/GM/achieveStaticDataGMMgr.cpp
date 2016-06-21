@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/25
-//	filename: 	src\GSLib\itemSystem\GM\itemGMMgr.cpp
-//	author:		zhangping
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 /*
 #include <GSLib/itemSystem/msgItemSystemGC.h>
 #include <GSLib/itemSystem/msgItemSystem.h>

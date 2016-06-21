@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/09/15
-//	filename:	src\BSLib\network\netStubThread.cpp
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/utility/tracer.h>
 #include <BSLib/network/netConnection.h>
 #include <BSLib/network/netServer.h>
@@ -398,4 +391,5 @@ void CNetStubThread::_updateNetBytesInfor(BSLib::Utility::CRealTime& a_realTimer
 }//Network
 
 }//BSLib
+
 

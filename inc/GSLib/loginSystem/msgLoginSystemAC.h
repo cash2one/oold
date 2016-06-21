@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/22
-//	filename: 	GSLib\loginSystem\msgLoginSystemAC.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_LOGINSYSTEM_MSGLOGINSYSTEMAC_H__
 #define __GSLIB_LOGINSYSTEM_MSGLOGINSYSTEMAC_H__
 
@@ -61,3 +54,4 @@ public:
 }//GSLib
 
 #endif//__GSLIB_LOGINSYSTEM_MSGLOGINSYSTEMAC_H__
+

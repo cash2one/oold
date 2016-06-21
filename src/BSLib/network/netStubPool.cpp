@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/09/15
-//	filename:	src\BSLib\network\netStubPool.cpp
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/utility/tracer.h>
 #include "netStubPool.h"
 #include "tcpStubThread.h"
@@ -256,4 +249,5 @@ bool CNetStubPool::_addStub(CNetStubPtr& stubPtr)
 }//Network
 
 }//BSLib
+
 

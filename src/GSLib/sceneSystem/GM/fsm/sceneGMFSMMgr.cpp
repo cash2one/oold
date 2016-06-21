@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/08/19
-//	filename: 	src\GSLib\sceneSystem\GM\fsm\sceneGMFSMMgr.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include "GM/fsm/sceneGMFSMMgr.h"
 #include "GM/fsm/sceneGMFSM.h"
 #include "GM/fsm/fsmBTCondition.h"
@@ -68,3 +61,4 @@ void CSceneGMFSMMgr::initFSMCondition()
 }//SceneSystem
 
 }//GSLib
+

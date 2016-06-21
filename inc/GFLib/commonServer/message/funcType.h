@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/08/05
-//	filename: 	GFLib\commonServer\message\funcType.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GFLIB_COMMONSERVER_MESSAGE_FUNCTYPE_H__
 #define __GFLIB_COMMONSERVER_MESSAGE_FUNCTYPE_H__
 
@@ -26,5 +19,6 @@ enum EFuncType
 }//GFLib
 
 #endif//__GFLIB_COMMONSERVER_MESSAGE_FUNCTYPE_H__
+
 
 

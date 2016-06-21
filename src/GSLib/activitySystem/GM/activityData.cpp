@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/12/6
-//	filename: 	GSLib\activitySystem\GM\activityData.cpp
-//	author:		zhangming
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 
 #include <BSLib/utility/dateTime.h>
 #include <GSLib/activitySystem/GM/activityData.h>
@@ -201,3 +194,4 @@ CDrawItemPool::~CDrawItemPool()
 } //ActivitySystem
 
 } //GSLib
+

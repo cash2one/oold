@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/27
-//	filename: 	src\GSLib\playerSystem\GT\playerSystemGT.cpp
-//	author:		zhangping
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/tracer.h>
 #include <GSLib/playerSystem/GT/playerGT.h>
 
@@ -79,3 +72,4 @@ CRoleGT * CPlayerGT::getCurRole()
 }//PlayerSystem
 
 }//GSLib
+

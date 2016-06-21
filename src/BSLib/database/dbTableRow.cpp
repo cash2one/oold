@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/10/23
-//	filename: 	src\BSLib\database\dbTableRow.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/database/dbTableRow.h>
 #include "dbTableCellIMPL.h"
 
@@ -307,3 +300,4 @@ bool CDBTableRow::_createTalbeRow()
 }//Database
 
 }//BSLib
+

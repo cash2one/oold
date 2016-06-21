@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/29
-//	filename: 	src\GSLib\petSystem\GM\hotSpringTask.cpp
-//	author:	    zhangping	
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include "GSLib/petSystem/GM/talkQuestion.h"
 #include <GSLib/tracer.h>
 
@@ -85,3 +78,4 @@ const std::vector<ItemSystem::GM::CPrizeItem>& CTalkQuestion::getItemArray() con
 }//PlayerSystem
 
 }//GSLib
+

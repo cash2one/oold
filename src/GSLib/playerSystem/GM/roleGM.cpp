@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/29
-//	filename: 	src\GSLib\playerSystem\GM\roleGM.cpp
-//	author:	    zhangping	
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <stdarg.h>
 #include <GSLib/dbSystem/GM/dbSystemGM.h>
 #include <GSLib/playerSystem/GM/roleModuleGMMgr.h>
@@ -1979,3 +1972,4 @@ bool CRoleGM::_notifyUpdateRoleDataToCenter()
 }//PlayerSystem
 
 }//GSLib
+

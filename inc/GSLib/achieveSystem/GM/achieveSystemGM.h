@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/09/09
-//	filename: 	GSLib\ACHIEVESYSTEM\GM\ACHIEVESYSTEMGM.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_ACHIEVESYSTEM_GM_ACHIEVESYSTEMGM_H__
 #define __GSLIB_ACHIEVESYSTEM_GM_ACHIEVESYSTEMGM_H__
 
@@ -50,3 +43,4 @@ public:
 }//GSLib
 
 #endif//__GSLIB_ACHIEVESYSTEM_GM_ACHIEVESYSTEMGM_H__
+

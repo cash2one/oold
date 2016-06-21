@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/09
-//	filename:	src\Server\common\tracer.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 
 
 #ifndef __SERVER_COMMON_TRACER_H__
@@ -23,6 +16,7 @@ enum EServerTraceType
 }//Server
 
 #endif//__SERVER_COMMON_TRACER_H__
+
 
 
 

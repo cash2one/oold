@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/08/17
-//	filename:	BSLib\utility\script.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_UTILITY_SCRIPT_H__
 #define __BSLIB_UTILITY_SCRIPT_H__
 
@@ -172,3 +165,4 @@ private:
 }//BSLib
 
 #endif//__BSLIB_UTILITY_SCRIPT_H__
+

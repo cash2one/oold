@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/11/6
-//	filename: 	GSLib\sceneSystem\DB\tableSceneDB.h
-//	author:		zhangming
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_SCENESYSTEM_DB_TABLESCENEDB_H__
 #define __GSLIB_SCENESYSTEM_DB_TABLESCENEDB_H__
 
@@ -319,3 +312,4 @@ public:
 }//GSLib
 
 #endif//__GSLIB_SCENESYSTEM_DB_TABLESCENEDB_H__
+

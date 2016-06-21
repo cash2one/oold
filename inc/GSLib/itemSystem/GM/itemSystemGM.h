@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/09/09
-//	filename: 	GSLib\itemSystem\GM\itemSystemGM.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_ITEMSYSTEM_GM_ITEMSYSTEMGM_H__
 #define __GSLIB_ITEMSYSTEM_GM_ITEMSYSTEMGM_H__
 
@@ -50,3 +43,4 @@ public:
 }//GSLib
 
 #endif//__GSLIB_ITEMSYSTEM_GM_ITEMSYSTEMGM_H__
+

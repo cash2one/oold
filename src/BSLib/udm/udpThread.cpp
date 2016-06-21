@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/08/21
-//	filename:	src\BSLib\udm\udpThread.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifdef WIN32
 
 #include "sockEvent.hpp"
@@ -519,4 +512,5 @@ void CUdpThread::_checkUdmClient()
 }//UDM
 
 }//BSLib
+
 

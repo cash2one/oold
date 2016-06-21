@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/09/12
-//	filename: 	BSLib\network\netStubMgr.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_NETWORK_NETSTUBMGR_H__
 #define __BSLIB_NETWORK_NETSTUBMGR_H__
 
@@ -50,4 +43,5 @@ protected:
 }//BSLib
 
 #endif//__BSLIB_NETWORK_NETSTUBMGR_H__
+
 

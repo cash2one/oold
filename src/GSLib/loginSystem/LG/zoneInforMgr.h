@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/20
-//	filename:	src\GSLib\loginSystem\LG\zoneInforMgr.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 
 #ifndef __GSLIB_LOGINSYSTEM_LG_ZONEINFORMGR_H__
 #define __GSLIB_LOGINSYSTEM_LG_ZONEINFORMGR_H__

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/29
-//	filename: 	src\GSLib\playerSystem\CN\CRoleBaseInfoCN.cpp
-//	author:	    zhangping	
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/tracer.h>
 #include <GSLib/playerSystem/CN/roleBaseInfoCN.h>
 
@@ -120,3 +113,4 @@ void CRoleBaseInfoCN::getBattleAttr(SBattleAttribute& a_battleAttr)
 }//PlayerSystem
 
 }//GSLib
+

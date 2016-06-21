@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2013/06/09
-//	filename:	BSLib\utility\cmdExecMgr.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_UTILITY_CMDEXECMGR_H__
 #define __BSLIB_UTILITY_CMDEXECMGR_H__
 
@@ -77,3 +70,4 @@ private:
 
 
 #endif // __BSLIB_UTILITY_CMDEXECMGR_H__
+

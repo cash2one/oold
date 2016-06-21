@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/25
-//	filename:	GSLib\playerSystem\msgNumIDPlayerSystem.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_PLAYERSYSTEM_MSGNUMIDPLAYERSYSTEM_H__
 #define __GSLIB_PLAYERSYSTEM_MSGNUMIDPLAYERSYSTEM_H__
 
@@ -289,3 +282,4 @@ enum EGetPurchaseGoldInfoResult
 }//GSLib
 
 #endif//__GSLIB_PLAYERSYSTEM_MSGNUMIDPLAYERSYSTEM_H__
+

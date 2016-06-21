@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/09/19
-//	filename: 	src\GFLib\commonServer\message\msgParse.cpp
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/utility/thread/threadData.h>
 #include <GFLib/commonServer/commonServer.h>
 #include <GFLib/commonServer/serverTypeMgr.h>
@@ -176,6 +169,7 @@ bool CService::_executeTransfer(GFLib::SMessage* msg, BSLib::uint32 msgSize)
 }//CommonServer
 
 }//GFLib
+
 
 
 

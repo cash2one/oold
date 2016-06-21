@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/09/10
-//	filename: 	src\GSLib\petSystem\GM\petSystemGM.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/petSystem/GM/petSystemGM.h>
 #include <GSLib/petSystem/GM/petModule.h>
 #include <GSLib/playerSystem/GM/roleModuleGMMgr.h>
@@ -89,3 +82,4 @@ BSLib::Utility::CTimerServer* CPetSystemGM::getTimerServer()
 }//PetSystem
 
 }//GSLib
+

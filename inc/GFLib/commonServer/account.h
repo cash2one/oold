@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/31
-//	filename: GFLib\commonServer\account.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GFLIB_COMMONSERVER_ACCOUNT_H__
 #define __GFLIB_COMMONSERVER_ACCOUNT_H__
 
@@ -65,3 +58,4 @@ typedef BSLib::Utility::CPointer<CAccount> CAccountPtr;
 }//GFLib
 
 #endif//__GFLIB_COMMONSERVER_ACCOUNT_H__
+

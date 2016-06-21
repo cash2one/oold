@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/08/16
-//	filename:	BSLib\network\udpConnectionMgr.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_NETWOEK_UDPCONNECTIONMGR_H__
 #define __BSLIB_NETWOEK_UDPCONNECTIONMGR_H__
 
@@ -43,3 +36,4 @@ private:
 }//BSLib
 
 #endif//__BSLIB_NETWOEK_UDPCONNECTIONMGR_H__
+

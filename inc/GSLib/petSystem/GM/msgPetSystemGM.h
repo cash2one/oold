@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/09/10
-//	filename: 	GSLib\petSystem\GM\msgPetSystemGM.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_PETSYSTEM_GM_MSGPETSYSTEMGM_H__
 #define __GSLIB_PETSYSTEM_GM_MSGPETSYSTEMGM_H__
 
@@ -408,3 +401,4 @@ public:
 }//GSLib
 
 #endif//__GSLIB_PETSYSTEM_GM_MSGPETSYSTEMGM_H__
+

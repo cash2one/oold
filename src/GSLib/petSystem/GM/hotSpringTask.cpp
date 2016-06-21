@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/29
-//	filename: 	src\GSLib\petSystem\GM\hotSpringTask.cpp
-//	author:	    zhangping	
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/petSystem/GM/hotSpringTask.h>
 #include <GSLib/tracer.h>
 
@@ -264,3 +257,4 @@ bool CHotSpringTask::_init(const std::string&a_question, const std::string& a_an
 }//PlayerSystem
 
 }//GSLib
+

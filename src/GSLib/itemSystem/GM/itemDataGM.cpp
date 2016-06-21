@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/27
-//	filename: 	src\GSLib\itemSystem\GM\itemDataGM.cpp
-//	author:		zhangping
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/tracer.h>
 #include <GSLib/itemSystem/msgItemSystem.h>
 #include <GSLib/dbSystem/GM/dbSystemGM.h>
@@ -376,3 +369,4 @@ bool CItemDataGM::_initPetLovelyItems()
 }//ItemSystem
 
 }//GSLib
+

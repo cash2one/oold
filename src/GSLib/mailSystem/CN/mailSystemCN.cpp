@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/10/09
-//	filename: 	src\GSLib\mailSystem\GM\mailSystemGM.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/mailSystem/CN/mailSystemCN.h>
 #include <BSLib/utility/dateTime.h>
 #include <GSLib/funType.h>
@@ -457,3 +450,4 @@ void CMailSystemCN::_dbDelRoleMail(SMail *mail)
 }//MailSystem
 
 }//GSLib
+

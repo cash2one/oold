@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/12/10
-//	filename: 	src\Server\superServer\superServer.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __SERVER_SUPERSERVER_SUPERSERVER_H__
 #define __SERVER_SUPERSERVER_SUPERSERVER_H__
 
@@ -47,3 +40,4 @@ public:
 };
 
 #endif//__SERVER_SUPERSERVER_SUPERSERVER_H__
+

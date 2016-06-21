@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/07/22
-//	filename: 	BSLib\framework\threadFrame.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_FRAMEWORK_THREADFRAME_H__
 #define __BSLIB_FRAMEWORK_THREADFRAME_H__
 
@@ -78,4 +71,5 @@ private:
 }//BSLib
 
 #endif //__BSLIB_FRAMEWORK_THREADFRAME_H__
+
 

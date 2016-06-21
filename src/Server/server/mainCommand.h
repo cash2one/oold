@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2013/06/13
-//	filename:	src\Server\server\mainCommand.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __SERVER_SERVER_MAINCOMMAND_H__
 #define __SERVER_SERVER_MAINCOMMAND_H__
 
@@ -47,3 +40,4 @@ private:
 };
 
 #endif//__SERVER_SERVER_MAINCOMMAND_H__
+

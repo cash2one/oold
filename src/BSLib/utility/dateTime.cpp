@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/06/24
-//	filename:	src\BSLib\utility\dateTime.cpp
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/utility/dateTime.h>
 
 #define  TIME_TEXT_MAX 256
@@ -294,3 +287,4 @@ int64 CSurveyTimer::microseconds()
 }//Utility
 
 }//BSLib
+

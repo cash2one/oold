@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/08/06
-//	filename:	BSLib\utility\file\dirInfo.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_UTILITY_FILE_DIRINFO_H__
 #define __BSLIB_UTILITY_FILE_DIRINFO_H__
 
@@ -83,3 +76,4 @@ private:
 }//BSLib
 
 #endif//__BSLIB_UTILITY_FILE_DIRINFO_H__
+

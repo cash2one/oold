@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/07/20
-//	filename:	e:\dev\mazj\inc\BSLib\framework\mainThread.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_FRAMEWORK_MAINTHREAD_H__
 #define __BSLIB_FRAMEWORK_MAINTHREAD_H__
 
@@ -57,3 +50,4 @@ private:
 }//BSLib
 
 #endif //__BSLIB_FRAMEWORK_MAINTHREAD_H__
+

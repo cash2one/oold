@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/29
-//	filename: 	src\GSLib\playerSystem\CN\roleCN.cpp
-//	author:	    zhangping	
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/tracer.h>
 #include <GSLib/playerSystem/CN/roleCN.h>
 #include <GSLib/playerSystem/CN/roleModuleCNMgr.h>
@@ -278,3 +271,4 @@ void CRoleCN::setRoleStatus(ERoleStatus a_roleStatus)
 }//PlayerSystem
 
 }//GSLib
+

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2015/1/8
-//	filename: 	src\GSLib\sceneSystem\GM\sceneAttr.cpp
-//	author:		zhangming
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/sceneSystem/GM/sceneAttr.h>
 
 namespace GSLib
@@ -61,3 +54,4 @@ BSLib::uint32 CSceneAttr::getEnterLevel() const
 }//SceneSystem
 
 }//GSLib
+

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/07/20
-//	filename: 	BSLib\framework\message\msgExec.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_FRAMEWORK_MESSAGE_MSGEXEC_H__
 #define __BSLIB_FRAMEWORK_MESSAGE_MSGEXEC_H__
 
@@ -47,3 +40,4 @@ typedef Utility::CPointer<CMsgExec> CMsgExecPtr;
 
 
 #endif // __BSLIB_FRAMEWORK_MESSAGE_MSGEXEC_H__
+

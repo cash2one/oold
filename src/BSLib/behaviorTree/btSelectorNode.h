@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/10/20
-//	filename:	src\BSLib\behaviorTree\btSelectorNode.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_BEHAVIORTREE_BTSELECTORNODE_H__
 #define __BSLIB_BEHAVIORTREE_BTSELECTORNODE_H__
 
@@ -54,3 +47,4 @@ protected:
 }//BSLib
 
 #endif//__BSLIB_BEHAVIORTREE_BTSELECTORNODE_H__
+

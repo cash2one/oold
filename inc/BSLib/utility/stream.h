@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/07/20
-//	filename: 	BSLib\utility\stream.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_UTILITY_STREAM_H__
 #define __BSLIB_UTILITY_STREAM_H__
 
@@ -153,3 +146,4 @@ CStream& CStream::_writeVector(const std::vector<T>& val)
 }//BSLib
 
 #endif // __BSLIB_UTILITY_STREAM_H__
+

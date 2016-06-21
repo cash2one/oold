@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/09/12
-//	filename: 	BSLib\network\netServer.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_NETWORK_NETSERVER_H__
 #define __BSLIB_NETWORK_NETSERVER_H__
 
@@ -122,3 +115,4 @@ private:
 }//BSLib
 
 #endif//__BSLIB_NETWORK_NETSERVER_H__
+

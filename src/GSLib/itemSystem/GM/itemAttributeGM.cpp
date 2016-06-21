@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/29
-//	filename: 	src\GSLib\itemSystem\GM\itemAttributeGM.cpp
-//	author:	    zhangping	
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include "GSLib/itemSystem/GM/itemAttributeGM.h"
 #include <GSLib/tracer.h>
 #include "GSLib/itemSystem/GM/itemGMMgr.h"
@@ -63,3 +56,4 @@ void CPrizeItem::serializeFrom(BSLib::Utility::CStream& stream)
 }//PlayerSystem
 
 }//GSLib
+

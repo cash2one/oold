@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/11/19
-//	filename: 	src\GSLib\taskSystem\GM\taskDataMgr.cpp
-//	author:		zhangming
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/utility/file/dirInfo.h>
 #include <GSLib/taskSystem/GM/taskDataMgr.h>
 #include <BSLib/utility/string.h>

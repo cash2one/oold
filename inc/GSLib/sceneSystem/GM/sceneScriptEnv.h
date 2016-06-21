@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/08/19
-//	filename: 	GSLib\sceneSystem\GM\sceneScriptEnv.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_SCENESYSTEM_GM_SCENESCRIPTENV_H__
 #define __GSLIB_SCENESYSTEM_GM_SCENESCRIPTENV_H__ 
 

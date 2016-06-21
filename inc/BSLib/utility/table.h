@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/08/20
-//	filename: 	BSLib\utility\table.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_UTILITY_TABLE_H_
 #define __BSLIB_UTILITY_TABLE_H_
 
@@ -98,3 +91,4 @@ private:
 }//BSLib
 
 #endif//__BSLIB_UTILITY_TABLE_H_
+

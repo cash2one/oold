@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/10/23
-//	filename: 	src\BSLib\database\dbTableCellIMPL.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include "dbTableCellIMPL.h"
 
 namespace BSLib
@@ -151,3 +144,4 @@ void CDBTableCellVarBin::setBlobValue(void* a_value, BSLib::uint32 a_valueSize)
 }//Database
 
 }//BSLib
+

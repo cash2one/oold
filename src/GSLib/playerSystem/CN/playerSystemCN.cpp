@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/25
-//	filename: 	src\GSLib\playerSystem\CN\playerSystemCN.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/playerSystem/CN/playerSystemCN.h>
 #include <GSLib/playerSystem/CN/playerCNMgr.h>
 #include <GSLib/playerSystem/CN/roleModuleCNMgr.h>
@@ -168,3 +161,4 @@ bool CPlayerSystemCN::exec(const std::string& a_key, BSLib::Database::CDBTableRo
 }//PlayerSystem
 
 }//GSLib
+

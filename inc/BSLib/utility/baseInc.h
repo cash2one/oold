@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/06/23
-//	filename: 	BSLib\utility\baseInc.h
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_UTILITY_BASEINC_H__
 #define __BSLIB_UTILITY_BASEINC_H__
 
@@ -35,6 +28,7 @@
 #endif
 
 #endif //__BSLIB_UTILITY_BASEINC_H__
+
 
 
 

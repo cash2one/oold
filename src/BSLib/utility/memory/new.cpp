@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2013/02/13
-//	filename:	src\BSLib\utility\memory\new.cpp
-//	author:		mazhejiang
-//	
-///	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/utility/memory/memory.h>
 #include <BSLib/utility/memory/new.h>
 /*
@@ -47,5 +40,6 @@ void operator delete[](void* a_data, const char* fileName, int line)
 {
 	Base::Utility::CMemory::deallocateMemory(a_data, fileName, line);
 }*/
+
 
 

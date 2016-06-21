@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/07/24
-//	filename:	BSLib\network\netConnection.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_NETWORK_NETCONNECTION_H__
 #define __BSLIB_NETWORK_NETCONNECTION_H__
 
@@ -126,3 +119,4 @@ typedef BSLib::Utility::CPointer<CNetConnectionCallback> CNetConnectionCallbackP
 }//BSLib
 
 #endif//__BSLIB_NETWORK_NETCONNECTION_H__
+

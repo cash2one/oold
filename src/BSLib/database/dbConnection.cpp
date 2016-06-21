@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/09/06
-//	filename:	src\BSLib\dateBSLib\dbConnection.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <BSLib/database/dbConnection.h>
 #include "mysqlConnection.h"
 
@@ -280,4 +273,5 @@ HDbConnection CDbConnection::getHandle()
 }//Database
 
 }//BSLib
+
 

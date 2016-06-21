@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/10/10
-//	filename: 	GSLib\chatSystem\chatSystemDefine.h
-//	author:		zhangming
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_CHATSYSTEM_CHATSYSTEMDEFINE_H__
 #define __GSLIB_CHATSYSTEM_CHATSYSTEMDEFINE_H__
 
@@ -38,3 +31,4 @@ enum EChatChanel
 }//GSLib
 
 #endif//__GSLIB_CHATSYSTEM_MSGNUMIDCHATSYSTEM_H__
+

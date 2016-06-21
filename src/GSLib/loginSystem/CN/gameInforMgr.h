@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/21
-//	filename: 	src\GSLib\loginSystem\CN\gameInforMgr.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_LOGINSYSTEM_CN_GAMEINFORMGR_H__
 #define __GSLIB_LOGINSYSTEM_CN_GAMEINFORMGR_H__
 

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/09/3
-//	filename: 	GSLib\playerSystem\GM\roleBagModuleGM.h
-//	author:		zhangping
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_PLAYERSYSTEM_GM_BAGITEM_H__
 #define __GSLIB_PLAYERSYSTEM_GM_BAGITEM_H__
 #include <GSLib/tracer.h>
@@ -119,3 +112,4 @@ public:
 }//GSLib
 
 #endif//__GSLIB_PLAYERSYSTEM_GM_BAGITEM_H__
+

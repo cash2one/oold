@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/07/25
-//	filename: 	GSLib\playerSystem\GM\CPlayerGM.h
-//	author:	     zhangping	
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __GSLIB_PLAYERSYSTEM_GM_PLAYERGM_H__
 #define __GSLIB_PLAYERSYSTEM_GM_PLAYERGM_H__
 
@@ -181,3 +174,4 @@ private:
 }//GSLib
 
 #endif//__GSLIB_PLAYERSYSTEM_GM_PLAYERSYSTEMGM_H__
+

@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/09/26
-//	filename: 	src\GSLib\petSystem\DB\petSystemDB.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/petSystem/DB/petSystemDB.h>
 #include <GSLib/dbSystem/DB/dbSystemDB.h>
 #include <GSLib/petSystem/DB/tablePetDB.h>
@@ -73,3 +66,4 @@ void CPetSystemDB::_cbServerLeave(const GFLib::SServerID& a_serverID, const std:
 }//PetSystem
 
 }//GSLib
+

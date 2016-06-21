@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2014/09/26
-//	filename: 	src\GSLib\itemSystem\DB\itemSystemDB.cpp
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #include <GSLib/itemSystem/DB/itemSystemDB.h>
 #include <GSLib/dbSystem/DB/dbSystemDB.h>
 #include <GSLib/itemSystem/DB/tableItemDB.h>
@@ -72,3 +65,4 @@ void CItemSystemDB::_cbServerLeave(const GFLib::SServerID& a_serverID, const std
 }//ItemSystem
 
 }//GSLib
+

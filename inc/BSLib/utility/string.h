@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////
-//	created:	2012/07/20
-//	filename:	BSLib\utility\string.h
-//	author:		mazhejiang
-//	
-//	purpose:	
-//////////////////////////////////////////////////////////////////////
 #ifndef __BSLIB_UTILITY_STRING_H__
 #define __BSLIB_UTILITY_STRING_H__
 
@@ -517,3 +510,4 @@ public:
 }//BSLib
 
 #endif //__BSLIB_UTILITY_STRING_H__
+
