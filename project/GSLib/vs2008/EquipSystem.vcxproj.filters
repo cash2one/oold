@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="GM">
+      <UniqueIdentifier>{ba35df96-7284-402c-9aed-7bdaf7199d34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GM\inc">
+      <UniqueIdentifier>{025243ac-d6c5-4d69-8f00-4e22a08b90a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GM\cpp">
+      <UniqueIdentifier>{dc702732-5824-48e6-984f-fe1b5c0389c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="inc">
+      <UniqueIdentifier>{97ef9a85-a23a-43d8-b19c-134fd5f02395}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DB">
+      <UniqueIdentifier>{ea98a3ad-5423-47fb-a940-b45447dc51b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DB\inc">
+      <UniqueIdentifier>{baef13f9-86ca-4307-ab6a-3da6647131a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DB\cpp">
+      <UniqueIdentifier>{6b599af4-0403-4362-9449-e9511f741088}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\inc\GSLib\equipSystem\GM\equipAttributeGM.h">
+      <Filter>GM\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\equipSystem\GM\equipSystemGM.h">
+      <Filter>GM\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\equipSystem\GM\msgEquipSystemGM.h">
+      <Filter>GM\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\equipSystem\GM\roleEquipGM.h">
+      <Filter>GM\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\equipSystem\GM\roleEquipModule.h">
+      <Filter>GM\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\GSLib\equipSystem\GM\equipConfigGMMgr.h">
+      <Filter>GM\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\equipSystem\baseDef.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\equipSystem\msgEquipSystem.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\equipSystem\msgEquipSystemGC.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\equipSystem\msgNumIDEquipSystem.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\equipSystem\DB\equipSystemDB.h">
+      <Filter>DB\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\equipSystem\DB\tableEquipDB.h">
+      <Filter>DB\inc</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\GSLib\equipSystem\GM\equipConfigGMMgr.cpp">
+      <Filter>GM\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\equipSystem\GM\equipSystemGM.cpp">
+      <Filter>GM\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\equipSystem\GM\roleEquipGM.cpp">
+      <Filter>GM\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\equipSystem\GM\roleEquipModule.cpp">
+      <Filter>GM\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\equipSystem\DB\equipSystemDB.cpp">
+      <Filter>DB\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\equipSystem\DB\tableEquipDB.cpp">
+      <Filter>DB\cpp</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

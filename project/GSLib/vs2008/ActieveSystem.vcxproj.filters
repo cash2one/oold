@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="inc">
+      <UniqueIdentifier>{6d19c028-19f0-4ce6-a0da-2dd77ca66a28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GM">
+      <UniqueIdentifier>{a0c6c4d6-4d7c-4381-9abd-1e4c0a125940}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GM\inc">
+      <UniqueIdentifier>{dc8d5d25-3180-46ef-8010-8977ca3fc28a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GM\cpp">
+      <UniqueIdentifier>{a8360def-b23a-4e37-8b51-642dec72bf03}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DB">
+      <UniqueIdentifier>{45010b08-2be5-47c3-affc-77da9258d7c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DB\inc">
+      <UniqueIdentifier>{3d05cd15-b654-448d-ad4b-ea5b7876363c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DB\cpp">
+      <UniqueIdentifier>{4efc252d-eb09-494a-94d4-fa8d30feb0b3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\inc\GSLib\achieveSystem\baseDef.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\achieveSystem\msgAchieveSystem.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\achieveSystem\msgAchieveSystemGC.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\achieveSystem\msgNumIDAchieveSystem.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\achieveSystem\GM\achieveAttributeGM.h">
+      <Filter>GM\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\achieveSystem\GM\achieveDataGM.h">
+      <Filter>GM\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\achieveSystem\GM\achieveDataGMMgr.h">
+      <Filter>GM\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\achieveSystem\GM\achieveModule.h">
+      <Filter>GM\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\achieveSystem\GM\achieveSystemGM.h">
+      <Filter>GM\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\achieveSystem\GM\msgAchieveSystemGM.h">
+      <Filter>GM\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\achieveSystem\DB\achieveSystemDB.h">
+      <Filter>DB\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\achieveSystem\DB\tableAchieveDB.h">
+      <Filter>DB\inc</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\GSLib\achieveSystem\GM\achieveAttributeGM.cpp">
+      <Filter>GM\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\achieveSystem\GM\achieveDataGM.cpp">
+      <Filter>GM\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\achieveSystem\GM\achieveDataGMMgr.cpp">
+      <Filter>GM\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\achieveSystem\GM\achieveModule.cpp">
+      <Filter>GM\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\achieveSystem\GM\achieveSystemGM.cpp">
+      <Filter>GM\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\achieveSystem\DB\achieveSystemDB.cpp">
+      <Filter>DB\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\achieveSystem\DB\tableAchieveDB.cpp">
+      <Filter>DB\cpp</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

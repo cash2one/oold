@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="CN">
+      <UniqueIdentifier>{8b541872-dc5a-4bcc-80cd-1b34cc0f72d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GM">
+      <UniqueIdentifier>{66cf9433-e144-4751-8769-11114032c8b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GM\inc">
+      <UniqueIdentifier>{bfe1f489-bb3c-408c-85c1-45235e539468}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GM\cpp">
+      <UniqueIdentifier>{c7ad641b-0032-4ed8-b554-58b7c4f3ded1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="inc">
+      <UniqueIdentifier>{fea6e3ff-7bf2-441f-972e-0df00a0e0429}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DB">
+      <UniqueIdentifier>{d32fea58-bfaa-436e-9688-676368d4fee0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DB\inc">
+      <UniqueIdentifier>{ab52f69f-3515-44ab-a666-ef3753bd6f3f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DB\cpp">
+      <UniqueIdentifier>{b71c5151-f4cd-4534-a6f7-af7bceaf9675}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\inc\GSLib\activitySystem\GM\activityData.h">
+      <Filter>GM\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\activitySystem\GM\activitySystemDataMgr.h">
+      <Filter>GM\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\activitySystem\GM\activitySystemDefine.h">
+      <Filter>GM\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\activitySystem\GM\activitySystemError.h">
+      <Filter>GM\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\activitySystem\GM\activitySystemGM.h">
+      <Filter>GM\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\activitySystem\GM\msgActivitySystemGM.h">
+      <Filter>GM\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\activitySystem\GM\roleActivityModule.h">
+      <Filter>GM\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\activitySystem\msgActivitySystem.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\activitySystem\msgActivitySystemGC.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\activitySystem\msgNumIDActivitySystem.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\activitySystem\DB\activitySystemDB.h">
+      <Filter>DB\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\activitySystem\DB\tableActivityDB.h">
+      <Filter>DB\inc</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\GSLib\activitySystem\GM\activityData.cpp">
+      <Filter>GM\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\activitySystem\GM\activitySystemDataMgr.cpp">
+      <Filter>GM\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\activitySystem\GM\activitySystemGM.cpp">
+      <Filter>GM\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\activitySystem\GM\roleActivityModule.cpp">
+      <Filter>GM\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\activitySystem\DB\activitySystemDB.cpp">
+      <Filter>DB\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\activitySystem\DB\tableActivityDB.cpp">
+      <Filter>DB\cpp</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="inc">
+      <UniqueIdentifier>{770e5bb7-7ecb-415f-aa81-9dc68b461b14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GM">
+      <UniqueIdentifier>{1a461d33-4512-4559-a503-30c358e8a2ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GM\inc">
+      <UniqueIdentifier>{08e7c206-49aa-4d00-b6dd-aafb01ecc0bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GM\cpp">
+      <UniqueIdentifier>{544801c8-e70a-4531-9c83-54e7140cb556}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CN">
+      <UniqueIdentifier>{a49fdeb0-95ca-4c25-b690-0a9bb50d513b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CN\inc">
+      <UniqueIdentifier>{bf4f2cbb-c4a9-4e3f-b68a-11bb87632ec8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CN\cpp">
+      <UniqueIdentifier>{6ee56cd6-3f22-4f9c-8555-fcd8de33c261}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\inc\GSLib\chatSystem\chatSystemDefine.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\chatSystem\chatSystemError.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\chatSystem\msgChatSystem.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\chatSystem\msgChatSystemGC.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\chatSystem\msgNumIDChatSystem.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\chatSystem\GM\chatContent.h">
+      <Filter>GM\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\chatSystem\GM\chatMgr.h">
+      <Filter>GM\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\chatSystem\GM\chatSystemData.h">
+      <Filter>GM\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\chatSystem\GM\chatSystemGM.h">
+      <Filter>GM\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\chatSystem\GM\msgChatSystemGM.h">
+      <Filter>GM\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\chatSystem\GM\roleChatModule.h">
+      <Filter>GM\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\chatSystem\CN\chatSystemCN.h">
+      <Filter>CN\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\chatSystem\CN\msgChatSystemCN.h">
+      <Filter>CN\inc</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\GSLib\chatSystem\GM\chatContent.cpp">
+      <Filter>GM\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\chatSystem\GM\chatMgr.cpp">
+      <Filter>GM\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\chatSystem\GM\chatSystemData.cpp">
+      <Filter>GM\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\chatSystem\GM\chatSystemGM.cpp">
+      <Filter>GM\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\chatSystem\GM\roleChatModule.cpp">
+      <Filter>GM\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\chatSystem\CN\chatSystemCN.cpp">
+      <Filter>CN\cpp</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

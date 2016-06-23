@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="inc">
+      <UniqueIdentifier>{1d9005b3-64eb-4c71-b42b-c743281b9848}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GM">
+      <UniqueIdentifier>{e1000d4a-f476-45b1-97d9-bb4ff3be3547}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GM\inc">
+      <UniqueIdentifier>{efeb5437-49bd-4410-8880-a95805a515a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GM\cpp">
+      <UniqueIdentifier>{2352b64e-da32-40e4-a3df-1ac45bbae028}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DB">
+      <UniqueIdentifier>{6b8c586b-0aac-435c-acd4-eee1341396d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DB\inc">
+      <UniqueIdentifier>{072426ef-494b-4a1e-8ca4-6d3a2bcc538c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DB\cpp">
+      <UniqueIdentifier>{d8abb2b0-8967-4f48-92f9-7db85a000f1e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\inc\GSLib\prizeSystem\lexical.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\prizeSystem\msgNumIDPrizeSystem.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\prizeSystem\msgPrizeSystem.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\prizeSystem\msgPrizeSystemGC.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\prizeSystem\GM\dateTimer.h">
+      <Filter>GM\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\prizeSystem\GM\msgPrizeSystemGM.h">
+      <Filter>GM\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\prizeSystem\GM\prize.proto.h">
+      <Filter>GM\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\prizeSystem\GM\prizeConfig.h">
+      <Filter>GM\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\prizeSystem\GM\prizeOwner.h">
+      <Filter>GM\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\prizeSystem\GM\prizeSystemGM.h">
+      <Filter>GM\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\prizeSystem\GM\rolePrizeModule.h">
+      <Filter>GM\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\prizeSystem\DB\prizeSystemDB.h">
+      <Filter>DB\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\prizeSystem\DB\tablePrizeDB.h">
+      <Filter>DB\inc</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\GSLib\prizeSystem\GM\dateTimer.cpp">
+      <Filter>GM\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\prizeSystem\GM\prizeConfig.cpp">
+      <Filter>GM\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\prizeSystem\GM\prizeOwner.cpp">
+      <Filter>GM\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\prizeSystem\GM\prizeSystemGM.cpp">
+      <Filter>GM\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\prizeSystem\GM\rolePrizeModule.cpp">
+      <Filter>GM\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\prizeSystem\DB\prizeSystemDB.cpp">
+      <Filter>DB\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\prizeSystem\DB\tablePrizeDB.cpp">
+      <Filter>DB\cpp</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

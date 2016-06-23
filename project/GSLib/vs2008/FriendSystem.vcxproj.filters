@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="DB">
+      <UniqueIdentifier>{a3d20c28-c08e-4031-bec0-e2c47be7e210}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DB\cpp">
+      <UniqueIdentifier>{a616dd37-0165-411d-9cbb-57a0efc8bcb2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DB\inc">
+      <UniqueIdentifier>{39c680ff-3bc3-4973-9f63-e215379f5aed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GM">
+      <UniqueIdentifier>{db35c8c9-b230-4713-bfac-478bb22ee9ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GM\cpp">
+      <UniqueIdentifier>{cdaf710b-244c-43ed-939e-3efd85793fce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GM\inc">
+      <UniqueIdentifier>{7b18d292-8bae-48bf-9998-1c12689d8815}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CN">
+      <UniqueIdentifier>{ace6f6d6-53ad-4464-80eb-71f180e8f49a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CN\cpp">
+      <UniqueIdentifier>{b91b6372-d466-4efc-998e-c10432099553}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CN\inc">
+      <UniqueIdentifier>{7c70b338-d738-4f05-bd24-ac5cc7adbfba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="inc">
+      <UniqueIdentifier>{d4536072-3d76-4941-bfbc-2b9f59e216e2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\GSLib\friendSystem\DB\friendSystemDB.cpp">
+      <Filter>DB\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\friendSystem\DB\tableFriendDB.cpp">
+      <Filter>DB\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\friendSystem\GM\friendSystemGM.cpp">
+      <Filter>GM\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\friendSystem\GM\roleFriendModule.cpp">
+      <Filter>GM\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\friendSystem\CN\friendSystemCN.cpp">
+      <Filter>CN\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\friendSystem\CN\roleFriendModuleCN.cpp">
+      <Filter>CN\cpp</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\inc\GSLib\friendSystem\DB\friendSystemDB.h">
+      <Filter>DB\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\friendSystem\DB\tableFriendDB.h">
+      <Filter>DB\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\friendSystem\GM\friendSystemGM.h">
+      <Filter>GM\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\friendSystem\GM\msgFriendSystemGM.h">
+      <Filter>GM\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\friendSystem\GM\roleFriendModule.h">
+      <Filter>GM\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\friendSystem\CN\friendSystemCN.h">
+      <Filter>CN\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\friendSystem\CN\msgFriendSystemCN.h">
+      <Filter>CN\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\friendSystem\CN\roleFriendModuleCN.h">
+      <Filter>CN\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\friendSystem\commhdr.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\friendSystem\msgFriendSystem.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\friendSystem\msgFriendSystemGC.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\friendSystem\msgNumIDFriendSystem.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

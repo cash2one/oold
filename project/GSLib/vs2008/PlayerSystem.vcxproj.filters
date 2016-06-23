@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="GT">
+      <UniqueIdentifier>{b22baedc-b871-4b3f-bc6d-ae33ee139d0d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GT\inc">
+      <UniqueIdentifier>{62a4d8c3-a9a8-4297-b9bb-e620636e92ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GT\cpp">
+      <UniqueIdentifier>{6f73f235-0c5e-408e-ae31-3f6a8325c5f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LG">
+      <UniqueIdentifier>{fe6c974f-860a-4515-a399-4cb3c34f22d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LG\inc">
+      <UniqueIdentifier>{dff5295e-b86b-485e-aca0-f0ab3a76c4e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LG\cpp">
+      <UniqueIdentifier>{0710986f-46f4-48e9-861a-b0556ebf13b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CN">
+      <UniqueIdentifier>{cf41d52d-3f1c-4915-8320-1ec985a2f884}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CN\cpp">
+      <UniqueIdentifier>{8d6970df-474d-478f-8f71-5d7227541cf8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CN\inc">
+      <UniqueIdentifier>{e5ef7e69-9521-4266-969b-ef5e00a40969}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GM">
+      <UniqueIdentifier>{39ad004e-7ab3-40b9-bc7d-59a01d9fa61e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GM\inc">
+      <UniqueIdentifier>{4aed3e8b-2bd7-4135-be29-6c9ac38f74ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GM\cpp">
+      <UniqueIdentifier>{ff0e32c1-a3dd-4679-a7e5-cbd8ece3eaeb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="inc">
+      <UniqueIdentifier>{11465b66-1199-43bc-ba5b-a604317b2331}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cpp">
+      <UniqueIdentifier>{953a6b97-9a3b-4f41-afbe-54c47f43cafc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DB">
+      <UniqueIdentifier>{28a68cae-98b9-4c4e-9a59-6fdd0b681770}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DB\inc">
+      <UniqueIdentifier>{0a736281-f40c-406a-9bb2-b477794b9a2b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DB\cpp">
+      <UniqueIdentifier>{ffbfec66-23cb-4bb1-9126-4ae4ea91845b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\inc\GSLib\playerSystem\GT\msgPlayerSystemGT.h">
+      <Filter>GT\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\playerSystem\GT\playerGT.h">
+      <Filter>GT\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\playerSystem\GT\playerGTMgr.h">
+      <Filter>GT\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\playerSystem\GT\playerSystemGT.h">
+      <Filter>GT\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\playerSystem\GT\roleGT.h">
+      <Filter>GT\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\playerSystem\LG\msgPlayerSystemLG.h">
+      <Filter>LG\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\playerSystem\LG\playerSystemLG.h">
+      <Filter>LG\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\playerSystem\CN\msgPlayerSystemCN.h">
+      <Filter>CN\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\playerSystem\CN\playerCN.h">
+      <Filter>CN\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\playerSystem\CN\playerCNMgr.h">
+      <Filter>CN\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\playerSystem\CN\playerSystemCN.h">
+      <Filter>CN\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\playerSystem\CN\roleBagModuleCN.h">
+      <Filter>CN\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\playerSystem\CN\roleBaseInfoCN.h">
+      <Filter>CN\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\playerSystem\CN\roleBaseInfoCNMgr.h">
+      <Filter>CN\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\playerSystem\CN\roleCN.h">
+      <Filter>CN\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\playerSystem\CN\roleModuleCN.h">
+      <Filter>CN\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\playerSystem\CN\roleModuleCNMgr.h">
+      <Filter>CN\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\playerSystem\GM\bagItem.h">
+      <Filter>GM\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\playerSystem\GM\msgPlayerSystemGM.h">
+      <Filter>GM\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\playerSystem\GM\netPlayerGM.h">
+      <Filter>GM\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\playerSystem\GM\netPlayerGMMgr.h">
+      <Filter>GM\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\playerSystem\GM\playerGM.h">
+      <Filter>GM\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\playerSystem\GM\playerGMMgr.h">
+      <Filter>GM\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\playerSystem\GM\playerSystemGM.h">
+      <Filter>GM\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\playerSystem\GM\roleBagGMMgr.h">
+      <Filter>GM\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\playerSystem\GM\roleBagModuleGM.h">
+      <Filter>GM\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\playerSystem\GM\roleGM.h">
+      <Filter>GM\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\playerSystem\GM\roleModuleGM.h">
+      <Filter>GM\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\playerSystem\GM\roleModuleGMMgr.h">
+      <Filter>GM\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\playerSystem\GM\roleResource.h">
+      <Filter>GM\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\GSLib\playerSystem\GM\roleConfigGMMgr.h">
+      <Filter>GM\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\GSLib\playerSystem\GM\roleDataGM.h">
+      <Filter>GM\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\playerSystem\baseDef.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\playerSystem\msgNumIDPlayerSystem.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\playerSystem\msgPlayerSystem.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\playerSystem\msgPlayerSystemGC.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\playerSystem\DB\msgPlayerSystemDB.h">
+      <Filter>DB\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\playerSystem\DB\playerSystemDB.h">
+      <Filter>DB\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\playerSystem\DB\tablePlayerDB.h">
+      <Filter>DB\inc</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\GSLib\playerSystem\GT\playerGT.cpp">
+      <Filter>GT\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\playerSystem\GT\playerGTMgr.cpp">
+      <Filter>GT\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\playerSystem\GT\playerSystemGT.cpp">
+      <Filter>GT\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\playerSystem\GT\roleGT.cpp">
+      <Filter>GT\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\playerSystem\LG\playerSystemLG.cpp">
+      <Filter>LG\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\playerSystem\CN\playerCN.cpp">
+      <Filter>CN\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\playerSystem\CN\playerCNMgr.cpp">
+      <Filter>CN\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\playerSystem\CN\playerSystemCN.cpp">
+      <Filter>CN\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\playerSystem\CN\roleBagModuleCN.cpp">
+      <Filter>CN\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\playerSystem\CN\roleBaseInfoCN.cpp">
+      <Filter>CN\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\playerSystem\CN\roleBaseInfoCNMgr.cpp">
+      <Filter>CN\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\playerSystem\CN\roleCN.cpp">
+      <Filter>CN\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\playerSystem\CN\roleModuleCN.cpp">
+      <Filter>CN\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\playerSystem\CN\roleModuleCNMgr.cpp">
+      <Filter>CN\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\playerSystem\GM\bagItem.cpp">
+      <Filter>GM\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\playerSystem\GM\playerGM.cpp">
+      <Filter>GM\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\playerSystem\GM\playerGMMgr.cpp">
+      <Filter>GM\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\playerSystem\GM\playerSystemGM.cpp">
+      <Filter>GM\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\playerSystem\GM\roleBagGMMgr.cpp">
+      <Filter>GM\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\playerSystem\GM\roleBagModuleGM.cpp">
+      <Filter>GM\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\playerSystem\GM\roleConfigGMMgr.cpp">
+      <Filter>GM\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\playerSystem\GM\roleDataGM.cpp">
+      <Filter>GM\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\playerSystem\GM\roleGM.cpp">
+      <Filter>GM\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\playerSystem\GM\roleModuleGM.cpp">
+      <Filter>GM\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\playerSystem\GM\roleModuleGMMgr.cpp">
+      <Filter>GM\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\playerSystem\GM\roleResource.cpp">
+      <Filter>GM\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\playerSystem\DB\playerSystemDB.cpp">
+      <Filter>DB\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\playerSystem\DB\tablePlayerDB.cpp">
+      <Filter>DB\cpp</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

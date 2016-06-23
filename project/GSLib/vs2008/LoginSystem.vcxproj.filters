@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="GT">
+      <UniqueIdentifier>{dfdc36b6-26b8-4089-a3d4-280eeccbf7ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GT\inc">
+      <UniqueIdentifier>{7f9f4d98-9200-4148-a6ff-cddfbae34859}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GT\cpp">
+      <UniqueIdentifier>{d413f62e-26f0-4805-8828-eccf014bac66}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LG">
+      <UniqueIdentifier>{ccce2fc2-3060-4f06-8f91-145ed05067a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LG\inc">
+      <UniqueIdentifier>{892627ae-fdfb-46c3-a08c-92245b57dc8f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LG\cpp">
+      <UniqueIdentifier>{27ef5b0f-6254-42d1-898d-4dc2d5015bdb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DB">
+      <UniqueIdentifier>{4005e54e-ef4b-4bb1-aa57-765b07f90584}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DB\inc">
+      <UniqueIdentifier>{640ff464-1393-446b-880d-25400ead300d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DB\cpp">
+      <UniqueIdentifier>{cd5c7296-e4fd-4ffa-9be4-93c9d6cc71d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CN">
+      <UniqueIdentifier>{59e41459-9ffb-40e2-a803-9e0f28fd5f17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CN\inc">
+      <UniqueIdentifier>{ed4a7bf1-284f-44ac-9feb-ee8d22696e87}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CN\cpp">
+      <UniqueIdentifier>{87f5e6f2-edb1-4120-ac25-a244c866c714}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GM">
+      <UniqueIdentifier>{1e66ef77-f905-4c58-bf87-eb3f60fb2b46}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GM\inc">
+      <UniqueIdentifier>{5e4b1e4c-a1e7-4f8a-88a5-83ad259fe7a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GM\cpp">
+      <UniqueIdentifier>{6b5efbdb-1bfd-4e66-8112-0f7452fe66dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="inc">
+      <UniqueIdentifier>{49de2f3c-d91f-4a07-8ed9-a4ffebc7102c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cpp">
+      <UniqueIdentifier>{545d7495-06db-4155-ba3d-e8e5349b2dcf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SP">
+      <UniqueIdentifier>{761c6769-c5db-42a1-9fd1-c9e4b3c21fc8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SP\inc">
+      <UniqueIdentifier>{32df592a-cdb1-4712-957d-0a7f36838720}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SP\cpp">
+      <UniqueIdentifier>{ecd79664-4b8a-4ad8-b7f0-efb55956b079}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\inc\GSLib\loginSystem\GT\loginSystemGT.h">
+      <Filter>GT\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\loginSystem\GT\msgLoginSystemGT.h">
+      <Filter>GT\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\loginSystem\GT\netPlayerGT.h">
+      <Filter>GT\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\loginSystem\GT\netPlayerGTMgr.h">
+      <Filter>GT\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\GSLib\loginSystem\GT\accountLoginGTInforMgr.h">
+      <Filter>GT\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\loginSystem\LG\loginSystemLG.h">
+      <Filter>LG\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\loginSystem\LG\msgLoginSystemLG.h">
+      <Filter>LG\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\GSLib\loginSystem\LG\accountLoginLGInforMgr.h">
+      <Filter>LG\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\GSLib\loginSystem\LG\zoneInforMgr.h">
+      <Filter>LG\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\loginSystem\DB\loginSystemDB.h">
+      <Filter>DB\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\loginSystem\DB\msgLoginSystemDB.h">
+      <Filter>DB\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\loginSystem\DB\netPlayerDB.h">
+      <Filter>DB\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\loginSystem\DB\netPlayerDBMgr.h">
+      <Filter>DB\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\GSLib\loginSystem\DB\accountLoginDBInforMgr.h">
+      <Filter>DB\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\loginSystem\CN\loginSystemCN.h">
+      <Filter>CN\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\loginSystem\CN\msgLoginSystemCN.h">
+      <Filter>CN\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\loginSystem\CN\netPlayerCN.h">
+      <Filter>CN\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\loginSystem\CN\netPlayerCNMgr.h">
+      <Filter>CN\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\GSLib\loginSystem\CN\accountLoginCNInforMgr.h">
+      <Filter>CN\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\GSLib\loginSystem\CN\gameInforMgr.h">
+      <Filter>CN\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\GSLib\loginSystem\CN\gateInforMgr.h">
+      <Filter>CN\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\loginSystem\GM\loginSystemGM.h">
+      <Filter>GM\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\loginSystem\GM\msgLoginSystemGM.h">
+      <Filter>GM\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\loginSystem\GM\netPlayerGM.h">
+      <Filter>GM\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\loginSystem\GM\netPlayerGMMgr.h">
+      <Filter>GM\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\GSLib\loginSystem\GM\accountLoginGMInforMgr.h">
+      <Filter>GM\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\loginSystem\msgLoginSystem.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\loginSystem\msgLoginSystemAC.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\loginSystem\msgLoginSystemGC.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\loginSystem\msgNumIDLoginSystem.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\loginSystem\netPlayer.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\loginSystem\SP\loginSystemSP.h">
+      <Filter>SP\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\loginSystem\SP\msgLoginSystemSP.h">
+      <Filter>SP\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\GSLib\loginSystem\SP\accountTokenInforMgr.h">
+      <Filter>SP\cpp</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\GSLib\loginSystem\GT\accountLoginGTInforMgr.cpp">
+      <Filter>GT\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\loginSystem\GT\loginSystemGT.cpp">
+      <Filter>GT\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\loginSystem\GT\netPlayerGT.cpp">
+      <Filter>GT\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\loginSystem\GT\netPlayerGTMgr.cpp">
+      <Filter>GT\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\loginSystem\LG\accountLoginLGInforMgr.cpp">
+      <Filter>LG\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\loginSystem\LG\loginSystemLG.cpp">
+      <Filter>LG\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\loginSystem\LG\zoneInforMgr.cpp">
+      <Filter>LG\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\loginSystem\DB\accountLoginDBInforMgr.cpp">
+      <Filter>DB\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\loginSystem\DB\loginSystemDB.cpp">
+      <Filter>DB\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\loginSystem\DB\netPlayerDB.cpp">
+      <Filter>DB\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\loginSystem\DB\netPlayerDBMgr.cpp">
+      <Filter>DB\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\loginSystem\CN\accountLoginCNInforMgr.cpp">
+      <Filter>CN\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\loginSystem\CN\gameInforMgr.cpp">
+      <Filter>CN\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\loginSystem\CN\gateInforMgr.cpp">
+      <Filter>CN\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\loginSystem\CN\loginSystemCN.cpp">
+      <Filter>CN\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\loginSystem\CN\netPlayerCN.cpp">
+      <Filter>CN\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\loginSystem\CN\netPlayerCNMgr.cpp">
+      <Filter>CN\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\loginSystem\GM\accountLoginGMInforMgr.cpp">
+      <Filter>GM\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\loginSystem\GM\loginSystemGM.cpp">
+      <Filter>GM\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\loginSystem\GM\netPlayerGM.cpp">
+      <Filter>GM\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\loginSystem\GM\netPlayerGMMgr.cpp">
+      <Filter>GM\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\loginSystem\netPlayer.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\loginSystem\SP\accountTokenInforMgr.cpp">
+      <Filter>SP\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\loginSystem\SP\loginSystemSP.cpp">
+      <Filter>SP\cpp</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="cpp">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="inc">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="res">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\src\BSLib\udm\epoll.h">
+      <Filter>cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\BSLib\udm\sockEvent.hpp">
+      <Filter>cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\BSLib\udm\udmAcceptor.h">
+      <Filter>cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\BSLib\udm\udmClient.h">
+      <Filter>cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\BSLib\udm\udmEpoll.h">
+      <Filter>cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\BSLib\udm\udmEpollMgr.h">
+      <Filter>cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\BSLib\udm\udmError.h">
+      <Filter>cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\BSLib\udm\udmMgr.h">
+      <Filter>cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\BSLib\udm\udmSocket.h">
+      <Filter>cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\BSLib\udm\udmSocketInfor.h">
+      <Filter>cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\BSLib\udm\udmStub.h">
+      <Filter>cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\BSLib\udm\udpCtrlMsg.h">
+      <Filter>cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\BSLib\udm\udpThread.h">
+      <Filter>cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\BSLib\udm\udpThreadMgr.h">
+      <Filter>cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\udm\baseDef.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\udm\udm.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\BSLib\udm\udm.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\udm\udmAcceptor.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\udm\udmClient.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\udm\udmEpoll.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\udm\udmEpollMgr.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\udm\udmMgr.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\udm\udmSocket.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\udm\udmStub.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\udm\udpThread.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\udm\udpThreadMgr.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="inc">
+      <UniqueIdentifier>{7bb3af60-891f-47ed-b3c7-64d2aa446525}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GM">
+      <UniqueIdentifier>{4af995f7-31ef-45bf-8729-da2c51edafbe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GM\inc">
+      <UniqueIdentifier>{897bd9e2-fed3-463a-a4ce-7bd893a0b2c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GM\cpp">
+      <UniqueIdentifier>{c85d0818-965e-45ce-80f0-8107673e79be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CN">
+      <UniqueIdentifier>{8160420f-13b6-4475-b331-8b9555e96aa6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CN\inc">
+      <UniqueIdentifier>{4a35c356-e897-4896-8747-f3d6f3407343}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CN\cpp">
+      <UniqueIdentifier>{38c5d6a0-e148-49ed-be98-cc97a7f65389}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DB">
+      <UniqueIdentifier>{e2838c85-1056-48fb-bf96-fd5930dc749c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DB\inc">
+      <UniqueIdentifier>{972c5001-479c-465f-ab22-03fbd3dd5a8e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DB\cpp">
+      <UniqueIdentifier>{8c6bc00f-6f30-4fff-bcca-192f61872554}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SP">
+      <UniqueIdentifier>{bc37fe94-d4c4-4427-9aef-6518393994ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SP\cpp">
+      <UniqueIdentifier>{cb8b3e3e-e0e3-4252-90ca-25bccee1e7cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SP\inc">
+      <UniqueIdentifier>{66bedd0c-9c96-4960-805f-dab4112d45c2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\inc\GSLib\masterSystem\gm.proto.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\masterSystem\msgMasterSystem.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\masterSystem\msgMasterSystemGC.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\masterSystem\msgNumIDMasterSystem.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\masterSystem\GM\masterSystemGM.h">
+      <Filter>GM\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\masterSystem\GM\msgMasterSystemGM.h">
+      <Filter>GM\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\masterSystem\GM\roleMasterModule.h">
+      <Filter>GM\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\masterSystem\CN\masterSystemCN.h">
+      <Filter>CN\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\masterSystem\CN\msgMasterSystemCN.h">
+      <Filter>CN\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\masterSystem\CN\roleMasterModuleCN.h">
+      <Filter>CN\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\masterSystem\DB\masterSystemDB.h">
+      <Filter>DB\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\masterSystem\DB\tableMasterDB.h">
+      <Filter>DB\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\masterSystem\SP\masterSystemSP.h">
+      <Filter>SP\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\masterSystem\SP\msg_def.h">
+      <Filter>SP\inc</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\GSLib\masterSystem\GM\masterSystemGM.cpp">
+      <Filter>GM\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\masterSystem\GM\roleMasterModule.cpp">
+      <Filter>GM\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\masterSystem\CN\masterSystemCN.cpp">
+      <Filter>CN\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\masterSystem\CN\roleMasterModuleCN.cpp">
+      <Filter>CN\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\masterSystem\DB\masterSystemDB.cpp">
+      <Filter>DB\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\masterSystem\DB\tableMasterDB.cpp">
+      <Filter>DB\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\masterSystem\SP\masterSystemSP.cpp">
+      <Filter>SP\cpp</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

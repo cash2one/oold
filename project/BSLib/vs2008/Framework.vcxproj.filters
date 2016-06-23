@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="cpp">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="cpp\message">
+      <UniqueIdentifier>{a9fba775-49ef-43a8-8a86-750e0ab55145}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="inc">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="inc\message">
+      <UniqueIdentifier>{f57704c5-2038-4196-9ed1-e2d1d7df9687}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="res">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\BSLib\framework\mainThread.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\framework\sysChannelMgr.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\framework\sysConfig.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\framework\threadFrame.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\framework\message\message.cpp">
+      <Filter>cpp\message</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\framework\message\msgDebug.cpp">
+      <Filter>cpp\message</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\framework\message\msgExec.cpp">
+      <Filter>cpp\message</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\framework\message\msgExecMgr.cpp">
+      <Filter>cpp\message</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\framework\message\msgFactory.cpp">
+      <Filter>cpp\message</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\inc\BSLib\framework\baseDef.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\framework\mainThread.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\framework\sysChannelMgr.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\framework\sysConfig.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\framework\threadFrame.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\framework\message\message.h">
+      <Filter>inc\message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\framework\message\msgDebug.h">
+      <Filter>inc\message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\framework\message\msgExec.h">
+      <Filter>inc\message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\framework\message\msgExecMgr.h">
+      <Filter>inc\message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\framework\message\msgFactory.h">
+      <Filter>inc\message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\framework\message\msgFramework.h">
+      <Filter>inc\message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\framework\message\msgLabel.h">
+      <Filter>inc\message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\framework\message\msgQueue.h">
+      <Filter>inc\message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\framework\message\msgType.h">
+      <Filter>inc\message</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

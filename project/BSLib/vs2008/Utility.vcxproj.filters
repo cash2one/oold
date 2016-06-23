@@ -1,0 +1,327 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="cpp">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="cpp\encrypt">
+      <UniqueIdentifier>{61fbb312-3995-4d10-bfd7-154ebe634c8a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cpp\file">
+      <UniqueIdentifier>{8b3a6707-5d5e-43d3-b0a9-f75fff89f194}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cpp\memory">
+      <UniqueIdentifier>{282e562d-45e9-42d7-bb2c-51224120c1fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cpp\thread">
+      <UniqueIdentifier>{ec32e44b-13a9-4807-9cbb-a52298d6059f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cpp\win32">
+      <UniqueIdentifier>{52d7c911-49ad-4775-aac6-6746c51516e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="inc">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="inc\encrypt">
+      <UniqueIdentifier>{c4dbbe3a-c4c6-4b0a-865e-5c41a80fac55}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="inc\file">
+      <UniqueIdentifier>{dcc8bb7a-50dc-4789-925a-0beb8fae4112}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="inc\memory">
+      <UniqueIdentifier>{0a016a3e-4cd8-4108-8cf9-19d4f94394aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="inc\thread">
+      <UniqueIdentifier>{16728846-7b5e-4d58-88bf-120dca24fc93}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="res">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\BSLib\utility\atomic.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\utility\cmdExecMgr.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\utility\command.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\utility\convert.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\utility\dateTime.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\utility\eventMgr.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\utility\exception.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\utility\fileTracer.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\utility\random.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\utility\script.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\utility\stream.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\utility\string.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\utility\table.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\utility\timerServer.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\utility\tracer.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\utility\uuid.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\utility\encrypt\encryDes.cpp">
+      <Filter>cpp\encrypt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\utility\encrypt\mycast.cpp">
+      <Filter>cpp\encrypt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\utility\encrypt\mydes.cpp">
+      <Filter>cpp\encrypt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\utility\encrypt\myidea.cpp">
+      <Filter>cpp\encrypt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\utility\encrypt\myrc5.cpp">
+      <Filter>cpp\encrypt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\utility\file\binFile.cpp">
+      <Filter>cpp\file</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\utility\file\dirInfo.cpp">
+      <Filter>cpp\file</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\utility\file\fileInfo.cpp">
+      <Filter>cpp\file</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\utility\file\gameData.cpp">
+      <Filter>cpp\file</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\utility\file\iniFile.cpp">
+      <Filter>cpp\file</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\utility\file\xmlFile.cpp">
+      <Filter>cpp\file</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\utility\memory\memory.cpp">
+      <Filter>cpp\memory</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\utility\memory\memPage.cpp">
+      <Filter>cpp\memory</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\utility\memory\memPool.cpp">
+      <Filter>cpp\memory</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\utility\memory\new.cpp">
+      <Filter>cpp\memory</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\utility\memory\objectPool.cpp">
+      <Filter>cpp\memory</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\utility\memory\shareMemory.cpp">
+      <Filter>cpp\memory</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\utility\thread\event.cpp">
+      <Filter>cpp\thread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\utility\thread\mutex.cpp">
+      <Filter>cpp\thread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\utility\thread\thdMsgQueue.cpp">
+      <Filter>cpp\thread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\utility\thread\thread.cpp">
+      <Filter>cpp\thread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\utility\thread\threadData.cpp">
+      <Filter>cpp\thread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\utility\thread\threadPool.cpp">
+      <Filter>cpp\thread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\utility\win32\ConsoleAdapter.cpp">
+      <Filter>cpp\win32</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\src\BSLib\utility\encrypt\mycast.h">
+      <Filter>cpp\encrypt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\BSLib\utility\encrypt\mydes.h">
+      <Filter>cpp\encrypt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\BSLib\utility\encrypt\myidea.h">
+      <Filter>cpp\encrypt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\BSLib\utility\encrypt\myrc5.h">
+      <Filter>cpp\encrypt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\BSLib\utility\memory\memPage.h">
+      <Filter>cpp\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\BSLib\utility\memory\memPool.h">
+      <Filter>cpp\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\BSLib\utility\win32\ConsoleAdapter.h">
+      <Filter>cpp\win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\utility\atomic.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\utility\baseDef.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\utility\baseInc.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\utility\buffer.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\utility\cmdExecMgr.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\utility\command.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\utility\convert.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\utility\dateTime.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\utility\eventMgr.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\utility\fileTracer.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\utility\function.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\utility\functionEvent.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\utility\hashMap.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\utility\noncopy.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\utility\pointer.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\utility\ptrQueue.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\utility\random.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\utility\script.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\utility\singleton.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\utility\stream.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\utility\string.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\utility\table.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\utility\timer.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\utility\timerServer.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\utility\tracer.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\utility\uniqueID.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\utility\uuid.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\utility\encrypt\encryDes.h">
+      <Filter>inc\encrypt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\utility\file\binFile.h">
+      <Filter>inc\file</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\utility\file\dirInfo.h">
+      <Filter>inc\file</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\utility\file\fileInfo.h">
+      <Filter>inc\file</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\utility\file\gameData.h">
+      <Filter>inc\file</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\utility\file\iniFile.h">
+      <Filter>inc\file</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\utility\file\xmlFile.h">
+      <Filter>inc\file</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\utility\memory\allocator.h">
+      <Filter>inc\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\utility\memory\memory.h">
+      <Filter>inc\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\utility\memory\new.h">
+      <Filter>inc\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\utility\memory\objectMgr.h">
+      <Filter>inc\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\utility\memory\objectPool.h">
+      <Filter>inc\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\utility\memory\shareMemory.h">
+      <Filter>inc\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\utility\thread\event.h">
+      <Filter>inc\thread</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\utility\thread\mutex.h">
+      <Filter>inc\thread</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\utility\thread\thdMsgQueue.h">
+      <Filter>inc\thread</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\utility\thread\thread.h">
+      <Filter>inc\thread</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\utility\thread\threadData.h">
+      <Filter>inc\thread</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\utility\thread\threadPool.h">
+      <Filter>inc\thread</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

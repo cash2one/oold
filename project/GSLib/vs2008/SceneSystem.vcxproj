@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{3BA7155A-D569-48D9-A20B-4DCEBE6FC367}</ProjectGuid>
+    <RootNamespace>CommonServer</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.30501.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>..\..\..\lib\GSLib\</OutDir>
+    <IntDir>$(TempOutDir)\GSLibOut\$(Platform)\$(ProjectName)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>..\..\..\lib\GSLib\</OutDir>
+    <IntDir>$(TempOutDir)\GSLibOut\$(Platform)\$(ProjectName)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>..\..\..\lib\GSLib\</OutDir>
+    <IntDir>$(TempOutDir)\GSLibOut\$(Platform)\$(ProjectName)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>..\..\..\lib\GSLib\</OutDir>
+    <IntDir>$(TempOutDir)\GSLibOut\$(Platform)\$(ProjectName)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\..\src\GSLib\sceneSystem;..\..\..\inc;..\..\..\inc\TDLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;$(GSLibMyTest);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader />
+      <ProgramDataBaseFileName>$(OutDir)$(Platform)\$(Configuration)\$(ProjectName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(Platform)\$(Configuration)\$(ProjectName).lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>..\..\..\src\GSLib\sceneSystem;..\..\..\inc;..\..\..\inc\TDLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader />
+      <ProgramDataBaseFileName>$(OutDir)$(Platform)\$(Configuration)\$(ProjectName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(Platform)\$(Configuration)\$(ProjectName).lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\..\src\GSLib\sceneSystem;..\..\..\inc;..\..\..\inc\TDLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;$(GSLibMyTest);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader />
+      <ProgramDataBaseFileName>$(OutDir)$(Platform)\$(Configuration)\$(ProjectName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(Platform)\$(Configuration)\$(ProjectName).lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>..\..\..\src\GSLib\sceneSystem;..\..\..\inc;..\..\..\inc\TDLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader />
+      <ProgramDataBaseFileName>$(OutDir)$(Platform)\$(Configuration)\$(ProjectName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(Platform)\$(Configuration)\$(ProjectName).lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\inc\GSLib\sceneSystem\CN\msgSceneSystemCN.h" />
+    <ClInclude Include="..\..\..\inc\GSLib\sceneSystem\CN\roleSceneModuleCN.h" />
+    <ClInclude Include="..\..\..\inc\GSLib\sceneSystem\CN\sceneSystemCN.h" />
+    <ClInclude Include="..\..\..\inc\GSLib\sceneSystem\DB\sceneSystemDB.h" />
+    <ClInclude Include="..\..\..\inc\GSLib\sceneSystem\DB\tableSceneDB.h" />
+    <ClInclude Include="..\..\..\inc\GSLib\sceneSystem\GM\arenaPrize.h" />
+    <ClInclude Include="..\..\..\inc\GSLib\sceneSystem\GM\dropItem.h" />
+    <ClInclude Include="..\..\..\inc\GSLib\sceneSystem\GM\dropItemEntry.h" />
+    <ClInclude Include="..\..\..\inc\GSLib\sceneSystem\GM\msgSceneSystemGM.h" />
+    <ClInclude Include="..\..\..\inc\GSLib\sceneSystem\GM\reviveItem.h" />
+    <ClInclude Include="..\..\..\inc\GSLib\sceneSystem\GM\roleArenaData.h" />
+    <ClInclude Include="..\..\..\inc\GSLib\sceneSystem\GM\roleSceneModule.h" />
+    <ClInclude Include="..\..\..\inc\GSLib\sceneSystem\GM\scene.h" />
+    <ClInclude Include="..\..\..\inc\GSLib\sceneSystem\GM\sceneAttr.h" />
+    <ClInclude Include="..\..\..\inc\GSLib\sceneSystem\GM\sceneData.h" />
+    <ClInclude Include="..\..\..\inc\GSLib\sceneSystem\GM\sceneDefine.h" />
+    <ClInclude Include="..\..\..\inc\GSLib\sceneSystem\GM\sceneErrorGM.h" />
+    <ClInclude Include="..\..\..\inc\GSLib\sceneSystem\GM\sceneGM.h" />
+    <ClInclude Include="..\..\..\inc\GSLib\sceneSystem\GM\sceneGMMgr.h" />
+    <ClInclude Include="..\..\..\inc\GSLib\sceneSystem\GM\sceneImpl.h" />
+    <ClInclude Include="..\..\..\inc\GSLib\sceneSystem\GM\sceneMgr.h" />
+    <ClInclude Include="..\..\..\inc\GSLib\sceneSystem\GM\scenePool.h" />
+    <ClInclude Include="..\..\..\inc\GSLib\sceneSystem\GM\scenePrize.h" />
+    <ClInclude Include="..\..\..\inc\GSLib\sceneSystem\GM\sceneScriptEnv.h" />
+    <ClInclude Include="..\..\..\inc\GSLib\sceneSystem\GM\sceneScriptGM.h" />
+    <ClInclude Include="..\..\..\inc\GSLib\sceneSystem\GM\sceneSystemData.h" />
+    <ClInclude Include="..\..\..\inc\GSLib\sceneSystem\GM\sceneSystemDataMgr.h" />
+    <ClInclude Include="..\..\..\inc\GSLib\sceneSystem\GM\sceneSystemGM.h" />
+    <ClInclude Include="..\..\..\inc\GSLib\sceneSystem\msgNumIDSceneSystem.h" />
+    <ClInclude Include="..\..\..\inc\GSLib\sceneSystem\msgSceneSystem.h" />
+    <ClInclude Include="..\..\..\inc\GSLib\sceneSystem\msgSceneSystemGC.h" />
+    <ClInclude Include="..\..\..\inc\GSLib\sceneSystem\sceneSystemCommonData.h" />
+    <ClInclude Include="..\..\..\inc\GSLib\sceneSystem\sceneSystemDefine.h" />
+    <ClInclude Include="..\..\..\src\GSLib\sceneSystem\GM\btree\sceneGMBTMgr.h" />
+    <ClInclude Include="..\..\..\src\GSLib\sceneSystem\GM\fsm\fsmBTCondition.h" />
+    <ClInclude Include="..\..\..\src\GSLib\sceneSystem\GM\fsm\fsmBTState.h" />
+    <ClInclude Include="..\..\..\src\GSLib\sceneSystem\GM\fsm\fsmScripCondition.h" />
+    <ClInclude Include="..\..\..\src\GSLib\sceneSystem\GM\fsm\fsmScripState.h" />
+    <ClInclude Include="..\..\..\src\GSLib\sceneSystem\GM\fsm\sceneGMFSM.h" />
+    <ClInclude Include="..\..\..\src\GSLib\sceneSystem\GM\fsm\sceneGMFSMMgr.h" />
+    <ClInclude Include="..\..\..\src\GSLib\sceneSystem\GM\originalScene.h" />
+    <ClInclude Include="..\..\..\src\GSLib\sceneSystem\GM\originalSceneMgr.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\CN\roleSceneModuleCN.cpp" />
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\CN\sceneSystemCN.cpp" />
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\DB\sceneSystemDB.cpp" />
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\DB\tableSceneDB.cpp" />
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\GM\arenaPrize.cpp" />
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\GM\btree\sceneGMBTMgr.cpp" />
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\GM\dropItem.cpp" />
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\GM\dropItemEntry.cpp" />
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\GM\fsm\fsmBTCondition.cpp" />
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\GM\fsm\fsmBTState.cpp" />
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\GM\fsm\fsmScripCondition.cpp" />
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\GM\fsm\fsmScripState.cpp" />
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\GM\fsm\sceneGMFSM.cpp" />
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\GM\fsm\sceneGMFSMMgr.cpp" />
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\GM\originalScene.cpp" />
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\GM\originalSceneMgr.cpp" />
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\GM\reviveItem.cpp" />
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\GM\roleArenaData.cpp" />
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\GM\roleSceneModule.cpp" />
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\GM\scene.cpp" />
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\GM\sceneAttr.cpp" />
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\GM\sceneData.cpp" />
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\GM\sceneGM.cpp" />
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\GM\sceneGMMgr.cpp" />
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\GM\sceneImpl.cpp" />
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\GM\sceneMgr.cpp" />
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\GM\scenePool.cpp" />
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\GM\scenePrize.cpp" />
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\GM\sceneScriptEnv.cpp" />
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\GM\sceneScriptGM.cpp" />
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\GM\sceneSystemData.cpp" />
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\GM\sceneSystemDataMgr.cpp" />
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\GM\sceneSystemGM.cpp" />
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\sceneSystemCommonData.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

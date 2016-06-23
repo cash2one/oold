@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="LG">
+      <UniqueIdentifier>{a94bd866-bc86-407f-ac85-3fde29a56938}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LG\inc">
+      <UniqueIdentifier>{e64518ec-9f7b-448e-84ba-231017a35318}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LG\cpp">
+      <UniqueIdentifier>{ba4855cf-043f-48a7-a81e-0966be01ee93}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DB">
+      <UniqueIdentifier>{f9c18e5f-6862-4ea7-9283-9db17523c44c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DB\inc">
+      <UniqueIdentifier>{865ec567-bc8f-4545-a9b8-f6146896a6c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DB\cpp">
+      <UniqueIdentifier>{19661403-79d0-405e-9489-505b8f101d5f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CN">
+      <UniqueIdentifier>{67748861-fb8e-4747-be68-32bbe51fa5f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CN\inc">
+      <UniqueIdentifier>{ac6fe0c2-8a79-4c27-95f8-151b9ef85183}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CN\cpp">
+      <UniqueIdentifier>{b00a63d4-5088-48fd-a1bd-b90cb20094e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="inc">
+      <UniqueIdentifier>{71d2a4f8-23f6-4906-a8b6-92a8249c44ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cpp">
+      <UniqueIdentifier>{605b6aa9-0f5f-4e46-9965-2758c288f262}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GT">
+      <UniqueIdentifier>{81b013be-d248-4c8f-8237-b2b103a3f32b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GT\inc">
+      <UniqueIdentifier>{9681ffa4-b86d-4f38-b58d-d3d6fd7cf05d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GT\cpp">
+      <UniqueIdentifier>{ef78add1-ff27-4002-b3fb-94a63c2748f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GM">
+      <UniqueIdentifier>{b8ea2b1a-b57f-45f2-92a6-c9963ba22664}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GM\inc">
+      <UniqueIdentifier>{a73af85f-96a3-4519-9975-d946404caad3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GM\cpp">
+      <UniqueIdentifier>{770ba702-fba9-48f5-954e-151efadd9eaf}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\inc\GSLib\dbSystem\LG\dbSystemLG.h">
+      <Filter>LG\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\dbSystem\LG\dbTableLG.h">
+      <Filter>LG\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\dbSystem\LG\msgDbSystemLG.h">
+      <Filter>LG\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\dbSystem\DB\dbSystemDB.h">
+      <Filter>DB\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\dbSystem\DB\msgDbSystemDB.h">
+      <Filter>DB\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\GSLib\dbSystem\DB\chargeTableDBMgr.h">
+      <Filter>DB\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\GSLib\dbSystem\DB\playerDB.h">
+      <Filter>DB\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\GSLib\dbSystem\DB\playerDBMgr.h">
+      <Filter>DB\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\GSLib\dbSystem\DB\tableDataMgr.h">
+      <Filter>DB\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\dbSystem\CN\dbSystemCN.h">
+      <Filter>CN\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\dbSystem\CN\msgDBSystemCN.h">
+      <Filter>CN\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\dbSystem\dbCommonSystem.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\dbSystem\keyIndexTable.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\dbSystem\keyTable.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\dbSystem\msgDBSystem.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\dbSystem\msgDBSystemGC.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\dbSystem\msgNumIDDBSystem.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\dbSystem\GT\dbSystemGT.h">
+      <Filter>GT\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\dbSystem\GT\msgDBSystemGT.h">
+      <Filter>GT\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\dbSystem\GM\dbSystemGM.h">
+      <Filter>GM\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\dbSystem\GM\msgDBSystemGM.h">
+      <Filter>GM\inc</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\GSLib\dbSystem\LG\dbSystemLG.cpp">
+      <Filter>LG\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\dbSystem\DB\chargeTableDBMgr.cpp">
+      <Filter>DB\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\dbSystem\DB\dbSystemDB.cpp">
+      <Filter>DB\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\dbSystem\DB\playerDB.cpp">
+      <Filter>DB\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\dbSystem\DB\playerDBMgr.cpp">
+      <Filter>DB\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\dbSystem\DB\tableDataMgr.cpp">
+      <Filter>DB\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\dbSystem\CN\dbSystemCN.cpp">
+      <Filter>CN\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\dbSystem\dbCommonSystem.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\dbSystem\keyIndexTable.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\dbSystem\keyTable.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\dbSystem\GT\dbSystemGT.cpp">
+      <Filter>GT\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\dbSystem\GM\dbSystemGM.cpp">
+      <Filter>GM\cpp</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

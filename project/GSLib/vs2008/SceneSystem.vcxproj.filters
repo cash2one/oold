@@ -1,0 +1,282 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="CN">
+      <UniqueIdentifier>{ca030911-7364-4b79-8113-f1b84a7e7f75}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CN\inc">
+      <UniqueIdentifier>{6864f9af-f066-400c-a87b-30ac41c686a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CN\cpp">
+      <UniqueIdentifier>{dded5040-b3a2-4622-8863-2c4b59e0a057}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GM">
+      <UniqueIdentifier>{3d3f66c3-fb24-41b0-9622-9f70cf55651b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GM\inc">
+      <UniqueIdentifier>{0bf6be89-e70f-48c3-98e2-886e086dfdfe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GM\inc\arena">
+      <UniqueIdentifier>{b1dd3ddd-a387-48d5-a79d-6f558fb2c9b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GM\inc\instance">
+      <UniqueIdentifier>{6e0709b8-4a40-43b5-9424-58e01ee0957b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GM\inc\script">
+      <UniqueIdentifier>{b78826df-548a-414f-b901-fdf1a64f44b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GM\inc\scene">
+      <UniqueIdentifier>{f054f936-d125-435c-abff-dcd904cb3caf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GM\cpp">
+      <UniqueIdentifier>{e66e44e2-19ec-4514-9bf7-b99e504f5512}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GM\cpp\btree">
+      <UniqueIdentifier>{0c860e60-e776-4b6f-bfe5-6ba2c3289d86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GM\cpp\fsm">
+      <UniqueIdentifier>{18106df4-fc25-4fee-a974-c3f6f6e955f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GM\cpp\arena">
+      <UniqueIdentifier>{91a53129-7fd5-4e11-9265-11759a054fa5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GM\cpp\instance">
+      <UniqueIdentifier>{24243834-eccc-4386-9844-3cfbf16c677c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GM\cpp\script">
+      <UniqueIdentifier>{a1db2148-e4d7-4597-8580-6bc29703932e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GM\cpp\scene">
+      <UniqueIdentifier>{5866b736-e8d9-497b-a013-bc791cf7dc5b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DB">
+      <UniqueIdentifier>{04faf08c-3137-4cda-ba9f-fdf26c447eda}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DB\inc">
+      <UniqueIdentifier>{bd687a17-f4fe-4286-afaf-58da47bac84f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DB\cpp">
+      <UniqueIdentifier>{40a9c14a-6cc4-4c3c-a239-c3a430277a24}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\inc\GSLib\sceneSystem\CN\msgSceneSystemCN.h">
+      <Filter>CN\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\sceneSystem\CN\roleSceneModuleCN.h">
+      <Filter>CN\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\sceneSystem\CN\sceneSystemCN.h">
+      <Filter>CN\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\sceneSystem\GM\msgSceneSystemGM.h">
+      <Filter>GM\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\sceneSystem\GM\roleSceneModule.h">
+      <Filter>GM\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\sceneSystem\GM\sceneAttr.h">
+      <Filter>GM\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\sceneSystem\GM\sceneData.h">
+      <Filter>GM\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\sceneSystem\GM\sceneDefine.h">
+      <Filter>GM\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\sceneSystem\GM\sceneErrorGM.h">
+      <Filter>GM\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\sceneSystem\GM\sceneMgr.h">
+      <Filter>GM\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\sceneSystem\GM\sceneSystemData.h">
+      <Filter>GM\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\sceneSystem\GM\sceneSystemDataMgr.h">
+      <Filter>GM\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\sceneSystem\GM\sceneSystemGM.h">
+      <Filter>GM\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\sceneSystem\GM\arenaPrize.h">
+      <Filter>GM\inc\arena</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\sceneSystem\GM\roleArenaData.h">
+      <Filter>GM\inc\arena</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\sceneSystem\GM\dropItem.h">
+      <Filter>GM\inc\instance</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\sceneSystem\GM\dropItemEntry.h">
+      <Filter>GM\inc\instance</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\sceneSystem\GM\reviveItem.h">
+      <Filter>GM\inc\instance</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\sceneSystem\GM\scenePrize.h">
+      <Filter>GM\inc\instance</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\sceneSystem\GM\sceneGM.h">
+      <Filter>GM\inc\script</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\sceneSystem\GM\sceneGMMgr.h">
+      <Filter>GM\inc\script</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\sceneSystem\GM\sceneScriptEnv.h">
+      <Filter>GM\inc\script</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\sceneSystem\GM\sceneScriptGM.h">
+      <Filter>GM\inc\script</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\sceneSystem\GM\scene.h">
+      <Filter>GM\inc\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\sceneSystem\GM\sceneImpl.h">
+      <Filter>GM\inc\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\sceneSystem\GM\scenePool.h">
+      <Filter>GM\inc\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\GSLib\sceneSystem\GM\btree\sceneGMBTMgr.h">
+      <Filter>GM\cpp\btree</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\GSLib\sceneSystem\GM\fsm\fsmBTCondition.h">
+      <Filter>GM\cpp\fsm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\GSLib\sceneSystem\GM\fsm\fsmBTState.h">
+      <Filter>GM\cpp\fsm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\GSLib\sceneSystem\GM\fsm\fsmScripCondition.h">
+      <Filter>GM\cpp\fsm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\GSLib\sceneSystem\GM\fsm\fsmScripState.h">
+      <Filter>GM\cpp\fsm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\GSLib\sceneSystem\GM\fsm\sceneGMFSM.h">
+      <Filter>GM\cpp\fsm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\GSLib\sceneSystem\GM\fsm\sceneGMFSMMgr.h">
+      <Filter>GM\cpp\fsm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\GSLib\sceneSystem\GM\originalScene.h">
+      <Filter>GM\cpp\script</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\GSLib\sceneSystem\GM\originalSceneMgr.h">
+      <Filter>GM\cpp\script</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\sceneSystem\DB\sceneSystemDB.h">
+      <Filter>DB\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\sceneSystem\DB\tableSceneDB.h">
+      <Filter>DB\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\GSLib\sceneSystem\msgNumIDSceneSystem.h" />
+    <ClInclude Include="..\..\..\inc\GSLib\sceneSystem\msgSceneSystem.h" />
+    <ClInclude Include="..\..\..\inc\GSLib\sceneSystem\msgSceneSystemGC.h" />
+    <ClInclude Include="..\..\..\inc\GSLib\sceneSystem\sceneSystemCommonData.h" />
+    <ClInclude Include="..\..\..\inc\GSLib\sceneSystem\sceneSystemDefine.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\CN\roleSceneModuleCN.cpp">
+      <Filter>CN\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\CN\sceneSystemCN.cpp">
+      <Filter>CN\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\GM\roleSceneModule.cpp">
+      <Filter>GM\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\GM\sceneAttr.cpp">
+      <Filter>GM\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\GM\sceneData.cpp">
+      <Filter>GM\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\GM\sceneMgr.cpp">
+      <Filter>GM\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\GM\sceneSystemData.cpp">
+      <Filter>GM\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\GM\sceneSystemDataMgr.cpp">
+      <Filter>GM\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\GM\sceneSystemGM.cpp">
+      <Filter>GM\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\GM\btree\sceneGMBTMgr.cpp">
+      <Filter>GM\cpp\btree</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\GM\fsm\fsmBTCondition.cpp">
+      <Filter>GM\cpp\fsm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\GM\fsm\fsmBTState.cpp">
+      <Filter>GM\cpp\fsm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\GM\fsm\fsmScripCondition.cpp">
+      <Filter>GM\cpp\fsm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\GM\fsm\fsmScripState.cpp">
+      <Filter>GM\cpp\fsm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\GM\fsm\sceneGMFSM.cpp">
+      <Filter>GM\cpp\fsm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\GM\fsm\sceneGMFSMMgr.cpp">
+      <Filter>GM\cpp\fsm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\GM\arenaPrize.cpp">
+      <Filter>GM\cpp\arena</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\GM\roleArenaData.cpp">
+      <Filter>GM\cpp\arena</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\GM\dropItem.cpp">
+      <Filter>GM\cpp\instance</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\GM\dropItemEntry.cpp">
+      <Filter>GM\cpp\instance</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\GM\reviveItem.cpp">
+      <Filter>GM\cpp\instance</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\GM\scenePrize.cpp">
+      <Filter>GM\cpp\instance</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\GM\originalScene.cpp">
+      <Filter>GM\cpp\script</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\GM\originalSceneMgr.cpp">
+      <Filter>GM\cpp\script</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\GM\sceneGM.cpp">
+      <Filter>GM\cpp\script</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\GM\sceneGMMgr.cpp">
+      <Filter>GM\cpp\script</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\GM\sceneScriptEnv.cpp">
+      <Filter>GM\cpp\script</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\GM\sceneScriptGM.cpp">
+      <Filter>GM\cpp\script</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\GM\scene.cpp">
+      <Filter>GM\cpp\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\GM\sceneImpl.cpp">
+      <Filter>GM\cpp\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\GM\scenePool.cpp">
+      <Filter>GM\cpp\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\DB\sceneSystemDB.cpp">
+      <Filter>DB\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\DB\tableSceneDB.cpp">
+      <Filter>DB\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\GSLib\sceneSystem\sceneSystemCommonData.cpp" />
+  </ItemGroup>
+</Project>

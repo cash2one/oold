@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="cpp">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="cpp\filters">
+      <UniqueIdentifier>{9d6625f5-133e-4062-a9f2-7ce7cdd2db33}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="inc">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="res">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\BSLib\behaviorTree\behaviorTree.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\behaviorTree\behaviorTreeMgr.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\behaviorTree\btDecoratorNode.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\behaviorTree\btLeafNode.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\behaviorTree\btLinkNode.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\behaviorTree\btNode.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\behaviorTree\btParallelNode.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\behaviorTree\btScriptAction.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\behaviorTree\btScriptCondition.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\behaviorTree\btSelectorNode.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\behaviorTree\btSequenceNode.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\behaviorTree\btWeight.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\behaviorTree\btWeightParallelNode.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\behaviorTree\btWeightSelectorNode.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\behaviorTree\btWeightSequenceNode.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\behaviorTree\filters\counterFilter.cpp">
+      <Filter>cpp\filters</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\behaviorTree\filters\loopFilter.cpp">
+      <Filter>cpp\filters</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\behaviorTree\filters\nonFilter.cpp">
+      <Filter>cpp\filters</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\behaviorTree\filters\timerFilter.cpp">
+      <Filter>cpp\filters</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\behaviorTree\filters\untilFailsFilter.cpp">
+      <Filter>cpp\filters</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\behaviorTree\filters\untilFailsLimitedFilter.cpp">
+      <Filter>cpp\filters</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\behaviorTree\filters\untilSuccessFilter.cpp">
+      <Filter>cpp\filters</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\behaviorTree\filters\untilSuccessLimitedFilter.cpp">
+      <Filter>cpp\filters</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\src\BSLib\behaviorTree\btLinkNode.h">
+      <Filter>cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\BSLib\behaviorTree\btParallelNode.h">
+      <Filter>cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\BSLib\behaviorTree\btScriptAction.h">
+      <Filter>cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\BSLib\behaviorTree\btScriptCondition.h">
+      <Filter>cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\BSLib\behaviorTree\btSelectorNode.h">
+      <Filter>cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\BSLib\behaviorTree\btSequenceNode.h">
+      <Filter>cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\BSLib\behaviorTree\btWeight.h">
+      <Filter>cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\BSLib\behaviorTree\btWeightParallelNode.h">
+      <Filter>cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\BSLib\behaviorTree\btWeightSelectorNode.h">
+      <Filter>cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\BSLib\behaviorTree\btWeightSequenceNode.h">
+      <Filter>cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\BSLib\behaviorTree\filters\counterFilter.h">
+      <Filter>cpp\filters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\BSLib\behaviorTree\filters\loopFilter.h">
+      <Filter>cpp\filters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\BSLib\behaviorTree\filters\nonFilter.h">
+      <Filter>cpp\filters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\BSLib\behaviorTree\filters\timerFilter.h">
+      <Filter>cpp\filters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\BSLib\behaviorTree\filters\untilFailsFilter.h">
+      <Filter>cpp\filters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\BSLib\behaviorTree\filters\untilFailsLimitedFilter.h">
+      <Filter>cpp\filters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\BSLib\behaviorTree\filters\untilSuccessFilter.h">
+      <Filter>cpp\filters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\BSLib\behaviorTree\filters\untilSuccessLimitedFilter.h">
+      <Filter>cpp\filters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\behaviorTree\baseDef.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\behaviorTree\behaviorTree.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\behaviorTree\behaviorTreeMgr.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\behaviorTree\btDecoratorNode.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\behaviorTree\btLeafNode.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\behaviorTree\btNode.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

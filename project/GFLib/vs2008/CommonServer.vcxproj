@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{D3D01BF9-5FF0-40A3-9DB6-8D2E5915E44B}</ProjectGuid>
+    <RootNamespace>CommonServer</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.30501.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>..\..\..\lib\GFLib\</OutDir>
+    <IntDir>$(TempOutDir)\GFLibOut\$(Platform)\$(ProjectName)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>..\..\..\lib\GFLib\</OutDir>
+    <IntDir>$(TempOutDir)\GFLibOut\$(Platform)\$(ProjectName)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>..\..\..\lib\GFLib\</OutDir>
+    <IntDir>$(TempOutDir)\GFLibOut\$(Platform)\$(ProjectName)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>..\..\..\lib\GFLib\</OutDir>
+    <IntDir>$(TempOutDir)\GFLibOut\$(Platform)\$(ProjectName)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\..\src\GFLib\commonServer;..\..\..\inc;..\..\..\inc\TDLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader />
+      <ProgramDataBaseFileName>$(OutDir)$(Platform)\$(Configuration)\$(ProjectName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(Platform)\$(Configuration)\$(ProjectName).lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>..\..\..\src\GFLib\commonServer;..\..\..\inc;..\..\..\inc\TDLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader />
+      <ProgramDataBaseFileName>$(OutDir)$(Platform)\$(Configuration)\$(ProjectName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(Platform)\$(Configuration)\$(ProjectName).lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\..\src\GFLib\commonServer;..\..\..\inc;..\..\..\inc\TDLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader />
+      <ProgramDataBaseFileName>$(OutDir)$(Platform)\$(Configuration)\$(ProjectName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(Platform)\$(Configuration)\$(ProjectName).lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>..\..\..\src\GFLib\commonServer;..\..\..\inc;..\..\..\inc\TDLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader />
+      <ProgramDataBaseFileName>$(OutDir)$(Platform)\$(Configuration)\$(ProjectName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(Platform)\$(Configuration)\$(ProjectName).lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\GFLib\commonServer\account.cpp" />
+    <ClCompile Include="..\..\..\src\GFLib\commonServer\accountMgr.cpp" />
+    <ClCompile Include="..\..\..\src\GFLib\commonServer\clientMgr.cpp" />
+    <ClCompile Include="..\..\..\src\GFLib\commonServer\commonClient.cpp" />
+    <ClCompile Include="..\..\..\src\GFLib\commonServer\commonServer.cpp" />
+    <ClCompile Include="..\..\..\src\GFLib\commonServer\commonSystem.cpp" />
+    <ClCompile Include="..\..\..\src\GFLib\commonServer\commonSystemMgr.cpp" />
+    <ClCompile Include="..\..\..\src\GFLib\commonServer\eventMgr.cpp" />
+    <ClCompile Include="..\..\..\src\GFLib\commonServer\serverTypeMgr.cpp" />
+    <ClCompile Include="..\..\..\src\GFLib\commonServer\service.cpp" />
+    <ClCompile Include="..\..\..\src\GFLib\commonServer\serviceMgr.cpp" />
+    <ClCompile Include="..\..\..\src\GFLib\commonServer\stub.cpp" />
+    <ClCompile Include="..\..\..\src\GFLib\commonServer\stubMgr.cpp" />
+    <ClCompile Include="..\..\..\src\GFLib\commonServer\sysChannelMgr.cpp" />
+    <ClCompile Include="..\..\..\src\GFLib\commonServer\uniqueIDMgr.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\inc\GFLib\commonServer\account.h" />
+    <ClInclude Include="..\..\..\inc\GFLib\commonServer\accountMgr.h" />
+    <ClInclude Include="..\..\..\inc\GFLib\commonServer\baseDef.h" />
+    <ClInclude Include="..\..\..\inc\GFLib\commonServer\clientMgr.h" />
+    <ClInclude Include="..\..\..\inc\GFLib\commonServer\commonClient.h" />
+    <ClInclude Include="..\..\..\inc\GFLib\commonServer\commonServer.h" />
+    <ClInclude Include="..\..\..\inc\GFLib\commonServer\commonSystem.h" />
+    <ClInclude Include="..\..\..\inc\GFLib\commonServer\commonSystemMgr.h" />
+    <ClInclude Include="..\..\..\inc\GFLib\commonServer\eventMgr.h" />
+    <ClInclude Include="..\..\..\inc\GFLib\commonServer\message\funcType.h" />
+    <ClInclude Include="..\..\..\inc\GFLib\commonServer\message\message.h" />
+    <ClInclude Include="..\..\..\inc\GFLib\commonServer\message\msgLabel.h" />
+    <ClInclude Include="..\..\..\inc\GFLib\commonServer\message\msgLocalServer.h" />
+    <ClInclude Include="..\..\..\inc\GFLib\commonServer\message\msgServerLink.h" />
+    <ClInclude Include="..\..\..\inc\GFLib\commonServer\message\msgSystemChannel.h" />
+    <ClInclude Include="..\..\..\inc\GFLib\commonServer\serverTypeMgr.h" />
+    <ClInclude Include="..\..\..\inc\GFLib\commonServer\service.h" />
+    <ClInclude Include="..\..\..\inc\GFLib\commonServer\serviceMgr.h" />
+    <ClInclude Include="..\..\..\inc\GFLib\commonServer\stub.h" />
+    <ClInclude Include="..\..\..\inc\GFLib\commonServer\stubMgr.h" />
+    <ClInclude Include="..\..\..\inc\GFLib\commonServer\sysChannelMgr.h" />
+    <ClInclude Include="..\..\..\inc\GFLib\commonServer\tracer.h" />
+    <ClInclude Include="..\..\..\inc\GFLib\commonServer\uniqueIDMgr.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\BSLib\vs2008\Database.vcxproj">
+      <Project>{7e597f7c-e038-4b1a-94d6-f8c0b94d8466}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\BSLib\vs2008\Framework.vcxproj">
+      <Project>{855632c2-e723-4dc3-a779-ce065ef95da6}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\BSLib\vs2008\Network.vcxproj">
+      <Project>{3c80d6d3-334f-4847-8341-0128924acb9f}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\BSLib\vs2008\UDM.vcxproj">
+      <Project>{44acf645-a664-4b67-8019-7cae3ab4d80a}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\BSLib\vs2008\Utility.vcxproj">
+      <Project>{86723aea-cb85-4847-b91f-5d308fb19352}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{B5DA53AC-71A2-425D-9CC6-7990BEF23170}</ProjectGuid>
+    <RootNamespace>CommonServer</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.30501.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>..\..\..\lib\GSLib\</OutDir>
+    <IntDir>$(TempOutDir)\GSLibOut\$(Platform)\$(ProjectName)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>..\..\..\lib\GSLib\</OutDir>
+    <IntDir>$(TempOutDir)\GSLibOut\$(Platform)\$(ProjectName)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>..\..\..\lib\GSLib\</OutDir>
+    <IntDir>$(TempOutDir)\GSLibOut\$(Platform)\$(ProjectName)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>..\..\..\lib\GSLib\</OutDir>
+    <IntDir>$(TempOutDir)\GSLibOut\$(Platform)\$(ProjectName)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\..\src\GSLib\loginSystem;..\..\..\inc;..\..\..\inc\TDLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;$(GSLibMyTest);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader />
+      <ProgramDataBaseFileName>$(OutDir)$(Platform)\$(Configuration)\$(ProjectName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(Platform)\$(Configuration)\$(ProjectName).lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\..\src\GSLib\loginSystem;..\..\..\inc;..\..\..\inc\TDLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;$(GSLibMyTest);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader />
+      <ProgramDataBaseFileName>$(OutDir)$(Platform)\$(Configuration)\$(ProjectName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(Platform)\$(Configuration)\$(ProjectName).lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>..\..\..\src\GSLib\loginSystem;..\..\..\inc;..\..\..\inc\TDLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader />
+      <ProgramDataBaseFileName>$(OutDir)$(Platform)\$(Configuration)\$(ProjectName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(Platform)\$(Configuration)\$(ProjectName).lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>..\..\..\src\GSLib\loginSystem;..\..\..\inc;..\..\..\inc\TDLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader />
+      <ProgramDataBaseFileName>$(OutDir)$(Platform)\$(Configuration)\$(ProjectName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(Platform)\$(Configuration)\$(ProjectName).lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\inc\GSLib\loginSystem\CN\loginSystemCN.h" />
+    <ClInclude Include="..\..\..\inc\GSLib\loginSystem\CN\msgLoginSystemCN.h" />
+    <ClInclude Include="..\..\..\inc\GSLib\loginSystem\CN\netPlayerCN.h" />
+    <ClInclude Include="..\..\..\inc\GSLib\loginSystem\CN\netPlayerCNMgr.h" />
+    <ClInclude Include="..\..\..\inc\GSLib\loginSystem\DB\loginSystemDB.h" />
+    <ClInclude Include="..\..\..\inc\GSLib\loginSystem\DB\msgLoginSystemDB.h" />
+    <ClInclude Include="..\..\..\inc\GSLib\loginSystem\DB\netPlayerDB.h" />
+    <ClInclude Include="..\..\..\inc\GSLib\loginSystem\DB\netPlayerDBMgr.h" />
+    <ClInclude Include="..\..\..\inc\GSLib\loginSystem\GM\loginSystemGM.h" />
+    <ClInclude Include="..\..\..\inc\GSLib\loginSystem\GM\msgLoginSystemGM.h" />
+    <ClInclude Include="..\..\..\inc\GSLib\loginSystem\GM\netPlayerGM.h" />
+    <ClInclude Include="..\..\..\inc\GSLib\loginSystem\GM\netPlayerGMMgr.h" />
+    <ClInclude Include="..\..\..\inc\GSLib\loginSystem\GT\loginSystemGT.h" />
+    <ClInclude Include="..\..\..\inc\GSLib\loginSystem\GT\msgLoginSystemGT.h" />
+    <ClInclude Include="..\..\..\inc\GSLib\loginSystem\GT\netPlayerGT.h" />
+    <ClInclude Include="..\..\..\inc\GSLib\loginSystem\GT\netPlayerGTMgr.h" />
+    <ClInclude Include="..\..\..\inc\GSLib\loginSystem\LG\loginSystemLG.h" />
+    <ClInclude Include="..\..\..\inc\GSLib\loginSystem\LG\msgLoginSystemLG.h" />
+    <ClInclude Include="..\..\..\inc\GSLib\loginSystem\msgLoginSystem.h" />
+    <ClInclude Include="..\..\..\inc\GSLib\loginSystem\msgLoginSystemAC.h" />
+    <ClInclude Include="..\..\..\inc\GSLib\loginSystem\msgLoginSystemGC.h" />
+    <ClInclude Include="..\..\..\inc\GSLib\loginSystem\msgNumIDLoginSystem.h" />
+    <ClInclude Include="..\..\..\inc\GSLib\loginSystem\netPlayer.h" />
+    <ClInclude Include="..\..\..\inc\GSLib\loginSystem\SP\loginSystemSP.h" />
+    <ClInclude Include="..\..\..\inc\GSLib\loginSystem\SP\msgLoginSystemSP.h" />
+    <ClInclude Include="..\..\..\src\GSLib\loginSystem\CN\accountLoginCNInforMgr.h" />
+    <ClInclude Include="..\..\..\src\GSLib\loginSystem\CN\gameInforMgr.h" />
+    <ClInclude Include="..\..\..\src\GSLib\loginSystem\CN\gateInforMgr.h" />
+    <ClInclude Include="..\..\..\src\GSLib\loginSystem\DB\accountLoginDBInforMgr.h" />
+    <ClInclude Include="..\..\..\src\GSLib\loginSystem\GM\accountLoginGMInforMgr.h" />
+    <ClInclude Include="..\..\..\src\GSLib\loginSystem\GT\accountLoginGTInforMgr.h" />
+    <ClInclude Include="..\..\..\src\GSLib\loginSystem\LG\accountLoginLGInforMgr.h" />
+    <ClInclude Include="..\..\..\src\GSLib\loginSystem\LG\zoneInforMgr.h" />
+    <ClInclude Include="..\..\..\src\GSLib\loginSystem\SP\accountTokenInforMgr.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\GSLib\loginSystem\CN\accountLoginCNInforMgr.cpp" />
+    <ClCompile Include="..\..\..\src\GSLib\loginSystem\CN\gameInforMgr.cpp" />
+    <ClCompile Include="..\..\..\src\GSLib\loginSystem\CN\gateInforMgr.cpp" />
+    <ClCompile Include="..\..\..\src\GSLib\loginSystem\CN\loginSystemCN.cpp" />
+    <ClCompile Include="..\..\..\src\GSLib\loginSystem\CN\netPlayerCN.cpp" />
+    <ClCompile Include="..\..\..\src\GSLib\loginSystem\CN\netPlayerCNMgr.cpp" />
+    <ClCompile Include="..\..\..\src\GSLib\loginSystem\DB\accountLoginDBInforMgr.cpp" />
+    <ClCompile Include="..\..\..\src\GSLib\loginSystem\DB\loginSystemDB.cpp" />
+    <ClCompile Include="..\..\..\src\GSLib\loginSystem\DB\netPlayerDB.cpp" />
+    <ClCompile Include="..\..\..\src\GSLib\loginSystem\DB\netPlayerDBMgr.cpp" />
+    <ClCompile Include="..\..\..\src\GSLib\loginSystem\GM\accountLoginGMInforMgr.cpp" />
+    <ClCompile Include="..\..\..\src\GSLib\loginSystem\GM\loginSystemGM.cpp" />
+    <ClCompile Include="..\..\..\src\GSLib\loginSystem\GM\netPlayerGM.cpp" />
+    <ClCompile Include="..\..\..\src\GSLib\loginSystem\GM\netPlayerGMMgr.cpp" />
+    <ClCompile Include="..\..\..\src\GSLib\loginSystem\GT\accountLoginGTInforMgr.cpp" />
+    <ClCompile Include="..\..\..\src\GSLib\loginSystem\GT\loginSystemGT.cpp" />
+    <ClCompile Include="..\..\..\src\GSLib\loginSystem\GT\netPlayerGT.cpp" />
+    <ClCompile Include="..\..\..\src\GSLib\loginSystem\GT\netPlayerGTMgr.cpp" />
+    <ClCompile Include="..\..\..\src\GSLib\loginSystem\LG\accountLoginLGInforMgr.cpp" />
+    <ClCompile Include="..\..\..\src\GSLib\loginSystem\LG\loginSystemLG.cpp" />
+    <ClCompile Include="..\..\..\src\GSLib\loginSystem\LG\zoneInforMgr.cpp" />
+    <ClCompile Include="..\..\..\src\GSLib\loginSystem\netPlayer.cpp" />
+    <ClCompile Include="..\..\..\src\GSLib\loginSystem\SP\accountTokenInforMgr.cpp" />
+    <ClCompile Include="..\..\..\src\GSLib\loginSystem\SP\loginSystemSP.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

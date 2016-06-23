@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{E0678B2F-8F7F-4AB3-88DC-671C72B66AA9}</ProjectGuid>
+    <RootNamespace>Framework</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.30501.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>..\..\..\lib\BSLib\</OutDir>
+    <IntDir>$(TempOutDir)\BSLibOut\$(Platform)\$(ProjectName)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>..\..\..\lib\BSLib\</OutDir>
+    <IntDir>$(TempOutDir)\BSLibOut\$(Platform)\$(ProjectName)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>..\..\..\lib\BSLib\</OutDir>
+    <IntDir>$(TempOutDir)\BSLibOut\$(Platform)\$(ProjectName)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>..\..\..\lib\BSLib\</OutDir>
+    <IntDir>$(TempOutDir)\BSLibOut\$(Platform)\$(ProjectName)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\..\src\BSLib\behaviorTree;..\..\..\inc;..\..\..\inc\TDLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader />
+      <ProgramDataBaseFileName>$(OutDir)$(Platform)\$(Configuration)\$(ProjectName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(Platform)\$(Configuration)\$(ProjectName).lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>..\..\..\src\BSLib\behaviorTree;..\..\..\inc;..\..\..\inc\TDLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader />
+      <ProgramDataBaseFileName>$(OutDir)$(Platform)\$(Configuration)\$(ProjectName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(Platform)\$(Configuration)\$(ProjectName).lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\..\src\BSLib\behaviorTree;..\..\..\inc;..\..\..\inc\TDLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader />
+      <ProgramDataBaseFileName>$(OutDir)$(Platform)\$(Configuration)\$(ProjectName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(Platform)\$(Configuration)\$(ProjectName).lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>..\..\..\src\BSLib\behaviorTree;..\..\..\inc;..\..\..\inc\TDLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader />
+      <ProgramDataBaseFileName>$(OutDir)$(Platform)\$(Configuration)\$(ProjectName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(Platform)\$(Configuration)\$(ProjectName).lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\BSLib\behaviorTree\behaviorTree.cpp" />
+    <ClCompile Include="..\..\..\src\BSLib\behaviorTree\behaviorTreeMgr.cpp" />
+    <ClCompile Include="..\..\..\src\BSLib\behaviorTree\btDecoratorNode.cpp" />
+    <ClCompile Include="..\..\..\src\BSLib\behaviorTree\btLeafNode.cpp" />
+    <ClCompile Include="..\..\..\src\BSLib\behaviorTree\btLinkNode.cpp" />
+    <ClCompile Include="..\..\..\src\BSLib\behaviorTree\btNode.cpp" />
+    <ClCompile Include="..\..\..\src\BSLib\behaviorTree\btParallelNode.cpp" />
+    <ClCompile Include="..\..\..\src\BSLib\behaviorTree\btScriptAction.cpp" />
+    <ClCompile Include="..\..\..\src\BSLib\behaviorTree\btScriptCondition.cpp" />
+    <ClCompile Include="..\..\..\src\BSLib\behaviorTree\btSelectorNode.cpp" />
+    <ClCompile Include="..\..\..\src\BSLib\behaviorTree\btSequenceNode.cpp" />
+    <ClCompile Include="..\..\..\src\BSLib\behaviorTree\btWeight.cpp" />
+    <ClCompile Include="..\..\..\src\BSLib\behaviorTree\btWeightParallelNode.cpp" />
+    <ClCompile Include="..\..\..\src\BSLib\behaviorTree\btWeightSelectorNode.cpp" />
+    <ClCompile Include="..\..\..\src\BSLib\behaviorTree\btWeightSequenceNode.cpp" />
+    <ClCompile Include="..\..\..\src\BSLib\behaviorTree\filters\counterFilter.cpp" />
+    <ClCompile Include="..\..\..\src\BSLib\behaviorTree\filters\loopFilter.cpp" />
+    <ClCompile Include="..\..\..\src\BSLib\behaviorTree\filters\nonFilter.cpp" />
+    <ClCompile Include="..\..\..\src\BSLib\behaviorTree\filters\timerFilter.cpp" />
+    <ClCompile Include="..\..\..\src\BSLib\behaviorTree\filters\untilFailsFilter.cpp" />
+    <ClCompile Include="..\..\..\src\BSLib\behaviorTree\filters\untilFailsLimitedFilter.cpp" />
+    <ClCompile Include="..\..\..\src\BSLib\behaviorTree\filters\untilSuccessFilter.cpp" />
+    <ClCompile Include="..\..\..\src\BSLib\behaviorTree\filters\untilSuccessLimitedFilter.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\inc\BSLib\behaviorTree\baseDef.h" />
+    <ClInclude Include="..\..\..\inc\BSLib\behaviorTree\behaviorTree.h" />
+    <ClInclude Include="..\..\..\inc\BSLib\behaviorTree\behaviorTreeMgr.h" />
+    <ClInclude Include="..\..\..\inc\BSLib\behaviorTree\btDecoratorNode.h" />
+    <ClInclude Include="..\..\..\inc\BSLib\behaviorTree\btLeafNode.h" />
+    <ClInclude Include="..\..\..\inc\BSLib\behaviorTree\btNode.h" />
+    <ClInclude Include="..\..\..\src\BSLib\behaviorTree\btLinkNode.h" />
+    <ClInclude Include="..\..\..\src\BSLib\behaviorTree\btParallelNode.h" />
+    <ClInclude Include="..\..\..\src\BSLib\behaviorTree\btScriptAction.h" />
+    <ClInclude Include="..\..\..\src\BSLib\behaviorTree\btScriptCondition.h" />
+    <ClInclude Include="..\..\..\src\BSLib\behaviorTree\btSelectorNode.h" />
+    <ClInclude Include="..\..\..\src\BSLib\behaviorTree\btSequenceNode.h" />
+    <ClInclude Include="..\..\..\src\BSLib\behaviorTree\btWeight.h" />
+    <ClInclude Include="..\..\..\src\BSLib\behaviorTree\btWeightParallelNode.h" />
+    <ClInclude Include="..\..\..\src\BSLib\behaviorTree\btWeightSelectorNode.h" />
+    <ClInclude Include="..\..\..\src\BSLib\behaviorTree\btWeightSequenceNode.h" />
+    <ClInclude Include="..\..\..\src\BSLib\behaviorTree\filters\counterFilter.h" />
+    <ClInclude Include="..\..\..\src\BSLib\behaviorTree\filters\loopFilter.h" />
+    <ClInclude Include="..\..\..\src\BSLib\behaviorTree\filters\nonFilter.h" />
+    <ClInclude Include="..\..\..\src\BSLib\behaviorTree\filters\timerFilter.h" />
+    <ClInclude Include="..\..\..\src\BSLib\behaviorTree\filters\untilFailsFilter.h" />
+    <ClInclude Include="..\..\..\src\BSLib\behaviorTree\filters\untilFailsLimitedFilter.h" />
+    <ClInclude Include="..\..\..\src\BSLib\behaviorTree\filters\untilSuccessFilter.h" />
+    <ClInclude Include="..\..\..\src\BSLib\behaviorTree\filters\untilSuccessLimitedFilter.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
