@@ -50,7 +50,7 @@ void CMainCommand::init(bool a_needInput)
 	m_cmdExecMgr.addCmdExecPtr("list", &CMainCommand::_onCmdList, this);
 	m_cmdExecMgr.addCmdExecPtr("help", &CMainCommand::_onCmdHelp, this);
 	m_cmdExecMgr.addCmdExecPtr("use", &CMainCommand::_onCmdUse, this);
-	//m_cmdExecMgr.addCmdExecPtr("send", &CMainCommand::_onCmdUse, this);
+	m_cmdExecMgr.addCmdExecPtr("send", &CMainCommand::_onCmdUse, this);
 
 	if (m_needInput) {
 		m_isRunning = true;
@@ -337,17 +337,17 @@ int CMainCommand::_onCmdUse(BSLib::Utility::CProperties& a_properties, void* a_p
 		printf("\n\r获取参数失败");
 		return 1;
 	}
-	SChannelInfo* channelInfor = CChannelMgr::singleton().getChannelInfo(serverName);
-	if (channelInfor == NULL) {
+	SChannelInfo* channelInfo = CChannelMgr::singleton().getChannelInfo(serverName);
+	if (channelInfo == NULL) {
 		printf("\n\r通道[%s]不存在", serverName);
 		return 1;
 	}
 
-	m_cmdShow = channelInfor->m_serverName;
+	m_cmdShow = channelInfo->m_serverName;
 
 //	printf("\n%s>", m_cmdShow.c_str());
 
-	m_localNumber = channelInfor->m_channelID.getLocalNumber();
+	m_localNumber = channelInfo->m_channelID.getLocalNumber();
 
 	return 1;
 }
@@ -358,12 +358,12 @@ bool CMainCommand::notifyCommandToServer(const std::string& a_command)
 		printf("\n\r当前通道无效");
 		return false;
 	}
-	SChannelInfo* channelInfor = CChannelMgr::singleton().getChannelInfo(m_localNumber);
-	if (channelInfor == NULL) {
+	SChannelInfo* channelInfo = CChannelMgr::singleton().getChannelInfo(m_localNumber);
+	if (channelInfo == NULL) {
 		printf("\n\r通道[%d]不存在", m_localNumber);
 		return false;
 	}
 	GFLib::SMsgSysChannelLC2LCNtfCommand ntfCommand;
 	ntfCommand.setCommand(a_command);
-	return CChannelMgr::singleton().sendMsg(channelInfor->m_channelID, &ntfCommand, sizeof(ntfCommand));
+	return CChannelMgr::singleton().sendMsg(channelInfo->m_channelID, &ntfCommand, sizeof(ntfCommand));
 }
