@@ -321,7 +321,7 @@ int CMainCommand::_onCmdStop(BSLib::Utility::CProperties& a_properties, void* a_
 
 int CMainCommand::_onCmdList(BSLib::Utility::CProperties& a_properties, void* a_para)
 {
-	CChannelMgr::singleton().showAllChannelInfor();
+	CChannelMgr::singleton().showAllChannelInfo();
 	return 1;
 }
 
@@ -337,7 +337,7 @@ int CMainCommand::_onCmdUse(BSLib::Utility::CProperties& a_properties, void* a_p
 		printf("\n\r获取参数失败");
 		return 1;
 	}
-	SChannelInfor* channelInfor = CChannelMgr::singleton().getChannelInfor(serverName);
+	SChannelInfo* channelInfor = CChannelMgr::singleton().getChannelInfo(serverName);
 	if (channelInfor == NULL) {
 		printf("\n\r通道[%s]不存在", serverName);
 		return 1;
@@ -358,7 +358,7 @@ bool CMainCommand::notifyCommandToServer(const std::string& a_command)
 		printf("\n\r当前通道无效");
 		return false;
 	}
-	SChannelInfor* channelInfor = CChannelMgr::singleton().getChannelInfor(m_localNumber);
+	SChannelInfo* channelInfor = CChannelMgr::singleton().getChannelInfo(m_localNumber);
 	if (channelInfor == NULL) {
 		printf("\n\r通道[%d]不存在", m_localNumber);
 		return false;

@@ -30,8 +30,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{70407C
 		..\inc\GSLib\uniqueIDType.h = ..\inc\GSLib\uniqueIDType.h
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{BE5E6E73-F238-4334-ACE2-70B5D486949C}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Server", "Server\vs2008\Server.vcxproj", "{C636E48F-B5CD-4F13-9884-5D26377241A8}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LoginServer", "Server\vs2008\LoginServer.vcxproj", "{C920A94A-19B1-4ED6-A5CE-B9503988CB35}"

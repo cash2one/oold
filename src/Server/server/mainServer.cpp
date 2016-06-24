@@ -29,7 +29,7 @@ bool CMainServer::_init()
 {
 	BSLib::Utility::CStringA command = BSLib::Framework::CSysConfig::singleton().getValueStr("c");
 	if (command.empty()) {
-		g_fileTracer.setOutConsole(true, "infor");
+		g_fileTracer.setOutConsole(true, "info");
 		
 		CMainCommand::singleton().init(true);
 		

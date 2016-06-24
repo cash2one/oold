@@ -6,7 +6,7 @@
 #include <BSLib/framework/message/msgExecMgr.h>
 #include <GFLib/commonServer/message/msgSystemChannel.h>
 
-struct SChannelInfor
+struct SChannelInfo
 {
 	BSLib::Framework::CChannelID m_channelID;
 	GFLib::SServerID m_serverID;
@@ -26,9 +26,9 @@ public:
 	void stopAll();
 	void stop(BSLib::uint8 a_localNumber);
 
-	SChannelInfor* getChannelInfor(const std::string& a_serverName);
-	SChannelInfor* getChannelInfor(BSLib::uint8 a_localNumber);
-	void showAllChannelInfor();
+	SChannelInfo* getChannelInfo(const std::string& a_serverName);
+	SChannelInfo* getChannelInfo(BSLib::uint8 a_localNumber);
+	void showAllChannelInfo();
 
 protected:
 	virtual void _initChannel();
@@ -38,10 +38,10 @@ protected:
 
 private:
 	void _final();
-	void _onSysChannelLC2LCResServerInfor(BSLib::Framework::SMsgLabel* msgLabel,BSLib::Framework:: SMessage* msg);
+	void _onSysChannelLC2LCResServerInfo(BSLib::Framework::SMsgLabel* msgLabel,BSLib::Framework:: SMessage* msg);
 
 private:
-	std::vector<SChannelInfor*> m_localServerInfor;
+	std::vector<SChannelInfo*> m_localServerInfo;
 	BSLib::Framework::CMsgExecMgr m_msgExecMgr;
 };
 
