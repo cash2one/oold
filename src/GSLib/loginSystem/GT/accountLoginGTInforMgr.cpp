@@ -247,7 +247,7 @@ void CAccountLoginGTInforMgr::checCN2GTAckAccountLogin(CMsgLoginSystemCN2GTAckAc
 	}
 	infor->m_state = EACCNTSTT_GT_OK;
 	stubPtr->sendMsg(ackAccountLoginGT);
-	BSLIB_LOG_INFOR(GSLib::ETT_GSLIB_LOGINSYSTEM, "[AccountLogin][AccountName=%s][AccountID=%lld][ZoneID=%d]", 
+	BSLIB_LOG_INFO(GSLib::ETT_GSLIB_LOGINSYSTEM, "[AccountLogin][AccountName=%s][AccountID=%lld][ZoneID=%d]", 
 		infor->m_accountName.c_str(), infor->getAccountKey().getAccountID(), infor->m_accountKey.getZoneID());
 
 }

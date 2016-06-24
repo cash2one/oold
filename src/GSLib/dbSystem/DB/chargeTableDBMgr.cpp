@@ -86,7 +86,7 @@ bool CChargeTableDBMgr::getRoleChargeList(const SRoleKey& a_roleKey, std::vector
 		chargeList.m_money = money;
 		a_chargeList.push_back(chargeList);
 
-		BSLIB_LOG_INFOR(ETT_GSLIB_DBSYSTEM, "[charge_read]%s[chargeid=%lld][type=%d][money=%d]", a_roleKey.toLogString().c_str(), chargeID, type, money);
+		BSLIB_LOG_INFO(ETT_GSLIB_DBSYSTEM, "[charge_read]%s[chargeid=%lld][type=%d][money=%d]", a_roleKey.toLogString().c_str(), chargeID, type, money);
 	}
 
 	BSLib::Utility::CDateTime dataTime = BSLib::Utility::CDateTime::getCurrentTime();
@@ -103,7 +103,7 @@ bool CChargeTableDBMgr::getRoleChargeList(const SRoleKey& a_roleKey, std::vector
 		if (!m_dbConnectionLocal.executeQuery(sql)) {
 			return false;
 		}
-		BSLIB_LOG_INFOR(ETT_GSLIB_DBSYSTEM, "[charge_read_set]%s[chargeid=%lld][type=%d][money=%d]", a_roleKey.toLogString().c_str(), a_chargeList[i].m_chargeID, a_chargeList[i].m_type, a_chargeList[i].m_money);
+		BSLIB_LOG_INFO(ETT_GSLIB_DBSYSTEM, "[charge_read_set]%s[chargeid=%lld][type=%d][money=%d]", a_roleKey.toLogString().c_str(), a_chargeList[i].m_chargeID, a_chargeList[i].m_type, a_chargeList[i].m_money);
 	}
 
 	return true;

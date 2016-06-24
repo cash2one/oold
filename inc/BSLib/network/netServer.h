@@ -13,14 +13,14 @@ namespace Network
 
 class CNetStubPool;
 
-struct SNetStubsInfor
+struct SNetStubsInfo
 {
 	BSLib::uint32 m_connectTotal;	//链接总次数
 	BSLib::uint32 m_stubCount;		//链接数
 	BSLib::uint32 m_stubVerifyCount;//正在验证的链接数
 	BSLib::uint32 m_stubOkayCount;	//验证成功的链接数
 
-	SNetStubsInfor()
+	SNetStubsInfo()
 	{
 		m_connectTotal = 0;
 		m_stubCount = 0;
@@ -29,7 +29,7 @@ struct SNetStubsInfor
 	}
 };
 
-struct SNetFlowInfor
+struct SNetFlowInfo
 {
 	BSLib::uint64 m_recvBytesCount;		//总接受字节数量
 	BSLib::uint64 m_sendBytesCount;		//总发送字节数量	
@@ -39,7 +39,7 @@ struct SNetFlowInfor
 	BSLib::uint32 m_recvBytesPerStubMax;	//最大每秒接受字节数量
 	BSLib::uint32 m_sendBytesPerStubMax;	//最大每秒发送字节数量
 
-	SNetFlowInfor()
+	SNetFlowInfo()
 	{
 		m_recvBytesCount = 0;
 		m_sendBytesCount = 0;
@@ -50,10 +50,10 @@ struct SNetFlowInfor
 	}
 };
 
-struct SNetInfor
+struct SNetInfo
 {
-	SNetStubsInfor m_tcpStubsInfor;
-	SNetFlowInfor m_tcpFlowInfor;
+	SNetStubsInfo m_tcpStubsInfor;
+	SNetFlowInfo m_tcpFlowInfor;
 };
 
 class  BSLIB_NETWORK_API CNetServer
@@ -64,7 +64,7 @@ public:
 
 	CNetStubMgr* getNetStubMgr() { return m_netStubMgr; }
 
-	void getNetInfor(SNetInfor& a_netInfor, BSLib::Utility::CRealTime& realTimer);
+	void getNetInfo(SNetInfo& a_netInfo, BSLib::Utility::CRealTime& realTimer);
 
 protected:
 	bool _addTcpAccpetor(CSockAddr& acceptorAddr, void* tempData = NULL);

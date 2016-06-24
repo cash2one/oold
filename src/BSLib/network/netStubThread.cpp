@@ -33,7 +33,7 @@ void CNetStubThread::start()
 	BSLib::Utility::CThread::start();
 }
 
-void CNetStubThread::getFlowInfor(SNetFlowInfor& a_infor, BSLib::Utility::CRealTime& a_realTimer)
+void CNetStubThread::getFlowInfo(SNetFlowInfo& a_infor, BSLib::Utility::CRealTime& a_realTimer)
 {
 	a_infor.m_recvBytesCount = m_recvBytesCount;
 	a_infor.m_sendBytesCount = m_sendBytesCount;
@@ -298,7 +298,7 @@ void CNetStubThread::_updateNetBytesInfor(BSLib::Utility::CRealTime& a_realTimer
 			continue;
 		}
 		SNetStubNetInfor netStubNetInfor;
-		netStubCbPtr->getNetInfor(a_realTimer, netStubNetInfor);
+		netStubCbPtr->getNetInfo(a_realTimer, netStubNetInfor);
 
 		m_recvBytesCount += netStubNetInfor.m_recvBytesCount ;
 		m_sendBytesCount += netStubNetInfor.m_sendBytesCount ;
@@ -317,7 +317,7 @@ void CNetStubThread::_updateNetBytesInfor(BSLib::Utility::CRealTime& a_realTimer
 			continue;
 		}
 		SNetStubNetInfor netStubNetInfor;
-		netStubCbPtr->getNetInfor(a_realTimer, netStubNetInfor);
+		netStubCbPtr->getNetInfo(a_realTimer, netStubNetInfor);
 
 		m_recvBytesCount += netStubNetInfor.m_recvBytesCount ;
 		m_sendBytesCount += netStubNetInfor.m_sendBytesCount ;
@@ -336,7 +336,7 @@ void CNetStubThread::_updateNetBytesInfor(BSLib::Utility::CRealTime& a_realTimer
 			continue;
 		}
 		SNetStubNetInfor netStubNetInfor;
-		netStubCbPtr->getNetInfor(a_realTimer, netStubNetInfor);
+		netStubCbPtr->getNetInfo(a_realTimer, netStubNetInfor);
 
 		m_recvBytesCount += netStubNetInfor.m_recvBytesCount ;
 		m_sendBytesCount += netStubNetInfor.m_sendBytesCount ;
@@ -355,7 +355,7 @@ void CNetStubThread::_updateNetBytesInfor(BSLib::Utility::CRealTime& a_realTimer
 			continue;
 		}
 		SNetStubNetInfor netStubNetInfor;
-		netStubCbPtr->getNetInfor(a_realTimer, netStubNetInfor);
+		netStubCbPtr->getNetInfo(a_realTimer, netStubNetInfor);
 
 		m_recvBytesCount += netStubNetInfor.m_recvBytesCount ;
 		m_sendBytesCount += netStubNetInfor.m_sendBytesCount ;
@@ -374,7 +374,7 @@ void CNetStubThread::_updateNetBytesInfor(BSLib::Utility::CRealTime& a_realTimer
 			continue;
 		}
 		SNetStubNetInfor netStubNetInfor;
-		netStubCbPtr->getNetInfor(a_realTimer, netStubNetInfor);
+		netStubCbPtr->getNetInfo(a_realTimer, netStubNetInfor);
 
 		m_recvBytesCount += netStubNetInfor.m_recvBytesCount ;
 		m_sendBytesCount += netStubNetInfor.m_sendBytesCount ;

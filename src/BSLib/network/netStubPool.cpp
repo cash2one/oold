@@ -91,7 +91,7 @@ uint32 CNetStubPool::getStubCount()
 	return count;
 }
 
-void CNetStubPool::getStubsInfor(SNetStubsInfor& a_infor)
+void CNetStubPool::getStubsInfo(SNetStubsInfo& a_infor)
 {
 	a_infor.m_stubCount = 0;
 	a_infor.m_stubOkayCount = 0;
@@ -107,7 +107,7 @@ void CNetStubPool::getStubsInfor(SNetStubsInfor& a_infor)
 	}
 }
 
-void CNetStubPool::getFlowInfor(SNetFlowInfor& a_infor, BSLib::Utility::CRealTime& realTimer)
+void CNetStubPool::getFlowInfo(SNetFlowInfo& a_infor, BSLib::Utility::CRealTime& realTimer)
 {
 	a_infor.m_recvBytesCount = 0;
 	a_infor.m_sendBytesCount = 0;
@@ -120,8 +120,8 @@ void CNetStubPool::getFlowInfor(SNetFlowInfor& a_infor, BSLib::Utility::CRealTim
 		BSLib::Utility::CThreadPtr& netThreadPtr = m_threadArray[i];
 		CNetStubThread* netStubThread = (CNetStubThread*)netThreadPtr;
 		if (netStubThread != NULL) {
-			SNetFlowInfor infor;
-			netStubThread->getFlowInfor(infor, realTimer);
+			SNetFlowInfo infor;
+			netStubThread->getFlowInfo(infor, realTimer);
 			a_infor.m_recvBytesCount += infor.m_recvBytesCount;
 			a_infor.m_sendBytesCount += infor.m_sendBytesCount;
 			if (a_infor.m_recvBytesPerStubMax < infor.m_recvBytesPerStubMax) {

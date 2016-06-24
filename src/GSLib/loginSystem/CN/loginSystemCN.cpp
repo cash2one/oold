@@ -215,7 +215,7 @@ void CLoginSystemCN::_onMsgLoginSystemLG2CNReqAccountLogin(BSLib::Framework::SMs
 				return;
 			}
 
-			BSLIB_LOG_INFOR(ETT_GSLIB_LOGINSYSTEM, "注册网关[AccountName=%s][GateServerID=%s]", reqAccountLogin->m_accountName.c_str(), gateServerID.toString().c_str());
+			BSLIB_LOG_INFO(ETT_GSLIB_LOGINSYSTEM, "注册网关[AccountName=%s][GateServerID=%s]", reqAccountLogin->m_accountName.c_str(), gateServerID.toString().c_str());
 		}
 		break;
 	case EACCNTSTT_CN_ACCOUNT_FINAL:	//锁定账号，账号正在退出
@@ -230,7 +230,7 @@ void CLoginSystemCN::_onMsgLoginSystemLG2CNReqAccountLogin(BSLib::Framework::SMs
 
 	case EACCNTSTT_CN_WAIT_CLIENT:// 等待账号登陆
 		{
-			BSLIB_LOG_INFOR(ETT_GSLIB_LOGINSYSTEM, "踢下原登陆账号[AccountName=%s]", reqAccountLogin->m_accountName.c_str());
+			BSLIB_LOG_INFO(ETT_GSLIB_LOGINSYSTEM, "踢下原登陆账号[AccountName=%s]", reqAccountLogin->m_accountName.c_str());
 
 			if (!CAccountLoginCNInforMgr::singleton().registerLG2CNReqAccountLogin(sessionID, netMsgLable->m_serverIDFrome, gateServerID, *reqAccountLogin, EACCNTSTT_CN_WAIT_GATE)) {
 				ackAccountLogin.m_state = ELOGINRESULT_SERVER_ERROR;
@@ -240,12 +240,12 @@ void CLoginSystemCN::_onMsgLoginSystemLG2CNReqAccountLogin(BSLib::Framework::SMs
 				return;
 			}
 
-			BSLIB_LOG_INFOR(ETT_GSLIB_LOGINSYSTEM, "注册网关[AccountName=%s][GateServerID=%s]", reqAccountLogin->m_accountName.c_str(), gateServerID.toString().c_str());
+			BSLIB_LOG_INFO(ETT_GSLIB_LOGINSYSTEM, "注册网关[AccountName=%s][GateServerID=%s]", reqAccountLogin->m_accountName.c_str(), gateServerID.toString().c_str());
 		}
 		break;
 	case EACCNTSTT_CN_OK:// 账号在线
 		{
-			BSLIB_LOG_INFOR(ETT_GSLIB_LOGINSYSTEM, "要求踢下在线账号[AccountName=%s]", reqAccountLogin->m_accountName.c_str());
+			BSLIB_LOG_INFO(ETT_GSLIB_LOGINSYSTEM, "要求踢下在线账号[AccountName=%s]", reqAccountLogin->m_accountName.c_str());
 
 			if (!CAccountLoginCNInforMgr::singleton().registerLG2CNReqAccountLogin(sessionID, netMsgLable->m_serverIDFrome, gateServerID, *reqAccountLogin, EACCNTSTT_CN_KICK_ACCOUNT)) {
 				ackAccountLogin.m_state = ELOGINRESULT_SERVER_ERROR;
@@ -255,13 +255,13 @@ void CLoginSystemCN::_onMsgLoginSystemLG2CNReqAccountLogin(BSLib::Framework::SMs
 				return;
 			}
 
-			BSLIB_LOG_INFOR(ETT_GSLIB_LOGINSYSTEM, "玩家上线操作[AccountName=%s][GateServerID=%s]", reqAccountLogin->m_accountName.c_str(), gateServerID.toString().c_str());
+			BSLIB_LOG_INFO(ETT_GSLIB_LOGINSYSTEM, "玩家上线操作[AccountName=%s][GateServerID=%s]", reqAccountLogin->m_accountName.c_str(), gateServerID.toString().c_str());
 		}
 		break;
 
 	case EACCNTSTT_CN_OFFLINE_WAIT_CLIENT:// 账号离线，等待账号上线
 		{
-			BSLIB_LOG_INFOR(ETT_GSLIB_LOGINSYSTEM, "踢下原登陆账号[AccountName=%s]", reqAccountLogin->m_accountName.c_str());
+			BSLIB_LOG_INFO(ETT_GSLIB_LOGINSYSTEM, "踢下原登陆账号[AccountName=%s]", reqAccountLogin->m_accountName.c_str());
 
 			if (!CAccountLoginCNInforMgr::singleton().registerLG2CNReqAccountLogin(sessionID, netMsgLable->m_serverIDFrome, gateServerID, *reqAccountLogin, EACCNTSTT_CN_OFFLINE_WAIT_GATE)) {
 				ackAccountLogin.m_state = ELOGINRESULT_SERVER_ERROR;
@@ -271,7 +271,7 @@ void CLoginSystemCN::_onMsgLoginSystemLG2CNReqAccountLogin(BSLib::Framework::SMs
 				return;
 			}
 
-			BSLIB_LOG_INFOR(ETT_GSLIB_LOGINSYSTEM, "玩家上线操作[AccountName=%s][GateServerID=%s]", reqAccountLogin->m_accountName.c_str(), gateServerID.toString().c_str());
+			BSLIB_LOG_INFO(ETT_GSLIB_LOGINSYSTEM, "玩家上线操作[AccountName=%s][GateServerID=%s]", reqAccountLogin->m_accountName.c_str(), gateServerID.toString().c_str());
 		}
 		break;
 	case EACCNTSTT_CN_WAIT_GATE:	//锁定账号，账号正在等待Gate回应

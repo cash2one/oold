@@ -73,7 +73,7 @@ void CAccountLoginLGInforMgr::checkCN2LGAckAccountLogin(CMsgLoginSystemCN2LGAckA
 		return;
 	}
 
-	BSLIB_LOG_INFOR(ETT_GSLIB_LOGINSYSTEM, "游戏区请求结束[AccountName=%s][SessionID=%d][State=%d]",
+	BSLIB_LOG_INFO(ETT_GSLIB_LOGINSYSTEM, "游戏区请求结束[AccountName=%s][SessionID=%d][State=%d]",
 		infor->m_accountName.c_str(),
 		a_ackAccountLogin.m_loginSession,
 		a_ackAccountLogin.m_state);
@@ -110,7 +110,7 @@ void CAccountLoginLGInforMgr::checkSP2LGAckRegisterToken(CMsgLoginSystemSP2LGAck
 		return;
 	}
 
-	BSLIB_LOG_INFOR(ETT_GSLIB_LOGINSYSTEM, "Super请求结束[AccountName=%s][SessionID=%d][State=%d][m_token=%s][AccountID=%lld]",
+	BSLIB_LOG_INFO(ETT_GSLIB_LOGINSYSTEM, "Super请求结束[AccountName=%s][SessionID=%d][State=%d][m_token=%s][AccountID=%lld]",
 		infor->m_accountName.c_str(),
 		a_ackRegisterToken.m_loginSession,
 		a_ackRegisterToken.m_state,
@@ -187,7 +187,7 @@ void CAccountLoginLGInforMgr::checkSP2LGAckCheckToken(CMsgLoginSystemSP2LGAckChe
 		return ;
 	}
 
-	BSLIB_LOG_INFOR(ETT_GSLIB_LOGINSYSTEM, "进入游戏区请求[AccountName=%s][zoneID=%d][SessionID=%d]",
+	BSLIB_LOG_INFO(ETT_GSLIB_LOGINSYSTEM, "进入游戏区请求[AccountName=%s][zoneID=%d][SessionID=%d]",
 		infor->m_accountName.c_str(),
 		infor->m_accountKey.getZoneID(),
 		infor->m_sessionID);;

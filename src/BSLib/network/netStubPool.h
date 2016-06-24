@@ -26,8 +26,8 @@ public:
  	virtual uint32 getStubCount();
 	virtual bool addStub(CNetStubPtr& stubPtr);
 
-	void getStubsInfor(SNetStubsInfor& a_infor);
-	void getFlowInfor(SNetFlowInfor& a_infor, BSLib::Utility::CRealTime& realTimer);
+	void getStubsInfo(SNetStubsInfo& a_infor);
+	void getFlowInfo(SNetFlowInfo& a_infor, BSLib::Utility::CRealTime& realTimer);
 
 private:
 	virtual bool _addStub(CNetStubPtr& stubPtr);

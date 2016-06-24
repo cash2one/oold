@@ -632,7 +632,7 @@ void CRoleSceneModule::_onMsgSceneSystemGC2GMReqChallengeArenaRole(BSLib::Framew
 				index = m_arenaData.m_vecChallengees.size() - 1;
 			}
 		}
-		BSLIB_LOG_INFOR(ETT_GSLIB_SCENESYSTEM, "被挑战者index[%d], accountID[%d] zoneID[%d] RoleIndex[%d]", 
+		BSLIB_LOG_INFO(ETT_GSLIB_SCENESYSTEM, "被挑战者index[%d], accountID[%d] zoneID[%d] RoleIndex[%d]", 
 			index, challengeeData.m_accountID, challengeeData.m_zoneID, challengeeData.m_roleIndex);
 		if (challengeeData.m_accountID > 0) {
 			SRoleKey searchRole(challengeeData.m_accountID, challengeeData.m_zoneID, challengeeData.m_roleIndex);
@@ -668,7 +668,7 @@ void CRoleSceneModule::_onMsgSceneSystemGC2GMReqChallengeArenaRoleFinish(BSLib::
 
 	CArenaChallengeeData &challengee = m_arenaData.m_vecChallengees[m_arenaData.m_combatRole];
 
-	BSLIB_LOG_INFOR(ETT_GSLIB_SCENESYSTEM, "竞技场挑战结束,被挑战者index[%d], accountID[%d] zoneID[%d] RoleIndex[%d]", 
+	BSLIB_LOG_INFO(ETT_GSLIB_SCENESYSTEM, "竞技场挑战结束,被挑战者index[%d], accountID[%d] zoneID[%d] RoleIndex[%d]", 
 		m_arenaData.m_combatRole, challengee.m_accountID, challengee.m_zoneID, challengee.m_roleIndex);
 
 	BSLib::int32 challengeTime = (BSLib::int32)BSLib::Utility::CDateTime::getCurrentTime().getSeconds();

@@ -68,8 +68,8 @@ int CGateServer::main()
 
 bool CGateServer::_callback()
 {
-	BSLib::Network::SNetInfor netInfor;
-	BSLib::Network::CNetServer::getNetInfor(netInfor, *BSLib::Framework::CMainThread::getRealTime());
+	BSLib::Network::SNetInfo netInfor;
+	BSLib::Network::CNetServer::getNetInfo(netInfor, *BSLib::Framework::CMainThread::getRealTime());
 	if (netInfor.m_tcpStubsInfor.m_connectTotal != m_tcpStubsInfor.m_connectTotal ||
 		netInfor.m_tcpStubsInfor.m_stubCount != m_tcpStubsInfor.m_stubCount ||
 		netInfor.m_tcpStubsInfor.m_stubOkayCount != m_tcpStubsInfor.m_stubOkayCount || 

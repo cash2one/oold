@@ -233,7 +233,7 @@ bool CTaskDataMgr::_loadDailyTaskData(const std::string &a_path)
 
 	BSLib::Utility::CTableSheet tableSheet;
 	if (!tableSheet.loadXmlFile(fileName)) {
-		BSLIB_LOG_INFOR(ETT_GSLIB_TASKSYSTEM, "加载日常任务数据失败[%s]", fileName.c_str());
+		BSLIB_LOG_INFO(ETT_GSLIB_TASKSYSTEM, "加载日常任务数据失败[%s]", fileName.c_str());
 		return false;
 	}
 
@@ -280,7 +280,7 @@ bool CTaskDataMgr::_loadDailyTaskData(const std::string &a_path)
 			_addDailyTaskData(taskAttr);
 		}
 	} catch (...) {
-		BSLIB_LOG_INFOR(ETT_GSLIB_TASKSYSTEM, "加载日常任务数据失败[%s]", fileName.c_str());
+		BSLIB_LOG_INFO(ETT_GSLIB_TASKSYSTEM, "加载日常任务数据失败[%s]", fileName.c_str());
 		return false;		
 	}
 
@@ -294,7 +294,7 @@ bool CTaskDataMgr::_loadDailyTaskConfig(const std::string & a_path)
 
 	BSLib::Utility::CTableSheet tableSheet;
 	if (!tableSheet.loadXmlFile(fileName)) {
-		BSLIB_LOG_INFOR(ETT_GSLIB_TASKSYSTEM, "加载任务配置失败[%s]", fileName.c_str());
+		BSLIB_LOG_INFO(ETT_GSLIB_TASKSYSTEM, "加载任务配置失败[%s]", fileName.c_str());
 		return false;
 	}
 	try {
@@ -308,7 +308,7 @@ bool CTaskDataMgr::_loadDailyTaskConfig(const std::string & a_path)
 		data = firstMainTask[0]["taksTPID"];
 		data >> m_firstMainTaskTPID;
 	} catch (...) {
-		BSLIB_LOG_INFOR(ETT_GSLIB_TASKSYSTEM, "加载任务配置失败[%s]", fileName.c_str());
+		BSLIB_LOG_INFO(ETT_GSLIB_TASKSYSTEM, "加载任务配置失败[%s]", fileName.c_str());
 		return false;		
 	}
 
@@ -323,7 +323,7 @@ bool CTaskDataMgr::_loadMainTaskConfig(const std::string & a_path)
 
 	BSLib::Utility::CTableSheet tableSheet;
 	if (!tableSheet.loadXmlFile(fileName)) {
-		BSLIB_LOG_INFOR(ETT_GSLIB_TASKSYSTEM, "加载主线任务数据失败[%s]", fileName.c_str());
+		BSLIB_LOG_INFO(ETT_GSLIB_TASKSYSTEM, "加载主线任务数据失败[%s]", fileName.c_str());
 		return false;
 	}
 
@@ -353,7 +353,7 @@ bool CTaskDataMgr::_loadMainTaskConfig(const std::string & a_path)
 					taskAttr->m_NPC.m_isSpawned = BSLib::Utility::CConvert::toUint32(npcDetailList[2]) != 0;
 				}
 			} else {
-				BSLIB_LOG_INFOR(ETT_GSLIB_TASKSYSTEM, "加载主线任务数据失败[%s], [f_monster_drop]字段填写有误", fileName.c_str());
+				BSLIB_LOG_INFO(ETT_GSLIB_TASKSYSTEM, "加载主线任务数据失败[%s], [f_monster_drop]字段填写有误", fileName.c_str());
 				return false;
 			}
 			table[i]["f_stage"] >> taskAttr->m_stageID;
@@ -379,7 +379,7 @@ bool CTaskDataMgr::_loadMainTaskConfig(const std::string & a_path)
 					}
 					taskAttr->m_dropItemTPID = dropItem.m_itemTPID;
 				} else {
-					BSLIB_LOG_INFOR(ETT_GSLIB_TASKSYSTEM, "加载主线任务数据失败[%s], [f_monster_drop]字段填写有误", fileName.c_str());
+					BSLIB_LOG_INFO(ETT_GSLIB_TASKSYSTEM, "加载主线任务数据失败[%s], [f_monster_drop]字段填写有误", fileName.c_str());
 					return false;
 				}
 			} 
@@ -398,7 +398,7 @@ bool CTaskDataMgr::_loadMainTaskConfig(const std::string & a_path)
 					item.m_itemCount = BSLib::Utility::CConvert::toUint32(itemDetailList[1]);
 					taskAttr->m_vecPrizeItem.push_back(item);
 				} else {
-					BSLIB_LOG_INFOR(ETT_GSLIB_TASKSYSTEM, "加载主线任务数据失败[%s], [f_award]字段填写有误", fileName.c_str());
+					BSLIB_LOG_INFO(ETT_GSLIB_TASKSYSTEM, "加载主线任务数据失败[%s], [f_award]字段填写有误", fileName.c_str());
 					return false;
 				}
 			}
@@ -414,7 +414,7 @@ bool CTaskDataMgr::_loadMainTaskConfig(const std::string & a_path)
 			_addMainTaskData(taskAttr);
 		}
 	} catch (...) {
-		BSLIB_LOG_INFOR(ETT_GSLIB_TASKSYSTEM, "加载主线任务数据失败[%s]", fileName.c_str());
+		BSLIB_LOG_INFO(ETT_GSLIB_TASKSYSTEM, "加载主线任务数据失败[%s]", fileName.c_str());
 		return false;		
 	}
 
@@ -428,7 +428,7 @@ bool CTaskDataMgr::_loadPetTaskConfig(const std::string & a_path)
 
 	BSLib::Utility::CTableSheet tableSheet;
 	if (!tableSheet.loadXmlFile(fileName)) {
-		BSLIB_LOG_INFOR(ETT_GSLIB_TASKSYSTEM, "加载伙伴任务任务数据失败[%s]", fileName.c_str());
+		BSLIB_LOG_INFO(ETT_GSLIB_TASKSYSTEM, "加载伙伴任务任务数据失败[%s]", fileName.c_str());
 		return false;
 	}
 	
@@ -457,7 +457,7 @@ bool CTaskDataMgr::_loadPetTaskConfig(const std::string & a_path)
 			table[i]["f_role_level_required"] >> levelRequired;
 			levelRequired.split(levels, ",");
 			if (levels.size() != 2) {
-				BSLIB_LOG_INFOR(ETT_GSLIB_TASKSYSTEM, "加载伙伴任务数据失败[%s], [f_prize]字段填写有误", fileName.c_str());
+				BSLIB_LOG_INFO(ETT_GSLIB_TASKSYSTEM, "加载伙伴任务数据失败[%s], [f_prize]字段填写有误", fileName.c_str());
 				return false;
 			}
 			taskAttr->m_minRoleLevel = BSLib::Utility::CConvert::toUint32(levels[0]);
@@ -476,14 +476,14 @@ bool CTaskDataMgr::_loadPetTaskConfig(const std::string & a_path)
 					item.m_itemCount = BSLib::Utility::CConvert::toUint32(itemDetailList[1]);
 					taskAttr->m_prizeItemList.push_back(item);
 				} else {
-					BSLIB_LOG_INFOR(ETT_GSLIB_TASKSYSTEM, "加载伙伴任务数据失败[%s], [f_prize]字段填写有误", fileName.c_str());
+					BSLIB_LOG_INFO(ETT_GSLIB_TASKSYSTEM, "加载伙伴任务数据失败[%s], [f_prize]字段填写有误", fileName.c_str());
 					return false;
 				}
 			}
 			_addPetTaskData(taskAttr);
 		}
 	} catch (...) {
-		BSLIB_LOG_INFOR(ETT_GSLIB_TASKSYSTEM, "加载伙伴任务任务数据失败[%s]", fileName.c_str());
+		BSLIB_LOG_INFO(ETT_GSLIB_TASKSYSTEM, "加载伙伴任务任务数据失败[%s]", fileName.c_str());
 		return false;		
 	}
 

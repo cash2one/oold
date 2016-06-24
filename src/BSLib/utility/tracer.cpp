@@ -245,7 +245,7 @@ void CTracer::sysWarn(uint16 type, const char* file, int line, const char* forma
 	BSLIB_TRACER_OUTTRACE_STATIC(type, ETL_WARN);
 }
 
-void CTracer::sysInfor(uint16 type, const char* file, int line, const char* format, ...)
+void CTracer::sysInfo(uint16 type, const char* file, int line, const char* format, ...)
 {
 	BSLIB_TRACER_OUTTRACE_STATIC(type, ETL_INFOR);
 }

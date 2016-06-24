@@ -439,7 +439,7 @@ void CRoleTaskModule::_onMsgTaskSystemGC2GMReqGetMainTaskPrize(BSLib::Framework:
 			prizeModule->prizeRequest(m_roleMainTaskData.m_taskAttr->m_vecPrizeItem, sneder, title, content, "MainTaskPrize");//todo
 			for (std::vector<ItemSystem::GM::CPrizeItem>::const_iterator itr = m_roleMainTaskData.m_taskAttr->m_vecPrizeItem.begin(); 
 				itr != m_roleMainTaskData.m_taskAttr->m_vecPrizeItem.end(); ++itr) {
-					BSLIB_LOG_INFOR(ETT_GSLIB_TASKSYSTEM, "获得主线任务奖励:id[%d] count[%d]", itr->m_itemTPID, itr->m_itemCount);
+					BSLIB_LOG_INFO(ETT_GSLIB_TASKSYSTEM, "获得主线任务奖励:id[%d] count[%d]", itr->m_itemTPID, itr->m_itemCount);
 			}
 			m_roleMainTaskData.m_state = ETASKSTATE_GOT_PRIZE;
 			sendMsgToClient(msgAck);

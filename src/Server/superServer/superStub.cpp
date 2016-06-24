@@ -46,7 +46,7 @@ void CSuperStub::_cbTerminate()
 // {
 // 	GSLib::LoginSystem::CMsgLoginSystemGC2LGReqAccountLogin* reqAccountLogin = (GSLib::LoginSystem::CMsgLoginSystemGC2LGReqAccountLogin*)msg;
 // 	
-// 	BSLIB_LOG_INFOR(Server::ETT_SERVER_COMMON, "ÇëÇóµÇÂ½[AccountName=%s][Zone=%d][Channel=%d]"
+// 	BSLIB_LOG_INFO(Server::ETT_SERVER_COMMON, "ÇëÇóµÇÂ½[AccountName=%s][Zone=%d][Channel=%d]"
 // 		, reqAccountLogin->m_accountName.c_str()
 // 		, reqAccountLogin->m_zoneID
 // 		, reqAccountLogin->m_channelID);
@@ -98,7 +98,7 @@ void CSuperStub::_cbTerminate()
 // {
 // 	GSLib::LoginSystem::CMsgLoginSystemGC2LGReqRegisterAccount* reqAccountLogin = (GSLib::LoginSystem::CMsgLoginSystemGC2LGReqRegisterAccount*)msg;
 // 
-// 	BSLIB_LOG_INFOR(Server::ETT_SERVER_COMMON, "ÇëÇó×¢²á[AccountName=%s][Zone=%d][Channel=%d]"
+// 	BSLIB_LOG_INFO(Server::ETT_SERVER_COMMON, "ÇëÇó×¢²á[AccountName=%s][Zone=%d][Channel=%d]"
 // 		, reqAccountLogin->m_accountName.c_str()
 // 		, reqAccountLogin->m_zoneID
 // 		, reqAccountLogin->m_channelID);

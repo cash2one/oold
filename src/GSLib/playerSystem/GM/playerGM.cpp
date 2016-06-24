@@ -505,12 +505,12 @@ void CPlayerGM::_onMsgPlayerSystemCN2GMAckSelectRole(BSLib::Framework::SMsgLabel
     BSLIB_LOG_DEBUG(ETT_GSLIB_PLAYERSYSTEM, "[getCurRoleIndex()=%d][initToClientEnd]初始化角色数据完成", getCurRoleIndex());
     ackGC.m_retCode = ESELECTROLE_RESULT_SUCCESS;
 	sendMsgToClient(ackGC);
-	BSLIB_LOG_INFOR(GSLib::ETT_GSLIB_PLAYERSYSTEM, "[SelectRole][AccountName=%s][AccountID=%lld][ZoneID=%d][RoleIndex=%d]", 
+	BSLIB_LOG_INFO(GSLib::ETT_GSLIB_PLAYERSYSTEM, "[SelectRole][AccountName=%s][AccountID=%lld][ZoneID=%d][RoleIndex=%d]", 
 		getAccountName().c_str(), getAccountID(), getZoneID(), m_curRoleIndex);
 
 	{
 		BSLib::Utility::CDateTime now = BSLib::Utility::CDateTime::getCurrentTime();
-		BSLIB_LOG_INFOR(ETT_GSLIB_GAME, "[t_login][f_time=%s][f_acc_id=%lld][f_char_id=%d]", 
+		BSLIB_LOG_INFO(ETT_GSLIB_GAME, "[t_login][f_time=%s][f_acc_id=%lld][f_char_id=%d]", 
 			now.toString().c_str(),
 			getAccountID(), 
 			m_curRoleIndex);
@@ -814,11 +814,11 @@ void CPlayerGM::_onMsgPlayerSystemDB2CMNtfChargeList(BSLib::Framework::SMsgLabel
 	
 	PrizeSystem::GM::CRolePrizeModule * prize = role->getPrizeModule();
 	for (int i=0; i<(int)msgChargeList->m_chargeList.size(); ++i) {
-		BSLIB_LOG_INFOR(ETT_GSLIB_DBSYSTEM, "[charge_read_ok]%s[chargeid=%lld][type=%d][money=%d]",  msgChargeList->m_roleKey.toLogString().c_str(), msgChargeList->m_chargeList[i].m_chargeID, msgChargeList->m_chargeList[i].m_type, msgChargeList->m_chargeList[i].m_money);
+		BSLIB_LOG_INFO(ETT_GSLIB_DBSYSTEM, "[charge_read_ok]%s[chargeid=%lld][type=%d][money=%d]",  msgChargeList->m_roleKey.toLogString().c_str(), msgChargeList->m_chargeList[i].m_chargeID, msgChargeList->m_chargeList[i].m_type, msgChargeList->m_chargeList[i].m_money);
 		prize->chargeUpdate(msgChargeList->m_chargeList[i].m_chargeID, msgChargeList->m_chargeList[i].m_type, msgChargeList->m_chargeList[i].m_money);
 		role->chargeVipScore(msgChargeList->m_chargeList[i].m_money); // vip 积分
 		BSLib::uint32 vipScore = role->getVipScore();
-		BSLIB_LOG_INFOR(ETT_GSLIB_DBSYSTEM, "[total vip score=%d]",  vipScore);
+		BSLIB_LOG_INFO(ETT_GSLIB_DBSYSTEM, "[total vip score=%d]",  vipScore);
 	}
 }
 

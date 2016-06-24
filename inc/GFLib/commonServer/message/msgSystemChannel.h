@@ -13,8 +13,8 @@ namespace GFLib
 
 enum EFuncSysChannelID
 {
-	EMSGID_SYSCHANNEL_LC2LC_REQ_SERVERINFOR = 1,
-	EMSGID_SYSCHANNEL_LC2LC_RES_SERVERINFOR,
+	EMSGID_SYSCHANNEL_LC2LC_REQ_SERVERINFO = 1,
+	EMSGID_SYSCHANNEL_LC2LC_RES_SERVERINFO,
 	EMSGID_SYSCHANNEL_LC2LC_NTF_COMMAND,
 };
 
@@ -24,21 +24,21 @@ enum EFuncSysChannelID
 #pragma pack (1)
 #endif
 
-const BSLib::uint32 MsgIDSysChannelLC2LCReqServerInfor = GFLIB_MSGID_DEBUG(GFLib::SRVTYPE_LOCAL, EFUNCTYPE_SYSTEM_CHANNEL, EMSGID_SYSCHANNEL_LC2LC_REQ_SERVERINFOR);
-struct SMsgSysChannelLC2LCReqServerInfor: public GFLib::SMessage
+const BSLib::uint32 MsgIDSysChannelLC2LCReqServerInfo = GFLIB_MSGID_DEBUG(GFLib::SRVTYPE_LOCAL, EFUNCTYPE_SYSTEM_CHANNEL, EMSGID_SYSCHANNEL_LC2LC_REQ_SERVERINFO);
+struct SMsgSysChannelLC2LCReqServerInfo: public GFLib::SMessage
 {
-	SMsgSysChannelLC2LCReqServerInfor() : GFLib::SMessage(MsgIDSysChannelLC2LCReqServerInfor)
+	SMsgSysChannelLC2LCReqServerInfo() : GFLib::SMessage(MsgIDSysChannelLC2LCReqServerInfo)
 	{
 		;
 	}
 };
 
-const BSLib::uint32 MsgIDSysChannelLC2LCResServerInfor = GFLIB_MSGID_DEBUG(GFLib::SRVTYPE_LOCAL, EFUNCTYPE_SYSTEM_CHANNEL, EMSGID_SYSCHANNEL_LC2LC_RES_SERVERINFOR);
-struct SMsgSysChannelLC2LCResServerInfor: public GFLib::SMessage
+const BSLib::uint32 MsgIDSysChannelLC2LCResServerInfo = GFLIB_MSGID_DEBUG(GFLib::SRVTYPE_LOCAL, EFUNCTYPE_SYSTEM_CHANNEL, EMSGID_SYSCHANNEL_LC2LC_RES_SERVERINFO);
+struct SMsgSysChannelLC2LCResServerInfo: public GFLib::SMessage
 {
 	SServerID m_localServerID;
 	char m_localKeyName[GFLIB_KEY_NAME_MAX + 1];
-	SMsgSysChannelLC2LCResServerInfor() : GFLib::SMessage(MsgIDSysChannelLC2LCResServerInfor)
+	SMsgSysChannelLC2LCResServerInfo() : GFLib::SMessage(MsgIDSysChannelLC2LCResServerInfo)
 	{
 		m_localServerID = INVALID_SERVERID;
 		memset(m_localKeyName, 0, sizeof(m_localKeyName));

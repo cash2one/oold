@@ -49,7 +49,7 @@ bool CAchieveConfigDataGMMgr::loadGameConfig(const std::string& a_configPath)
         return false;
     }
     try {
-        BSLIB_LOG_INFOR(ETT_GSLIB_ACHIEVESYSTEM, "[LOADCONFIG][%s]", path.c_str());
+        BSLIB_LOG_INFO(ETT_GSLIB_ACHIEVESYSTEM, "[LOADCONFIG][%s]", path.c_str());
         BSLib::Utility::CTable& table = tableSheet["item"];
         for (BSLib::uint32 i=0; i < table.getRowCount(); ++i) {
             if (!loadRow(table[i])){

@@ -14,7 +14,10 @@ namespace GFLib
 namespace CommonServer
 {
 
-class GFLIB_COMMONSERVER_API CCommonClient : public CService, public BSLib::Network::CTcpClient, public BSLib::Network::CTcpConnectionMgr
+class GFLIB_COMMONSERVER_API CCommonClient 
+    :public CService,
+    public BSLib::Network::CTcpClient,
+    public BSLib::Network::CTcpConnectionMgr
 {
 public:
 	CCommonClient(GFLib::SServerID& a_serverID, const std::string& a_serverKey);

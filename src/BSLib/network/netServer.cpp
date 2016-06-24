@@ -73,13 +73,13 @@ CNetServer::~CNetServer()
 	;
 }
 
-void  CNetServer::getNetInfor(SNetInfor& a_netInfor, BSLib::Utility::CRealTime& realTimer)
+void  CNetServer::getNetInfo(SNetInfo& a_netInfo, BSLib::Utility::CRealTime& realTimer)
 {
 	if (m_tcpStubPool != NULL) {
-		m_tcpStubPool->getStubsInfor(a_netInfor.m_tcpStubsInfor);
-		m_tcpStubPool->getFlowInfor(a_netInfor.m_tcpFlowInfor, realTimer);
+		m_tcpStubPool->getStubsInfo(a_netInfo.m_tcpStubsInfor);
+		m_tcpStubPool->getFlowInfo(a_netInfo.m_tcpFlowInfor, realTimer);
 	}	
-	a_netInfor.m_tcpStubsInfor.m_connectTotal = m_tcpCollectCount.getValue();
+	a_netInfo.m_tcpStubsInfor.m_connectTotal = m_tcpCollectCount.getValue();
 }
 
 bool CNetServer::_addTcpAccpetor(CSockAddr& acceptorAddr, void* tempData)
@@ -217,7 +217,7 @@ int CNetServer::_final()
 
 bool CNetServer::_newTcpConnect(int sock, BSLib::Network::CSockAddr& addrLocal, BSLib::Network::CSockAddr& addrPeer, void* tempData)
 {
-	BSLIB_LOG_INFOR(BSLib::ETT_BSLIB_NETWORK, "TCP[%d][%s:%d]<--[%s:%d] connect", sock, addrLocal.getIP().c_str(), addrLocal.getPort(), addrPeer.getIP().c_str(), addrPeer.getPort());
+	BSLIB_LOG_INFO(BSLib::ETT_BSLIB_NETWORK, "TCP[%d][%s:%d]<--[%s:%d] connect", sock, addrLocal.getIP().c_str(), addrLocal.getPort(), addrPeer.getIP().c_str(), addrPeer.getPort());
 	m_tcpCollectCount.increment();
 
 	BSLib::Network::CNetConnectionPtr tcpNetConnPtr = new BSLib::Network::CTcpConnection(sock);
@@ -246,7 +246,7 @@ bool CNetServer::_newTcpConnect(int sock, BSLib::Network::CSockAddr& addrLocal, 
 
 bool CNetServer::_newUdpConnect(int sock, BSLib::Network::CSockAddr& addrLocal, BSLib::Network::CSockAddr& addrPeer, void* tempData)
 {
-	BSLIB_LOG_INFOR(BSLib::ETT_BSLIB_NETWORK, "UDP[%d][%s:%d]<--[%s:%d] connect", sock, addrLocal.getIP().c_str(), addrLocal.getPort(), addrPeer.getIP().c_str(), addrPeer.getPort());
+	BSLIB_LOG_INFO(BSLib::ETT_BSLIB_NETWORK, "UDP[%d][%s:%d]<--[%s:%d] connect", sock, addrLocal.getIP().c_str(), addrLocal.getPort(), addrPeer.getIP().c_str(), addrPeer.getPort());
 
 	BSLib::Network::CNetConnectionPtr udpNetConnPtr = new BSLib::Network::CUdpConnection(sock);
 	if (udpNetConnPtr == NULL){

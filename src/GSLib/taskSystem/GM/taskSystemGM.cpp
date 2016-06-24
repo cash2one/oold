@@ -103,13 +103,13 @@ bool CTaskSystemGM::_initTaskSystemData()
 
 	BSLib::Utility::CTimerServer *timer = _getTimerServer();
 	if (timer == NULL) {
-		BSLIB_LOG_INFOR(ETT_GSLIB_TASKSYSTEM, "CTaskSystemGM::_initTaskSystemData fail, timer = [NULL]");
+		BSLIB_LOG_INFO(ETT_GSLIB_TASKSYSTEM, "CTaskSystemGM::_initTaskSystemData fail, timer = [NULL]");
 		return false;
 	}
 	BSLib::uint64 timeDelay = (m_nextTaskSystemDataResetTime - BSLib::Utility::CDateTime::getCurrentTime().getSeconds()) *  1000;
 	BSLib::uint32 timeInterval = C_ONE_DAY_SECONDS * 1000;
 	timer->addTimer(&CTaskSystemGM::_taskSystemTimerCallBack, this, 0, 0, timeInterval, (BSLib::uint32)timeDelay, -1);
-	BSLIB_LOG_INFOR(ETT_GSLIB_TASKSYSTEM, "---Add task system reset timer %d-%d-%d-%d:%d delay[%dms]---", curDate.getYear(),curDate.getMonth(),curDate.getDay(), curDate.getHour(), curDate.getMinute(), timeDelay);
+	BSLIB_LOG_INFO(ETT_GSLIB_TASKSYSTEM, "---Add task system reset timer %d-%d-%d-%d:%d delay[%dms]---", curDate.getYear(),curDate.getMonth(),curDate.getDay(), curDate.getHour(), curDate.getMinute(), timeDelay);
 
 	return true;
 }
@@ -119,7 +119,7 @@ bool CTaskSystemGM::_taskSystemTimerCallBack(BSLib::uint64, void*)
 	BSLib::Utility::CDateTime curDate = BSLib::Utility::CDateTime::getCurrentTime();
 	m_lastTaskSystemDataResetTime = m_nextTaskSystemDataResetTime;
 	m_nextTaskSystemDataResetTime += C_ONE_DAY_SECONDS;
-	BSLIB_LOG_INFOR(ETT_GSLIB_TASKSYSTEM, "---_taskSystemTimerCallBack %d-%d-%d-%d:%d---", curDate.getYear(),curDate.getMonth(),curDate.getDay(), curDate.getHour(), curDate.getMinute());
+	BSLIB_LOG_INFO(ETT_GSLIB_TASKSYSTEM, "---_taskSystemTimerCallBack %d-%d-%d-%d:%d---", curDate.getYear(),curDate.getMonth(),curDate.getDay(), curDate.getHour(), curDate.getMinute());
 	std::list<GSLib::PlayerSystem::GM::CRoleGM*> listRoles;
 	GSLib::PlayerSystem::GM::CPlayerGMMgr::singleton().getActiveRolesGM(listRoles);
 	for (std::list<GSLib::PlayerSystem::GM::CRoleGM*>::iterator itr = listRoles.begin(); itr != listRoles.end(); ++itr) {

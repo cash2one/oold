@@ -147,12 +147,12 @@ void CSceneSystemGM::_initContinuousStageData()
 	BSLib::uint32 timeInterval = ONE_DAY_SECONDS * 1000;
 	BSLib::Utility::CTimerServer *timer = _getTimerServer();
 	if (timer == NULL) {
-		BSLIB_LOG_INFOR(ETT_GSLIB_ACTIVITYSYSTEM, "CSceneSystemGM::_initContinuousStageData fail, timer = [NULL]");
+		BSLIB_LOG_INFO(ETT_GSLIB_ACTIVITYSYSTEM, "CSceneSystemGM::_initContinuousStageData fail, timer = [NULL]");
 		return;
 	}
 	const BSLib::Utility::CDateTime & curDate = BSLib::Utility::CDateTime::getCurrentTime();
 	timer->addTimer(&CSceneSystemGM::_onContinuousStageResetCallback, this, 0, 0, timeInterval, (BSLib::uint32)timeDelay, -1);
-	BSLIB_LOG_INFOR(ETT_GSLIB_SCENESYSTEM, "---Add daily continuous stage reset timer %d-%d-%d-%d:%d delay[%dms]---", curDate.getYear(),curDate.getMonth(),curDate.getDay(), curDate.getHour(), curDate.getMinute(), timeDelay);
+	BSLIB_LOG_INFO(ETT_GSLIB_SCENESYSTEM, "---Add daily continuous stage reset timer %d-%d-%d-%d:%d delay[%dms]---", curDate.getYear(),curDate.getMonth(),curDate.getDay(), curDate.getHour(), curDate.getMinute(), timeDelay);
 }
 
 void CSceneSystemGM::_initStageHelperResetTimer()
@@ -162,12 +162,12 @@ void CSceneSystemGM::_initStageHelperResetTimer()
 	BSLib::uint32 timeInterval = ONE_DAY_SECONDS * 1000;
 	BSLib::Utility::CTimerServer *timer = _getTimerServer();
 	if (timer == NULL) {
-		BSLIB_LOG_INFOR(ETT_GSLIB_ACTIVITYSYSTEM, "CSceneSystemGM::_initStageHelperResetTimer fail, timer = [NULL]");
+		BSLIB_LOG_INFO(ETT_GSLIB_ACTIVITYSYSTEM, "CSceneSystemGM::_initStageHelperResetTimer fail, timer = [NULL]");
 		return;
 	}
 	const BSLib::Utility::CDateTime & curDate = BSLib::Utility::CDateTime::getCurrentTime();
 	timer->addTimer(&CSceneSystemGM::_onStageGetHlepResetCallback, this, 0, 0, timeInterval, (BSLib::uint32)timeDelay, -1);
-	BSLIB_LOG_INFOR(ETT_GSLIB_SCENESYSTEM, "---Add daily stage helper reset timer %d-%d-%d-%d:%d delay[%dms]---", curDate.getYear(),curDate.getMonth(),curDate.getDay(), curDate.getHour(), curDate.getMinute(), timeDelay);
+	BSLIB_LOG_INFO(ETT_GSLIB_SCENESYSTEM, "---Add daily stage helper reset timer %d-%d-%d-%d:%d delay[%dms]---", curDate.getYear(),curDate.getMonth(),curDate.getDay(), curDate.getHour(), curDate.getMinute(), timeDelay);
 }
 
 void CSceneSystemGM::_initArenaResetTimer()
@@ -177,12 +177,12 @@ void CSceneSystemGM::_initArenaResetTimer()
 	BSLib::uint32 timeInterval = ONE_DAY_SECONDS * 1000;
 	BSLib::Utility::CTimerServer *timer = _getTimerServer();
 	if (timer == NULL) {
-		BSLIB_LOG_INFOR(ETT_GSLIB_ACTIVITYSYSTEM, "CSceneSystemGM::_initArenaResetTimer fail, timer = [NULL]");
+		BSLIB_LOG_INFO(ETT_GSLIB_ACTIVITYSYSTEM, "CSceneSystemGM::_initArenaResetTimer fail, timer = [NULL]");
 		return;
 	}
 	const BSLib::Utility::CDateTime & curDate = BSLib::Utility::CDateTime::getCurrentTime();
 	timer->addTimer(&CSceneSystemGM::_onArenaResetCallback, this, 0, 0, timeInterval, (BSLib::uint32)timeDelay, -1);
-	BSLIB_LOG_INFOR(ETT_GSLIB_SCENESYSTEM, "---Add Arena reset timer %d-%d-%d-%d:%d delay[%dms]---", curDate.getYear(),curDate.getMonth(),curDate.getDay(), curDate.getHour(), curDate.getMinute(), timeDelay);
+	BSLIB_LOG_INFO(ETT_GSLIB_SCENESYSTEM, "---Add Arena reset timer %d-%d-%d-%d:%d delay[%dms]---", curDate.getYear(),curDate.getMonth(),curDate.getDay(), curDate.getHour(), curDate.getMinute(), timeDelay);
 }
 
 void CSceneSystemGM::_initInstanceStageTimer()
@@ -192,12 +192,12 @@ void CSceneSystemGM::_initInstanceStageTimer()
 	BSLib::uint32 timeInterval = ONE_DAY_SECONDS * 1000;
 	BSLib::Utility::CTimerServer *timer = _getTimerServer();
 	if (timer == NULL) {
-		BSLIB_LOG_INFOR(ETT_GSLIB_ACTIVITYSYSTEM, "CSceneSystemGM::_initInstanceStageTimer fail, timer = [NULL]");
+		BSLIB_LOG_INFO(ETT_GSLIB_ACTIVITYSYSTEM, "CSceneSystemGM::_initInstanceStageTimer fail, timer = [NULL]");
 		return;
 	}
 	const BSLib::Utility::CDateTime & curDate = BSLib::Utility::CDateTime::getCurrentTime();
 	timer->addTimer(&CSceneSystemGM::_onInstanceStageResetCallback, this, 0, 0, timeInterval, (BSLib::uint32)timeDelay, -1);
-	BSLIB_LOG_INFOR(ETT_GSLIB_SCENESYSTEM, "---Add instance stage reset timer %d-%d-%d-%d:%d delay[%dms]---", curDate.getYear(),curDate.getMonth(),curDate.getDay(), curDate.getHour(), curDate.getMinute(), timeDelay);
+	BSLIB_LOG_INFO(ETT_GSLIB_SCENESYSTEM, "---Add instance stage reset timer %d-%d-%d-%d:%d delay[%dms]---", curDate.getYear(),curDate.getMonth(),curDate.getDay(), curDate.getHour(), curDate.getMinute(), timeDelay);
 }
 
 bool CSceneSystemGM::_onContinuousStageResetCallback(BSLib::uint64 a_num, void* a_para)
@@ -205,7 +205,7 @@ bool CSceneSystemGM::_onContinuousStageResetCallback(BSLib::uint64 a_num, void* 
 	m_lastDailyContinuousStageResetTime = m_nextDailyContinuousStageResetTime;
 	m_nextDailyContinuousStageResetTime += ONE_DAY_SECONDS;
 	const BSLib::Utility::CDateTime & curDate = BSLib::Utility::CDateTime::getCurrentTime();
-	BSLIB_LOG_INFOR(ETT_GSLIB_ACTIVITYSYSTEM, "---_continuousStageResetCallback %d-%d-%d-%d:%d---", curDate.getYear(),curDate.getMonth(),curDate.getDay(), curDate.getHour(), curDate.getMinute());
+	BSLIB_LOG_INFO(ETT_GSLIB_ACTIVITYSYSTEM, "---_continuousStageResetCallback %d-%d-%d-%d:%d---", curDate.getYear(),curDate.getMonth(),curDate.getDay(), curDate.getHour(), curDate.getMinute());
 	std::list<GSLib::PlayerSystem::GM::CRoleGM*> listRoles;
 	GSLib::PlayerSystem::GM::CPlayerGMMgr::singleton().getActiveRolesGM(listRoles);
 	for (std::list<GSLib::PlayerSystem::GM::CRoleGM*>::iterator itr = listRoles.begin(); itr != listRoles.end(); ++itr) {
@@ -240,7 +240,7 @@ bool CSceneSystemGM::_onStageGetHlepResetCallback(BSLib::uint64 a_num, void* a_p
 	m_lastRoleDailyStageHelperResetTime = m_nextRoleDailyStageHelperResetTime;
 	m_nextRoleDailyStageHelperResetTime += ONE_DAY_SECONDS;
 	const BSLib::Utility::CDateTime & curDate = BSLib::Utility::CDateTime::getCurrentTime();
-	BSLIB_LOG_INFOR(ETT_GSLIB_ACTIVITYSYSTEM, "---_continuousStageResetCallback %d-%d-%d-%d:%d---", curDate.getYear(),curDate.getMonth(),curDate.getDay(), curDate.getHour(), curDate.getMinute());
+	BSLIB_LOG_INFO(ETT_GSLIB_ACTIVITYSYSTEM, "---_continuousStageResetCallback %d-%d-%d-%d:%d---", curDate.getYear(),curDate.getMonth(),curDate.getDay(), curDate.getHour(), curDate.getMinute());
 	std::list<GSLib::PlayerSystem::GM::CRoleGM*> listRoles;
 	GSLib::PlayerSystem::GM::CPlayerGMMgr::singleton().getActiveRolesGM(listRoles);
 	for (std::list<GSLib::PlayerSystem::GM::CRoleGM*>::iterator itr = listRoles.begin(); itr != listRoles.end(); ++itr) {
@@ -261,7 +261,7 @@ bool CSceneSystemGM::_onArenaResetCallback(BSLib::uint64 a_num, void* a_para)
 	m_lastArenaResetTime = m_nextArenaResetTime;
 	m_nextArenaResetTime += ONE_DAY_SECONDS;
 	const BSLib::Utility::CDateTime & curDate = BSLib::Utility::CDateTime::getCurrentTime();
-	BSLIB_LOG_INFOR(ETT_GSLIB_ACTIVITYSYSTEM, "---_onArenaResetCallback %d-%d-%d-%d:%d---", curDate.getYear(),curDate.getMonth(),curDate.getDay(), curDate.getHour(), curDate.getMinute());
+	BSLIB_LOG_INFO(ETT_GSLIB_ACTIVITYSYSTEM, "---_onArenaResetCallback %d-%d-%d-%d:%d---", curDate.getYear(),curDate.getMonth(),curDate.getDay(), curDate.getHour(), curDate.getMinute());
 	std::list<GSLib::PlayerSystem::GM::CRoleGM*> listRoles;
 	GSLib::PlayerSystem::GM::CPlayerGMMgr::singleton().getActiveRolesGM(listRoles);
 	for (std::list<GSLib::PlayerSystem::GM::CRoleGM*>::iterator itr = listRoles.begin(); itr != listRoles.end(); ++itr) {
@@ -282,7 +282,7 @@ bool CSceneSystemGM::_onInstanceStageResetCallback(BSLib::uint64 a_num, void* a_
 	m_lastInstanceStageResetTime = m_nextInstanceStageResetTime;
 	m_nextInstanceStageResetTime += ONE_DAY_SECONDS;
 	const BSLib::Utility::CDateTime & curDate = BSLib::Utility::CDateTime::getCurrentTime();
-	BSLIB_LOG_INFOR(ETT_GSLIB_ACTIVITYSYSTEM, "---_onInstanceStageResetCallback %d-%d-%d-%d:%d---", curDate.getYear(),curDate.getMonth(),curDate.getDay(), curDate.getHour(), curDate.getMinute());
+	BSLIB_LOG_INFO(ETT_GSLIB_ACTIVITYSYSTEM, "---_onInstanceStageResetCallback %d-%d-%d-%d:%d---", curDate.getYear(),curDate.getMonth(),curDate.getDay(), curDate.getHour(), curDate.getMinute());
 	std::list<GSLib::PlayerSystem::GM::CRoleGM*> listRoles;
 	GSLib::PlayerSystem::GM::CPlayerGMMgr::singleton().getActiveRolesGM(listRoles);
 	for (std::list<GSLib::PlayerSystem::GM::CRoleGM*>::iterator itr = listRoles.begin(); itr != listRoles.end(); ++itr) {

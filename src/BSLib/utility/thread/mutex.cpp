@@ -242,12 +242,12 @@ void CMutexProcess::lock()
 		while (errno == EINVAL || errno == EIDRM) {
 			m_hndMutexProcess = BSLIB_UTILITY_HNDMUTEXPROCESS_INVALID;
 			if (create(m_key, true)) {
-				BSLIB_LOG_INFOR(ETT_BSLIB_UTILITY, "CMutexProcess::lock create sem\n");
+				BSLIB_LOG_INFO(ETT_BSLIB_UTILITY, "CMutexProcess::lock create sem\n");
 				break;
 			}
 			if (open(m_key)) {
 				if (::semop(m_hndMutexProcess, &askfor_res, 1) >= 0) {
-					BSLIB_LOG_INFOR(ETT_BSLIB_UTILITY, "CMutexProcess::lock open sem\n");
+					BSLIB_LOG_INFO(ETT_BSLIB_UTILITY, "CMutexProcess::lock open sem\n");
 					break;
 				}
 			}

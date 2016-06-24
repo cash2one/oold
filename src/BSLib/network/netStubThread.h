@@ -113,7 +113,7 @@ public:
 		return m_stubPtr->_checkDeleteOvertime(realTimer);
 	}
 
-	void getNetInfor(BSLib::Utility::CRealTime& realTimer, SNetStubNetInfor& a_netStubNetInfor)
+	void getNetInfo(BSLib::Utility::CRealTime& realTimer, SNetStubNetInfor& a_netStubNetInfor)
 	{
 		CNetConnectionPtr netConnectionPtr = m_stubPtr->getNetConnectionPtr();
 		if (netConnectionPtr != NULL) {
@@ -208,7 +208,7 @@ public:
 	virtual uint32 getVerifyStubCount() { return (uint32)m_verifyList.size(); }
 	virtual uint32 getOkayStubCount() { return (uint32)m_okayList.size(); }
 
-	virtual void getFlowInfor(SNetFlowInfor& a_infor, BSLib::Utility::CRealTime& a_realTimer);
+	virtual void getFlowInfo(SNetFlowInfo& a_infor, BSLib::Utility::CRealTime& a_realTimer);
 
 	virtual void terminate();
 

@@ -441,7 +441,7 @@ bool CDBSystemDB::_loadInitTableByGlobal()
 	std::list<SInitTableInfor>::iterator it = m_initTableByGlobal.begin();
 	for (; it != m_initTableByGlobal.end(); ++it) {
 		
-		BSLIB_LOG_INFOR(ETT_GSLIB_DBSYSTEM, "加载全局初始化数据[TableID=%d]", it->m_tableID);
+		BSLIB_LOG_INFO(ETT_GSLIB_DBSYSTEM, "加载全局初始化数据[TableID=%d]", it->m_tableID);
 
 		if (!CTableDataMgr::singleton().loadTableData("", "", it->m_tableID,it->m_strWhere)) {
 			BSLIB_LOG_ERROR(ETT_GSLIB_DBSYSTEM, "加载全局初始化数据失败[TableID=%d]", it->m_tableID);
@@ -456,7 +456,7 @@ bool CDBSystemDB::_loadInitTableByPlayer()
 	std::list<SInitTableInfor>::iterator it = m_initTableByPlayer.begin();
 	for (; it != m_initTableByPlayer.end(); ++it) {
 
-		BSLIB_LOG_INFOR(ETT_GSLIB_DBSYSTEM, "加载玩家初始化数据[TableID=%d]", it->m_tableID);
+		BSLIB_LOG_INFO(ETT_GSLIB_DBSYSTEM, "加载玩家初始化数据[TableID=%d]", it->m_tableID);
 
 		if (!CTableDataMgr::singleton().loadTableData("", "", it->m_tableID,it->m_strWhere)) {
 			BSLIB_LOG_ERROR(ETT_GSLIB_DBSYSTEM, "加载玩家初始化数据失败[TableID=%d]", it->m_tableID);
@@ -471,7 +471,7 @@ bool CDBSystemDB::_loadInitTableByRole()
 	std::list<SInitTableInfor>::iterator it = m_initTableByRole.begin();
 	for (; it != m_initTableByRole.end(); ++it) {
 
-		BSLIB_LOG_INFOR(ETT_GSLIB_DBSYSTEM, "加载角色初始化数据[TableID=%d]", it->m_tableID);
+		BSLIB_LOG_INFO(ETT_GSLIB_DBSYSTEM, "加载角色初始化数据[TableID=%d]", it->m_tableID);
 
 		if (!CTableDataMgr::singleton().loadTableData("", "", it->m_tableID, it->m_strWhere)) {
 			BSLIB_LOG_ERROR(ETT_GSLIB_DBSYSTEM, "加载角色初始化数据失败[TableID=%d]", it->m_tableID);

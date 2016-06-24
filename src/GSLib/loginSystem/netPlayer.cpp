@@ -48,7 +48,7 @@ void CNetPlayer::outputGameLog(const std::string& a_gameLable, const char* a_for
    accountName = m_accountName;
 #endif
 
-	BSLIB_LOG_INFOR(ETT_GSLIB_GAME, "[%s]%s[AccountName=%s]%s", 
+	BSLIB_LOG_INFO(ETT_GSLIB_GAME, "[%s]%s[AccountName=%s]%s", 
 		a_gameLable.c_str(), 
 		m_accountKey.toLogString().c_str(), 
 		accountName.c_str(),

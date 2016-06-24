@@ -108,11 +108,6 @@ void CCommonClient::terminate()
 	m_isRunning = false;
 }
 
-// void CCommonClient::setServerID(SServerID serverID)
-// {
-// 	CService::_setServerID(serverID);
-// }
-
 void CCommonClient::_initClient()
 {
 	;
@@ -229,7 +224,7 @@ int CCommonClient::_run(void* a_para)
 			CService::getServerID().getServerNumber(),
 			CService::getKey().c_str());
 
-		BSLib::Network::CTcpClient::close();
+		BSLib::Network::CTcpClient::INetClient_close();
 		BSLib::Network::CTcpConnectionMgr::_checkDelConn();
 		BSLib::Network::CTcpConnectionMgr::_clearAllConnection();
 
@@ -249,7 +244,7 @@ bool CCommonClient::_connectServer()
 {
 	bool serverExist = !CCommonServer::getCommonServer()->isTerminate();
 
-	BSLIB_LOG_INFOR(ETT_GFLIB_COMMON, "链接服务器[%s:%d] %s(%d.%d.%d) Key[%s] ......", 
+	BSLIB_LOG_INFO(ETT_GFLIB_COMMON, "链接服务器[%s:%d] %s(%d.%d.%d) Key[%s] ......", 
 		m_connectIP.c_str(), 
 		m_connectPort,
 		GFLib::CommonServer::CServerTypeMgr::singleton().getTextServerType(CService::getServerID().getServerType()).c_str(),
@@ -260,8 +255,8 @@ bool CCommonClient::_connectServer()
 
 	bool isConnect = false;
 	while(m_isRunning && serverExist){
-		if (BSLib::Network::CTcpClient::connect(m_connectIP.c_str(), m_connectPort)) {
-			BSLIB_LOG_INFOR(ETT_GFLIB_COMMON, "链接服务器[%s:%d] %s(%d.%d.%d) Key[%s] 成功", 
+		if (BSLib::Network::CTcpClient::INetClient_connect(m_connectIP.c_str(), m_connectPort)) {
+			BSLIB_LOG_INFO(ETT_GFLIB_COMMON, "链接服务器[%s:%d] %s(%d.%d.%d) Key[%s] 成功", 
 				m_connectIP.c_str(), 
 				m_connectPort,
 				GFLib::CommonServer::CServerTypeMgr::singleton().getTextServerType(CService::getServerID().getServerType()).c_str(),
@@ -361,7 +356,7 @@ void CCommonClient::_onMsgServerLinkXS2XXResServerID(BSLib::Framework::SMsgLabel
 	serverEnter.setServerKey(CService::getKey());
 	CCommonServer::getCommonServer()->sendMsg(&serverEnter, sizeof(serverEnter));
 
-	BSLIB_LOG_INFOR(ETT_GFLIB_COMMON, "Client %s(%d.%d.%d) Key[%s] OK",
+	BSLIB_LOG_INFO(ETT_GFLIB_COMMON, "Client %s(%d.%d.%d) Key[%s] OK",
 		GFLib::CommonServer::CServerTypeMgr::singleton().getTextServerType(CService::getServerID().getServerType()).c_str(),
 		CService::getServerID().getZoneID(),
 		CService::getServerID().getServerType(),

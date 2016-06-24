@@ -50,7 +50,7 @@ void CLoginStub::_onMsgLoginSystemGC2LGReqAccountLogin(BSLib::Framework::SMsgLab
 {
 	GSLib::LoginSystem::CMsgLoginSystemGC2LGReqAccountLogin* reqAccountLogin = (GSLib::LoginSystem::CMsgLoginSystemGC2LGReqAccountLogin*)msg;
 	
-	BSLIB_LOG_INFOR(Server::ETT_SERVER_COMMON, "ÇëÇóµÇÂ½[AccountName=%s][Zone=%d][Channel=%d]"
+	BSLIB_LOG_INFO(Server::ETT_SERVER_COMMON, "ÇëÇóµÇÂ½[AccountName=%s][Zone=%d][Channel=%d]"
 		, reqAccountLogin->m_accountName.c_str()
 		, reqAccountLogin->m_zoneID
 		, reqAccountLogin->m_channelID);
@@ -102,7 +102,7 @@ void CLoginStub::_onMsgLoginSystemGC2LGReqRegisterAccount(BSLib::Framework::SMsg
 {
 	GSLib::LoginSystem::CMsgLoginSystemGC2LGReqRegisterAccount* reqAccountLogin = (GSLib::LoginSystem::CMsgLoginSystemGC2LGReqRegisterAccount*)msg;
 
-	BSLIB_LOG_INFOR(Server::ETT_SERVER_COMMON, "ÇëÇó×¢²á[AccountName=%s][Channel=%d]"
+	BSLIB_LOG_INFO(Server::ETT_SERVER_COMMON, "ÇëÇó×¢²á[AccountName=%s][Channel=%d]"
 		, reqAccountLogin->m_accountName.c_str()
 		, reqAccountLogin->m_channelID);
 
@@ -123,7 +123,7 @@ void CLoginStub::_onMsgLoginSystemGC2LGReqGetAccountToken(BSLib::Framework::SMsg
 {
     GSLib::LoginSystem::CMsgLoginSystemGC2LGReqGetAccountToken* reqAccountLogin = (GSLib::LoginSystem::CMsgLoginSystemGC2LGReqGetAccountToken*)msg;
 
-    BSLIB_LOG_INFOR(Server::ETT_SERVER_COMMON, "ÇëÇóµÇÂ½[AccountName=%s][Channel=%d]"
+    BSLIB_LOG_INFO(Server::ETT_SERVER_COMMON, "ÇëÇóµÇÂ½[AccountName=%s][Channel=%d]"
         , reqAccountLogin->m_accountName.c_str()
         , reqAccountLogin->m_channelID);
 

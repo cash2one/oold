@@ -338,7 +338,7 @@ bool CSceneSystemDataMgr::_loadCityAttr(const std::string & a_path)
 	BSLib::Utility::CDirInfo::standardization(fileName);
 	BSLib::Utility::CTableSheet tableSheet;
 	if (!tableSheet.loadXmlFile(fileName)) {
-		BSLIB_LOG_INFOR(ETT_GSLIB_SCENESYSTEM, "加载主城场景失败[%s]", fileName.c_str());
+		BSLIB_LOG_INFO(ETT_GSLIB_SCENESYSTEM, "加载主城场景失败[%s]", fileName.c_str());
 		return false;
 	}
 	try {
@@ -359,7 +359,7 @@ bool CSceneSystemDataMgr::_loadCityAttr(const std::string & a_path)
 			m_hashScene.setValue(sceneAttr->m_sceneTPID, sceneAttr);
 		}
 	} catch (...) {
-		BSLIB_LOG_INFOR(ETT_GSLIB_SCENESYSTEM, "加载主城场景失败[%s]", fileName.c_str());
+		BSLIB_LOG_INFO(ETT_GSLIB_SCENESYSTEM, "加载主城场景失败[%s]", fileName.c_str());
 		return false;		
 	}
 	return true;
@@ -372,7 +372,7 @@ bool CSceneSystemDataMgr::_loadReviveItems(const std::string &a_path)
 	BSLib::Utility::CTableSheet tableSheet;
 	BSLib::Utility::CDirInfo::standardization(fileName);
 	if (!tableSheet.loadXmlFile(fileName)) {
-		BSLIB_LOG_INFOR(ETT_GSLIB_SCENESYSTEM, "加载场复活物品置失败[%s]", fileName.c_str());
+		BSLIB_LOG_INFO(ETT_GSLIB_SCENESYSTEM, "加载场复活物品置失败[%s]", fileName.c_str());
 		return false;
 	}
 	try {
@@ -391,7 +391,7 @@ bool CSceneSystemDataMgr::_loadReviveItems(const std::string &a_path)
 			CSceneSystemDataMgr::singleton().addReviveItem(reviveItem);
 		}
 	} catch (...) {
-		BSLIB_LOG_INFOR(ETT_GSLIB_SCENESYSTEM, "加载场复活物品置失败[%s]", fileName.c_str());
+		BSLIB_LOG_INFO(ETT_GSLIB_SCENESYSTEM, "加载场复活物品置失败[%s]", fileName.c_str());
 		return false;		
 	}
 	return true;
@@ -404,7 +404,7 @@ bool CSceneSystemDataMgr::_loadItemDropTable(const std::string &a_path)
 
 	BSLib::Utility::CTableSheet tableSheet;
 	if (!tableSheet.loadXmlFile(fileName)) {
-		BSLIB_LOG_INFOR(ETT_GSLIB_SCENESYSTEM, "加载物品掉落表置失败[%s]", fileName.c_str());
+		BSLIB_LOG_INFO(ETT_GSLIB_SCENESYSTEM, "加载物品掉落表置失败[%s]", fileName.c_str());
 		return false;
 	}
 
@@ -443,7 +443,7 @@ bool CSceneSystemDataMgr::_loadItemDropTable(const std::string &a_path)
 			CSceneSystemDataMgr::singleton().addDropItemTableEntry(dropEntry);
 		}
 	} catch (...) {
-		BSLIB_LOG_INFOR(ETT_GSLIB_SCENESYSTEM, "加载物品掉落表置失败[%s]", fileName.c_str());
+		BSLIB_LOG_INFO(ETT_GSLIB_SCENESYSTEM, "加载物品掉落表置失败[%s]", fileName.c_str());
 		return false;		
 	}
 
@@ -478,7 +478,7 @@ bool CSceneSystemDataMgr::_loadArenaData(const std::string &a_path)
 //	std::string fileName = a_path + "\\t_monster_instance_config.xml";
 //	BSLib::Utility::CTableSheet tableSheet;
 //	if (!tableSheet.loadXmlFile(fileName)) {
-//		BSLIB_LOG_INFOR(ETT_GSLIB_SCENESYSTEM, "加载怪物实例数据数据失败[%s]", fileName.c_str());
+//		BSLIB_LOG_INFO(ETT_GSLIB_SCENESYSTEM, "加载怪物实例数据数据失败[%s]", fileName.c_str());
 //		return false;
 //	}
 //	try {
@@ -491,7 +491,7 @@ bool CSceneSystemDataMgr::_loadArenaData(const std::string &a_path)
 //			m_hashMonsterInstance.setValue(monsterInstance->m_instanceID, monsterInstance);
 //		}
 //	} catch (...) {
-//		BSLIB_LOG_INFOR(ETT_GSLIB_SCENESYSTEM, "加载怪物实例数据数据失败[%s]", fileName.c_str());
+//		BSLIB_LOG_INFO(ETT_GSLIB_SCENESYSTEM, "加载怪物实例数据数据失败[%s]", fileName.c_str());
 //		return false;
 //	}
 //
@@ -505,7 +505,7 @@ bool CSceneSystemDataMgr::_loadStageUnit(const std::string &a_path)
 
 	BSLib::Utility::CTableSheet tableSheet;
 	if (!tableSheet.loadXmlFile(fileName)) {
-		BSLIB_LOG_INFOR(ETT_GSLIB_SCENESYSTEM, "加载关卡单元数据失败[%s]", fileName.c_str());
+		BSLIB_LOG_INFO(ETT_GSLIB_SCENESYSTEM, "加载关卡单元数据失败[%s]", fileName.c_str());
 		return false;
 	}
 	try {
@@ -584,7 +584,7 @@ bool CSceneSystemDataMgr::_loadStageUnit(const std::string &a_path)
 			}
 		}
 	} catch (...) {
-		BSLIB_LOG_INFOR(ETT_GSLIB_SCENESYSTEM, "加载关卡单元数据失败[%s]", fileName.c_str());
+		BSLIB_LOG_INFO(ETT_GSLIB_SCENESYSTEM, "加载关卡单元数据失败[%s]", fileName.c_str());
 		return false;
 	}
 
@@ -598,7 +598,7 @@ bool CSceneSystemDataMgr::_loadStageAttr(const std::string &a_path)
 
 	BSLib::Utility::CTableSheet tableSheet;
 	if (!tableSheet.loadXmlFile(fileName)) {
-		BSLIB_LOG_INFOR(ETT_GSLIB_SCENESYSTEM, "加载副本关卡数据失败[%s]", fileName.c_str());
+		BSLIB_LOG_INFO(ETT_GSLIB_SCENESYSTEM, "加载副本关卡数据失败[%s]", fileName.c_str());
 		return false;
 	}
 	try {
@@ -675,7 +675,7 @@ bool CSceneSystemDataMgr::_loadStageAttr(const std::string &a_path)
 					dropItem.m_totalWeight = 10000;
 					stageAttr->m_stagePrizeAttr.m_vecRandomDrops.push_back(dropItem);
 				} else {
-					BSLIB_LOG_INFOR(ETT_GSLIB_SCENESYSTEM, "加载副本关卡数据失败[%s], 奖励物品填写错误, stage_id[%d]", fileName.c_str(), stageAttr->m_sceneTPID);
+					BSLIB_LOG_INFO(ETT_GSLIB_SCENESYSTEM, "加载副本关卡数据失败[%s], 奖励物品填写错误, stage_id[%d]", fileName.c_str(), stageAttr->m_sceneTPID);
 					return false;
 				}
 
@@ -736,7 +736,7 @@ bool CSceneSystemDataMgr::_loadStageAttr(const std::string &a_path)
 		}
 	}
 	catch (...) {
-		BSLIB_LOG_INFOR(ETT_GSLIB_SCENESYSTEM, "加载副本关卡数据失败[%s]", fileName.c_str());
+		BSLIB_LOG_INFO(ETT_GSLIB_SCENESYSTEM, "加载副本关卡数据失败[%s]", fileName.c_str());
 		return false;
 	}
 
@@ -750,7 +750,7 @@ bool CSceneSystemDataMgr::_loadInstanceData(const std::string &a_path)
 
 	BSLib::Utility::CTableSheet tableSheet;
 	if (!tableSheet.loadXmlFile(fileName)) {
-		BSLIB_LOG_INFOR(ETT_GSLIB_SCENESYSTEM, "加载副本数据失败[%s]", fileName.c_str());
+		BSLIB_LOG_INFO(ETT_GSLIB_SCENESYSTEM, "加载副本数据失败[%s]", fileName.c_str());
 		return false;
 	}
 	try {
@@ -762,7 +762,7 @@ bool CSceneSystemDataMgr::_loadInstanceData(const std::string &a_path)
 			table[i]["f_type"] >> temp;
 			instanceAttr->m_instanceType = (EInstanceType)temp;
 			if (instanceAttr->m_instanceType <= EINSTANCE_TYPE_NONE || instanceAttr->m_instanceType >= EINSTANCE_TYPE_MAX) {
-				BSLIB_LOG_INFOR(ETT_GSLIB_SCENESYSTEM, "加载副本数据失败[%s],副本[%d]类型错误！", fileName.c_str(), instanceAttr->m_TPID);
+				BSLIB_LOG_INFO(ETT_GSLIB_SCENESYSTEM, "加载副本数据失败[%s],副本[%d]类型错误！", fileName.c_str(), instanceAttr->m_TPID);
 				return false;
 			}
 			table[i]["f_unlock_instance"] >> instanceAttr->m_unlockInstanceTPID;
@@ -780,7 +780,7 @@ bool CSceneSystemDataMgr::_loadInstanceData(const std::string &a_path)
 					CStageAttr *stageAttr = itr->second;
 					if (stageAttr != NULL) {
 						if (stageAttr->m_instanceType != EINSTANCE_TYPE_NONE) {
-							BSLIB_LOG_INFOR(ETT_GSLIB_SCENESYSTEM, "加载副本数据失败[%s],副本[%d]的关卡[%d]赋值给多个副本！", fileName.c_str(), instanceAttr->m_TPID, stageID);
+							BSLIB_LOG_INFO(ETT_GSLIB_SCENESYSTEM, "加载副本数据失败[%s],副本[%d]的关卡[%d]赋值给多个副本！", fileName.c_str(), instanceAttr->m_TPID, stageID);
 							return false;
 						}
 						//TODO 加个限制，没有才加入
@@ -801,7 +801,7 @@ bool CSceneSystemDataMgr::_loadInstanceData(const std::string &a_path)
 						instanceAttr->m_vecStage.push_back(stageAttr);
 					}
 				} else {
-					BSLIB_LOG_INFOR(ETT_GSLIB_SCENESYSTEM, "加载副本数据失败[%s],副本[%d]的关卡[%d]不存在！", fileName.c_str(), instanceAttr->m_TPID, stageID);
+					BSLIB_LOG_INFO(ETT_GSLIB_SCENESYSTEM, "加载副本数据失败[%s],副本[%d]的关卡[%d]不存在！", fileName.c_str(), instanceAttr->m_TPID, stageID);
 					return false;
 				}
 			}
@@ -810,7 +810,7 @@ bool CSceneSystemDataMgr::_loadInstanceData(const std::string &a_path)
 		}
 	}
 	catch (...) {
-		BSLIB_LOG_INFOR(ETT_GSLIB_SCENESYSTEM, "加载副本数据失败[%s]", fileName.c_str());
+		BSLIB_LOG_INFO(ETT_GSLIB_SCENESYSTEM, "加载副本数据失败[%s]", fileName.c_str());
 		return false;
 	}
 
@@ -824,7 +824,7 @@ bool CSceneSystemDataMgr::_loadInstanceStarPrizeData(const std::string & a_path)
 
 	BSLib::Utility::CTableSheet tableSheet;
 	if (!tableSheet.loadXmlFile(fileName)) {
-		BSLIB_LOG_INFOR(ETT_GSLIB_SCENESYSTEM, "加载副本星级奖励失败[%s]", fileName.c_str());
+		BSLIB_LOG_INFO(ETT_GSLIB_SCENESYSTEM, "加载副本星级奖励失败[%s]", fileName.c_str());
 		return false;
 	}
 	try {
@@ -847,7 +847,7 @@ bool CSceneSystemDataMgr::_loadInstanceStarPrizeData(const std::string & a_path)
 			_addInstanceStarPrize(instanceTPID, star, vecPrizeItem);
 		}
 	} catch (...) {
-		BSLIB_LOG_INFOR(ETT_GSLIB_SCENESYSTEM, "加载副本星级奖励失败[%s]", fileName.c_str());
+		BSLIB_LOG_INFO(ETT_GSLIB_SCENESYSTEM, "加载副本星级奖励失败[%s]", fileName.c_str());
 		return false;		
 	}
 	return true;
@@ -860,7 +860,7 @@ bool CSceneSystemDataMgr::_loadArenaDailyRankPrize(const std::string &a_path)
 
 	BSLib::Utility::CTableSheet tableSheet;
 	if (!tableSheet.loadXmlFile(fileName)) {
-		BSLIB_LOG_INFOR(ETT_GSLIB_SCENESYSTEM, "加载竞技场每日排名奖励失败[%s]", fileName.c_str());
+		BSLIB_LOG_INFO(ETT_GSLIB_SCENESYSTEM, "加载竞技场每日排名奖励失败[%s]", fileName.c_str());
 		return false;
 	}
 
@@ -885,7 +885,7 @@ bool CSceneSystemDataMgr::_loadArenaDailyRankPrize(const std::string &a_path)
 			addDailyRankPrize(rank, prize);
 		}
 	} catch (...) {
-		BSLIB_LOG_INFOR(ETT_GSLIB_SCENESYSTEM, "加载竞技场每日排名奖励失败[%s]", fileName.c_str());
+		BSLIB_LOG_INFO(ETT_GSLIB_SCENESYSTEM, "加载竞技场每日排名奖励失败[%s]", fileName.c_str());
 		return false;		
 	}
 
@@ -899,7 +899,7 @@ bool CSceneSystemDataMgr::_loadArenaHistoryHighestRankPrize(const std::string &a
 
 	BSLib::Utility::CTableSheet tableSheet;
 	if (!tableSheet.loadXmlFile(fileName)) {
-		BSLIB_LOG_INFOR(ETT_GSLIB_SCENESYSTEM, "加载竞技场最高排名奖励奖励失败[%s]", fileName.c_str());
+		BSLIB_LOG_INFO(ETT_GSLIB_SCENESYSTEM, "加载竞技场最高排名奖励奖励失败[%s]", fileName.c_str());
 		return false;
 	}
 
@@ -924,7 +924,7 @@ bool CSceneSystemDataMgr::_loadArenaHistoryHighestRankPrize(const std::string &a
 			addHistoryHighestRankPrize(rank, prize);
 		}
 	} catch (...) {
-		BSLIB_LOG_INFOR(ETT_GSLIB_SCENESYSTEM, "加载竞技场最高排名奖励奖励失败[%s]", fileName.c_str());
+		BSLIB_LOG_INFO(ETT_GSLIB_SCENESYSTEM, "加载竞技场最高排名奖励奖励失败[%s]", fileName.c_str());
 		return false;		
 	}
 
@@ -938,7 +938,7 @@ bool CSceneSystemDataMgr::_loadArenaChallengePrize(const std::string &a_path)
 
 	BSLib::Utility::CTableSheet tableSheet;
 	if (!tableSheet.loadXmlFile(fileName)) {
-		BSLIB_LOG_INFOR(ETT_GSLIB_SCENESYSTEM, "加载竞技场排名挑战奖励失败[%s]", fileName.c_str());
+		BSLIB_LOG_INFO(ETT_GSLIB_SCENESYSTEM, "加载竞技场排名挑战奖励失败[%s]", fileName.c_str());
 		return false;
 	}
 
@@ -968,7 +968,7 @@ bool CSceneSystemDataMgr::_loadArenaChallengePrize(const std::string &a_path)
 			}
 		}
 	} catch (...) {
-		BSLIB_LOG_INFOR(ETT_GSLIB_SCENESYSTEM, "加载竞技场排名挑战奖励失败[%s]", fileName.c_str());
+		BSLIB_LOG_INFO(ETT_GSLIB_SCENESYSTEM, "加载竞技场排名挑战奖励失败[%s]", fileName.c_str());
 		return false;		
 	}
 
@@ -981,7 +981,7 @@ bool CSceneSystemDataMgr::_loadArenaChallengePrize(const std::string &a_path)
 //
 //	BSLib::Utility::CTableSheet tableSheet;
 //	if (!tableSheet.loadXmlFile(fileName)) {
-//		BSLIB_LOG_INFOR(ETT_GSLIB_SCENESYSTEM, "加载竞技场配置失败[%s]", fileName.c_str());
+//		BSLIB_LOG_INFO(ETT_GSLIB_SCENESYSTEM, "加载竞技场配置失败[%s]", fileName.c_str());
 //		return false;
 //	}
 //
@@ -989,7 +989,7 @@ bool CSceneSystemDataMgr::_loadArenaChallengePrize(const std::string &a_path)
 //		BSLib::Utility::CTable &table = tableSheet["config"];
 //		table[0]["f_max_role_hp_extend_times"] >> m_maxRoleHPExtendTimes;				
 //	} catch (...) {
-//		BSLIB_LOG_INFOR(ETT_GSLIB_SCENESYSTEM, "加载竞技场配置失败[%s]", fileName.c_str());
+//		BSLIB_LOG_INFO(ETT_GSLIB_SCENESYSTEM, "加载竞技场配置失败[%s]", fileName.c_str());
 //		return false;		
 //	}
 //
@@ -1003,7 +1003,7 @@ bool CSceneSystemDataMgr::_loadStageTemplate(const std::string &a_path)
 
 	BSLib::Utility::CTableSheet tableSheet;
 	if (!tableSheet.loadXmlFile(fileName)) {
-		BSLIB_LOG_INFOR(ETT_GSLIB_SCENESYSTEM, "加载随机关卡配置失败[%s]", fileName.c_str());
+		BSLIB_LOG_INFO(ETT_GSLIB_SCENESYSTEM, "加载随机关卡配置失败[%s]", fileName.c_str());
 		return false;
 	}
 
@@ -1023,13 +1023,13 @@ bool CSceneSystemDataMgr::_loadStageTemplate(const std::string &a_path)
 				stageTemplate->m_minStageUnitBatchCount = BSLib::Utility::CConvert::toUint32(vecMonsterCount[0]);
 				stageTemplate->m_maxStageUnitBatchCount = BSLib::Utility::CConvert::toUint32(vecMonsterCount[1]);
 			} else {
-				BSLIB_LOG_INFOR(ETT_GSLIB_SCENESYSTEM, "加载随机关卡配置失败[%s],难度[%d]每批次敌人填写格式有误", fileName.c_str(), stageTemplate->m_difficulty);
+				BSLIB_LOG_INFO(ETT_GSLIB_SCENESYSTEM, "加载随机关卡配置失败[%s],难度[%d]每批次敌人填写格式有误", fileName.c_str(), stageTemplate->m_difficulty);
 			}
 			
 			_addTemplateStage(stageTemplate);
 		}			
 	} catch (...) {
-		BSLIB_LOG_INFOR(ETT_GSLIB_SCENESYSTEM, "加载随机关卡配置失败[%s]", fileName.c_str());
+		BSLIB_LOG_INFO(ETT_GSLIB_SCENESYSTEM, "加载随机关卡配置失败[%s]", fileName.c_str());
 		return false;		
 	}
 

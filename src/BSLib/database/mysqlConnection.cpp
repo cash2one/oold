@@ -566,7 +566,7 @@ bool CMysqlConnection::_checkConnect()
 {
 	if (mysql_ping(&m_mysql) != 0) {
 		close();
-		BSLIB_LOG_INFOR(ETT_BSLIB_DATABASE, "重新连接MySQL");
+		BSLIB_LOG_INFO(ETT_BSLIB_DATABASE, "重新连接MySQL");
 		if (!connect(m_urlInfor)){
 			BSLIB_LOG_FATAL(ETT_BSLIB_DATABASE, "重新连接MySQL失败");
 			return false;

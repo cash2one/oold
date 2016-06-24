@@ -10,7 +10,7 @@ namespace LoginSystem
 namespace LG
 {
 
-class CServiceMgrCallback : public BSLib::Utility::CHashMap<GFLib::ServerID, GFLib::CommonServer::SServiceInfor*>::CCallback
+class CServiceMgrCallback : public BSLib::Utility::CHashMap<GFLib::ServerID, GFLib::CommonServer::SServiceInfo*>::CCallback
 {
 public:
 	CServiceMgrCallback(BSLib::Utility::CHashMap<GFLib::ZoneID, SZoneInfor*>* zoneOnlineInforHashMap)
@@ -18,7 +18,7 @@ public:
 	{
 		;
 	}
-	virtual bool exec(const GFLib::ServerID& _key, GFLib::CommonServer::SServiceInfor*& _value)
+	virtual bool exec(const GFLib::ServerID& _key, GFLib::CommonServer::SServiceInfo*& _value)
 	{
 		GFLib::SServerID serverID(_key);
 

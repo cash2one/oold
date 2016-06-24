@@ -64,7 +64,7 @@ bool CLoginSystemLG::registerAccount(GFLib::StubID a_stubID, std::string& accoun
 
 	GSLib::DBSystem::LG::SAccountData accountData;
 	if(registerType == GSLib::LoginSystem::EREGEITERTYPE_NORMAL_REGISTER){
-		BSLIB_LOG_INFOR(ETT_GSLIB_LOGINSYSTEM, "普通注册[AccountName=%s]", a_reqRegisterAccount.m_accountName.c_str());
+		BSLIB_LOG_INFO(ETT_GSLIB_LOGINSYSTEM, "普通注册[AccountName=%s]", a_reqRegisterAccount.m_accountName.c_str());
 		if(a_reqRegisterAccount.m_accountName.length() < 6){
 			a_ackRegisterAccount.m_state = EREGISTERRESULT_ACCOUNT_INVALID;
 			return false;
@@ -126,7 +126,7 @@ bool CLoginSystemLG::registerAccount(GFLib::StubID a_stubID, std::string& accoun
 
 		// 记录日志
 		BSLib::Utility::CDateTime now = BSLib::Utility::CDateTime::getCurrentTime();
-		BSLIB_LOG_INFOR(ETT_GSLIB_GAME, "[t_register][f_time=%s][f_acc_id=%lld][f_acc_type=%u]", 
+		BSLIB_LOG_INFO(ETT_GSLIB_GAME, "[t_register][f_time=%s][f_acc_id=%lld][f_acc_type=%u]", 
 			now.toString().c_str(),
 			accountID,
 			a_reqRegisterAccount.m_channelID);
@@ -167,14 +167,14 @@ bool CLoginSystemLG::registerAccount(GFLib::StubID a_stubID, std::string& accoun
 // 			if( res > 0)
 // 			{
 // 				BSLib::Utility::CDateTime now = BSLib::Utility::CDateTime::getCurrentTime();
-// 				BSLIB_LOG_INFOR(ETT_GSLIB_GAME, "[t_register][f_time=%s][f_acc_id=%lld][f_acc_type=%u]", 
+// 				BSLIB_LOG_INFO(ETT_GSLIB_GAME, "[t_register][f_time=%s][f_acc_id=%lld][f_acc_type=%u]", 
 // 					now.toString().c_str(),
 // 					saData.m_accountID,
 // 					saData.m_channelID);
 // 			}
 // 		}
 	} else if(registerType == GSLib::LoginSystem::EREGEITERTYPE_FAST_REGISTER){
-		BSLIB_LOG_INFOR(ETT_GSLIB_LOGINSYSTEM, "快速注册[m_uniqueID=%s][m_uniqueKey=%s]", a_reqRegisterAccount.m_uniqueID.c_str(), a_reqRegisterAccount.m_uniqueKey.c_str());
+		BSLIB_LOG_INFO(ETT_GSLIB_LOGINSYSTEM, "快速注册[m_uniqueID=%s][m_uniqueKey=%s]", a_reqRegisterAccount.m_uniqueID.c_str(), a_reqRegisterAccount.m_uniqueKey.c_str());
 		const BSLib::uint32 bindFlag = 0;
 		int res = GSLib::DBSystem::LG::CDBSystemLG::singleton().selectFastLoginAccountData(a_reqRegisterAccount.m_uniqueID,a_reqRegisterAccount.m_uniqueKey,bindFlag, accountData);
 
@@ -218,7 +218,7 @@ bool CLoginSystemLG::registerAccount(GFLib::StubID a_stubID, std::string& accoun
 // 		a_ackRegisterAccount.m_state = ELOGINRESULT_SUCCESS;
 // 		return true;
 	} else if(registerType == GSLib::LoginSystem::EREGEITERTYPE_BIND_MACHINE){
-		BSLIB_LOG_INFOR(ETT_GSLIB_LOGINSYSTEM, "账号绑定[AccountName=%s][m_uniqueID=%s][m_uniqueKey=%s]", a_reqRegisterAccount.m_accountName.c_str(), a_reqRegisterAccount.m_uniqueID.c_str(), a_reqRegisterAccount.m_uniqueKey.c_str());
+		BSLIB_LOG_INFO(ETT_GSLIB_LOGINSYSTEM, "账号绑定[AccountName=%s][m_uniqueID=%s][m_uniqueKey=%s]", a_reqRegisterAccount.m_accountName.c_str(), a_reqRegisterAccount.m_uniqueID.c_str(), a_reqRegisterAccount.m_uniqueKey.c_str());
 	}
 
 	return true;
@@ -326,7 +326,7 @@ bool CLoginSystemLG::_verifyNormalAccountLogin(GFLib::StubID a_stubID, std::stri
 // 		return false;
 // 	}
 // 
-// 	BSLIB_LOG_INFOR(ETT_GSLIB_LOGINSYSTEM, "进入Super请求[AccountName=%s][zoneID=%d][SessionID=%d]",
+// 	BSLIB_LOG_INFO(ETT_GSLIB_LOGINSYSTEM, "进入Super请求[AccountName=%s][zoneID=%d][SessionID=%d]",
 // 		a_reqAccountLogin.m_accountName.c_str(),
 // 		a_reqAccountLogin.m_zoneID,
 // 		accountInfor.m_sessionID);
@@ -342,7 +342,7 @@ bool CLoginSystemLG::_verifyNormalAccountLogin(GFLib::StubID a_stubID, std::stri
 		return false;
 	}
 
-    BSLIB_LOG_INFOR(ETT_GSLIB_LOGINSYSTEM, "进入CMsgLoginSystemLG2CNReqAccountLogin请求[AccountName=%s][zoneID=%d][SessionID=%d]",
+    BSLIB_LOG_INFO(ETT_GSLIB_LOGINSYSTEM, "进入CMsgLoginSystemLG2CNReqAccountLogin请求[AccountName=%s][zoneID=%d][SessionID=%d]",
         a_reqAccountLogin.m_accountName.c_str(),
         a_reqAccountLogin.m_zoneID,
         accountInfor.m_sessionID);
@@ -408,7 +408,7 @@ bool CLoginSystemLG::_verifyTokenAccountLogin(GFLib::StubID a_stubID, std::strin
         return false;
     }
 
-    BSLIB_LOG_INFOR(ETT_GSLIB_LOGINSYSTEM, "进入Super请求[AccountName=%s][zoneID=%d][SessionID=%d]",
+    BSLIB_LOG_INFO(ETT_GSLIB_LOGINSYSTEM, "进入Super请求[AccountName=%s][zoneID=%d][SessionID=%d]",
         a_reqAccountLogin.m_accountName.c_str(),
         a_reqAccountLogin.m_zoneID,
         accountInfor.m_sessionID);
@@ -473,7 +473,7 @@ bool CLoginSystemLG::_verifyFastAccountLogin(GFLib::StubID a_stubID, std::string
 // 		return false;
 // 	}
 // 
-// 	BSLIB_LOG_INFOR(ETT_GSLIB_LOGINSYSTEM, "进入Super请求[AccountName=%s][zoneID=%d][SessionID=%d]",
+// 	BSLIB_LOG_INFO(ETT_GSLIB_LOGINSYSTEM, "进入Super请求[AccountName=%s][zoneID=%d][SessionID=%d]",
 // 		a_reqAccountLogin.m_uniqueID.c_str(),
 // 		a_reqAccountLogin.m_zoneID,
 // 		accountInfor.m_sessionID);
@@ -488,7 +488,7 @@ bool CLoginSystemLG::_verifyFastAccountLogin(GFLib::StubID a_stubID, std::string
         return false;
     }
 
-    BSLIB_LOG_INFOR(ETT_GSLIB_LOGINSYSTEM, "进入CMsgLoginSystemLG2CNReqAccountLogin请求[AccountName=%s][zoneID=%d][SessionID=%d]",
+    BSLIB_LOG_INFO(ETT_GSLIB_LOGINSYSTEM, "进入CMsgLoginSystemLG2CNReqAccountLogin请求[AccountName=%s][zoneID=%d][SessionID=%d]",
         a_reqAccountLogin.m_accountName.c_str(),
         a_reqAccountLogin.m_zoneID,
         accountInfor.m_sessionID);
@@ -504,7 +504,7 @@ bool CLoginSystemLG::_fastRegisterAccount(CMsgLoginSystemGC2LGReqAccountLogin& a
 
     GSLib::DBSystem::LG::SAccountData accountData;
     if(loginType == GSLib::LoginSystem::ELOGINTYPE_FAST_LOGIN){
-        BSLIB_LOG_INFOR(ETT_GSLIB_LOGINSYSTEM, "快速注册[m_uniqueID=%s][m_uniqueKey=%s]", a_reqAccountLogin.m_uniqueID.c_str(), a_reqAccountLogin.m_uniqueKey.c_str());
+        BSLIB_LOG_INFO(ETT_GSLIB_LOGINSYSTEM, "快速注册[m_uniqueID=%s][m_uniqueKey=%s]", a_reqAccountLogin.m_uniqueID.c_str(), a_reqAccountLogin.m_uniqueKey.c_str());
         //return registerFastAccountLogin(a_stubID,accountLoginIP,a_reqRegisterAccount,a_ackRegisterAccount);
         const BSLib::uint32 bindFlag = 0;
         int res = GSLib::DBSystem::LG::CDBSystemLG::singleton().selectFastLoginAccountData(a_reqAccountLogin.m_uniqueID,a_reqAccountLogin.m_uniqueKey,bindFlag, accountData);
@@ -556,7 +556,7 @@ bool CLoginSystemLG::_fastRegisterAccount(CMsgLoginSystemGC2LGReqGetAccountToken
 
 	GSLib::DBSystem::LG::SAccountData accountData;
 	if(loginType == GSLib::LoginSystem::ELOGINTYPE_FAST_LOGIN){
-		BSLIB_LOG_INFOR(ETT_GSLIB_LOGINSYSTEM, "快速注册[m_uniqueID=%s][m_uniqueKey=%s]", a_reqAccountLogin.m_uniqueID.c_str(), a_reqAccountLogin.m_uniqueKey.c_str());
+		BSLIB_LOG_INFO(ETT_GSLIB_LOGINSYSTEM, "快速注册[m_uniqueID=%s][m_uniqueKey=%s]", a_reqAccountLogin.m_uniqueID.c_str(), a_reqAccountLogin.m_uniqueKey.c_str());
 		const BSLib::uint32 bindFlag = 0;
 		int res = GSLib::DBSystem::LG::CDBSystemLG::singleton().selectFastLoginAccountData(a_reqAccountLogin.m_uniqueID,a_reqAccountLogin.m_uniqueKey,bindFlag, accountData);
 
@@ -656,7 +656,7 @@ bool CLoginSystemLG::_verifyNormalGetAccountToken(GFLib::StubID a_stubID, std::s
         return false;
     }
 
-    BSLIB_LOG_INFOR(ETT_GSLIB_LOGINSYSTEM, "进入Super请求[AccountName=%s][SessionID=%d]",
+    BSLIB_LOG_INFO(ETT_GSLIB_LOGINSYSTEM, "进入Super请求[AccountName=%s][SessionID=%d]",
         a_reqAccountLogin.m_accountName.c_str(),
         accountInfor.m_sessionID);
 
@@ -714,7 +714,7 @@ bool CLoginSystemLG::_verifyFastGetAccountToken(GFLib::StubID a_stubID, std::str
         return false;
     }
 
-    BSLIB_LOG_INFOR(ETT_GSLIB_LOGINSYSTEM, "进入Super请求[AccountName=%s][SessionID=%d]",
+    BSLIB_LOG_INFO(ETT_GSLIB_LOGINSYSTEM, "进入Super请求[AccountName=%s][SessionID=%d]",
         a_reqAccountLogin.m_uniqueID.c_str(),
         accountInfor.m_sessionID);
 

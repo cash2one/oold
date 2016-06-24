@@ -14,7 +14,7 @@ namespace CommonServer
 {
 
 //////////////////////////////////////////////////////////////////////////
-bool loadServersNode(ZoneID a_zoneID, BSLib::Utility::CXmlFile& a_xmlFile, BSLib::Utility::HXmlNode a_serversNode, SServiceNetInfor& a_netInfor)
+bool loadServersNode(ZoneID a_zoneID, BSLib::Utility::CXmlFile& a_xmlFile, BSLib::Utility::HXmlNode a_serversNode, SServiceNetInfo& a_netInfor)
 { 
 	BSLib::int32 serverNumber = 0;
 	std::string strServerType = "";
@@ -57,7 +57,7 @@ bool loadServersNode(ZoneID a_zoneID, BSLib::Utility::CXmlFile& a_xmlFile, BSLib
 			return false;
 		}
 		if (subNodeName == "listener") {
-			SServiceNetListenerInfor listenerInfor;
+			SServiceNetListenerInfo listenerInfor;
 			std::string listenerIP;
 			BSLib::int32 listenerPort = 0;
 			std::string strNeedOuter = "false";
@@ -78,7 +78,7 @@ bool loadServersNode(ZoneID a_zoneID, BSLib::Utility::CXmlFile& a_xmlFile, BSLib
 
 			a_netInfor.m_listenerAddrList.push_back(listenerInfor);
 		} else if (subNodeName == "connect") {
-			SServiceNetConnectorInfor connectorInfor;
+			SServiceNetConnectorInfo connectorInfor;
 			std::string strNeedReconnect = "false";
 			std::string strNeedTerminateServer = "false";
 			std::string strNeedPing = "false";
@@ -108,7 +108,7 @@ bool loadServersNode(ZoneID a_zoneID, BSLib::Utility::CXmlFile& a_xmlFile, BSLib
 	return true;
 }
 
-bool loadGlobalNodes(BSLib::Utility::CXmlFile& a_xmlFile, BSLib::Utility::HXmlNode a_globalNode, BSLib::Utility::CHashMap<std::string, SServiceInfor*>& a_hashMapByKeyName)
+bool loadGlobalNodes(BSLib::Utility::CXmlFile& a_xmlFile, BSLib::Utility::HXmlNode a_globalNode, BSLib::Utility::CHashMap<std::string, SServiceInfo*>& a_hashMapByKeyName)
 {
 	BSLib::Utility::HXmlNode subNode = a_xmlFile.getChildNode(a_globalNode);
 	while (subNode != NULL) {
@@ -117,7 +117,7 @@ bool loadGlobalNodes(BSLib::Utility::CXmlFile& a_xmlFile, BSLib::Utility::HXmlNo
 			return false;
 		}
 		if (subNodeName == "server") {
-			SServiceInfor* serviceInfor = new SServiceInfor;
+			SServiceInfo* serviceInfor = new SServiceInfo;
 			if (serviceInfor == NULL) {
 				return false;
 			}
@@ -138,7 +138,7 @@ bool loadGlobalNodes(BSLib::Utility::CXmlFile& a_xmlFile, BSLib::Utility::HXmlNo
 	return true;
 }
 
-bool loadZoneNodes(BSLib::Utility::CXmlFile& a_xmlFile, BSLib::Utility::HXmlNode a_zoneNode, BSLib::Utility::CHashMap<std::string, SServiceInfor*>& a_hashMapByKeyName)
+bool loadZoneNodes(BSLib::Utility::CXmlFile& a_xmlFile, BSLib::Utility::HXmlNode a_zoneNode, BSLib::Utility::CHashMap<std::string, SServiceInfo*>& a_hashMapByKeyName)
 {
 	BSLib::int32 zoneID = GLOBAL_ZONEID;
 	a_xmlFile.getNodeAttrValue(a_zoneNode, "zoneid", zoneID);
@@ -153,7 +153,7 @@ bool loadZoneNodes(BSLib::Utility::CXmlFile& a_xmlFile, BSLib::Utility::HXmlNode
 			return false;
 		}
 		if (subNodeName == "server") {
-			SServiceInfor* serviceInfor = new SServiceInfor;
+			SServiceInfo* serviceInfor = new SServiceInfo;
 			if (serviceInfor == NULL) {
 				return false;
 			}
@@ -203,7 +203,7 @@ bool CServiceMgr::addService(CServicePtr& a_service)
 {
 	SServerID serverID = a_service->getServerID();
 
-	SServiceInfor* serviceInfor = NULL;
+	SServiceInfo* serviceInfor = NULL;
 	m_hashMapByServerID.getValue(serverID.getServerID(), serviceInfor);
 	if (serviceInfor == NULL) {
 		return false;
@@ -253,7 +253,7 @@ bool CServiceMgr::addService(CServicePtr& a_service)
 
 bool CServiceMgr::delService(SServerID a_serverID)
 {
-	SServiceInfor* serviceInfor = NULL;
+	SServiceInfo* serviceInfor = NULL;
 	m_hashMapByServerID.getValue(a_serverID.getServerID(), serviceInfor);
 	if (serviceInfor == NULL) {
 		return false;
@@ -279,7 +279,7 @@ bool CServiceMgr::delService(SServerID a_serverID)
 
 void CServiceMgr::freeService(SServerID a_serverID)
 {
-	SServiceInfor* serviceInfor = NULL;
+	SServiceInfo* serviceInfor = NULL;
 	m_hashMapByServerID.getValue(a_serverID.getServerID(), serviceInfor);
 	if (serviceInfor == NULL) {
 		return ;
@@ -295,7 +295,7 @@ void CServiceMgr::freeService(SServerID a_serverID)
 
 void CServiceMgr::closeAll()
 {
-	BSLib::Utility::CHashMap<std::string, SServiceInfor*>::iterator it_key = m_hashMapByKeyName.begin();
+	BSLib::Utility::CHashMap<std::string, SServiceInfo*>::iterator it_key = m_hashMapByKeyName.begin();
 	for (; it_key != m_hashMapByKeyName.end(); ++it_key) {
 		if (it_key->second == NULL) {
 			continue;
@@ -310,7 +310,7 @@ void CServiceMgr::closeAll()
 
 bool CServiceMgr::sendMsgToServer(const std::string& a_serverKey, GFLib::SMessage* a_msg, BSLib::uint32 a_msgSize)
 {
-	SServiceInfor* serviceInfor = NULL;
+	SServiceInfo* serviceInfor = NULL;
 	m_hashMapByKeyName.getValue(a_serverKey, serviceInfor);
 	if (serviceInfor == NULL) {
 		return false;
@@ -328,7 +328,7 @@ bool CServiceMgr::sendMsgToServer(const std::string& a_serverKey, GFLib::SMessag
 
 bool CServiceMgr::sendMsgToServer(const std::string& a_serverKey, GFLib::CMessage& a_msg)
 {
-	SServiceInfor* serviceInfor = NULL;
+	SServiceInfo* serviceInfor = NULL;
 	m_hashMapByKeyName.getValue(a_serverKey, serviceInfor);
 	if (serviceInfor == NULL) {
 		return false;
@@ -347,7 +347,7 @@ bool CServiceMgr::sendMsgToServer(const std::string& a_serverKey, GFLib::CMessag
 
 bool CServiceMgr::sendMsgToServer(const ServerID& a_serverID, GFLib::SMessage* a_msg, BSLib::uint32 a_msgSize)
 {
-	SServiceInfor* serviceInfor = NULL;
+	SServiceInfo* serviceInfor = NULL;
 	m_hashMapByServerID.getValue(a_serverID, serviceInfor);
 	if (serviceInfor == NULL) {
 		return false;
@@ -366,7 +366,7 @@ bool CServiceMgr::sendMsgToServer(const ServerID& a_serverID, GFLib::SMessage* a
 
 bool CServiceMgr::sendMsgToServer(const ServerID& a_serverID, GFLib::CMessage& a_msg)
 {
-	SServiceInfor* serviceInfor = NULL;
+	SServiceInfo* serviceInfor = NULL;
 	m_hashMapByServerID.getValue(a_serverID, serviceInfor);
 	if (serviceInfor == NULL) {
 		return false;
@@ -454,14 +454,14 @@ bool CServiceMgr::sendMsgToServer(const SServerID& a_serverID, const SAccountKey
 
 bool CServiceMgr::sendMsgToServerType(ServerType a_serverType, GFLib::SMessage* a_msg, BSLib::uint32 a_msgSize)
 {
-	BSLib::Utility::CHashMap< ServerType, std::vector< SServiceInfor* > >::iterator it_type;
+	BSLib::Utility::CHashMap< ServerType, std::vector< SServiceInfo* > >::iterator it_type;
 	it_type = m_hashMapByServerType.find(a_serverType);
 	if (it_type == m_hashMapByServerType.end()) {
 		return true;
 	}
-	std::vector<SServiceInfor*>& serviceList = it_type->second;
+	std::vector<SServiceInfo*>& serviceList = it_type->second;
 	for (BSLib::uint32 i=0; i<serviceList.size(); ++i) {
-		SServiceInfor* serviceInfor = serviceList[i];
+		SServiceInfo* serviceInfor = serviceList[i];
 		if (serviceInfor == NULL) {
 			continue;
 		}
@@ -481,14 +481,14 @@ bool CServiceMgr::sendMsgToServerType(ServerType a_serverType, GFLib::SMessage* 
 
 bool CServiceMgr::sendMsgToServerType(ServerType a_serverType, GFLib::CMessage& a_msg)
 {
-	BSLib::Utility::CHashMap< ServerType, std::vector< SServiceInfor* > >::iterator it_type;
+	BSLib::Utility::CHashMap< ServerType, std::vector< SServiceInfo* > >::iterator it_type;
 	it_type = m_hashMapByServerType.find(a_serverType);
 	if (it_type == m_hashMapByServerType.end()) {
 		return true;
 	}
-	std::vector<SServiceInfor*>& serviceList = it_type->second;
+	std::vector<SServiceInfo*>& serviceList = it_type->second;
 	for (BSLib::uint32 i=0; i<serviceList.size(); ++i) {
-		SServiceInfor* serviceInfor = serviceList[i];
+		SServiceInfo* serviceInfor = serviceList[i];
 		if (serviceInfor == NULL) {
 			continue;
 		}
@@ -508,7 +508,7 @@ bool CServiceMgr::sendMsgToServerType(ServerType a_serverType, GFLib::CMessage& 
 
 SServerID CServiceMgr::getServerID(const std::string& a_serverKey)
 {
-	SServiceInfor* serviceInfor = NULL;
+	SServiceInfo* serviceInfor = NULL;
 	m_hashMapByKeyName.getValue(a_serverKey, serviceInfor);
 	if (serviceInfor == NULL) {
 		return SServerID(0);
@@ -520,7 +520,7 @@ const std::string& CServiceMgr::getServerKey(SServerID a_serverID)
 {
 	static std::string tmp = "";
 
-	SServiceInfor* serviceInfor = NULL;
+	SServiceInfo* serviceInfor = NULL;
 	m_hashMapByServerID.getValue(a_serverID.getServerID(), serviceInfor);
 	if (serviceInfor == NULL) {
 		return tmp;
@@ -528,14 +528,14 @@ const std::string& CServiceMgr::getServerKey(SServerID a_serverID)
 	return serviceInfor->m_netInfor.m_key;
 }
 
-const SServiceNetInfor* CServiceMgr::getServerNetInfor(const std::string& a_serverKey)
+const SServiceNetInfo* CServiceMgr::getServerNetInfor(const std::string& a_serverKey)
 {
-	SServiceInfor* serviceInfor = NULL;
+	SServiceInfo* serviceInfor = NULL;
 	m_hashMapByKeyName.getValue(a_serverKey, serviceInfor);
 	return &serviceInfor->m_netInfor;
 }
 
-void CServiceMgr::traversal(BSLib::Utility::CHashMap<ServerID, SServiceInfor*>::CCallback& cb)
+void CServiceMgr::traversal(BSLib::Utility::CHashMap<ServerID, SServiceInfo*>::CCallback& cb)
 {
 	m_hashMapByServerID.traversal(cb);
 }
@@ -584,9 +584,9 @@ bool CServiceMgr::_loadConfigFile(const std::string& a_configFile)
 
 bool CServiceMgr::_initServiceInfor()
 {
-	BSLib::Utility::CHashMap<std::string, SServiceInfor*>::iterator it_key = m_hashMapByKeyName.begin();
+	BSLib::Utility::CHashMap<std::string, SServiceInfo*>::iterator it_key = m_hashMapByKeyName.begin();
 	for (; it_key != m_hashMapByKeyName.end(); ++it_key) {
-		SServiceInfor* seviceInfor = it_key->second;
+		SServiceInfo* seviceInfor = it_key->second;
 		if (seviceInfor == NULL) {
 			return false;
 		}
@@ -596,20 +596,20 @@ bool CServiceMgr::_initServiceInfor()
 		}
 		m_hashMapByServerID.setValue(seviceInfor->m_netInfor.m_serverID.getServerID(), seviceInfor);
 		
-		BSLib::Utility::CHashMap< ServerType, std::vector< SServiceInfor* > >::iterator it_type;
+		BSLib::Utility::CHashMap< ServerType, std::vector< SServiceInfo* > >::iterator it_type;
 		it_type = m_hashMapByServerType.find(seviceInfor->m_netInfor.m_serverID.getServerType());
 		if (it_type == m_hashMapByServerType.end()) {
-			std::vector<SServiceInfor*> serviceList;
+			std::vector<SServiceInfo*> serviceList;
 			serviceList.push_back(seviceInfor);
 			m_hashMapByServerType.setValue(seviceInfor->m_netInfor.m_serverID.getServerType(), serviceList);
 		} else {
 			it_type->second.push_back(seviceInfor);
 		}
 
-		BSLib::Utility::CHashMap< ZoneID, std::vector< SServiceInfor* > >::iterator it_zone;
+		BSLib::Utility::CHashMap< ZoneID, std::vector< SServiceInfo* > >::iterator it_zone;
 		it_zone = m_hashMapByZone.find(seviceInfor->m_netInfor.m_serverID.getZoneID());
 		if (it_zone == m_hashMapByZone.end()) {
-			std::vector<SServiceInfor*> serviceList;
+			std::vector<SServiceInfo*> serviceList;
 			serviceList.push_back(seviceInfor);
 			m_hashMapByZone.setValue(seviceInfor->m_netInfor.m_serverID.getZoneID(), serviceList);
 		} else {
@@ -617,9 +617,9 @@ bool CServiceMgr::_initServiceInfor()
 		}
 
 		for (BSLib::uint32 i=0; i<seviceInfor->m_netInfor.m_connectorAddrList.size(); ++i) {
-			SServiceNetConnectorInfor& connectInfor = seviceInfor->m_netInfor.m_connectorAddrList[i];
+			SServiceNetConnectorInfo& connectInfor = seviceInfor->m_netInfor.m_connectorAddrList[i];
 
-			SServiceInfor* connectServiceInfor = NULL;
+			SServiceInfo* connectServiceInfor = NULL;
 			m_hashMapByKeyName.getValue(connectInfor.m_serverKey, connectServiceInfor);
 			if (connectServiceInfor == NULL) {
 				BSLIB_LOG_TRACE(ETT_GFLIB_COMMON, "服务器[%s]链接服务器[%s]不存在", seviceInfor->m_netInfor.m_key.c_str(), connectInfor.m_serverKey.c_str());

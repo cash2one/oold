@@ -95,17 +95,17 @@ bool CCommonServer::_init()
 	GFLib::CommonServer::CEventMgr::singleton().init(GFLIB_EVENT_ID_MAX);
 
 	
-	BSLIB_LOG_INFOR(ETT_GFLIB_COMMON, "********************************************************");
+	BSLIB_LOG_INFO(ETT_GFLIB_COMMON, "********************************************************");
 #ifdef _DEBUG
 
-	BSLIB_LOG_INFOR(ETT_GFLIB_COMMON, "%s Debug Version[%s]", serverName.c_str(), getServerVersion().c_str());
+	BSLIB_LOG_INFO(ETT_GFLIB_COMMON, "%s Debug Version[%s]", serverName.c_str(), getServerVersion().c_str());
 
 #else
 
-	BSLIB_LOG_INFOR(ETT_GFLIB_COMMON, "%s Release Version[%s]", serverName.c_str(), getServerVersion().c_str());
+	BSLIB_LOG_INFO(ETT_GFLIB_COMMON, "%s Release Version[%s]", serverName.c_str(), getServerVersion().c_str());
 
 #endif
-	BSLIB_LOG_INFOR(ETT_GFLIB_COMMON, "********************************************************");
+	BSLIB_LOG_INFO(ETT_GFLIB_COMMON, "********************************************************");
 
 #ifdef _DEBUG
 
@@ -182,14 +182,14 @@ bool CCommonServer::_init()
 		m_needPing = true;
 	}
 
-	BSLIB_LOG_INFOR(ETT_GFLIB_COMMON, "###### %s 初始化完成 ######", serverName.c_str());
+	BSLIB_LOG_INFO(ETT_GFLIB_COMMON, "###### %s 初始化完成 ######", serverName.c_str());
 	return true;
 }
 
 int CCommonServer::_final()
 {
 	const std::string& serverName = getServerTypeName();
-	BSLIB_LOG_INFOR(ETT_GFLIB_COMMON, "###### %s 退出 ######", serverName.c_str());
+	BSLIB_LOG_INFO(ETT_GFLIB_COMMON, "###### %s 退出 ######", serverName.c_str());
 
 	GFLib::CommonServer::CCommonSystemMgr::singleton().final();
 	
@@ -232,7 +232,7 @@ bool CCommonServer::_callback()
 // void CCommonServer::_update_1000()
 // {
 // 	BSLib::Network::SNetCollectInfor netCollectInfor;
-// 	BSLib::Network::CNetServer::getNetInfor(netCollectInfor);
+// 	BSLib::Network::CNetServer::getNetInfo(netCollectInfor);
 // 
 // 	BSLIB_LOG_TRACE(ETT_GFLIB_COMMON, "[ConnectCount=%d][StubCount=%d][OkeyStubCount=%d][VerifyStubCount=%d]"
 // 		,netCollectInfor.m_tcpConnectCount
@@ -246,7 +246,7 @@ bool CCommonServer::_initServer()
 	//const std::string& serverName = getServerTypeName();
 
 	std::string serverKey = getServerKey();
-	const SServiceNetInfor* serverInfor = CServiceMgr::singleton().getServerNetInfor(serverKey);
+	const SServiceNetInfo* serverInfor = CServiceMgr::singleton().getServerNetInfor(serverKey);
 	if (serverInfor == NULL) {
 		BSLIB_LOG_TRACE(ETT_GFLIB_COMMON, "ServerKey[%s]获取网络参数失败", serverKey.c_str());
 		return false;
@@ -257,7 +257,7 @@ bool CCommonServer::_initServer()
 	}
 	_setServerID(serverInfor->m_serverID);
 
-	BSLIB_LOG_INFOR(ETT_GFLIB_COMMON, "设置本地服务 %s(%d.%d.%d) Key[%s]",
+	BSLIB_LOG_INFO(ETT_GFLIB_COMMON, "设置本地服务 %s(%d.%d.%d) Key[%s]",
 		GFLib::CommonServer::CServerTypeMgr::singleton().getTextServerType(getServerID().getServerType()).c_str(),
 		getServerID().getZoneID(),
 		getServerID().getServerType(),
@@ -282,7 +282,7 @@ bool CCommonServer::_loadGameConfig(const std::string& a_configPath)
 
 void CCommonServer::_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
 {
-	GFLIB_ADDMSG_OBJEXEC(a_msgExecMgr, MsgIDSysChannelLC2LCReqServerInfor, &CCommonServer::_onMsgSysChannelLC2LCReqServerInfor, this);
+	GFLIB_ADDMSG_OBJEXEC(a_msgExecMgr, MsgIDSysChannelLC2LCReqServerInfo, &CCommonServer::_onMsgSysChannelLC2LCReqServerInfor, this);
 	GFLIB_ADDMSG_OBJEXEC(a_msgExecMgr, MsgIDSysChannelLC2LCNtfCommand, &CCommonServer::_onMsgSysChannelLC2LCNtfCommand, this);
 	GFLIB_ADDMSG_OBJEXEC(a_msgExecMgr, MsgIDServerLocalLC2LCNtfServerEnter, &CCommonServer::_onMsgServerLocalLC2LCNtfServerEnter, this);
 	GFLIB_ADDMSG_OBJEXEC(a_msgExecMgr, MsgIDServerLocalLC2LCNtfServerLeave, &CCommonServer::_onMsgServerLocalLC2LCNtfServerLeave, this);
@@ -345,7 +345,7 @@ BSLib::Network::CNetStubPtr CCommonServer::_cbNewTcpStub(BSLib::Network::CNetCon
 {
 	const BSLib::Network::CSockAddr& localAddr = netConnPtr->getLocalAddr();
 	const BSLib::Network::CSockAddr& peerAddr = netConnPtr->getPeerAddr();
-	BSLIB_LOG_INFOR(ETT_GFLIB_COMMON, "连接[%s:%d]<-------[%s:%d]", localAddr.getIP().c_str(), localAddr.getPort(), peerAddr.getIP().c_str(), peerAddr.getPort());
+	BSLIB_LOG_INFO(ETT_GFLIB_COMMON, "连接[%s:%d]<-------[%s:%d]", localAddr.getIP().c_str(), localAddr.getPort(), peerAddr.getIP().c_str(), peerAddr.getPort());
 
 	return BSLib::Network::CNetStubPtr(NULL);
 }
@@ -523,7 +523,7 @@ void CCommonServer::_changeLogFile()
 			logFilePath += logFile;
 			BSLib::Utility::CDirInfo::standardization(logFilePath);
 
-			BSLIB_LOG_INFOR(ETT_GFLIB_COMMON, "转移日志[%s]", logFilePath.c_str());
+			BSLIB_LOG_INFO(ETT_GFLIB_COMMON, "转移日志[%s]", logFilePath.c_str());
 
 			BSLib::Utility::CStringA logType = BSLib::Framework::CSysConfig::singleton().getValueStr(serverName, "LogType");
 			logType.toLower();
@@ -551,14 +551,14 @@ void CCommonServer::_closeTrace()
 bool CCommonServer::_connectServer()
 {
 	std::string serverKey = getServerKey();
-	const SServiceNetInfor* serverInfor = CServiceMgr::singleton().getServerNetInfor(serverKey);
-	if (serverInfor == NULL) {
+	const SServiceNetInfo* serverInfo = CServiceMgr::singleton().getServerNetInfor(serverKey);
+	if (serverInfo == NULL) {
 		BSLIB_LOG_ERROR(ETT_GFLIB_COMMON, "ServerKey[%s]获取网络参数失败", serverKey.c_str());
 		return false;
 	}
 
-	for (BSLib::uint32 i=0; i<serverInfor->m_connectorAddrList.size(); ++i) {
-		std::string connectServerKey = serverInfor->m_connectorAddrList[i].m_serverKey;
+	for (BSLib::uint32 i=0; i<serverInfo->m_connectorAddrList.size(); ++i) {
+		std::string connectServerKey = serverInfo->m_connectorAddrList[i].m_serverKey;
 		SServerID serverID = CServiceMgr::singleton().getServerID(connectServerKey);
 		if (!serverID.isValid()) {
 			BSLIB_LOG_ERROR(ETT_GFLIB_COMMON, "ServerKey[%s]链接[%s]失败,ServerID无效", serverKey.c_str(), connectServerKey.c_str());
@@ -570,10 +570,10 @@ bool CCommonServer::_connectServer()
 			BSLIB_LOG_ERROR(ETT_GFLIB_COMMON, "ServerKey[%s]链接[%s]失败", serverKey.c_str(), connectServerKey.c_str());
 			return false;
 		}
-		commonClientPtr->setServerIPAndPort(serverInfor->m_connectorAddrList[i].m_connectorAddr.getIP(), serverInfor->m_connectorAddrList[i].m_connectorAddr.getPort());
-		commonClientPtr->setNeedReconnect(serverInfor->m_connectorAddrList[i].m_reconnect);
-		commonClientPtr->setNeedTerminateServer(serverInfor->m_connectorAddrList[i].m_terminateServer);
-		commonClientPtr->setNeedPing(serverInfor->m_connectorAddrList[i].m_needPing);
+		commonClientPtr->setServerIPAndPort(serverInfo->m_connectorAddrList[i].m_connectorAddr.getIP(), serverInfo->m_connectorAddrList[i].m_connectorAddr.getPort());
+		commonClientPtr->setNeedReconnect(serverInfo->m_connectorAddrList[i].m_reconnect);
+		commonClientPtr->setNeedTerminateServer(serverInfo->m_connectorAddrList[i].m_terminateServer);
+		commonClientPtr->setNeedPing(serverInfo->m_connectorAddrList[i].m_needPing);
 		
 		CClientMgr::singleton().addCommonClient(serverID, commonClientPtr);
 		commonClientPtr->start();
@@ -597,14 +597,14 @@ bool CCommonServer::_openNetServer()
 				return false;
 			}
 			needOpenTcp = true;
-			BSLIB_LOG_INFOR(ETT_GFLIB_COMMON, "%s 开启监听端口 TCP[%s:%d] 成功", serverName.c_str(), acceptorIPAndPort->m_listenerAddr.getIP().c_str(), acceptorIPAndPort->m_listenerAddr.getPort());
+			BSLIB_LOG_INFO(ETT_GFLIB_COMMON, "%s 开启监听端口 TCP[%s:%d] 成功", serverName.c_str(), acceptorIPAndPort->m_listenerAddr.getIP().c_str(), acceptorIPAndPort->m_listenerAddr.getPort());
 		} else if (acceptorIPAndPort->m_netType == BSLib::Network::NETT_UDP) {
 			if (!BSLib::Network::CNetServer::_addUdpAccpetor(acceptorIPAndPort->m_listenerAddr, acceptorIPAndPort->m_tempData)) {
 				BSLIB_LOG_ERROR(ETT_GFLIB_COMMON, "%s 开启监听端口 UDP[%s:%d] 失败", serverName.c_str(), acceptorIPAndPort->m_listenerAddr.getIP().c_str(), acceptorIPAndPort->m_listenerAddr.getPort());
 				return false;
 			}
 			needOpenUdp = true;
-			BSLIB_LOG_INFOR(ETT_GFLIB_COMMON, "%s 开启监听端口 UDP[%s:%d] 成功", serverName.c_str(), acceptorIPAndPort->m_listenerAddr.getIP().c_str(), acceptorIPAndPort->m_listenerAddr.getPort());
+			BSLIB_LOG_INFO(ETT_GFLIB_COMMON, "%s 开启监听端口 UDP[%s:%d] 成功", serverName.c_str(), acceptorIPAndPort->m_listenerAddr.getIP().c_str(), acceptorIPAndPort->m_listenerAddr.getPort());
 		}
 		BSLIB_SAFE_DELETE(acceptorIPAndPort);
 	}
@@ -657,7 +657,7 @@ void CCommonServer::_onMsgSysChannelLC2LCReqServerInfor(BSLib::Framework::SMsgLa
 	}
 	BSLib::Framework::SSysMsgLabel* sysMsgLabel = (BSLib::Framework::SSysMsgLabel*)msgLabel;
 	
-	SMsgSysChannelLC2LCResServerInfor resServerInfor;
+	SMsgSysChannelLC2LCResServerInfo resServerInfor;
 	resServerInfor.m_localServerID = getServerID();
 	resServerInfor.setLocalKeyName(getServerKey());
 
@@ -668,7 +668,7 @@ void CCommonServer::_onMsgSysChannelLC2LCNtfCommand(BSLib::Framework::SMsgLabel*
 {
 	SMsgSysChannelLC2LCNtfCommand* command = (SMsgSysChannelLC2LCNtfCommand*)msg;
 
-	BSLIB_LOG_INFOR(ETT_GFLIB_COMMON, "收到通道命令[%s]", command->m_command);
+	BSLIB_LOG_INFO(ETT_GFLIB_COMMON, "收到通道命令[%s]", command->m_command);
 
 	m_cmdExecMgr.parseCommand(command->m_command, msgLabel);
 }

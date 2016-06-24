@@ -118,7 +118,7 @@ bool CActivitySystemDataMgr::_loadAttendenceAttrs(const std::string & a_path)
 	BSLib::Utility::CDirInfo::standardization(fileName);
 	BSLib::Utility::CTableSheet tableSheet;
 	if (!tableSheet.loadXmlFile(fileName)) {
-		BSLIB_LOG_INFOR(ETT_GSLIB_TASKSYSTEM, "加载每日签到奖励数据失败[%s]", fileName.c_str());
+		BSLIB_LOG_INFO(ETT_GSLIB_TASKSYSTEM, "加载每日签到奖励数据失败[%s]", fileName.c_str());
 		return false;
 	}
 	try {
@@ -151,7 +151,7 @@ bool CActivitySystemDataMgr::_loadAttendenceAttrs(const std::string & a_path)
 			CActivitySystemDataMgr::singleton().addAttendenceAttr(tableID, attr);
 		}
 	} catch (...) {
-		BSLIB_LOG_INFOR(ETT_GSLIB_TASKSYSTEM, "加载每日签到奖励数据失败[%s]", fileName.c_str());
+		BSLIB_LOG_INFO(ETT_GSLIB_TASKSYSTEM, "加载每日签到奖励数据失败[%s]", fileName.c_str());
 		return false;		
 	}
 
@@ -164,7 +164,7 @@ bool CActivitySystemDataMgr::_loadAttendenceConfig(const std::string & a_path)
 	BSLib::Utility::CDirInfo::standardization(fileName);
 	BSLib::Utility::CTableSheet tableSheet;
 	if (!tableSheet.loadXmlFile(fileName)) {
-		BSLIB_LOG_INFOR(ETT_GSLIB_TASKSYSTEM, "加载每日签到配置数据失败[%s]", fileName.c_str());
+		BSLIB_LOG_INFO(ETT_GSLIB_TASKSYSTEM, "加载每日签到配置数据失败[%s]", fileName.c_str());
 		return false;
 	}
 	try {
@@ -172,7 +172,7 @@ bool CActivitySystemDataMgr::_loadAttendenceConfig(const std::string & a_path)
 		BSLib::Utility::CStringA input(table[0]["f_current_table_id"]);
 		input >> m_curAttendenceTable;
 	} catch (...) {
-		BSLIB_LOG_INFOR(ETT_GSLIB_TASKSYSTEM, "加载每日签到配置数据失败[%s]", fileName.c_str());
+		BSLIB_LOG_INFO(ETT_GSLIB_TASKSYSTEM, "加载每日签到配置数据失败[%s]", fileName.c_str());
 		return false;		
 	}
 
@@ -184,7 +184,7 @@ bool CActivitySystemDataMgr::_loadPetCardConfig(const std::string & a_path)
 	BSLib::Utility::CDirInfo::standardization(fileName);
 	BSLib::Utility::CTableSheet tableSheet;
 	if (!tableSheet.loadXmlFile(fileName)) {
-		BSLIB_LOG_INFOR(ETT_GSLIB_TASKSYSTEM, "加载抽卡宠物物品数据失败[%s]", fileName.c_str());
+		BSLIB_LOG_INFO(ETT_GSLIB_TASKSYSTEM, "加载抽卡宠物物品数据失败[%s]", fileName.c_str());
 		return false;
 	}
 	try {
@@ -194,7 +194,7 @@ bool CActivitySystemDataMgr::_loadPetCardConfig(const std::string & a_path)
 			table[i]["f_pet_id"] >> petCardInfo.m_petTPID;
 			table[i]["f_level"] >> petCardInfo.m_level;
 			if (petCardInfo.m_level > (BSLib::uint32)MAX_DRAW_CARD_LEVEL) {
-				BSLIB_LOG_INFOR(ETT_GSLIB_TASKSYSTEM, "加载抽卡宠物物品数据失败[%s], 卡牌[%d]类型超过最大上限", fileName.c_str(), petCardInfo.m_petTPID);
+				BSLIB_LOG_INFO(ETT_GSLIB_TASKSYSTEM, "加载抽卡宠物物品数据失败[%s], 卡牌[%d]类型超过最大上限", fileName.c_str(), petCardInfo.m_petTPID);
 				return false;
 			}
 			table[i]["f_pet_weight"] >> petCardInfo.m_petWeight;
@@ -205,7 +205,7 @@ bool CActivitySystemDataMgr::_loadPetCardConfig(const std::string & a_path)
 			m_hashPetCardInfo[petCardInfo.m_level].setValue(petCardInfo.m_petTPID, petCardInfo);
 		}
 	} catch (...) {
-		BSLIB_LOG_INFOR(ETT_GSLIB_TASKSYSTEM, "加载抽卡宠物物品数据失败[%s]", fileName.c_str());
+		BSLIB_LOG_INFO(ETT_GSLIB_TASKSYSTEM, "加载抽卡宠物物品数据失败[%s]", fileName.c_str());
 		return false;		
 	}
 	return true;
@@ -218,7 +218,7 @@ bool CActivitySystemDataMgr::_loadDrawCardWeightBonusConfig(const std::string & 
 	BSLib::Utility::CDirInfo::standardization(fileName);
 	BSLib::Utility::CTableSheet tableSheet;
 	if (!tableSheet.loadXmlFile(fileName)) {
-		BSLIB_LOG_INFOR(ETT_GSLIB_TASKSYSTEM, "加载抽卡权重加成数据失败[%s]", fileName.c_str());
+		BSLIB_LOG_INFO(ETT_GSLIB_TASKSYSTEM, "加载抽卡权重加成数据失败[%s]", fileName.c_str());
 		return false;
 	}
 	try {
@@ -228,7 +228,7 @@ bool CActivitySystemDataMgr::_loadDrawCardWeightBonusConfig(const std::string & 
 			BSLib::uint32 para = 0;
 			table[i]["f_bouns_type"] >> type;
 			if (type < EDRAW_CARD_WEIGHT_BONUS_TYPE_CHARGE || type >= EDRAW_CARD_WEIGHT_BONUS_TYPE_MAX) {
-				BSLIB_LOG_INFOR(ETT_GSLIB_TASKSYSTEM, "权重加成类型错误,加载抽卡权重加成数据失败[%s]", fileName.c_str());
+				BSLIB_LOG_INFO(ETT_GSLIB_TASKSYSTEM, "权重加成类型错误,加载抽卡权重加成数据失败[%s]", fileName.c_str());
 				return false;		
 			}
 			table[i]["f_para"] >> para;
@@ -243,7 +243,7 @@ bool CActivitySystemDataMgr::_loadDrawCardWeightBonusConfig(const std::string & 
 			m_drawCardWeightBonusInfo[type].setValue(cardLevelWeightBonus.m_para, cardLevelWeightBonus);
 		}
 	} catch (...) {
-		BSLIB_LOG_INFOR(ETT_GSLIB_TASKSYSTEM, "加载抽卡权重加成数据失败[%s]", fileName.c_str());
+		BSLIB_LOG_INFO(ETT_GSLIB_TASKSYSTEM, "加载抽卡权重加成数据失败[%s]", fileName.c_str());
 		return false;		
 	}
 	return true;

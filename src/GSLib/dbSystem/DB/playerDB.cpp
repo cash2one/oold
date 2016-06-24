@@ -52,7 +52,7 @@ void CPlayerDB::_cbFinalPlayer()
 // 	const GFLib::SAccountKey& accountKey = getAccountKey();
 // 	const std::string& dbKey = accountKey.getDBKey();
 // 
-// 	BSLIB_LOG_INFOR(ETT_GSLIB_DBSYSTEM, "%s cbFinalPlayer保存到DB", accountKey.toLogString().c_str());
+// 	BSLIB_LOG_INFO(ETT_GSLIB_DBSYSTEM, "%s cbFinalPlayer保存到DB", accountKey.toLogString().c_str());
 // 
 // 	CDBSystemDB::singleton().saveAllTableData(dbKey);
 }
@@ -67,7 +67,7 @@ void CPlayerDB::_cbPlayerOffline()
 // 	const GFLib::SAccountKey& accountKey = getAccountKey();
 // 	const std::string& dbKey = accountKey.getDBKey();
 // 
-// 	BSLIB_LOG_INFOR(ETT_GSLIB_DBSYSTEM, "%s cbPlayerOffline保存到DB", accountKey.toLogString().c_str());
+// 	BSLIB_LOG_INFO(ETT_GSLIB_DBSYSTEM, "%s cbPlayerOffline保存到DB", accountKey.toLogString().c_str());
 // 
 // 	CDBSystemDB::singleton().saveAllTableData(dbKey);
 }

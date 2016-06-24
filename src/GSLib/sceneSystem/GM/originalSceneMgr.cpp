@@ -83,7 +83,7 @@ bool COriginalSceneMgr::_loadSceneConfig(const std::string& a_configPath)
 
 	BSLib::Utility::CTableSheet tableSheet;
 	if (!tableSheet.loadXmlFile(scenePath)) {
-		BSLIB_LOG_INFOR(ETT_GSLIB_SCENESYSTEM, "¼ÓÔØ³¡¾°ÅäÖÃÊ§°Ü[%s]", scenePath.c_str());
+		BSLIB_LOG_INFO(ETT_GSLIB_SCENESYSTEM, "¼ÓÔØ³¡¾°ÅäÖÃÊ§°Ü[%s]", scenePath.c_str());
 		return false;
 	}
 	GFLib::CommonServer::CCommonServer* commonServer = GFLib::CommonServer::CCommonServer::getCommonServer();
@@ -121,7 +121,7 @@ bool COriginalSceneMgr::_loadSceneConfig(const std::string& a_configPath)
 			}
 
 			if (m_originalSceneHashMap.find(sceneTPID) != m_originalSceneHashMap.end()) {
-				BSLIB_LOG_INFOR(ETT_GSLIB_SCENESYSTEM, "SceneTPIDÖØ¸´[%d]", sceneTPID);
+				BSLIB_LOG_INFO(ETT_GSLIB_SCENESYSTEM, "SceneTPIDÖØ¸´[%d]", sceneTPID);
 				return false;
 			}
 			COriginalScene* originalScene  = new COriginalScene(sceneTPID, sceneName, (ESceneType)sceneType);
@@ -145,7 +145,7 @@ bool COriginalSceneMgr::_loadSceneConfig(const std::string& a_configPath)
 			m_originalSceneHashMap.setValue(sceneTPID, originalScene);
 		}
 	} catch (...){
-		BSLIB_LOG_INFOR(ETT_GSLIB_SCENESYSTEM, "¼ÓÔØ³¡¾°ÎÄ¼şÊ§°Ü[%s]", scenePath.c_str());
+		BSLIB_LOG_INFO(ETT_GSLIB_SCENESYSTEM, "¼ÓÔØ³¡¾°ÎÄ¼şÊ§°Ü[%s]", scenePath.c_str());
 		return false;
 	}
 	return true;
@@ -168,7 +168,7 @@ bool COriginalSceneMgr::_loadSceneScript(const std::string& a_configPath)
 		BSLib::Utility::CDirInfo::standardization(fsmFile);
 		if (BSLib::Utility::CFileInfo::isExist(fsmFile)) {
 			if (!CSceneGMFSMMgr::singleton().loadFSMFile(fsmFile)) {
-				BSLIB_LOG_INFOR(ETT_GSLIB_SCENESYSTEM, "¼ÓÔØ³¡¾°ÎÄ¼şÊ§°Ü[%s]", fsmFile.c_str());
+				BSLIB_LOG_INFO(ETT_GSLIB_SCENESYSTEM, "¼ÓÔØ³¡¾°ÎÄ¼şÊ§°Ü[%s]", fsmFile.c_str());
 				return false;
 			}
 		}
@@ -177,7 +177,7 @@ bool COriginalSceneMgr::_loadSceneScript(const std::string& a_configPath)
 		BSLib::Utility::CDirInfo::standardization(btFile);
 		if (BSLib::Utility::CFileInfo::isExist(btFile)) {
 			if (!CSceneGMBTMgr::singleton().loadBTFromFile(btFile)) {
-				BSLIB_LOG_INFOR(ETT_GSLIB_SCENESYSTEM, "¼ÓÔØ³¡¾°ÎÄ¼şÊ§°Ü[%s]", btFile.c_str());
+				BSLIB_LOG_INFO(ETT_GSLIB_SCENESYSTEM, "¼ÓÔØ³¡¾°ÎÄ¼şÊ§°Ü[%s]", btFile.c_str());
 				return false;
 			}
 		}
@@ -197,7 +197,7 @@ bool COriginalSceneMgr::_initOriginalScene(const std::string& a_configPath)
 		//std::string fileName = a_configPath + "sceneConfig.xml";
 		//BSLib::Utility::CTableSheet tableSheet;
 		//if (!tableSheet.loadXmlFile(a_configPath)) {
-		//	BSLIB_LOG_INFOR(ETT_GSLIB_SCENESYSTEM, "¼ÓÔØ³¡¾°ÅäÖÃÊ§°Ü[%s]", a_configPath.c_str());
+		//	BSLIB_LOG_INFO(ETT_GSLIB_SCENESYSTEM, "¼ÓÔØ³¡¾°ÅäÖÃÊ§°Ü[%s]", a_configPath.c_str());
 		//	return false;
 		//}
 		//if (!scene->init()) {

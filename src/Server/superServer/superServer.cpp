@@ -79,7 +79,7 @@ bool CSuperServer::_callback()
 {
 // 	BSLib::uint64 id_1 = GFLib::CommonServer::CUniqueIDMgr::singleton().getInt64ZoneUniqueID(1);
 // 	BSLib::uint64 id_2 = GFLib::CommonServer::CUniqueIDMgr::singleton().getInt64ZoneUniqueID(2);
-// 	BSLIB_LOG_INFOR(Server::ETT_SERVER_COMMON, "@@@[%llX][%llX]", id_1, id_2);
+// 	BSLIB_LOG_INFO(Server::ETT_SERVER_COMMON, "@@@[%llX][%llX]", id_1, id_2);
 	return GFLib::CommonServer::CCommonServer::_callback();
 }
 

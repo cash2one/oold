@@ -91,7 +91,7 @@ bool CAccountLoginCNInforMgr::registerLG2CNReqAccountLogin(BSLib::uint32& a_sess
 		return false;
 	}
 
-	BSLIB_LOG_INFOR(ETT_GSLIB_LOGINSYSTEM, "通知Gate注册玩家 %s[AccountName=%s]", a_reqAccountLogin.toString().c_str(), a_reqAccountLogin.m_accountName.c_str());
+	BSLIB_LOG_INFO(ETT_GSLIB_LOGINSYSTEM, "通知Gate注册玩家 %s[AccountName=%s]", a_reqAccountLogin.toString().c_str(), a_reqAccountLogin.m_accountName.c_str());
 
 	return true;
 }
@@ -116,7 +116,7 @@ void CAccountLoginCNInforMgr::checkGT2CNAckAccountLogin(CMsgLoginSystemGT2CNAckA
 	EAccountStateCN state = infor->getAccountState();
 	if (state == EACCNTSTT_CN_WAIT_GATE) {
 		if (a_ackAccountLogin.m_state != ELOGINRESULT_SUCCESS) {
-			BSLIB_LOG_INFOR(ETT_GSLIB_LOGINSYSTEM, "Gate反馈 %s[AccountName=%s][%d][%d]", infor->m_accountKey.toLogString().c_str(), infor->m_accountName.c_str(), infor->getAccountState(), a_ackAccountLogin.m_state);
+			BSLIB_LOG_INFO(ETT_GSLIB_LOGINSYSTEM, "Gate反馈 %s[AccountName=%s][%d][%d]", infor->m_accountKey.toLogString().c_str(), infor->m_accountName.c_str(), infor->getAccountState(), a_ackAccountLogin.m_state);
 
 			GFLib::CommonServer::CServiceMgr::singleton().sendMsgToServer(infor->m_loginServerID, ackAccountLogin);
 			CGateInforMgr::singleton().decreaseWaitAccountFromGateServer(infor->m_gateServerID);
@@ -127,7 +127,7 @@ void CAccountLoginCNInforMgr::checkGT2CNAckAccountLogin(CMsgLoginSystemGT2CNAckA
 
 	} else if (state == EACCNTSTT_CN_OFFLINE_WAIT_GATE) {
 		if (a_ackAccountLogin.m_state != ELOGINRESULT_SUCCESS) {
-			BSLIB_LOG_INFOR(ETT_GSLIB_LOGINSYSTEM, "Gate反馈 %s[AccountName=%s][%d][%d]", infor->m_accountKey.toLogString().c_str(), infor->m_accountName.c_str(), infor->getAccountState(), a_ackAccountLogin.m_state);
+			BSLIB_LOG_INFO(ETT_GSLIB_LOGINSYSTEM, "Gate反馈 %s[AccountName=%s][%d][%d]", infor->m_accountKey.toLogString().c_str(), infor->m_accountName.c_str(), infor->getAccountState(), a_ackAccountLogin.m_state);
 
 			GFLib::CommonServer::CServiceMgr::singleton().sendMsgToServer(infor->m_loginServerID, ackAccountLogin);
 			infor->setAccountState(EACCNTSTT_CN_OFFLINE_WAIT_CLIENT);
@@ -135,14 +135,14 @@ void CAccountLoginCNInforMgr::checkGT2CNAckAccountLogin(CMsgLoginSystemGT2CNAckA
 		}
 		infor->setAccountState(EACCNTSTT_CN_OFFLINE_WAIT_CLIENT);
 	} else if (state == EACCNTSTT_CN_KICK_ACCOUNT) {
-		BSLIB_LOG_INFOR(ETT_GSLIB_LOGINSYSTEM, "Gate要求下线 %s[AccountName=%s][%d][%d]", infor->m_accountKey.toLogString().c_str(), infor->m_accountName.c_str(), infor->getAccountState(), a_ackAccountLogin.m_state);
+		BSLIB_LOG_INFO(ETT_GSLIB_LOGINSYSTEM, "Gate要求下线 %s[AccountName=%s][%d][%d]", infor->m_accountKey.toLogString().c_str(), infor->m_accountName.c_str(), infor->getAccountState(), a_ackAccountLogin.m_state);
 
 		infor->setAccountState(EACCNTSTT_CN_PLAYER_OFFLINE_KICK);
 		_notifyOffline(infor);
 		return;
 	}
 
-	BSLIB_LOG_INFOR(ETT_GSLIB_LOGINSYSTEM, "Gate反馈 %s[AccountName=%s][%d][%d]", infor->m_accountKey.toLogString().c_str(), infor->m_accountName.c_str(), infor->getAccountState(), a_ackAccountLogin.m_state);
+	BSLIB_LOG_INFO(ETT_GSLIB_LOGINSYSTEM, "Gate反馈 %s[AccountName=%s][%d][%d]", infor->m_accountKey.toLogString().c_str(), infor->m_accountName.c_str(), infor->getAccountState(), a_ackAccountLogin.m_state);
 
 	BSLib::Network::CSockAddr&  connectAddr = CGateInforMgr::singleton().getGateConnectAddr(infor->m_gateServerID);
 
@@ -195,7 +195,7 @@ void CAccountLoginCNInforMgr::timeoutAccountOffline(BSLib::uint32& a_sessionID)
 	if (infor->getAccountState() != EACCNTSTT_CN_OFFLINE_WAIT_CLIENT) {
 		return;
 	}
-	BSLIB_LOG_INFOR(ETT_GSLIB_LOGINSYSTEM, "离线超时[SessionID=%d]%s[Account=%s]", a_sessionID, infor->m_accountKey.toLogString().c_str(), infor->m_accountName.c_str());
+	BSLIB_LOG_INFO(ETT_GSLIB_LOGINSYSTEM, "离线超时[SessionID=%d]%s[Account=%s]", a_sessionID, infor->m_accountKey.toLogString().c_str(), infor->m_accountName.c_str());
 
 	infor->setAccountState(EACCNTSTT_CN_ACCOUNT_FINAL);
 	_notifyFinal(infor);
@@ -251,7 +251,7 @@ bool CAccountLoginCNInforMgr::checkGT2CNReqAccountLogin(CMsgLoginSystemGT2CNReqA
 	infor->m_gameServerID = gameServerID;
 	infor->setAccountState(EACCNTSTT_CN_PLAYER_INIT);
 
-	BSLIB_LOG_INFOR(ETT_GSLIB_LOGINSYSTEM, "准备初始化玩家 %s[AccountName=%s]", infor->m_accountKey.toLogString().c_str(), infor->m_accountName.c_str());
+	BSLIB_LOG_INFO(ETT_GSLIB_LOGINSYSTEM, "准备初始化玩家 %s[AccountName=%s]", infor->m_accountKey.toLogString().c_str(), infor->m_accountName.c_str());
 
 	if (!_notifyCreatePlayer(infor)) {
 		BSLIB_LOG_ERROR(ETT_GSLIB_LOGINSYSTEM, "创建Player失败 %s[AccountName=%s][%d]", infor->m_accountKey.toLogString().c_str(), infor->m_accountName.c_str(), state);
@@ -987,7 +987,7 @@ void CAccountLoginCNInforMgr::_finishOffline(SAccountLoginCNInfor* a_infor)
 			LoginSystem::CN::CLoginSystemCN::singleton().delTimeoutAccountOnline(a_infor->m_timeHandleOffline);
 		}
 		
-		BSLIB_LOG_INFOR(ETT_GSLIB_LOGINSYSTEM, "离线设置退出触发器器[SessionID=%d]%s[Account=%s]", a_infor->m_cnSessionID, a_infor->m_accountKey.toLogString().c_str(), a_infor->m_accountName.c_str());
+		BSLIB_LOG_INFO(ETT_GSLIB_LOGINSYSTEM, "离线设置退出触发器器[SessionID=%d]%s[Account=%s]", a_infor->m_cnSessionID, a_infor->m_accountKey.toLogString().c_str(), a_infor->m_accountName.c_str());
 
 		a_infor->m_timeHandleOffline = LoginSystem::CN::CLoginSystemCN::singleton().addTimeoutAccountOnline(a_infor->m_cnSessionID);
 		return ;
@@ -1035,7 +1035,7 @@ void CAccountLoginCNInforMgr::_notifyOnline(SAccountLoginCNInfor* a_infor)
 
 
 	if (a_infor->m_timeHandleOffline != BSLib::Utility::INVALID_TIMER) {
-		BSLIB_LOG_INFOR(ETT_GSLIB_LOGINSYSTEM, "上线，清除触发器器[SessionID=%d]%s[Account=%s]", a_infor->m_cnSessionID, a_infor->m_accountKey.toLogString().c_str(), a_infor->m_accountName.c_str());
+		BSLIB_LOG_INFO(ETT_GSLIB_LOGINSYSTEM, "上线，清除触发器器[SessionID=%d]%s[Account=%s]", a_infor->m_cnSessionID, a_infor->m_accountKey.toLogString().c_str(), a_infor->m_accountName.c_str());
 
 		LoginSystem::CN::CLoginSystemCN::singleton().delTimeoutAccountOnline(a_infor->m_timeHandleOffline);
 		a_infor->m_timeHandleOffline =  BSLib::Utility::INVALID_TIMER;

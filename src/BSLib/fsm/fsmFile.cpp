@@ -75,7 +75,7 @@ bool CFSMFile::loadFSMFile(const std::string& a_fsmFile)
 					filePath = includeFSMFile;
 				}
 				BSLib::Utility::CFileInfo::standardization(filePath);
-				BSLIB_LOG_INFOR(ETT_BSLIB_BTREE, "加载include节点文件[%s]", filePath.c_str());
+				BSLIB_LOG_INFO(ETT_BSLIB_BTREE, "加载include节点文件[%s]", filePath.c_str());
 				if (!loadFSMFile(filePath)) {
 					BSLIB_LOG_ERROR(ETT_BSLIB_BTREE, "加载include节点文件失败[%s]", filePath.c_str());
 					xmlFile.clear();

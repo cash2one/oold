@@ -157,7 +157,7 @@ bool CTableDataMgr::saveTableData(const std::string& a_key, const std::string& a
 		return false;
 	}
 
-	BSLIB_LOG_INFOR(ETT_GSLIB_DBSYSTEM, "save数据[TableID=%d][TableName=%s]", a_tableID, tableInfor->m_dbTableName.c_str());
+	BSLIB_LOG_INFO(ETT_GSLIB_DBSYSTEM, "save数据[TableID=%d][TableName=%s]", a_tableID, tableInfor->m_dbTableName.c_str());
 
 	switch(tableInfor->m_tableKeyType) 
 	{
@@ -239,7 +239,7 @@ void CTableDataMgr::_closeDBTableInfor()
 			BSLIB_SAFE_DELETE(talbe);
 			continue;
 		}
-		BSLIB_LOG_INFOR(ETT_GSLIB_DBSYSTEM, "保存数据库[%s]", columnInfor->m_dbTableName.c_str());
+		BSLIB_LOG_INFO(ETT_GSLIB_DBSYSTEM, "保存数据库[%s]", columnInfor->m_dbTableName.c_str());
 
 		_saveKeyTable(columnInfor, "");
 
@@ -259,7 +259,7 @@ void CTableDataMgr::_closeDBTableInfor()
 			BSLIB_SAFE_DELETE(talbe);
 			continue;
 		}
-		BSLIB_LOG_INFOR(ETT_GSLIB_DBSYSTEM, "保存数据库[%s]", columnInfor->m_dbTableName.c_str());
+		BSLIB_LOG_INFO(ETT_GSLIB_DBSYSTEM, "保存数据库[%s]", columnInfor->m_dbTableName.c_str());
 
 		_saveKeyIndexTable(columnInfor, "", "");
 

@@ -22,7 +22,7 @@ bool CChannelMgr::init(BSLib::uint32 a_sysKey)
 	}
 
 	BSLib::Framework::CMsgExecPtr msgExecPtr = new BSLib::Framework::CMsgExec(&CChannelMgr::_onSysChannelLC2LCResServerInfor, this);
-	m_msgExecMgr.addMsgExecPtr(GFLIB_MSG_TYPE(GFLib::SRVTYPE_LOCAL, GFLib::EFUNCTYPE_SYSTEM_CHANNEL), GFLib::EMSGID_SYSCHANNEL_LC2LC_RES_SERVERINFOR, msgExecPtr);
+	m_msgExecMgr.addMsgExecPtr(GFLIB_MSG_TYPE(GFLib::SRVTYPE_LOCAL, GFLib::EFUNCTYPE_SYSTEM_CHANNEL), GFLib::EMSGID_SYSCHANNEL_LC2LC_RES_SERVERINFO, msgExecPtr);
 
 	return true;
 }
@@ -127,7 +127,7 @@ void CChannelMgr::_parseSysMsg(BSLib::Framework::CChannelID& a_channelIDFrom, BS
 					break;
 				}
 				
-				GFLib::SMsgSysChannelLC2LCReqServerInfor reqServerInfor;
+				GFLib::SMsgSysChannelLC2LCReqServerInfo reqServerInfor;
 				BSLib::Framework::CSysChannelMgr::sendMsg(a_channelIDFrom, &reqServerInfor, sizeof(reqServerInfor));
 
 				break;
@@ -180,7 +180,7 @@ void CChannelMgr::_final()
 void CChannelMgr::_onSysChannelLC2LCResServerInfor(BSLib::Framework::SMsgLabel* msgLabel,BSLib::Framework:: SMessage* msg)
 {
 	BSLib::Framework::SSysMsgLabel* channelMsgLabel = (BSLib::Framework::SSysMsgLabel*)msgLabel;
-	GFLib::SMsgSysChannelLC2LCResServerInfor* resServerInfor = (GFLib::SMsgSysChannelLC2LCResServerInfor*)msg;
+	GFLib::SMsgSysChannelLC2LCResServerInfo* resServerInfor = (GFLib::SMsgSysChannelLC2LCResServerInfo*)msg;
 
 	BSLib::uint8 localNumber = channelMsgLabel->m_sysMsgIDFrome.getLocalNumber();
 	if (m_localServerInfor[localNumber] != NULL) {

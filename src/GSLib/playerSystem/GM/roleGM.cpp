@@ -126,7 +126,7 @@ void CRoleGM::outputGameLog(const std::string& a_gameLable, const char* a_format
 #endif
 
 	BSLib::Utility::CDateTime now = BSLib::Utility::CDateTime::getCurrentTime();
-	BSLIB_LOG_INFOR(ETT_GSLIB_GAME, "[%s][f_time=%s][f_acc_id=%lld][f_char_id=%d]%s", 
+	BSLIB_LOG_INFO(ETT_GSLIB_GAME, "[%s][f_time=%s][f_acc_id=%lld][f_char_id=%d]%s", 
 		a_gameLable.c_str(), 
 		now.toString().c_str(),
 		m_roleKey.getAccountID(), 
@@ -1173,7 +1173,7 @@ bool CRoleGM::_modifyDiamond(BSLib::int32 a_addValue,std::string a_reason,bool a
         return false;
 	} else if (newValue > BSLIB_INT32_MAX) {
 		value = BSLIB_INT32_MAX;
-        BSLIB_LOG_INFOR(ETT_GSLIB_PLAYERSYSTEM, "modifyDiamond error,[a_addValue=%d][a_reason=%s][a_notify=%d][curValue=%u][newValue=%u",
+        BSLIB_LOG_INFO(ETT_GSLIB_PLAYERSYSTEM, "modifyDiamond error,[a_addValue=%d][a_reason=%s][a_notify=%d][curValue=%u][newValue=%u",
 			a_addValue,a_reason.c_str(),a_notify, curValue, newValue);
 	} else {
 		value = (BSLib::uint32)newValue;

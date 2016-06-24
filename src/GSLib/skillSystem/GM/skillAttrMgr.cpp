@@ -84,7 +84,7 @@ bool CSkillDataMgr::_loadSkillAttrs(const std::string &a_configPath)
 
 	BSLib::Utility::CTableSheet tableSheet;
 	if (!tableSheet.loadXmlFile(skillAttrPath)) {
-		BSLIB_LOG_INFOR(ETT_GSLIB_SCENESYSTEM, "加载技能配置失败[%s]", skillAttrPath.c_str());
+		BSLIB_LOG_INFO(ETT_GSLIB_SCENESYSTEM, "加载技能配置失败[%s]", skillAttrPath.c_str());
 		return false;
 	}
 	try {
@@ -103,7 +103,7 @@ bool CSkillDataMgr::_loadSkillAttrs(const std::string &a_configPath)
 			}
 		}
 	} catch (...){
-		BSLIB_LOG_INFOR(ETT_GSLIB_SCENESYSTEM, "加载技能配置文件失败[%s]", skillAttrPath.c_str());
+		BSLIB_LOG_INFO(ETT_GSLIB_SCENESYSTEM, "加载技能配置文件失败[%s]", skillAttrPath.c_str());
 		return false;
 	}
 

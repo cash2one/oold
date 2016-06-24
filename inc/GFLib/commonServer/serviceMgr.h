@@ -11,14 +11,14 @@ namespace GFLib
 namespace CommonServer
 {
 
-struct SServiceNetListenerInfor
+struct SServiceNetListenerInfo
 {
 	BSLib::Network::CSockAddr m_listenerAddr;
 	BSLib::int32 m_flag;
 	bool m_outer;
 };
 
-struct SServiceNetConnectorInfor
+struct SServiceNetConnectorInfo
 {
 	std::string m_serverKey;
 	BSLib::Network::CSockAddr m_connectorAddr;
@@ -28,22 +28,22 @@ struct SServiceNetConnectorInfor
 	bool m_needPing;
 };
 
-struct SServiceNetInfor
+struct SServiceNetInfo
 {
 	SServerID m_serverID;
 	std::string m_key;
 	BSLib::Network::CSockAddr m_outerAddr;
 	BSLib::Network::CSockAddr m_innerAddr;
-	std::vector<SServiceNetListenerInfor> m_listenerAddrList;
-	std::vector<SServiceNetConnectorInfor> m_connectorAddrList;
+	std::vector<SServiceNetListenerInfo> m_listenerAddrList;
+	std::vector<SServiceNetConnectorInfo> m_connectorAddrList;
 };
 
 
-struct SServiceInfor
+struct SServiceInfo
 {
-	SServiceInfor() : m_servicePtr(NULL), m_state(0) {}
+	SServiceInfo() : m_servicePtr(NULL), m_state(0) {}
 
-	SServiceNetInfor m_netInfor;
+	SServiceNetInfo m_netInfor;
 	CServicePtr m_servicePtr;
 	BSLib::uint8 m_state;
 };
@@ -81,19 +81,19 @@ public:
 	SServerID getServerID(const std::string& a_serverKey);
 	const std::string& getServerKey(SServerID a_serverID);
 
-	const SServiceNetInfor* getServerNetInfor(const std::string& a_serverKey);
+	const SServiceNetInfo* getServerNetInfor(const std::string& a_serverKey);
 
-	void traversal(BSLib::Utility::CHashMap<ServerID, SServiceInfor*>::CCallback& cb);
+	void traversal(BSLib::Utility::CHashMap<ServerID, SServiceInfo*>::CCallback& cb);
 
 protected:
 	bool _loadConfigFile(const std::string& a_configFile);
 	bool _initServiceInfor();
 
 private:
-	BSLib::Utility::CHashMap<std::string, SServiceInfor*> m_hashMapByKeyName;
-	BSLib::Utility::CHashMap<ServerID, SServiceInfor*> m_hashMapByServerID;
-	BSLib::Utility::CHashMap<ServerType, std::vector< SServiceInfor* > > m_hashMapByServerType;
-	BSLib::Utility::CHashMap<ZoneID, std::vector< SServiceInfor*> > m_hashMapByZone;
+	BSLib::Utility::CHashMap<std::string, SServiceInfo*> m_hashMapByKeyName;
+	BSLib::Utility::CHashMap<ServerID, SServiceInfo*> m_hashMapByServerID;
+	BSLib::Utility::CHashMap<ServerType, std::vector< SServiceInfo* > > m_hashMapByServerType;
+	BSLib::Utility::CHashMap<ZoneID, std::vector< SServiceInfo*> > m_hashMapByZone;
 	BSLib::Utility::CMutex m_mutex;
 };
 

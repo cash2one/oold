@@ -471,7 +471,7 @@ bool CSysChannelMgr::_initChannelInfor(BSLib::uint32 a_sysKey)
 
 	m_mutexProcess.unlock();
 
-	BSLIB_LOG_INFOR(ETT_BSLIB_FRAMEWORK, "分配消息通道[%d]", localNumber);
+	BSLIB_LOG_INFO(ETT_BSLIB_FRAMEWORK, "分配消息通道[%d]", localNumber);
 	
 	m_channelID.setChannelID(localNumber);
 

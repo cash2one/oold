@@ -9,7 +9,7 @@ namespace LoginSystem
 namespace CN
 {
 
-class CGateServiceMgrCallback : public BSLib::Utility::CHashMap<GFLib::ServerID, GFLib::CommonServer::SServiceInfor*>::CCallback
+class CGateServiceMgrCallback : public BSLib::Utility::CHashMap<GFLib::ServerID, GFLib::CommonServer::SServiceInfo*>::CCallback
 {
 public:
 	CGateServiceMgrCallback(std::vector<SGateInfor>* gateOnlineInforHashMap)
@@ -17,7 +17,7 @@ public:
 	{
 		;
 	}
-	virtual bool exec(const GFLib::ServerID& _key, GFLib::CommonServer::SServiceInfor*& _value)
+	virtual bool exec(const GFLib::ServerID& _key, GFLib::CommonServer::SServiceInfo*& _value)
 	{
 		GFLib::SServerID serverID(_key);
 

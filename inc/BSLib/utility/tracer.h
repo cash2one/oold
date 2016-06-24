@@ -96,7 +96,7 @@ public:
 	static void sysDebug(uint16 type, const char* file, int line, const char* format, ...);
 	static void sysTrace(uint16 type, const char* file, int line, const char* format, ...);
 	static void sysWarn(uint16 type, const char* file, int line, const char* format, ...);
-	static void sysInfor(uint16 type, const char* file, int line, const char* format, ...);
+	static void sysInfo(uint16 type, const char* file, int line, const char* format, ...);
 	static void sysError(uint16 type, const char* file, int line, const char* format, ...);
 	static void sysFatal(uint16 type, const char* file, int line, const char* format, ...);
 
@@ -148,8 +148,8 @@ private:
 #define BSLIB_LOG_WARN(type, format, ...)\
 	BSLib::Utility::CTracer::sysWarn(type, __FILE__, __LINE__, format, ## __VA_ARGS__);
 
-#define BSLIB_LOG_INFOR(type, format, ...)\
-	BSLib::Utility::CTracer::sysInfor(type, __FILE__, __LINE__, format, ## __VA_ARGS__);
+#define BSLIB_LOG_INFO(type, format, ...)\
+	BSLib::Utility::CTracer::sysInfo(type, __FILE__, __LINE__, format, ## __VA_ARGS__);
 
 #define BSLIB_LOG_ERROR(type, format, ...)\
 	BSLib::Utility::CTracer::sysError(type, __FILE__, __LINE__, format, ## __VA_ARGS__);
