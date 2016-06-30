@@ -29,7 +29,7 @@ namespace BSLib
 namespace Framework
 {
 
-class BSLIB_FRAMEWORK_API CMainThread : public CThreadFrame
+class BSLIB_FRAMEWORK_API CMainThread : public IThreadFrame
 {
 public:
 	CMainThread();

@@ -13,12 +13,12 @@ CSuperStub::CSuperStub(BSLib::Network::CNetConnectionPtr& netConnection)
 	;
 }
 
-void CSuperStub::_finalStub()
+void CSuperStub::INetStub_finalStub()
 {
 	;
 }
 
-void CSuperStub::_initStubMsg(BSLib::Framework::CMsgExecMgr* msgExecMgr)
+void CSuperStub::INetStub_initStubMsg(BSLib::Framework::CMsgExecMgr* msgExecMgr)
 {
 // 	BSLib::Framework::CMsgFactory::singleton().registerCreateCMsgFun(GSLib::LoginSystem::MsgIDLoginSystemGC2LGReqAccountLogin, &BSLib::Framework::CreateCMessage<GSLib::LoginSystem::CMsgLoginSystemGC2LGReqAccountLogin>);
 // 	GFLIB_ADDMSG_OBJEXEC_OBJAFTER(msgExecMgr, GSLib::LoginSystem::MsgIDLoginSystemGC2LGReqAccountLogin, &CLoginStub::_onMsgLoginSystemGC2LGReqAccountLogin, &CLoginStub::_afterMsgHandlerLoginStub, this);
@@ -27,7 +27,7 @@ void CSuperStub::_initStubMsg(BSLib::Framework::CMsgExecMgr* msgExecMgr)
 // 	GFLIB_ADDMSG_OBJEXEC_OBJAFTER(msgExecMgr, GSLib::LoginSystem::MsgIDLoginSystemGC2LGReqRegisterAccount, &CLoginStub::_onMsgLoginSystemGC2LGReqRegisterAccount, &CLoginStub::_afterMsgHandlerRegisterStub, this);
 }
 
-void CSuperStub::_cbTerminate()
+void CSuperStub::INetStub_cbTerminate()
 {
 // 	if (m_timeHandleAccountLogin != BSLib::Utility::INVALID_TIMER) {
 // 		BSLib::Utility::CTimerServer* timerServer = GFLib::CommonServer::CStub::_getTimerServer();

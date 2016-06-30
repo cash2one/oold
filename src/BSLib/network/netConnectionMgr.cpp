@@ -7,7 +7,7 @@ namespace BSLib
 namespace Network
 {
 
-CNetConnectionMgr::CNetConnectionMgr()
+INetConnectionMgr::INetConnectionMgr()
 : m_addConnSize(0)
 , m_delConnSize(0)
 , m_connSize(0)
@@ -15,12 +15,12 @@ CNetConnectionMgr::CNetConnectionMgr()
 	;
 }
 
-CNetConnectionMgr::~CNetConnectionMgr()
+INetConnectionMgr::~INetConnectionMgr()
 {
 	;
 }
 
-bool CNetConnectionMgr::addConnection(CNetConnectionPtr& connection, CNetConnectionCallbackPtr& netConnectionCb)
+bool INetConnectionMgr::INetConnectionMgr_addConnection(CNetConnectionPtr& connection, CNetConnectionCallbackPtr& netConnectionCb)
 {
 	if (connection == NULL || netConnectionCb == NULL){
 		return false;
@@ -41,7 +41,7 @@ bool CNetConnectionMgr::addConnection(CNetConnectionPtr& connection, CNetConnect
 	return true;
 }
 
-bool CNetConnectionMgr::delConnection(int sock)
+bool INetConnectionMgr::INetConnectionMgr_delConnection(int sock)
 {
 	m_mutex.lock();
 	m_delConnList.push(sock);
@@ -50,13 +50,13 @@ bool CNetConnectionMgr::delConnection(int sock)
 	return true;
 }
 
-bool CNetConnectionMgr::epoll(int msSec)
+bool INetConnectionMgr::INetConnectionMgr_epoll(int msSec)
 {
 	updateConn();
 
 	BSLib::Utility::CSurveyTimer timer;
 	int64 start = timer.milliseconds();
-	while (_epoll(msSec)) {
+	while (_INetConnectionMgr_epoll(msSec)) {
 		if ((timer.milliseconds() - start) >= msSec) {
 			updateConn();
 			return true;
@@ -66,7 +66,7 @@ bool CNetConnectionMgr::epoll(int msSec)
 	return false;
 }
 
-void CNetConnectionMgr::updateConn()
+void INetConnectionMgr::updateConn()
 {
 	if (m_addConnSize){
 		_checkAddConn();
@@ -76,7 +76,7 @@ void CNetConnectionMgr::updateConn()
 	}
 }
 
-void CNetConnectionMgr::_checkAddConn()
+void INetConnectionMgr::_checkAddConn()
 {
 	std::queue<CConnectItemPtr> addConnListTemp;
 
@@ -95,13 +95,13 @@ void CNetConnectionMgr::_checkAddConn()
 			continue;
 		}
 		_addConnection(connPtr);
-		this->postSend(connPtr->m_connect->getSockect());
+		this->INetConnectionMgr_postSend(connPtr->m_connect->getSockect());
 		addConnListTemp.pop();
 	}
 	m_connSize = m_connHashMap.size();
 }
 
-void CNetConnectionMgr::_checkDelConn()
+void INetConnectionMgr::_checkDelConn()
 {
 	std::queue<int> delConnListTemp;
 	
@@ -121,10 +121,10 @@ void CNetConnectionMgr::_checkDelConn()
 	m_connSize = m_connHashMap.size();
 }
 
-bool CNetConnectionMgr::_addConnection(CConnectItemPtr& connItemPtr)
+bool INetConnectionMgr::_addConnection(CConnectItemPtr& connItemPtr)
 {
 	m_connHashMap.setValue(connItemPtr->m_connect->getSockect(), connItemPtr);
-	if (!_addConnToPoll(connItemPtr)){
+	if (!_INetConnectionMgr_addConnToPoll(connItemPtr)){
 		m_connHashMap.remove(connItemPtr->m_connect->getSockect());
 		return false;
 	}
@@ -132,27 +132,27 @@ bool CNetConnectionMgr::_addConnection(CConnectItemPtr& connItemPtr)
 	return true;
 }
 
-void CNetConnectionMgr::_delConnection(int sock)
+void INetConnectionMgr::_delConnection(int sock)
 {
 	CConnectItemPtr item = m_connHashMap.getValue(sock);
 	if (item == NULL || item->m_connect == NULL){
 		return;
 	}
-	_delConnFromPoll(item);
+	_INetConnectionMgr_delConnFromPoll(item);
 
 	item->m_connect->setNetConnectionMgr(NULL);
 
 	m_connHashMap.remove(sock);
 }
 
-CNetConnectionMgr::CConnectItemPtr CNetConnectionMgr::_getConnectionItem(int sock)
+INetConnectionMgr::CConnectItemPtr INetConnectionMgr::_getConnectionItem(int sock)
 {
 	CConnectItemPtr item = NULL;
 	m_connHashMap.getValue(sock, item);
 	return item;
 }
 
-void CNetConnectionMgr::_clearAllConnection()
+void INetConnectionMgr::_clearAllConnection()
 {
 	BSLib::Utility::CHashMap<int, CConnectItemPtr>::iterator it = m_connHashMap.begin();
 	for (; it != m_connHashMap.end(); ++it)	{
@@ -160,7 +160,7 @@ void CNetConnectionMgr::_clearAllConnection()
 		if (item == NULL || item->m_connect == NULL){
 			continue;
 		}
-		_delConnFromPoll(item);
+		_INetConnectionMgr_delConnFromPoll(item);
 
 		item->m_connect->setNetConnectionMgr(NULL);
 	}

@@ -303,9 +303,9 @@ int CTcpConnection::_recv(void* dataBuff, int buffSize)
 
 void CTcpConnection::_postSend() 
 {
-	CNetConnectionMgr* netConnMgr = getNetConnectionMgr();
+	INetConnectionMgr* netConnMgr = getNetConnectionMgr();
 	if (netConnMgr != NULL){
-		netConnMgr->postSend((int)m_tcpSock);
+		netConnMgr->INetConnectionMgr_postSend((int)m_tcpSock);
 	}
 }
 

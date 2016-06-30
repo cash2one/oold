@@ -699,7 +699,7 @@ void CRoleGM::updateCombat()
     const GSLib::SRoleKey roleKey = getRoleKey();
     roleKey.serializeTo(stream);
     stream << m_combat;
-    GFLib::CommonServer::CEventMgr::singleton().sendEvent(EEVENTID_ACHIEVE_COMBAT,stream);
+    //GFLib::CommonServer::CEventMgr::singleton().sendEvent(EEVENTID_ACHIEVE_COMBAT,stream);
 }
 
 const std::string CRoleGM::getName() const 
@@ -1086,7 +1086,7 @@ bool CRoleGM::modifyRoleResource(ERoleResID a_resID,BSLib::int32 a_addValue,std:
             BSLib::uint32 level = getVipLevel(); 
             stream << subID;
             stream << level;
-            GFLib::CommonServer::CEventMgr::singleton().sendEvent(EEVENTID_ACHIEVE_CHARGEPAY,stream);
+            //GFLib::CommonServer::CEventMgr::singleton().sendEvent(EEVENTID_ACHIEVE_CHARGEPAY,stream);
         }
         break;
        
@@ -1463,7 +1463,7 @@ bool CRoleGM::_initRoleSkillByConfig()
         skillModule->initSkill(skillTPID,skillLevel);
         stream << skillLevel; 
     }
-    GFLib::CommonServer::CEventMgr::singleton().sendEvent(EEVENTID_ACHIEVE_SKILL,stream);
+    //GFLib::CommonServer::CEventMgr::singleton().sendEvent(EEVENTID_ACHIEVE_SKILL,stream);
 
     return true;
 }
@@ -1782,7 +1782,7 @@ void CRoleGM::_setResource(ERoleResID a_resID,const BSLib::uint32 value)
         roleKey.serializeTo(stream);
         BSLib::uint32 level = getLevel();
         stream << level;
-        GFLib::CommonServer::CEventMgr::singleton().sendEvent(EEVENTID_ACHIEVE_ROLELEVEL,stream);
+        //GFLib::CommonServer::CEventMgr::singleton().sendEvent(EEVENTID_ACHIEVE_ROLELEVEL,stream);
     }
     
 }

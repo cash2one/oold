@@ -27,11 +27,11 @@ enum EStubState
 
 class CNetStubCb;
 
-class BSLIB_NETWORK_API CNetStub
+class BSLIB_NETWORK_API INetStub
 {
 public:
-	CNetStub(CNetConnectionPtr& netConnection);
-	virtual ~CNetStub();
+	INetStub(CNetConnectionPtr& netConnection);
+	virtual ~INetStub();
 
 	StubID getStubID() { return m_stubID;}
 	EStubState getState() { return m_stubState; }
@@ -51,11 +51,11 @@ public:
 	static void setOkeyStateTimeoutMAX(uint32 okeyTimeoutMAX, uint32 pingTime);
 
 protected:
-	virtual void _initStub() = 0;
-	virtual void _finalStub() = 0;
-	virtual void _cbNotifyPing() = 0;
-	virtual bool _cbParseMsg(void* msgBuff, uint32 msgSize) = 0;
-	virtual void _cbTerminate() = 0;
+	virtual void INetStub_initStub() = 0;
+	virtual void INetStub_finalStub() = 0;
+	virtual void INetStub_cbNotifyPing() = 0;
+	virtual bool INetStub_cbParseMsg(void* msgBuff, uint32 msgSize) = 0;
+	virtual void INetStub_cbTerminate() = 0;
 
 	bool _checkVerifyOvertime(BSLib::Utility::CRealTime& realTimer);
 	bool _checkOkeyOvertime(BSLib::Utility::CRealTime& realTimer);
@@ -90,7 +90,7 @@ private:
 	friend class CNetStubCb;
 	friend class CNetStubMgr;
 };
-typedef BSLib::Utility::CPointer<CNetStub> CNetStubPtr;
+typedef BSLib::Utility::CPointer<INetStub> CNetStubPtr;
 
 }//Network
 

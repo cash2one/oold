@@ -106,14 +106,14 @@ void CLoginSystemDB::_onMsgLoginSystemCN2DBReqCreatePlayer(BSLib::Framework::SMs
 {
 	GFLib::SNetMsgLabel* msgLabel = (GFLib::SNetMsgLabel*)a_msgLabel;
 	CMsgLoginSystemCN2DBReqCreatePlayer* reqCreatePlayer = (CMsgLoginSystemCN2DBReqCreatePlayer*)a_msg;
-	if (CAccountLoginDBInforMgr::singleton().checkCN2DBReqCreatePlayer(msgLabel->m_serverIDFrome, *reqCreatePlayer)) {
+	if (CAccountLoginDBInforMgr::singleton().checkCN2DBReqCreatePlayer(msgLabel->m_serverIDFrom, *reqCreatePlayer)) {
 		return;
 	}
 	CMsgLoginSystemDB2CNAckCreatePlayer ackCreatePlayer;
 	ackCreatePlayer.m_accountKey = reqCreatePlayer->m_accountKey;
 	ackCreatePlayer.m_centerSession = reqCreatePlayer->m_centerSessionID;
 	ackCreatePlayer.m_state = ELOGINRESULT_SERVER_ERROR;
-	GFLib::CommonServer::CServiceMgr::singleton().sendMsgToServer(msgLabel->m_serverIDFrome, ackCreatePlayer);
+	GFLib::CommonServer::CServiceMgr::singleton().sendMsgToServer(msgLabel->m_serverIDFrom, ackCreatePlayer);
 }
 
 void CLoginSystemDB::_onMsgLoginSystemCN2DBReqInitPlayer(BSLib::Framework::SMsgLabel* a_msgLabel,BSLib::Framework::SMessage* a_msg)
@@ -127,7 +127,7 @@ void CLoginSystemDB::_onMsgLoginSystemCN2DBReqInitPlayer(BSLib::Framework::SMsgL
 	ackInitPlayer.m_accountKey = reqInitPlayer->m_accountKey;
 	ackInitPlayer.m_centerSessionID = reqInitPlayer->m_centerSessionID;
 	ackInitPlayer.m_state = ELOGINRESULT_SERVER_ERROR;
-	GFLib::CommonServer::CServiceMgr::singleton().sendMsgToServer(msgLabel->m_serverIDFrome, ackInitPlayer);
+	GFLib::CommonServer::CServiceMgr::singleton().sendMsgToServer(msgLabel->m_serverIDFrom, ackInitPlayer);
 }
 
 void CLoginSystemDB::_onMsgLoginSystemGM2DBAckInitPlayer(BSLib::Framework::SMsgLabel* a_msgLabel,BSLib::Framework::SMessage* a_msg)
@@ -147,7 +147,7 @@ void CLoginSystemDB::_onMsgLoginSystemCN2DBReqAccountOffline(BSLib::Framework::S
 	CMsgLoginSystemDB2CNAckAccountOffline ackAccountOffline;
 	ackAccountOffline.m_accountKey = reqAccountOffline->m_accountKey;
 	ackAccountOffline.m_centerSessionID = reqAccountOffline->m_centerSessionID;
-	GFLib::CommonServer::CServiceMgr::singleton().sendMsgToServer(msgLabel->m_serverIDFrome, ackAccountOffline);
+	GFLib::CommonServer::CServiceMgr::singleton().sendMsgToServer(msgLabel->m_serverIDFrom, ackAccountOffline);
 }
 
 void CLoginSystemDB::_onMsgLoginSystemCN2DBReqAccountOnline(BSLib::Framework::SMsgLabel* a_msgLabel,BSLib::Framework::SMessage* a_msg)
@@ -160,7 +160,7 @@ void CLoginSystemDB::_onMsgLoginSystemCN2DBReqAccountOnline(BSLib::Framework::SM
 	CMsgLoginSystemDB2CNAckAccountOnline ackAccountOnline;
 	ackAccountOnline.m_accountKey = reqAccountOnline->m_accountKey;
 	ackAccountOnline.m_centerSessionID = reqAccountOnline->m_centerSessionID;
-	GFLib::CommonServer::CServiceMgr::singleton().sendMsgToServer(msgLabel->m_serverIDFrome, ackAccountOnline);
+	GFLib::CommonServer::CServiceMgr::singleton().sendMsgToServer(msgLabel->m_serverIDFrom, ackAccountOnline);
 }
 
 void CLoginSystemDB::_onMsgLoginSystemGT2DBNtfAccountFinal(BSLib::Framework::SMsgLabel* a_msgLabel,BSLib::Framework::SMessage* a_msg)
@@ -187,7 +187,7 @@ void CLoginSystemDB::_onMsgLoginSystemCN2DBReqAccountFinal(BSLib::Framework::SMs
 	CMsgLoginSystemDB2CNAckAccountFinal ackAccountFinal;
 	ackAccountFinal.m_accountKey = reqAccountFinal->m_accountKey;
 	ackAccountFinal.m_centerSessionID = reqAccountFinal->m_centerSessionID;
-	GFLib::CommonServer::CServiceMgr::singleton().sendMsgToServer(msgLabel->m_serverIDFrome, ackAccountFinal);
+	GFLib::CommonServer::CServiceMgr::singleton().sendMsgToServer(msgLabel->m_serverIDFrom, ackAccountFinal);
 }
 
 }//DB

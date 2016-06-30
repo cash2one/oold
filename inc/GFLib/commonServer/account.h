@@ -49,7 +49,7 @@ private:
 	GFLib::SAccountKey m_accountKey;
 	CAccountTransferMsgCallback* m_transferMsgCb;
 
-	friend class CService;
+	friend class IService;
 };
 typedef BSLib::Utility::CPointer<CAccount> CAccountPtr;
 

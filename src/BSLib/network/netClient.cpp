@@ -139,7 +139,7 @@ bool CTcpClient::INetClient_connect(const char* serverIP, uint16 serverPort)
 	if (!m_netConnectionPtr->connect(sockServer, 3)){
 		return false;
 	}
-	if (!m_tcpConnectionMgr->addConnection(m_netConnectionPtr, m_tcpClientCb)) {
+	if (!m_tcpConnectionMgr->INetConnectionMgr_addConnection(m_netConnectionPtr, m_tcpClientCb)) {
 		return false;
 	}
 	return true;
@@ -153,7 +153,7 @@ void CTcpClient::INetClient_close()
 	if (!m_netConnectionPtr->isValid()) {
 		return ;
 	}
-	m_tcpConnectionMgr->delConnection(m_netConnectionPtr->getSockect());
+	m_tcpConnectionMgr->INetConnectionMgr_delConnection(m_netConnectionPtr->getSockect());
 	INetClient::INetClient_close();
 }
 
@@ -195,7 +195,7 @@ bool CUdpClient::INetClient_connect(const char* serverIP, uint16 serverPort)
 	if (!m_netConnectionPtr->connect(sockServer, 3)){
 		return false;
 	}
-	if (!m_udpConnectionMgr->addConnection(m_netConnectionPtr, m_udpClientCb)) {
+	if (!m_udpConnectionMgr->INetConnectionMgr_addConnection(m_netConnectionPtr, m_udpClientCb)) {
 		return false;
 	}
 	return true;
@@ -225,7 +225,7 @@ bool CUdpClient::connect(CSockAddr& addrLocal, CSockAddr& addrServer)
 	if (!m_netConnectionPtr->connect(addrLocal, addrServer, 3)){
 		return false;
 	}
-	if (!m_udpConnectionMgr->addConnection(m_netConnectionPtr, m_udpClientCb)) {
+	if (!m_udpConnectionMgr->INetConnectionMgr_addConnection(m_netConnectionPtr, m_udpClientCb)) {
 		return false;
 	}
 	return true;
@@ -239,7 +239,7 @@ void CUdpClient::INetClient_close()
 	if (!m_netConnectionPtr->isValid()) {
 		return ;
 	}
-	m_udpConnectionMgr->delConnection(m_netConnectionPtr->getSockect());
+	m_udpConnectionMgr->INetConnectionMgr_delConnection(m_netConnectionPtr->getSockect());
 	INetClient::INetClient_close();
 }
 

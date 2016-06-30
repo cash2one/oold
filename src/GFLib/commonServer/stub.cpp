@@ -14,7 +14,7 @@ namespace CommonServer
 {
 
 CStub::CStub(BSLib::Network::CNetConnectionPtr& netConnection)
-: BSLib::Network::CNetStub(netConnection)
+: BSLib::Network::INetStub(netConnection)
 {
 	;
 }
@@ -24,9 +24,9 @@ CStub::~CStub()
 	;
 }
 
-bool CStub::sendMsg(GFLib::SMessage* msg, BSLib::uint32 msgSize)
+bool CStub::IService_sendMsg(GFLib::SMessage* msg, BSLib::uint32 msgSize)
 {
-	if (BSLib::Network::CNetStub::send(msg, msgSize) > 0){		
+	if (BSLib::Network::INetStub::send(msg, msgSize) > 0){		
 		BSLIB_LOG_DEBUG(ETT_GFLIB_COMMON, "Stub[%d] Send MsgID(%d[%s].%d.%d) [%s]",
 			this->getStubID(),
 			msg->getServerType(),
@@ -41,14 +41,14 @@ bool CStub::sendMsg(GFLib::SMessage* msg, BSLib::uint32 msgSize)
 	return false;
 }
 
-bool CStub::sendMsg(GFLib::CMessage& msg)
+bool CStub::IService_sendMsg(GFLib::CMessage& msg)
 {
 	BSLib::Utility::CStream stream;
 	if (!msg.serializeTo(stream)){
 		BSLIB_LOG_ERROR(ETT_GFLIB_COMMON, "Stub[%d]·¢ËÍÏûÏ¢Ê§°Ü[%s][%s]", this->getStubID(), msg.toString().c_str(), BSLib::Framework::CMsgDebug::singleton().getPrompt(&msg).c_str());
 		return false;
 	}
-	if (BSLib::Network::CNetStub::send(stream) > 0){
+	if (BSLib::Network::INetStub::send(stream) > 0){
 		BSLIB_LOG_DEBUG(ETT_GFLIB_COMMON, "Stub[%d] Send MsgID(%d[%s].%d.%d) [%s]", 
 			this->getStubID(), 
 			msg.getServerType(),
@@ -62,87 +62,87 @@ bool CStub::sendMsg(GFLib::CMessage& msg)
 	return false;
 }
 
-void CStub::close()
+void CStub::IService_close()
 {
-	BSLib::Network::CNetStub::setState(BSLib::Network::ESS_RECYCLE);
+	BSLib::Network::INetStub::setState(BSLib::Network::ESS_RECYCLE);
 }
 
-void CStub::_initStub()
+void CStub::INetStub_initStub()
 {
-	BSLib::Framework::CMsgExecMgr* msgExecMgr = CService::_getMsgExecMgr();
+	BSLib::Framework::CMsgExecMgr* msgExecMgr = IService::_getMsgExecMgr();
 
 	GFLIB_ADDMSG_OBJEXEC(msgExecMgr, MsgIDServerLinkXS2XXReqPing, &CStub::_onMsgServerLinkXS2XXReqPing,this);
 	GFLIB_ADDMSG_OBJEXEC(msgExecMgr, MsgIDServerLinkXX2XSResPing, &CStub::_onMsgServerLinkXX2XSResPing,this);
 
-	_initStubMsg(msgExecMgr);
+	INetStub_initStubMsg(msgExecMgr);
 }
 
-void CStub::_finalStub()
+void CStub::INetStub_finalStub()
 {
 	;
 }
 
-void CStub::_initStubMsg(BSLib::Framework::CMsgExecMgr* msgExecMgr)
+void CStub::INetStub_initStubMsg(BSLib::Framework::CMsgExecMgr* msgExecMgr)
 {
 	GFLIB_ADDMSG_OBJEXEC_OBJAFTER(msgExecMgr, MsgIDServerLinkXX2XSReqServerID, &CStub::_onMsgServerLinkXX2XSReqServerType, &CStub::_afterMsgHandlerStub, this);
 }
 
-void CStub::_cbNotifyPing()
+void CStub::INetStub_cbNotifyPing()
 {
 	SMsgServerLinkXS2XXReqPing reqPing;
-	BSLib::Network::CNetStub::send(&reqPing, sizeof(reqPing));
+	BSLib::Network::INetStub::send(&reqPing, sizeof(reqPing));
 }
 
-bool CStub::_cbParseMsg(void* msgBuff, BSLib::uint32 msgSize)
+bool CStub::INetStub_cbParseMsg(void* msgBuff, BSLib::uint32 msgSize)
 {
 	GFLib::SMessage* msg = (GFLib::SMessage*)msgBuff;
 
-	return CService::_parseMsg(msg, msgSize);
+	return IService::_parseMsg(msg, msgSize);
 }
 
-void CStub::_cbTerminate()
+void CStub::INetStub_cbTerminate()
 {
-	if (CServiceMgr::singleton().delService(CService::getServerID())) {
+	if (CServiceMgr::singleton().delService(IService::getServerID())) {
 		CCommonServer* commonServer = CCommonServer::getCommonServer();
 		if (commonServer == NULL) {
 			return ;
 		}
 		SMsgServerLocalLC2LCNtfServerLeave serverLeave;
-		serverLeave.m_leaveServerID = CService::getServerID();
-		serverLeave.setServerKey(CService::getKey());
+		serverLeave.m_leaveServerID = IService::getServerID();
+		serverLeave.setServerKey(IService::getKey());
 
 		commonServer->sendMsg(&serverLeave, sizeof(serverLeave));
 	}
 
 	BSLIB_LOG_INFO(ETT_GFLIB_COMMON, "Stub[%d] %s(%d.%d.%d) Key[%s] Terminate",
 		this->getStubID(),
-		GFLib::CommonServer::CServerTypeMgr::singleton().getTextServerType(CService::getServerID().getServerType()).c_str(),
-		CService::getServerID().getZoneID(),
-		CService::getServerID().getServerType(),
-		CService::getServerID().getServerNumber(),
-		CService::getKey().c_str());
+		GFLib::CommonServer::CServerTypeMgr::singleton().getTextServerType(IService::getServerID().getServerType()).c_str(),
+		IService::getServerID().getZoneID(),
+		IService::getServerID().getServerType(),
+		IService::getServerID().getServerNumber(),
+		IService::getKey().c_str());
 }
 
-bool CStub::_canTransfer() 
+bool CStub::_IService_canTransfer() 
 { 
-	BSLib::Network::EStubState stubState = BSLib::Network::CNetStub::getState();
+	BSLib::Network::EStubState stubState = BSLib::Network::INetStub::getState();
 	return stubState == BSLib::Network::ESS_OKAY || stubState == BSLib::Network::ESS_RECYCLE;
 }
 
-GFLib::StubID CStub::_getStubID()
+GFLib::StubID CStub::_IService_getStubID()
 {
-	return BSLib::Network::CNetStub::getStubID();
+	return BSLib::Network::INetStub::getStubID();
 }
 
 void CStub::_onMsgServerLinkXS2XXReqPing(BSLib::Framework::SMsgLabel* msgLabel,BSLib::Framework::SMessage* msg)
 {
 	GFLib::SMsgServerLinkXX2XSResPing resPing;
-	BSLib::Network::CNetStub::send(&resPing, sizeof(GFLib::SMsgServerLinkXX2XSResPing));
+	BSLib::Network::INetStub::send(&resPing, sizeof(GFLib::SMsgServerLinkXX2XSResPing));
 }
 
 void CStub::_onMsgServerLinkXX2XSResPing(BSLib::Framework::SMsgLabel* msgLabel,BSLib::Framework::SMessage* msg)
 {
-	BSLib::Network::CNetStub::_resetOkeyTick();
+	BSLib::Network::INetStub::_resetOkeyTick();
 }
 
 void CStub::_onMsgServerLinkXX2XSReqServerType(BSLib::Framework::SMsgLabel* msgLabel,BSLib::Framework::SMessage* msg)
@@ -152,15 +152,15 @@ void CStub::_onMsgServerLinkXX2XSReqServerType(BSLib::Framework::SMsgLabel* msgL
 	if (reqServerType->m_serverID == 0) {
 		return;
 	}
-	CService::_setServerID(reqServerType->m_serverID.getServerID());
-	CService::_setKey(reqServerType->m_key);
+	IService::_setServerID(reqServerType->m_serverID.getServerID());
+	IService::_setKey(reqServerType->m_key);
 
 	CCommonServer* server = CCommonServer::getCommonServer();
 	GFLib::SMsgServerLinkXS2XXResServerID resServerType;
 	resServerType.m_serverID = server->getServerID();
 	resServerType.setKey(server->getServerKey());
 
-	if (!sendMsg(&resServerType, sizeof(GFLib::SMsgServerLinkXS2XXResServerID))) {
+	if (!IService_sendMsg(&resServerType, sizeof(GFLib::SMsgServerLinkXS2XXResServerID))) {
 		return ;
 	}
 	
@@ -171,24 +171,24 @@ void CStub::_onMsgServerLinkXX2XSReqServerType(BSLib::Framework::SMsgLabel* msgL
 	}
 
 	if (!CServiceMgr::singleton().addService(servicePtr)) {
-		BSLib::Network::CNetStub::setState(BSLib::Network::ESS_RECYCLE);
+		BSLib::Network::INetStub::setState(BSLib::Network::ESS_RECYCLE);
 		return;
 	}
 
-	BSLib::Network::CNetStub::setState(BSLib::Network::ESS_OKAY);
+	BSLib::Network::INetStub::setState(BSLib::Network::ESS_OKAY);
 	
 	SMsgServerLocalLC2LCNtfServerEnter serverEnter;
-	serverEnter.m_enterServerID = CService::getServerID();
-	serverEnter.setServerKey(CService::getKey());
+	serverEnter.m_enterServerID = IService::getServerID();
+	serverEnter.setServerKey(IService::getKey());
 	CCommonServer::getCommonServer()->sendMsg(&serverEnter, sizeof(serverEnter));
 
 	BSLIB_LOG_INFO(ETT_GFLIB_COMMON, "Stub[%d] %s(%d.%d.%d) Key[%s] OK",
 		this->getStubID(),
-		GFLib::CommonServer::CServerTypeMgr::singleton().getTextServerType(CService::getServerID().getServerType()).c_str(),
-		CService::getServerID().getZoneID(),
-		CService::getServerID().getServerType(),
-		CService::getServerID().getServerNumber(),
-		CService::getKey().c_str());
+		GFLib::CommonServer::CServerTypeMgr::singleton().getTextServerType(IService::getServerID().getServerType()).c_str(),
+		IService::getServerID().getZoneID(),
+		IService::getServerID().getServerType(),
+		IService::getServerID().getServerNumber(),
+		IService::getKey().c_str());
 }
 
 void CStub::_afterMsgHandlerStub(BSLib::Framework::CMsgExecMgr* msgExecMgr, BSLib::Framework::SMsgLabel* msgLabel, BSLib::Framework::SMessage* msg)

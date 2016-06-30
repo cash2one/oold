@@ -33,7 +33,7 @@ struct SNetConnectionBytesInfor
 	BSLib::uint64 m_sendBytes;
 };
 
-class CNetConnectionMgr;
+class INetConnectionMgr;
 
 class BSLIB_NETWORK_API CNetConnection
 {
@@ -65,8 +65,8 @@ public:
 	const CSockAddr& getLocalAddr() { return m_localAddr; }
 	const CSockAddr& getPeerAddr() { return m_peerAddr; }
 
-	void setNetConnectionMgr(CNetConnectionMgr* connMgr) { m_netConnectMgr = connMgr; }
-	CNetConnectionMgr* getNetConnectionMgr() { return m_netConnectMgr; }
+	void setNetConnectionMgr(INetConnectionMgr* connMgr) { m_netConnectMgr = connMgr; }
+	INetConnectionMgr* getNetConnectionMgr() { return m_netConnectMgr; }
 
 	void getNetConnectionInfor(SNetConnectionBytesInfor& a_connectionInfor);
 
@@ -101,7 +101,7 @@ private:
 	CSockAddr m_localAddr;
 	CSockAddr m_peerAddr;
 	Utility::CBufferInt8 m_recvBuff;
-	CNetConnectionMgr* m_netConnectMgr;
+	INetConnectionMgr* m_netConnectMgr;
 };
 typedef BSLib::Utility::CPointer<CNetConnection> CNetConnectionPtr;
 

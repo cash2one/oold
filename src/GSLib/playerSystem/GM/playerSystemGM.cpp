@@ -444,7 +444,7 @@ bool CPlayerSystemGM::_initEvent()
 {
     for(BSLib::uint32 i = EEVENTID_ACHIEVE_ROLELEVEL;i<= EEVENTID_ACHIEVE_MAXID; ++i){
          BSLib::Utility::EventID eventID = i;
-         GFLib::CommonServer::CEventMgr::singleton().registerEvent(eventID,&CPlayerSystemGM::_onEventAchieveUpdate,this);
+         //GFLib::CommonServer::CEventMgr::singleton().registerEvent(eventID,&CPlayerSystemGM::_onEventAchieveUpdate,this);
     }
     return true;
 }

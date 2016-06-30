@@ -323,7 +323,7 @@ bool CServiceMgr::sendMsgToServer(const std::string& a_serverKey, GFLib::SMessag
 	if (servicePtr == NULL) {
 		return false;
 	}
-	return servicePtr->sendMsg(a_msg, a_msgSize);
+	return servicePtr->IService_sendMsg(a_msg, a_msgSize);
 }
 
 bool CServiceMgr::sendMsgToServer(const std::string& a_serverKey, GFLib::CMessage& a_msg)
@@ -342,7 +342,7 @@ bool CServiceMgr::sendMsgToServer(const std::string& a_serverKey, GFLib::CMessag
 		return false;
 	}
 
-	return servicePtr->sendMsg(a_msg);
+	return servicePtr->IService_sendMsg(a_msg);
 }
 
 bool CServiceMgr::sendMsgToServer(const ServerID& a_serverID, GFLib::SMessage* a_msg, BSLib::uint32 a_msgSize)
@@ -361,7 +361,7 @@ bool CServiceMgr::sendMsgToServer(const ServerID& a_serverID, GFLib::SMessage* a
 		return false;
 	}
 
-	return servicePtr->sendMsg(a_msg, a_msgSize);
+	return servicePtr->IService_sendMsg(a_msg, a_msgSize);
 }
 
 bool CServiceMgr::sendMsgToServer(const ServerID& a_serverID, GFLib::CMessage& a_msg)
@@ -380,7 +380,7 @@ bool CServiceMgr::sendMsgToServer(const ServerID& a_serverID, GFLib::CMessage& a
 		return false;
 	}
 
-	return servicePtr->sendMsg(a_msg);
+	return servicePtr->IService_sendMsg(a_msg);
 }
 
 bool CServiceMgr::sendMsgToServer(const SServerID& a_serverID, GFLib::SMessage* a_msg, BSLib::uint32 a_msgSize)
@@ -406,7 +406,7 @@ bool CServiceMgr::sendMsgToServer(const SServerID& a_serverID, const SAccountKey
 
 	SMsgServerLinkXX2XXNtfTransfer* ntTransfer = (SMsgServerLinkXX2XXNtfTransfer*)stream.writePtr();
 	new (static_cast<void*>(ntTransfer)) SMsgServerLinkXX2XXNtfTransfer();
-	ntTransfer->m_serverIDFrome = server->getServerID();
+	ntTransfer->m_serverIDFrom = server->getServerID();
 	ntTransfer->m_serverIDTo = a_serverID;
 	ntTransfer->m_accountKey = a_accountKey;
 	ntTransfer->m_msgSize = 0;
@@ -433,7 +433,7 @@ bool CServiceMgr::sendMsgToServer(const SServerID& a_serverID, const SAccountKey
 
 	SMsgServerLinkXX2XXNtfTransfer* ntTransfer = (SMsgServerLinkXX2XXNtfTransfer*)stream.writePtr();
 	new (static_cast<void*>(ntTransfer)) SMsgServerLinkXX2XXNtfTransfer();
-	ntTransfer->m_serverIDFrome = server->getServerID();
+	ntTransfer->m_serverIDFrom = server->getServerID();
 	ntTransfer->m_serverIDTo = a_serverID;
 	ntTransfer->m_accountKey = a_accountKey;
 	ntTransfer->m_msgSize = 0;
@@ -474,7 +474,7 @@ bool CServiceMgr::sendMsgToServerType(ServerType a_serverType, GFLib::SMessage* 
 			continue;
 		}
 
-		servicePtr->sendMsg(a_msg, a_msgSize);
+		servicePtr->IService_sendMsg(a_msg, a_msgSize);
 	}
 	return true;
 }
@@ -501,7 +501,7 @@ bool CServiceMgr::sendMsgToServerType(ServerType a_serverType, GFLib::CMessage& 
 			continue;
 		}
 
-		servicePtr->sendMsg(a_msg);
+		servicePtr->IService_sendMsg(a_msg);
 	}
 	return true;
 }

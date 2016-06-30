@@ -62,7 +62,7 @@ bool CAccount::sendMsgToServer(const GFLib::SServerID& a_serverID, const GFLib::
 
 	SMsgServerLinkXX2XXNtfTransfer* ntTransfer = (SMsgServerLinkXX2XXNtfTransfer*)stream.writePtr();
 	new (static_cast<void*>(ntTransfer)) SMsgServerLinkXX2XXNtfTransfer();
-	ntTransfer->m_serverIDFrome = server->getServerID();
+	ntTransfer->m_serverIDFrom = server->getServerID();
 	ntTransfer->m_serverIDTo = a_toServerID;
 	ntTransfer->m_accountKey = m_accountKey;
 	ntTransfer->m_msgSize = 0;
@@ -89,7 +89,7 @@ bool CAccount::sendMsgToServer(const GFLib::SServerID& a_serverID, const GFLib::
 
 	SMsgServerLinkXX2XXNtfTransfer* ntTransfer = (SMsgServerLinkXX2XXNtfTransfer*)stream.writePtr();
 	new (static_cast<void*>(ntTransfer)) SMsgServerLinkXX2XXNtfTransfer();
-	ntTransfer->m_serverIDFrome = server->getServerID();
+	ntTransfer->m_serverIDFrom = server->getServerID();
 	ntTransfer->m_serverIDTo = a_toServerID;
 	ntTransfer->m_accountKey = m_accountKey;
 	ntTransfer->m_msgSize = 0;

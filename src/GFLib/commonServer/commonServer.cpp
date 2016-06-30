@@ -11,8 +11,7 @@
 #include <GFLib/commonServer/stubMgr.h>
 #include <GFLib/commonServer/serviceMgr.h>
 #include <GFLib/commonServer/sysChannelMgr.h>
-#include <GFLib/commonServer/uniqueIDMgr.h>
-#include <GFLib/commonServer/eventMgr.h>
+
 
 namespace GFLib
 {
@@ -87,14 +86,6 @@ bool CCommonServer::_init()
 	_setOutConsole();
 	_setOutTrace();
 
-	if (!CUniqueIDMgr::singleton().init()) {
-		BSLIB_LOG_ERROR(ETT_GFLIB_COMMON, "加载唯一值临时文件失败");
-		return false;
-	}
-
-	GFLib::CommonServer::CEventMgr::singleton().init(GFLIB_EVENT_ID_MAX);
-
-	
 	BSLIB_LOG_INFO(ETT_GFLIB_COMMON, "********************************************************");
 #ifdef _DEBUG
 
@@ -213,10 +204,6 @@ int CCommonServer::_final()
 	BSLIB_LOG_DEBUG(ETT_GFLIB_COMMON, "释放CMainThread资源", serverName.c_str());
 	BSLib::Framework::CMainThread::_final();
 
-	CUniqueIDMgr::singleton().final();
-
-	GFLib::CommonServer::CEventMgr::singleton().clear();
-
 	_closeTrace();
 
 	return 0;
@@ -224,8 +211,6 @@ int CCommonServer::_final()
 
 bool CCommonServer::_callback()
 {
-	GFLib::CommonServer::CEventMgr::singleton().updateEvent();
-
 	return BSLib::Framework::CMainThread::_callback();
 }
 

@@ -39,7 +39,7 @@ bool CNetPlayerGT::sendMsgToClient(GFLib::SMessage* a_msg, BSLib::uint32 a_msgSi
 		BSLIB_LOG_ERROR(ETT_GSLIB_LOGINSYSTEM, "%s发送消息失败[%s][%s]", CNetPlayer::getAccountKey().toLogString().c_str(), a_msg->toString().c_str(), BSLib::Framework::CMsgDebug::singleton().getPrompt(a_msg).c_str());
 		return false;
 	}
-	return stubPtr->sendMsg(a_msg, a_msgSize);
+	return stubPtr->IService_sendMsg(a_msg, a_msgSize);
 }
 
 bool CNetPlayerGT::sendMsgToClient(GFLib::CMessage& a_msg)
@@ -53,7 +53,7 @@ bool CNetPlayerGT::sendMsgToClient(GFLib::CMessage& a_msg)
 		BSLIB_LOG_ERROR(ETT_GSLIB_LOGINSYSTEM, "%s发送消息失败[%s][%s]", CNetPlayer::getAccountKey().toLogString().c_str(), a_msg.toString().c_str(), BSLib::Framework::CMsgDebug::singleton().getPrompt(&a_msg).c_str());
 		return false;
 	}
-	return stubPtr->sendMsg(a_msg);
+	return stubPtr->IService_sendMsg(a_msg);
 }
 
 bool CNetPlayerGT::sendMsgToCenterServer(GFLib::SMessage* a_msg, BSLib::uint32 a_msgSize)

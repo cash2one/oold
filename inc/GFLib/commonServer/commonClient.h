@@ -15,7 +15,7 @@ namespace CommonServer
 {
 
 class GFLIB_COMMONSERVER_API CCommonClient 
-    :public CService,
+    :public IService,
     public BSLib::Network::CTcpClient,
     public BSLib::Network::CTcpConnectionMgr
 {
@@ -23,9 +23,9 @@ public:
 	CCommonClient(GFLib::SServerID& a_serverID, const std::string& a_serverKey);
 	virtual ~CCommonClient();
 
-	virtual bool sendMsg(GFLib::SMessage* msg, BSLib::uint32 msgSize);
-	virtual bool sendMsg(GFLib::CMessage& msg);
-	virtual void close();
+	virtual bool IService_sendMsg(GFLib::SMessage* msg, BSLib::uint32 msgSize);
+	virtual bool IService_sendMsg(GFLib::CMessage& msg);
+	virtual void IService_close();
 
 	void start();
 	void join();
@@ -44,10 +44,10 @@ protected:
 	virtual void _notifyServerID();
 	virtual void _finalClient();
 
-	virtual bool _cbParseMsg(void* msgBuff, BSLib::uint32 msgSize);
-	virtual void _cbTerminate();
+	virtual bool _INetClient_cbParseMsg(void* msgBuff, BSLib::uint32 msgSize);
+	virtual void _INetClient_cbTerminate();
 	virtual bool _canTransfer() { return true; }
-	virtual GFLib::StubID _getStubID() { return INVALID_STUBID; }
+	virtual GFLib::StubID _IService_getStubID() { return INVALID_STUBID; }
 
 	virtual int _run(void* a_para);
 

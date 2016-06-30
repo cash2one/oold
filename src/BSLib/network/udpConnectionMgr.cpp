@@ -21,7 +21,7 @@ CUdpConnectionMgr::~CUdpConnectionMgr()
 	}
 }
 
-bool CUdpConnectionMgr::postSend(int udpSocket)
+bool CUdpConnectionMgr::INetConnectionMgr_postSend(int udpSocket)
 {
 	if (m_udmEpollID == -1) {
 		return false;
@@ -29,7 +29,7 @@ bool CUdpConnectionMgr::postSend(int udpSocket)
 	return BSLib::UDM::epollAddSock(m_udmEpollID, udpSocket, BSLib::UDM::UDM_EPOLL_WRITE, NULL) == BSLIB_UDM_OK;
 }
 
-bool CUdpConnectionMgr::_addConnToPoll(CConnectItemPtr& connItemPtr)
+bool CUdpConnectionMgr::_INetConnectionMgr_addConnToPoll(CConnectItemPtr& connItemPtr)
 {
 	if (m_udmEpollID == -1) {
 		return false;
@@ -47,7 +47,7 @@ bool CUdpConnectionMgr::_addConnToPoll(CConnectItemPtr& connItemPtr)
 	return BSLib::UDM::epollAddSock(m_udmEpollID, item->m_connect->getSockect(), BSLib::UDM::UDM_EPOLL_READ | BSLib::UDM::UDM_EPOLL_WRITE | BSLib::UDM::UDM_EPOLL_ERROR, NULL) == BSLIB_UDM_OK;
 }
 
-void CUdpConnectionMgr::_delConnFromPoll(CConnectItemPtr& connItemPtr)
+void CUdpConnectionMgr::_INetConnectionMgr_delConnFromPoll(CConnectItemPtr& connItemPtr)
 {
 	if (m_udmEpollID == -1) {
 		return ;
@@ -59,7 +59,7 @@ void CUdpConnectionMgr::_delConnFromPoll(CConnectItemPtr& connItemPtr)
 	BSLib::UDM::epollDelSock(m_udmEpollID, item->m_connect->getSockect(), BSLib::UDM::UDM_EPOLL_READ | BSLib::UDM::UDM_EPOLL_WRITE | BSLib::UDM::UDM_EPOLL_ERROR);
 }
 
-bool CUdpConnectionMgr::_epoll(int msSec)
+bool CUdpConnectionMgr::_INetConnectionMgr_epoll(int msSec)
 {
 	if (m_udmEpollID == -1) {
 		return false;
@@ -72,13 +72,13 @@ bool CUdpConnectionMgr::_epoll(int msSec)
 		return false;
 	}
 	for (int i=0; i<waitCount; ++i)	{
-		CConnectItemPtr itemPtr = CNetConnectionMgr::_getConnectionItem(epollEvent[i].m_udmSocket);
+		CConnectItemPtr itemPtr = INetConnectionMgr::_getConnectionItem(epollEvent[i].m_udmSocket);
 		if (itemPtr == NULL) {
 			continue;
 		}
 		CConnectItem* item = (CConnectItem*)itemPtr;
 		if (item == NULL) {
-			CNetConnectionMgr::_delConnection(epollEvent[i].m_udmSocket);
+			INetConnectionMgr::_delConnection(epollEvent[i].m_udmSocket);
 			continue;
 		}
 		if (epollEvent[i].m_udmEpollEvent & BSLib::UDM::UDM_EPOLL_READ) {
@@ -145,7 +145,7 @@ void CUdpConnectionMgr::_terminateScoket(int& udmSocket, void* data)
 		item->m_connect->close();
 	//}
 
-	CNetConnectionMgr::_delConnection(udmSocket);
+	INetConnectionMgr::_delConnection(udmSocket);
 }
 
 }//Network

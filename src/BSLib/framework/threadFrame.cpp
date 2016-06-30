@@ -11,7 +11,7 @@ namespace BSLib
 namespace Framework
 {
 
-CThreadFrame::CThreadFrame()
+IThreadFrame::IThreadFrame()
 : m_isTerminate(false)
 , m_isValid(false)
 , m_msgQueue(&m_event)
@@ -22,12 +22,12 @@ CThreadFrame::CThreadFrame()
 	;
 }
 
-CThreadFrame::~CThreadFrame()
+IThreadFrame::~IThreadFrame()
 {
 	;
 }
 
-void CThreadFrame::terminate()
+void IThreadFrame::terminate()
 {
 	if (isTerminate()) {
 		return ;
@@ -36,7 +36,7 @@ void CThreadFrame::terminate()
 	sendMsg(&ntfTerminate, sizeof(ntfTerminate));
 }
 
-bool CThreadFrame::sendMsg(CMessage& msg)
+bool IThreadFrame::sendMsg(CMessage& msg)
 {
 	BSLib::Utility::CStream stream;
 	if (!msg.serializeTo(stream)){
@@ -45,7 +45,7 @@ bool CThreadFrame::sendMsg(CMessage& msg)
 	return sendMsg((SMessage*)stream.readPtr(), (int)stream.readSize());
 }
 
-bool CThreadFrame::sendMsg(CMessage& msg, SMsgLabel* msgLabel, int msgLabelSize)
+bool IThreadFrame::sendMsg(CMessage& msg, SMsgLabel* msgLabel, int msgLabelSize)
 {
 	BSLib::Utility::CStream stream;
 	if (!msg.serializeTo(stream)){
@@ -54,7 +54,7 @@ bool CThreadFrame::sendMsg(CMessage& msg, SMsgLabel* msgLabel, int msgLabelSize)
 	return sendMsg((SMessage*)stream.readPtr(), (int)stream.readSize(), msgLabel, msgLabelSize);
 }
 
-bool CThreadFrame::sendMsg(SMessage* msg, int msgSize)
+bool IThreadFrame::sendMsg(SMessage* msg, int msgSize)
 {
 	if (isTerminate()) {
 		return false;
@@ -64,7 +64,7 @@ bool CThreadFrame::sendMsg(SMessage* msg, int msgSize)
 	return sendMsg(msg, msgSize, &msgLabel, sizeof(msgLabel));
 }
 
-bool CThreadFrame::sendMsg(SMessage* msg, int msgSize, SMsgLabel* msgLabel, int msgLabelSize)
+bool IThreadFrame::sendMsg(SMessage* msg, int msgSize, SMsgLabel* msgLabel, int msgLabelSize)
 {
 	if (isTerminate()) {
 		return false;
@@ -79,7 +79,7 @@ bool CThreadFrame::sendMsg(SMessage* msg, int msgSize, SMsgLabel* msgLabel, int 
 	return false;
 }
 
-bool CThreadFrame::_init()
+bool IThreadFrame::_init()
 {
 	BSLib::Utility::CRealTime* realTime = getRealTime();
 	if (realTime == NULL) {
@@ -89,7 +89,7 @@ bool CThreadFrame::_init()
 	m_lastMilliseconds = realTime->milliseconds();
 	//m_updateTimer_1.reset(1000, *realTime);
 
-	CMsgExecPtr msgExecPtr = new CMsgExec(&CThreadFrame::_onMsgNtfTerminate, this);
+	CMsgExecPtr msgExecPtr = new CMsgExec(&IThreadFrame::_onMsgNtfTerminate, this);
 	if (msgExecPtr == NULL){
 		return false;
 	}
@@ -99,7 +99,7 @@ bool CThreadFrame::_init()
 	return true;
 }
 
-int CThreadFrame::_main()
+int IThreadFrame::_main()
 {
 	m_isValid = true;
 	m_isTerminate = false;
@@ -149,25 +149,25 @@ int CThreadFrame::_main()
 	return res;
 }
 
-int CThreadFrame::_final()
+int IThreadFrame::_final()
 {
 	CMsgDebug::singleton().clear();
 	m_msgExecMgr.clear();
 	return 0;
 }
 
-bool CThreadFrame::_callback()
+bool IThreadFrame::_callback()
 {
 	_parseMsg();
 	return true;
 }
 
-// void CThreadFrame::_update_1000()
+// void IThreadFrame::_update_1000()
 // {
 // 	;
 // }
 
-void CThreadFrame::_parseMsg()
+void IThreadFrame::_parseMsg()
 {
 	SMessage* msg = NULL;
 	SMsgLabel* msgLable = NULL;
@@ -216,12 +216,12 @@ void CThreadFrame::_parseMsg()
 
 }
 
-void CThreadFrame::_waitMsg(uint32 a_timeout)
+void IThreadFrame::_waitMsg(uint32 a_timeout)
 {
 	m_event.wait(a_timeout);
 }
 
-void CThreadFrame::_onMsgNtfTerminate(SMsgLabel* lable, SMessage* msg)
+void IThreadFrame::_onMsgNtfTerminate(SMsgLabel* lable, SMessage* msg)
 {
 	m_isTerminate = true;
 }

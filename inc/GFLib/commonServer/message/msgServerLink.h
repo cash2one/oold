@@ -92,7 +92,7 @@ struct SMsgServerLinkXX2XSResPing: public SMessage
 const BSLib::uint32 MsgIDServerLinkXX2XXNtfTransfer = GFLIB_MSGID_DEBUG(GFLib::SRVTYPE_ANY, EFUNCTYPE_SERVER_LINK, EMSGNUMID_SERVERLINK_XX2XX_NTF_TRANSFER);
 struct SMsgServerLinkXX2XXNtfTransfer: public SMessage
 {
-	SServerID m_serverIDFrome;
+	SServerID m_serverIDFrom;
 	SServerID m_serverIDTo;
 	SAccountKey m_accountKey;
 
@@ -101,7 +101,7 @@ struct SMsgServerLinkXX2XXNtfTransfer: public SMessage
 
 	SMsgServerLinkXX2XXNtfTransfer() : SMessage(MsgIDServerLinkXX2XXNtfTransfer)
 	{
-		m_serverIDFrome = INVALID_SERVERID;
+		m_serverIDFrom = INVALID_SERVERID;
 		m_serverIDTo = INVALID_SERVERID;
 		m_msgSize = 0;
 	}

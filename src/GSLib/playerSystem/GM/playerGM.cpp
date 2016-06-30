@@ -4,8 +4,6 @@
 #include <GSLib/playerSystem/GM/playerGMMgr.h>
 #include <GSLib/playerSystem/GM/playerSystemGM.h>
 #include <GSLib/sceneSystem/GM/sceneGMMgr.h>
-#include <GFLib/commonServer/eventMgr.h>
-#include <GFLib/commonServer/uniqueIDMgr.h>
 #include <GSLib/uniqueIDType.h>
 #include <GSLib/petSystem/GM/petModule.h>
 #include <GSLib/prizeSystem/GM/rolePrizeModule.h>
@@ -1165,7 +1163,7 @@ bool CPlayerGM::_createRole(GSLib::DBSystem::CKeyTablePtr& a_keyTable)
         return false;
     }
 
-    BSLib::uint64 roleID = GFLib::CommonServer::CUniqueIDMgr::singleton().getInt64ZoneUniqueID(GSLib::EUNIQUEIDTYPE_ROLEID);
+    BSLib::uint64 roleID = 1; //GFLib::CommonServer::CUniqueIDMgr::singleton().getInt64ZoneUniqueID(GSLib::EUNIQUEIDTYPE_ROLEID);
     BSLIB_LOG_DEBUG(ETT_GSLIB_PLAYERSYSTEM, "Éú³ÉRoleID[RoleID=%lld]", roleID);
     RoleIndex roleIndex;
     if (!_createRole(m_roleNameData.m_roleName, m_newRoleTPID,roleID, roleIndex)) {

@@ -14,7 +14,7 @@ namespace GFLib
 namespace CommonServer
 {
 
-bool CService::_parseMsg(GFLib::SMessage* msg, BSLib::uint32 msgSize)
+bool IService::_parseMsg(GFLib::SMessage* msg, BSLib::uint32 msgSize)
 {
 	BSLib::uint8 msgServerType = msg->getServerType();
 	BSLib::uint8 msgFunType = msg->getFunctionType();
@@ -25,9 +25,9 @@ bool CService::_parseMsg(GFLib::SMessage* msg, BSLib::uint32 msgSize)
 	ServerID localServerID = commonServer->getServerID().getServerID();
 
 	GFLib::SNetMsgLabel msgLable;
-	msgLable.m_serverIDFrome = m_serverID;
+	msgLable.m_serverIDFrom = m_serverID;
 	msgLable.m_serverIDSender = m_serverID;
-	msgLable.m_stubIDsender = _getStubID();
+	msgLable.m_stubIDsender = _IService_getStubID();
 	msgLable.m_serverIDTo = localServerID;
 	msgLable.m_msgSize = msgSize;
 
@@ -57,7 +57,7 @@ bool CService::_parseMsg(GFLib::SMessage* msg, BSLib::uint32 msgSize)
 		BSLib::uint16 subMsgID = subMsg->getID();
 		
 		msgLable.m_msgSize = msgSizeSubMsg;
-		msgLable.m_serverIDFrome = ntTransfer->m_serverIDFrome;
+		msgLable.m_serverIDFrom = ntTransfer->m_serverIDFrom;
 		msgLable.m_serverIDSender = m_serverID;
 		msgLable.m_serverIDTo = ntTransfer->m_serverIDTo;
 		msgLable.m_acountKey = ntTransfer->m_accountKey;
@@ -97,7 +97,7 @@ bool CService::_parseMsg(GFLib::SMessage* msg, BSLib::uint32 msgSize)
 	return false;
 }
 
-bool CService::_transferMsg(GFLib::SMessage* msg, BSLib::uint32 msgSize)
+bool IService::_IService_transferMsg(GFLib::SMessage* msg, BSLib::uint32 msgSize)
 {
 	if (msg->getUniqueID() != MsgIDServerLinkXX2XXNtfTransfer) {
 		BSLIB_LOG_ERROR(ETT_GFLIB_COMMON, "丢弃消息[%s][%s],不是转发消息", msg->toString().c_str(), BSLib::Framework::CMsgDebug::singleton().getPrompt(msg).c_str());
@@ -120,7 +120,7 @@ bool CService::_transferMsg(GFLib::SMessage* msg, BSLib::uint32 msgSize)
 }
 
 
-bool CService::_executeMessage(GFLib::SNetMsgLabel* lable, GFLib::SMessage* msg)
+bool IService::_executeMessage(GFLib::SNetMsgLabel* lable, GFLib::SMessage* msg)
 {
 	BSLib::Framework::CMessage* cmsg = BSLib::Framework::CMsgFactory::singleton().createCMessage(msg->getUniqueID());
 	if (cmsg != NULL) {
@@ -151,14 +151,14 @@ bool CService::_executeMessage(GFLib::SNetMsgLabel* lable, GFLib::SMessage* msg)
 	return true;
 }
 
-bool CService::_executeTransfer(GFLib::SMessage* msg, BSLib::uint32 msgSize)
+bool IService::_executeTransfer(GFLib::SMessage* msg, BSLib::uint32 msgSize)
 {
 	//转发
-	if (!_canTransfer()) {
+	if (!_IService_canTransfer()) {
 		BSLIB_LOG_ERROR(ETT_GFLIB_COMMON, "丢弃消息[%s][%s],转发受限制", msg->toString().c_str(), BSLib::Framework::CMsgDebug::singleton().getPrompt(msg).c_str());
 		return m_serverID.isValid();
 	}
-	if (_transferMsg(msg, msgSize)) {
+	if (_IService_transferMsg(msg, msgSize)) {
 		//BSLIB_LOG_DEBUG(ETT_GFLIB_COMMON, "转发消息[%s][%s]成功", msg->toString().c_str(), BSLib::Framework::CMsgDebug::singleton().getPrompt(msg).c_str());
 		return true;
 	}

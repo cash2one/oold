@@ -10,9 +10,9 @@ public:
 	CLoginStub(BSLib::Network::CNetConnectionPtr& netConnection);
 
 protected:
-	virtual void _finalStub();
-	virtual void _initStubMsg(BSLib::Framework::CMsgExecMgr* msgExecMgr);
-	virtual void _cbTerminate();
+	virtual void INetStub_finalStub();
+	virtual void INetStub_initStubMsg(BSLib::Framework::CMsgExecMgr* msgExecMgr);
+	virtual void INetStub_cbTerminate();
 
 private:
 	void _onMsgLoginSystemGC2LGReqAccountLogin(BSLib::Framework::SMsgLabel* msgLabel,BSLib::Framework::SMessage* msg);

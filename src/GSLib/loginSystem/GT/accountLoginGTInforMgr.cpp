@@ -137,7 +137,7 @@ bool CAccountLoginGTInforMgr::verifyAccountLogin(GFLib::StubID a_stubID, std::st
              GFLib::CommonServer::CStubPtr newStubPtr = GFLib::CommonServer::CStubMgr::singleton().getCommonStubByStubID(a_stubID);
              if (newStubPtr != NULL) {
                  a_ackAccountLogin.m_state = ELOGINRESULT_SUCCESS;
-                 newStubPtr->sendMsg(a_ackAccountLogin);
+                 newStubPtr->IService_sendMsg(a_ackAccountLogin);
                  return true;
              }
          }
@@ -222,7 +222,7 @@ void CAccountLoginGTInforMgr::checCN2GTAckAccountLogin(CMsgLoginSystemCN2GTAckAc
 			GFLib::CommonServer::CStubPtr stubPtr = GFLib::CommonServer::CStubMgr::singleton().getCommonStubByStubID(infor->m_stubID);
 			if (stubPtr != NULL) {
 				ackAccountLoginGT.m_state = a_ackAccountLogin.m_state;
-				stubPtr->sendMsg(ackAccountLoginGT);
+				stubPtr->IService_sendMsg(ackAccountLoginGT);
 				stubPtr->setState(BSLib::Network::ESS_RECYCLE);
 				m_accountInforMgr.destroyByGTSessionID(a_ackAccountLogin.m_gateSession);
 			}
@@ -246,7 +246,7 @@ void CAccountLoginGTInforMgr::checCN2GTAckAccountLogin(CMsgLoginSystemCN2GTAckAc
 		infor->m_cbverifyAccountLogin->_cbVerifyAccountLogin(infor->m_gameServerID, infor->m_dataServerID, infor->m_centerServerID);
 	}
 	infor->m_state = EACCNTSTT_GT_OK;
-	stubPtr->sendMsg(ackAccountLoginGT);
+	stubPtr->IService_sendMsg(ackAccountLoginGT);
 	BSLIB_LOG_INFO(GSLib::ETT_GSLIB_LOGINSYSTEM, "[AccountLogin][AccountName=%s][AccountID=%lld][ZoneID=%d]", 
 		infor->m_accountName.c_str(), infor->getAccountKey().getAccountID(), infor->m_accountKey.getZoneID());
 
@@ -522,7 +522,7 @@ void CAccountLoginGTInforMgr::broadcastMsg(CMsgLoginSystemXS2GTNtfBroadcastMsg* 
 			if (stubPtr == NULL) {
 				return true;
 			}
-			stubPtr->sendMsg(m_msg, m_msgSize);
+			stubPtr->IService_sendMsg(m_msg, m_msgSize);
 			return true;
 		}
 

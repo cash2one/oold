@@ -1,6 +1,5 @@
 #include <stdarg.h>
 #include <BSLib/utility/random.h>
-#include <GFLib/commonServer/eventMgr.h>
 #include <GSLib/tracer.h>
 #include <GSLib/petSystem/GM/petModule.h>
 #include <GSLib/petSystem/msgPetSystem.h>
@@ -1069,7 +1068,7 @@ void CPetModule::_checkPetAchieve()
         BSLib::uint32 level = achieve_1100_count; 
         stream << subID;
         stream << level;
-        GFLib::CommonServer::CEventMgr::singleton().sendEvent(EEVENTID_ACHIEVE_PET,stream);
+        //GFLib::CommonServer::CEventMgr::singleton().sendEvent(EEVENTID_ACHIEVE_PET,stream);
     }
     if (achieve_1101_count != 0){
         BSLib::Utility::CStream stream;
@@ -1085,7 +1084,7 @@ void CPetModule::_checkPetAchieve()
         BSLib::uint32 level = achieve_1101_count; 
         stream << subID;
         stream << level;
-        GFLib::CommonServer::CEventMgr::singleton().sendEvent(EEVENTID_ACHIEVE_PET,stream);
+        //GFLib::CommonServer::CEventMgr::singleton().sendEvent(EEVENTID_ACHIEVE_PET,stream);
     }
     if (achieve_1102_count != 0){
         BSLib::Utility::CStream stream;
@@ -1101,7 +1100,7 @@ void CPetModule::_checkPetAchieve()
         BSLib::uint32 level = achieve_1102_count; 
         stream << subID;
         stream << level;
-        GFLib::CommonServer::CEventMgr::singleton().sendEvent(EEVENTID_ACHIEVE_PET,stream);
+        //GFLib::CommonServer::CEventMgr::singleton().sendEvent(EEVENTID_ACHIEVE_PET,stream);
     }
 }
 

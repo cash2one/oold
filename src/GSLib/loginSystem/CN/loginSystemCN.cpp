@@ -201,15 +201,15 @@ void CLoginSystemCN::_onMsgLoginSystemLG2CNReqAccountLogin(BSLib::Framework::SMs
 		{
 			if (!CGateInforMgr::singleton().increaseAccountToGateServer(gateServerID)) {
 				ackAccountLogin.m_state = ELOGINRESULT_ZONEID_STOP;
-				GFLib::CommonServer::CServiceMgr::singleton().sendMsgToServer(netMsgLable->m_serverIDFrome, ackAccountLogin);
+				GFLib::CommonServer::CServiceMgr::singleton().sendMsgToServer(netMsgLable->m_serverIDFrom, ackAccountLogin);
 				BSLIB_LOG_ERROR(ETT_GSLIB_LOGINSYSTEM, "获取网关失败[AccountName=%s]", reqAccountLogin->m_accountName.c_str());
 				return;
 			}
 			CGateInforMgr::singleton().increaseWaitAccountFromGateServer(gateServerID);
 
-			if (!CAccountLoginCNInforMgr::singleton().registerLG2CNReqAccountLogin(sessionID, netMsgLable->m_serverIDFrome, gateServerID, *reqAccountLogin, EACCNTSTT_CN_WAIT_GATE)) {
+			if (!CAccountLoginCNInforMgr::singleton().registerLG2CNReqAccountLogin(sessionID, netMsgLable->m_serverIDFrom, gateServerID, *reqAccountLogin, EACCNTSTT_CN_WAIT_GATE)) {
 				ackAccountLogin.m_state = ELOGINRESULT_SERVER_ERROR;
-				GFLib::CommonServer::CServiceMgr::singleton().sendMsgToServer(netMsgLable->m_serverIDFrome, ackAccountLogin);
+				GFLib::CommonServer::CServiceMgr::singleton().sendMsgToServer(netMsgLable->m_serverIDFrom, ackAccountLogin);
 				CGateInforMgr::singleton().decreaseWaitAccountFromGateServer(gateServerID);
 				BSLIB_LOG_ERROR(ETT_GSLIB_LOGINSYSTEM, "保存登陆信息失败[AccountName=%s]", reqAccountLogin->m_accountName.c_str());
 				return;
@@ -222,7 +222,7 @@ void CLoginSystemCN::_onMsgLoginSystemLG2CNReqAccountLogin(BSLib::Framework::SMs
 	case EACCNTSTT_CN_PLAYER_OFFLINE_BREAK://锁定账号，账号正在离线
 		{
 			ackAccountLogin.m_state = ELOGINRESULT_ACCOUNT_EXIT;
-			GFLib::CommonServer::CServiceMgr::singleton().sendMsgToServer(netMsgLable->m_serverIDFrome, ackAccountLogin);
+			GFLib::CommonServer::CServiceMgr::singleton().sendMsgToServer(netMsgLable->m_serverIDFrom, ackAccountLogin);
 			BSLIB_LOG_ERROR(ETT_GSLIB_LOGINSYSTEM, "账号正在退出[AccountName=%s]", reqAccountLogin->m_accountName.c_str());
 			return;
 		}
@@ -232,9 +232,9 @@ void CLoginSystemCN::_onMsgLoginSystemLG2CNReqAccountLogin(BSLib::Framework::SMs
 		{
 			BSLIB_LOG_INFO(ETT_GSLIB_LOGINSYSTEM, "踢下原登陆账号[AccountName=%s]", reqAccountLogin->m_accountName.c_str());
 
-			if (!CAccountLoginCNInforMgr::singleton().registerLG2CNReqAccountLogin(sessionID, netMsgLable->m_serverIDFrome, gateServerID, *reqAccountLogin, EACCNTSTT_CN_WAIT_GATE)) {
+			if (!CAccountLoginCNInforMgr::singleton().registerLG2CNReqAccountLogin(sessionID, netMsgLable->m_serverIDFrom, gateServerID, *reqAccountLogin, EACCNTSTT_CN_WAIT_GATE)) {
 				ackAccountLogin.m_state = ELOGINRESULT_SERVER_ERROR;
-				GFLib::CommonServer::CServiceMgr::singleton().sendMsgToServer(netMsgLable->m_serverIDFrome, ackAccountLogin);
+				GFLib::CommonServer::CServiceMgr::singleton().sendMsgToServer(netMsgLable->m_serverIDFrom, ackAccountLogin);
 				//CGateInforMgr::singleton().decreaseWaitAccountFromGateServer(gateServerID);
 				BSLIB_LOG_ERROR(ETT_GSLIB_LOGINSYSTEM, "保存登陆信息失败[AccountName=%s]", reqAccountLogin->m_accountName.c_str());
 				return;
@@ -247,9 +247,9 @@ void CLoginSystemCN::_onMsgLoginSystemLG2CNReqAccountLogin(BSLib::Framework::SMs
 		{
 			BSLIB_LOG_INFO(ETT_GSLIB_LOGINSYSTEM, "要求踢下在线账号[AccountName=%s]", reqAccountLogin->m_accountName.c_str());
 
-			if (!CAccountLoginCNInforMgr::singleton().registerLG2CNReqAccountLogin(sessionID, netMsgLable->m_serverIDFrome, gateServerID, *reqAccountLogin, EACCNTSTT_CN_KICK_ACCOUNT)) {
+			if (!CAccountLoginCNInforMgr::singleton().registerLG2CNReqAccountLogin(sessionID, netMsgLable->m_serverIDFrom, gateServerID, *reqAccountLogin, EACCNTSTT_CN_KICK_ACCOUNT)) {
 				ackAccountLogin.m_state = ELOGINRESULT_SERVER_ERROR;
-				GFLib::CommonServer::CServiceMgr::singleton().sendMsgToServer(netMsgLable->m_serverIDFrome, ackAccountLogin);
+				GFLib::CommonServer::CServiceMgr::singleton().sendMsgToServer(netMsgLable->m_serverIDFrom, ackAccountLogin);
 				//CGateInforMgr::singleton().decreaseWaitAccountFromGateServer(gateServerID);
 				BSLIB_LOG_ERROR(ETT_GSLIB_LOGINSYSTEM, "保存登陆信息失败[AccountName=%s]", reqAccountLogin->m_accountName.c_str());
 				return;
@@ -263,9 +263,9 @@ void CLoginSystemCN::_onMsgLoginSystemLG2CNReqAccountLogin(BSLib::Framework::SMs
 		{
 			BSLIB_LOG_INFO(ETT_GSLIB_LOGINSYSTEM, "踢下原登陆账号[AccountName=%s]", reqAccountLogin->m_accountName.c_str());
 
-			if (!CAccountLoginCNInforMgr::singleton().registerLG2CNReqAccountLogin(sessionID, netMsgLable->m_serverIDFrome, gateServerID, *reqAccountLogin, EACCNTSTT_CN_OFFLINE_WAIT_GATE)) {
+			if (!CAccountLoginCNInforMgr::singleton().registerLG2CNReqAccountLogin(sessionID, netMsgLable->m_serverIDFrom, gateServerID, *reqAccountLogin, EACCNTSTT_CN_OFFLINE_WAIT_GATE)) {
 				ackAccountLogin.m_state = ELOGINRESULT_SERVER_ERROR;
-				GFLib::CommonServer::CServiceMgr::singleton().sendMsgToServer(netMsgLable->m_serverIDFrome, ackAccountLogin);
+				GFLib::CommonServer::CServiceMgr::singleton().sendMsgToServer(netMsgLable->m_serverIDFrom, ackAccountLogin);
 				//CGateInforMgr::singleton().decreaseWaitAccountFromGateServer(gateServerID);
 				BSLIB_LOG_ERROR(ETT_GSLIB_LOGINSYSTEM, "保存登陆信息失败[AccountName=%s]", reqAccountLogin->m_accountName.c_str());
 				return;
@@ -283,7 +283,7 @@ void CLoginSystemCN::_onMsgLoginSystemLG2CNReqAccountLogin(BSLib::Framework::SMs
 	default:
 		{
 			ackAccountLogin.m_state = ELOGINRESULT_ACCOUNT_LOGIN;
-			GFLib::CommonServer::CServiceMgr::singleton().sendMsgToServer(netMsgLable->m_serverIDFrome, ackAccountLogin);
+			GFLib::CommonServer::CServiceMgr::singleton().sendMsgToServer(netMsgLable->m_serverIDFrom, ackAccountLogin);
 			BSLIB_LOG_ERROR(ETT_GSLIB_LOGINSYSTEM, "账号正在登陆[AccountName=%s]", reqAccountLogin->m_accountName.c_str());
 			return;
 		}
@@ -310,7 +310,7 @@ void CLoginSystemCN::_onMsgLoginSystemGT2CNReqAccountLogin(BSLib::Framework::SMs
 		return ;
 	}
 
-	GFLib::CommonServer::CServiceMgr::singleton().sendMsgToServer(netMsgLable->m_serverIDFrome, ackAccountLogin);
+	GFLib::CommonServer::CServiceMgr::singleton().sendMsgToServer(netMsgLable->m_serverIDFrom, ackAccountLogin);
 }
 
 void CLoginSystemCN::_onMsgLoginSystemGM2CNAckCreatePlayer(BSLib::Framework::SMsgLabel* a_msgLabel,BSLib::Framework::SMessage* a_msg)

@@ -14,12 +14,12 @@ CGMStub::CGMStub(BSLib::Network::CNetConnectionPtr& netConnection)
 	;
 }
 
-void CGMStub::_finalStub()
+void CGMStub::INetStub_finalStub()
 {
 	;
 }
 
-void CGMStub::_initStubMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
+void CGMStub::INetStub_initStubMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
 {
 // 	BSLib::Framework::CMsgFactory::singleton().registerCreateCMsgFun(GSLib::LoginSystem::MsgIDLoginSystemGC2LGReqAccountLogin, &BSLib::Framework::CreateCMessage<GSLib::LoginSystem::CMsgLoginSystemGC2LGReqAccountLogin>);
 // 	GFLIB_ADDMSG_OBJEXEC_OBJAFTER(msgExecMgr, GSLib::LoginSystem::MsgIDLoginSystemGC2LGReqAccountLogin, &CLoginStub::_onMsgLoginSystemGC2LGReqAccountLogin, &CLoginStub::_afterMsgHandlerLoginStub, this);
@@ -32,7 +32,7 @@ void CGMStub::_initStubMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
 	GSLIB_MSGFUN_REG(CMsgMasterSystemXX2XSReqOnlineZone, CGMStub);
 }
 
-void CGMStub::_cbTerminate()
+void CGMStub::INetStub_cbTerminate()
 {
 // 	if (m_timeHandleAccountLogin != BSLib::Utility::INVALID_TIMER) {
 // 		BSLib::Utility::CTimerServer* timerServer = GFLib::CommonServer::CStub::_getTimerServer();
@@ -156,7 +156,7 @@ void CGMStub::_cbTerminate()
 void CGMStub::_onCMsgMasterSystemXX2XSReqLogin(BSLib::Framework::SMsgLabel* msgLabel,BSLib::Framework::SMessage* msg)
 {	
 	GSLib::MasterSystem::CMsgMasterSystemXS2XXAckLogin ack;
-	sendMsg(ack);
+	IService_sendMsg(ack);
 	
 	GFLib::CommonServer::CStub::setState(BSLib::Network::ESS_OKAY);
 }
@@ -169,7 +169,7 @@ void CGMStub::_onCMsgMasterSystemXX2XSReqOnlineZone(BSLib::Framework::SMsgLabel*
 	{
 		ack.keys.push_back(it->first);
 	}
-	sendMsg(ack);
+	IService_sendMsg(ack);
 }
 
 

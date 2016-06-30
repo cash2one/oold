@@ -17,7 +17,7 @@
 			<listener ip="0.0.0.0" port="9000" flag="0" outer="true"/>
 			<listener ip="0.0.0.0" port="9001" flag="1" outer="false"/>
 		</server>
-		<server number="4" type="login" key="LG00-22" outerip="10.0.1.102" innerip="10.0.1.102">
+		<server number="4" type="login" key="LG00-22" outerip="192.168.11.119" innerip="10.0.1.102">
 			<!-- ip 服务器监听地址, port 服务器监听端口, flag 端口标识, outer 标记-->
 			<listener ip="0.0.0.0" port="9000" flag="0" outer="true"/>
 			<listener ip="0.0.0.0" port="9001" flag="1" outer="false"/>
@@ -124,7 +124,7 @@
 	<zone zoneid="22">
 		<!--number 服务器编号（1~255）-->
 		<!--type 服务器类型, key 服务器唯一标识，outerip 外网访问IP地址，innerip 内网访问IP地址-->
-		<server number="1" type="gate" key="GT22-00" outerip="10.0.1.102" innerip=""> 
+		<server number="1" type="gate" key="GT22-00" outerip="192.168.11.119" innerip=""> 
 			<!-- ip 服务器监听地址, port 服务器监听端口, flag 端口标识, outer 标记-->
 			<listener ip="0.0.0.0" port="9002" flag="0" outer="true" />
 

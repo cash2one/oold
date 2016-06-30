@@ -39,9 +39,6 @@
     <ClCompile Include="..\..\..\src\GFLib\commonServer\commonSystemMgr.cpp">
       <Filter>cpp</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\src\GFLib\commonServer\eventMgr.cpp">
-      <Filter>cpp</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\src\GFLib\commonServer\serverTypeMgr.cpp">
       <Filter>cpp</Filter>
     </ClCompile>
@@ -58,9 +55,6 @@
       <Filter>cpp</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\src\GFLib\commonServer\sysChannelMgr.cpp">
-      <Filter>cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\src\GFLib\commonServer\uniqueIDMgr.cpp">
       <Filter>cpp</Filter>
     </ClCompile>
   </ItemGroup>
@@ -89,9 +83,6 @@
     <ClInclude Include="..\..\..\inc\GFLib\commonServer\commonSystemMgr.h">
       <Filter>inc</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\inc\GFLib\commonServer\eventMgr.h">
-      <Filter>inc</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\inc\GFLib\commonServer\serverTypeMgr.h">
       <Filter>inc</Filter>
     </ClInclude>
@@ -111,9 +102,6 @@
       <Filter>inc</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\inc\GFLib\commonServer\tracer.h">
-      <Filter>inc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\inc\GFLib\commonServer\uniqueIDMgr.h">
       <Filter>inc</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\inc\GFLib\commonServer\message\funcType.h">

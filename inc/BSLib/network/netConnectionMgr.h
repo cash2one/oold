@@ -13,7 +13,7 @@ namespace BSLib
 namespace Network
 {
 
-class BSLIB_NETWORK_API CNetConnectionMgr
+class BSLIB_NETWORK_API INetConnectionMgr
 {
 protected:
 	class CConnectItem
@@ -25,20 +25,20 @@ protected:
 	typedef BSLib::Utility::CPointer<CConnectItem> CConnectItemPtr;
 
 public:
-	CNetConnectionMgr();
-	virtual ~CNetConnectionMgr();
+	INetConnectionMgr();
+	virtual ~INetConnectionMgr();
 
 	//支持多线程添加
-	virtual bool addConnection(CNetConnectionPtr& connection, CNetConnectionCallbackPtr& netConnectionCb);
+	virtual bool INetConnectionMgr_addConnection(CNetConnectionPtr& connection, CNetConnectionCallbackPtr& netConnectionCb);
 	//支持多线程删除
-	virtual bool delConnection(int sock);
+	virtual bool INetConnectionMgr_delConnection(int sock);
 
 	//轮询方式调用
 	//执行连接的recv和send
-	virtual bool epoll(int msSec);
+	virtual bool INetConnectionMgr_epoll(int msSec);
 
 	//通知socket发送
-	virtual bool postSend(int tcpSocket) = 0;
+	virtual bool INetConnectionMgr_postSend(int tcpSocket) = 0;
 	
 	uint32 getConnectionCount() { return m_connSize + m_addConnSize - m_delConnSize; }
 	
@@ -56,9 +56,9 @@ protected:
 	
 	CConnectItemPtr _getConnectionItem(int sock);
 
-	virtual bool _addConnToPoll(CConnectItemPtr& connItemPtr) = 0;
-	virtual void _delConnFromPoll(CConnectItemPtr& connItemPtr) = 0;
-	virtual bool _epoll(int msSec) = 0;
+	virtual bool _INetConnectionMgr_addConnToPoll(CConnectItemPtr& connItemPtr) = 0;
+	virtual void _INetConnectionMgr_delConnFromPoll(CConnectItemPtr& connItemPtr) = 0;
+	virtual bool _INetConnectionMgr_epoll(int msSec) = 0;
 
 private:
 	BSLib::Utility::CHashMap<int, CConnectItemPtr> m_connHashMap;

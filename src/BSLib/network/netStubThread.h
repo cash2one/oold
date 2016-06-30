@@ -56,7 +56,7 @@ public:
 			if (recvSize == 0){
 				return true;
 			}
-			if (!m_stubPtr->_cbParseMsg((void*)m_stream.readPtr(), m_stream.readSize())) {
+			if (!m_stubPtr->INetStub_cbParseMsg((void*)m_stream.readPtr(), m_stream.readSize())) {
 				m_stream.reset();
 				return false;
 			}
@@ -67,7 +67,7 @@ public:
 
 	virtual void terminate()
 	{
-		m_stubPtr->_cbTerminate();
+		m_stubPtr->INetStub_cbTerminate();
 	}
 
 	virtual void terminate(CNetConnectionPtr& connection)
@@ -150,12 +150,12 @@ public:
 
 	void initStub()
 	{
-		m_stubPtr->_initStub();
+		m_stubPtr->INetStub_initStub();
 	}
 
 	void finalStub()
 	{
-		m_stubPtr->_finalStub();
+		m_stubPtr->INetStub_finalStub();
 	}
 
 	bool sendToNetFromBuff()

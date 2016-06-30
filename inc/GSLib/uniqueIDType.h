@@ -1,7 +1,6 @@
 #ifndef __GSLIB_UNIQUEIDTYPE_H__
 #define __GSLIB_UNIQUEIDTYPE_H__
 
-#include <GFLib/commonServer/uniqueIDMgr.h>
 #include <GSLib/baseDef.h>
 
 namespace GSLib

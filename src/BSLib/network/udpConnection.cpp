@@ -159,9 +159,9 @@ int CUdpConnection::_recv(void* dataBuff, int buffSize)
 
 void CUdpConnection::_postSend()
 {
-	CNetConnectionMgr* netConnMgr = getNetConnectionMgr();
+	INetConnectionMgr* netConnMgr = getNetConnectionMgr();
 	if (netConnMgr != NULL){
-		netConnMgr->postSend(m_udmSock);
+		netConnMgr->INetConnectionMgr_postSend(m_udmSock);
 	}
 }
 
