@@ -135,7 +135,7 @@ bool CMainThread::_init()
 
 #endif
 
-	return CThreadFrame::_init();
+	return IThreadFrame::_init();
 }
 
 }//Framework

@@ -1,6 +1,7 @@
 #ifndef __GSLIB_RANKSYSTEM_CN_RANKIMPL_H__
 #define __GSLIB_RANKSYSTEM_CN_RANKIMPL_H__
 #include <GSLib/rankSystem/CN/rank.h>
+#include <xfunctional>
 
 namespace GSLib
 {

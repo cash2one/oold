@@ -498,7 +498,7 @@ bool CDBSystemDB::_selectTableCommand(GFLib::SNetMsgLabel* a_msgLabel, CMsgLogin
 			std::list<SInitTableInfor>::iterator it = m_initTableByPlayer.begin();
 			for (; it != m_initTableByPlayer.end(); ++it) {
 				SInitTableInfor& infor = *it;
-				if (infor.m_serverType == GFLib::SRVTYPE_NULL || infor.m_serverType == a_msgLabel->m_serverIDFrome.getServerType()) {
+				if (infor.m_serverType == GFLib::SRVTYPE_NULL || infor.m_serverType == a_msgLabel->m_serverIDFrom.getServerType()) {
 					ackSelectTableData.m_tableID = infor.m_tableID;
 					if (infor.m_moduleType != EMODULECTYPE_NULL) {
 						ackSelectTableData.m_moduleType = infor.m_moduleType;
@@ -511,14 +511,14 @@ bool CDBSystemDB::_selectTableCommand(GFLib::SNetMsgLabel* a_msgLabel, CMsgLogin
 					if (!CTableDataMgr::singleton().selectTableData(a_reqSelectTableData->m_key, a_reqSelectTableData->m_index, infor.m_tableID, ackSelectTableData.m_stream,infor.m_strWhere)) {
 						ackSelectTableData.m_state = 1;
 					}
-					GFLib::CommonServer::CServiceMgr::singleton().sendMsgToServer(a_msgLabel->m_serverIDFrome, ackSelectTableData);
+					GFLib::CommonServer::CServiceMgr::singleton().sendMsgToServer(a_msgLabel->m_serverIDFrom, ackSelectTableData);
 				}
 			}
 			ackSelectTableData.m_moduleType = a_reqSelectTableData->m_moduleType;
 			ackSelectTableData.m_funcType = a_reqSelectTableData->m_funcType;
 			ackSelectTableData.m_tableID = EDBTABLEID_COMMAND_INIT_PLAYER_FINSH;
 			ackSelectTableData.m_state = 0;
-			GFLib::CommonServer::CServiceMgr::singleton().sendMsgToServer(a_msgLabel->m_serverIDFrome, ackSelectTableData);
+			GFLib::CommonServer::CServiceMgr::singleton().sendMsgToServer(a_msgLabel->m_serverIDFrom, ackSelectTableData);
 			return true;
 		}
 	case EDBTABLEID_COMMAND_INIT_ROLE:
@@ -526,7 +526,7 @@ bool CDBSystemDB::_selectTableCommand(GFLib::SNetMsgLabel* a_msgLabel, CMsgLogin
 			std::list<SInitTableInfor>::iterator it = m_initTableByRole.begin();
 			for (; it != m_initTableByRole.end(); ++it) {
 				SInitTableInfor& infor = *it;
-				if (infor.m_serverType == GFLib::SRVTYPE_NULL || infor.m_serverType == a_msgLabel->m_serverIDFrome.getServerType()) {
+				if (infor.m_serverType == GFLib::SRVTYPE_NULL || infor.m_serverType == a_msgLabel->m_serverIDFrom.getServerType()) {
 					ackSelectTableData.m_tableID = infor.m_tableID;
 					if (infor.m_moduleType != EMODULECTYPE_NULL) {
 						ackSelectTableData.m_moduleType = infor.m_moduleType;
@@ -539,19 +539,19 @@ bool CDBSystemDB::_selectTableCommand(GFLib::SNetMsgLabel* a_msgLabel, CMsgLogin
 					if (!CTableDataMgr::singleton().selectTableData(a_reqSelectTableData->m_key, a_reqSelectTableData->m_index, infor.m_tableID, ackSelectTableData.m_stream,infor.m_strWhere)) {
 						ackSelectTableData.m_state = 1;
 					}
-					GFLib::CommonServer::CServiceMgr::singleton().sendMsgToServer(a_msgLabel->m_serverIDFrome, ackSelectTableData);
+					GFLib::CommonServer::CServiceMgr::singleton().sendMsgToServer(a_msgLabel->m_serverIDFrom, ackSelectTableData);
 				}
 			}
 			ackSelectTableData.m_moduleType = a_reqSelectTableData->m_moduleType;
 			ackSelectTableData.m_funcType = a_reqSelectTableData->m_funcType;
 			ackSelectTableData.m_tableID = EDBTABLEID_COMMAND_INIT_ROLE_FINSH;
 			ackSelectTableData.m_state = 0;
-			GFLib::CommonServer::CServiceMgr::singleton().sendMsgToServer(a_msgLabel->m_serverIDFrome, ackSelectTableData);
+			GFLib::CommonServer::CServiceMgr::singleton().sendMsgToServer(a_msgLabel->m_serverIDFrom, ackSelectTableData);
 
 			GSLib::PlayerSystem::CMsgPlayerSystemDB2GMNtfChargeList msgChargeList;
 			msgChargeList.m_roleKey = a_reqSelectTableData->m_roleKey;
 			if (CChargeTableDBMgr::singleton().getRoleChargeList(msgChargeList.m_roleKey, msgChargeList.m_chargeList)) {
-				GFLib::CommonServer::CServiceMgr::singleton().sendMsgToServer(a_msgLabel->m_serverIDFrome, a_reqSelectTableData->m_roleKey.getAccountKey(), msgChargeList);
+				GFLib::CommonServer::CServiceMgr::singleton().sendMsgToServer(a_msgLabel->m_serverIDFrom, a_reqSelectTableData->m_roleKey.getAccountKey(), msgChargeList);
 			}
 
 			return true;
@@ -562,7 +562,7 @@ bool CDBSystemDB::_selectTableCommand(GFLib::SNetMsgLabel* a_msgLabel, CMsgLogin
 			ackSelectTableData.m_funcType = a_reqSelectTableData->m_funcType;
 			ackSelectTableData.m_tableID = EDBTABLEID_COMMAND_INIT_ROLE_END;
 			ackSelectTableData.m_state = 0;
-			GFLib::CommonServer::CServiceMgr::singleton().sendMsgToServer(a_msgLabel->m_serverIDFrome, ackSelectTableData);
+			GFLib::CommonServer::CServiceMgr::singleton().sendMsgToServer(a_msgLabel->m_serverIDFrom, ackSelectTableData);
 			return true;
 		}
 	case EDBTABLEID_COMMAND_INIT_SERVER:
@@ -570,7 +570,7 @@ bool CDBSystemDB::_selectTableCommand(GFLib::SNetMsgLabel* a_msgLabel, CMsgLogin
 			std::list<SInitTableInfor>::iterator it = m_initTableByGlobal.begin();
 			for (; it != m_initTableByGlobal.end(); ++it) {
 				SInitTableInfor& infor = *it;
-				if (infor.m_serverType == GFLib::SRVTYPE_NULL || infor.m_serverType == a_msgLabel->m_serverIDFrome.getServerType()) {
+				if (infor.m_serverType == GFLib::SRVTYPE_NULL || infor.m_serverType == a_msgLabel->m_serverIDFrom.getServerType()) {
 					ackSelectTableData.m_tableID = infor.m_tableID;
 					if (infor.m_moduleType != EMODULECTYPE_NULL) {
 						ackSelectTableData.m_moduleType = infor.m_moduleType;
@@ -583,14 +583,14 @@ bool CDBSystemDB::_selectTableCommand(GFLib::SNetMsgLabel* a_msgLabel, CMsgLogin
 					if (!CTableDataMgr::singleton().selectTableData(a_reqSelectTableData->m_key, a_reqSelectTableData->m_index, infor.m_tableID, ackSelectTableData.m_stream,infor.m_strWhere)) {
 						ackSelectTableData.m_state = 1;
 					}
-					GFLib::CommonServer::CServiceMgr::singleton().sendMsgToServer(a_msgLabel->m_serverIDFrome, ackSelectTableData);
+					GFLib::CommonServer::CServiceMgr::singleton().sendMsgToServer(a_msgLabel->m_serverIDFrom, ackSelectTableData);
 				}
 			}
 			ackSelectTableData.m_moduleType = a_reqSelectTableData->m_moduleType;
 			ackSelectTableData.m_funcType = a_reqSelectTableData->m_funcType;
 			ackSelectTableData.m_tableID = EDBTABLEID_COMMAND_INIT_SERVER_FINSH;
 			ackSelectTableData.m_state = 0;
-			GFLib::CommonServer::CServiceMgr::singleton().sendMsgToServer(a_msgLabel->m_serverIDFrome, ackSelectTableData);
+			GFLib::CommonServer::CServiceMgr::singleton().sendMsgToServer(a_msgLabel->m_serverIDFrom, ackSelectTableData);
 
 			return true;
 		}
@@ -634,7 +634,7 @@ void CDBSystemDB::_onMsgDBSystemXS2DBReqSelectTableData(BSLib::Framework::SMsgLa
 	if (!CTableDataMgr::singleton().selectTableData(reqSelectTableData->m_key, reqSelectTableData->m_index, reqSelectTableData->m_tableID, ackSelectTableData.m_stream,reqSelectTableData->m_strWhere)) {
 		ackSelectTableData.m_state = 1;
 	}
-	GFLib::CommonServer::CServiceMgr::singleton().sendMsgToServer(msgLabel->m_serverIDFrome, ackSelectTableData);
+	GFLib::CommonServer::CServiceMgr::singleton().sendMsgToServer(msgLabel->m_serverIDFrom, ackSelectTableData);
 }
 
 void CDBSystemDB::_onMsgDBSystemXS2DBReqSelectGlobalTableData(BSLib::Framework::SMsgLabel* a_msgLabel,BSLib::Framework::SMessage* a_msg)
@@ -654,14 +654,14 @@ void CDBSystemDB::_onMsgDBSystemXS2DBReqSelectGlobalTableData(BSLib::Framework::
     ackSelectTableData.m_srcRoleKey = reqSelectTableData->m_srcRoleKey;
     if (reqSelectTableData->m_tableID & EDBTABLEID_COMMAND) {
          ackSelectTableData.m_state = 1;
-         GFLib::CommonServer::CServiceMgr::singleton().sendMsgToServer(msgLabel->m_serverIDFrome, ackSelectTableData);
+         GFLib::CommonServer::CServiceMgr::singleton().sendMsgToServer(msgLabel->m_serverIDFrom, ackSelectTableData);
          return;
     }
 
     if (!CTableDataMgr::singleton().selectTableData(reqSelectTableData->m_key, reqSelectTableData->m_index, reqSelectTableData->m_tableID, ackSelectTableData.m_stream,reqSelectTableData->m_strWhere)) {
         ackSelectTableData.m_state = 1;
     }
-    GFLib::CommonServer::CServiceMgr::singleton().sendMsgToServer(msgLabel->m_serverIDFrome, ackSelectTableData);
+    GFLib::CommonServer::CServiceMgr::singleton().sendMsgToServer(msgLabel->m_serverIDFrom, ackSelectTableData);
 }
 
 
@@ -697,7 +697,7 @@ void CDBSystemDB::_onMsgDBSystemXS2DBReqSelectGlobalMultiTableData(BSLib::Framew
              desStream.reset();
              if (req.m_tableID & EDBTABLEID_COMMAND) {
                  ackSelectMultiTableData.m_state = 1;
-                 GFLib::CommonServer::CServiceMgr::singleton().sendMsgToServer(msgLabel->m_serverIDFrome, ackSelectMultiTableData);
+                 GFLib::CommonServer::CServiceMgr::singleton().sendMsgToServer(msgLabel->m_serverIDFrom, ackSelectMultiTableData);
                  return;
              }
              if (!CTableDataMgr::singleton().selectTableData(req.m_tableKey, req.m_tableIndex, req.m_tableID, desStream,req.m_strWhere)) {
@@ -711,7 +711,7 @@ void CDBSystemDB::_onMsgDBSystemXS2DBReqSelectGlobalMultiTableData(BSLib::Framew
              data.serializeTo(ackSelectMultiTableData.m_stream);
          }
 
-    GFLib::CommonServer::CServiceMgr::singleton().sendMsgToServer(msgLabel->m_serverIDFrome, ackSelectMultiTableData);
+    GFLib::CommonServer::CServiceMgr::singleton().sendMsgToServer(msgLabel->m_serverIDFrom, ackSelectMultiTableData);
 }
 
 void CDBSystemDB::_onMsgDBSystemXS2DBNtfUpdateTableData(BSLib::Framework::SMsgLabel* a_msgLabel,BSLib::Framework::SMessage* a_msg)

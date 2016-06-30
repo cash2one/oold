@@ -6,7 +6,6 @@
 #include <GSLib/dbSystem/keyIndexTable.h>
 #include <GSLib/dbSystem/keyTable.h>
 #include <GSLib/playerSystem/GM/playerGMMgr.h>
-#include <GFLib/commonServer/eventMgr.h>
 namespace GSLib
 {
 

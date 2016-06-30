@@ -5,7 +5,6 @@
 #include <GFLib/commonServer/message/msgLabel.h>
 #include <GSLib/funType.h>
 #include <GSLib/loginSystem/SP/loginSystemSP.h>
-#include <GFLib/commonServer/uniqueIDMgr.h>
 #include "superServer.h"
 #include "common/tracer.h"
 #include "common/serverDef.hpp"

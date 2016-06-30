@@ -10,7 +10,7 @@ namespace BSLib
 namespace Network
 {
 
-class BSLIB_NETWORK_API CUdpConnectionMgr : public CNetConnectionMgr
+class BSLIB_NETWORK_API CUdpConnectionMgr : public INetConnectionMgr
 {
 public:
 	CUdpConnectionMgr();

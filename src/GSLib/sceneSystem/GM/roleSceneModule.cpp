@@ -17,7 +17,6 @@
 #include <GSLib/sceneSystem/GM/sceneSystemGM.h>
 #include <GSLib/rankSystem/GM/roleRankModule.h>
 #include <GSLib/skillSystem/GM/roleSkillModule.h>
-#include <GFLib/commonServer/eventMgr.h>
 #include <GSLib/sceneSystem/sceneSystemCommonData.h>
 #include <GSLib/rankSystem/GM/roleRankModule.h>
 #include <GSLib/skillSystem/GM/skill.h>
@@ -1882,14 +1881,14 @@ void CRoleSceneModule::_updateInstanceAchieve(BSLib::uint32 a_instanceID, BSLib:
 		const GSLib::SRoleKey roleKey = getRoleGM()->getRoleKey();
 		roleKey.serializeTo(stream);
 		stream << a_stageID;
-		GFLib::CommonServer::CEventMgr::singleton().sendEvent(EEVENTID_ACHIEVE_PASS_INSTANCE,stream);
+		//GFLib::CommonServer::CEventMgr::singleton().sendEvent(EEVENTID_ACHIEVE_PASS_INSTANCE,stream);
 
 		BSLib::uint32 bossID = stageAttr->getBossID();
 		if (bossID > 0) {
 			const GSLib::SRoleKey roleKey = getRoleGM()->getRoleKey();
 			roleKey.serializeTo(stream);
 			stream << bossID;
-			GFLib::CommonServer::CEventMgr::singleton().sendEvent(EEVENTID_ACHIEVE_KILL_BOSS,stream);
+			//GFLib::CommonServer::CEventMgr::singleton().sendEvent(EEVENTID_ACHIEVE_KILL_BOSS,stream);
 		}
 	}
 }
@@ -1904,7 +1903,7 @@ void CRoleSceneModule::_updateContinuousInstanceAchieve(BSLib::uint32 a_curMaxSt
 	const GSLib::SRoleKey roleKey = getRoleGM()->getRoleKey();
 	roleKey.serializeTo(stream);
 	stream << a_curMaxStage;
-	GFLib::CommonServer::CEventMgr::singleton().sendEvent(EEVENTID_ACHIEVE_PASS_STAGE,stream);
+	//GFLib::CommonServer::CEventMgr::singleton().sendEvent(EEVENTID_ACHIEVE_PASS_STAGE,stream);
 }
 
 void CRoleSceneModule::_updateRollContiuousStageFastClearCountAchieve()
@@ -1918,7 +1917,7 @@ void CRoleSceneModule::_updateRollContiuousStageFastClearCountAchieve()
 	roleKey.serializeTo(stream);
 	BSLib::uint32 throwCount = 1; // Í¶ÖÀ´ÎÊý
 	stream << throwCount;
-	GFLib::CommonServer::CEventMgr::singleton().sendEvent(EEVENTID_ACHIEVE_DICE,stream);
+	//GFLib::CommonServer::CEventMgr::singleton().sendEvent(EEVENTID_ACHIEVE_DICE,stream);
 }
 
 void CRoleSceneModule::_onGetArenaDataFromCNServer(const CMsgSceneSystemCN2GMAckArenaAction &a_msg)

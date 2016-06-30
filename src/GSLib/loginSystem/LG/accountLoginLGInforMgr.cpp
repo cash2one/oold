@@ -87,7 +87,7 @@ void CAccountLoginLGInforMgr::checkCN2LGAckAccountLogin(CMsgLoginSystemCN2LGAckA
 		ackAccountLogin2GC.m_gateSession = a_ackAccountLogin.m_gateSession;
 		ackAccountLogin2GC.m_accountKey = a_ackAccountLogin.m_accountKey;
 	}
-	stubPtr->sendMsg(ackAccountLogin2GC);
+	stubPtr->IService_sendMsg(ackAccountLogin2GC);
 	stubPtr->setState(BSLib::Network::ESS_RECYCLE);
 
 	m_accountInforMgr.destroyByLGSessionID(a_ackAccountLogin.m_loginSession);
@@ -121,7 +121,7 @@ void CAccountLoginLGInforMgr::checkSP2LGAckRegisterToken(CMsgLoginSystemSP2LGAck
     ackGetToken.m_state = EGETACCOUNTTAKEN_SUCCESS;
     ackGetToken.m_accountToken = a_ackRegisterToken.m_token;
     ackGetToken.m_accountID = infor->m_accountKey.getAccountID();
-    stubPtr->sendMsg(ackGetToken);
+    stubPtr->IService_sendMsg(ackGetToken);
     stubPtr->setState(BSLib::Network::ESS_RECYCLE);
 }
 
@@ -149,7 +149,7 @@ void CAccountLoginLGInforMgr::checkSP2LGAckCheckToken(CMsgLoginSystemSP2LGAckChe
         BSLIB_LOG_ERROR(ETT_GSLIB_LOGINSYSTEM, "verifyTokenAccountLogin获取游戏区失败[ZoneID=%d][m_state=%d]", 
             a_ackCheckToken.m_accountKey.getZoneID(),a_ackCheckToken.m_state);
 
-        stubPtr->sendMsg(ackAccountLogin);
+        stubPtr->IService_sendMsg(ackAccountLogin);
         stubPtr->setState(BSLib::Network::ESS_RECYCLE);
 
         m_accountInforMgr.destroyByLGSessionID(a_ackCheckToken.m_loginSession);  
@@ -163,7 +163,7 @@ void CAccountLoginLGInforMgr::checkSP2LGAckCheckToken(CMsgLoginSystemSP2LGAckChe
        BSLIB_LOG_ERROR(ETT_GSLIB_LOGINSYSTEM, "verifyTokenAccountLogin获取游戏区失败[ZoneID=%d][m_state=%d]", 
             a_ackCheckToken.m_accountKey.getZoneID(),a_ackCheckToken.m_state);
 
-        stubPtr->sendMsg(ackAccountLogin);
+        stubPtr->IService_sendMsg(ackAccountLogin);
         stubPtr->setState(BSLib::Network::ESS_RECYCLE);
         m_accountInforMgr.destroyByLGSessionID(a_ackCheckToken.m_loginSession);     
         return ;
@@ -181,7 +181,7 @@ void CAccountLoginLGInforMgr::checkSP2LGAckCheckToken(CMsgLoginSystemSP2LGAckChe
 		BSLIB_LOG_ERROR(ETT_GSLIB_LOGINSYSTEM, "发送消息失败[CenterServer=%s][Account=%s]",
 			centerServerID.toString().c_str(),
 			infor->m_accountName.c_str());
-		stubPtr->sendMsg(ackAccountLogin);
+		stubPtr->IService_sendMsg(ackAccountLogin);
 		stubPtr->setState(BSLib::Network::ESS_RECYCLE);
 		m_accountInforMgr.destroyByLGSessionID(a_ackCheckToken.m_loginSession);
 		return ;

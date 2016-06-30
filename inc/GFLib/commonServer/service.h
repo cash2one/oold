@@ -13,16 +13,16 @@ namespace GFLib
 namespace CommonServer
 {
 
-class GFLIB_COMMONSERVER_API CService
+class GFLIB_COMMONSERVER_API IService
 {
 public:
-	CService() {}
-	virtual ~CService(){ m_msgExecMgr.clear(); }
+	IService() {}
+	virtual ~IService(){ m_msgExecMgr.clear(); }
 	SServerID getServerID() { return m_serverID; }
 	const std::string& getKey() { return m_key; }
 
-	virtual bool sendMsg(GFLib::SMessage* a_msg, BSLib::uint32 a_msgSize) = 0;
-	virtual bool sendMsg(GFLib::CMessage& a_msg) = 0;
+	virtual bool IService_sendMsg(GFLib::SMessage* a_msg, BSLib::uint32 a_msgSize) = 0;
+	virtual bool IService_sendMsg(GFLib::CMessage& a_msg) = 0;
 	virtual void close() = 0;
 
 protected:
@@ -53,7 +53,7 @@ private:
 	BSLib::Framework::CMsgExecMgr m_msgExecMgr;
 };
 
-typedef BSLib::Utility::CPointer<CService> CServicePtr;
+typedef BSLib::Utility::CPointer<IService> CServicePtr;
 
 }//CommonServer
 

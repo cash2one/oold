@@ -10,7 +10,7 @@ namespace GFLib
 struct GFLIB_COMMONSERVER_API SNetMsgLabel : public BSLib::Framework::SMsgLabel 
 {
 public:
-	SServerID m_serverIDFrome;
+	SServerID m_serverIDFrom;
 	SServerID m_serverIDSender;
 	GFLib::StubID m_stubIDsender;
 	SServerID m_serverIDTo;
@@ -18,7 +18,7 @@ public:
 
 	SNetMsgLabel() : BSLib::Framework::SMsgLabel(sizeof(SNetMsgLabel))
 	{
-		m_serverIDFrome = INVALID_SERVERID;
+		m_serverIDFrom = INVALID_SERVERID;
 		m_serverIDSender = INVALID_SERVERID;
 		m_stubIDsender = INVALID_STUBID;
 		m_serverIDTo = INVALID_SERVERID;

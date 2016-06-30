@@ -146,7 +146,7 @@ void CTcpConnectionMgr::_terminateScoket(SOCKET& tcpSocket, void* data)
 		item->m_callback->terminate(item->m_connect);
 	}
 
-	CNetConnectionMgr::_delConnection((int)tcpSocket);
+	INetConnectionMgr::_delConnection((int)tcpSocket);
 }
 
 }//Network

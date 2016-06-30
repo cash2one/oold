@@ -67,7 +67,7 @@ void CLoginStub::_onMsgLoginSystemGC2LGReqAccountLogin(BSLib::Framework::SMsgLab
 	
 	GSLib::LoginSystem::CMsgLoginSystemLG2GCAckAccountLogin ackAccountLogin;
 	if (!GSLib::LoginSystem::LG::CLoginSystemLG::singleton().verifyAccountLogin(getStubID(), accountLoginIP, *reqAccountLogin, ackAccountLogin)){
-		GFLib::CommonServer::CStub::sendMsg(ackAccountLogin);
+		GFLib::CommonServer::CStub::IService_sendMsg(ackAccountLogin);
 		return ;
 	}
 
@@ -114,7 +114,7 @@ void CLoginStub::_onMsgLoginSystemGC2LGReqRegisterAccount(BSLib::Framework::SMsg
 
 	GSLib::LoginSystem::CMsgLoginSystemLG2GCAckRegisterAccount ackAccountLogin;
 	GSLib::LoginSystem::LG::CLoginSystemLG::singleton().registerAccount(getStubID(), accountLoginIP, *reqAccountLogin, ackAccountLogin);
-	GFLib::CommonServer::CStub::sendMsg(ackAccountLogin);
+	GFLib::CommonServer::CStub::IService_sendMsg(ackAccountLogin);
 	return;
 }
 
@@ -136,7 +136,7 @@ void CLoginStub::_onMsgLoginSystemGC2LGReqGetAccountToken(BSLib::Framework::SMsg
 
     GSLib::LoginSystem::CMsgLoginSystemLG2GCAckGetAccountToken ackAccountLogin;
     if (!GSLib::LoginSystem::LG::CLoginSystemLG::singleton().verifyGetAccountToken(getStubID(), accountLoginIP, *reqAccountLogin, ackAccountLogin)){
-        GFLib::CommonServer::CStub::sendMsg(ackAccountLogin);
+        GFLib::CommonServer::CStub::IService_sendMsg(ackAccountLogin);
         return ;
     }
 }
@@ -177,7 +177,7 @@ void CLoginStub::_notifyAccountLoginResult(GSLib::LoginSystem::ELoginResult resu
 {
 	GSLib::LoginSystem::CMsgLoginSystemLG2GCAckAccountLogin ackAccountLogin;
 	ackAccountLogin.m_state = result;
-	GFLib::CommonServer::CStub::sendMsg(ackAccountLogin);
+	GFLib::CommonServer::CStub::IService_sendMsg(ackAccountLogin);
 }
 
 
@@ -185,7 +185,7 @@ void CLoginStub::_notifyGetAccountTokenResult(GSLib::LoginSystem::EGetAccountTok
 {
     GSLib::LoginSystem::CMsgLoginSystemLG2GCAckGetAccountToken ackAccountLogin;
     ackAccountLogin.m_state = result;
-    GFLib::CommonServer::CStub::sendMsg(ackAccountLogin);
+    GFLib::CommonServer::CStub::IService_sendMsg(ackAccountLogin);
 }
 
 

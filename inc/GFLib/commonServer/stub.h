@@ -11,14 +11,14 @@ namespace GFLib
 namespace CommonServer
 {
 
-class GFLIB_COMMONSERVER_API CStub : public CService, public BSLib::Network::CNetStub
+class GFLIB_COMMONSERVER_API CStub : public IService, public BSLib::Network::CNetStub
 {
 public:
 	CStub(BSLib::Network::CNetConnectionPtr& netConnection);
 	virtual ~CStub();
 
-	virtual bool sendMsg(GFLib::SMessage* msg, BSLib::uint32 msgSize);
-	virtual bool sendMsg(GFLib::CMessage& msg);
+	virtual bool IService_sendMsg(GFLib::SMessage* msg, BSLib::uint32 msgSize);
+	virtual bool IService_sendMsg(GFLib::CMessage& msg);
 	virtual void close();
 
 protected:

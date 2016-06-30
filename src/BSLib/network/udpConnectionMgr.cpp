@@ -72,13 +72,13 @@ bool CUdpConnectionMgr::_epoll(int msSec)
 		return false;
 	}
 	for (int i=0; i<waitCount; ++i)	{
-		CConnectItemPtr itemPtr = CNetConnectionMgr::_getConnectionItem(epollEvent[i].m_udmSocket);
+		CConnectItemPtr itemPtr = INetConnectionMgr::_getConnectionItem(epollEvent[i].m_udmSocket);
 		if (itemPtr == NULL) {
 			continue;
 		}
 		CConnectItem* item = (CConnectItem*)itemPtr;
 		if (item == NULL) {
-			CNetConnectionMgr::_delConnection(epollEvent[i].m_udmSocket);
+			INetConnectionMgr::_delConnection(epollEvent[i].m_udmSocket);
 			continue;
 		}
 		if (epollEvent[i].m_udmEpollEvent & BSLib::UDM::UDM_EPOLL_READ) {
@@ -145,7 +145,7 @@ void CUdpConnectionMgr::_terminateScoket(int& udmSocket, void* data)
 		item->m_connect->close();
 	//}
 
-	CNetConnectionMgr::_delConnection(udmSocket);
+	INetConnectionMgr::_delConnection(udmSocket);
 }
 
 }//Network

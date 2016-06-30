@@ -156,7 +156,7 @@ void CGMStub::_cbTerminate()
 void CGMStub::_onCMsgMasterSystemXX2XSReqLogin(BSLib::Framework::SMsgLabel* msgLabel,BSLib::Framework::SMessage* msg)
 {	
 	GSLib::MasterSystem::CMsgMasterSystemXS2XXAckLogin ack;
-	sendMsg(ack);
+	IService_sendMsg(ack);
 	
 	GFLib::CommonServer::CStub::setState(BSLib::Network::ESS_OKAY);
 }
@@ -169,7 +169,7 @@ void CGMStub::_onCMsgMasterSystemXX2XSReqOnlineZone(BSLib::Framework::SMsgLabel*
 	{
 		ack.keys.push_back(it->first);
 	}
-	sendMsg(ack);
+	IService_sendMsg(ack);
 }
 
 

@@ -2,7 +2,6 @@
 #include <GFLib/commonServer/serviceMgr.h>
 #include <GFLib/commonServer/stubMgr.h>
 #include <GFLib/commonServer/message/msgLabel.h>
-#include <GFLib/commonServer/eventMgr.h>
 #include <GSLib/funType.h>
 #include <GSLib/loginSystem/GM/loginSystemGM.h>
 #include <GSLib/dbSystem/GM/dbSystemGM.h>
@@ -103,7 +102,7 @@ bool CGameServer::_callback()
 	GSLib::PetSystem::GM::CPetSystemGM::singleton().update(delayTimer);
 	GSLib::PrizeSystem::GM::CPrizeSystemGM::singleton().update(delayTimer);
 
-	GFLib::CommonServer::CEventMgr::singleton().updateEvent();
+	//GFLib::CommonServer::CEventMgr::singleton().updateEvent();
 
 //	GFLib::CommonServer::CCommonServer::_parseMsg();
 	

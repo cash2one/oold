@@ -15,11 +15,11 @@ namespace Framework
 
 #define BSLIB_FRAMEWORK_MSGQUEUE_MAX 64
 
-class BSLIB_FRAMEWORK_API CThreadFrame
+class BSLIB_FRAMEWORK_API IThreadFrame
 {
 public:
-	CThreadFrame();
-	virtual ~CThreadFrame();
+	IThreadFrame();
+	virtual ~IThreadFrame();
 
 	bool isValid() { return m_isValid; }
 	virtual bool isTerminate() { return m_isTerminate; }

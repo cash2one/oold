@@ -101,7 +101,7 @@ void CGateStub::_onMsgLoginSystemGC2GTReqAccountLogin(BSLib::Framework::SMsgLabe
 	
 	GSLib::LoginSystem::CMsgLoginSystemGT2GCAckAccountLogin ackAccountLogin;
 	if (!GSLib::LoginSystem::GT::CLoginSystemGT::singleton().verifyAccountLogin(getStubID(), gateLoginIP, *reqAccountLogin, ackAccountLogin,this)) {
-		GFLib::CommonServer::CStub::sendMsg(ackAccountLogin);
+		GFLib::CommonServer::CStub::IService_sendMsg(ackAccountLogin);
 		GFLib::CommonServer::CStub::setState(BSLib::Network::ESS_RECYCLE);
 		return ;
 	}
