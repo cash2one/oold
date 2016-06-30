@@ -305,7 +305,7 @@ void CTcpConnection::_postSend()
 {
 	INetConnectionMgr* netConnMgr = getNetConnectionMgr();
 	if (netConnMgr != NULL){
-		netConnMgr->postSend((int)m_tcpSock);
+		netConnMgr->INetConnectionMgr_postSend((int)m_tcpSock);
 	}
 }
 

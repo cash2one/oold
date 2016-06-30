@@ -39,7 +39,7 @@ CTcpConnectionMgr::~CTcpConnectionMgr()
 	}
 }
 
-bool CTcpConnectionMgr::postSend(int tcpSocket)
+bool CTcpConnectionMgr::INetConnectionMgr_postSend(int tcpSocket)
 {
 	if (m_tcpEpoll == NULL) {
 		return false;
@@ -47,7 +47,7 @@ bool CTcpConnectionMgr::postSend(int tcpSocket)
 	return m_tcpEpoll->notifySend(tcpSocket);
 }
 
-bool CTcpConnectionMgr::_addConnToPoll(CConnectItemPtr& connItemPtr)
+bool CTcpConnectionMgr::_INetConnectionMgr_addConnToPoll(CConnectItemPtr& connItemPtr)
 {
 	if (m_tcpEpoll == NULL) {
 		return false;
@@ -79,7 +79,7 @@ bool CTcpConnectionMgr::_addConnToPoll(CConnectItemPtr& connItemPtr)
 	return true;
 }
 
-void CTcpConnectionMgr::_delConnFromPoll(CConnectItemPtr& connItemPtr)
+void CTcpConnectionMgr::_INetConnectionMgr_delConnFromPoll(CConnectItemPtr& connItemPtr)
 {
 	if (m_tcpEpoll == NULL) {
 		return ;
@@ -91,7 +91,7 @@ void CTcpConnectionMgr::_delConnFromPoll(CConnectItemPtr& connItemPtr)
 	m_tcpEpoll->delTcpFromEpoll(item->m_connect->getSockect());
 }
 
-bool CTcpConnectionMgr::_epoll(int msSec)
+bool CTcpConnectionMgr::_INetConnectionMgr_epoll(int msSec)
 {
 	if (m_tcpEpoll == NULL) {
 		return false;

@@ -16,12 +16,12 @@ public:
 	CUdpConnectionMgr();
 	virtual ~CUdpConnectionMgr();
 
-	virtual bool postSend(int udpSocket);
+	virtual bool INetConnectionMgr_postSend(int udpSocket);
 
 protected:
-	virtual bool _addConnToPoll(CConnectItemPtr& connItemPtr);
-	virtual void _delConnFromPoll(CConnectItemPtr& connItemPtr);
-	virtual bool _epoll(int msSec);
+	virtual bool _INetConnectionMgr_addConnToPoll(CConnectItemPtr& connItemPtr);
+	virtual void _INetConnectionMgr_delConnFromPoll(CConnectItemPtr& connItemPtr);
+	virtual bool _INetConnectionMgr_epoll(int msSec);
 
 	virtual bool _readScoket(int& udmSocket, void* data);
 	virtual bool _writeScoket(int& udmSocket, void* data);

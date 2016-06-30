@@ -46,7 +46,7 @@ bool CUdpStubThread::_delStubToNetConnectionMgr(CNetStubPtr& stubPtr)
 
 void CUdpStubThread::_wait()
 {
-	CUdpConnectionMgr::_epoll(15);
+	CUdpConnectionMgr::_INetConnectionMgr_epoll(15);
 }
 
 void CUdpStubThread::_enterRun()

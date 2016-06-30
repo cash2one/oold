@@ -25,7 +25,7 @@ public:
 
 	virtual bool IService_sendMsg(GFLib::SMessage* msg, BSLib::uint32 msgSize);
 	virtual bool IService_sendMsg(GFLib::CMessage& msg);
-	virtual void close();
+	virtual void IService_close();
 
 	void start();
 	void join();
@@ -47,7 +47,7 @@ protected:
 	virtual bool _INetClient_cbParseMsg(void* msgBuff, BSLib::uint32 msgSize);
 	virtual void _INetClient_cbTerminate();
 	virtual bool _canTransfer() { return true; }
-	virtual GFLib::StubID _getStubID() { return INVALID_STUBID; }
+	virtual GFLib::StubID _IService_getStubID() { return INVALID_STUBID; }
 
 	virtual int _run(void* a_para);
 

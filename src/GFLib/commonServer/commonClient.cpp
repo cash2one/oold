@@ -79,7 +79,7 @@ bool CCommonClient::IService_sendMsg(GFLib::CMessage& msg)
 	return false;
 }
 
-void CCommonClient::close()
+void CCommonClient::IService_close()
 {
 	terminate();
 }

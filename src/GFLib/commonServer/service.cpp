@@ -27,7 +27,7 @@ bool IService::_parseMsg(GFLib::SMessage* msg, BSLib::uint32 msgSize)
 	GFLib::SNetMsgLabel msgLable;
 	msgLable.m_serverIDFrom = m_serverID;
 	msgLable.m_serverIDSender = m_serverID;
-	msgLable.m_stubIDsender = _getStubID();
+	msgLable.m_stubIDsender = _IService_getStubID();
 	msgLable.m_serverIDTo = localServerID;
 	msgLable.m_msgSize = msgSize;
 
@@ -97,7 +97,7 @@ bool IService::_parseMsg(GFLib::SMessage* msg, BSLib::uint32 msgSize)
 	return false;
 }
 
-bool IService::_transferMsg(GFLib::SMessage* msg, BSLib::uint32 msgSize)
+bool IService::_IService_transferMsg(GFLib::SMessage* msg, BSLib::uint32 msgSize)
 {
 	if (msg->getUniqueID() != MsgIDServerLinkXX2XXNtfTransfer) {
 		BSLIB_LOG_ERROR(ETT_GFLIB_COMMON, "丢弃消息[%s][%s],不是转发消息", msg->toString().c_str(), BSLib::Framework::CMsgDebug::singleton().getPrompt(msg).c_str());
@@ -154,11 +154,11 @@ bool IService::_executeMessage(GFLib::SNetMsgLabel* lable, GFLib::SMessage* msg)
 bool IService::_executeTransfer(GFLib::SMessage* msg, BSLib::uint32 msgSize)
 {
 	//转发
-	if (!_canTransfer()) {
+	if (!_IService_canTransfer()) {
 		BSLIB_LOG_ERROR(ETT_GFLIB_COMMON, "丢弃消息[%s][%s],转发受限制", msg->toString().c_str(), BSLib::Framework::CMsgDebug::singleton().getPrompt(msg).c_str());
 		return m_serverID.isValid();
 	}
-	if (_transferMsg(msg, msgSize)) {
+	if (_IService_transferMsg(msg, msgSize)) {
 		//BSLIB_LOG_DEBUG(ETT_GFLIB_COMMON, "转发消息[%s][%s]成功", msg->toString().c_str(), BSLib::Framework::CMsgDebug::singleton().getPrompt(msg).c_str());
 		return true;
 	}

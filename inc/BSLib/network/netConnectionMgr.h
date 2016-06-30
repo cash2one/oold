@@ -38,7 +38,7 @@ public:
 	virtual bool INetConnectionMgr_epoll(int msSec);
 
 	//Í¨Öªsocket·¢ËÍ
-	virtual bool postSend(int tcpSocket) = 0;
+	virtual bool INetConnectionMgr_postSend(int tcpSocket) = 0;
 	
 	uint32 getConnectionCount() { return m_connSize + m_addConnSize - m_delConnSize; }
 	
@@ -56,9 +56,9 @@ protected:
 	
 	CConnectItemPtr _getConnectionItem(int sock);
 
-	virtual bool _addConnToPoll(CConnectItemPtr& connItemPtr) = 0;
-	virtual void _delConnFromPoll(CConnectItemPtr& connItemPtr) = 0;
-	virtual bool _epoll(int msSec) = 0;
+	virtual bool _INetConnectionMgr_addConnToPoll(CConnectItemPtr& connItemPtr) = 0;
+	virtual void _INetConnectionMgr_delConnFromPoll(CConnectItemPtr& connItemPtr) = 0;
+	virtual bool _INetConnectionMgr_epoll(int msSec) = 0;
 
 private:
 	BSLib::Utility::CHashMap<int, CConnectItemPtr> m_connHashMap;

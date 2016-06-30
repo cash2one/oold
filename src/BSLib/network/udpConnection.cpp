@@ -161,7 +161,7 @@ void CUdpConnection::_postSend()
 {
 	INetConnectionMgr* netConnMgr = getNetConnectionMgr();
 	if (netConnMgr != NULL){
-		netConnMgr->postSend(m_udmSock);
+		netConnMgr->INetConnectionMgr_postSend(m_udmSock);
 	}
 }
 

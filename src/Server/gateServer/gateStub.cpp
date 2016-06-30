@@ -12,18 +12,18 @@ CGateStub::CGateStub(BSLib::Network::CNetConnectionPtr& netConnection)
 	;
 }
 
-void CGateStub::_finalStub()
+void CGateStub::INetStub_finalStub()
 {
 	;
 }
 
-void CGateStub::_initStubMsg(BSLib::Framework::CMsgExecMgr* msgExecMgr)
+void CGateStub::INetStub_initStubMsg(BSLib::Framework::CMsgExecMgr* msgExecMgr)
 {
 	BSLib::Framework::CMsgFactory::singleton().registerCreateCMsgFun(GSLib::LoginSystem::MsgIDLoginSystemGC2GTReqAccountLogin, &BSLib::Framework::CreateCMessage<GSLib::LoginSystem::CMsgLoginSystemGC2GTReqAccountLogin>);
 	GFLIB_ADDMSG_OBJEXEC_OBJAFTER(msgExecMgr, GSLib::LoginSystem::MsgIDLoginSystemGC2GTReqAccountLogin, &CGateStub::_onMsgLoginSystemGC2GTReqAccountLogin, &CGateStub::_afterMsgHandlerGameStub, this);
 }
 
-void CGateStub::_cbTerminate()
+void CGateStub::INetStub_cbTerminate()
 {
 	if (m_isValidAccountID) {
 		GSLib::LoginSystem::GT::CLoginSystemGT::singleton().terminateAccountLogin(m_accountKey, m_gateKey, m_gateSession, getStubID());

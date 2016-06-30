@@ -11,21 +11,11 @@ public:
 	CGMStub(BSLib::Network::CNetConnectionPtr& netConnection);
 
 protected:
-	virtual void _finalStub();
-	virtual void _initStubMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr);
-	virtual void _cbTerminate();
+	virtual void INetStub_finalStub();
+	virtual void INetStub_initStubMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr);
+	virtual void INetStub_cbTerminate();
 
 private:
-// 	void _onMsgLoginSystemGC2LGReqAccountLogin(BSLib::Framework::SMsgLabel* msgLabel,BSLib::Framework::SMessage* msg);
-// 	void _onMsgLoginSystemGC2LGReqRegisterAccount(BSLib::Framework::SMsgLabel* msgLabel,BSLib::Framework::SMessage* msg);
-// 	void _afterMsgHandlerLoginStub(BSLib::Framework::CMsgExecMgr* msgExecMgr, BSLib::Framework::SMsgLabel* msgLabel, BSLib::Framework::SMessage* msg);
-// 	void _afterMsgHandlerRegisterStub(BSLib::Framework::CMsgExecMgr* msgExecMgr, BSLib::Framework::SMsgLabel* msgLabel, BSLib::Framework::SMessage* msg);
-// 
-// 	bool _cbTimerAccountLogin(BSLib::uint64, void* a_para);
-// 
-// 	void _notifyAccountLoginResult(GSLib::LoginSystem::ELoginResult result);
-
-
 	GSLIB_MSGFUN_DECLARE(CMsgMasterSystemXX2XSReqLogin);
 	GSLIB_MSGFUN_DECLARE(CMsgMasterSystemXX2XSReqOnlineZone);
 

@@ -10,9 +10,9 @@ public:
 	CGateStub(BSLib::Network::CNetConnectionPtr& netConnection);
 
 protected:
-	virtual void _finalStub();
-	virtual void _initStubMsg(BSLib::Framework::CMsgExecMgr* msgExecMgr);
-	virtual void _cbTerminate();
+	virtual void INetStub_finalStub();
+	virtual void INetStub_initStubMsg(BSLib::Framework::CMsgExecMgr* msgExecMgr);
+	virtual void INetStub_cbTerminate();
 
 	virtual bool _transferMsg(GFLib::SMessage* msg, BSLib::uint32 a_msgSize);
 

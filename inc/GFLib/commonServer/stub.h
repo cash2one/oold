@@ -11,7 +11,7 @@ namespace GFLib
 namespace CommonServer
 {
 
-class GFLIB_COMMONSERVER_API CStub : public IService, public BSLib::Network::CNetStub
+class GFLIB_COMMONSERVER_API CStub : public IService, public BSLib::Network::INetStub
 {
 public:
 	CStub(BSLib::Network::CNetConnectionPtr& netConnection);
@@ -19,18 +19,18 @@ public:
 
 	virtual bool IService_sendMsg(GFLib::SMessage* msg, BSLib::uint32 msgSize);
 	virtual bool IService_sendMsg(GFLib::CMessage& msg);
-	virtual void close();
+	virtual void IService_close();
 
 protected:
-	virtual void _initStub();
-	virtual void _finalStub();
-	virtual void _initStubMsg(BSLib::Framework::CMsgExecMgr* msgExecMgr);
-	virtual void _cbNotifyPing();
-	virtual bool _cbParseMsg(void* msgBuff, BSLib::uint32 msgSize);
-	virtual void _cbTerminate();
+	virtual void INetStub_initStub();
+	virtual void INetStub_finalStub();
+	virtual void INetStub_initStubMsg(BSLib::Framework::CMsgExecMgr* msgExecMgr);
+	virtual void INetStub_cbNotifyPing();
+	virtual bool INetStub_cbParseMsg(void* msgBuff, BSLib::uint32 msgSize);
+	virtual void INetStub_cbTerminate();
 
-	virtual bool _canTransfer();
-	virtual GFLib::StubID _getStubID();
+	virtual bool _IService_canTransfer();
+	virtual GFLib::StubID _IService_getStubID();
 
 protected:
 	void _onMsgServerLinkXX2XSReqServerType(BSLib::Framework::SMsgLabel* msgLabel,BSLib::Framework::SMessage* msg);

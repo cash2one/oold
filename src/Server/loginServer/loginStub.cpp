@@ -14,12 +14,12 @@ CLoginStub::CLoginStub(BSLib::Network::CNetConnectionPtr& netConnection)
 	;
 }
 
-void CLoginStub::_finalStub()
+void CLoginStub::INetStub_finalStub()
 {
 	;
 }
 
-void CLoginStub::_initStubMsg(BSLib::Framework::CMsgExecMgr* msgExecMgr)
+void CLoginStub::INetStub_initStubMsg(BSLib::Framework::CMsgExecMgr* msgExecMgr)
 {
 	BSLib::Framework::CMsgFactory::singleton().registerCreateCMsgFun(GSLib::LoginSystem::MsgIDLoginSystemGC2LGReqAccountLogin, &BSLib::Framework::CreateCMessage<GSLib::LoginSystem::CMsgLoginSystemGC2LGReqAccountLogin>);
 	GFLIB_ADDMSG_OBJEXEC_OBJAFTER(msgExecMgr, GSLib::LoginSystem::MsgIDLoginSystemGC2LGReqAccountLogin, &CLoginStub::_onMsgLoginSystemGC2LGReqAccountLogin, &CLoginStub::_afterMsgHandlerLoginStub, this);
@@ -31,7 +31,7 @@ void CLoginStub::_initStubMsg(BSLib::Framework::CMsgExecMgr* msgExecMgr)
     GFLIB_ADDMSG_OBJEXEC_OBJAFTER(msgExecMgr, GSLib::LoginSystem::MsgIDLoginSystemGC2LGReqGetAccountToken, &CLoginStub::_onMsgLoginSystemGC2LGReqGetAccountToken, &CLoginStub::_afterMsgHandlerGetAccountTokenStub, this);
 }
 
-void CLoginStub::_cbTerminate()
+void CLoginStub::INetStub_cbTerminate()
 {
 	if (m_timeHandleAccountLogin != BSLib::Utility::INVALID_TIMER) {
 		BSLib::Utility::CTimerServer* timerServer = GFLib::CommonServer::CStub::_getTimerServer();

@@ -13,11 +13,11 @@ namespace BSLib
 namespace Network
 {
 
-uint32 CNetStub::m_verifyTimeout = BSLIB_NETWORK_VERIFY_TIMEOUT;
-uint32 CNetStub::m_okeyTimeout = BSLIB_NETWORK_OKEY_TIMEOUT;
-uint32 CNetStub::m_errorPingMax = BSLIB_NETWORK_ERROR_PING_MAX;
+uint32 INetStub::m_verifyTimeout = BSLIB_NETWORK_VERIFY_TIMEOUT;
+uint32 INetStub::m_okeyTimeout = BSLIB_NETWORK_OKEY_TIMEOUT;
+uint32 INetStub::m_errorPingMax = BSLIB_NETWORK_ERROR_PING_MAX;
 
-CNetStub::CNetStub(CNetConnectionPtr& netConnection)
+INetStub::INetStub(CNetConnectionPtr& netConnection)
 : m_stubID(INVALID_STUBID)
 , m_stubState(ESS_NULL)
 , m_netConnectionPtr(netConnection)
@@ -32,9 +32,9 @@ CNetStub::CNetStub(CNetConnectionPtr& netConnection)
 	;
 }
 
-CNetStub::~CNetStub()
+INetStub::~INetStub()
 {
-	BSLIB_LOG_DEBUG(BSLib::ETT_BSLIB_NETWORK, "free BSLib::Network::CNetStub");
+	BSLIB_LOG_DEBUG(BSLib::ETT_BSLIB_NETWORK, "free BSLib::Network::INetStub");
 	if (m_netConnectionPtr == NULL){
 		return ;
 	}
@@ -42,7 +42,7 @@ CNetStub::~CNetStub()
 	m_netConnectionPtr = NULL;
 }
 
-void CNetStub::setState(EStubState state)
+void INetStub::setState(EStubState state)
 {
 	if (m_stubState >= state) {
 		return ;
@@ -70,12 +70,12 @@ void CNetStub::setState(EStubState state)
 	}
 }
 
-void CNetStub::gotoNextState() 
+void INetStub::gotoNextState() 
 { 
 	setState((EStubState)((m_stubState + 1) % ESS_MAX));
 }
 
-int CNetStub::send(BSLib::Utility::CStream& stream)
+int INetStub::send(BSLib::Utility::CStream& stream)
 {
 	if (m_stubState == ESS_VERIFY || m_stubState == ESS_OKAY){
 		if (m_netConnectionPtr != NULL && m_netConnectionPtr->isValid()) {
@@ -85,7 +85,7 @@ int CNetStub::send(BSLib::Utility::CStream& stream)
 	return -1;
 }
 
-int CNetStub::send(const void* msgBuff, unsigned int buffSize)
+int INetStub::send(const void* msgBuff, unsigned int buffSize)
 {
 	if (m_stubState == ESS_VERIFY || m_stubState == ESS_OKAY){
 		if (m_netConnectionPtr != NULL && m_netConnectionPtr->isValid()) {
@@ -95,7 +95,7 @@ int CNetStub::send(const void* msgBuff, unsigned int buffSize)
 	return -1;
 }
 
-void CNetStub::setOkeyStateTimeoutMAX(uint32 okeyTimeoutMAX, uint32 pingTime) 
+void INetStub::setOkeyStateTimeoutMAX(uint32 okeyTimeoutMAX, uint32 pingTime) 
 { 
 	m_errorPingMax = (uint32)(okeyTimeoutMAX / pingTime);
 	if (m_errorPingMax <= 0){
@@ -105,12 +105,12 @@ void CNetStub::setOkeyStateTimeoutMAX(uint32 okeyTimeoutMAX, uint32 pingTime)
 }
 
 
-bool CNetStub::_checkVerifyOvertime(BSLib::Utility::CRealTime& realTimer)
+bool INetStub::_checkVerifyOvertime(BSLib::Utility::CRealTime& realTimer)
 {
 	return m_verifyOvertime(realTimer);
 }
 
-bool CNetStub::_checkOkeyOvertime(BSLib::Utility::CRealTime& realTimer)
+bool INetStub::_checkOkeyOvertime(BSLib::Utility::CRealTime& realTimer)
 {
 	if (!m_needPing) {
 		return false;
@@ -119,25 +119,25 @@ bool CNetStub::_checkOkeyOvertime(BSLib::Utility::CRealTime& realTimer)
 		if (m_errorNotifyPingCount >= m_errorPingMax){
 			return true;
 		}
-		_cbNotifyPing();
+		INetStub_cbNotifyPing();
 		m_okeyOvertime.next(realTimer);
 		++m_errorNotifyPingCount;
 	}
 	return false;
 }
 
-bool CNetStub::_checkDeleteOvertime(BSLib::Utility::CRealTime& realTimer)
+bool INetStub::_checkDeleteOvertime(BSLib::Utility::CRealTime& realTimer)
 {
 	return m_deleteOvertime(realTimer);
 }
 
-void CNetStub::_resetOkeyTick()
+void INetStub::_resetOkeyTick()
 {
 	m_okeyOvertime.next(*m_realTime);
 	m_errorNotifyPingCount = 0;
 }
 
-void CNetStub::_setTimerServer(BSLib::Utility::CTimerServer* a_timerServer)
+void INetStub::_setTimerServer(BSLib::Utility::CTimerServer* a_timerServer)
 {
 	m_timerServer = a_timerServer;
 }

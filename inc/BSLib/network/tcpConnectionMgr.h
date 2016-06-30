@@ -18,12 +18,12 @@ public:
 	CTcpConnectionMgr();
 	virtual ~CTcpConnectionMgr();
 	
-	virtual bool postSend(int tcpSocket);
+	virtual bool INetConnectionMgr_postSend(int tcpSocket);
 
 protected:
-	virtual bool _addConnToPoll(CConnectItemPtr& connItemPtr);
-	virtual void _delConnFromPoll(CConnectItemPtr& connItemPtr);
-	virtual bool _epoll(int msSec);
+	virtual bool _INetConnectionMgr_addConnToPoll(CConnectItemPtr& connItemPtr);
+	virtual void _INetConnectionMgr_delConnFromPoll(CConnectItemPtr& connItemPtr);
+	virtual bool _INetConnectionMgr_epoll(int msSec);
 
 	virtual bool _readScoket(SOCKET& tcpSocket, void* data);
 	virtual bool _writeScoket(SOCKET& tcpSocket, void* data);

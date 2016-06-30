@@ -56,7 +56,7 @@ bool INetConnectionMgr::INetConnectionMgr_epoll(int msSec)
 
 	BSLib::Utility::CSurveyTimer timer;
 	int64 start = timer.milliseconds();
-	while (_epoll(msSec)) {
+	while (_INetConnectionMgr_epoll(msSec)) {
 		if ((timer.milliseconds() - start) >= msSec) {
 			updateConn();
 			return true;
@@ -95,7 +95,7 @@ void INetConnectionMgr::_checkAddConn()
 			continue;
 		}
 		_addConnection(connPtr);
-		this->postSend(connPtr->m_connect->getSockect());
+		this->INetConnectionMgr_postSend(connPtr->m_connect->getSockect());
 		addConnListTemp.pop();
 	}
 	m_connSize = m_connHashMap.size();
@@ -124,7 +124,7 @@ void INetConnectionMgr::_checkDelConn()
 bool INetConnectionMgr::_addConnection(CConnectItemPtr& connItemPtr)
 {
 	m_connHashMap.setValue(connItemPtr->m_connect->getSockect(), connItemPtr);
-	if (!_addConnToPoll(connItemPtr)){
+	if (!_INetConnectionMgr_addConnToPoll(connItemPtr)){
 		m_connHashMap.remove(connItemPtr->m_connect->getSockect());
 		return false;
 	}
@@ -138,7 +138,7 @@ void INetConnectionMgr::_delConnection(int sock)
 	if (item == NULL || item->m_connect == NULL){
 		return;
 	}
-	_delConnFromPoll(item);
+	_INetConnectionMgr_delConnFromPoll(item);
 
 	item->m_connect->setNetConnectionMgr(NULL);
 
@@ -160,7 +160,7 @@ void INetConnectionMgr::_clearAllConnection()
 		if (item == NULL || item->m_connect == NULL){
 			continue;
 		}
-		_delConnFromPoll(item);
+		_INetConnectionMgr_delConnFromPoll(item);
 
 		item->m_connect->setNetConnectionMgr(NULL);
 	}

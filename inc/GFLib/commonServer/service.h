@@ -23,7 +23,7 @@ public:
 
 	virtual bool IService_sendMsg(GFLib::SMessage* a_msg, BSLib::uint32 a_msgSize) = 0;
 	virtual bool IService_sendMsg(GFLib::CMessage& a_msg) = 0;
-	virtual void close() = 0;
+	virtual void IService_close() = 0;
 
 protected:
 	void _setKey(const std::string& a_key) { m_key = a_key; }
@@ -32,16 +32,16 @@ protected:
 
 	bool _parseMsg(GFLib::SMessage* msg, BSLib::uint32 a_msgSize);
 
-	virtual bool _transferMsg(GFLib::SMessage* msg, BSLib::uint32 a_msgSize);
+	virtual bool _IService_transferMsg(GFLib::SMessage* msg, BSLib::uint32 a_msgSize);
 
 	/// @brief  _canTransfer 
 	///			判断能否转发消息
 	///			如果不具有转发功能，消息只能在该对象内部处理
 	/// @return bool
-	virtual bool _canTransfer() { return false; }
+	virtual bool _IService_canTransfer() { return false; }
 
 protected:
-	virtual GFLib::StubID _getStubID() = 0;
+	virtual GFLib::StubID _IService_getStubID() = 0;
 
 private:
 	bool _executeMessage(GFLib::SNetMsgLabel* lable, GFLib::SMessage* msg);
