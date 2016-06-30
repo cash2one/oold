@@ -163,14 +163,12 @@
     <ClCompile Include="..\..\..\src\GFLib\commonServer\commonServer.cpp" />
     <ClCompile Include="..\..\..\src\GFLib\commonServer\commonSystem.cpp" />
     <ClCompile Include="..\..\..\src\GFLib\commonServer\commonSystemMgr.cpp" />
-    <ClCompile Include="..\..\..\src\GFLib\commonServer\eventMgr.cpp" />
     <ClCompile Include="..\..\..\src\GFLib\commonServer\serverTypeMgr.cpp" />
     <ClCompile Include="..\..\..\src\GFLib\commonServer\service.cpp" />
     <ClCompile Include="..\..\..\src\GFLib\commonServer\serviceMgr.cpp" />
     <ClCompile Include="..\..\..\src\GFLib\commonServer\stub.cpp" />
     <ClCompile Include="..\..\..\src\GFLib\commonServer\stubMgr.cpp" />
     <ClCompile Include="..\..\..\src\GFLib\commonServer\sysChannelMgr.cpp" />
-    <ClCompile Include="..\..\..\src\GFLib\commonServer\uniqueIDMgr.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\inc\GFLib\commonServer\account.h" />
@@ -181,7 +179,6 @@
     <ClInclude Include="..\..\..\inc\GFLib\commonServer\commonServer.h" />
     <ClInclude Include="..\..\..\inc\GFLib\commonServer\commonSystem.h" />
     <ClInclude Include="..\..\..\inc\GFLib\commonServer\commonSystemMgr.h" />
-    <ClInclude Include="..\..\..\inc\GFLib\commonServer\eventMgr.h" />
     <ClInclude Include="..\..\..\inc\GFLib\commonServer\message\funcType.h" />
     <ClInclude Include="..\..\..\inc\GFLib\commonServer\message\message.h" />
     <ClInclude Include="..\..\..\inc\GFLib\commonServer\message\msgLabel.h" />
@@ -195,7 +192,6 @@
     <ClInclude Include="..\..\..\inc\GFLib\commonServer\stubMgr.h" />
     <ClInclude Include="..\..\..\inc\GFLib\commonServer\sysChannelMgr.h" />
     <ClInclude Include="..\..\..\inc\GFLib\commonServer\tracer.h" />
-    <ClInclude Include="..\..\..\inc\GFLib\commonServer\uniqueIDMgr.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\BSLib\vs2008\Database.vcxproj">
