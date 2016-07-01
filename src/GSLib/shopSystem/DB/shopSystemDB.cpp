@@ -34,14 +34,14 @@ void CShopSystemDB::_final()
 	GSLib::DBSystem::CDBCommonSystem::_final();
 }
 
-bool CShopSystemDB::_loadGameConfig(const std::string& a_configPath)
+bool CShopSystemDB::ICommonServer_loadGameConfig(const std::string& a_configPath)
 {
-	return GSLib::DBSystem::CDBCommonSystem::_loadGameConfig(a_configPath);
+	return GSLib::DBSystem::CDBCommonSystem::ICommonServer_loadGameConfig(a_configPath);
 }
 
-bool CShopSystemDB::_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
+bool CShopSystemDB::ICommonServer_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
 {
-	return GSLib::DBSystem::CDBCommonSystem::_initServerMsg(a_msgExecMgr);
+	return GSLib::DBSystem::CDBCommonSystem::ICommonServer_initServerMsg(a_msgExecMgr);
 }
 
 bool CShopSystemDB::_startSystem()
@@ -52,14 +52,14 @@ bool CShopSystemDB::_startSystem()
 	return GSLib::DBSystem::CDBCommonSystem::_startSystem();
 }
 
-void CShopSystemDB::_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)
+void CShopSystemDB::ICommonServer_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)
 {
-	GSLib::DBSystem::CDBCommonSystem::_cbServerEnter(a_serverID, a_key);
+	GSLib::DBSystem::CDBCommonSystem::ICommonServer_cbServerEnter(a_serverID, a_key);
 }
 
-void CShopSystemDB::_cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key)
+void CShopSystemDB::ICommonServer_cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key)
 {
-	GSLib::DBSystem::CDBCommonSystem::_cbServerLeave(a_serverID, a_key);
+	GSLib::DBSystem::CDBCommonSystem::ICommonServer_cbServerLeave(a_serverID, a_key);
 }
 
 }//DB

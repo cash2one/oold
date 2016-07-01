@@ -45,18 +45,18 @@ void CChatSystemGM::_final()
 	GSLib::DBSystem::CDBCommonSystem::_final();
 }
 
-bool CChatSystemGM::_loadGameConfig(const std::string& a_configPath)
+bool CChatSystemGM::ICommonServer_loadGameConfig(const std::string& a_configPath)
 {
-	GFLib::CommonServer::CCommonServer* srv = GFLib::CommonServer::CCommonServer::getCommonServer();
+	GFLib::CommonServer::ICommonServer* srv = GFLib::CommonServer::ICommonServer::getCommonServer();
 	std::string serverName = srv->getServerTypeName();
 	m_enableGMChatCommand = (BSLib::Framework::CSysConfig::singleton().getValueInt(serverName, "EnableGMChatCommand") != 0);
 
-	return GSLib::DBSystem::CDBCommonSystem::_loadGameConfig(a_configPath);
+	return GSLib::DBSystem::CDBCommonSystem::ICommonServer_loadGameConfig(a_configPath);
 }
 
-bool CChatSystemGM::_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
+bool CChatSystemGM::ICommonServer_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
 {
-	return GSLib::DBSystem::CDBCommonSystem::_initServerMsg(a_msgExecMgr);
+	return GSLib::DBSystem::CDBCommonSystem::ICommonServer_initServerMsg(a_msgExecMgr);
 }
 
 bool CChatSystemGM::_startSystem()
@@ -64,14 +64,14 @@ bool CChatSystemGM::_startSystem()
 	return GSLib::DBSystem::CDBCommonSystem::_startSystem();
 }
 
-void CChatSystemGM::_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)
+void CChatSystemGM::ICommonServer_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)
 {
-	GSLib::DBSystem::CDBCommonSystem::_cbServerEnter(a_serverID, a_key);
+	GSLib::DBSystem::CDBCommonSystem::ICommonServer_cbServerEnter(a_serverID, a_key);
 }
 
-void CChatSystemGM::_cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key)
+void CChatSystemGM::ICommonServer_cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key)
 {
-	GSLib::DBSystem::CDBCommonSystem::_cbServerLeave(a_serverID, a_key);
+	GSLib::DBSystem::CDBCommonSystem::ICommonServer_cbServerLeave(a_serverID, a_key);
 }
 
 bool CChatSystemGM::enableGMChatCommand() const

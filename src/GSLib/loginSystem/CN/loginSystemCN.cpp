@@ -62,12 +62,12 @@ void CLoginSystemCN::_final()
 	GSLib::DBSystem::CDBCommonSystem::_final();
 }
 
-bool CLoginSystemCN::_loadGameConfig(const std::string& a_configPath)
+bool CLoginSystemCN::ICommonServer_loadGameConfig(const std::string& a_configPath)
 {
-	return GSLib::DBSystem::CDBCommonSystem::_loadGameConfig(a_configPath);
+	return GSLib::DBSystem::CDBCommonSystem::ICommonServer_loadGameConfig(a_configPath);
 }
 
-bool CLoginSystemCN::_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
+bool CLoginSystemCN::ICommonServer_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
 {
 	BSLib::Framework::CMsgFactory::singleton().registerCreateCMsgFun(MsgIDLoginSystemLG2CNReqAccountLogin, &BSLib::Framework::CreateCMessage<CMsgLoginSystemLG2CNReqAccountLogin>);
 	GFLIB_ADDMSG_OBJEXEC(a_msgExecMgr, MsgIDLoginSystemLG2CNReqAccountLogin, &CLoginSystemCN::_onMsgLoginSystemLG2CNReqAccountLogin, this);
@@ -144,7 +144,7 @@ bool CLoginSystemCN::_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
 	BSLib::Framework::CMsgFactory::singleton().registerCreateCMsgFun(MsgIDLoginSystemGT2CNNtfAccountTimeout, &BSLib::Framework::CreateCMessage<CMsgLoginSystemGT2CNNtfAccountTimeout>);
 	GFLIB_ADDMSG_OBJEXEC(a_msgExecMgr, MsgIDLoginSystemGT2CNNtfAccountTimeout, &CLoginSystemCN::_onMsgLoginSystemGT2CNNtfAccountTimeout, this);
 
-	return GSLib::DBSystem::CDBCommonSystem::_initServerMsg(a_msgExecMgr);
+	return GSLib::DBSystem::CDBCommonSystem::ICommonServer_initServerMsg(a_msgExecMgr);
 }
 
 bool CLoginSystemCN::_startSystem()
@@ -152,38 +152,38 @@ bool CLoginSystemCN::_startSystem()
 	return GSLib::DBSystem::CDBCommonSystem::_startSystem();
 }
 
-void CLoginSystemCN::_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)
+void CLoginSystemCN::ICommonServer_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)
 {
-	if (a_serverID.getServerType() == SRVTYPE_GATESERVER) {
+	if (a_serverID.ICommonServer_getServerType() == SRVTYPE_GATESERVER) {
 		CGateInforMgr::singleton().gateServerEnter(a_serverID);
 		return ;
-	}else if (a_serverID.getServerType() == SRVTYPE_GAMESERVER){
+	}else if (a_serverID.ICommonServer_getServerType() == SRVTYPE_GAMESERVER){
 		CGameInforMgr::singleton().gameServerEnter(a_serverID);
 		return ;
-	} else if (a_serverID.getServerType() == SRVTYPE_DATASERVER){
+	} else if (a_serverID.ICommonServer_getServerType() == SRVTYPE_DATASERVER){
 		CAccountLoginCNInforMgr::singleton().setDataServerID(a_serverID);
 		return ;
 	}
 	
-	GSLib::DBSystem::CDBCommonSystem::_cbServerEnter(a_serverID, a_key);
+	GSLib::DBSystem::CDBCommonSystem::ICommonServer_cbServerEnter(a_serverID, a_key);
 }
 
-void CLoginSystemCN::_cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key)
+void CLoginSystemCN::ICommonServer_cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key)
 {
-	if (a_serverID.getServerType() == SRVTYPE_GATESERVER) {
+	if (a_serverID.ICommonServer_getServerType() == SRVTYPE_GATESERVER) {
 		CAccountLoginCNInforMgr::singleton().gateServerLeave(a_serverID);
 		CGateInforMgr::singleton().gateServerLeave(a_serverID);
 		return ;
-	} else if (a_serverID.getServerType() == SRVTYPE_GAMESERVER){
+	} else if (a_serverID.ICommonServer_getServerType() == SRVTYPE_GAMESERVER){
 		CAccountLoginCNInforMgr::singleton().gameServerLeave(a_serverID);
 		CGameInforMgr::singleton().gameServerLeave(a_serverID);
 		return ;
-	} else if (a_serverID.getServerType() == SRVTYPE_DATASERVER){
+	} else if (a_serverID.ICommonServer_getServerType() == SRVTYPE_DATASERVER){
 		CAccountLoginCNInforMgr::singleton().dataServerLeave(a_serverID);
 		CAccountLoginCNInforMgr::singleton().setDataServerID(GFLib::INVALID_SERVERID);
 		return ;
 	}
-	GSLib::DBSystem::CDBCommonSystem::_cbServerLeave(a_serverID, a_key);
+	GSLib::DBSystem::CDBCommonSystem::ICommonServer_cbServerLeave(a_serverID, a_key);
 }
 
 void CLoginSystemCN::_onMsgLoginSystemLG2CNReqAccountLogin(BSLib::Framework::SMsgLabel* a_msgLabel,BSLib::Framework::SMessage* a_msg)

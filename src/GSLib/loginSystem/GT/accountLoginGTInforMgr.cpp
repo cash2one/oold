@@ -538,8 +538,8 @@ void CAccountLoginGTInforMgr::broadcastMsg(CMsgLoginSystemXS2GTNtfBroadcastMsg* 
 	BSLib::uint32 msgSize = a_ntfBroadcastMsg->m_subMsg.readSize();
 
 	BSLIB_LOG_ERROR(ETT_GSLIB_LOGINSYSTEM, "Broadcast MsgID(%d[%s].%d.%d) [%s]", 
-		msg->getServerType(),
-		GFLib::CommonServer::CServerTypeMgr::singleton().getCodeServerType(msg->getServerType()).c_str(),
+		msg->ICommonServer_getServerType(),
+		GFLib::CommonServer::CServerTypeMgr::singleton().getCodeServerType(msg->ICommonServer_getServerType()).c_str(),
 		msg->getFunctionType(), 
 		msg->getID(),
 		BSLib::Framework::CMsgDebug::singleton().getPrompt(msg).c_str());

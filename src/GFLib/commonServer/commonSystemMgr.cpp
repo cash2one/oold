@@ -78,7 +78,7 @@ bool CCommonSystemMgr::loadGameConfig(const std::string& a_configPath)
 		if (funSystem == NULL) {
 			continue;
 		}
-		if (!funSystem->_loadGameConfig(a_configPath)) {
+		if (!funSystem->ICommonServer_loadGameConfig(a_configPath)) {
 			BSLIB_LOG_ERROR(ETT_GFLIB_COMMON, "加载系统功能[%d]配置失败", it->first);
 			return false;
 		}
@@ -94,7 +94,7 @@ void CCommonSystemMgr::initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr
 		if (funSystem == NULL) {
 			continue;
 		}
-		if (!funSystem->_initServerMsg(a_msgExecMgr)) {
+		if (!funSystem->ICommonServer_initServerMsg(a_msgExecMgr)) {
 			BSLIB_LOG_ERROR(ETT_GFLIB_COMMON, "加载系统功能[%d]消息失败", it->first);
 		}
 	}
@@ -137,7 +137,7 @@ void CCommonSystemMgr::cbServerEnter(const SServerID& a_serverID, const std::str
 		if (funSystem == NULL) {
 			continue;
 		}
-		funSystem->_cbServerEnter(a_serverID, a_key);
+		funSystem->ICommonServer_cbServerEnter(a_serverID, a_key);
 	}
 }
 
@@ -149,7 +149,7 @@ void CCommonSystemMgr::cbServerLeave(const SServerID& a_serverID, const std::str
 		if (funSystem == NULL) {
 			continue;
 		}
-		funSystem->_cbServerLeave(a_serverID, a_key);
+		funSystem->ICommonServer_cbServerLeave(a_serverID, a_key);
 	}
 }
 

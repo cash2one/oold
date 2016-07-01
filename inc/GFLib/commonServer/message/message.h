@@ -21,7 +21,7 @@ public:
 	SMessage(BSLib::uint8 a_server, BSLib::uint8 a_func, BSLib::uint16 a_id)
 		: BSLib::Framework::SMessage(BSLIB_HI_SHIFT(a_server, 8) + a_func, a_id) {}
 
-	BSLib::uint8 getServerType()
+	BSLib::uint8 ICommonServer_getServerType()
 	{
 		return BSLIB_LO_SHIFT(BSLib::Framework::SMessage::getType() & 0XFF00, 8); 
 	}
@@ -45,7 +45,7 @@ public:
 	CMessage(BSLib::uint8 server, BSLib::uint8 func, BSLib::uint16 id)
 		: BSLib::Framework::CMessage(BSLIB_HI_SHIFT(server, 8) + func, id) {}
 
-	BSLib::uint8 getServerType() 
+	BSLib::uint8 ICommonServer_getServerType() 
 	{ 
 		return BSLIB_LO_SHIFT(BSLib::Framework::SMessage::getType() & 0XFF00, 8); 
 	}

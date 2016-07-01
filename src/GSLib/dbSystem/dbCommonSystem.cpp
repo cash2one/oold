@@ -36,11 +36,11 @@ bool CDBCommonSystem::selectTableData(const GSLib::SRoleKey& a_roleKey, const st
 
 bool CDBCommonSystem::selectTableData(const GSLib::SRoleKey& a_roleKey, const std::string& a_tableKey, const std::string& a_tableIndex, EDBTableID a_tableID, EModuleType a_moduleType, BSLib::uint32 a_sessionID, BSLib::uint16 a_funcType, const std::string& a_strWhere)
 {
-	GFLib::CommonServer::CCommonServer* server = GFLib::CommonServer::CCommonServer::getCommonServer();
+	GFLib::CommonServer::ICommonServer* server = GFLib::CommonServer::ICommonServer::getCommonServer();
 	if (server == NULL) {
 		return false;
 	}
-	if (server->getServerType() == SRVTYPE_DATASERVER) {
+	if (server->ICommonServer_getServerType() == SRVTYPE_DATASERVER) {
 		return GSLib::DBSystem::DB::CDBSystemDB::singleton().selectTableData(a_roleKey, a_tableKey, a_tableIndex, a_tableID, a_moduleType, a_sessionID, a_funcType,a_strWhere);
 	}
 	if (!m_dataServerID.isValid()) {
@@ -66,11 +66,11 @@ bool CDBCommonSystem::selectTableData(const GSLib::SRoleKey& a_roleKey, const st
 
 bool CDBCommonSystem::selectGlobalTableData(const GSLib::SRoleKey& a_srcRoleKey,const GSLib::SRoleKey& a_roleKey, const std::string& a_tableKey, const std::string& a_tableIndex, EDBTableID a_tableID, EModuleType a_moduleType, BSLib::uint32 a_sessionID, BSLib::uint16 a_funcType, const std::string& a_strWhere)
 {
-    GFLib::CommonServer::CCommonServer* server = GFLib::CommonServer::CCommonServer::getCommonServer();
+    GFLib::CommonServer::ICommonServer* server = GFLib::CommonServer::ICommonServer::getCommonServer();
     if (server == NULL) {
         return false;
     }
-    if (server->getServerType() == SRVTYPE_DATASERVER) {
+    if (server->ICommonServer_getServerType() == SRVTYPE_DATASERVER) {
         return GSLib::DBSystem::DB::CDBSystemDB::singleton().selectTableData(a_roleKey, a_tableKey, a_tableIndex, a_tableID, a_moduleType, a_sessionID, a_funcType,a_strWhere);
     }
     if (!m_dataServerID.isValid()) {
@@ -97,11 +97,11 @@ bool CDBCommonSystem::selectGlobalTableData(const GSLib::SRoleKey& a_srcRoleKey,
 
 bool CDBCommonSystem::selectGlobalMultiTableData(const GSLib::SRoleKey& a_srcRoleKey,EModuleType a_srcModuleType,BSLib::uint32 a_sessionID,void* a_ptr,std::vector<SReqTablesData> a_selectDataArray)
 {
-    GFLib::CommonServer::CCommonServer* server = GFLib::CommonServer::CCommonServer::getCommonServer();
+    GFLib::CommonServer::ICommonServer* server = GFLib::CommonServer::ICommonServer::getCommonServer();
     if (server == NULL) {
         return false;
     }
-    if (server->getServerType() == SRVTYPE_DATASERVER) {
+    if (server->ICommonServer_getServerType() == SRVTYPE_DATASERVER) {
         return GSLib::DBSystem::DB::CDBSystemDB::singleton().selectTableDatas(a_srcRoleKey,a_srcModuleType, a_sessionID, a_ptr,a_selectDataArray);
     }
     if (!m_dataServerID.isValid()) {
@@ -139,11 +139,11 @@ bool CDBCommonSystem::updateTableData(const std::string& a_key, const std::strin
 
 bool CDBCommonSystem::updateTableData(const std::string& a_tableKey, const std::string& a_tableIndex, const std::string& a_name, EDBTableID a_tableID, void* a_data, BSLib::uint32 a_dataSize, bool a_needSave)
 {
-	GFLib::CommonServer::CCommonServer* server = GFLib::CommonServer::CCommonServer::getCommonServer();
+	GFLib::CommonServer::ICommonServer* server = GFLib::CommonServer::ICommonServer::getCommonServer();
 	if (server == NULL) {
 		return false;
 	}
-	if (server->getServerType() == SRVTYPE_DATASERVER) {
+	if (server->ICommonServer_getServerType() == SRVTYPE_DATASERVER) {
 		return GSLib::DBSystem::DB::CDBSystemDB::singleton().updateTableData(a_tableKey, a_tableIndex, a_name, a_tableID, a_data, a_dataSize, a_needSave);
 	}
 
@@ -163,11 +163,11 @@ bool CDBCommonSystem::updateTableData(const std::string& a_tableKey, const std::
 
 bool CDBCommonSystem::removeTableData(BSLib::Utility::CStream& a_steam, EDBTableID a_tableID, bool a_needSave)
 {
-	GFLib::CommonServer::CCommonServer* server = GFLib::CommonServer::CCommonServer::getCommonServer();
+	GFLib::CommonServer::ICommonServer* server = GFLib::CommonServer::ICommonServer::getCommonServer();
 	if (server == NULL) {
 		return false;
 	}
-	if (server->getServerType() == SRVTYPE_DATASERVER) {
+	if (server->ICommonServer_getServerType() == SRVTYPE_DATASERVER) {
 		return GSLib::DBSystem::DB::CDBSystemDB::singleton().removeTableData(a_steam, a_tableID, a_needSave);
 	}
 
@@ -183,11 +183,11 @@ bool CDBCommonSystem::removeTableData(BSLib::Utility::CStream& a_steam, EDBTable
 
 bool CDBCommonSystem::removeTableData(const std::string& a_tableKey, const std::string& a_tableIndex, EDBTableID a_tableID, bool a_needSave)
 {
-	GFLib::CommonServer::CCommonServer* server = GFLib::CommonServer::CCommonServer::getCommonServer();
+	GFLib::CommonServer::ICommonServer* server = GFLib::CommonServer::ICommonServer::getCommonServer();
 	if (server == NULL) {
 		return false;
 	}
-	if (server->getServerType() == SRVTYPE_DATASERVER) {
+	if (server->ICommonServer_getServerType() == SRVTYPE_DATASERVER) {
 		return GSLib::DBSystem::DB::CDBSystemDB::singleton().removeTableData(a_tableKey, a_tableIndex, a_tableID, a_needSave);
 	}
 
@@ -211,11 +211,11 @@ bool CDBCommonSystem::removeTableData(const std::string& a_tableKey, const std::
 
 bool CDBCommonSystem::saveTableData(const std::string& a_tableKey, const std::string& a_tableIndex, EDBTableID a_tableID)
 {
-	GFLib::CommonServer::CCommonServer* server = GFLib::CommonServer::CCommonServer::getCommonServer();
+	GFLib::CommonServer::ICommonServer* server = GFLib::CommonServer::ICommonServer::getCommonServer();
 	if (server == NULL) {
 		return false;
 	}
-	if (server->getServerType() == SRVTYPE_DATASERVER) {
+	if (server->ICommonServer_getServerType() == SRVTYPE_DATASERVER) {
 		return GSLib::DBSystem::DB::CDBSystemDB::singleton().saveTableData(a_tableKey, a_tableIndex, a_tableID);
 	}
 
@@ -232,11 +232,11 @@ bool CDBCommonSystem::saveTableData(const std::string& a_tableKey, const std::st
 
 bool CDBCommonSystem::closeTableData(const std::string& a_tableKey, const std::string& a_tableIndex, EDBTableID a_tableID)
 {
-	GFLib::CommonServer::CCommonServer* server = GFLib::CommonServer::CCommonServer::getCommonServer();
+	GFLib::CommonServer::ICommonServer* server = GFLib::CommonServer::ICommonServer::getCommonServer();
 	if (server == NULL) {
 		return false;
 	}
-	if (server->getServerType() == SRVTYPE_DATASERVER) {
+	if (server->ICommonServer_getServerType() == SRVTYPE_DATASERVER) {
 		return GSLib::DBSystem::DB::CDBSystemDB::singleton().closeTableData(a_tableKey, a_tableIndex, a_tableID);
 	}
 
@@ -465,22 +465,22 @@ void CDBCommonSystem::_final()
 	return GFLib::CommonServer::CCommonSystem::_final();
 }
 
-void CDBCommonSystem::_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)
+void CDBCommonSystem::ICommonServer_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)
 {
-	if (a_serverID.getServerType() == SRVTYPE_DATASERVER){
+	if (a_serverID.ICommonServer_getServerType() == SRVTYPE_DATASERVER){
 		m_dataServerID = a_serverID;
 		return ;
 	}
-	return GFLib::CommonServer::CCommonSystem::_cbServerEnter(a_serverID, a_key);
+	return GFLib::CommonServer::CCommonSystem::ICommonServer_cbServerEnter(a_serverID, a_key);
 }
 
-void CDBCommonSystem::_cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key)
+void CDBCommonSystem::ICommonServer_cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key)
 {
-	if (a_serverID.getServerType() == SRVTYPE_DATASERVER){
+	if (a_serverID.ICommonServer_getServerType() == SRVTYPE_DATASERVER){
 		m_dataServerID = GFLib::INVALID_SERVERID;
 		return ;
 	}
-	return GFLib::CommonServer::CCommonSystem::_cbServerLeave(a_serverID, a_key);
+	return GFLib::CommonServer::CCommonSystem::ICommonServer_cbServerLeave(a_serverID, a_key);
 }
 
 bool CDBCommonSystem::_cbSelectKeyTableData(const GSLib::SRoleKey& a_roleKey, CKeyTablePtr& a_keyTable, EDBTableID a_tableID, EModuleType a_moduleType, BSLib::uint32 a_sessionID)

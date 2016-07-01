@@ -733,16 +733,16 @@ void CLoginSystemLG::_final()
 	GFLib::CommonServer::CCommonSystem::_final();
 }
 
-bool CLoginSystemLG::_loadGameConfig(const std::string& a_configPath)
+bool CLoginSystemLG::ICommonServer_loadGameConfig(const std::string& a_configPath)
 {   
-    GFLib::CommonServer::CCommonServer* srv = GFLib::CommonServer::CCommonServer::getCommonServer();
+    GFLib::CommonServer::ICommonServer* srv = GFLib::CommonServer::ICommonServer::getCommonServer();
     std::string srvName = srv->getServerTypeName();
     m_codeFilterMode = BSLib::Framework::CSysConfig::singleton().getValueInt(srvName, "ActivationCodeMode");
 
-	return GFLib::CommonServer::CCommonSystem::_loadGameConfig(a_configPath);
+	return GFLib::CommonServer::CCommonSystem::ICommonServer_loadGameConfig(a_configPath);
 }
 
-bool CLoginSystemLG::_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
+bool CLoginSystemLG::ICommonServer_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
 {
 	BSLib::Framework::CMsgFactory::singleton().registerCreateCMsgFun(MsgIDLoginSystemCN2LGAckAccountLogin, &BSLib::Framework::CreateCMessage<CMsgLoginSystemCN2LGAckAccountLogin>);
 	GFLIB_ADDMSG_OBJEXEC(a_msgExecMgr, MsgIDLoginSystemCN2LGAckAccountLogin, &CLoginSystemLG::_onMsgLoginSystemCN2LGAckAccountLogin, this);
@@ -753,7 +753,7 @@ bool CLoginSystemLG::_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
 	BSLib::Framework::CMsgFactory::singleton().registerCreateCMsgFun(MsgIDLoginSystemSP2LGAckCheckToken, &BSLib::Framework::CreateCMessage<CMsgLoginSystemSP2LGAckCheckToken>);
 	GFLIB_ADDMSG_OBJEXEC(a_msgExecMgr, MsgIDLoginSystemSP2LGAckCheckToken, &CLoginSystemLG::_onMsgLoginSystemSP2LGAckCheckToken, this);
 
-	return GFLib::CommonServer::CCommonSystem::_initServerMsg(a_msgExecMgr);
+	return GFLib::CommonServer::CCommonSystem::ICommonServer_initServerMsg(a_msgExecMgr);
 }
 
 bool CLoginSystemLG::_startSystem()
@@ -761,9 +761,9 @@ bool CLoginSystemLG::_startSystem()
 	return GFLib::CommonServer::CCommonSystem::_startSystem();
 }
 
-void CLoginSystemLG::_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)
+void CLoginSystemLG::ICommonServer_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)
 {
-	GFLib::ServerType serverType = a_serverID.getServerType();
+	GFLib::ServerType serverType = a_serverID.ICommonServer_getServerType();
 	switch (serverType)
 	{
 	case SRVTYPE_CENTERSERVER:
@@ -775,9 +775,9 @@ void CLoginSystemLG::_cbServerEnter(const GFLib::SServerID& a_serverID, const st
 	} 
 }
 
-void CLoginSystemLG::_cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key)
+void CLoginSystemLG::ICommonServer_cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key)
 {
-	GFLib::ServerType serverType = a_serverID.getServerType();
+	GFLib::ServerType serverType = a_serverID.ICommonServer_getServerType();
 	switch (serverType)
 	{
 	case SRVTYPE_CENTERSERVER:

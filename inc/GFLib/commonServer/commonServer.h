@@ -16,19 +16,19 @@ namespace CommonServer
 
 struct SAcceptorIPAndPort;
 
-class GFLIB_COMMONSERVER_API CCommonServer 
+class GFLIB_COMMONSERVER_API ICommonServer 
     : public BSLib::Framework::CMainThread
     , public BSLib::Network::INetServer
 {
 public:
-	CCommonServer();
-	virtual ~CCommonServer();
+	ICommonServer();
+	virtual ~ICommonServer();
 
-	virtual SServerID getServerID() { return m_serverID; }
-	virtual const std::string getServerKey() { return m_key; }
+	SServerID getServerID() { return m_serverID; }
+	const std::string getServerKey() { return m_key; }
 
-	virtual ServerType getServerType() = 0;
-	virtual std::string getServerVersion() = 0;
+	virtual ServerType ICommonServer_getServerType() = 0;
+	virtual std::string ICommonServer_getServerVersion() = 0;
 	const std::string& getServerTypeName();
 
 	BSLib::Utility::CCmdExecMgr* getCmdExecMgr() { return _getCmdExecMgr(); }
@@ -36,26 +36,26 @@ public:
 	bool getNeedPing() { return m_needPing; }
 
 protected:
-	virtual bool _IThread_init();
-	virtual int _IThread_final();
+	virtual bool _IThread_init() override;
+	virtual int _IThread_final() override;
 
 	virtual bool _IThread_callback() override;
 	//virtual void _update_1000();
 	
 	//初始化服务器
 	//ServerID 和 ServerKey
-	virtual bool _initServer();
+	virtual bool ICommonServer_initServer();
 
-	virtual bool _initSystem(CCommonSystemMgr* commanSystemMgr);
+	virtual bool ICommonServer_initSystem(CCommonSystemMgr* commanSystemMgr);
 
 	//加载游戏配置文件
-	virtual bool _loadGameConfig(const std::string& a_configPath);
+	virtual bool ICommonServer_loadGameConfig(const std::string& a_configPath);
 
 	//服务器消息初始化
-	virtual void _initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr);
+	virtual void ICommonServer_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr);
 
-	virtual void _cbServerEnter(SServerID& a_serverID, const std::string& a_key);
-	virtual void _cbServerLeave(SServerID& a_serverID, const std::string& a_key);
+	virtual void ICommonServer_cbServerEnter(SServerID& a_serverID, const std::string& a_key);
+	virtual void ICommonServer_cbServerLeave(SServerID& a_serverID, const std::string& a_key);
 
 	void _setKey(const std::string& a_key) { m_key = a_key; }
 	void _setServerID(SServerID a_serverID) { m_serverID = a_serverID; }
@@ -89,7 +89,7 @@ private:
 	void _onMsgServerLocalLC2LCNtfCommand(BSLib::Framework::SMsgLabel* msgLabel,BSLib::Framework:: SMessage* msg);
 
 public:
-	static CCommonServer* getCommonServer() { return (CCommonServer*)BSLib::Framework::CMainThread::getMainThread(); }
+	static ICommonServer* getCommonServer() { return (ICommonServer*)BSLib::Framework::CMainThread::getMainThread(); }
 
 private:
 	std::string m_key;

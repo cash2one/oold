@@ -30,7 +30,7 @@ CMailSystemCN::CMailSystemCN()
 	m_mailIdSeed = 0;
 	m_serverNO = 0;
 
-	GFLib::CommonServer::CCommonServer* server = GFLib::CommonServer::CCommonServer::getCommonServer();
+	GFLib::CommonServer::ICommonServer* server = GFLib::CommonServer::ICommonServer::getCommonServer();
 	if (server != NULL){
 		m_serverNO = server->getServerID().m_number;
 		//m_uniqueMailer.m_zoneId = server->getServerID().getZoneID();
@@ -64,14 +64,14 @@ void CMailSystemCN::_final()
 	GSLib::DBSystem::CDBCommonSystem::_final();
 }
 
-bool CMailSystemCN::_loadGameConfig(const std::string& a_configPath)
+bool CMailSystemCN::ICommonServer_loadGameConfig(const std::string& a_configPath)
 {
-	return GSLib::DBSystem::CDBCommonSystem::_loadGameConfig(a_configPath);
+	return GSLib::DBSystem::CDBCommonSystem::ICommonServer_loadGameConfig(a_configPath);
 }
 
-bool CMailSystemCN::_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
+bool CMailSystemCN::ICommonServer_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
 {	
-	return GSLib::DBSystem::CDBCommonSystem::_initServerMsg(a_msgExecMgr);
+	return GSLib::DBSystem::CDBCommonSystem::ICommonServer_initServerMsg(a_msgExecMgr);
 }
 
 
@@ -122,7 +122,7 @@ bool CMailSystemCN::_startSystem()
 	return GSLib::DBSystem::CDBCommonSystem::_startSystem();
 }
 
-void CMailSystemCN::_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)
+void CMailSystemCN::ICommonServer_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)
 {	
 
 #ifdef  BIANJIANTEST
@@ -135,10 +135,10 @@ void CMailSystemCN::_cbServerEnter(const GFLib::SServerID& a_serverID, const std
 	}
 #endif
 
-	return GSLib::DBSystem::CDBCommonSystem::_cbServerEnter(a_serverID, a_key);
+	return GSLib::DBSystem::CDBCommonSystem::ICommonServer_cbServerEnter(a_serverID, a_key);
 }
 
-void CMailSystemCN::_cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key)
+void CMailSystemCN::ICommonServer_cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key)
 {	
 
 #ifdef  BIANJIANTEST
@@ -151,7 +151,7 @@ void CMailSystemCN::_cbServerLeave(const GFLib::SServerID& a_serverID, const std
 	}
 #endif
 
-	GSLib::DBSystem::CDBCommonSystem::_cbServerLeave(a_serverID, a_key);
+	GSLib::DBSystem::CDBCommonSystem::ICommonServer_cbServerLeave(a_serverID, a_key);
 }
 
 

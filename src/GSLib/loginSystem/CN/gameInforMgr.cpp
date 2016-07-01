@@ -26,7 +26,7 @@ public:
 		if (serverID.getZoneID() == 0) {
 			return true;
 		}
-		if (serverID.getServerType() != SRVTYPE_GAMESERVER) {
+		if (serverID.ICommonServer_getServerType() != SRVTYPE_GAMESERVER) {
 			return true;
 		}
 

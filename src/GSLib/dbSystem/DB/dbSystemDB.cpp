@@ -346,12 +346,12 @@ void CDBSystemDB::_final()
 	CDBCommonSystem::_final();
 }
 
-bool CDBSystemDB::_loadGameConfig(const std::string& a_configPath)
+bool CDBSystemDB::ICommonServer_loadGameConfig(const std::string& a_configPath)
 {
-	return CDBCommonSystem::_loadGameConfig(a_configPath);
+	return CDBCommonSystem::ICommonServer_loadGameConfig(a_configPath);
 }
 
-bool CDBSystemDB::_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
+bool CDBSystemDB::ICommonServer_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
 {
 	BSLib::Framework::CMsgFactory::singleton().registerCreateCMsgFun(MsgIDDBSystemXS2DBReqSelectTableData, &BSLib::Framework::CreateCMessage<CMsgLoginSystemXS2DBReqSelectTableData>);
 	GFLIB_ADDMSG_OBJEXEC(a_msgExecMgr, MsgIDDBSystemXS2DBReqSelectTableData, &CDBSystemDB::_onMsgDBSystemXS2DBReqSelectTableData, this);
@@ -377,7 +377,7 @@ bool CDBSystemDB::_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
 	BSLib::Framework::CMsgFactory::singleton().registerCreateCMsgFun(MsgIDDBSystemCH2DBNtfCharge, &BSLib::Framework::CreateCMessage<CMsgDBSystemCH2DBNtfCharge>);
 	GFLIB_ADDMSG_OBJEXEC(a_msgExecMgr, MsgIDDBSystemCH2DBNtfCharge, &CDBSystemDB::_onMsgDBSystemCH2DBNtfCharge, this);
 
-	return CDBCommonSystem::_initServerMsg(a_msgExecMgr);
+	return CDBCommonSystem::ICommonServer_initServerMsg(a_msgExecMgr);
 }
 
 bool CDBSystemDB::_startSystem()
@@ -408,14 +408,14 @@ bool CDBSystemDB::_postStartSystem()
 	return CDBCommonSystem::_postStartSystem();
 }
 
-void CDBSystemDB::_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)
+void CDBSystemDB::ICommonServer_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)
 {
-	return CDBCommonSystem::_cbServerEnter(a_serverID, a_key);
+	return CDBCommonSystem::ICommonServer_cbServerEnter(a_serverID, a_key);
 }
 
-void CDBSystemDB::_cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key)
+void CDBSystemDB::ICommonServer_cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key)
 {
-	return CDBCommonSystem::_cbServerLeave(a_serverID, a_key);
+	return CDBCommonSystem::ICommonServer_cbServerLeave(a_serverID, a_key);
 }
 
 bool CDBSystemDB::_cbSelectKeyTableData(const GSLib::SRoleKey& a_roleKey, CKeyTablePtr& a_keyTable, EDBTableID a_tableID, EModuleType a_moduleType, BSLib::uint32 a_sessionID)
@@ -498,7 +498,7 @@ bool CDBSystemDB::_selectTableCommand(GFLib::SNetMsgLabel* a_msgLabel, CMsgLogin
 			std::list<SInitTableInfor>::iterator it = m_initTableByPlayer.begin();
 			for (; it != m_initTableByPlayer.end(); ++it) {
 				SInitTableInfor& infor = *it;
-				if (infor.m_serverType == GFLib::SRVTYPE_NULL || infor.m_serverType == a_msgLabel->m_serverIDFrom.getServerType()) {
+				if (infor.m_serverType == GFLib::SRVTYPE_NULL || infor.m_serverType == a_msgLabel->m_serverIDFrom.ICommonServer_getServerType()) {
 					ackSelectTableData.m_tableID = infor.m_tableID;
 					if (infor.m_moduleType != EMODULECTYPE_NULL) {
 						ackSelectTableData.m_moduleType = infor.m_moduleType;
@@ -526,7 +526,7 @@ bool CDBSystemDB::_selectTableCommand(GFLib::SNetMsgLabel* a_msgLabel, CMsgLogin
 			std::list<SInitTableInfor>::iterator it = m_initTableByRole.begin();
 			for (; it != m_initTableByRole.end(); ++it) {
 				SInitTableInfor& infor = *it;
-				if (infor.m_serverType == GFLib::SRVTYPE_NULL || infor.m_serverType == a_msgLabel->m_serverIDFrom.getServerType()) {
+				if (infor.m_serverType == GFLib::SRVTYPE_NULL || infor.m_serverType == a_msgLabel->m_serverIDFrom.ICommonServer_getServerType()) {
 					ackSelectTableData.m_tableID = infor.m_tableID;
 					if (infor.m_moduleType != EMODULECTYPE_NULL) {
 						ackSelectTableData.m_moduleType = infor.m_moduleType;
@@ -570,7 +570,7 @@ bool CDBSystemDB::_selectTableCommand(GFLib::SNetMsgLabel* a_msgLabel, CMsgLogin
 			std::list<SInitTableInfor>::iterator it = m_initTableByGlobal.begin();
 			for (; it != m_initTableByGlobal.end(); ++it) {
 				SInitTableInfor& infor = *it;
-				if (infor.m_serverType == GFLib::SRVTYPE_NULL || infor.m_serverType == a_msgLabel->m_serverIDFrom.getServerType()) {
+				if (infor.m_serverType == GFLib::SRVTYPE_NULL || infor.m_serverType == a_msgLabel->m_serverIDFrom.ICommonServer_getServerType()) {
 					ackSelectTableData.m_tableID = infor.m_tableID;
 					if (infor.m_moduleType != EMODULECTYPE_NULL) {
 						ackSelectTableData.m_moduleType = infor.m_moduleType;

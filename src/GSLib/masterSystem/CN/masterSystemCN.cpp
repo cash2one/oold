@@ -53,12 +53,12 @@ void CMasterSystemCN::_final()
 	GSLib::DBSystem::CDBCommonSystem::_final();
 }
 
-bool CMasterSystemCN::_loadGameConfig(const std::string& a_configPath)
+bool CMasterSystemCN::ICommonServer_loadGameConfig(const std::string& a_configPath)
 {
-	return GSLib::DBSystem::CDBCommonSystem::_loadGameConfig(a_configPath);
+	return GSLib::DBSystem::CDBCommonSystem::ICommonServer_loadGameConfig(a_configPath);
 }
 
-bool CMasterSystemCN::_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
+bool CMasterSystemCN::ICommonServer_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
 {	
 	GSLIB_MSGFUN_REG(CMsgMasterSystemXX2XSReqRoleInfo, CMasterSystemCN);
 	GSLIB_MSGFUN_REG(CMsgMasterSystemXX2XSReqMail, CMasterSystemCN);
@@ -75,7 +75,7 @@ bool CMasterSystemCN::_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr
 	GSLIB_MSGFUN_REG(CMsgMasterSystemXS2XXAckAccountForbid, CMasterSystemCN);
 
 
-	return GSLib::DBSystem::CDBCommonSystem::_initServerMsg(a_msgExecMgr);
+	return GSLib::DBSystem::CDBCommonSystem::ICommonServer_initServerMsg(a_msgExecMgr);
 }
 
 
@@ -84,7 +84,7 @@ bool CMasterSystemCN::_startSystem()
 	return GSLib::DBSystem::CDBCommonSystem::_startSystem();
 }
 
-void CMasterSystemCN::_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)
+void CMasterSystemCN::ICommonServer_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)
 {	
 	if(a_serverID.m_type == GSLib::SRVTYPE_SUPERSERVER)
 	{
@@ -96,10 +96,10 @@ void CMasterSystemCN::_cbServerEnter(const GFLib::SServerID& a_serverID, const s
 		if(m_gmKey.empty())
 			m_gmKey = a_key;
 	}
-	return GSLib::DBSystem::CDBCommonSystem::_cbServerEnter(a_serverID, a_key);
+	return GSLib::DBSystem::CDBCommonSystem::ICommonServer_cbServerEnter(a_serverID, a_key);
 }
 
-void CMasterSystemCN::_cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key)
+void CMasterSystemCN::ICommonServer_cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key)
 {	
 	if(a_serverID.m_type == GSLib::SRVTYPE_SUPERSERVER)
 	{
@@ -116,7 +116,7 @@ void CMasterSystemCN::_cbServerLeave(const GFLib::SServerID& a_serverID, const s
 		if(m_gmKey == a_key)
 			m_gmKey = "";
 	}
-	GSLib::DBSystem::CDBCommonSystem::_cbServerLeave(a_serverID, a_key);
+	GSLib::DBSystem::CDBCommonSystem::ICommonServer_cbServerLeave(a_serverID, a_key);
 }
 
 void CMasterSystemCN::_onCMsgMasterSystemXX2XSReqRoleItemDeduct(BSLib::Framework::SMsgLabel* a_msgLabel,BSLib::Framework::SMessage* a_msg)

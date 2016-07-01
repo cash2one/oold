@@ -39,12 +39,12 @@ void CLoginSystemSP::_final()
 	GFLib::CommonServer::CCommonSystem::_final();
 }
 
-bool CLoginSystemSP::_loadGameConfig(const std::string& a_configPath)
+bool CLoginSystemSP::ICommonServer_loadGameConfig(const std::string& a_configPath)
 {
-	return GFLib::CommonServer::CCommonSystem::_loadGameConfig(a_configPath);
+	return GFLib::CommonServer::CCommonSystem::ICommonServer_loadGameConfig(a_configPath);
 }
 
-bool CLoginSystemSP::_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
+bool CLoginSystemSP::ICommonServer_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
 {
 	BSLib::Framework::CMsgFactory::singleton().registerCreateCMsgFun(MsgIDLoginSystemLG2SPReqRegisterToken, &BSLib::Framework::CreateCMessage<CMsgLoginSystemLG2SPReqRegisterToken>);
 	GFLIB_ADDMSG_OBJEXEC(a_msgExecMgr, MsgIDLoginSystemLG2SPReqRegisterToken, &CLoginSystemSP::_onMsgLoginSystemLG2SPReqRegisterToken, this);
@@ -55,7 +55,7 @@ bool CLoginSystemSP::_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
 	BSLib::Framework::CMsgFactory::singleton().registerCreateCMsgFun(MsgIDLoginSystemAC2SPAckCheckToken, &BSLib::Framework::CreateCMessage<CMsgLoginSystemAC2SPAckCheckToken>);
 	GFLIB_ADDMSG_OBJEXEC(a_msgExecMgr, MsgIDLoginSystemAC2SPAckCheckToken, &CLoginSystemSP::_onMsgLoginSystemAC2SPAckCheckToken, this);
 
-	return GFLib::CommonServer::CCommonSystem::_initServerMsg(a_msgExecMgr);
+	return GFLib::CommonServer::CCommonSystem::ICommonServer_initServerMsg(a_msgExecMgr);
 }
 
 bool CLoginSystemSP::_startSystem()
@@ -63,9 +63,9 @@ bool CLoginSystemSP::_startSystem()
 	return GFLib::CommonServer::CCommonSystem::_startSystem();
 }
 
-void CLoginSystemSP::_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)
+void CLoginSystemSP::ICommonServer_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)
 {
-	GFLib::ServerType serverType = a_serverID.getServerType();
+	GFLib::ServerType serverType = a_serverID.ICommonServer_getServerType();
 	switch (serverType)
 	{
 	case SRVTYPE_AUTHCODESERVER:
@@ -74,9 +74,9 @@ void CLoginSystemSP::_cbServerEnter(const GFLib::SServerID& a_serverID, const st
 	} 
 }
 
-void CLoginSystemSP::_cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key)
+void CLoginSystemSP::ICommonServer_cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key)
 {
-	GFLib::ServerType serverType = a_serverID.getServerType();
+	GFLib::ServerType serverType = a_serverID.ICommonServer_getServerType();
 	switch (serverType)
 	{
 	case SRVTYPE_AUTHCODESERVER:

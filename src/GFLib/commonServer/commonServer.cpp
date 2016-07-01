@@ -32,9 +32,9 @@ struct SAcceptorIPAndPort
 
 	BOOL WINAPI CtrlHandler(DWORD ctrlType)
 	{
-		CCommonServer::getCommonServer()->terminate();
+		ICommonServer::getCommonServer()->terminate();
 
-		while (CCommonServer::getCommonServer()->isValid()) {
+		while (ICommonServer::getCommonServer()->isValid()) {
 			BSLib::Utility::CThread::msleep(10);
 		}
 		return TRUE;
@@ -45,14 +45,14 @@ struct SAcceptorIPAndPort
 BSLib::Utility::CFileTracer g_fileTracer;
 
 //////////////////////////////////////////////////////////////////////////
-CCommonServer::CCommonServer()
+ICommonServer::ICommonServer()
 : m_serverID(INVALID_SERVERID)
 , m_needPing(false)
 {
 	//CClientMgr::singleton().setClientCreator(this);
 }
 
-CCommonServer::~CCommonServer()
+ICommonServer::~ICommonServer()
 {
 	for (BSLib::uint32 i=0; i<m_acceptorIPAndPorts.size(); ++i) {
 		SAcceptorIPAndPort* acceptorIPAndPort = m_acceptorIPAndPorts[i];
@@ -64,12 +64,12 @@ CCommonServer::~CCommonServer()
 	m_acceptorIPAndPorts.clear();
 }
 
-const std::string& CCommonServer::getServerTypeName()
+const std::string& ICommonServer::getServerTypeName()
 {
-	return CServerTypeMgr::singleton().getTextServerType(getServerType());
+	return CServerTypeMgr::singleton().getTextServerType(ICommonServer_getServerType());
 }
 
-bool CCommonServer::_IThread_init()
+bool ICommonServer::_IThread_init()
 {
 	if (!_loadInitConfigFile()){
 		return false;
@@ -89,11 +89,11 @@ bool CCommonServer::_IThread_init()
 	BSLIB_LOG_INFO(ETT_GFLIB_COMMON, "********************************************************");
 #ifdef _DEBUG
 
-	BSLIB_LOG_INFO(ETT_GFLIB_COMMON, "%s Debug Version[%s]", serverName.c_str(), getServerVersion().c_str());
+	BSLIB_LOG_INFO(ETT_GFLIB_COMMON, "%s Debug Version[%s]", serverName.c_str(), ICommonServer_getServerVersion().c_str());
 
 #else
 
-	BSLIB_LOG_INFO(ETT_GFLIB_COMMON, "%s Release Version[%s]", serverName.c_str(), getServerVersion().c_str());
+	BSLIB_LOG_INFO(ETT_GFLIB_COMMON, "%s Release Version[%s]", serverName.c_str(), ICommonServer_getServerVersion().c_str());
 
 #endif
 	BSLIB_LOG_INFO(ETT_GFLIB_COMMON, "********************************************************");
@@ -110,16 +110,16 @@ bool CCommonServer::_IThread_init()
 		return false;
 	}
 
-	if (!_initServer()) {
+	if (!ICommonServer_initServer()) {
 		return false;
 	}
 
 	CCommonSystemMgr* commonSystemMgr = &CCommonSystemMgr::singleton();
-	if (!_initSystem(commonSystemMgr)) {
+	if (!ICommonServer_initSystem(commonSystemMgr)) {
 		return false;
 	}
 	std::string gameConfigPath = BSLib::Framework::CSysConfig::singleton().getValueStr("GameConfigPath");
-	if (!_loadGameConfig(gameConfigPath)) {
+	if (!ICommonServer_loadGameConfig(gameConfigPath)) {
 		BSLIB_LOG_ERROR(ETT_GFLIB_COMMON, "加载游戏配置文件失败");
 		return false;
 	}
@@ -139,7 +139,7 @@ bool CCommonServer::_IThread_init()
 	_changeLogFile();
 
 	BSLib::Framework::CMsgExecMgr* msgExecMgr = _getMsgExecMgr();
-	_initServerMsg(msgExecMgr);
+	ICommonServer_initServerMsg(msgExecMgr);
 	commonSystemMgr->initServerMsg(msgExecMgr);
 	
 	BSLib::Utility::CCmdExecMgr* cmdExecMgr = _getCmdExecMgr();
@@ -177,7 +177,7 @@ bool CCommonServer::_IThread_init()
 	return true;
 }
 
-int CCommonServer::_IThread_final()
+int ICommonServer::_IThread_final()
 {
 	const std::string& serverName = getServerTypeName();
 	BSLIB_LOG_INFO(ETT_GFLIB_COMMON, "###### %s 退出 ######", serverName.c_str());
@@ -209,12 +209,12 @@ int CCommonServer::_IThread_final()
 	return 0;
 }
 
-bool CCommonServer::_IThread_callback()
+bool ICommonServer::_IThread_callback()
 {
 	return BSLib::Framework::CMainThread::_IThread_callback();
 }
 
-// void CCommonServer::_update_1000()
+// void ICommonServer::_update_1000()
 // {
 // 	BSLib::Network::SNetCollectInfor netCollectInfor;
 // 	BSLib::Network::INetServer::getNetInfo(netCollectInfor);
@@ -226,7 +226,7 @@ bool CCommonServer::_IThread_callback()
 // 		,netCollectInfor.m_tcpVerifyStubCount);
 // }
 
-bool CCommonServer::_initServer()
+bool ICommonServer::ICommonServer_initServer()
 {
 	//const std::string& serverName = getServerTypeName();
 
@@ -236,16 +236,16 @@ bool CCommonServer::_initServer()
 		BSLIB_LOG_TRACE(ETT_GFLIB_COMMON, "ServerKey[%s]获取网络参数失败", serverKey.c_str());
 		return false;
 	}
-	if (getServerType() != serverInfor->m_serverID.getServerType()) {
+	if (ICommonServer_getServerType() != serverInfor->m_serverID.ICommonServer_getServerType()) {
 		BSLIB_LOG_TRACE(ETT_GFLIB_COMMON, "ServerKey[%s]获取类型参数不一致", serverKey.c_str());
 		return false;
 	}
 	_setServerID(serverInfor->m_serverID);
 
 	BSLIB_LOG_INFO(ETT_GFLIB_COMMON, "设置本地服务 %s(%d.%d.%d) Key[%s]",
-		GFLib::CommonServer::CServerTypeMgr::singleton().getTextServerType(getServerID().getServerType()).c_str(),
+		GFLib::CommonServer::CServerTypeMgr::singleton().getTextServerType(getServerID().ICommonServer_getServerType()).c_str(),
 		getServerID().getZoneID(),
-		getServerID().getServerType(),
+		getServerID().ICommonServer_getServerType(),
 		getServerID().getServerNumber(),
 		getServerKey().c_str());
 
@@ -255,53 +255,53 @@ bool CCommonServer::_initServer()
 	return true;
 }
 
-bool CCommonServer::_initSystem(CCommonSystemMgr* commanSystemMgr)
+bool ICommonServer::ICommonServer_initSystem(CCommonSystemMgr* commanSystemMgr)
 {
 	return true;
 }
 
-bool CCommonServer::_loadGameConfig(const std::string& a_configPath)
+bool ICommonServer::ICommonServer_loadGameConfig(const std::string& a_configPath)
 {
 	return true;
 }
 
-void CCommonServer::_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
+void ICommonServer::ICommonServer_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
 {
-	GFLIB_ADDMSG_OBJEXEC(a_msgExecMgr, MsgIDSysChannelLC2LCReqServerInfo, &CCommonServer::_onMsgSysChannelLC2LCReqServerInfor, this);
-	GFLIB_ADDMSG_OBJEXEC(a_msgExecMgr, MsgIDSysChannelLC2LCNtfCommand, &CCommonServer::_onMsgSysChannelLC2LCNtfCommand, this);
-	GFLIB_ADDMSG_OBJEXEC(a_msgExecMgr, MsgIDServerLocalLC2LCNtfServerEnter, &CCommonServer::_onMsgServerLocalLC2LCNtfServerEnter, this);
-	GFLIB_ADDMSG_OBJEXEC(a_msgExecMgr, MsgIDServerLocalLC2LCNtfServerLeave, &CCommonServer::_onMsgServerLocalLC2LCNtfServerLeave, this);
+	GFLIB_ADDMSG_OBJEXEC(a_msgExecMgr, MsgIDSysChannelLC2LCReqServerInfo, &ICommonServer::_onMsgSysChannelLC2LCReqServerInfor, this);
+	GFLIB_ADDMSG_OBJEXEC(a_msgExecMgr, MsgIDSysChannelLC2LCNtfCommand, &ICommonServer::_onMsgSysChannelLC2LCNtfCommand, this);
+	GFLIB_ADDMSG_OBJEXEC(a_msgExecMgr, MsgIDServerLocalLC2LCNtfServerEnter, &ICommonServer::_onMsgServerLocalLC2LCNtfServerEnter, this);
+	GFLIB_ADDMSG_OBJEXEC(a_msgExecMgr, MsgIDServerLocalLC2LCNtfServerLeave, &ICommonServer::_onMsgServerLocalLC2LCNtfServerLeave, this);
 
 	BSLib::Framework::CMsgFactory::singleton().registerCreateCMsgFun(MsgIDServerLocalLC2LCNtfCommand, &BSLib::Framework::CreateCMessage<CMsgServerLocalLC2LCNtfCommand>);
-	GFLIB_ADDMSG_OBJEXEC(a_msgExecMgr, MsgIDServerLocalLC2LCNtfCommand, &CCommonServer::_onMsgServerLocalLC2LCNtfCommand, this);
+	GFLIB_ADDMSG_OBJEXEC(a_msgExecMgr, MsgIDServerLocalLC2LCNtfCommand, &ICommonServer::_onMsgServerLocalLC2LCNtfCommand, this);
 }
 
 
-void CCommonServer::_cbServerEnter(SServerID& a_serverID, const std::string& a_key)
+void ICommonServer::ICommonServer_cbServerEnter(SServerID& a_serverID, const std::string& a_key)
 {
 	BSLIB_LOG_TRACE(ETT_GFLIB_COMMON, "%s(%d.%d.%d)[%s]进入",
-		GFLib::CommonServer::CServerTypeMgr::singleton().getTextServerType(a_serverID.getServerType()).c_str(),
+		GFLib::CommonServer::CServerTypeMgr::singleton().getTextServerType(a_serverID.ICommonServer_getServerType()).c_str(),
 		a_serverID.getZoneID(),
-		a_serverID.getServerType(),
+		a_serverID.ICommonServer_getServerType(),
 		a_serverID.getServerNumber(),
 		a_key.c_str());
 
 	CCommonSystemMgr::singleton().cbServerEnter(a_serverID, a_key);
 }
 
-void CCommonServer::_cbServerLeave(SServerID& a_serverID, const std::string& a_key)
+void ICommonServer::ICommonServer_cbServerLeave(SServerID& a_serverID, const std::string& a_key)
 {
 	CCommonSystemMgr::singleton().cbServerLeave(a_serverID, a_key);
 
 	BSLIB_LOG_TRACE(ETT_GFLIB_COMMON, "%s(%d.%d.%d)[%s]离开",
-		GFLib::CommonServer::CServerTypeMgr::singleton().getTextServerType(a_serverID.getServerType()).c_str(),
+		GFLib::CommonServer::CServerTypeMgr::singleton().getTextServerType(a_serverID.ICommonServer_getServerType()).c_str(),
 		a_serverID.getZoneID(),
-		a_serverID.getServerType(),
+		a_serverID.ICommonServer_getServerType(),
 		a_serverID.getServerNumber(),
 		a_key.c_str());
 }
 
-bool CCommonServer::_addAcceptorIPAndPort(BSLib::Network::ENetType netType, const BSLib::Network::CSockAddr& acceptorAddr, void* tempData)
+bool ICommonServer::_addAcceptorIPAndPort(BSLib::Network::ENetType netType, const BSLib::Network::CSockAddr& acceptorAddr, void* tempData)
 {
 	SAcceptorIPAndPort* acceptorIPAndPort = new SAcceptorIPAndPort();
 	if (acceptorIPAndPort == NULL) {
@@ -314,19 +314,19 @@ bool CCommonServer::_addAcceptorIPAndPort(BSLib::Network::ENetType netType, cons
 	return true;
 }
 
-bool CCommonServer::_addAcceptorIPAndPort(BSLib::Network::ENetType netType, const std::string& acceptorIP, int acceptorPort, void* tempData)
+bool ICommonServer::_addAcceptorIPAndPort(BSLib::Network::ENetType netType, const std::string& acceptorIP, int acceptorPort, void* tempData)
 {
 	BSLib::Network::CSockAddr acceptorAddr(acceptorIP.c_str(), acceptorPort);
 
 	return _addAcceptorIPAndPort(netType, acceptorAddr, tempData);
 }
 
-BSLib::Network::CNetStubMgr* CCommonServer::_INetServer_cbNetStubMgr()
+BSLib::Network::CNetStubMgr* ICommonServer::_INetServer_cbNetStubMgr()
 {
 	return &CStubMgr::singleton();
 }
 
-BSLib::Network::CNetStubPtr CCommonServer::_INetServer_cbNewTcpStub(BSLib::Network::CNetConnectionPtr& netConnPtr, void* tempData)
+BSLib::Network::CNetStubPtr ICommonServer::_INetServer_cbNewTcpStub(BSLib::Network::CNetConnectionPtr& netConnPtr, void* tempData)
 {
 	const BSLib::Network::CSockAddr& localAddr = netConnPtr->getLocalAddr();
 	const BSLib::Network::CSockAddr& peerAddr = netConnPtr->getPeerAddr();
@@ -335,17 +335,17 @@ BSLib::Network::CNetStubPtr CCommonServer::_INetServer_cbNewTcpStub(BSLib::Netwo
 	return BSLib::Network::CNetStubPtr(NULL);
 }
 
-BSLib::Network::CNetStubPtr CCommonServer::_INetServer_cbNewUdpStub(BSLib::Network::CNetConnectionPtr& netConnPtr, void* tempData)
+BSLib::Network::CNetStubPtr ICommonServer::_INetServer_cbNewUdpStub(BSLib::Network::CNetConnectionPtr& netConnPtr, void* tempData)
 {
 	return BSLib::Network::CNetStubPtr(NULL);
 }
 
-CCommonClientPtr CCommonServer::_cbCreateClient(SServerID& a_serverID, const std::string& a_serverKey)
+CCommonClientPtr ICommonServer::_cbCreateClient(SServerID& a_serverID, const std::string& a_serverKey)
 {
 	return CCommonClientPtr(NULL);
 }
 
-bool CCommonServer::_loadInitConfigFile()
+bool ICommonServer::_loadInitConfigFile()
 {
 	//加载配置文件
 	const std::string& serverName = getServerTypeName();
@@ -398,7 +398,7 @@ bool CCommonServer::_loadInitConfigFile()
 	return true;
 }
 
-bool CCommonServer::_loadNetConfigFile()
+bool ICommonServer::_loadNetConfigFile()
 {
 	std::string workpath = BSLib::Framework::CSysConfig::singleton().getValueStr("WorkPath");
 	std::string netConfigFile = BSLib::Framework::CSysConfig::singleton().getValueStr("NetConfigFile");
@@ -418,7 +418,7 @@ bool CCommonServer::_loadNetConfigFile()
 	return true;
 }
 
-void CCommonServer::_setOutConsole()
+void ICommonServer::_setOutConsole()
 {
 	const std::string& serverName = getServerTypeName();
 	//设置控制台输出
@@ -453,7 +453,7 @@ void CCommonServer::_setOutConsole()
 	BSLib::Utility::CTracer::setSysTracer(&g_fileTracer);
 }
 
-void CCommonServer::_setOutTrace()
+void ICommonServer::_setOutTrace()
 {
 	const std::string& serverName = getServerTypeName();
 	std::string workpath = BSLib::Framework::CSysConfig::singleton().getValueStr("WorkPath");
@@ -489,7 +489,7 @@ void CCommonServer::_setOutTrace()
 	g_fileTracer.setTypeName(ETT_GFLIB_COMMON, "GFCOMMON");
 }
 
-void CCommonServer::_changeLogFile()
+void ICommonServer::_changeLogFile()
 {
 	const std::string& serverName = getServerTypeName();
 
@@ -527,13 +527,13 @@ void CCommonServer::_changeLogFile()
 	}
 }
 
-void CCommonServer::_closeTrace()
+void ICommonServer::_closeTrace()
 {
 	BSLib::Utility::CTracer::setSysTracer(NULL);
 	g_fileTracer.close();
 }
 
-bool CCommonServer::_connectServer()
+bool ICommonServer::_connectServer()
 {
 	std::string serverKey = getServerKey();
 	const SServiceNetInfo* serverInfo = CServiceMgr::singleton().getServerNetInfor(serverKey);
@@ -566,7 +566,7 @@ bool CCommonServer::_connectServer()
 	return true;
 }
 
-bool CCommonServer::_openNetServer()
+bool ICommonServer::_openNetServer()
 {
 	const std::string& serverName = getServerTypeName();
 	bool needOpenTcp = false;
@@ -635,7 +635,7 @@ bool CCommonServer::_openNetServer()
 	return true;
 }
 
-void CCommonServer::_onMsgSysChannelLC2LCReqServerInfor(BSLib::Framework::SMsgLabel* msgLabel,BSLib::Framework:: SMessage* msg)
+void ICommonServer::_onMsgSysChannelLC2LCReqServerInfor(BSLib::Framework::SMsgLabel* msgLabel,BSLib::Framework:: SMessage* msg)
 {
 	if (msgLabel->getLabelType() != BSLib::Framework::ELABELTYPE_SYS) {
 		return ;
@@ -649,7 +649,7 @@ void CCommonServer::_onMsgSysChannelLC2LCReqServerInfor(BSLib::Framework::SMsgLa
 	CSysChannelMgr::singleton().sendMsg(sysMsgLabel->m_sysMsgIDFrome, &resServerInfor, sizeof(resServerInfor));
 }
 
-void CCommonServer::_onMsgSysChannelLC2LCNtfCommand(BSLib::Framework::SMsgLabel* msgLabel,BSLib::Framework:: SMessage* msg)
+void ICommonServer::_onMsgSysChannelLC2LCNtfCommand(BSLib::Framework::SMsgLabel* msgLabel,BSLib::Framework:: SMessage* msg)
 {
 	SMsgSysChannelLC2LCNtfCommand* command = (SMsgSysChannelLC2LCNtfCommand*)msg;
 
@@ -658,20 +658,20 @@ void CCommonServer::_onMsgSysChannelLC2LCNtfCommand(BSLib::Framework::SMsgLabel*
 	m_cmdExecMgr.parseCommand(command->m_command, msgLabel);
 }
 
-void CCommonServer::_onMsgServerLocalLC2LCNtfServerEnter(BSLib::Framework::SMsgLabel* msgLabel,BSLib::Framework:: SMessage* msg)
+void ICommonServer::_onMsgServerLocalLC2LCNtfServerEnter(BSLib::Framework::SMsgLabel* msgLabel,BSLib::Framework:: SMessage* msg)
 {
 	SMsgServerLocalLC2LCNtfServerEnter* serverEnter = (SMsgServerLocalLC2LCNtfServerEnter*)msg;
-	_cbServerEnter(serverEnter->m_enterServerID, serverEnter->m_enterServerKey);
+	ICommonServer_cbServerEnter(serverEnter->m_enterServerID, serverEnter->m_enterServerKey);
 }
 
-void CCommonServer::_onMsgServerLocalLC2LCNtfServerLeave(BSLib::Framework::SMsgLabel* msgLabel,BSLib::Framework:: SMessage* msg)
+void ICommonServer::_onMsgServerLocalLC2LCNtfServerLeave(BSLib::Framework::SMsgLabel* msgLabel,BSLib::Framework:: SMessage* msg)
 {
 	SMsgServerLocalLC2LCNtfServerLeave* serverLeave = (SMsgServerLocalLC2LCNtfServerLeave*)msg;
-	_cbServerLeave(serverLeave->m_leaveServerID, serverLeave->m_leaveServerKey);
+	ICommonServer_cbServerLeave(serverLeave->m_leaveServerID, serverLeave->m_leaveServerKey);
 	CServiceMgr::singleton().freeService(serverLeave->m_leaveServerID);
 }
 
-void CCommonServer::_onMsgServerLocalLC2LCNtfCommand(BSLib::Framework::SMsgLabel* msgLabel,BSLib::Framework:: SMessage* msg)
+void ICommonServer::_onMsgServerLocalLC2LCNtfCommand(BSLib::Framework::SMsgLabel* msgLabel,BSLib::Framework:: SMessage* msg)
 {
 	CMsgServerLocalLC2LCNtfCommand* command = (CMsgServerLocalLC2LCNtfCommand*)msg;
 

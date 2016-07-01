@@ -33,17 +33,17 @@ void CDBSystemGT::_final()
 	GSLib::DBSystem::CDBCommonSystem::_final();
 }
 
-bool CDBSystemGT::_loadGameConfig(const std::string& a_configPath)
+bool CDBSystemGT::ICommonServer_loadGameConfig(const std::string& a_configPath)
 {
-	return GSLib::DBSystem::CDBCommonSystem::_loadGameConfig(a_configPath);
+	return GSLib::DBSystem::CDBCommonSystem::ICommonServer_loadGameConfig(a_configPath);
 }
 
-bool CDBSystemGT::_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
+bool CDBSystemGT::ICommonServer_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
 {
 	BSLib::Framework::CMsgFactory::singleton().registerCreateCMsgFun(MsgIDDBSystemDB2XSAckSelectTableData, &BSLib::Framework::CreateCMessage<CMsgLoginSystemDB2XSAckSelectTableData>);
 	GFLIB_ADDMSG_OBJEXEC(a_msgExecMgr, MsgIDDBSystemDB2XSAckSelectTableData, &CDBSystemGT::_onMsgDBSystemDB2XSAckSelectTableData, this);
 
-	return GSLib::DBSystem::CDBCommonSystem::_initServerMsg(a_msgExecMgr);
+	return GSLib::DBSystem::CDBCommonSystem::ICommonServer_initServerMsg(a_msgExecMgr);
 }
 
 bool CDBSystemGT::_startSystem()
@@ -56,11 +56,11 @@ bool CDBSystemGT::_postStartSystem()
 	return CDBCommonSystem::_postStartSystem();
 }
 
-void CDBSystemGT::_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)
+void CDBSystemGT::ICommonServer_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)
 {
-	GSLib::DBSystem::CDBCommonSystem::_cbServerEnter(a_serverID, a_key);
+	GSLib::DBSystem::CDBCommonSystem::ICommonServer_cbServerEnter(a_serverID, a_key);
 
-	if (a_serverID.getServerType() == GSLib::SRVTYPE_DATASERVER) {
+	if (a_serverID.ICommonServer_getServerType() == GSLib::SRVTYPE_DATASERVER) {
 		if (!selectTableData("", GSLib::EDBTABLEID_COMMAND_INIT_SERVER)) {
 			BSLIB_LOG_ERROR(ETT_GSLIB_DBSYSTEM, "从DB获取Server数据失败");
 			return ;
@@ -68,9 +68,9 @@ void CDBSystemGT::_cbServerEnter(const GFLib::SServerID& a_serverID, const std::
 	}
 }
 
-void CDBSystemGT::_cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key)
+void CDBSystemGT::ICommonServer_cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key)
 {
-	return GSLib::DBSystem::CDBCommonSystem::_cbServerLeave(a_serverID, a_key);
+	return GSLib::DBSystem::CDBCommonSystem::ICommonServer_cbServerLeave(a_serverID, a_key);
 }
 
 bool CDBSystemGT::_cbSelectKeyTableData(const GSLib::SRoleKey& a_roleKey, CKeyTablePtr& a_keyTable, EDBTableID a_tableID, EModuleType a_moduleType, BSLib::uint32 a_sessionID)

@@ -43,7 +43,7 @@ public:
 	void setTransferMsgCB(CAccountTransferMsgCallback* cb) { m_transferMsgCb = cb; }
 
 private:
-	virtual bool _transferMsg(const GFLib::ServerType& a_serverType, GFLib::SMessage* msg, BSLib::uint32 msgSize);
+	bool _transferMsg(const GFLib::ServerType& a_serverType, GFLib::SMessage* msg, BSLib::uint32 msgSize);
 
 private:
 	GFLib::SAccountKey m_accountKey;

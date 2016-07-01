@@ -28,7 +28,7 @@ CTableDataMgr::~CTableDataMgr()
 
 bool CTableDataMgr::init()
 {
-	const std::string& serverName = GFLib::CommonServer::CCommonServer::getCommonServer()->getServerTypeName();
+	const std::string& serverName = GFLib::CommonServer::ICommonServer::getCommonServer()->getServerTypeName();
 	const std::string localMysqlDB = BSLib::Framework::CSysConfig::singleton().getValueStr(serverName, "LocalMySQLDB");
 	if (localMysqlDB.empty()) {
 		BSLIB_LOG_ERROR(ETT_GSLIB_DBSYSTEM, "获取本地数据库参数失败");

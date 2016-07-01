@@ -29,8 +29,8 @@ bool IStub::IService_sendMsg(GFLib::SMessage* msg, BSLib::uint32 msgSize)
 	if (BSLib::Network::INetStub::send(msg, msgSize) > 0){		
 		BSLIB_LOG_DEBUG(ETT_GFLIB_COMMON, "Stub[%d] Send MsgID(%d[%s].%d.%d) [%s]",
 			this->getStubID(),
-			msg->getServerType(),
-			CServerTypeMgr::singleton().getCodeServerType(msg->getServerType()).c_str(),
+			msg->ICommonServer_getServerType(),
+			CServerTypeMgr::singleton().getCodeServerType(msg->ICommonServer_getServerType()).c_str(),
 			msg->getFunctionType(), 
 			msg->getID(),
 			BSLib::Framework::CMsgDebug::singleton().getPrompt(msg).c_str());
@@ -51,8 +51,8 @@ bool IStub::IService_sendMsg(GFLib::CMessage& msg)
 	if (BSLib::Network::INetStub::send(stream) > 0){
 		BSLIB_LOG_DEBUG(ETT_GFLIB_COMMON, "Stub[%d] Send MsgID(%d[%s].%d.%d) [%s]", 
 			this->getStubID(), 
-			msg.getServerType(),
-			CServerTypeMgr::singleton().getCodeServerType(msg.getServerType()).c_str(),
+			msg.ICommonServer_getServerType(),
+			CServerTypeMgr::singleton().getCodeServerType(msg.ICommonServer_getServerType()).c_str(),
 			msg.getFunctionType(), 
 			msg.getID(),
 			BSLib::Framework::CMsgDebug::singleton().getPrompt(&msg).c_str());
@@ -103,7 +103,7 @@ bool IStub::INetStub_cbParseMsg(void* msgBuff, BSLib::uint32 msgSize)
 void IStub::INetStub_cbTerminate()
 {
 	if (CServiceMgr::singleton().delService(IService::getServerID())) {
-		CCommonServer* commonServer = CCommonServer::getCommonServer();
+		ICommonServer* commonServer = ICommonServer::getCommonServer();
 		if (commonServer == NULL) {
 			return ;
 		}
@@ -116,9 +116,9 @@ void IStub::INetStub_cbTerminate()
 
 	BSLIB_LOG_INFO(ETT_GFLIB_COMMON, "Stub[%d] %s(%d.%d.%d) Key[%s] Terminate",
 		this->getStubID(),
-		GFLib::CommonServer::CServerTypeMgr::singleton().getTextServerType(IService::getServerID().getServerType()).c_str(),
+		GFLib::CommonServer::CServerTypeMgr::singleton().getTextServerType(IService::getServerID().ICommonServer_getServerType()).c_str(),
 		IService::getServerID().getZoneID(),
-		IService::getServerID().getServerType(),
+		IService::getServerID().ICommonServer_getServerType(),
 		IService::getServerID().getServerNumber(),
 		IService::getKey().c_str());
 }
@@ -155,7 +155,7 @@ void IStub::_onMsgServerLinkXX2XSReqServerType(BSLib::Framework::SMsgLabel* msgL
 	IService::_setServerID(reqServerType->m_serverID.getServerID());
 	IService::_setKey(reqServerType->m_key);
 
-	CCommonServer* server = CCommonServer::getCommonServer();
+	ICommonServer* server = ICommonServer::getCommonServer();
 	GFLib::SMsgServerLinkXS2XXResServerID resServerType;
 	resServerType.m_serverID = server->getServerID();
 	resServerType.setKey(server->getServerKey());
@@ -180,13 +180,13 @@ void IStub::_onMsgServerLinkXX2XSReqServerType(BSLib::Framework::SMsgLabel* msgL
 	SMsgServerLocalLC2LCNtfServerEnter serverEnter;
 	serverEnter.m_enterServerID = IService::getServerID();
 	serverEnter.setServerKey(IService::getKey());
-	CCommonServer::getCommonServer()->sendMsg(&serverEnter, sizeof(serverEnter));
+	ICommonServer::getCommonServer()->sendMsg(&serverEnter, sizeof(serverEnter));
 
 	BSLIB_LOG_INFO(ETT_GFLIB_COMMON, "Stub[%d] %s(%d.%d.%d) Key[%s] OK",
 		this->getStubID(),
-		GFLib::CommonServer::CServerTypeMgr::singleton().getTextServerType(IService::getServerID().getServerType()).c_str(),
+		GFLib::CommonServer::CServerTypeMgr::singleton().getTextServerType(IService::getServerID().ICommonServer_getServerType()).c_str(),
 		IService::getServerID().getZoneID(),
-		IService::getServerID().getServerType(),
+		IService::getServerID().ICommonServer_getServerType(),
 		IService::getServerID().getServerNumber(),
 		IService::getKey().c_str());
 }

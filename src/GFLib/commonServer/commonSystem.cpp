@@ -26,12 +26,12 @@ void CCommonSystem::_final()
 	;
 }
 
-bool CCommonSystem::_loadGameConfig(const std::string& a_configPath)
+bool CCommonSystem::ICommonServer_loadGameConfig(const std::string& a_configPath)
 {
 	return true;
 }
 
-bool CCommonSystem::_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
+bool CCommonSystem::ICommonServer_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
 {
 	return true;
 }
@@ -56,12 +56,12 @@ bool CCommonSystem::_postStartSystem()
 	return true;
 }
 
-void CCommonSystem::_cbServerEnter(const SServerID& a_serverID, const std::string& a_key)
+void CCommonSystem::ICommonServer_cbServerEnter(const SServerID& a_serverID, const std::string& a_key)
 {
 	;
 }
 
-void CCommonSystem::_cbServerLeave(const SServerID& a_serverID, const std::string& a_key)
+void CCommonSystem::ICommonServer_cbServerLeave(const SServerID& a_serverID, const std::string& a_key)
 {
 	;
 }

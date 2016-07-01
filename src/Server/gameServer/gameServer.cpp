@@ -68,12 +68,12 @@ CGameServer::~CGameServer()
 	;
 }
 
-GFLib::ServerType CGameServer::getServerType()
+GFLib::ServerType CGameServer::ICommonServer_getServerType()
 {
 	return GSLib::SRVTYPE_GAMESERVER;
 }
 
-std::string CGameServer::getServerVersion()
+std::string CGameServer::ICommonServer_getServerVersion()
 {
 	BSLib::Utility::CStringA strVersion;
 	strVersion += GAMESERVER_VERSION_TEXT;
@@ -87,14 +87,14 @@ int CGameServer::main()
 
 bool CGameServer::_init()
 {
-	return GFLib::CommonServer::CCommonServer::_IThread_init();
+	return GFLib::CommonServer::ICommonServer::_IThread_init();
 }
 
 bool CGameServer::_callback()
 {
-	BSLib::int64 delayTimer = GFLib::CommonServer::CCommonServer::getDelayTimer();
+	BSLib::int64 delayTimer = GFLib::CommonServer::ICommonServer::getDelayTimer();
 	
-	GFLib::CommonServer::CCommonServer::_parseMsg();
+	GFLib::CommonServer::ICommonServer::_parseMsg();
 	
 	GSLib::PlayerSystem::GM::CPlayerSystemGM::singleton().update(delayTimer);
 	GSLib::SceneSystem::GM::CSceneSystemGM::singleton().update(delayTimer);
@@ -104,7 +104,7 @@ bool CGameServer::_callback()
 
 	//GFLib::CommonServer::CEventMgr::singleton().updateEvent();
 
-//	GFLib::CommonServer::CCommonServer::_parseMsg();
+//	GFLib::CommonServer::ICommonServer::_parseMsg();
 	
 
 //  	BSLib::uint64 id = GFLib::CommonServer::CUniqueIDMgr::singleton().getInt64ZoneUniqueID(GSLib::EUNIQUEIDTYPE_MAILID);
@@ -115,10 +115,10 @@ bool CGameServer::_callback()
 
 int CGameServer::_final()
 {
-	return GFLib::CommonServer::CCommonServer::_IThread_final();
+	return GFLib::CommonServer::ICommonServer::_IThread_final();
 }
 
-bool CGameServer::_initSystem(GFLib::CommonServer::CCommonSystemMgr* commanSystemMgr)
+bool CGameServer::ICommonServer_initSystem(GFLib::CommonServer::CCommonSystemMgr* commanSystemMgr)
 {
 	Server::initTraceType();
 
@@ -142,32 +142,32 @@ bool CGameServer::_initSystem(GFLib::CommonServer::CCommonSystemMgr* commanSyste
     commanSystemMgr->addSystem(&GSLib::AchieveSystem::GM::CAchieveSystemGM::singleton());
 	commanSystemMgr->addSystem(&GSLib::MasterSystem::GM::CMasterSystemGM::singleton());
 
-	return GFLib::CommonServer::CCommonServer::_initSystem(commanSystemMgr);
+	return GFLib::CommonServer::ICommonServer::ICommonServer_initSystem(commanSystemMgr);
 }
 
-bool CGameServer::_loadGameConfig(const std::string& a_configPath)
+bool CGameServer::ICommonServer_loadGameConfig(const std::string& a_configPath)
 {
 	return true;
 }
 
-void CGameServer::_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
+void CGameServer::ICommonServer_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
 {
-	GFLib::CommonServer::CCommonServer::_initServerMsg(a_msgExecMgr);
+	GFLib::CommonServer::ICommonServer::ICommonServer_initServerMsg(a_msgExecMgr);
 }
 
-void CGameServer::_cbServerEnter(GFLib::SServerID& a_serverID, const std::string& a_key)
+void CGameServer::ICommonServer_cbServerEnter(GFLib::SServerID& a_serverID, const std::string& a_key)
 {
-	GFLib::CommonServer::CCommonServer::_cbServerEnter(a_serverID, a_key);
+	GFLib::CommonServer::ICommonServer::ICommonServer_cbServerEnter(a_serverID, a_key);
 }
 
-void CGameServer::_cbServerLeave(GFLib::SServerID& a_serverID, const std::string& a_key)
+void CGameServer::ICommonServer_cbServerLeave(GFLib::SServerID& a_serverID, const std::string& a_key)
 {
-	GFLib::CommonServer::CCommonServer::_cbServerLeave(a_serverID, a_key);
+	GFLib::CommonServer::ICommonServer::ICommonServer_cbServerLeave(a_serverID, a_key);
 }
 
 GFLib::CommonServer::CCommonClientPtr CGameServer::_cbCreateClient(GFLib::SServerID& a_serverID, const std::string& a_serverKey)
 {
-	switch (a_serverID.getServerType())
+	switch (a_serverID.ICommonServer_getServerType())
 	{
 	case GSLib::SRVTYPE_CENTERSERVER:
 		{
@@ -185,7 +185,7 @@ GFLib::CommonServer::CCommonClientPtr CGameServer::_cbCreateClient(GFLib::SServe
 		}
 	}
 
-	return GFLib::CommonServer::CCommonServer::_cbCreateClient(a_serverID, a_serverKey);
+	return GFLib::CommonServer::ICommonServer::_cbCreateClient(a_serverID, a_serverKey);
 }
 
 BSLib::Network::CNetStubPtr CGameServer::_cbNewTcpStub(BSLib::Network::CNetConnectionPtr& netConnPtr, void* tempData)

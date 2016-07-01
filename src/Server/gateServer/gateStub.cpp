@@ -41,7 +41,7 @@ bool CGateStub::_transferMsg(GFLib::SMessage* msg, BSLib::uint32 a_msgSize)
 	if (accountPtr == NULL) {
 		return false;
 	}
-	GFLib::ServerType msgType = msg->getServerType();
+	GFLib::ServerType msgType = msg->ICommonServer_getServerType();
 	switch(msgType)
 	{
 	case GSLib::SRVTYPE_DATASERVER:

@@ -60,12 +60,12 @@ CDataServer::~CDataServer()
 	;
 }
 
-GFLib::ServerType CDataServer::getServerType()
+GFLib::ServerType CDataServer::ICommonServer_getServerType()
 {
 	return GSLib::SRVTYPE_DATASERVER;
 }
 
-std::string CDataServer::getServerVersion()
+std::string CDataServer::ICommonServer_getServerVersion()
 {
 	BSLib::Utility::CStringA strVersion;
 	//strVersion.format("%d.", GFLib::ESRVTYPE_GATEWAY);
@@ -80,15 +80,15 @@ int CDataServer::main()
 
 int CDataServer::_final()
 {
-	return GFLib::CommonServer::CCommonServer::_IThread_final();
+	return GFLib::CommonServer::ICommonServer::_IThread_final();
 }
 
-bool CDataServer::_loadGameConfig(const std::string& a_configPath)
+bool CDataServer::ICommonServer_loadGameConfig(const std::string& a_configPath)
 {
 	return true;
 }
 
-bool CDataServer::_initSystem(GFLib::CommonServer::CCommonSystemMgr* commanSystemMgr)
+bool CDataServer::ICommonServer_initSystem(GFLib::CommonServer::CCommonSystemMgr* commanSystemMgr)
 {
 	Server::initTraceType();
 
@@ -108,17 +108,17 @@ bool CDataServer::_initSystem(GFLib::CommonServer::CCommonSystemMgr* commanSyste
 	commanSystemMgr->addSystem(&GSLib::RankSystem::DB::CRankSystemDB::singleton());
 	commanSystemMgr->addSystem(&GSLib::MasterSystem::DB::CMasterSystemDB::singleton());
 
-	return GFLib::CommonServer::CCommonServer::_initSystem(commanSystemMgr);
+	return GFLib::CommonServer::ICommonServer::ICommonServer_initSystem(commanSystemMgr);
 }
 
-void CDataServer::_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
+void CDataServer::ICommonServer_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
 {
-	GFLib::CommonServer::CCommonServer::_initServerMsg(a_msgExecMgr);
+	GFLib::CommonServer::ICommonServer::ICommonServer_initServerMsg(a_msgExecMgr);
 }
 
 GFLib::CommonServer::CCommonClientPtr CDataServer::_cbCreateClient(GFLib::SServerID& a_serverID, const std::string& a_serverKey)
 {
-	switch (a_serverID.getServerType())
+	switch (a_serverID.ICommonServer_getServerType())
 	{
 	case GSLib::SRVTYPE_CHARGESERVER:
 		{
@@ -130,7 +130,7 @@ GFLib::CommonServer::CCommonClientPtr CDataServer::_cbCreateClient(GFLib::SServe
 			;
 		}
 	}
-	return GFLib::CommonServer::CCommonServer::_cbCreateClient(a_serverID, a_serverKey);
+	return GFLib::CommonServer::ICommonServer::_cbCreateClient(a_serverID, a_serverKey);
 }
 
 BSLib::Network::CNetStubPtr CDataServer::_cbNewTcpStub(BSLib::Network::CNetConnectionPtr& netConnPtr, void* tempData)

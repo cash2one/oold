@@ -54,12 +54,12 @@ CCenterServer::~CCenterServer()
 	;
 }
 
-GFLib::ServerType CCenterServer::getServerType()
+GFLib::ServerType CCenterServer::ICommonServer_getServerType()
 {
 	return GSLib::SRVTYPE_CENTERSERVER;
 }
 
-std::string CCenterServer::getServerVersion()
+std::string CCenterServer::ICommonServer_getServerVersion()
 {
 	BSLib::Utility::CStringA strVersion;
 	strVersion += CENTERSERVER_VERSION_TEXT;
@@ -73,10 +73,10 @@ int CCenterServer::main()
 
 int CCenterServer::_final()
 {
-	return GFLib::CommonServer::CCommonServer::_IThread_final();
+	return GFLib::CommonServer::ICommonServer::_IThread_final();
 }
 
-bool CCenterServer::_initSystem(GFLib::CommonServer::CCommonSystemMgr* commanSystemMgr)
+bool CCenterServer::ICommonServer_initSystem(GFLib::CommonServer::CCommonSystemMgr* commanSystemMgr)
 {
 	Server::initTraceType();
 
@@ -90,32 +90,32 @@ bool CCenterServer::_initSystem(GFLib::CommonServer::CCommonSystemMgr* commanSys
 	commanSystemMgr->addSystem(&GSLib::SceneSystem::CN::CSceneSystemCN::singleton());
 	commanSystemMgr->addSystem(&GSLib::MasterSystem::CN::CMasterSystemCN::singleton());
 
-	return GFLib::CommonServer::CCommonServer::_initSystem(commanSystemMgr);
+	return GFLib::CommonServer::ICommonServer::ICommonServer_initSystem(commanSystemMgr);
 }
 
-bool CCenterServer::_loadGameConfig(const std::string& a_configPath)
+bool CCenterServer::ICommonServer_loadGameConfig(const std::string& a_configPath)
 {
-	return GFLib::CommonServer::CCommonServer::_loadGameConfig(a_configPath);;
+	return GFLib::CommonServer::ICommonServer::ICommonServer_loadGameConfig(a_configPath);;
 }
 
-void CCenterServer::_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
+void CCenterServer::ICommonServer_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
 {
-	GFLib::CommonServer::CCommonServer::_initServerMsg(a_msgExecMgr);
+	GFLib::CommonServer::ICommonServer::ICommonServer_initServerMsg(a_msgExecMgr);
 }
 
-void CCenterServer::_cbServerEnter(GFLib::SServerID& a_serverID, const std::string& a_key)
+void CCenterServer::ICommonServer_cbServerEnter(GFLib::SServerID& a_serverID, const std::string& a_key)
 {
-	GFLib::CommonServer::CCommonServer::_cbServerEnter(a_serverID, a_key);
+	GFLib::CommonServer::ICommonServer::ICommonServer_cbServerEnter(a_serverID, a_key);
 }
 
-void CCenterServer::_cbServerLeave(GFLib::SServerID& a_serverID, const std::string& a_key)
+void CCenterServer::ICommonServer_cbServerLeave(GFLib::SServerID& a_serverID, const std::string& a_key)
 {
-	GFLib::CommonServer::CCommonServer::_cbServerLeave(a_serverID, a_key);
+	GFLib::CommonServer::ICommonServer::ICommonServer_cbServerLeave(a_serverID, a_key);
 }
 
 GFLib::CommonServer::CCommonClientPtr CCenterServer::_cbCreateClient(GFLib::SServerID& a_serverID, const std::string& a_serverKey)
 {
-	switch (a_serverID.getServerType())
+	switch (a_serverID.ICommonServer_getServerType())
 	{
 	case GSLib::SRVTYPE_DATASERVER:
 		{
@@ -138,7 +138,7 @@ GFLib::CommonServer::CCommonClientPtr CCenterServer::_cbCreateClient(GFLib::SSer
 		}
 	}
 
-	return GFLib::CommonServer::CCommonServer::_cbCreateClient(a_serverID, a_serverKey);
+	return GFLib::CommonServer::ICommonServer::_cbCreateClient(a_serverID, a_serverKey);
 }
 
 BSLib::Network::CNetStubPtr CCenterServer::_cbNewTcpStub(BSLib::Network::CNetConnectionPtr& netConnPtr, void* tempData)

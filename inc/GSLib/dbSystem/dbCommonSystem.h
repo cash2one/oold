@@ -251,8 +251,8 @@ protected:
 
 	virtual bool _init();
 	virtual void _final();
-	virtual void _cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key);
-	virtual void _cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key);
+	virtual void ICommonServer_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key);
+	virtual void ICommonServer_cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key);
 
 	virtual bool _cbSelectKeyTableData(const GSLib::SRoleKey& a_roleKey, CKeyTablePtr& a_keyTable, EDBTableID a_tableID, EModuleType a_moduleType, BSLib::uint32 a_sessionID);
 	virtual bool _cbSelectKeyIndexTableData(const GSLib::SRoleKey& a_roleKey, CKeyIndexTablePtr& a_keyTable, EDBTableID a_tableID, EModuleType a_moduleType, BSLib::uint32 a_sessionID);

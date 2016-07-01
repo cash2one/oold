@@ -46,14 +46,14 @@ void CFriendSystemGM::_final()
 	GSLib::DBSystem::CDBCommonSystem::_final();
 }
 
-bool CFriendSystemGM::_loadGameConfig(const std::string& a_configPath)
+bool CFriendSystemGM::ICommonServer_loadGameConfig(const std::string& a_configPath)
 {
-	return GSLib::DBSystem::CDBCommonSystem::_loadGameConfig(a_configPath);
+	return GSLib::DBSystem::CDBCommonSystem::ICommonServer_loadGameConfig(a_configPath);
 }
 
-bool CFriendSystemGM::_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
+bool CFriendSystemGM::ICommonServer_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
 {	
-	return GSLib::DBSystem::CDBCommonSystem::_initServerMsg(a_msgExecMgr);
+	return GSLib::DBSystem::CDBCommonSystem::ICommonServer_initServerMsg(a_msgExecMgr);
 }
 
 bool CFriendSystemGM::_startSystem()
@@ -61,14 +61,14 @@ bool CFriendSystemGM::_startSystem()
 	return GSLib::DBSystem::CDBCommonSystem::_startSystem();
 }
 
-void CFriendSystemGM::_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)
+void CFriendSystemGM::ICommonServer_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)
 {
-	GFLib::CommonServer::CCommonSystem::_cbServerEnter(a_serverID, a_key);
+	GFLib::CommonServer::CCommonSystem::ICommonServer_cbServerEnter(a_serverID, a_key);
 }
 
-void CFriendSystemGM::_cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key)
+void CFriendSystemGM::ICommonServer_cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key)
 {
-	GFLib::CommonServer::CCommonSystem::_cbServerLeave(a_serverID, a_key);
+	GFLib::CommonServer::CCommonSystem::ICommonServer_cbServerLeave(a_serverID, a_key);
 }
 
 

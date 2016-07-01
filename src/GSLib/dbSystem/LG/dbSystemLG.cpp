@@ -141,7 +141,7 @@ bool CDBSystemLG::insertAccountData(BSLib::Utility::CStream& a_stream, BSLib::ui
 
 bool CDBSystemLG::_init()
 {
-	const std::string& serverName = GFLib::CommonServer::CCommonServer::getCommonServer()->getServerTypeName();
+	const std::string& serverName = GFLib::CommonServer::ICommonServer::getCommonServer()->getServerTypeName();
 	const std::string mysqlDB = BSLib::Framework::CSysConfig::singleton().getValueStr(serverName, "MySQLDB");
 	if (mysqlDB.empty()) {
 		BSLIB_LOG_ERROR(ETT_GSLIB_DBSYSTEM, "获取数据库参数失败");
@@ -162,14 +162,14 @@ void CDBSystemLG::_final()
 	GFLib::CommonServer::CCommonSystem::_final();
 }
 
-bool CDBSystemLG::_loadGameConfig(const std::string& a_configPath)
+bool CDBSystemLG::ICommonServer_loadGameConfig(const std::string& a_configPath)
 {
-	return GFLib::CommonServer::CCommonSystem::_loadGameConfig(a_configPath);
+	return GFLib::CommonServer::CCommonSystem::ICommonServer_loadGameConfig(a_configPath);
 }
 
-bool CDBSystemLG::_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
+bool CDBSystemLG::ICommonServer_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
 {
-	return GFLib::CommonServer::CCommonSystem::_initServerMsg(a_msgExecMgr);
+	return GFLib::CommonServer::CCommonSystem::ICommonServer_initServerMsg(a_msgExecMgr);
 }
 
 bool CDBSystemLG::_startSystem()
@@ -177,14 +177,14 @@ bool CDBSystemLG::_startSystem()
 	return GFLib::CommonServer::CCommonSystem::_startSystem();
 }
 
-void CDBSystemLG::_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)
+void CDBSystemLG::ICommonServer_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)
 {
-	return GFLib::CommonServer::CCommonSystem::_cbServerEnter(a_serverID, a_key);
+	return GFLib::CommonServer::CCommonSystem::ICommonServer_cbServerEnter(a_serverID, a_key);
 }
 
-void CDBSystemLG::_cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key)
+void CDBSystemLG::ICommonServer_cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key)
 {
-	return GFLib::CommonServer::CCommonSystem::_cbServerLeave(a_serverID, a_key);
+	return GFLib::CommonServer::CCommonSystem::ICommonServer_cbServerLeave(a_serverID, a_key);
 }
 
 }//LG

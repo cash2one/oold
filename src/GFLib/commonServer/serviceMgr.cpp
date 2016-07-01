@@ -213,27 +213,27 @@ bool CServiceMgr::addService(CServicePtr& a_service)
 
 	if (serviceInfor->m_state != 0) {
 		BSLIB_LOG_TRACE(ETT_GFLIB_COMMON, "%s(%d.%d.%d)[%s]注册失败,Server资源还没有释放",
-			GFLib::CommonServer::CServerTypeMgr::singleton().getTextServerType(serverID.getServerType()).c_str(),
+			GFLib::CommonServer::CServerTypeMgr::singleton().getTextServerType(serverID.ICommonServer_getServerType()).c_str(),
 			serverID.getZoneID(),
-			serverID.getServerType(),
+			serverID.ICommonServer_getServerType(),
 			serverID.getServerNumber(),
 			a_service->getKey().c_str());
 		return false;
 	}
 	if (serviceInfor->m_servicePtr != NULL) {
 		BSLIB_LOG_TRACE(ETT_GFLIB_COMMON, "%s(%d.%d.%d)[%s]注册失败,已经存在",
-			GFLib::CommonServer::CServerTypeMgr::singleton().getTextServerType(serverID.getServerType()).c_str(),
+			GFLib::CommonServer::CServerTypeMgr::singleton().getTextServerType(serverID.ICommonServer_getServerType()).c_str(),
 			serverID.getZoneID(),
-			serverID.getServerType(),
+			serverID.ICommonServer_getServerType(),
 			serverID.getServerNumber(),
 			a_service->getKey().c_str());
 		return false;
 	}
 	if (serviceInfor->m_netInfor.m_key != a_service->getKey()) {
 		BSLIB_LOG_TRACE(ETT_GFLIB_COMMON, "%s(%d.%d.%d)[%s]注册失败,ServerKey不一致",
-			GFLib::CommonServer::CServerTypeMgr::singleton().getTextServerType(serverID.getServerType()).c_str(),
+			GFLib::CommonServer::CServerTypeMgr::singleton().getTextServerType(serverID.ICommonServer_getServerType()).c_str(),
 			serverID.getZoneID(),
-			serverID.getServerType(),
+			serverID.ICommonServer_getServerType(),
 			serverID.getServerNumber(),
 			a_service->getKey().c_str());
 		return false;
@@ -242,9 +242,9 @@ bool CServiceMgr::addService(CServicePtr& a_service)
 	serviceInfor->m_state = 1;
 
 	BSLIB_LOG_TRACE(ETT_GFLIB_COMMON, "%s(%d.%d.%d)[%s]注册成功",
-		GFLib::CommonServer::CServerTypeMgr::singleton().getTextServerType(serverID.getServerType()).c_str(),
+		GFLib::CommonServer::CServerTypeMgr::singleton().getTextServerType(serverID.ICommonServer_getServerType()).c_str(),
 		serverID.getZoneID(),
-		serverID.getServerType(),
+		serverID.ICommonServer_getServerType(),
 		serverID.getServerNumber(),
 		a_service->getKey().c_str());
 
@@ -266,9 +266,9 @@ bool CServiceMgr::delService(SServerID a_serverID)
 	}
 
 	BSLIB_LOG_TRACE(ETT_GFLIB_COMMON, "%s(%d.%d.%d)注销成功",
-		CServerTypeMgr::singleton().getTextServerType(a_serverID.getServerType()).c_str(),
+		CServerTypeMgr::singleton().getTextServerType(a_serverID.ICommonServer_getServerType()).c_str(),
 		a_serverID.getZoneID(),
-		a_serverID.getServerType(),
+		a_serverID.ICommonServer_getServerType(),
 		a_serverID.getServerNumber());
 
 	serviceInfor->m_servicePtr = NULL;
@@ -396,7 +396,7 @@ bool CServiceMgr::sendMsgToServer(const SServerID& a_serverID, GFLib::CMessage& 
 
 bool CServiceMgr::sendMsgToServer(const SServerID& a_serverID, const SAccountKey& a_accountKey, GFLib::SMessage* a_msg, BSLib::uint32 a_msgSize)
 {
-	GFLib::CommonServer::CCommonServer* server = GFLib::CommonServer::CCommonServer::getCommonServer();
+	GFLib::CommonServer::ICommonServer* server = GFLib::CommonServer::ICommonServer::getCommonServer();
 	if (server == NULL) {
 		return false;
 	}
@@ -423,7 +423,7 @@ bool CServiceMgr::sendMsgToServer(const SServerID& a_serverID, const SAccountKey
 
 bool CServiceMgr::sendMsgToServer(const SServerID& a_serverID, const SAccountKey& a_accountKey, GFLib::CMessage& a_msg)
 {
-	GFLib::CommonServer::CCommonServer* server = GFLib::CommonServer::CCommonServer::getCommonServer();
+	GFLib::CommonServer::ICommonServer* server = GFLib::CommonServer::ICommonServer::getCommonServer();
 	if (server == NULL) {
 		return false;
 	}
@@ -597,11 +597,11 @@ bool CServiceMgr::_initServiceInfor()
 		m_hashMapByServerID.setValue(seviceInfor->m_netInfor.m_serverID.getServerID(), seviceInfor);
 		
 		BSLib::Utility::CHashMap< ServerType, std::vector< SServiceInfo* > >::iterator it_type;
-		it_type = m_hashMapByServerType.find(seviceInfor->m_netInfor.m_serverID.getServerType());
+		it_type = m_hashMapByServerType.find(seviceInfor->m_netInfor.m_serverID.ICommonServer_getServerType());
 		if (it_type == m_hashMapByServerType.end()) {
 			std::vector<SServiceInfo*> serviceList;
 			serviceList.push_back(seviceInfor);
-			m_hashMapByServerType.setValue(seviceInfor->m_netInfor.m_serverID.getServerType(), serviceList);
+			m_hashMapByServerType.setValue(seviceInfor->m_netInfor.m_serverID.ICommonServer_getServerType(), serviceList);
 		} else {
 			it_type->second.push_back(seviceInfor);
 		}

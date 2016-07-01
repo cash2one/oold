@@ -40,12 +40,12 @@ void CPlayerSystemCN::_final()
 	GSLib::DBSystem::CDBCommonSystem::_final();
 }
 
-bool CPlayerSystemCN::_loadGameConfig(const std::string& a_configPath)
+bool CPlayerSystemCN::ICommonServer_loadGameConfig(const std::string& a_configPath)
 {
-	return GSLib::DBSystem::CDBCommonSystem::_loadGameConfig(a_configPath);
+	return GSLib::DBSystem::CDBCommonSystem::ICommonServer_loadGameConfig(a_configPath);
 }
 
-bool CPlayerSystemCN::_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
+bool CPlayerSystemCN::ICommonServer_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
 {
 	GFLIB_ADDMSGTYPE_OBJEXEC(a_msgExecMgr, GFLIB_MSG_TYPE(SRVTYPE_CENTERSERVER, EFUNCTYPE_PLAYERSYSTEM), &PlayerSystem::CN::CPlayerSystemCN::_onMsgPlayerSystem, this);
 	GFLIB_ADDMSGTYPE_OBJEXEC(a_msgExecMgr, GFLIB_MSG_TYPE(SRVTYPE_CENTERSERVER, EFUNCTYPE_EQUIPSYSTEM), &PlayerSystem::CN::CPlayerSystemCN::_onMsgPlayerSystem, this);
@@ -61,7 +61,7 @@ bool CPlayerSystemCN::_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr
 	GFLIB_ADDMSGTYPE_OBJEXEC(a_msgExecMgr, GFLIB_MSG_TYPE(SRVTYPE_CENTERSERVER, EFUNCTYPE_RANKSYSTEM), &PlayerSystem::CN::CPlayerSystemCN::_onMsgPlayerSystem, this);
     GFLIB_ADDMSGTYPE_OBJEXEC(a_msgExecMgr, GFLIB_MSG_TYPE(SRVTYPE_CENTERSERVER, EFUNCTYPE_FRIENDSYSTEM), &PlayerSystem::CN::CPlayerSystemCN::_onMsgPlayerSystem, this);
 
-	return GSLib::DBSystem::CDBCommonSystem::_initServerMsg(a_msgExecMgr);
+	return GSLib::DBSystem::CDBCommonSystem::ICommonServer_initServerMsg(a_msgExecMgr);
 }
 
 bool CPlayerSystemCN::_startSystem()
@@ -69,14 +69,14 @@ bool CPlayerSystemCN::_startSystem()
 	return GSLib::DBSystem::CDBCommonSystem::_startSystem();
 }
 
-void CPlayerSystemCN::_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)
+void CPlayerSystemCN::ICommonServer_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)
 {
-	GSLib::DBSystem::CDBCommonSystem::_cbServerEnter(a_serverID, a_key);
+	GSLib::DBSystem::CDBCommonSystem::ICommonServer_cbServerEnter(a_serverID, a_key);
 }
 
-void CPlayerSystemCN::_cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key)
+void CPlayerSystemCN::ICommonServer_cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key)
 {
-	GSLib::DBSystem::CDBCommonSystem::_cbServerLeave(a_serverID, a_key);
+	GSLib::DBSystem::CDBCommonSystem::ICommonServer_cbServerLeave(a_serverID, a_key);
 }
 
 void CPlayerSystemCN::_onMsgPlayerSystem(BSLib::Framework::SMsgLabel* a_msgLabel,BSLib::Framework::SMessage* a_msg)
@@ -96,8 +96,8 @@ void CPlayerSystemCN::_onMsgPlayerSystem(BSLib::Framework::SMsgLabel* a_msgLabel
 	}
 
 	BSLIB_LOG_ERROR(ETT_GSLIB_PLAYERSYSTEM, "¶ªÆúÏûÏ¢ MsgID(%d[%s].%d.%d) [%s] [%s]", 
-		msg->getServerType(),
-		GFLib::CommonServer::CServerTypeMgr::singleton().getCodeServerType(msg->getServerType()).c_str(),
+		msg->ICommonServer_getServerType(),
+		GFLib::CommonServer::CServerTypeMgr::singleton().getCodeServerType(msg->ICommonServer_getServerType()).c_str(),
 		msg->getFunctionType(), 
 		msg->getID(),
 		BSLib::Framework::CMsgDebug::singleton().getPrompt(msg).c_str(),netMsgLable->m_acountKey.toLogString().c_str());

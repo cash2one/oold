@@ -315,7 +315,7 @@ void CRoleChatModule::_onMsgChatSystemGC2GMReqChat(BSLib::Framework::SMsgLabel* 
 	CMsgChatSystemGC2GMReqChat *msgReq = (CMsgChatSystemGC2GMReqChat *)a_msg;
 	if (CChatSystemGM::singleton().enableGMChatCommand()) {
 		if (msgReq->m_content.size() > 0 && msgReq->m_content[0] == '\\') {
-			GFLib::CommonServer::CCommonServer* server = GFLib::CommonServer::CCommonServer::getCommonServer();
+			GFLib::CommonServer::ICommonServer* server = GFLib::CommonServer::ICommonServer::getCommonServer();
 			if (server == NULL) {
 				return ;
 			}

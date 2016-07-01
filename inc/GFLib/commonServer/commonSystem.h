@@ -39,20 +39,20 @@ protected:
 	virtual void _final();
 
 	///////////////////////////////////////////////////////////////////////////
-	// Method:    _loadGameConfig
+	// Method:    ICommonServer_loadGameConfig
 	// Qualifier: 加载系统配置文件
 	// Returns:   bool
 	// Parameter: const std::string & a_configPath
 	///////////////////////////////////////////////////////////////////////////
-	virtual bool _loadGameConfig(const std::string& a_configPath);
+	virtual bool ICommonServer_loadGameConfig(const std::string& a_configPath);
 
 	///////////////////////////////////////////////////////////////////////////
-	// Method:    _initServerMsg
+	// Method:    ICommonServer_initServerMsg
 	// Qualifier: 初始化系统消息
 	// Returns:   bool
 	// Parameter: BSLib::Framework::CMsgExecMgr * a_msgExecMgr
 	///////////////////////////////////////////////////////////////////////////
-	virtual bool _initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr);
+	virtual bool ICommonServer_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr);
 
 	///////////////////////////////////////////////////////////////////////////
 	// Method:    _initCommand
@@ -84,22 +84,22 @@ protected:
 	virtual bool _postStartSystem();
 
 	///////////////////////////////////////////////////////////////////////////
-	// Method:    _cbServerEnter
+	// Method:    ICommonServer_cbServerEnter
 	// Qualifier:
 	// Returns:   void
 	// Parameter: SServerID & a_serverID
 	// Parameter: const std::string & a_key
 	///////////////////////////////////////////////////////////////////////////
-	virtual void _cbServerEnter(const SServerID& a_serverID, const std::string& a_key);
+	virtual void ICommonServer_cbServerEnter(const SServerID& a_serverID, const std::string& a_key);
 
 	///////////////////////////////////////////////////////////////////////////
-	// Method:    _cbServerLeave
+	// Method:    ICommonServer_cbServerLeave
 	// Qualifier:
 	// Returns:   void
 	// Parameter: SServerID & a_serverID
 	// Parameter: const std::string & a_key
 	///////////////////////////////////////////////////////////////////////////
-	virtual void _cbServerLeave(const SServerID& a_serverID, const std::string& a_key);
+	virtual void ICommonServer_cbServerLeave(const SServerID& a_serverID, const std::string& a_key);
 	
 protected:
 	///////////////////////////////////////////////////////////////////////////

@@ -48,12 +48,12 @@ CSuperServer::~CSuperServer()
 	;
 }
 
-GFLib::ServerType CSuperServer::getServerType()
+GFLib::ServerType CSuperServer::ICommonServer_getServerType()
 {
 	return GSLib::SRVTYPE_SUPERSERVER;
 }
 
-std::string CSuperServer::getServerVersion()
+std::string CSuperServer::ICommonServer_getServerVersion()
 {
 	BSLib::Utility::CStringA strVersion;
 	strVersion += SUPERSERVER_VERSION_TEXT;
@@ -67,7 +67,7 @@ int CSuperServer::main()
 
 bool CSuperServer::_init()
 {
-	if (!GFLib::CommonServer::CCommonServer::_IThread_init()) {
+	if (!GFLib::CommonServer::ICommonServer::_IThread_init()) {
 		return false;
 	}
 
@@ -79,45 +79,45 @@ bool CSuperServer::_callback()
 // 	BSLib::uint64 id_1 = GFLib::CommonServer::CUniqueIDMgr::singleton().getInt64ZoneUniqueID(1);
 // 	BSLib::uint64 id_2 = GFLib::CommonServer::CUniqueIDMgr::singleton().getInt64ZoneUniqueID(2);
 // 	BSLIB_LOG_INFO(Server::ETT_SERVER_COMMON, "@@@[%llX][%llX]", id_1, id_2);
-	return GFLib::CommonServer::CCommonServer::_IThread_callback();
+	return GFLib::CommonServer::ICommonServer::_IThread_callback();
 }
 
 int CSuperServer::_final()
 {
-	return GFLib::CommonServer::CCommonServer::_IThread_final();
+	return GFLib::CommonServer::ICommonServer::_IThread_final();
 }
 
-bool CSuperServer::_initSystem(GFLib::CommonServer::CCommonSystemMgr* commanSystemMgr)
+bool CSuperServer::ICommonServer_initSystem(GFLib::CommonServer::CCommonSystemMgr* commanSystemMgr)
 {
 	Server::initTraceType();
 	
 	commanSystemMgr->addSystem(&GSLib::LoginSystem::SP::CLoginSystemSP::singleton());
 	commanSystemMgr->addSystem(&GSLib::MasterSystem::SP::CMasterSystemSP::singleton());
 
-	return GFLib::CommonServer::CCommonServer::_initSystem(commanSystemMgr);
+	return GFLib::CommonServer::ICommonServer::ICommonServer_initSystem(commanSystemMgr);
 }
 
-bool CSuperServer::_loadGameConfig(const std::string& a_configPath)
+bool CSuperServer::ICommonServer_loadGameConfig(const std::string& a_configPath)
 {	
-	return GFLib::CommonServer::CCommonServer::_loadGameConfig(a_configPath);
+	return GFLib::CommonServer::ICommonServer::ICommonServer_loadGameConfig(a_configPath);
 }
 
-void CSuperServer::_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
+void CSuperServer::ICommonServer_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
 {	
-	GFLib::CommonServer::CCommonServer::_initServerMsg(a_msgExecMgr);
+	GFLib::CommonServer::ICommonServer::ICommonServer_initServerMsg(a_msgExecMgr);
 }
 
-void CSuperServer::_cbServerEnter(GFLib::SServerID& a_serverID, const std::string& a_key)
+void CSuperServer::ICommonServer_cbServerEnter(GFLib::SServerID& a_serverID, const std::string& a_key)
 {	
 	if(a_serverID.m_type == GSLib::SRVTYPE_CENTERSERVER)
 	{
 		m_cnServers.insert(std::make_pair(a_key, a_serverID));
 	}
 
-	GFLib::CommonServer::CCommonServer::_cbServerEnter(a_serverID, a_key);
+	GFLib::CommonServer::ICommonServer::ICommonServer_cbServerEnter(a_serverID, a_key);
 }
 
-void CSuperServer::_cbServerLeave(GFLib::SServerID& a_serverID, const std::string& a_key)
+void CSuperServer::ICommonServer_cbServerLeave(GFLib::SServerID& a_serverID, const std::string& a_key)
 {	
 	if(a_serverID.m_type == GSLib::SRVTYPE_CENTERSERVER)
 	{	
@@ -126,12 +126,12 @@ void CSuperServer::_cbServerLeave(GFLib::SServerID& a_serverID, const std::strin
 			m_cnServers.erase(it);
 	}
 
-	GFLib::CommonServer::CCommonServer::_cbServerLeave(a_serverID, a_key);
+	GFLib::CommonServer::ICommonServer::ICommonServer_cbServerLeave(a_serverID, a_key);
 }
 
 GFLib::CommonServer::CCommonClientPtr CSuperServer::_cbCreateClient(GFLib::SServerID& a_serverID, const std::string& a_serverKey)
 {
-	switch (a_serverID.getServerType())
+	switch (a_serverID.ICommonServer_getServerType())
 	{
 	case GSLib::SRVTYPE_AUTHCODESERVER:
 		{
@@ -143,7 +143,7 @@ GFLib::CommonServer::CCommonClientPtr CSuperServer::_cbCreateClient(GFLib::SServ
 			;
 		}
 	}
-	return GFLib::CommonServer::CCommonServer::_cbCreateClient(a_serverID, a_serverKey);
+	return GFLib::CommonServer::ICommonServer::_cbCreateClient(a_serverID, a_serverKey);
 }
 
 BSLib::Network::CNetStubPtr CSuperServer::_cbNewTcpStub(BSLib::Network::CNetConnectionPtr& netConnPtr, void* tempData)

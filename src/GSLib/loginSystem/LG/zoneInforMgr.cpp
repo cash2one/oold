@@ -25,7 +25,7 @@ public:
 		if (serverID.getZoneID() == 0) {
 			return true;
 		}
-		if (serverID.getServerType() != SRVTYPE_CENTERSERVER) {
+		if (serverID.ICommonServer_getServerType() != SRVTYPE_CENTERSERVER) {
 			return true;
 		}
 

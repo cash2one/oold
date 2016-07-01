@@ -16,12 +16,12 @@ namespace CommonServer
 
 bool IService::_parseMsg(GFLib::SMessage* msg, BSLib::uint32 msgSize)
 {
-	BSLib::uint8 msgServerType = msg->getServerType();
+	BSLib::uint8 msgServerType = msg->ICommonServer_getServerType();
 	BSLib::uint8 msgFunType = msg->getFunctionType();
 	BSLib::uint16 msgID = msg->getID();
 
-	CCommonServer* commonServer = CCommonServer::getCommonServer();
-	BSLib::uint8 localServerType = (BSLib::uint8)commonServer->getServerType();
+	ICommonServer* commonServer = ICommonServer::getCommonServer();
+	BSLib::uint8 localServerType = (BSLib::uint8)commonServer->ICommonServer_getServerType();
 	ServerID localServerID = commonServer->getServerID().getServerID();
 
 	GFLib::SNetMsgLabel msgLable;
@@ -52,7 +52,7 @@ bool IService::_parseMsg(GFLib::SMessage* msg, BSLib::uint32 msgSize)
 		GFLib::SMessage* subMsg = (GFLib::SMessage*)ntTransfer->m_msg;
 		BSLib::uint32 msgSizeSubMsg = ntTransfer->m_msgSize;
 		
-		BSLib::uint8 subMsgServerType = subMsg->getServerType();
+		BSLib::uint8 subMsgServerType = subMsg->ICommonServer_getServerType();
 		BSLib::uint8 subMsgFunType = subMsg->getFunctionType();
 		BSLib::uint16 subMsgID = subMsg->getID();
 		
@@ -112,7 +112,7 @@ bool IService::_IService_transferMsg(GFLib::SMessage* msg, BSLib::uint32 msgSize
 		BSLIB_LOG_ERROR(ETT_GFLIB_COMMON, "丢弃消息[%s][%s],AccountID不存在", subMsg->toString().c_str(), BSLib::Framework::CMsgDebug::singleton().getPrompt(subMsg).c_str());
 		return m_serverID.isValid();
 	}
-	if (!accountPtr->_transferMsg(subMsg->getServerType(), msg, msgSize)) {
+	if (!accountPtr->_transferMsg(subMsg->ICommonServer_getServerType(), msg, msgSize)) {
 		//BSLIB_LOG_ERROR(ETT_GFLIB_COMMON, "丢弃消息[%s][%s]", subMsg->toString().c_str(), BSLib::Framework::CMsgDebug::singleton().getPrompt(subMsg).c_str());
 		return m_serverID.isValid();
 	}
@@ -142,7 +142,7 @@ bool IService::_executeMessage(GFLib::SNetMsgLabel* lable, GFLib::SMessage* msg)
 // 		return false;
 // 	}
 	//发送给本地消息队列处理
-	CCommonServer* commonServer = CCommonServer::getCommonServer();
+	ICommonServer* commonServer = ICommonServer::getCommonServer();
 	if (!commonServer->sendMsg(msg, lable->m_msgSize, lable, lable->getLabelSize())) {
 		BSLIB_LOG_ERROR(ETT_GFLIB_COMMON, "丢弃消息[%s][%s],转发消息队列失败", msg->toString().c_str(), BSLib::Framework::CMsgDebug::singleton().getPrompt(msg).c_str());
 		return false;

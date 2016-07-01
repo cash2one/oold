@@ -37,7 +37,7 @@ void CSysChannelMgr::_parseSysMsg(BSLib::Framework::CChannelID& a_channelIDFrom,
 
 void CSysChannelMgr::_parseMsg(BSLib::Framework::SMessage* a_msg, BSLib::Framework::SSysMsgLabel* msgLabel)
 {
-	CCommonServer* commonServer = CCommonServer::getCommonServer();
+	ICommonServer* commonServer = ICommonServer::getCommonServer();
 
 	if (commonServer == NULL) {
 		return ;
@@ -51,7 +51,7 @@ void CSysChannelMgr::_onSysMsgTerminate()
 
 	CServiceMgr::singleton().closeAll();
 
-	CCommonServer* commonServer = CCommonServer::getCommonServer();
+	ICommonServer* commonServer = ICommonServer::getCommonServer();
 	if (commonServer != NULL) {
 		commonServer->terminate();
 	}

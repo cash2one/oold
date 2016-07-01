@@ -43,21 +43,21 @@ void CRankSystemCN::_final()
 	GSLib::DBSystem::CDBCommonSystem::_final();
 }
 
-bool CRankSystemCN::_loadGameConfig(const std::string& a_configPath)
+bool CRankSystemCN::ICommonServer_loadGameConfig(const std::string& a_configPath)
 {	
 	if( !CRankConfig::singleton().loadConfigFile(a_configPath)){
 		return false;
 	}
 
-	return GSLib::DBSystem::CDBCommonSystem::_loadGameConfig(a_configPath);
+	return GSLib::DBSystem::CDBCommonSystem::ICommonServer_loadGameConfig(a_configPath);
 }
 
-bool CRankSystemCN::_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
+bool CRankSystemCN::ICommonServer_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
 {
 	//BSLib::Framework::CMsgFactory::singleton().registerCreateCMsgFun(MsgIDChatSystemGM2CNReqPrivateChat, &BSLib::Framework::CreateCMessage<CMsgChatSystemGM2CNReqPrivateChat>);
 	//GFLIB_ADDMSG_OBJEXEC(a_msgExecMgr, MsgIDChatSystemGM2CNReqPrivateChat, &CChatSystemCN::_onMsgChatSystemGM2CNReqPrivateChat, this);
 
-	return GSLib::DBSystem::CDBCommonSystem::_initServerMsg(a_msgExecMgr);
+	return GSLib::DBSystem::CDBCommonSystem::ICommonServer_initServerMsg(a_msgExecMgr);
 }
 
 bool CRankSystemCN::_startSystem()
@@ -104,22 +104,22 @@ bool CRankSystemCN::_cbSaveTimer(BSLib::uint64, void* a_para)
 	return true;
 }
 
-void CRankSystemCN::_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)
+void CRankSystemCN::ICommonServer_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)
 {	
 	if(a_serverID.m_type == SRVTYPE_DATASERVER){
 		m_dataReady = true;
 	}
 
-	return GSLib::DBSystem::CDBCommonSystem::_cbServerEnter(a_serverID, a_key);
+	return GSLib::DBSystem::CDBCommonSystem::ICommonServer_cbServerEnter(a_serverID, a_key);
 }
 
-void CRankSystemCN::_cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key)
+void CRankSystemCN::ICommonServer_cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key)
 {	
 	if(a_serverID.m_type == SRVTYPE_DATASERVER){
 		m_dataReady = false;
 	}
 
-	GSLib::DBSystem::CDBCommonSystem::_cbServerLeave(a_serverID, a_key);
+	GSLib::DBSystem::CDBCommonSystem::ICommonServer_cbServerLeave(a_serverID, a_key);
 }
 
 Rank* CRankSystemCN::getRank(BSLib::uint32 a_id)

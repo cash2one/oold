@@ -86,7 +86,7 @@ bool COriginalSceneMgr::_loadSceneConfig(const std::string& a_configPath)
 		BSLIB_LOG_INFO(ETT_GSLIB_SCENESYSTEM, "º”‘ÿ≥°æ∞≈‰÷√ ß∞‹[%s]", scenePath.c_str());
 		return false;
 	}
-	GFLib::CommonServer::CCommonServer* commonServer = GFLib::CommonServer::CCommonServer::getCommonServer();
+	GFLib::CommonServer::ICommonServer* commonServer = GFLib::CommonServer::ICommonServer::getCommonServer();
 	if (commonServer == NULL) {
 		return false;
 	}

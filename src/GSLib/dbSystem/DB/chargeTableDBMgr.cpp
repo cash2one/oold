@@ -26,7 +26,7 @@ CChargeTableDBMgr::~CChargeTableDBMgr()
 
 bool CChargeTableDBMgr::init()
 {
-	const std::string& serverName = GFLib::CommonServer::CCommonServer::getCommonServer()->getServerTypeName();
+	const std::string& serverName = GFLib::CommonServer::ICommonServer::getCommonServer()->getServerTypeName();
 	std::string chargeMysqlDB = BSLib::Framework::CSysConfig::singleton().getValueStr(serverName, "ChargeMySQLDB");
 	if (chargeMysqlDB.empty()) {
 		chargeMysqlDB = BSLib::Framework::CSysConfig::singleton().getValueStr(serverName, "LocalMySQLDB");

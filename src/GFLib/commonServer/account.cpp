@@ -52,7 +52,7 @@ bool CAccount::sendMsgToClient(const GFLib::SServerID& a_gateServerID, GFLib::CM
 
 bool CAccount::sendMsgToServer(const GFLib::SServerID& a_serverID, const GFLib::SServerID& a_toServerID, GFLib::SMessage* a_msg, BSLib::uint32 a_msgSize)
 {
-	GFLib::CommonServer::CCommonServer* server = GFLib::CommonServer::CCommonServer::getCommonServer();
+	GFLib::CommonServer::ICommonServer* server = GFLib::CommonServer::ICommonServer::getCommonServer();
 	if (server == NULL) {
 		return false;
 	}
@@ -79,7 +79,7 @@ bool CAccount::sendMsgToServer(const GFLib::SServerID& a_serverID, const GFLib::
 
 bool CAccount::sendMsgToServer(const GFLib::SServerID& a_serverID, const GFLib::SServerID& a_toServerID, GFLib::CMessage& a_msg)
 {
-	GFLib::CommonServer::CCommonServer* server = GFLib::CommonServer::CCommonServer::getCommonServer();
+	GFLib::CommonServer::ICommonServer* server = GFLib::CommonServer::ICommonServer::getCommonServer();
 	if (server == NULL) {
 		return false;
 	}

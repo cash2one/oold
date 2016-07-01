@@ -52,16 +52,16 @@ void CMasterSystemSP::_final()
 	GSLib::DBSystem::CDBCommonSystem::_final();
 }
 
-bool CMasterSystemSP::_loadGameConfig(const std::string& a_configPath)
+bool CMasterSystemSP::ICommonServer_loadGameConfig(const std::string& a_configPath)
 {	
 	// ╪сть command db path ini
-	GFLib::CommonServer::CCommonServer* srv = GFLib::CommonServer::CCommonServer::getCommonServer();
+	GFLib::CommonServer::ICommonServer* srv = GFLib::CommonServer::ICommonServer::getCommonServer();
 	std::string srvName = srv->getServerTypeName();
 	m_cmddb = BSLib::Framework::CSysConfig::singleton().getValueStr(srvName, "CmdMysqlPath");
-	return GSLib::DBSystem::CDBCommonSystem::_loadGameConfig(a_configPath);
+	return GSLib::DBSystem::CDBCommonSystem::ICommonServer_loadGameConfig(a_configPath);
 }
 
-bool CMasterSystemSP::_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
+bool CMasterSystemSP::ICommonServer_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
 {	
 	GSLIB_MSGFUN_REG(CMsgMasterSystemXX2XSReqAccountSearch, CMasterSystemSP);
 	GSLIB_MSGFUN_REG(CMsgMasterSystemXS2XXAckAccountSearch, CMasterSystemSP);
@@ -84,7 +84,7 @@ bool CMasterSystemSP::_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr
 	GSLIB_MSGFUN_REG(CMsgMasterSystemXX2XSReqBroadcast, CMasterSystemSP);
 	GSLIB_MSGFUN_REG(CMsgMasterSystemXS2XXAckBroadcast, CMasterSystemSP);
 
-	return GSLib::DBSystem::CDBCommonSystem::_initServerMsg(a_msgExecMgr);
+	return GSLib::DBSystem::CDBCommonSystem::ICommonServer_initServerMsg(a_msgExecMgr);
 }
 
 
@@ -93,14 +93,14 @@ bool CMasterSystemSP::_startSystem()
 	return GSLib::DBSystem::CDBCommonSystem::_startSystem();
 }
 
-void CMasterSystemSP::_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)
+void CMasterSystemSP::ICommonServer_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)
 {	
 	if(a_serverID.m_type == GSLib::SRVTYPE_CENTERSERVER)
 	{
 		m_cnServers.insert(std::make_pair(a_serverID.getZoneID(), a_key));
 	}
 
-	return GSLib::DBSystem::CDBCommonSystem::_cbServerEnter(a_serverID, a_key);
+	return GSLib::DBSystem::CDBCommonSystem::ICommonServer_cbServerEnter(a_serverID, a_key);
 }
 
 int CMasterSystemSP::_run(void* obj)
@@ -396,7 +396,7 @@ void CMasterSystemSP::onCommand()
 	}
 }
 
-void CMasterSystemSP::_cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key)
+void CMasterSystemSP::ICommonServer_cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key)
 {	
 	if(a_serverID.m_type == GSLib::SRVTYPE_CENTERSERVER)
 	{	
@@ -405,7 +405,7 @@ void CMasterSystemSP::_cbServerLeave(const GFLib::SServerID& a_serverID, const s
 			m_cnServers.erase(it);
 	}
 
-	GSLib::DBSystem::CDBCommonSystem::_cbServerLeave(a_serverID, a_key);
+	GSLib::DBSystem::CDBCommonSystem::ICommonServer_cbServerLeave(a_serverID, a_key);
 }
 
 GSLIB_FORWARD_MSGFUN_DEFINE(CMsgMasterSystemXX2XSReqRoleInfo, CMasterSystemSP)

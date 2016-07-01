@@ -4,7 +4,7 @@
 #include <BSLib/utility/singleton.h>
 #include <GFLib/commonServer/commonServer.h>
 
-class CDataServer : public GFLib::CommonServer::CCommonServer
+class CDataServer : public GFLib::CommonServer::ICommonServer
 {
 public:
 	CDataServer();
@@ -12,18 +12,18 @@ public:
 
 	BSLIB_SINGLETON_DECLARE(CDataServer);
 
-	virtual GFLib::ServerType getServerType();
-	virtual std::string getServerVersion();
+	virtual GFLib::ServerType ICommonServer_getServerType();
+	virtual std::string ICommonServer_getServerVersion();
 
 public:
 	static int main();
 
 protected:
 	virtual int _final();
-	virtual bool _initSystem(GFLib::CommonServer::CCommonSystemMgr* commanSystemMgr);
+	virtual bool ICommonServer_initSystem(GFLib::CommonServer::CCommonSystemMgr* commanSystemMgr);
 
-	virtual bool _loadGameConfig(const std::string& a_configPath);
-	virtual void _initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr);
+	virtual bool ICommonServer_loadGameConfig(const std::string& a_configPath);
+	virtual void ICommonServer_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr);
 	virtual GFLib::CommonServer::CCommonClientPtr _cbCreateClient(GFLib::SServerID& a_serverID, const std::string& a_serverKey);
 	virtual BSLib::Network::CNetStubPtr _cbNewTcpStub(BSLib::Network::CNetConnectionPtr& netConnPtr, void* tempData);
 };

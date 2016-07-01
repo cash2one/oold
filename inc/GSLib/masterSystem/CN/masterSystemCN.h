@@ -35,11 +35,11 @@ public:
 public:
 	virtual bool _init();	// test
 	virtual void _final();
-	virtual bool _loadGameConfig(const std::string& a_configPath);
-	virtual bool _initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr);
+	virtual bool ICommonServer_loadGameConfig(const std::string& a_configPath);
+	virtual bool ICommonServer_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr);
 	virtual bool _startSystem();
-	virtual void _cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key);
-	virtual void _cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key);
+	virtual void ICommonServer_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key);
+	virtual void ICommonServer_cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key);
 
 private:
 	virtual bool _cbSelectGlobalKeyTableData(const GSLib::SRoleKey& a_srcRoleKey, const GSLib::SRoleKey& a_roleKey, DBSystem::CKeyTablePtr& a_keyTable,

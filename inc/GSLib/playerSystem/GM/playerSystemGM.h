@@ -28,13 +28,13 @@ public:
 protected:
 	virtual bool _init();
 	virtual void _final();
-	virtual bool _loadGameConfig(const std::string& a_configPath);
-	virtual bool _initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr);
+	virtual bool ICommonServer_loadGameConfig(const std::string& a_configPath);
+	virtual bool ICommonServer_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr);
 	virtual bool _initCommand(BSLib::Utility::CCmdExecMgr* a_cmdExecMgr);
 
 	virtual bool _startSystem();
-	virtual void _cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key);
-	virtual void _cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key);
+	virtual void ICommonServer_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key);
+	virtual void ICommonServer_cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key);
 
 protected:
 	virtual bool _cbSelectKeyTableData(const GSLib::SRoleKey& a_roleKey, GSLib::DBSystem::CKeyTablePtr& a_keyTable, EDBTableID a_tableID, EModuleType a_moduleType, BSLib::uint32 a_sessionID);
