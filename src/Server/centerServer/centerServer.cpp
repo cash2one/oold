@@ -148,7 +148,7 @@ BSLib::Network::CNetStubPtr CCenterServer::_cbNewTcpStub(BSLib::Network::CNetCon
 	BSLib::Network::CNetStubPtr netStubPtr = NULL;
 	switch (flag) {
 		case 1:
-			netStubPtr = new GFLib::CommonServer::CStub(netConnPtr);
+			netStubPtr = new GFLib::CommonServer::IStub(netConnPtr);
 			break;
 		case 0:
 		default:

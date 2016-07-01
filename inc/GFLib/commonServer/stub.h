@@ -11,26 +11,29 @@ namespace GFLib
 namespace CommonServer
 {
 
-class GFLIB_COMMONSERVER_API CStub : public IService, public BSLib::Network::INetStub
+class GFLIB_COMMONSERVER_API IStub 
+    : public IService
+    , public BSLib::Network::INetStub
 {
 public:
-	CStub(BSLib::Network::CNetConnectionPtr& netConnection);
-	virtual ~CStub();
+	IStub(BSLib::Network::CNetConnectionPtr& netConnection);
+	virtual ~IStub();
 
-	virtual bool IService_sendMsg(GFLib::SMessage* msg, BSLib::uint32 msgSize);
-	virtual bool IService_sendMsg(GFLib::CMessage& msg);
-	virtual void IService_close();
+	virtual bool IService_sendMsg(GFLib::SMessage* msg, BSLib::uint32 msgSize) override;
+	virtual bool IService_sendMsg(GFLib::CMessage& msg) override;
+	virtual void IService_close() override;
 
 protected:
-	virtual void INetStub_initStub();
-	virtual void INetStub_finalStub();
-	virtual void INetStub_initStubMsg(BSLib::Framework::CMsgExecMgr* msgExecMgr);
-	virtual void INetStub_cbNotifyPing();
-	virtual bool INetStub_cbParseMsg(void* msgBuff, BSLib::uint32 msgSize);
-	virtual void INetStub_cbTerminate();
+	virtual void INetStub_initStub() override;
+	virtual void INetStub_finalStub() override;
+	virtual void INetStub_cbNotifyPing() override;
+	virtual bool INetStub_cbParseMsg(void* msgBuff, BSLib::uint32 msgSize) override;
+	virtual void INetStub_cbTerminate() override;
 
-	virtual bool _IService_canTransfer();
-	virtual GFLib::StubID _IService_getStubID();
+	virtual bool _IService_canTransfer() override;
+	virtual GFLib::StubID _IService_getStubID() override;
+
+    virtual void IStub_initStubMsg(BSLib::Framework::CMsgExecMgr* msgExecMgr);
 
 protected:
 	void _onMsgServerLinkXX2XSReqServerType(BSLib::Framework::SMsgLabel* msgLabel,BSLib::Framework::SMessage* msg);
@@ -40,7 +43,7 @@ protected:
 
 };
 
-typedef BSLib::Utility::CPointer<CStub> CStubPtr;
+typedef BSLib::Utility::CPointer<IStub> CStubPtr;
 
 }//CommonServer
 

@@ -1,1 +1,1 @@
-start ./bin/Server_d.exe -k 11
+start ./bin64/Server_d.exe -k 11

@@ -8,7 +8,7 @@
 #define TIMEOUT_MAX_ACCOUNT_LOGIN (30 * 1000)
 
 CGMStub::CGMStub(BSLib::Network::CNetConnectionPtr& netConnection)
-: GFLib::CommonServer::CStub(netConnection)
+: GFLib::CommonServer::IStub(netConnection)
 , m_timeHandleAccountLogin(BSLib::Utility::INVALID_TIMER)
 {
 	;
@@ -19,7 +19,7 @@ void CGMStub::INetStub_finalStub()
 	;
 }
 
-void CGMStub::INetStub_initStubMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
+void CGMStub::IStub_initStubMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
 {
 // 	BSLib::Framework::CMsgFactory::singleton().registerCreateCMsgFun(GSLib::LoginSystem::MsgIDLoginSystemGC2LGReqAccountLogin, &BSLib::Framework::CreateCMessage<GSLib::LoginSystem::CMsgLoginSystemGC2LGReqAccountLogin>);
 // 	GFLIB_ADDMSG_OBJEXEC_OBJAFTER(msgExecMgr, GSLib::LoginSystem::MsgIDLoginSystemGC2LGReqAccountLogin, &CLoginStub::_onMsgLoginSystemGC2LGReqAccountLogin, &CLoginStub::_afterMsgHandlerLoginStub, this);
@@ -35,7 +35,7 @@ void CGMStub::INetStub_initStubMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
 void CGMStub::INetStub_cbTerminate()
 {
 // 	if (m_timeHandleAccountLogin != BSLib::Utility::INVALID_TIMER) {
-// 		BSLib::Utility::CTimerServer* timerServer = GFLib::CommonServer::CStub::_getTimerServer();
+// 		BSLib::Utility::CTimerServer* timerServer = GFLib::CommonServer::IStub::_getTimerServer();
 // 		if (timerServer == NULL) {
 // 			return;
 // 		}
@@ -68,11 +68,11 @@ void CGMStub::INetStub_cbTerminate()
 // 	
 // 	GSLib::LoginSystem::CMsgLoginSystemLG2GCAckAccountLogin ackAccountLogin;
 // 	if (!GSLib::LoginSystem::LG::CLoginSystemLG::singleton().verifyAccountLogin(getStubID(), accountLoginIP, *reqAccountLogin, ackAccountLogin)){
-// 		GFLib::CommonServer::CStub::sendMsg(ackAccountLogin);
+// 		GFLib::CommonServer::IStub::sendMsg(ackAccountLogin);
 // 		return ;
 // 	}
 // 
-// 	BSLib::Utility::CTimerServer* timerServer = GFLib::CommonServer::CStub::_getTimerServer();
+// 	BSLib::Utility::CTimerServer* timerServer = GFLib::CommonServer::IStub::_getTimerServer();
 // 	if (timerServer == NULL) {
 // 		GSLib::LoginSystem::LG::CLoginSystemLG::singleton().removeAccountLogin(getStubID());
 // 		_notifyAccountLoginResult(GSLib::LoginSystem::ELOGINRESULT_SERVER_ERROR);
@@ -96,7 +96,7 @@ void CGMStub::INetStub_cbTerminate()
 // 		return;
 // 	}
 // 
-// 	GFLib::CommonServer::CStub::setState(BSLib::Network::ESS_OKAY);
+// 	GFLib::CommonServer::IStub::setState(BSLib::Network::ESS_OKAY);
 // }
 // 
 // void CGMStub::_onMsgLoginSystemGC2LGReqRegisterAccount(BSLib::Framework::SMsgLabel* msgLabel,BSLib::Framework::SMessage* msg)
@@ -116,7 +116,7 @@ void CGMStub::INetStub_cbTerminate()
 // 
 // 	GSLib::LoginSystem::CMsgLoginSystemLG2GCAckRegisterAccount ackAccountLogin;
 // 	GSLib::LoginSystem::LG::CLoginSystemLG::singleton().registerAccount(getStubID(), accountLoginIP, *reqAccountLogin, ackAccountLogin);
-// 	GFLib::CommonServer::CStub::sendMsg(ackAccountLogin);
+// 	GFLib::CommonServer::IStub::sendMsg(ackAccountLogin);
 // 	return;
 // }
 // 
@@ -142,7 +142,7 @@ void CGMStub::INetStub_cbTerminate()
 // 
 // 	}
 // 	m_timeHandleAccountLogin = BSLib::Utility::INVALID_TIMER;
-// 	GFLib::CommonServer::CStub::setState(BSLib::Network::ESS_RECYCLE);
+// 	GFLib::CommonServer::IStub::setState(BSLib::Network::ESS_RECYCLE);
 // 	return false;
 // }
 // 
@@ -150,7 +150,7 @@ void CGMStub::INetStub_cbTerminate()
 // {
 // 	GSLib::LoginSystem::CMsgLoginSystemLG2GCAckAccountLogin ackAccountLogin;
 // 	ackAccountLogin.m_state = result;
-// 	GFLib::CommonServer::CStub::sendMsg(ackAccountLogin);
+// 	GFLib::CommonServer::IStub::sendMsg(ackAccountLogin);
 // }
 
 void CGMStub::_onCMsgMasterSystemXX2XSReqLogin(BSLib::Framework::SMsgLabel* msgLabel,BSLib::Framework::SMessage* msg)
@@ -158,7 +158,7 @@ void CGMStub::_onCMsgMasterSystemXX2XSReqLogin(BSLib::Framework::SMsgLabel* msgL
 	GSLib::MasterSystem::CMsgMasterSystemXS2XXAckLogin ack;
 	IService_sendMsg(ack);
 	
-	GFLib::CommonServer::CStub::setState(BSLib::Network::ESS_OKAY);
+	GFLib::CommonServer::IStub::setState(BSLib::Network::ESS_OKAY);
 }
 
 void CGMStub::_onCMsgMasterSystemXX2XSReqOnlineZone(BSLib::Framework::SMsgLabel* msgLabel,BSLib::Framework::SMessage* msg)

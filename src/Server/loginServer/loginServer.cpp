@@ -134,7 +134,7 @@ BSLib::Network::CNetStubPtr CLoginServer::_cbNewTcpStub(BSLib::Network::CNetConn
 			netStubPtr = new CLoginStub(netConnPtr);
 			break;
 		case 1:
-			netStubPtr = new GFLib::CommonServer::CStub(netConnPtr);
+			netStubPtr = new GFLib::CommonServer::IStub(netConnPtr);
 			break;
 		default:
 			break;

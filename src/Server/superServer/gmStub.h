@@ -5,14 +5,14 @@
 #include <GSLib/loginSystem/msgLoginSystem.h>
 #include <GSLib/masterSystem/msgMasterSystem.h>
 
-class CGMStub : public GFLib::CommonServer::CStub
+class CGMStub : public GFLib::CommonServer::IStub
 {
 public:
 	CGMStub(BSLib::Network::CNetConnectionPtr& netConnection);
 
 protected:
 	virtual void INetStub_finalStub();
-	virtual void INetStub_initStubMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr);
+	virtual void IStub_initStubMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr);
 	virtual void INetStub_cbTerminate();
 
 private:

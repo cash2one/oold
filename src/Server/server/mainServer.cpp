@@ -25,7 +25,7 @@ int CMainServer::main()
 	return CMainServer::singleton()._IThread_main();
 }
 
-bool CMainServer::_init()
+bool CMainServer::_IThread_init()
 {
 	BSLib::Utility::CStringA command = BSLib::Framework::CSysConfig::singleton().getValueStr("c");
 	if (command.empty()) {
@@ -50,7 +50,7 @@ bool CMainServer::_init()
 	return true;
 }
 
-int CMainServer::_final()
+int CMainServer::_IThread__final()
 {
 	g_fileTracer.close();
 	CMainCommand::singleton().final();

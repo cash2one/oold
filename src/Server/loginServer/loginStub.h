@@ -4,14 +4,14 @@
 #include <GFLib/commonServer/stub.h>
 #include <GSLib/loginSystem/msgLoginSystem.h>
 
-class CLoginStub : public GFLib::CommonServer::CStub
+class CLoginStub : public GFLib::CommonServer::IStub
 {
 public:
 	CLoginStub(BSLib::Network::CNetConnectionPtr& netConnection);
 
 protected:
 	virtual void INetStub_finalStub();
-	virtual void INetStub_initStubMsg(BSLib::Framework::CMsgExecMgr* msgExecMgr);
+	virtual void IStub_initStubMsg(BSLib::Framework::CMsgExecMgr* msgExecMgr);
 	virtual void INetStub_cbTerminate();
 
 private:

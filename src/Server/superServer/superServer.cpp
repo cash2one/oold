@@ -155,7 +155,7 @@ BSLib::Network::CNetStubPtr CSuperServer::_cbNewTcpStub(BSLib::Network::CNetConn
 			netStubPtr = new CGMStub(netConnPtr);
 			break;
 		case 1:
-			netStubPtr = new GFLib::CommonServer::CStub(netConnPtr);
+			netStubPtr = new GFLib::CommonServer::IStub(netConnPtr);
 			break;
 		default:
 			break;

@@ -8,7 +8,7 @@
 #define TIMEOUT_MAX_ACCOUNT_LOGIN (30 * 1000)
 
 CLoginStub::CLoginStub(BSLib::Network::CNetConnectionPtr& netConnection)
-: GFLib::CommonServer::CStub(netConnection)
+: GFLib::CommonServer::IStub(netConnection)
 , m_timeHandleAccountLogin(BSLib::Utility::INVALID_TIMER)
 {
 	;
@@ -19,7 +19,7 @@ void CLoginStub::INetStub_finalStub()
 	;
 }
 
-void CLoginStub::INetStub_initStubMsg(BSLib::Framework::CMsgExecMgr* msgExecMgr)
+void CLoginStub::IStub_initStubMsg(BSLib::Framework::CMsgExecMgr* msgExecMgr)
 {
 	BSLib::Framework::CMsgFactory::singleton().registerCreateCMsgFun(GSLib::LoginSystem::MsgIDLoginSystemGC2LGReqAccountLogin, &BSLib::Framework::CreateCMessage<GSLib::LoginSystem::CMsgLoginSystemGC2LGReqAccountLogin>);
 	GFLIB_ADDMSG_OBJEXEC_OBJAFTER(msgExecMgr, GSLib::LoginSystem::MsgIDLoginSystemGC2LGReqAccountLogin, &CLoginStub::_onMsgLoginSystemGC2LGReqAccountLogin, &CLoginStub::_afterMsgHandlerLoginStub, this);
@@ -34,7 +34,7 @@ void CLoginStub::INetStub_initStubMsg(BSLib::Framework::CMsgExecMgr* msgExecMgr)
 void CLoginStub::INetStub_cbTerminate()
 {
 	if (m_timeHandleAccountLogin != BSLib::Utility::INVALID_TIMER) {
-		BSLib::Utility::CTimerServer* timerServer = GFLib::CommonServer::CStub::_getTimerServer();
+		BSLib::Utility::CTimerServer* timerServer = GFLib::CommonServer::IStub::_getTimerServer();
 		if (timerServer == NULL) {
 			return;
 		}
@@ -67,11 +67,11 @@ void CLoginStub::_onMsgLoginSystemGC2LGReqAccountLogin(BSLib::Framework::SMsgLab
 	
 	GSLib::LoginSystem::CMsgLoginSystemLG2GCAckAccountLogin ackAccountLogin;
 	if (!GSLib::LoginSystem::LG::CLoginSystemLG::singleton().verifyAccountLogin(getStubID(), accountLoginIP, *reqAccountLogin, ackAccountLogin)){
-		GFLib::CommonServer::CStub::IService_sendMsg(ackAccountLogin);
+		GFLib::CommonServer::IStub::IService_sendMsg(ackAccountLogin);
 		return ;
 	}
 
-	BSLib::Utility::CTimerServer* timerServer = GFLib::CommonServer::CStub::_getTimerServer();
+	BSLib::Utility::CTimerServer* timerServer = GFLib::CommonServer::IStub::_getTimerServer();
 	if (timerServer == NULL) {
 		GSLib::LoginSystem::LG::CLoginSystemLG::singleton().removeAccountLogin(getStubID());
 		_notifyAccountLoginResult(GSLib::LoginSystem::ELOGINRESULT_SERVER_ERROR);
@@ -95,7 +95,7 @@ void CLoginStub::_onMsgLoginSystemGC2LGReqAccountLogin(BSLib::Framework::SMsgLab
 		return;
 	}
 
-	GFLib::CommonServer::CStub::setState(BSLib::Network::ESS_OKAY);
+	GFLib::CommonServer::IStub::setState(BSLib::Network::ESS_OKAY);
 }
 
 void CLoginStub::_onMsgLoginSystemGC2LGReqRegisterAccount(BSLib::Framework::SMsgLabel* msgLabel,BSLib::Framework::SMessage* msg)
@@ -114,7 +114,7 @@ void CLoginStub::_onMsgLoginSystemGC2LGReqRegisterAccount(BSLib::Framework::SMsg
 
 	GSLib::LoginSystem::CMsgLoginSystemLG2GCAckRegisterAccount ackAccountLogin;
 	GSLib::LoginSystem::LG::CLoginSystemLG::singleton().registerAccount(getStubID(), accountLoginIP, *reqAccountLogin, ackAccountLogin);
-	GFLib::CommonServer::CStub::IService_sendMsg(ackAccountLogin);
+	GFLib::CommonServer::IStub::IService_sendMsg(ackAccountLogin);
 	return;
 }
 
@@ -136,7 +136,7 @@ void CLoginStub::_onMsgLoginSystemGC2LGReqGetAccountToken(BSLib::Framework::SMsg
 
     GSLib::LoginSystem::CMsgLoginSystemLG2GCAckGetAccountToken ackAccountLogin;
     if (!GSLib::LoginSystem::LG::CLoginSystemLG::singleton().verifyGetAccountToken(getStubID(), accountLoginIP, *reqAccountLogin, ackAccountLogin)){
-        GFLib::CommonServer::CStub::IService_sendMsg(ackAccountLogin);
+        GFLib::CommonServer::IStub::IService_sendMsg(ackAccountLogin);
         return ;
     }
 }
@@ -169,7 +169,7 @@ bool CLoginStub::_cbTimerAccountLogin(BSLib::uint64, void* a_para)
 
 	}
 	m_timeHandleAccountLogin = BSLib::Utility::INVALID_TIMER;
-	GFLib::CommonServer::CStub::setState(BSLib::Network::ESS_RECYCLE);
+	GFLib::CommonServer::IStub::setState(BSLib::Network::ESS_RECYCLE);
 	return false;
 }
 
@@ -177,7 +177,7 @@ void CLoginStub::_notifyAccountLoginResult(GSLib::LoginSystem::ELoginResult resu
 {
 	GSLib::LoginSystem::CMsgLoginSystemLG2GCAckAccountLogin ackAccountLogin;
 	ackAccountLogin.m_state = result;
-	GFLib::CommonServer::CStub::IService_sendMsg(ackAccountLogin);
+	GFLib::CommonServer::IStub::IService_sendMsg(ackAccountLogin);
 }
 
 
@@ -185,7 +185,7 @@ void CLoginStub::_notifyGetAccountTokenResult(GSLib::LoginSystem::EGetAccountTok
 {
     GSLib::LoginSystem::CMsgLoginSystemLG2GCAckGetAccountToken ackAccountLogin;
     ackAccountLogin.m_state = result;
-    GFLib::CommonServer::CStub::IService_sendMsg(ackAccountLogin);
+    GFLib::CommonServer::IStub::IService_sendMsg(ackAccountLogin);
 }
 
 

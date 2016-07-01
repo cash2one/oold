@@ -195,7 +195,7 @@ BSLib::Network::CNetStubPtr CGameServer::_cbNewTcpStub(BSLib::Network::CNetConne
 	BSLib::Network::CNetStubPtr netStubPtr = NULL;
 	switch (flag) {
 		case 1:
-			netStubPtr = new GFLib::CommonServer::CStub(netConnPtr);
+			netStubPtr = new GFLib::CommonServer::IStub(netConnPtr);
 			break;
 		case 0:
 		default:
