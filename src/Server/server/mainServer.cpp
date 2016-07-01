@@ -22,7 +22,7 @@ CMainServer::~CMainServer()
 
 int CMainServer::main()
 {	
-	return CMainServer::singleton()._main();
+	return CMainServer::singleton()._IThread_main();
 }
 
 bool CMainServer::_init()
@@ -40,7 +40,7 @@ bool CMainServer::_init()
 	} else {
 		CMainCommand::singleton().init(false);
 	}
-	if (!BSLib::Framework::CMainThread::_init()) {
+	if (!BSLib::Framework::CMainThread::_IThread_init()) {
 		return false;
 	}
 	BSLib::uint32 key = BSLib::Framework::CSysConfig::singleton().getValueInt("k");
@@ -55,7 +55,7 @@ int CMainServer::_final()
 	g_fileTracer.close();
 	CMainCommand::singleton().final();
 	CChannelMgr::singleton().final();
-	return BSLib::Framework::CMainThread::_final();
+	return BSLib::Framework::CMainThread::_IThread_final();
 }
 
 

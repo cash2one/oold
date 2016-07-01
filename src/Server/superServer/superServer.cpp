@@ -62,12 +62,12 @@ std::string CSuperServer::getServerVersion()
 
 int CSuperServer::main()
 {
-	return CSuperServer::singleton()._main();
+	return CSuperServer::singleton()._IThread_main();
 }
 
 bool CSuperServer::_init()
 {
-	if (!GFLib::CommonServer::CCommonServer::_init()) {
+	if (!GFLib::CommonServer::CCommonServer::_IThread_init()) {
 		return false;
 	}
 
@@ -79,12 +79,12 @@ bool CSuperServer::_callback()
 // 	BSLib::uint64 id_1 = GFLib::CommonServer::CUniqueIDMgr::singleton().getInt64ZoneUniqueID(1);
 // 	BSLib::uint64 id_2 = GFLib::CommonServer::CUniqueIDMgr::singleton().getInt64ZoneUniqueID(2);
 // 	BSLIB_LOG_INFO(Server::ETT_SERVER_COMMON, "@@@[%llX][%llX]", id_1, id_2);
-	return GFLib::CommonServer::CCommonServer::_callback();
+	return GFLib::CommonServer::CCommonServer::_IThread_callback();
 }
 
 int CSuperServer::_final()
 {
-	return GFLib::CommonServer::CCommonServer::_final();
+	return GFLib::CommonServer::CCommonServer::_IThread_final();
 }
 
 bool CSuperServer::_initSystem(GFLib::CommonServer::CCommonSystemMgr* commanSystemMgr)

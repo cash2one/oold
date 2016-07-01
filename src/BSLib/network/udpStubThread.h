@@ -13,7 +13,7 @@ namespace Network
 class CUdpStubThread : public CNetStubThread, public CUdpConnectionMgr
 {
 public:
-	CUdpStubThread(CNetServer* netServer);
+	CUdpStubThread(INetServer* netServer);
 	virtual ~CUdpStubThread();
 
 protected:

@@ -6,7 +6,7 @@ namespace BSLib
 namespace Network
 {
 
-CTcpStubThread::CTcpStubThread(CNetServer* netServer)
+CTcpStubThread::CTcpStubThread(INetServer* netServer)
 : CNetStubThread(netServer)
 {
 	;

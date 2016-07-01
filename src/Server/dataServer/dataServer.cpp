@@ -75,12 +75,12 @@ std::string CDataServer::getServerVersion()
 
 int CDataServer::main()
 {
-	return CDataServer::singleton()._main();
+	return CDataServer::singleton()._IThread_main();
 }
 
 int CDataServer::_final()
 {
-	return GFLib::CommonServer::CCommonServer::_final();
+	return GFLib::CommonServer::CCommonServer::_IThread_final();
 }
 
 bool CDataServer::_loadGameConfig(const std::string& a_configPath)

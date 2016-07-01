@@ -68,12 +68,12 @@ std::string CCenterServer::getServerVersion()
 
 int CCenterServer::main()
 {
-	return CCenterServer::singleton()._main();
+	return CCenterServer::singleton()._IThread_main();
 }
 
 int CCenterServer::_final()
 {
-	return GFLib::CommonServer::CCommonServer::_final();
+	return GFLib::CommonServer::CCommonServer::_IThread_final();
 }
 
 bool CCenterServer::_initSystem(GFLib::CommonServer::CCommonSystemMgr* commanSystemMgr)

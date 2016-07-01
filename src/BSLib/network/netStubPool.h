@@ -13,12 +13,12 @@ namespace BSLib
 namespace Network
 {
 
-class CNetServer;
+class INetServer;
 
 class CNetStubPool
 {
 public:
-	CNetStubPool(CNetServer* netServer, ENetType netType);
+	CNetStubPool(INetServer* netServer, ENetType netType);
 	virtual ~CNetStubPool();
 
 	virtual bool init(const uint32 maxStub, uint32 countPerThd, const uint32 minThread);
@@ -33,7 +33,7 @@ private:
 	virtual bool _addStub(CNetStubPtr& stubPtr);
 
 private:
-	CNetServer* m_netServer;
+	INetServer* m_netServer;
 	ENetType m_netType;
 	uint32 m_maxStub;
 	uint32 m_countPerThd;

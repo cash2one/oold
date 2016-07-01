@@ -116,7 +116,7 @@ CMainThread::~CMainThread()
 	;
 }
 
-bool CMainThread::_init()
+bool CMainThread::_IThread_init()
 {
 #ifdef WIN32
 
@@ -135,7 +135,7 @@ bool CMainThread::_init()
 
 #endif
 
-	return IThreadFrame::_init();
+	return IThread::_IThread_init();
 }
 
 }//Framework

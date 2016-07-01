@@ -9,7 +9,7 @@ namespace BSLib
 namespace Network
 {
 
-CNetStubThread::CNetStubThread(CNetServer* netServer)
+CNetStubThread::CNetStubThread(INetServer* netServer)
 : m_isRunning(false)
 , m_oneSecTimer(1000)
 , m_threeSecTimer(3000)

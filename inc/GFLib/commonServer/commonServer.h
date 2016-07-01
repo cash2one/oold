@@ -16,7 +16,9 @@ namespace CommonServer
 
 struct SAcceptorIPAndPort;
 
-class GFLIB_COMMONSERVER_API CCommonServer : public BSLib::Framework::CMainThread, public BSLib::Network::CNetServer
+class GFLIB_COMMONSERVER_API CCommonServer 
+    : public BSLib::Framework::CMainThread
+    , public BSLib::Network::INetServer
 {
 public:
 	CCommonServer();
@@ -34,10 +36,10 @@ public:
 	bool getNeedPing() { return m_needPing; }
 
 protected:
-	virtual bool _init();
-	virtual int _final();
+	virtual bool _INetServer_init();
+	virtual int _INetServer_final();
 
-	virtual bool _callback();
+	virtual bool _IThread_callback() override;
 	//virtual void _update_1000();
 	
 	//初始化服务器
@@ -63,9 +65,9 @@ protected:
 
 	BSLib::Utility::CCmdExecMgr* _getCmdExecMgr() { return &m_cmdExecMgr; }
 
-	virtual BSLib::Network::CNetStubMgr* _cbNetStubMgr();
-	virtual BSLib::Network::CNetStubPtr _cbNewTcpStub(BSLib::Network::CNetConnectionPtr& netConnPtr, void* tempData);
-	virtual BSLib::Network::CNetStubPtr _cbNewUdpStub(BSLib::Network::CNetConnectionPtr& netConnPtr, void* tempData);
+	virtual BSLib::Network::CNetStubMgr* _INetServer_cbNetStubMgr();
+	virtual BSLib::Network::CNetStubPtr _INetServer_cbNewTcpStub(BSLib::Network::CNetConnectionPtr& netConnPtr, void* tempData);
+	virtual BSLib::Network::CNetStubPtr _INetServer_cbNewUdpStub(BSLib::Network::CNetConnectionPtr& netConnPtr, void* tempData);
 	virtual CCommonClientPtr _cbCreateClient(SServerID& a_serverID, const std::string& a_serverKey);
 
 protected:

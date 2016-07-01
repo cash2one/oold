@@ -29,14 +29,14 @@ namespace BSLib
 namespace Framework
 {
 
-class BSLIB_FRAMEWORK_API CMainThread : public IThreadFrame
+class BSLIB_FRAMEWORK_API CMainThread : public IThread
 {
 public:
 	CMainThread();
 	virtual ~CMainThread();
 
 protected:
-	virtual bool _init();
+	virtual bool _IThread_init();
 
 public:
 	static CMainThread* getMainThread() { return m_mainThread; }

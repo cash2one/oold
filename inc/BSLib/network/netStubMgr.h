@@ -29,7 +29,7 @@ protected:
 	bool _send(StubID stubID, const void* msgBuff, uint32 buffSize);
 
 private:
-	virtual bool checkUniqueID(StubID id);
+	virtual bool checkUniqueID(StubID id) override;
 
 protected:
 	BSLib::Utility::CMutex m_mutex;

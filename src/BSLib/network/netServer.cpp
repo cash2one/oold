@@ -20,7 +20,7 @@ namespace Network
 class CTcpAcceptorCb: public BSLib::Network::CNetAcceptorCallback
 {
 public:
-	CTcpAcceptorCb(CNetServer* netServer) : m_netServer(netServer){}
+	CTcpAcceptorCb(INetServer* netServer) : m_netServer(netServer){}
 	virtual ~CTcpAcceptorCb(){}
 
 	virtual bool newConnect(int sock, BSLib::Network::CSockAddr& addrLocal, BSLib::Network::CSockAddr& addrPeer, void* tempData)
@@ -32,13 +32,13 @@ public:
 	}
 
 private:
-	CNetServer* m_netServer;
+	INetServer* m_netServer;
 };
 
 class CUdpAcceptorCb: public BSLib::Network::CNetAcceptorCallback
 {
 public:
-	CUdpAcceptorCb(CNetServer* netServer) : m_netServer(netServer){}
+	CUdpAcceptorCb(INetServer* netServer) : m_netServer(netServer){}
 	virtual ~CUdpAcceptorCb(){}
 
 	virtual bool newConnect(int sock, BSLib::Network::CSockAddr& addrLocal, BSLib::Network::CSockAddr& addrPeer, void* tempData)
@@ -50,12 +50,12 @@ public:
 	}
 
 private:
-	CNetServer* m_netServer;
+	INetServer* m_netServer;
 };
 
 //////////////////////////////////////////////////////////////////////////
 
-CNetServer::CNetServer()
+INetServer::INetServer()
 : m_netStubMgr(NULL)
 , m_tcpAcceptor(NULL)
 , m_udpAcceptor(NULL)
@@ -68,12 +68,12 @@ CNetServer::CNetServer()
 	;
 }
 
-CNetServer::~CNetServer()
+INetServer::~INetServer()
 {
 	;
 }
 
-void  CNetServer::getNetInfo(SNetInfo& a_netInfo, BSLib::Utility::CRealTime& realTimer)
+void  INetServer::getNetInfo(SNetInfo& a_netInfo, BSLib::Utility::CRealTime& realTimer)
 {
 	if (m_tcpStubPool != NULL) {
 		m_tcpStubPool->getStubsInfo(a_netInfo.m_tcpStubsInfor);
@@ -82,7 +82,7 @@ void  CNetServer::getNetInfo(SNetInfo& a_netInfo, BSLib::Utility::CRealTime& rea
 	a_netInfo.m_tcpStubsInfor.m_connectTotal = m_tcpCollectCount.getValue();
 }
 
-bool CNetServer::_addTcpAccpetor(CSockAddr& acceptorAddr, void* tempData)
+bool INetServer::_addTcpAccpetor(CSockAddr& acceptorAddr, void* tempData)
 {
 	if (m_acceptorCbPtr == NULL) {
 		m_acceptorCbPtr = new CTcpAcceptorCb(this);
@@ -105,14 +105,14 @@ bool CNetServer::_addTcpAccpetor(CSockAddr& acceptorAddr, void* tempData)
 	return true;
 }
 
-bool CNetServer::_addTcpAccpetor(const std::string& acceptorIP, uint16 acceptPort, void* tempData)
+bool INetServer::_addTcpAccpetor(const std::string& acceptorIP, uint16 acceptPort, void* tempData)
 {
 	BSLib::Network::CSockAddr tcpSockAddr(acceptorIP.c_str(), acceptPort);
 
 	return _addTcpAccpetor(tcpSockAddr, tempData);
 }
 
-bool CNetServer::_addUdpAccpetor(CSockAddr& acceptorAddr, void* tempData)
+bool INetServer::_addUdpAccpetor(CSockAddr& acceptorAddr, void* tempData)
 {
 	if (m_acceptorCbPtr == NULL) {
 		m_acceptorCbPtr = new CUdpAcceptorCb(this);
@@ -135,14 +135,14 @@ bool CNetServer::_addUdpAccpetor(CSockAddr& acceptorAddr, void* tempData)
 	return true;
 }
 
-bool CNetServer::_addUdpAccpetor(const std::string& acceptorIP, uint16 acceptPort, void* tempData)
+bool INetServer::_addUdpAccpetor(const std::string& acceptorIP, uint16 acceptPort, void* tempData)
 {
 	BSLib::Network::CSockAddr udpSockAddr(acceptorIP.c_str(), acceptPort);
 
 	return _addUdpAccpetor(udpSockAddr, tempData);
 }
 
-bool CNetServer::_setTcpStubPool(uint32 maxStub, uint32 minThread, uint32 maxStubPerThd)
+bool INetServer::_setTcpStubPool(uint32 maxStub, uint32 minThread, uint32 maxStubPerThd)
 { 
 	if (m_tcpStubPool == NULL) {
 		m_tcpStubPool = new CNetStubPool(this, NETT_TCP);
@@ -153,7 +153,7 @@ bool CNetServer::_setTcpStubPool(uint32 maxStub, uint32 minThread, uint32 maxStu
 	return m_tcpStubPool->init(maxStub, maxStubPerThd, minThread);
 }
 
-bool CNetServer::_setUdpStubPool(uint32 maxStub, uint32 minThread, uint32 maxStubPerThd) 
+bool INetServer::_setUdpStubPool(uint32 maxStub, uint32 minThread, uint32 maxStubPerThd) 
 {
 	if (m_udpStubPool == NULL) {
 		m_udpStubPool = new CNetStubPool(this, NETT_UDP);
@@ -164,10 +164,10 @@ bool CNetServer::_setUdpStubPool(uint32 maxStub, uint32 minThread, uint32 maxStu
 	return m_udpStubPool->init(maxStub, maxStubPerThd, minThread); 
 }
 
-bool CNetServer::_init()
+bool INetServer::_INetServer_init()
 {
 	if (m_netStubMgr == NULL) {
-		m_netStubMgr = _cbNetStubMgr();
+		m_netStubMgr = _INetServer_cbNetStubMgr();
 		if (m_netStubMgr == NULL) {
 			BSLIB_LOG_ERROR(BSLib::ETT_BSLIB_NETWORK, "NetStubMgr == NULL");
 			return false;
@@ -176,16 +176,16 @@ bool CNetServer::_init()
 	
 	if (m_tcpAcceptor != NULL) {
 		m_tcpAcceptorRunning = true;
-		m_tcpAcceptorThread = BSLib::Utility::CHndThread::createThread(&CNetServer::_tcpAcceptorThread, this);
+		m_tcpAcceptorThread = BSLib::Utility::CHndThread::createThread(&INetServer::_tcpAcceptorThread, this);
 	}
 	if (m_udpAcceptor != NULL) {
 		m_udpAcceptorRunning = true;
-		m_udpAcceptorThread = BSLib::Utility::CHndThread::createThread(&CNetServer::_udpAcceptorThread, this);
+		m_udpAcceptorThread = BSLib::Utility::CHndThread::createThread(&INetServer::_udpAcceptorThread, this);
 	}
 	return true;
 }
 
-int CNetServer::_final()
+int INetServer::_INetServer_final()
 {
 	if (m_tcpAcceptor != NULL) {
 		if (m_tcpAcceptorThread.isValid()) {
@@ -215,7 +215,7 @@ int CNetServer::_final()
 	return 0;
 }
 
-bool CNetServer::_newTcpConnect(int sock, BSLib::Network::CSockAddr& addrLocal, BSLib::Network::CSockAddr& addrPeer, void* tempData)
+bool INetServer::_newTcpConnect(int sock, BSLib::Network::CSockAddr& addrLocal, BSLib::Network::CSockAddr& addrPeer, void* tempData)
 {
 	BSLIB_LOG_INFO(BSLib::ETT_BSLIB_NETWORK, "TCP[%d][%s:%d]<--[%s:%d] connect", sock, addrLocal.getIP().c_str(), addrLocal.getPort(), addrPeer.getIP().c_str(), addrPeer.getPort());
 	m_tcpCollectCount.increment();
@@ -229,7 +229,7 @@ bool CNetServer::_newTcpConnect(int sock, BSLib::Network::CSockAddr& addrLocal, 
 		BSLIB_LOG_ERROR(BSLib::ETT_BSLIB_NETWORK, "tcpStubPool == NULL");
 		return false;
 	}
-	BSLib::Network::CNetStubPtr tcpStub = _cbNewTcpStub(tcpNetConnPtr, tempData);
+	BSLib::Network::CNetStubPtr tcpStub = _INetServer_cbNewTcpStub(tcpNetConnPtr, tempData);
 	if (tcpStub == NULL){
 		BSLIB_LOG_ERROR(BSLib::ETT_BSLIB_NETWORK, "create TcpStub error");
 		return false;
@@ -244,7 +244,7 @@ bool CNetServer::_newTcpConnect(int sock, BSLib::Network::CSockAddr& addrLocal, 
 	return true;
 }
 
-bool CNetServer::_newUdpConnect(int sock, BSLib::Network::CSockAddr& addrLocal, BSLib::Network::CSockAddr& addrPeer, void* tempData)
+bool INetServer::_newUdpConnect(int sock, BSLib::Network::CSockAddr& addrLocal, BSLib::Network::CSockAddr& addrPeer, void* tempData)
 {
 	BSLIB_LOG_INFO(BSLib::ETT_BSLIB_NETWORK, "UDP[%d][%s:%d]<--[%s:%d] connect", sock, addrLocal.getIP().c_str(), addrLocal.getPort(), addrPeer.getIP().c_str(), addrPeer.getPort());
 
@@ -257,7 +257,7 @@ bool CNetServer::_newUdpConnect(int sock, BSLib::Network::CSockAddr& addrLocal, 
 		BSLIB_LOG_ERROR(BSLib::ETT_BSLIB_NETWORK, "udpStubPool == NULL");
 		return false;
 	}
-	BSLib::Network::CNetStubPtr udpStub = _cbNewUdpStub(udpNetConnPtr, tempData);
+	BSLib::Network::CNetStubPtr udpStub = _INetServer_cbNewUdpStub(udpNetConnPtr, tempData);
 	if (udpStub == NULL){
 		BSLIB_LOG_ERROR(BSLib::ETT_BSLIB_NETWORK, "create UdpStub error");
 		return false;
@@ -272,7 +272,7 @@ bool CNetServer::_newUdpConnect(int sock, BSLib::Network::CSockAddr& addrLocal, 
 	return true;
 }
 
-int CNetServer::_tcpAcceptorThread(void* para)
+int INetServer::_tcpAcceptorThread(void* para)
 {
 	while (m_tcpAcceptorRunning) {
 		m_tcpAcceptor->waitSocket(15);
@@ -281,7 +281,7 @@ int CNetServer::_tcpAcceptorThread(void* para)
 	return 0;
 }
 
-int CNetServer::_udpAcceptorThread(void* para)
+int INetServer::_udpAcceptorThread(void* para)
 {
 	while (m_udpAcceptorRunning) {
 		m_udpAcceptor->waitSocket(15);
