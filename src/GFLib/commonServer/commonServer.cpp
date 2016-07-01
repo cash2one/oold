@@ -69,7 +69,7 @@ const std::string& CCommonServer::getServerTypeName()
 	return CServerTypeMgr::singleton().getTextServerType(getServerType());
 }
 
-bool CCommonServer::_INetServer_init()
+bool CCommonServer::_IThread_init()
 {
 	if (!_loadInitConfigFile()){
 		return false;
@@ -177,7 +177,7 @@ bool CCommonServer::_INetServer_init()
 	return true;
 }
 
-int CCommonServer::_INetServer_final()
+int CCommonServer::_IThread_final()
 {
 	const std::string& serverName = getServerTypeName();
 	BSLIB_LOG_INFO(ETT_GFLIB_COMMON, "###### %s ÍË³ö ######", serverName.c_str());

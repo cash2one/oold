@@ -146,7 +146,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>Utility.lib;UDM.lib;Network.lib;Framework.lib;Database.lib;CommonServer.lib;Dbghelp.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>$(OutDir)$(ProjectName)_d.exe</OutputFile>
+      <OutputFile>$(OutDir)$(ProjectName).exe</OutputFile>
       <AdditionalLibraryDirectories>..\..\..\lib\BSLib\$(Platform)\$(Configuration);..\..\..\lib\GFLib\$(Platform)\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>

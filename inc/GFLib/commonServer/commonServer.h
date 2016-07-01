@@ -36,8 +36,8 @@ public:
 	bool getNeedPing() { return m_needPing; }
 
 protected:
-	virtual bool _INetServer_init();
-	virtual int _INetServer_final();
+	virtual bool _IThread_init();
+	virtual int _IThread_final();
 
 	virtual bool _IThread_callback() override;
 	//virtual void _update_1000();
