@@ -9,7 +9,7 @@ namespace BSLib
 namespace Network
 {
 
-CNetStubPool::CNetStubPool(CNetServer* netServer, ENetType netType)
+CNetStubPool::CNetStubPool(INetServer* netServer, ENetType netType)
 : m_netServer(netServer)
 , m_netType(netType)
 , m_maxStub(0)

@@ -69,7 +69,7 @@ const std::string& CCommonServer::getServerTypeName()
 	return CServerTypeMgr::singleton().getTextServerType(getServerType());
 }
 
-bool CCommonServer::_init()
+bool CCommonServer::_IThread_init()
 {
 	if (!_loadInitConfigFile()){
 		return false;
@@ -132,7 +132,7 @@ bool CCommonServer::_init()
 		return false;
 	}
 
-	if (!BSLib::Framework::CMainThread::_init()) {
+	if (!BSLib::Framework::CMainThread::_IThread_init()) {
 		return false;
 	}
 
@@ -148,7 +148,7 @@ bool CCommonServer::_init()
 	if (!_openNetServer()) {
 		return false;
 	}
-	if (!BSLib::Network::CNetServer::_init()) {
+	if (!BSLib::Network::INetServer::_INetServer_init()) {
 		return false;
 	}
 	BSLib::uint32 sysKey = BSLib::Framework::CSysConfig::singleton().getValueInt("SysKey");
@@ -177,7 +177,7 @@ bool CCommonServer::_init()
 	return true;
 }
 
-int CCommonServer::_final()
+int CCommonServer::_IThread_final()
 {
 	const std::string& serverName = getServerTypeName();
 	BSLIB_LOG_INFO(ETT_GFLIB_COMMON, "###### %s 退出 ######", serverName.c_str());
@@ -195,29 +195,29 @@ int CCommonServer::_final()
 	BSLIB_LOG_DEBUG(ETT_GFLIB_COMMON, "释放CClientMgr资源", serverName.c_str());
 	CClientMgr::singleton().final();
 
-	BSLIB_LOG_DEBUG(ETT_GFLIB_COMMON, "释放CNetServer资源", serverName.c_str());
-	BSLib::Network::CNetServer::_final();
+	BSLIB_LOG_DEBUG(ETT_GFLIB_COMMON, "释放INetServer资源", serverName.c_str());
+	BSLib::Network::INetServer::_INetServer_final();
 
 	BSLIB_LOG_DEBUG(ETT_GFLIB_COMMON, "释放CServiceMgr资源", serverName.c_str());
 	CServiceMgr::singleton().closeAll();
 
 	BSLIB_LOG_DEBUG(ETT_GFLIB_COMMON, "释放CMainThread资源", serverName.c_str());
-	BSLib::Framework::CMainThread::_final();
+	BSLib::Framework::CMainThread::_IThread_final();
 
 	_closeTrace();
 
 	return 0;
 }
 
-bool CCommonServer::_callback()
+bool CCommonServer::_IThread_callback()
 {
-	return BSLib::Framework::CMainThread::_callback();
+	return BSLib::Framework::CMainThread::_IThread_callback();
 }
 
 // void CCommonServer::_update_1000()
 // {
 // 	BSLib::Network::SNetCollectInfor netCollectInfor;
-// 	BSLib::Network::CNetServer::getNetInfo(netCollectInfor);
+// 	BSLib::Network::INetServer::getNetInfo(netCollectInfor);
 // 
 // 	BSLIB_LOG_TRACE(ETT_GFLIB_COMMON, "[ConnectCount=%d][StubCount=%d][OkeyStubCount=%d][VerifyStubCount=%d]"
 // 		,netCollectInfor.m_tcpConnectCount
@@ -321,12 +321,12 @@ bool CCommonServer::_addAcceptorIPAndPort(BSLib::Network::ENetType netType, cons
 	return _addAcceptorIPAndPort(netType, acceptorAddr, tempData);
 }
 
-BSLib::Network::CNetStubMgr* CCommonServer::_cbNetStubMgr()
+BSLib::Network::CNetStubMgr* CCommonServer::_INetServer_cbNetStubMgr()
 {
 	return &CStubMgr::singleton();
 }
 
-BSLib::Network::CNetStubPtr CCommonServer::_cbNewTcpStub(BSLib::Network::CNetConnectionPtr& netConnPtr, void* tempData)
+BSLib::Network::CNetStubPtr CCommonServer::_INetServer_cbNewTcpStub(BSLib::Network::CNetConnectionPtr& netConnPtr, void* tempData)
 {
 	const BSLib::Network::CSockAddr& localAddr = netConnPtr->getLocalAddr();
 	const BSLib::Network::CSockAddr& peerAddr = netConnPtr->getPeerAddr();
@@ -335,7 +335,7 @@ BSLib::Network::CNetStubPtr CCommonServer::_cbNewTcpStub(BSLib::Network::CNetCon
 	return BSLib::Network::CNetStubPtr(NULL);
 }
 
-BSLib::Network::CNetStubPtr CCommonServer::_cbNewUdpStub(BSLib::Network::CNetConnectionPtr& netConnPtr, void* tempData)
+BSLib::Network::CNetStubPtr CCommonServer::_INetServer_cbNewUdpStub(BSLib::Network::CNetConnectionPtr& netConnPtr, void* tempData)
 {
 	return BSLib::Network::CNetStubPtr(NULL);
 }
@@ -577,14 +577,14 @@ bool CCommonServer::_openNetServer()
 			continue;
 		}
 		if (acceptorIPAndPort->m_netType == BSLib::Network::NETT_TCP) {
-			if (!BSLib::Network::CNetServer::_addTcpAccpetor(acceptorIPAndPort->m_listenerAddr, acceptorIPAndPort->m_tempData)) {
+			if (!BSLib::Network::INetServer::_addTcpAccpetor(acceptorIPAndPort->m_listenerAddr, acceptorIPAndPort->m_tempData)) {
 				BSLIB_LOG_ERROR(ETT_GFLIB_COMMON, "%s 开启监听端口 TCP[%s:%d] 失败", serverName.c_str(), acceptorIPAndPort->m_listenerAddr.getIP().c_str(), acceptorIPAndPort->m_listenerAddr.getPort());
 				return false;
 			}
 			needOpenTcp = true;
 			BSLIB_LOG_INFO(ETT_GFLIB_COMMON, "%s 开启监听端口 TCP[%s:%d] 成功", serverName.c_str(), acceptorIPAndPort->m_listenerAddr.getIP().c_str(), acceptorIPAndPort->m_listenerAddr.getPort());
 		} else if (acceptorIPAndPort->m_netType == BSLib::Network::NETT_UDP) {
-			if (!BSLib::Network::CNetServer::_addUdpAccpetor(acceptorIPAndPort->m_listenerAddr, acceptorIPAndPort->m_tempData)) {
+			if (!BSLib::Network::INetServer::_addUdpAccpetor(acceptorIPAndPort->m_listenerAddr, acceptorIPAndPort->m_tempData)) {
 				BSLIB_LOG_ERROR(ETT_GFLIB_COMMON, "%s 开启监听端口 UDP[%s:%d] 失败", serverName.c_str(), acceptorIPAndPort->m_listenerAddr.getIP().c_str(), acceptorIPAndPort->m_listenerAddr.getPort());
 				return false;
 			}
@@ -609,7 +609,7 @@ bool CCommonServer::_openNetServer()
 		if (maxStubPerThd == 0) {
 			maxStubPerThd = 512;
 		}
-		if (!BSLib::Network::CNetServer::_setTcpStubPool(maxStub, minThread, maxStubPerThd)) {
+		if (!BSLib::Network::INetServer::_setTcpStubPool(maxStub, minThread, maxStubPerThd)) {
 			BSLIB_LOG_ERROR(ETT_GFLIB_COMMON, "%s 开启TCP Stub Pool失败", serverName.c_str());
 			return false;
 		}
@@ -627,7 +627,7 @@ bool CCommonServer::_openNetServer()
 		if (maxStubPerThd == 0) {
 			maxStubPerThd = 512;
 		}
-		if (!BSLib::Network::CNetServer::_setUdpStubPool(maxStub, minThread, maxStubPerThd)) {
+		if (!BSLib::Network::INetServer::_setUdpStubPool(maxStub, minThread, maxStubPerThd)) {
 			BSLIB_LOG_ERROR(ETT_GFLIB_COMMON, "%s 开启UDP Stub Pool失败", serverName.c_str());
 			return false;
 		}

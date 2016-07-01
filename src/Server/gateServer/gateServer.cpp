@@ -63,13 +63,13 @@ std::string CGateServer::getServerVersion()
 
 int CGateServer::main()
 {
-	return CGateServer::singleton()._main();
+	return CGateServer::singleton()._IThread_main();
 }
 
 bool CGateServer::_callback()
 {
 	BSLib::Network::SNetInfo netInfor;
-	BSLib::Network::CNetServer::getNetInfo(netInfor, *BSLib::Framework::CMainThread::getRealTime());
+	BSLib::Network::INetServer::getNetInfo(netInfor, *BSLib::Framework::CMainThread::getRealTime());
 	if (netInfor.m_tcpStubsInfor.m_connectTotal != m_tcpStubsInfor.m_connectTotal ||
 		netInfor.m_tcpStubsInfor.m_stubCount != m_tcpStubsInfor.m_stubCount ||
 		netInfor.m_tcpStubsInfor.m_stubOkayCount != m_tcpStubsInfor.m_stubOkayCount || 
@@ -84,12 +84,12 @@ bool CGateServer::_callback()
 			m_tcpStubsInfor = netInfor.m_tcpStubsInfor;
 	}
 
-	return GFLib::CommonServer::CCommonServer::_callback();
+	return GFLib::CommonServer::CCommonServer::_IThread_callback();
 }
 
 int CGateServer::_final()
 {
-	return GFLib::CommonServer::CCommonServer::_final();
+	return GFLib::CommonServer::CCommonServer::_IThread_final();
 }
 
 bool CGateServer::_initSystem(GFLib::CommonServer::CCommonSystemMgr* commanSystemMgr)

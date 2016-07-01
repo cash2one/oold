@@ -68,12 +68,12 @@ std::string CCenterServer::getServerVersion()
 
 int CCenterServer::main()
 {
-	return CCenterServer::singleton()._main();
+	return CCenterServer::singleton()._IThread_main();
 }
 
 int CCenterServer::_final()
 {
-	return GFLib::CommonServer::CCommonServer::_final();
+	return GFLib::CommonServer::CCommonServer::_IThread_final();
 }
 
 bool CCenterServer::_initSystem(GFLib::CommonServer::CCommonSystemMgr* commanSystemMgr)
@@ -148,7 +148,7 @@ BSLib::Network::CNetStubPtr CCenterServer::_cbNewTcpStub(BSLib::Network::CNetCon
 	BSLib::Network::CNetStubPtr netStubPtr = NULL;
 	switch (flag) {
 		case 1:
-			netStubPtr = new GFLib::CommonServer::CStub(netConnPtr);
+			netStubPtr = new GFLib::CommonServer::IStub(netConnPtr);
 			break;
 		case 0:
 		default:

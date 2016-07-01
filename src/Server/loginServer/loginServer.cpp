@@ -61,12 +61,12 @@ std::string CLoginServer::getServerVersion()
 
 int CLoginServer::main()
 {
-	return CLoginServer::singleton()._main();
+	return CLoginServer::singleton()._IThread_main();
 }
 
 bool CLoginServer::_init()
 {
-	if (!GFLib::CommonServer::CCommonServer::_init()) {
+	if (!GFLib::CommonServer::CCommonServer::_IThread_init()) {
 		return false;
 	}
 	return true;
@@ -74,7 +74,7 @@ bool CLoginServer::_init()
 
 int CLoginServer::_final()
 {
-	return GFLib::CommonServer::CCommonServer::_final();
+	return GFLib::CommonServer::CCommonServer::_IThread_final();
 }
 
 bool CLoginServer::_initSystem(GFLib::CommonServer::CCommonSystemMgr* commanSystemMgr)
@@ -134,7 +134,7 @@ BSLib::Network::CNetStubPtr CLoginServer::_cbNewTcpStub(BSLib::Network::CNetConn
 			netStubPtr = new CLoginStub(netConnPtr);
 			break;
 		case 1:
-			netStubPtr = new GFLib::CommonServer::CStub(netConnPtr);
+			netStubPtr = new GFLib::CommonServer::IStub(netConnPtr);
 			break;
 		default:
 			break;

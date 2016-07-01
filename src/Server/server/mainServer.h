@@ -16,8 +16,8 @@ public:
 	static int main();
 
 protected:
-	virtual bool _init();
-	virtual int _final(); 
+	virtual bool _IThread_init();
+	virtual int _IThread__final(); 
 
 private:
 };

@@ -195,12 +195,12 @@ typedef BSLib::Utility::CPointer<CNetStubCb> CNetStubCbPtr;
 //////////////////////////////////////////////////////////////////////////
 // CNetStubThread
 //////////////////////////////////////////////////////////////////////////
-class CNetServer;
+class INetServer;
 
 class CNetStubThread : public BSLib::Utility::CThread
 {
 public:
-	CNetStubThread(CNetServer* netServer);
+	CNetStubThread(INetServer* netServer);
 	virtual ~CNetStubThread();
 
 	virtual void start();
@@ -241,7 +241,7 @@ private:
 	std::list<CNetStubCbPtr> m_syncList;
 	std::list<CNetStubCbPtr> m_okayList;
 
-	CNetServer* m_netServer;
+	INetServer* m_netServer;
 	BSLib::Utility::CTimerServer m_timerServer;
 
 	BSLib::uint64 m_recvBytesCount;

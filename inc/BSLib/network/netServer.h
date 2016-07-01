@@ -56,11 +56,11 @@ struct SNetInfo
 	SNetFlowInfo m_tcpFlowInfor;
 };
 
-class  BSLIB_NETWORK_API CNetServer
+class  BSLIB_NETWORK_API INetServer
 {
 public:
-	CNetServer();
-	virtual ~CNetServer();
+	INetServer();
+	virtual ~INetServer();
 
 	CNetStubMgr* getNetStubMgr() { return m_netStubMgr; }
 
@@ -80,12 +80,12 @@ protected:
 	bool _setTcpStubPool(uint32 maxStub, uint32 minThread, uint32 maxStubPerThd);
 	bool _setUdpStubPool(uint32 maxStub, uint32 minThread, uint32 maxStubPerThd);
 
-	virtual bool _init();
-	virtual int _final();
+	virtual bool _INetServer_init();
+	virtual int _INetServer_final();
 
-	virtual CNetStubMgr* _cbNetStubMgr() = 0;
-	virtual CNetStubPtr _cbNewTcpStub(BSLib::Network::CNetConnectionPtr& netConnPtr, void* tempData) = 0;
-	virtual CNetStubPtr _cbNewUdpStub(BSLib::Network::CNetConnectionPtr& netConnPtr, void* tempData) = 0;
+	virtual CNetStubMgr* _INetServer_cbNetStubMgr() = 0;
+	virtual CNetStubPtr _INetServer_cbNewTcpStub(BSLib::Network::CNetConnectionPtr& netConnPtr, void* tempData) = 0;
+	virtual CNetStubPtr _INetServer_cbNewUdpStub(BSLib::Network::CNetConnectionPtr& netConnPtr, void* tempData) = 0;
 
 private:	
 	bool _newTcpConnect(int sock, BSLib::Network::CSockAddr& addrLocal, BSLib::Network::CSockAddr& addrPeer, void* tempData);

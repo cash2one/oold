@@ -25,9 +25,9 @@ protected:
 	virtual void _INetConnectionMgr_delConnFromPoll(CConnectItemPtr& connItemPtr);
 	virtual bool _INetConnectionMgr_epoll(int msSec);
 
-	virtual bool _readScoket(SOCKET& tcpSocket, void* data);
-	virtual bool _writeScoket(SOCKET& tcpSocket, void* data);
-	virtual void _terminateScoket(SOCKET& tcpSocket, void* data);
+	bool _readScoket(SOCKET& tcpSocket, void* data);
+	bool _writeScoket(SOCKET& tcpSocket, void* data);
+	void _terminateScoket(SOCKET& tcpSocket, void* data);
 
 private:
 	CTcpEpoll* m_tcpEpoll;

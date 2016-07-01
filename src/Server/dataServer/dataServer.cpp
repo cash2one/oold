@@ -75,12 +75,12 @@ std::string CDataServer::getServerVersion()
 
 int CDataServer::main()
 {
-	return CDataServer::singleton()._main();
+	return CDataServer::singleton()._IThread_main();
 }
 
 int CDataServer::_final()
 {
-	return GFLib::CommonServer::CCommonServer::_final();
+	return GFLib::CommonServer::CCommonServer::_IThread_final();
 }
 
 bool CDataServer::_loadGameConfig(const std::string& a_configPath)
@@ -139,7 +139,7 @@ BSLib::Network::CNetStubPtr CDataServer::_cbNewTcpStub(BSLib::Network::CNetConne
 	BSLib::Network::CNetStubPtr netStubPtr = NULL;
 	switch (flag) {
 		case 1:
-			netStubPtr = new GFLib::CommonServer::CStub(netConnPtr);
+			netStubPtr = new GFLib::CommonServer::IStub(netConnPtr);
 			break;
 		case 0:
 		default:

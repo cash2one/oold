@@ -82,12 +82,12 @@ std::string CGameServer::getServerVersion()
 
 int CGameServer::main()
 {
-	return CGameServer::singleton()._main();
+	return CGameServer::singleton()._IThread_main();
 }
 
 bool CGameServer::_init()
 {
-	return GFLib::CommonServer::CCommonServer::_init();
+	return GFLib::CommonServer::CCommonServer::_IThread_init();
 }
 
 bool CGameServer::_callback()
@@ -115,7 +115,7 @@ bool CGameServer::_callback()
 
 int CGameServer::_final()
 {
-	return GFLib::CommonServer::CCommonServer::_final();
+	return GFLib::CommonServer::CCommonServer::_IThread_final();
 }
 
 bool CGameServer::_initSystem(GFLib::CommonServer::CCommonSystemMgr* commanSystemMgr)
@@ -195,7 +195,7 @@ BSLib::Network::CNetStubPtr CGameServer::_cbNewTcpStub(BSLib::Network::CNetConne
 	BSLib::Network::CNetStubPtr netStubPtr = NULL;
 	switch (flag) {
 		case 1:
-			netStubPtr = new GFLib::CommonServer::CStub(netConnPtr);
+			netStubPtr = new GFLib::CommonServer::IStub(netConnPtr);
 			break;
 		case 0:
 		default:

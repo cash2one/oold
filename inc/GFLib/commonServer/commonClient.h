@@ -31,7 +31,7 @@ public:
 	void join();
 	bool isValid();
 
-	virtual void terminate();
+	void terminate();
 
 	void setNeedReconnect(bool a_reconnect) { m_needReconnect = a_reconnect; }
 	void setNeedTerminateServer(bool a_terminateServer) { m_neetTerminateServer = a_terminateServer; }
@@ -40,16 +40,16 @@ public:
 	void setServerIPAndPort(const std::string& connectIP, int connectPort) { m_connectIP = connectIP; m_connectPort = connectPort; }
 
 protected:
-	virtual void _initClient();	
-	virtual void _notifyServerID();
-	virtual void _finalClient();
+	void _initClient();	
+	void _notifyServerID();
+	void _finalClient();
 
 	virtual bool _INetClient_cbParseMsg(void* msgBuff, BSLib::uint32 msgSize);
 	virtual void _INetClient_cbTerminate();
-	virtual bool _canTransfer() { return true; }
+	
 	virtual GFLib::StubID _IService_getStubID() { return INVALID_STUBID; }
 
-	virtual int _run(void* a_para);
+	int _run(void* a_para);
 
 	BSLib::Utility::CTimerServer* _getTimerServer() { return &m_timerServer; }
 

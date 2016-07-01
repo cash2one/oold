@@ -11,7 +11,7 @@ namespace BSLib
 namespace Framework
 {
 
-IThreadFrame::IThreadFrame()
+IThread::IThread()
 : m_isTerminate(false)
 , m_isValid(false)
 , m_msgQueue(&m_event)
@@ -22,12 +22,12 @@ IThreadFrame::IThreadFrame()
 	;
 }
 
-IThreadFrame::~IThreadFrame()
+IThread::~IThread()
 {
 	;
 }
 
-void IThreadFrame::terminate()
+void IThread::terminate()
 {
 	if (isTerminate()) {
 		return ;
@@ -36,7 +36,7 @@ void IThreadFrame::terminate()
 	sendMsg(&ntfTerminate, sizeof(ntfTerminate));
 }
 
-bool IThreadFrame::sendMsg(CMessage& msg)
+bool IThread::sendMsg(CMessage& msg)
 {
 	BSLib::Utility::CStream stream;
 	if (!msg.serializeTo(stream)){
@@ -45,7 +45,7 @@ bool IThreadFrame::sendMsg(CMessage& msg)
 	return sendMsg((SMessage*)stream.readPtr(), (int)stream.readSize());
 }
 
-bool IThreadFrame::sendMsg(CMessage& msg, SMsgLabel* msgLabel, int msgLabelSize)
+bool IThread::sendMsg(CMessage& msg, SMsgLabel* msgLabel, int msgLabelSize)
 {
 	BSLib::Utility::CStream stream;
 	if (!msg.serializeTo(stream)){
@@ -54,7 +54,7 @@ bool IThreadFrame::sendMsg(CMessage& msg, SMsgLabel* msgLabel, int msgLabelSize)
 	return sendMsg((SMessage*)stream.readPtr(), (int)stream.readSize(), msgLabel, msgLabelSize);
 }
 
-bool IThreadFrame::sendMsg(SMessage* msg, int msgSize)
+bool IThread::sendMsg(SMessage* msg, int msgSize)
 {
 	if (isTerminate()) {
 		return false;
@@ -64,7 +64,7 @@ bool IThreadFrame::sendMsg(SMessage* msg, int msgSize)
 	return sendMsg(msg, msgSize, &msgLabel, sizeof(msgLabel));
 }
 
-bool IThreadFrame::sendMsg(SMessage* msg, int msgSize, SMsgLabel* msgLabel, int msgLabelSize)
+bool IThread::sendMsg(SMessage* msg, int msgSize, SMsgLabel* msgLabel, int msgLabelSize)
 {
 	if (isTerminate()) {
 		return false;
@@ -79,7 +79,7 @@ bool IThreadFrame::sendMsg(SMessage* msg, int msgSize, SMsgLabel* msgLabel, int 
 	return false;
 }
 
-bool IThreadFrame::_init()
+bool IThread::_IThread_init()
 {
 	BSLib::Utility::CRealTime* realTime = getRealTime();
 	if (realTime == NULL) {
@@ -89,7 +89,7 @@ bool IThreadFrame::_init()
 	m_lastMilliseconds = realTime->milliseconds();
 	//m_updateTimer_1.reset(1000, *realTime);
 
-	CMsgExecPtr msgExecPtr = new CMsgExec(&IThreadFrame::_onMsgNtfTerminate, this);
+	CMsgExecPtr msgExecPtr = new CMsgExec(&IThread::_onMsgNtfTerminate, this);
 	if (msgExecPtr == NULL){
 		return false;
 	}
@@ -99,7 +99,7 @@ bool IThreadFrame::_init()
 	return true;
 }
 
-int IThreadFrame::_main()
+int IThread::_IThread_main()
 {
 	m_isValid = true;
 	m_isTerminate = false;
@@ -109,7 +109,7 @@ int IThreadFrame::_main()
 		return -1;
 	}
 
-	if (_init()){
+	if (_IThread_init()){
 		while(!isTerminate()){
 
 			realTime->now();
@@ -120,7 +120,7 @@ int IThreadFrame::_main()
 
 			m_timerServer.update();
 
-			if (!_callback()){
+			if (!_IThread_callback()){
 				break;
 			}
 // 			if (m_updateTimer_1(*realTime)) {
@@ -141,7 +141,7 @@ int IThreadFrame::_main()
 
 	m_isTerminate = true;
 
-	int res = _final();
+	int res = _IThread_final();
 
 	m_isValid = false;
 	m_msgQueue.clear();
@@ -149,25 +149,25 @@ int IThreadFrame::_main()
 	return res;
 }
 
-int IThreadFrame::_final()
+int IThread::_IThread_final()
 {
 	CMsgDebug::singleton().clear();
 	m_msgExecMgr.clear();
 	return 0;
 }
 
-bool IThreadFrame::_callback()
+bool IThread::_IThread_callback()
 {
 	_parseMsg();
 	return true;
 }
 
-// void IThreadFrame::_update_1000()
+// void IThread::_update_1000()
 // {
 // 	;
 // }
 
-void IThreadFrame::_parseMsg()
+void IThread::_parseMsg()
 {
 	SMessage* msg = NULL;
 	SMsgLabel* msgLable = NULL;
@@ -216,12 +216,12 @@ void IThreadFrame::_parseMsg()
 
 }
 
-void IThreadFrame::_waitMsg(uint32 a_timeout)
+void IThread::_waitMsg(uint32 a_timeout)
 {
 	m_event.wait(a_timeout);
 }
 
-void IThreadFrame::_onMsgNtfTerminate(SMsgLabel* lable, SMessage* msg)
+void IThread::_onMsgNtfTerminate(SMsgLabel* lable, SMessage* msg)
 {
 	m_isTerminate = true;
 }

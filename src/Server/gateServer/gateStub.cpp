@@ -4,7 +4,7 @@
 #include "gateStub.h"
 
 CGateStub::CGateStub(BSLib::Network::CNetConnectionPtr& netConnection)
-: GFLib::CommonServer::CStub(netConnection)
+: GFLib::CommonServer::IStub(netConnection)
 , m_gateKey(0)
 , m_gateSession(0)
 , m_isValidAccountID(false)
@@ -17,7 +17,7 @@ void CGateStub::INetStub_finalStub()
 	;
 }
 
-void CGateStub::INetStub_initStubMsg(BSLib::Framework::CMsgExecMgr* msgExecMgr)
+void CGateStub::IStub_initStubMsg(BSLib::Framework::CMsgExecMgr* msgExecMgr)
 {
 	BSLib::Framework::CMsgFactory::singleton().registerCreateCMsgFun(GSLib::LoginSystem::MsgIDLoginSystemGC2GTReqAccountLogin, &BSLib::Framework::CreateCMessage<GSLib::LoginSystem::CMsgLoginSystemGC2GTReqAccountLogin>);
 	GFLIB_ADDMSG_OBJEXEC_OBJAFTER(msgExecMgr, GSLib::LoginSystem::MsgIDLoginSystemGC2GTReqAccountLogin, &CGateStub::_onMsgLoginSystemGC2GTReqAccountLogin, &CGateStub::_afterMsgHandlerGameStub, this);
@@ -97,12 +97,12 @@ void CGateStub::_onMsgLoginSystemGC2GTReqAccountLogin(BSLib::Framework::SMsgLabe
 	
 	std::string gateLoginIP = netConnectionPtr->getPeerAddr().getIP();
 
-	GFLib::CommonServer::CStub::setState(BSLib::Network::ESS_OKAY);
+	GFLib::CommonServer::IStub::setState(BSLib::Network::ESS_OKAY);
 	
 	GSLib::LoginSystem::CMsgLoginSystemGT2GCAckAccountLogin ackAccountLogin;
 	if (!GSLib::LoginSystem::GT::CLoginSystemGT::singleton().verifyAccountLogin(getStubID(), gateLoginIP, *reqAccountLogin, ackAccountLogin,this)) {
-		GFLib::CommonServer::CStub::IService_sendMsg(ackAccountLogin);
-		GFLib::CommonServer::CStub::setState(BSLib::Network::ESS_RECYCLE);
+		GFLib::CommonServer::IStub::IService_sendMsg(ackAccountLogin);
+		GFLib::CommonServer::IStub::setState(BSLib::Network::ESS_RECYCLE);
 		return ;
 	}
 	m_isValidAccountID = true;

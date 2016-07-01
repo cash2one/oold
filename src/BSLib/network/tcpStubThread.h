@@ -13,7 +13,7 @@ namespace Network
 class CTcpStubThread : public CNetStubThread, public CTcpConnectionMgr
 {
 public:
-	CTcpStubThread(CNetServer* netServer);
+	CTcpStubThread(INetServer* netServer);
 	virtual ~CTcpStubThread();
 
 protected:
