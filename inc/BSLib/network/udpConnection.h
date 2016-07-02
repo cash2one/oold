@@ -9,14 +9,15 @@ namespace BSLib
 namespace Network
 {
 
-class BSLIB_NETWORK_API CUdpConnection : public CNetConnection
+class BSLIB_NETWORK_API CUdpConnection 
+    : public INetConnection
 {
 public:
-	CUdpConnection(int sock = -1, CEncrypt* ptrEncrypt = NULL, CCompress* ptrCompress = NULL);
+	CUdpConnection(int sock = -1, IEncrypt* ptrEncrypt = NULL, ICompress* ptrCompress = NULL);
 	virtual ~CUdpConnection();
 
-	virtual bool sendToNetFromBuff();
-	virtual bool isEmptyOfSendBuff();
+	virtual bool INetConnection_sendToNetFromBuff();
+	virtual bool INetConnection_isEmptyOfSendBuff();
 
 	virtual bool connect(CSockAddr& addrServer, int connMax = 0);
 	virtual bool connect(CSockAddr& addrLocal, CSockAddr& addrServer, int connMax = 0);

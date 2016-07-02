@@ -93,9 +93,9 @@ private:
 
 private:
 	CNetStubMgr* m_netStubMgr;
-	BSLib::Network::CNetAcceptor* m_tcpAcceptor;
+	BSLib::Network::INetAcceptor* m_tcpAcceptor;
 	BSLib::Utility::CHndThread m_tcpAcceptorThread;
-	BSLib::Network::CNetAcceptor* m_udpAcceptor;
+	BSLib::Network::INetAcceptor* m_udpAcceptor;
 	BSLib::Utility::CHndThread m_udpAcceptorThread;
 	BSLib::Network::CNetAcceptorCallbackPtr m_acceptorCbPtr;
 	bool m_tcpAcceptorRunning;

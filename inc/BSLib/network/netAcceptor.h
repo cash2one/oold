@@ -19,7 +19,7 @@ public:
 };
 typedef BSLib::Utility::CPointer<CNetAcceptorCallback> CNetAcceptorCallbackPtr;
 
-class BSLIB_NETWORK_API CNetAcceptor
+class BSLIB_NETWORK_API INetAcceptor
 {
 public:
 	struct SAcceptorItem
@@ -34,22 +34,22 @@ public:
 	typedef Utility::CPointer<SAcceptorItem> SAcceptorItemPtr;
 
 public:
-	virtual ~CNetAcceptor() {}
+	virtual ~INetAcceptor() {}
 	bool addAcceptor(CSockAddr& addrAcceptor, CNetAcceptorCallbackPtr& cbNewConnection, void* tempData);
 	bool delAcceptor(CSockAddr& addrAcceptor);
 
 	virtual bool waitSocket(int msSec) = 0;
 
 protected:
-	virtual bool _addAcceptor(SAcceptorItemPtr& item) = 0;
-	virtual bool _delAcceptor(SAcceptorItemPtr& item) = 0;
+	virtual bool _INetAcceptor_addAcceptor(SAcceptorItemPtr& item) = 0;
+	virtual bool _INetAcceptor_delAcceptor(SAcceptorItemPtr& item) = 0;
 
 protected:
 	std::vector<SAcceptorItemPtr> m_accepteorList;
 
 };
 
-typedef BSLib::Utility::CPointer<CNetAcceptor> CNetAcceptorsPtr;
+typedef BSLib::Utility::CPointer<INetAcceptor> INetAcceptorsPtr;
 
 }//Network
 

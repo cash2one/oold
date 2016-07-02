@@ -13,21 +13,21 @@ namespace BSLib
 namespace Network
 {
 
-class CEncrypt
+class IEncrypt
 {
 public:
-	virtual ~CEncrypt(){}
+	virtual ~IEncrypt(){}
 	virtual int encrypt(const void* inData, unsigned int inSize, void* outBuff, unsigned int& outSize, bool isEncrypt) = 0;
 };
 
-class CCompress
+class ICompress
 {
 public:
-	virtual ~CCompress(){}
+	virtual ~ICompress(){}
 	virtual int compress(const void* inData, unsigned int inSize, void* outBuff, unsigned int& outSize, bool isCompress) = 0;
 };
 
-struct SNetConnectionBytesInfor 
+struct SNetConnectionBytesInfo 
 {
 	BSLib::uint64 m_recvBytes;
 	BSLib::uint64 m_sendBytes;
@@ -35,19 +35,19 @@ struct SNetConnectionBytesInfor
 
 class INetConnectionMgr;
 
-class BSLIB_NETWORK_API CNetConnection
+class BSLIB_NETWORK_API INetConnection
 {
 public:
-	CNetConnection(CEncrypt* ptrEncrypt, CCompress* ptrCompress);
-	virtual ~CNetConnection();
+	INetConnection(IEncrypt* ptrEncrypt, ICompress* ptrCompress);
+	virtual ~INetConnection();
 
-	virtual bool recvToBuffFromNet();
-	virtual bool sendToNetFromBuff() = 0;
+	virtual bool INetConnection_recvToBuffFromNet();
+	virtual bool INetConnection_sendToNetFromBuff() = 0;
 
-	virtual bool isEmptyOfSendBuff() = 0;
+	virtual bool INetConnection_isEmptyOfSendBuff() = 0;
 
-	void setEncrypt(CEncrypt* ptrEncrypt) { m_encrypt = ptrEncrypt; }
-	void setCompress(CCompress* ptrCompress) { m_compress = ptrCompress; }
+	void setEncrypt(IEncrypt* ptrEncrypt) { m_encrypt = ptrEncrypt; }
+	void setCompress(ICompress* ptrCompress) { m_compress = ptrCompress; }
 
 	int send(BSLib::Utility::CStream& stream, bool useBuffer = false);
 	int send(const void* msgBuff, unsigned int buffSize, bool useBuffer = false);
@@ -68,7 +68,7 @@ public:
 	void setNetConnectionMgr(INetConnectionMgr* connMgr) { m_netConnectMgr = connMgr; }
 	INetConnectionMgr* getNetConnectionMgr() { return m_netConnectMgr; }
 
-	void getNetConnectionInfor(SNetConnectionBytesInfor& a_connectionInfor);
+	void getNetConnectionInfo(SNetConnectionBytesInfo& a_connectionInfo);
 
 protected:
 	virtual int _send(const void* dataBuff, int buffSize) = 0;
@@ -96,14 +96,14 @@ protected:
 	void _clearBuff();
 
 private:
-	CEncrypt* m_encrypt;
-	CCompress* m_compress;
+	IEncrypt* m_encrypt;
+	ICompress* m_compress;
 	CSockAddr m_localAddr;
 	CSockAddr m_peerAddr;
 	Utility::CBufferInt8 m_recvBuff;
 	INetConnectionMgr* m_netConnectMgr;
 };
-typedef BSLib::Utility::CPointer<CNetConnection> CNetConnectionPtr;
+typedef BSLib::Utility::CPointer<INetConnection> CNetConnectionPtr;
 
 class BSLIB_NETWORK_API CNetConnectionCallback
 {

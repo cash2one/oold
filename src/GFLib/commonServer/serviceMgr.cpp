@@ -199,7 +199,7 @@ bool CServiceMgr::loadConfig(const std::string& a_configFile)
 	return true;
 }
 
-bool CServiceMgr::addService(CServicePtr& a_service)
+bool CServiceMgr::addService(IServicePtr& a_service)
 {
 	SServerID serverID = a_service->getServerID();
 
@@ -317,7 +317,7 @@ bool CServiceMgr::sendMsgToServer(const std::string& a_serverKey, GFLib::SMessag
 	}
 	
 	m_mutex.lock();
-	CServicePtr servicePtr = serviceInfor->m_servicePtr ;
+	IServicePtr servicePtr = serviceInfor->m_servicePtr ;
 	m_mutex.unlock();
 
 	if (servicePtr == NULL) {
@@ -335,7 +335,7 @@ bool CServiceMgr::sendMsgToServer(const std::string& a_serverKey, GFLib::CMessag
 	}
 
 	m_mutex.lock();
-	CServicePtr servicePtr = serviceInfor->m_servicePtr ;
+	IServicePtr servicePtr = serviceInfor->m_servicePtr ;
 	m_mutex.unlock();
 
 	if (servicePtr == NULL) {
@@ -354,7 +354,7 @@ bool CServiceMgr::sendMsgToServer(const ServerID& a_serverID, GFLib::SMessage* a
 	}
 
 	m_mutex.lock();
-	CServicePtr servicePtr = serviceInfor->m_servicePtr ;
+	IServicePtr servicePtr = serviceInfor->m_servicePtr ;
 	m_mutex.unlock();
 
 	if (servicePtr == NULL) {
@@ -373,7 +373,7 @@ bool CServiceMgr::sendMsgToServer(const ServerID& a_serverID, GFLib::CMessage& a
 	}
 
 	m_mutex.lock();
-	CServicePtr servicePtr = serviceInfor->m_servicePtr ;
+	IServicePtr servicePtr = serviceInfor->m_servicePtr ;
 	m_mutex.unlock();
 
 	if (servicePtr == NULL) {
@@ -467,7 +467,7 @@ bool CServiceMgr::sendMsgToServerType(ServerType a_serverType, GFLib::SMessage* 
 		}
 
 		m_mutex.lock();
-		CServicePtr servicePtr = serviceInfor->m_servicePtr ;
+		IServicePtr servicePtr = serviceInfor->m_servicePtr ;
 		m_mutex.unlock();
 
 		if (servicePtr == NULL) {
@@ -494,7 +494,7 @@ bool CServiceMgr::sendMsgToServerType(ServerType a_serverType, GFLib::CMessage& 
 		}
 		
 		m_mutex.lock();
-		CServicePtr servicePtr = serviceInfor->m_servicePtr ;
+		IServicePtr servicePtr = serviceInfor->m_servicePtr ;
 		m_mutex.unlock();
 
 		if (servicePtr == NULL) {

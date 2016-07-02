@@ -165,7 +165,7 @@ void IStub::_onMsgServerLinkXX2XSReqServerType(BSLib::Framework::SMsgLabel* msgL
 	}
 	
 	CStubPtr stubPtr = CStubMgr::singleton().getCommonStubByStubID(getStubID());
-	CServicePtr servicePtr = (CServicePtr)stubPtr;
+	IServicePtr servicePtr = (IServicePtr)stubPtr;
 	if (servicePtr == NULL) {
 		return;
 	}

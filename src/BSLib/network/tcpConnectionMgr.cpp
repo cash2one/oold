@@ -111,7 +111,7 @@ bool CTcpConnectionMgr::_readScoket(SOCKET& tcpSocket, void* data)
 	if (!item->m_connect->isValid()){
 		return false;
 	}
-	if (!item->m_connect->recvToBuffFromNet()){
+	if (!item->m_connect->INetConnection_recvToBuffFromNet()){
 		return false;
 	}
 	return item->m_callback->recvMsg(item->m_connect);
@@ -129,7 +129,7 @@ bool CTcpConnectionMgr::_writeScoket(SOCKET& tcpSocket, void* data)
 	if (!item->m_connect->isValid()){
 		return false;
 	}
-	return item->m_connect->sendToNetFromBuff();
+	return item->m_connect->INetConnection_sendToNetFromBuff();
 }
 
 void CTcpConnectionMgr::_terminateScoket(SOCKET& tcpSocket, void* data)

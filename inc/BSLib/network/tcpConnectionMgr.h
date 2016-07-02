@@ -12,7 +12,8 @@ namespace Network
 
 class CTcpEpoll;
 
-class BSLIB_NETWORK_API CTcpConnectionMgr : public INetConnectionMgr
+class BSLIB_NETWORK_API CTcpConnectionMgr 
+    : public INetConnectionMgr
 {
 public:
 	CTcpConnectionMgr();

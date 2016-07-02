@@ -59,7 +59,7 @@ bool CTcpAcceptor::waitSocket(int msSec)
 	return m_tcpEpoll->epoll(msSec);
 }
 
-bool CTcpAcceptor::_addAcceptor(CNetAcceptor::SAcceptorItemPtr& item)
+bool CTcpAcceptor::_INetAcceptor_addAcceptor(INetAcceptor::SAcceptorItemPtr& item)
 {
 	sockaddr_in* addrListen = (sockaddr_in*)item->m_addrAcceptor;
 	SOCKET sock = ::WSASocket(AF_INET, SOCK_STREAM, IPPROTO_TCP, NULL, 0, WSA_FLAG_OVERLAPPED);  
@@ -92,7 +92,7 @@ bool CTcpAcceptor::_addAcceptor(CNetAcceptor::SAcceptorItemPtr& item)
 	return true;
 }
 
-bool CTcpAcceptor::_delAcceptor(CNetAcceptor::SAcceptorItemPtr& item)
+bool CTcpAcceptor::_INetAcceptor_delAcceptor(INetAcceptor::SAcceptorItemPtr& item)
 {
 	::closesocket(item->m_sockID);
 	item->m_sockID = INVALID_SOCKET;
@@ -143,7 +143,7 @@ void CTcpAcceptor::_terminateScoket(SOCKET& tcpSocket, void* data)
 	if (acceptor == NULL){
 		return ;
 	}
-	_delAcceptor(acceptor);
+	_INetAcceptor_delAcceptor(acceptor);
 }
 
 #else//WIN32
@@ -191,7 +191,7 @@ bool CTcpAcceptor::waitSocket(int msSec)
 	return true;
 }
 
-bool CTcpAcceptor::_addAcceptor(CNetAcceptor::SAcceptorItemPtr& item)
+bool CTcpAcceptor::_INetAcceptor_addAcceptor(INetAcceptor::SAcceptorItemPtr& item)
 {
 	sockaddr_in* addrListen = (sockaddr_in*)item->m_addrAcceptor;
 	SOCKET sock = ::socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
@@ -224,7 +224,7 @@ bool CTcpAcceptor::_addAcceptor(CNetAcceptor::SAcceptorItemPtr& item)
 	return true;
 }
 
-bool CTcpAcceptor::_delAcceptor(CNetAcceptor::SAcceptorItemPtr& item)
+bool CTcpAcceptor::_INetAcceptor_delAcceptor(INetAcceptor::SAcceptorItemPtr& item)
 {
 	if (m_epoll != NULL) {
 		m_epoll->delEpollEvent(item->m_sockID);
@@ -284,7 +284,7 @@ void CTcpAcceptor::_terminateScoket(SOCKET tcpSocket)
 	if (acceptor == NULL){
 		return ;
 	}
-	_delAcceptor(acceptor);
+	_INetAcceptor_delAcceptor(acceptor);
 }
 
 #endif//WIN32

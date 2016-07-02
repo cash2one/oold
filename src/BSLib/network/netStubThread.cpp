@@ -75,8 +75,8 @@ void CNetStubThread::_run()
 		if (netStubCbPtr == NULL) {
 			continue;
 		}
-		while (!netStubCbPtr->isEmptyOfSendBuff()){
-			if (!netStubCbPtr->sendToNetFromBuff()) {
+		while (!netStubCbPtr->INetConnection_isEmptyOfSendBuff()){
+			if (!netStubCbPtr->INetConnection_sendToNetFromBuff()) {
 				break;
 			}
 		}
@@ -94,8 +94,8 @@ void CNetStubThread::_run()
 		if (netStubCbPtr == NULL) {
 			continue;
 		}
-		while (!netStubCbPtr->isEmptyOfSendBuff()){
-			if (!netStubCbPtr->sendToNetFromBuff()) {
+		while (!netStubCbPtr->INetConnection_isEmptyOfSendBuff()){
+			if (!netStubCbPtr->INetConnection_sendToNetFromBuff()) {
 				break;
 			}
 		}
@@ -113,8 +113,8 @@ void CNetStubThread::_run()
 		if (netStubCbPtr == NULL){
 			continue;
 		}
-		while (!netStubCbPtr->isEmptyOfSendBuff()){
-			if (!netStubCbPtr->sendToNetFromBuff()) {
+		while (!netStubCbPtr->INetConnection_isEmptyOfSendBuff()){
+			if (!netStubCbPtr->INetConnection_sendToNetFromBuff()) {
 				break;
 			}
 		}
@@ -165,7 +165,7 @@ void CNetStubThread::_newTask()
 		netStubCbPtr->recvMsg();
 		CNetConnectionPtr netConnection = stubPtr->getNetConnectionPtr();
 		if (netConnection != NULL) {
-			netConnection->sendToNetFromBuff();;
+			netConnection->INetConnection_sendToNetFromBuff();;
 		}
 		m_verifyList.push_back(netStubCbPtr);
 
@@ -248,8 +248,8 @@ void CNetStubThread::_recyclePeer()
 
 		netStubCbPtr->recvMsg();
 
-		if (!netStubCbPtr->isEmptyOfSendBuff()) {
-			if (netStubCbPtr->sendToNetFromBuff()){
+		if (!netStubCbPtr->INetConnection_isEmptyOfSendBuff()) {
+			if (netStubCbPtr->INetConnection_sendToNetFromBuff()){
 				continue;
 			}
 		}

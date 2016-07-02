@@ -44,7 +44,7 @@ struct SServiceInfo
 	SServiceInfo() : m_servicePtr(NULL), m_state(0) {}
 
 	SServiceNetInfo m_netInfor;
-	CServicePtr m_servicePtr;
+	IServicePtr m_servicePtr;
 	BSLib::uint8 m_state;
 };
 
@@ -58,7 +58,7 @@ public:
 
 	bool loadConfig(const std::string& a_configFile);
 
-	bool addService(CServicePtr& a_service);
+	bool addService(IServicePtr& a_service);
 	bool delService(SServerID a_serverID);
 	void freeService(SServerID a_serverID);
 

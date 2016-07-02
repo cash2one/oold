@@ -9,14 +9,15 @@ namespace BSLib
 namespace Network
 {
 
-class BSLIB_NETWORK_API CTcpConnection : public CNetConnection
+class BSLIB_NETWORK_API CTcpConnection 
+    : public INetConnection
 {
 public:
-	CTcpConnection(SOCKET sock = INVALID_SOCKET, CEncrypt* ptrEncrypt = NULL, CCompress* ptrCompress = NULL);
+	CTcpConnection(SOCKET sock = INVALID_SOCKET, IEncrypt* ptrEncrypt = NULL, ICompress* ptrCompress = NULL);
 	virtual ~CTcpConnection();
 
-	virtual bool sendToNetFromBuff();
-	virtual bool isEmptyOfSendBuff();
+	virtual bool INetConnection_sendToNetFromBuff();
+	virtual bool INetConnection_isEmptyOfSendBuff();
 
 	/// @brief 连接服务器
 	/// @return	bool 连接成功返回true

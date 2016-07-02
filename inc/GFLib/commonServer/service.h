@@ -53,7 +53,7 @@ private:
 	BSLib::Framework::CMsgExecMgr m_msgExecMgr;
 };
 
-typedef BSLib::Utility::CPointer<IService> CServicePtr;
+typedef BSLib::Utility::CPointer<IService> IServicePtr;
 
 }//CommonServer
 

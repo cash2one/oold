@@ -117,8 +117,8 @@ public:
 	{
 		CNetConnectionPtr netConnectionPtr = m_stubPtr->getNetConnectionPtr();
 		if (netConnectionPtr != NULL) {
-			SNetConnectionBytesInfor connectionInfor;
-			netConnectionPtr->getNetConnectionInfor(connectionInfor);
+			SNetConnectionBytesInfo connectionInfor;
+			netConnectionPtr->getNetConnectionInfo(connectionInfor);
 			if (m_seconds == 0) {
 				m_netConnectBytesInfor = connectionInfor;
 				m_seconds = realTimer.seconds();
@@ -158,7 +158,7 @@ public:
 		m_stubPtr->INetStub_finalStub();
 	}
 
-	bool sendToNetFromBuff()
+	bool INetConnection_sendToNetFromBuff()
 	{
 		if (m_stubPtr == NULL) {
 			return false;
@@ -167,10 +167,10 @@ public:
 		if (connectPtr == NULL) {
 			return false;
 		}
-		return connectPtr->sendToNetFromBuff();
+		return connectPtr->INetConnection_sendToNetFromBuff();
 	}
 
-	bool isEmptyOfSendBuff()
+	bool INetConnection_isEmptyOfSendBuff()
 	{
 		if (m_stubPtr == NULL) {
 			return true;
@@ -179,7 +179,7 @@ public:
 		if (connectPtr == NULL) {
 			return true;
 		}
-		return connectPtr->isEmptyOfSendBuff();
+		return connectPtr->INetConnection_isEmptyOfSendBuff();
 	}
 
 	CNetStubPtr& getNetStub() { return m_stubPtr; }
@@ -187,7 +187,7 @@ public:
 private:
 	CNetStubPtr m_stubPtr;
 	BSLib::Utility::CStream m_stream;
-	SNetConnectionBytesInfor m_netConnectBytesInfor;
+	SNetConnectionBytesInfo m_netConnectBytesInfor;
 	BSLib::int64 m_seconds;
 };
 typedef BSLib::Utility::CPointer<CNetStubCb> CNetStubCbPtr;

@@ -12,8 +12,8 @@ namespace BSLib
 namespace Network
 {
 
-CUdpConnection::CUdpConnection(int sock, CEncrypt* ptrEncrypt, CCompress* ptrCompress)
-: CNetConnection(ptrEncrypt, ptrCompress)
+CUdpConnection::CUdpConnection(int sock, IEncrypt* ptrEncrypt, ICompress* ptrCompress)
+: INetConnection(ptrEncrypt, ptrCompress)
 , m_udmSock(-1) 
 , m_isValid(false)
 {
@@ -30,7 +30,7 @@ CUdpConnection::~CUdpConnection()
 	}
 }
 
-bool CUdpConnection::sendToNetFromBuff()
+bool CUdpConnection::INetConnection_sendToNetFromBuff()
 {
 	Utility::CMutexFun mutexFun(&m_sendMutex);
 
@@ -61,7 +61,7 @@ bool CUdpConnection::sendToNetFromBuff()
 	return true;
 }
 
-bool CUdpConnection::isEmptyOfSendBuff()
+bool CUdpConnection::INetConnection_isEmptyOfSendBuff()
 {
 	return !m_sendBuff.readReady();
 }
@@ -127,7 +127,7 @@ void CUdpConnection::close()
 	}
 	BSLib::UDM::close(m_udmSock);
 	m_isValid = false;
-	CNetConnection::close();
+	INetConnection::close();
 }
 
 bool CUdpConnection::isValid()

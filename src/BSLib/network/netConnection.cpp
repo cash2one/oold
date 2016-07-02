@@ -22,7 +22,7 @@ namespace Network
 	//数据包长度
 #define GNET_PACKET_LEN			0X00FFFFFF
 
-CNetConnection::CNetConnection(CEncrypt* ptrEncrypt, CCompress* ptrCompress)
+INetConnection::INetConnection(IEncrypt* ptrEncrypt, ICompress* ptrCompress)
 : m_encrypt(ptrEncrypt)
 , m_compress(ptrCompress)
 , m_netConnectMgr(NULL)
@@ -30,12 +30,12 @@ CNetConnection::CNetConnection(CEncrypt* ptrEncrypt, CCompress* ptrCompress)
 	;
 }
 
-CNetConnection::~CNetConnection()
+INetConnection::~INetConnection()
 {
 	;
 }
 
-bool CNetConnection::recvToBuffFromNet()
+bool INetConnection::INetConnection_recvToBuffFromNet()
 {
  	int len = 0;
 	
@@ -56,23 +56,23 @@ bool CNetConnection::recvToBuffFromNet()
 	return true;
 }
 
-void CNetConnection::getNetConnectionInfor(SNetConnectionBytesInfor& a_connectionInfor)
+void INetConnection::getNetConnectionInfo(SNetConnectionBytesInfo& a_connectionInfo)
 {
-	a_connectionInfor.m_recvBytes = _getRecvBytes();
-	a_connectionInfor.m_sendBytes = _getSendBytes();
+	a_connectionInfo.m_recvBytes = _getRecvBytes();
+	a_connectionInfo.m_sendBytes = _getSendBytes();
 }
 
-void CNetConnection::_waitForSend()
-{
-	Utility::CThread::msleep(100);
-}
-
-void CNetConnection::_waitForRecv()
+void INetConnection::_waitForSend()
 {
 	Utility::CThread::msleep(100);
 }
 
-int CNetConnection::send(Utility::CStream& stream, bool useBuffer)
+void INetConnection::_waitForRecv()
+{
+	Utility::CThread::msleep(100);
+}
+
+int INetConnection::send(Utility::CStream& stream, bool useBuffer)
 {
 	if (!isValid()){
 		return -1;
@@ -84,7 +84,7 @@ int CNetConnection::send(Utility::CStream& stream, bool useBuffer)
 	return sendSize;
 }
 
-int CNetConnection::send(const void* msgBuff, unsigned int buffSize, bool useBuffer)
+int INetConnection::send(const void* msgBuff, unsigned int buffSize, bool useBuffer)
 {
 	if (!isValid()){
 		return -1;
@@ -130,7 +130,7 @@ int CNetConnection::send(const void* msgBuff, unsigned int buffSize, bool useBuf
 	return _sendToNet(msgBuff, buffSize, flag);
 }
 
-int CNetConnection::recv(BSLib::Utility::CStream& stream)
+int INetConnection::recv(BSLib::Utility::CStream& stream)
 {
 	unsigned int buffLen = m_recvBuff.readSize();
 	if (buffLen < sizeof(unsigned int)){
@@ -185,13 +185,13 @@ int CNetConnection::recv(BSLib::Utility::CStream& stream)
 	return len;
 }
 
-int CNetConnection::recvBlock(BSLib::Utility::CStream& stream, int countMax)
+int INetConnection::recvBlock(BSLib::Utility::CStream& stream, int countMax)
 {
 	int recvSize = 0;
 	int count = 0;
 	do{
 		++count;
-		if(!recvToBuffFromNet()) {
+		if(!INetConnection_recvToBuffFromNet()) {
 			return -1;
 		}
 		if ((recvSize = recv(stream)) != 0){
@@ -205,12 +205,12 @@ int CNetConnection::recvBlock(BSLib::Utility::CStream& stream, int countMax)
 	return recvSize;
 }
 
-void CNetConnection::close()
+void INetConnection::close()
 {
 	_clearBuff();
 }
 
-int CNetConnection::_encrypt(const char* inData, unsigned int inLen, Utility::CBufferInt8& outBuff)
+int INetConnection::_encrypt(const char* inData, unsigned int inLen, Utility::CBufferInt8& outBuff)
 {
 	if (!outBuff.writeReserve(inLen * 2 + sizeof(unsigned int))){
 		return -1;
@@ -230,7 +230,7 @@ int CNetConnection::_encrypt(const char* inData, unsigned int inLen, Utility::CB
 	return resEncrypt;
 }
 
-int CNetConnection::_decrypt(const char* inData, unsigned int inLen, Utility::CBufferInt8& outBuff)
+int INetConnection::_decrypt(const char* inData, unsigned int inLen, Utility::CBufferInt8& outBuff)
 {
 	if (inLen < sizeof(unsigned int)){
 		return -1;
@@ -255,7 +255,7 @@ int CNetConnection::_decrypt(const char* inData, unsigned int inLen, Utility::CB
 	return resEncrypt;
 }
 
-int CNetConnection::_compress(const char* inData, unsigned int inLen, Utility::CBufferInt8& outBuff)
+int INetConnection::_compress(const char* inData, unsigned int inLen, Utility::CBufferInt8& outBuff)
 {
 	if (!outBuff.writeReserve(inLen * 2 + sizeof(unsigned int))){
 		return -1;
@@ -274,7 +274,7 @@ int CNetConnection::_compress(const char* inData, unsigned int inLen, Utility::C
 	return resCompress;
 }
 
-int CNetConnection::_uncompress(const char* inData, unsigned int inLen, Utility::CBufferInt8& outBuff)
+int INetConnection::_uncompress(const char* inData, unsigned int inLen, Utility::CBufferInt8& outBuff)
 {
 	if (inLen < sizeof(unsigned int)){
 		return -1;
@@ -299,7 +299,7 @@ int CNetConnection::_uncompress(const char* inData, unsigned int inLen, Utility:
 	return resCompress;
 }
 
-unsigned int CNetConnection::_mergerPacket(Utility::CBufferInt8& inBuff, Utility::CBufferInt8& outBuff)
+unsigned int INetConnection::_mergerPacket(Utility::CBufferInt8& inBuff, Utility::CBufferInt8& outBuff)
 {
 	//验证数据包是否完成
 	unsigned int cmdFlag = *((unsigned int*)inBuff.readPtr());
@@ -348,7 +348,7 @@ unsigned int CNetConnection::_mergerPacket(Utility::CBufferInt8& inBuff, Utility
 	return outBuff.readSize();
 }
 
-void CNetConnection::_clearBuff()
+void INetConnection::_clearBuff()
 {
 	m_recvBuff.reset();
 }

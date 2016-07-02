@@ -25,8 +25,8 @@ namespace Network
 {
 const int g_tcpBufferSize = 256*1024;
 
-CTcpConnection::CTcpConnection(SOCKET sock, CEncrypt* ptrEncrypt, CCompress* ptrCompress)
-: CNetConnection(ptrEncrypt, ptrCompress)
+CTcpConnection::CTcpConnection(SOCKET sock, IEncrypt* ptrEncrypt, ICompress* ptrCompress)
+: INetConnection(ptrEncrypt, ptrCompress)
 , m_tcpSock(INVALID_SOCKET) 
 , m_isValid(false)
 , m_recvBytes(0)
@@ -49,7 +49,7 @@ CTcpConnection::~CTcpConnection()
 	//;close();
 }
 
-bool CTcpConnection::sendToNetFromBuff()
+bool CTcpConnection::INetConnection_sendToNetFromBuff()
 {
 	Utility::CMutexFun mutexFun(&m_sendMutex);
 
@@ -67,7 +67,7 @@ bool CTcpConnection::sendToNetFromBuff()
 	return true;
 }
 
-bool CTcpConnection::isEmptyOfSendBuff()
+bool CTcpConnection::INetConnection_isEmptyOfSendBuff()
 {
 	return !m_sendBuff.readReady();
 }
@@ -195,7 +195,7 @@ void CTcpConnection::close()
 	}
 	::closesocket(m_tcpSock);
 	m_isValid = false;
-	CNetConnection::close();
+	INetConnection::close();
 }
 
 bool CTcpConnection::isValid()

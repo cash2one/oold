@@ -6,7 +6,7 @@ namespace BSLib
 namespace Network
 {
 
-bool CNetAcceptor::addAcceptor(CSockAddr& addrAcceptor, CNetAcceptorCallbackPtr& cbNewConnection, void* tempData)
+bool INetAcceptor::addAcceptor(CSockAddr& addrAcceptor, CNetAcceptorCallbackPtr& cbNewConnection, void* tempData)
 {
 	for (uint32 i=0; i<m_accepteorList.size(); ++i){
 		if (m_accepteorList[i]->m_addrAcceptor == addrAcceptor) {
@@ -23,14 +23,14 @@ bool CNetAcceptor::addAcceptor(CSockAddr& addrAcceptor, CNetAcceptorCallbackPtr&
 	item->m_sockID = INVALID_SOCKET;
 	item->m_tempData = tempData;
 
-	if (!_addAcceptor(item)){
+	if (!_INetAcceptor_addAcceptor(item)){
 		return false;
 	}
 	m_accepteorList.push_back(item);
 	return true;
 }
 
-bool CNetAcceptor::delAcceptor(CSockAddr& addrAcceptor)
+bool INetAcceptor::delAcceptor(CSockAddr& addrAcceptor)
 {
 	std::vector<SAcceptorItemPtr>::iterator it = m_accepteorList.begin();
 	for (; it != m_accepteorList.end(); ){
@@ -44,7 +44,7 @@ bool CNetAcceptor::delAcceptor(CSockAddr& addrAcceptor)
 			continue;
 		}
 
-		_delAcceptor(item);
+		_INetAcceptor_delAcceptor(item);
 		m_accepteorList.erase(it);
 		return true;
 	}

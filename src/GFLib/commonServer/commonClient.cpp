@@ -345,7 +345,7 @@ void CCommonClient::_onMsgServerLinkXS2XXResServerID(BSLib::Framework::SMsgLabel
 	}
 
 	CCommonClientPtr clientPtr = CClientMgr::singleton().getCommonClient(resServerType->m_serverID);
-	CServicePtr servicePtr = (CServicePtr)clientPtr;
+	IServicePtr servicePtr = (IServicePtr)clientPtr;
 	if (servicePtr == NULL) {
 		return ;
 	}

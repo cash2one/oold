@@ -47,7 +47,7 @@ bool CUdpAcceptor::waitSocket(int msSec)
 	return true;
 }
 
-bool CUdpAcceptor::_addAcceptor(SAcceptorItemPtr& item)
+bool CUdpAcceptor::_INetAcceptor_addAcceptor(SAcceptorItemPtr& item)
 {
 	sockaddr_in* addrListen = (sockaddr_in*)item->m_addrAcceptor;
 	UDMSOCKET sock = BSLib::UDM::socket();
@@ -70,7 +70,7 @@ bool CUdpAcceptor::_addAcceptor(SAcceptorItemPtr& item)
 	return true;
 }
 
-bool CUdpAcceptor::_delAcceptor(SAcceptorItemPtr& item)
+bool CUdpAcceptor::_INetAcceptor_delAcceptor(SAcceptorItemPtr& item)
 {
 	if (m_udmEpollID != -1) {
 		BSLib::UDM::epollDelSock((int)m_udmEpollID, (int)item->m_sockID, BSLib::UDM::UDM_EPOLL_READ | BSLib::UDM::UDM_EPOLL_ERROR);
@@ -113,7 +113,7 @@ void CUdpAcceptor::_terminateScoket(int udpSocket)
 	if (acceptor == NULL){
 		return ;
 	}
-	_delAcceptor(acceptor);
+	_INetAcceptor_delAcceptor(acceptor);
 }
 
 }//Network

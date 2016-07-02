@@ -21,7 +21,7 @@ namespace Network
 
 #endif
 
-class CTcpAcceptor : public CNetAcceptor
+class CTcpAcceptor : public INetAcceptor
 {
 public:
 	CTcpAcceptor();
@@ -30,8 +30,8 @@ public:
 	virtual bool waitSocket(int msSec);
 
 protected:
-	virtual bool _addAcceptor(CNetAcceptor::SAcceptorItemPtr& item);
-	virtual bool _delAcceptor(CNetAcceptor::SAcceptorItemPtr& item);
+	virtual bool _INetAcceptor_addAcceptor(INetAcceptor::SAcceptorItemPtr& item);
+	virtual bool _INetAcceptor_delAcceptor(INetAcceptor::SAcceptorItemPtr& item);
 
 #ifdef WIN32
 	bool _acceptScoket(SOCKET& a_tcpServerSocket, SOCKET& a_tcpPeerSocket, void* a_data);
@@ -44,7 +44,7 @@ protected:
 
 
 private:
-	BSLib::Utility::CHashMap<SOCKET, CNetAcceptor::SAcceptorItemPtr> m_tcpHashMap;
+	BSLib::Utility::CHashMap<SOCKET, INetAcceptor::SAcceptorItemPtr> m_tcpHashMap;
 
 #ifdef WIN32
 

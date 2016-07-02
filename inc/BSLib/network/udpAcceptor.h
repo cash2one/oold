@@ -14,7 +14,8 @@ namespace BSLib
 namespace Network
 {
 
-class BSLIB_NETWORK_API CUdpAcceptor : public CNetAcceptor
+class BSLIB_NETWORK_API CUdpAcceptor 
+    : public INetAcceptor
 {
 public:
 	CUdpAcceptor();
@@ -23,14 +24,14 @@ public:
 	virtual bool waitSocket(int msSec);
 
 protected:
-	virtual bool _addAcceptor(SAcceptorItemPtr& item);
-	virtual bool _delAcceptor(SAcceptorItemPtr& item);
+	virtual bool _INetAcceptor_addAcceptor(SAcceptorItemPtr& item);
+	virtual bool _INetAcceptor_delAcceptor(SAcceptorItemPtr& item);
 
 	bool _newScoket(int udmSocket);
 	void _terminateScoket(int udmSocket);
 
 private:
-	BSLib::Utility::CHashMap<int, CNetAcceptor::SAcceptorItemPtr> m_udmHashMap;
+	BSLib::Utility::CHashMap<int, INetAcceptor::SAcceptorItemPtr> m_udmHashMap;
 	int m_udmEpollID;
 };
 
