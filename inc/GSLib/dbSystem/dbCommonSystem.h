@@ -205,7 +205,7 @@ public:
 	CDBCommonSystem();
 	virtual ~CDBCommonSystem();
 
-	virtual BSLib::uint16 getFuncType() { return GFLib::EFUNCTYPE_NULL; }
+	virtual BSLib::uint16 ICommonSystem_getFuncType() { return GFLib::EFUNCTYPE_NULL; }
 	
 public:
 	//请求查询数据，回调函数_cbSelectKeyTableData或_cbSelectKeyIndexTableData

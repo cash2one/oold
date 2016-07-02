@@ -172,9 +172,9 @@ bool CDBSystemLG::ICommonSystem_initServerMsg(BSLib::Framework::CMsgExecMgr* a_m
 	return GFLib::CommonServer::ICommonSystem::ICommonSystem_initServerMsg(a_msgExecMgr);
 }
 
-bool CDBSystemLG::_startSystem()
+bool CDBSystemLG::_ICommonSystem_startSystem()
 {
-	return GFLib::CommonServer::ICommonSystem::_startSystem();
+	return GFLib::CommonServer::ICommonSystem::_ICommonSystem_startSystem();
 }
 
 void CDBSystemLG::ICommonSystem_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)

@@ -77,7 +77,7 @@ bool CPlayerSystemGM::ICommonSystem_initServerMsg(BSLib::Framework::CMsgExecMgr*
 	return GSLib::DBSystem::CDBCommonSystem::ICommonSystem_initServerMsg(a_msgExecMgr);
 }
 
-bool CPlayerSystemGM::_initCommand(BSLib::Utility::CCmdExecMgr* a_cmdExecMgr)
+bool CPlayerSystemGM::_ICommonSystem_initCommand(BSLib::Utility::CCmdExecMgr* a_cmdExecMgr)
 {
 	a_cmdExecMgr->addCmdExecPtr("AddGold",       &CPlayerSystemGM::_onCmdAddGold, this);
     a_cmdExecMgr->addCmdExecPtr("AddDiamond",    &CPlayerSystemGM::_onCmdAddDiamond, this);
@@ -86,12 +86,12 @@ bool CPlayerSystemGM::_initCommand(BSLib::Utility::CCmdExecMgr* a_cmdExecMgr)
     a_cmdExecMgr->addCmdExecPtr("UpdateLevel",   &CPlayerSystemGM::_onCmdUpdateLevel, this);  
     a_cmdExecMgr->addCmdExecPtr("SetVIPLevel",   &CPlayerSystemGM::_onCmdSetVIPLevel, this);  
 
-	return GSLib::DBSystem::CDBCommonSystem::_initCommand(a_cmdExecMgr);
+	return GSLib::DBSystem::CDBCommonSystem::_ICommonSystem_initCommand(a_cmdExecMgr);
 }
 
-bool CPlayerSystemGM::_startSystem()
+bool CPlayerSystemGM::_ICommonSystem_startSystem()
 {
-	return GSLib::DBSystem::CDBCommonSystem::_startSystem();
+	return GSLib::DBSystem::CDBCommonSystem::_ICommonSystem_startSystem();
 }
 
 void CPlayerSystemGM::ICommonSystem_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)

@@ -76,9 +76,9 @@ bool CShopSystemGM::ICommonSystem_initServerMsg(BSLib::Framework::CMsgExecMgr* a
 	return GSLib::DBSystem::CDBCommonSystem::ICommonSystem_initServerMsg(a_msgExecMgr);
 }
 
-bool CShopSystemGM::_startSystem()
+bool CShopSystemGM::_ICommonSystem_startSystem()
 {	
-	return GSLib::DBSystem::CDBCommonSystem::_startSystem();
+	return GSLib::DBSystem::CDBCommonSystem::_ICommonSystem_startSystem();
 }
 
 void CShopSystemGM::ICommonSystem_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)

@@ -60,10 +60,10 @@ bool CTaskSystemGM::ICommonSystem_initServerMsg(BSLib::Framework::CMsgExecMgr* a
 	return GSLib::DBSystem::CDBCommonSystem::ICommonSystem_initServerMsg(a_msgExecMgr);
 }
 
-bool CTaskSystemGM::_startSystem()
+bool CTaskSystemGM::_ICommonSystem_startSystem()
 {
 	_initTaskSystemData();
-	return GSLib::DBSystem::CDBCommonSystem::_startSystem();
+	return GSLib::DBSystem::CDBCommonSystem::_ICommonSystem_startSystem();
 }
 
 void CTaskSystemGM::ICommonSystem_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)

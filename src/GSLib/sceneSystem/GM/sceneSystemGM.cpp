@@ -96,13 +96,13 @@ bool CSceneSystemGM::ICommonSystem_initServerMsg(BSLib::Framework::CMsgExecMgr* 
 	return GSLib::DBSystem::CDBCommonSystem::ICommonSystem_initServerMsg(a_msgExecMgr);
 }
 
-bool CSceneSystemGM::_startSystem()
+bool CSceneSystemGM::_ICommonSystem_startSystem()
 {
 	_initContinuousStageData();
 	_initStageHelperResetTimer();
 	_initArenaResetTimer();
 	_initInstanceStageTimer();
-	return GSLib::DBSystem::CDBCommonSystem::_startSystem();
+	return GSLib::DBSystem::CDBCommonSystem::_ICommonSystem_startSystem();
 }
 
 void CSceneSystemGM::ICommonSystem_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)

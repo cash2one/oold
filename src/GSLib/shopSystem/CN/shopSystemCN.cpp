@@ -60,9 +60,9 @@ bool CShopSystemCN::ICommonSystem_initServerMsg(BSLib::Framework::CMsgExecMgr* a
 }
 
 
-bool CShopSystemCN::_startSystem()
+bool CShopSystemCN::_ICommonSystem_startSystem()
 {	
-	return GSLib::DBSystem::CDBCommonSystem::_startSystem();
+	return GSLib::DBSystem::CDBCommonSystem::_ICommonSystem_startSystem();
 }
 
 void CShopSystemCN::ICommonSystem_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)

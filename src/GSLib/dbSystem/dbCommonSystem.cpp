@@ -56,7 +56,7 @@ bool CDBCommonSystem::selectTableData(const GSLib::SRoleKey& a_roleKey, const st
 	reqSelectTableData.m_sessionID = a_sessionID;
     reqSelectTableData.m_strWhere = a_strWhere;
 	if (a_funcType == GFLib::EFUNCTYPE_NULL) {
-		reqSelectTableData.m_funcType = getFuncType();
+		reqSelectTableData.m_funcType = ICommonSystem_getFuncType();
 	} else {
 		reqSelectTableData.m_funcType = a_funcType;
 	}
@@ -87,7 +87,7 @@ bool CDBCommonSystem::selectGlobalTableData(const GSLib::SRoleKey& a_srcRoleKey,
     reqSelectTableData.m_strWhere = a_strWhere;
     reqSelectTableData.m_srcRoleKey = a_srcRoleKey;
     if (a_funcType == GFLib::EFUNCTYPE_NULL) {
-        reqSelectTableData.m_funcType = getFuncType();
+        reqSelectTableData.m_funcType = ICommonSystem_getFuncType();
     } else {
         reqSelectTableData.m_funcType = a_funcType;
     }
@@ -124,7 +124,7 @@ bool CDBCommonSystem::selectGlobalMultiTableData(const GSLib::SRoleKey& a_srcRol
         BSLib::Utility::CStream desStream;
         desStream.reset();
         if (req->m_funcType == GFLib::EFUNCTYPE_NULL) {
-            req->m_funcType= getFuncType();
+            req->m_funcType= ICommonSystem_getFuncType();
         }
         req->serializeTo(desStream);
         reqSelectTableData.m_stream << desStream;

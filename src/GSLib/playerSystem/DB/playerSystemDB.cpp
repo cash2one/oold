@@ -45,7 +45,7 @@ bool CPlayerSystemDB::ICommonSystem_initServerMsg(BSLib::Framework::CMsgExecMgr*
 	return GSLib::DBSystem::CDBCommonSystem::ICommonSystem_initServerMsg(a_msgExecMgr);
 }
 
-bool CPlayerSystemDB::_startSystem()
+bool CPlayerSystemDB::_ICommonSystem_startSystem()
 {
     GSLib::DBSystem::DB::CDBSystemDB::singleton().setInitTableByGlobal(GSLib::SRVTYPE_CENTERSERVER, GSLib::EFUNCTYPE_PLAYERSYSTEM, EMODULECTYPE_NULL, EDBTABLEID_ROLE_DATA,"InvalidFlag=0");
  	GSLib::DBSystem::DB::CDBSystemDB::singleton().setInitTableByPlayer(GSLib::SRVTYPE_GAMESERVER, GSLib::EFUNCTYPE_PLAYERSYSTEM, EMODULECTYPE_NULL, EDBTABLEID_PLAYER_DATA);
@@ -53,7 +53,7 @@ bool CPlayerSystemDB::_startSystem()
  	GSLib::DBSystem::DB::CDBSystemDB::singleton().setInitTableByRole(GSLib::SRVTYPE_GAMESERVER, GSLib::EFUNCTYPE_PLAYERSYSTEM, EMODULECTYPE_NULL, EDBTABLEID_ROLE_VIPGIFT_DATA);
  	GSLib::DBSystem::DB::CDBSystemDB::singleton().setInitTableByRole(GSLib::SRVTYPE_GAMESERVER, GSLib::EFUNCTYPE_PLAYERSYSTEM, EMODULECTYPE_BAG, EDBTABLEID_ROLE_BAG_DATA,"");
 
- 	return GSLib::DBSystem::CDBCommonSystem::_startSystem();
+ 	return GSLib::DBSystem::CDBCommonSystem::_ICommonSystem_startSystem();
 }
 
 void CPlayerSystemDB::ICommonSystem_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)

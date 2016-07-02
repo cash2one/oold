@@ -11,7 +11,8 @@ namespace GFLib
 namespace CommonServer
 {
 
-class GFLIB_COMMONSERVER_API CSysChannelMgr : public BSLib::Framework::CSysChannelMgr
+class GFLIB_COMMONSERVER_API CSysChannelMgr 
+    : public BSLib::Framework::CSysChannelMgr
 {
 public:
 	CSysChannelMgr();

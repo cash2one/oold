@@ -24,7 +24,7 @@ bool CCommonSystemMgr::addSystem(ICommonSystem* a_commonSystem)
 	if (a_commonSystem == NULL) {
 		return false;
 	}
-	BSLib::uint16 funType = a_commonSystem->getFuncType(); 
+	BSLib::uint16 funType = a_commonSystem->ICommonSystem_getFuncType(); 
 	if (m_funSystemHashMap.find(funType) != m_funSystemHashMap.end()) {
 		BSLIB_LOG_ERROR(ETT_GFLIB_COMMON, "增加系统功能[%d]失败", funType);
 		return false;
@@ -108,7 +108,7 @@ void CCommonSystemMgr::initCommand(BSLib::Utility::CCmdExecMgr* a_cmdExecMgr)
 		if (funSystem == NULL) {
 			continue;
 		}
-		if (!funSystem->_initCommand(a_cmdExecMgr)) {
+		if (!funSystem->_ICommonSystem_initCommand(a_cmdExecMgr)) {
 			BSLIB_LOG_ERROR(ETT_GFLIB_COMMON, "加载系统功能[%d]命令失败", it->first);;
 		}
 	}
@@ -162,7 +162,7 @@ bool CCommonSystemMgr::_prepStartSystem()
 		if (funSystem == NULL) {
 			continue;
 		}
-		if (!funSystem->_prepStartSystem()) {
+		if (!funSystem->_ICommonSystem_prepStartSystem()) {
 			BSLIB_LOG_ERROR(ETT_GFLIB_COMMON, "预期启动系统功能[%d]失败", it->first);
 			return false;
 		}
@@ -178,7 +178,7 @@ bool CCommonSystemMgr::_startSystem()
 		if (funSystem == NULL) {
 			continue;
 		}
-		if (!funSystem->_startSystem()) {
+		if (!funSystem->_ICommonSystem_startSystem()) {
 			BSLIB_LOG_ERROR(ETT_GFLIB_COMMON, "启动系统功能[%d]失败", it->first);
 			return false;
 		}
@@ -194,7 +194,7 @@ bool CCommonSystemMgr::_postStartSystem()
 		if (funSystem == NULL) {
 			continue;
 		}
-		if (!funSystem->_postStartSystem()) {
+		if (!funSystem->_ICommonSystem_postStartSystem()) {
 			BSLIB_LOG_ERROR(ETT_GFLIB_COMMON, "后置启动系统功能[%d]失败", it->first);
 			return false;
 		}

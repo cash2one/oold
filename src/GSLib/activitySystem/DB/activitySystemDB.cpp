@@ -25,7 +25,7 @@ CActivitySystemDB::~CActivitySystemDB()
 
 BSLIB_SINGLETON_DEFINE(CActivitySystemDB);
 
-BSLib::uint16 CActivitySystemDB::getFuncType()
+BSLib::uint16 CActivitySystemDB::ICommonSystem_getFuncType()
 {
 	return GSLib::EFUNCTYPE_ACTIVITYSYSTEM;
 }
@@ -50,11 +50,11 @@ bool CActivitySystemDB::ICommonSystem_initServerMsg(BSLib::Framework::CMsgExecMg
 	return GSLib::DBSystem::CDBCommonSystem::ICommonSystem_initServerMsg(a_msgExecMgr);
 }
 
-bool CActivitySystemDB::_startSystem()
+bool CActivitySystemDB::_ICommonSystem_startSystem()
 {	
 	GSLib::DBSystem::DB::CDBSystemDB::singleton().setInitTableByRole(GSLib::SRVTYPE_GAMESERVER, GSLib::EFUNCTYPE_ACTIVITYSYSTEM, EMODULETYPE_ACTIVITY, EDBABLEID_ROLE_ATTENDENCE_DATA);
 	GSLib::DBSystem::DB::CDBSystemDB::singleton().setInitTableByRole(GSLib::SRVTYPE_GAMESERVER, GSLib::EFUNCTYPE_ACTIVITYSYSTEM, EMODULETYPE_ACTIVITY, EDBTABLEID_ROLE_DRAW_CARD_DATA);
-	return GSLib::DBSystem::CDBCommonSystem::_startSystem();
+	return GSLib::DBSystem::CDBCommonSystem::_ICommonSystem_startSystem();
 }
 
 void CActivitySystemDB::ICommonSystem_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)

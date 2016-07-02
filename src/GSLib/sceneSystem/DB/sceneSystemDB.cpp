@@ -44,7 +44,7 @@ bool CSceneSystemDB::ICommonSystem_initServerMsg(BSLib::Framework::CMsgExecMgr* 
 	return GSLib::DBSystem::CDBCommonSystem::ICommonSystem_initServerMsg(a_msgExecMgr);
 }
 
-bool CSceneSystemDB::_startSystem()
+bool CSceneSystemDB::_ICommonSystem_startSystem()
 {
 	GSLib::DBSystem::DB::CDBSystemDB::singleton().setInitTableByRole(GSLib::SRVTYPE_GAMESERVER, GSLib::EFUNCTYPE_SCENESYSTEM, EMODULECTYPE_SCENE, EDBTABLEID_ROLE_SCENE_ARENA_ROLE_DATA);
 	GSLib::DBSystem::DB::CDBSystemDB::singleton().setInitTableByRole(GSLib::SRVTYPE_GAMESERVER, GSLib::EFUNCTYPE_SCENESYSTEM, EMODULECTYPE_SCENE, EDBTABLEID_ROLE_SCENE_ARENA_CHALLENGE_RECORD);
@@ -59,7 +59,7 @@ bool CSceneSystemDB::_startSystem()
 	//center
 	GSLib::DBSystem::DB::CDBSystemDB::singleton().setInitTableByRole(GSLib::SRVTYPE_CENTERSERVER, GSLib::EFUNCTYPE_SCENESYSTEM, EMODULECTYPE_SCENE, EDBTABLEID_ROLE_SCENE_ARENA_CHALLENGE_RECORD);
 
-	return GSLib::DBSystem::CDBCommonSystem::_startSystem();
+	return GSLib::DBSystem::CDBCommonSystem::_ICommonSystem_startSystem();
 }
 
 void CSceneSystemDB::ICommonSystem_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)

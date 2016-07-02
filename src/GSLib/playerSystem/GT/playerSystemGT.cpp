@@ -44,9 +44,9 @@ bool CPlayerSystemGT::ICommonSystem_initServerMsg(BSLib::Framework::CMsgExecMgr*
 	return GSLib::DBSystem::CDBCommonSystem::ICommonSystem_initServerMsg(a_msgExecMgr);
 }
 
-bool CPlayerSystemGT::_startSystem()
+bool CPlayerSystemGT::_ICommonSystem_startSystem()
 {
-	return GSLib::DBSystem::CDBCommonSystem::_startSystem();
+	return GSLib::DBSystem::CDBCommonSystem::_ICommonSystem_startSystem();
 }
 
 void CPlayerSystemGT::ICommonSystem_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)

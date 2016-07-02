@@ -49,9 +49,9 @@ bool CChatSystemCN::ICommonSystem_initServerMsg(BSLib::Framework::CMsgExecMgr* a
 	return GSLib::DBSystem::CDBCommonSystem::ICommonSystem_initServerMsg(a_msgExecMgr);
 }
 
-bool CChatSystemCN::_startSystem()
+bool CChatSystemCN::_ICommonSystem_startSystem()
 {
-	return GSLib::DBSystem::CDBCommonSystem::_startSystem();
+	return GSLib::DBSystem::CDBCommonSystem::_ICommonSystem_startSystem();
 }
 
 void CChatSystemCN::ICommonSystem_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)

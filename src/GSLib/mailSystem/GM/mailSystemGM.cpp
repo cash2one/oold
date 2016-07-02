@@ -124,7 +124,7 @@ bool CMailSystemGM::_cbTimerSendSystemMailTest(BSLib::uint64, void* a_para)
 }
 
 
-bool CMailSystemGM::_startSystem()
+bool CMailSystemGM::_ICommonSystem_startSystem()
 {	
 
 #ifdef  BIANJIANTEST1
@@ -133,7 +133,7 @@ bool CMailSystemGM::_startSystem()
 #endif
 
 
-	return GSLib::DBSystem::CDBCommonSystem::_startSystem();
+	return GSLib::DBSystem::CDBCommonSystem::_ICommonSystem_startSystem();
 }
 
 void CMailSystemGM::ICommonSystem_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)

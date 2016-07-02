@@ -154,7 +154,7 @@ bool CDBSystemDB::selectTableData(const GSLib::SRoleKey& a_roleKey, const std::s
 	if (!CTableDataMgr::singleton().selectTableData(a_tableKey, a_tableIndex, a_tableID, stream,a_strWhere)) {
 		stream.reset();
 	}
-	if (a_funcType == GFLib::EFUNCTYPE_NULL || a_funcType == getFuncType()){
+	if (a_funcType == GFLib::EFUNCTYPE_NULL || a_funcType == ICommonSystem_getFuncType()){
 		cbSelectTableData(a_roleKey, a_moduleType, a_tableID, stream, a_sessionID);
 		return true;
 	}
@@ -163,7 +163,7 @@ bool CDBSystemDB::selectTableData(const GSLib::SRoleKey& a_roleKey, const std::s
 		BSLIB_LOG_ERROR(ETT_GSLIB_DBSYSTEM, "select返回数据失败,没有找到相应的功能模块[FuncType=%d][TableID=%d]", a_funcType, a_tableID);
 		return false;
 	}
-	if (commonSystem->getFuncType() == a_funcType) {
+	if (commonSystem->ICommonSystem_getFuncType() == a_funcType) {
 		BSLIB_LOG_ERROR(ETT_GSLIB_DBSYSTEM, "select返回数据失败,功能模块不一致[FuncType=%d][TableID=%d]", a_funcType, a_tableID);
 		return false;
 	}
@@ -207,7 +207,7 @@ bool CDBSystemDB::selectTableDatas(const GSLib::SRoleKey& a_srcRoleKey,EModuleTy
         //BSLIB_LOG_ERROR(ETT_GSLIB_DBSYSTEM, "select返回数据失败,没有找到相应的PlayerSystem系统[TableID=%d]", ackSelectData->m_tableID);
         return false;
     }
-    if (commonSystem->getFuncType() != GSLib::EFUNCTYPE_PLAYERSYSTEM) {
+    if (commonSystem->ICommonSystem_getFuncType() != GSLib::EFUNCTYPE_PLAYERSYSTEM) {
         BSLIB_LOG_ERROR(ETT_GSLIB_DBSYSTEM, "select返回数据失败,功能模块不一致[m_sessionID=%d][m_state=%d]", a_sessionID, state);
         return false;
     }
@@ -380,7 +380,7 @@ bool CDBSystemDB::ICommonSystem_initServerMsg(BSLib::Framework::CMsgExecMgr* a_m
 	return CDBCommonSystem::ICommonSystem_initServerMsg(a_msgExecMgr);
 }
 
-bool CDBSystemDB::_startSystem()
+bool CDBSystemDB::_ICommonSystem_startSystem()
 {
 	BSLib::Utility::CTimerServer* timerServer = _getTimerServer();
 	if (timerServer == NULL) {
@@ -391,10 +391,10 @@ bool CDBSystemDB::_startSystem()
 		return false;
 	}
 
-	return CDBCommonSystem::_startSystem();
+	return CDBCommonSystem::_ICommonSystem_startSystem();
 }
 
-bool CDBSystemDB::_postStartSystem()
+bool CDBSystemDB::_ICommonSystem_postStartSystem()
 {
 	if (!_loadInitTableByGlobal()) {
 		return false;
@@ -405,7 +405,7 @@ bool CDBSystemDB::_postStartSystem()
 // 	if (!_loadInitTableByRole()) {
 // 		return false;
 // 	}
-	return CDBCommonSystem::_postStartSystem();
+	return CDBCommonSystem::_ICommonSystem_postStartSystem();
 }
 
 void CDBSystemDB::ICommonSystem_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)

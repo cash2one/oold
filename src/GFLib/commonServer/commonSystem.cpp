@@ -36,22 +36,22 @@ bool ICommonSystem::ICommonSystem_initServerMsg(BSLib::Framework::CMsgExecMgr* a
 	return true;
 }
 
-bool ICommonSystem::_initCommand(BSLib::Utility::CCmdExecMgr* a_cmdExecMgr)
+bool ICommonSystem::_ICommonSystem_initCommand(BSLib::Utility::CCmdExecMgr* a_cmdExecMgr)
 {
 	return true;
 }
 
-bool ICommonSystem::_prepStartSystem()
+bool ICommonSystem::_ICommonSystem_prepStartSystem()
 {
 	return true;
 }
 
-bool ICommonSystem::_startSystem()
+bool ICommonSystem::_ICommonSystem_startSystem()
 {
 	return true;
 }
 
-bool ICommonSystem::_postStartSystem()
+bool ICommonSystem::_ICommonSystem_postStartSystem()
 {
 	return true;
 }

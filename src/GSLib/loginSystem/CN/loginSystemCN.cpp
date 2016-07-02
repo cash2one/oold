@@ -147,9 +147,9 @@ bool CLoginSystemCN::ICommonSystem_initServerMsg(BSLib::Framework::CMsgExecMgr* 
 	return GSLib::DBSystem::CDBCommonSystem::ICommonSystem_initServerMsg(a_msgExecMgr);
 }
 
-bool CLoginSystemCN::_startSystem()
+bool CLoginSystemCN::_ICommonSystem_startSystem()
 {
-	return GSLib::DBSystem::CDBCommonSystem::_startSystem();
+	return GSLib::DBSystem::CDBCommonSystem::_ICommonSystem_startSystem();
 }
 
 void CLoginSystemCN::ICommonSystem_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)

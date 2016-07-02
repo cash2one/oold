@@ -45,9 +45,9 @@ bool CItemSystemGM::ICommonSystem_initServerMsg(BSLib::Framework::CMsgExecMgr* a
 	return GSLib::DBSystem::CDBCommonSystem::ICommonSystem_initServerMsg(a_msgExecMgr);
 }
 
-bool CItemSystemGM::_startSystem()
+bool CItemSystemGM::_ICommonSystem_startSystem()
 {
-	return GSLib::DBSystem::CDBCommonSystem::_startSystem();
+	return GSLib::DBSystem::CDBCommonSystem::_ICommonSystem_startSystem();
 }
 
 void CItemSystemGM::ICommonSystem_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)

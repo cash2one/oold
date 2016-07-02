@@ -61,10 +61,10 @@ bool CActivitySystemGM::ICommonSystem_initServerMsg(BSLib::Framework::CMsgExecMg
 	return GSLib::DBSystem::CDBCommonSystem::ICommonSystem_initServerMsg(a_msgExecMgr);
 }
 
-bool CActivitySystemGM::_startSystem()
+bool CActivitySystemGM::_ICommonSystem_startSystem()
 {	
 	_initDailyFreeGoldDrawCardData();
-	return GSLib::DBSystem::CDBCommonSystem::_startSystem();
+	return GSLib::DBSystem::CDBCommonSystem::_ICommonSystem_startSystem();
 }
 
 void CActivitySystemGM::ICommonSystem_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)

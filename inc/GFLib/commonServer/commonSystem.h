@@ -22,7 +22,7 @@ public:
 	virtual ~ICommonSystem();
 
 public:
-	virtual BSLib::uint16 getFuncType() = 0;
+	virtual BSLib::uint16 ICommonSystem_getFuncType() = 0;
 
 protected:
 	///////////////////////////////////////////////////////////////////////////
@@ -55,33 +55,33 @@ protected:
 	virtual bool ICommonSystem_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr);
 
 	///////////////////////////////////////////////////////////////////////////
-	// Method:    _initCommand
+	// Method:    _ICommonSystem_initCommand
 	// Qualifier: 初始化命令
 	// Returns:   bool
 	// Parameter: BSLib::Framework::CMsgExecMgr * a_msgExecMgr
 	///////////////////////////////////////////////////////////////////////////
-	virtual bool _initCommand(BSLib::Utility::CCmdExecMgr* a_cmdExecMgr);
+	virtual bool _ICommonSystem_initCommand(BSLib::Utility::CCmdExecMgr* a_cmdExecMgr);
 	
 	///////////////////////////////////////////////////////////////////////////
-	// Method:    _prepStartSystem
+	// Method:    _ICommonSystem_prepStartSystem
 	// Qualifier: 为启动系统做好准备
 	// Returns:   bool
 	///////////////////////////////////////////////////////////////////////////
-	virtual bool _prepStartSystem();
+	virtual bool _ICommonSystem_prepStartSystem();
 
 	///////////////////////////////////////////////////////////////////////////
-	// Method:    _startSystem
+	// Method:    _ICommonSystem_startSystem
 	// Qualifier: 启动系统做好准备
 	// Returns:   bool
 	///////////////////////////////////////////////////////////////////////////
-	virtual bool _startSystem();
+	virtual bool _ICommonSystem_startSystem();
 
 	///////////////////////////////////////////////////////////////////////////
-	// Method:    _startSystem
+	// Method:    _ICommonSystem_startSystem
 	// Qualifier: 启动系统后置准备
 	// Returns:   bool
 	///////////////////////////////////////////////////////////////////////////
-	virtual bool _postStartSystem();
+	virtual bool _ICommonSystem_postStartSystem();
 
 	///////////////////////////////////////////////////////////////////////////
 	// Method:    ICommonSystem_cbServerEnter

@@ -12,7 +12,8 @@ namespace GFLib
 namespace CommonServer
 {
 
-class GFLIB_COMMONSERVER_API CStubMgr : public BSLib::Network::CNetStubMgr
+class GFLIB_COMMONSERVER_API CStubMgr 
+    : public BSLib::Network::CNetStubMgr
 {
 public:
 	CStubMgr();

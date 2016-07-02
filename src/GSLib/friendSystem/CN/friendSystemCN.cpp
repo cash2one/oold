@@ -65,9 +65,9 @@ bool CFriendSystemCN::ICommonSystem_initServerMsg(BSLib::Framework::CMsgExecMgr*
 }
 
 
-bool CFriendSystemCN::_startSystem()
+bool CFriendSystemCN::_ICommonSystem_startSystem()
 {	
-	return GSLib::DBSystem::CDBCommonSystem::_startSystem();
+	return GSLib::DBSystem::CDBCommonSystem::_ICommonSystem_startSystem();
 }
 
 void CFriendSystemCN::ICommonSystem_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)

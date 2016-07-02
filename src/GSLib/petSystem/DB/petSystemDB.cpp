@@ -44,10 +44,10 @@ bool CPetSystemDB::ICommonSystem_initServerMsg(BSLib::Framework::CMsgExecMgr* a_
 	return GSLib::DBSystem::CDBCommonSystem::ICommonSystem_initServerMsg(a_msgExecMgr);
 }
 
-bool CPetSystemDB::_startSystem()
+bool CPetSystemDB::_ICommonSystem_startSystem()
 {
 	GSLib::DBSystem::DB::CDBSystemDB::singleton().setInitTableByRole(GSLib::SRVTYPE_GAMESERVER, GSLib::EFUNCTYPE_PETSYSTEM, EMODULECTYPE_PET, EDBTABLEID_ROLE_PET_DATA,"");
-	return GSLib::DBSystem::CDBCommonSystem::_startSystem();
+	return GSLib::DBSystem::CDBCommonSystem::_ICommonSystem_startSystem();
 }
 
 void CPetSystemDB::ICommonSystem_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)

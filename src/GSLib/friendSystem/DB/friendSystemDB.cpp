@@ -44,7 +44,7 @@ bool CFriendSystemDB::ICommonSystem_initServerMsg(BSLib::Framework::CMsgExecMgr*
 	return GSLib::DBSystem::CDBCommonSystem::ICommonSystem_initServerMsg(a_msgExecMgr);
 }
 
-bool CFriendSystemDB::_startSystem()
+bool CFriendSystemDB::_ICommonSystem_startSystem()
 {	
 	GSLib::DBSystem::DB::CDBSystemDB::singleton().setInitTableByRole(GSLib::SRVTYPE_CENTERSERVER,
 		GSLib::EFUNCTYPE_FRIENDSYSTEM, EMODULETYPE_FRIEND, EDBTABLEID_ROLE_FRIEND_DATA);
@@ -56,7 +56,7 @@ bool CFriendSystemDB::_startSystem()
 		GSLib::EFUNCTYPE_FRIENDSYSTEM, EMODULECTYPE_NULL, EDBTABLEID_FRIEND_PENDING_QUEUE_DATA);
 
 
-	return GSLib::DBSystem::CDBCommonSystem::_startSystem();
+	return GSLib::DBSystem::CDBCommonSystem::_ICommonSystem_startSystem();
 }
 
 void CFriendSystemDB::ICommonSystem_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)

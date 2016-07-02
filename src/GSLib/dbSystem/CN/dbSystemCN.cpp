@@ -46,14 +46,14 @@ bool CDBSystemCN::ICommonSystem_initServerMsg(BSLib::Framework::CMsgExecMgr* a_m
 	return GSLib::DBSystem::CDBCommonSystem::ICommonSystem_initServerMsg(a_msgExecMgr);
 }
 
-bool CDBSystemCN::_startSystem()
+bool CDBSystemCN::_ICommonSystem_startSystem()
 {
-	return GSLib::DBSystem::CDBCommonSystem::_startSystem();
+	return GSLib::DBSystem::CDBCommonSystem::_ICommonSystem_startSystem();
 }
 
-bool CDBSystemCN::_postStartSystem()
+bool CDBSystemCN::_ICommonSystem_postStartSystem()
 {
-	return GSLib::DBSystem::CDBCommonSystem::_postStartSystem();
+	return GSLib::DBSystem::CDBCommonSystem::_ICommonSystem_postStartSystem();
 }
 
 void CDBSystemCN::ICommonSystem_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)
@@ -95,7 +95,7 @@ void CDBSystemCN::_onMsgDBSystemDB2XSAckSelectTableData(BSLib::Framework::SMsgLa
 {
 	CMsgLoginSystemDB2XSAckSelectTableData* ackSelectData = (CMsgLoginSystemDB2XSAckSelectTableData*)a_msg;
 
-	if (ackSelectData->m_funcType == GFLib::EFUNCTYPE_NULL || ackSelectData->m_funcType == getFuncType()){
+	if (ackSelectData->m_funcType == GFLib::EFUNCTYPE_NULL || ackSelectData->m_funcType == ICommonSystem_getFuncType()){
 		cbSelectTableData(ackSelectData->m_roleKey, ackSelectData->m_moduleType, ackSelectData->m_tableID, ackSelectData->m_stream, ackSelectData->m_sessionID);
 		return ;
 	}
@@ -106,7 +106,7 @@ void CDBSystemCN::_onMsgDBSystemDB2XSAckSelectTableData(BSLib::Framework::SMsgLa
 			BSLIB_LOG_ERROR(ETT_GSLIB_DBSYSTEM, "select返回数据失败,没有找到相应的系统[FuncType=%d][TableID=%d]", ackSelectData->m_funcType, ackSelectData->m_tableID);
 			return ;
 		}
-		if (commonSystem->getFuncType() != ackSelectData->m_funcType) {
+		if (commonSystem->ICommonSystem_getFuncType() != ackSelectData->m_funcType) {
 			BSLIB_LOG_ERROR(ETT_GSLIB_DBSYSTEM, "select返回数据失败,功能模块不一致[FuncType=%d][TableID=%d]", ackSelectData->m_funcType, ackSelectData->m_tableID);
 			return ;
 		}
@@ -117,7 +117,7 @@ void CDBSystemCN::_onMsgDBSystemDB2XSAckSelectTableData(BSLib::Framework::SMsgLa
 			BSLIB_LOG_ERROR(ETT_GSLIB_DBSYSTEM, "select返回数据失败,没有找到相应的PlayerSystem系统[TableID=%d]", ackSelectData->m_tableID);
 			return ;
 		}
-		if (commonSystem->getFuncType() != GSLib::EFUNCTYPE_PLAYERSYSTEM) {
+		if (commonSystem->ICommonSystem_getFuncType() != GSLib::EFUNCTYPE_PLAYERSYSTEM) {
 			BSLIB_LOG_ERROR(ETT_GSLIB_DBSYSTEM, "select返回数据失败,功能模块不一致[FuncType=%d][TableID=%d]", ackSelectData->m_funcType, ackSelectData->m_tableID);
 			return ;
 		}

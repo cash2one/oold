@@ -60,9 +60,9 @@ bool CRankSystemCN::ICommonSystem_initServerMsg(BSLib::Framework::CMsgExecMgr* a
 	return GSLib::DBSystem::CDBCommonSystem::ICommonSystem_initServerMsg(a_msgExecMgr);
 }
 
-bool CRankSystemCN::_startSystem()
+bool CRankSystemCN::_ICommonSystem_startSystem()
 {	
-	return GSLib::DBSystem::CDBCommonSystem::_startSystem();
+	return GSLib::DBSystem::CDBCommonSystem::_ICommonSystem_startSystem();
 }
 
 bool CRankSystemCN::_cbDateTimer(BSLib::uint64, void* a_para)

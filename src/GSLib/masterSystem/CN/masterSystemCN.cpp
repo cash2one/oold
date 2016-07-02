@@ -79,9 +79,9 @@ bool CMasterSystemCN::ICommonSystem_initServerMsg(BSLib::Framework::CMsgExecMgr*
 }
 
 
-bool CMasterSystemCN::_startSystem()
+bool CMasterSystemCN::_ICommonSystem_startSystem()
 {	
-	return GSLib::DBSystem::CDBCommonSystem::_startSystem();
+	return GSLib::DBSystem::CDBCommonSystem::_ICommonSystem_startSystem();
 }
 
 void CMasterSystemCN::ICommonSystem_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)

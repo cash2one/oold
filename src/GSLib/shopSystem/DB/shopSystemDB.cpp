@@ -44,12 +44,12 @@ bool CShopSystemDB::ICommonSystem_initServerMsg(BSLib::Framework::CMsgExecMgr* a
 	return GSLib::DBSystem::CDBCommonSystem::ICommonSystem_initServerMsg(a_msgExecMgr);
 }
 
-bool CShopSystemDB::_startSystem()
+bool CShopSystemDB::_ICommonSystem_startSystem()
 {	
 	GSLib::DBSystem::DB::CDBSystemDB::singleton().setInitTableByRole(GSLib::SRVTYPE_GAMESERVER,
 		GSLib::EFUNCTYPE_SHOPSYSTEM, EMODULETYPE_SHOP, EDBTABLEID_ROLE_SHOP_DATA);
 
-	return GSLib::DBSystem::CDBCommonSystem::_startSystem();
+	return GSLib::DBSystem::CDBCommonSystem::_ICommonSystem_startSystem();
 }
 
 void CShopSystemDB::ICommonSystem_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)

@@ -44,7 +44,7 @@ bool CMailSystemDB::ICommonSystem_initServerMsg(BSLib::Framework::CMsgExecMgr* a
 	return GSLib::DBSystem::CDBCommonSystem::ICommonSystem_initServerMsg(a_msgExecMgr);
 }
 
-bool CMailSystemDB::_startSystem()
+bool CMailSystemDB::_ICommonSystem_startSystem()
 {	
 	GSLib::DBSystem::DB::CDBSystemDB::singleton().setInitTableByRole(GSLib::SRVTYPE_GAMESERVER,
 		GSLib::EFUNCTYPE_MAILSYSTEM, EMODULECTYPE_MAIL, EDBTABLEID_ROLE_MAIL_CONFIG_DATA);
@@ -60,7 +60,7 @@ bool CMailSystemDB::_startSystem()
 	GSLib::DBSystem::DB::CDBSystemDB::singleton().setInitTableByGlobal(GSLib::SRVTYPE_CENTERSERVER, 
 		GSLib::EFUNCTYPE_MAILSYSTEM, EMODULECTYPE_NULL, EDBTABLEID_MAIL_OUTPUT_DATA);	
 
-	return GSLib::DBSystem::CDBCommonSystem::_startSystem();
+	return GSLib::DBSystem::CDBCommonSystem::_ICommonSystem_startSystem();
 }
 
 void CMailSystemDB::ICommonSystem_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)

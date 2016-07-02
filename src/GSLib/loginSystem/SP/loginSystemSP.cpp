@@ -58,9 +58,9 @@ bool CLoginSystemSP::ICommonSystem_initServerMsg(BSLib::Framework::CMsgExecMgr* 
 	return GFLib::CommonServer::ICommonSystem::ICommonSystem_initServerMsg(a_msgExecMgr);
 }
 
-bool CLoginSystemSP::_startSystem()
+bool CLoginSystemSP::_ICommonSystem_startSystem()
 {
-	return GFLib::CommonServer::ICommonSystem::_startSystem();
+	return GFLib::CommonServer::ICommonSystem::_ICommonSystem_startSystem();
 }
 
 void CLoginSystemSP::ICommonSystem_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)

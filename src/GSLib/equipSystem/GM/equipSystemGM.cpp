@@ -55,9 +55,9 @@ bool CEquipSystemGM::ICommonSystem_initServerMsg(BSLib::Framework::CMsgExecMgr* 
 	return GSLib::DBSystem::CDBCommonSystem::ICommonSystem_initServerMsg(a_msgExecMgr);
 }
 
-bool CEquipSystemGM::_startSystem()
+bool CEquipSystemGM::_ICommonSystem_startSystem()
 {
-	return GSLib::DBSystem::CDBCommonSystem::_startSystem();
+	return GSLib::DBSystem::CDBCommonSystem::_ICommonSystem_startSystem();
 }
 
 void CEquipSystemGM::ICommonSystem_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)
