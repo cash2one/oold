@@ -19,7 +19,7 @@ CCommonSystemMgr::~CCommonSystemMgr()
 	;
 }
 
-bool CCommonSystemMgr::addSystem(CCommonSystem* a_commonSystem)
+bool CCommonSystemMgr::addSystem(ICommonSystem* a_commonSystem)
 {
 	if (a_commonSystem == NULL) {
 		return false;
@@ -33,18 +33,18 @@ bool CCommonSystemMgr::addSystem(CCommonSystem* a_commonSystem)
 	return true;
 }
 
-CCommonSystem* CCommonSystemMgr::getSystem(BSLib::uint16 a_funType)
+ICommonSystem* CCommonSystemMgr::getSystem(BSLib::uint16 a_funType)
 {
-	CCommonSystem* commonSystem = NULL;
+	ICommonSystem* commonSystem = NULL;
 	m_funSystemHashMap.getValue(a_funType, commonSystem);
 	return commonSystem;
 }
 
 bool CCommonSystemMgr::init(BSLib::Utility::CTimerServer* a_timerServer)
 {
-	BSLib::Utility::CHashMap<BSLib::uint16, CCommonSystem*>::iterator it = m_funSystemHashMap.begin();
+	BSLib::Utility::CHashMap<BSLib::uint16, ICommonSystem*>::iterator it = m_funSystemHashMap.begin();
 	for (; it != m_funSystemHashMap.end(); ++it) {
-		CCommonSystem* funSystem = it->second;
+		ICommonSystem* funSystem = it->second;
 		if (funSystem == NULL) {
 			continue;
 		}
@@ -59,9 +59,9 @@ bool CCommonSystemMgr::init(BSLib::Utility::CTimerServer* a_timerServer)
 
 void CCommonSystemMgr::final()
 {
-	BSLib::Utility::CHashMap<BSLib::uint16, CCommonSystem*>::iterator it = m_funSystemHashMap.begin();
+	BSLib::Utility::CHashMap<BSLib::uint16, ICommonSystem*>::iterator it = m_funSystemHashMap.begin();
 	for (; it != m_funSystemHashMap.end(); ++it) {
-		CCommonSystem* funSystem = it->second;
+		ICommonSystem* funSystem = it->second;
 		if (funSystem == NULL) {
 			continue;
 		}
@@ -72,13 +72,13 @@ void CCommonSystemMgr::final()
 
 bool CCommonSystemMgr::loadGameConfig(const std::string& a_configPath)
 {
-	BSLib::Utility::CHashMap<BSLib::uint16, CCommonSystem*>::iterator it = m_funSystemHashMap.begin();
+	BSLib::Utility::CHashMap<BSLib::uint16, ICommonSystem*>::iterator it = m_funSystemHashMap.begin();
 	for (; it != m_funSystemHashMap.end(); ++it) {
-		CCommonSystem* funSystem = it->second;
+		ICommonSystem* funSystem = it->second;
 		if (funSystem == NULL) {
 			continue;
 		}
-		if (!funSystem->ICommonServer_loadGameConfig(a_configPath)) {
+		if (!funSystem->ICommonSystem_loadGameConfig(a_configPath)) {
 			BSLIB_LOG_ERROR(ETT_GFLIB_COMMON, "加载系统功能[%d]配置失败", it->first);
 			return false;
 		}
@@ -88,13 +88,13 @@ bool CCommonSystemMgr::loadGameConfig(const std::string& a_configPath)
 
 void CCommonSystemMgr::initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
 {
-	BSLib::Utility::CHashMap<BSLib::uint16, CCommonSystem*>::iterator it = m_funSystemHashMap.begin();
+	BSLib::Utility::CHashMap<BSLib::uint16, ICommonSystem*>::iterator it = m_funSystemHashMap.begin();
 	for (; it != m_funSystemHashMap.end(); ++it) {
-		CCommonSystem* funSystem = it->second;
+		ICommonSystem* funSystem = it->second;
 		if (funSystem == NULL) {
 			continue;
 		}
-		if (!funSystem->ICommonServer_initServerMsg(a_msgExecMgr)) {
+		if (!funSystem->ICommonSystem_initServerMsg(a_msgExecMgr)) {
 			BSLIB_LOG_ERROR(ETT_GFLIB_COMMON, "加载系统功能[%d]消息失败", it->first);
 		}
 	}
@@ -102,9 +102,9 @@ void CCommonSystemMgr::initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr
 
 void CCommonSystemMgr::initCommand(BSLib::Utility::CCmdExecMgr* a_cmdExecMgr)
 {
-	BSLib::Utility::CHashMap<BSLib::uint16, CCommonSystem*>::iterator it = m_funSystemHashMap.begin();
+	BSLib::Utility::CHashMap<BSLib::uint16, ICommonSystem*>::iterator it = m_funSystemHashMap.begin();
 	for (; it != m_funSystemHashMap.end(); ++it) {
-		CCommonSystem* funSystem = it->second;
+		ICommonSystem* funSystem = it->second;
 		if (funSystem == NULL) {
 			continue;
 		}
@@ -131,34 +131,34 @@ bool CCommonSystemMgr::startSystem()
 
 void CCommonSystemMgr::cbServerEnter(const SServerID& a_serverID, const std::string& a_key)
 {
-	BSLib::Utility::CHashMap<BSLib::uint16, CCommonSystem*>::iterator it = m_funSystemHashMap.begin();
+	BSLib::Utility::CHashMap<BSLib::uint16, ICommonSystem*>::iterator it = m_funSystemHashMap.begin();
 	for (; it != m_funSystemHashMap.end(); ++it) {
-		CCommonSystem* funSystem = it->second;
+		ICommonSystem* funSystem = it->second;
 		if (funSystem == NULL) {
 			continue;
 		}
-		funSystem->ICommonServer_cbServerEnter(a_serverID, a_key);
+		funSystem->ICommonSystem_cbServerEnter(a_serverID, a_key);
 	}
 }
 
 void CCommonSystemMgr::cbServerLeave(const SServerID& a_serverID, const std::string& a_key)
 {
-	BSLib::Utility::CHashMap<BSLib::uint16, CCommonSystem*>::iterator it = m_funSystemHashMap.begin();
+	BSLib::Utility::CHashMap<BSLib::uint16, ICommonSystem*>::iterator it = m_funSystemHashMap.begin();
 	for (; it != m_funSystemHashMap.end(); ++it) {
-		CCommonSystem* funSystem = it->second;
+		ICommonSystem* funSystem = it->second;
 		if (funSystem == NULL) {
 			continue;
 		}
-		funSystem->ICommonServer_cbServerLeave(a_serverID, a_key);
+		funSystem->ICommonSystem_cbServerLeave(a_serverID, a_key);
 	}
 }
 
 
 bool CCommonSystemMgr::_prepStartSystem()
 {
-	BSLib::Utility::CHashMap<BSLib::uint16, CCommonSystem*>::iterator it = m_funSystemHashMap.begin();
+	BSLib::Utility::CHashMap<BSLib::uint16, ICommonSystem*>::iterator it = m_funSystemHashMap.begin();
 	for (; it != m_funSystemHashMap.end(); ++it) {
-		CCommonSystem* funSystem = it->second;
+		ICommonSystem* funSystem = it->second;
 		if (funSystem == NULL) {
 			continue;
 		}
@@ -172,9 +172,9 @@ bool CCommonSystemMgr::_prepStartSystem()
 
 bool CCommonSystemMgr::_startSystem()
 {
-	BSLib::Utility::CHashMap<BSLib::uint16, CCommonSystem*>::iterator it = m_funSystemHashMap.begin();
+	BSLib::Utility::CHashMap<BSLib::uint16, ICommonSystem*>::iterator it = m_funSystemHashMap.begin();
 	for (; it != m_funSystemHashMap.end(); ++it) {
-		CCommonSystem* funSystem = it->second;
+		ICommonSystem* funSystem = it->second;
 		if (funSystem == NULL) {
 			continue;
 		}
@@ -188,9 +188,9 @@ bool CCommonSystemMgr::_startSystem()
 
 bool CCommonSystemMgr::_postStartSystem()
 {
-	BSLib::Utility::CHashMap<BSLib::uint16, CCommonSystem*>::iterator it = m_funSystemHashMap.begin();
+	BSLib::Utility::CHashMap<BSLib::uint16, ICommonSystem*>::iterator it = m_funSystemHashMap.begin();
 	for (; it != m_funSystemHashMap.end(); ++it) {
-		CCommonSystem* funSystem = it->second;
+		ICommonSystem* funSystem = it->second;
 		if (funSystem == NULL) {
 			continue;
 		}

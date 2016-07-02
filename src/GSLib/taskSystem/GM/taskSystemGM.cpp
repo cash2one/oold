@@ -46,18 +46,18 @@ void CTaskSystemGM::_final()
 	GSLib::DBSystem::CDBCommonSystem::_final();
 }
 
-bool CTaskSystemGM::ICommonServer_loadGameConfig(const std::string& a_configPath)
+bool CTaskSystemGM::ICommonSystem_loadGameConfig(const std::string& a_configPath)
 {
 	std::string fileName = a_configPath + "\\task";
 	if (!CTaskDataMgr::singleton().loadConfig(fileName)) {
 		return false;
 	}
-	return GSLib::DBSystem::CDBCommonSystem::ICommonServer_loadGameConfig(a_configPath);
+	return GSLib::DBSystem::CDBCommonSystem::ICommonSystem_loadGameConfig(a_configPath);
 }
 
-bool CTaskSystemGM::ICommonServer_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
+bool CTaskSystemGM::ICommonSystem_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
 {
-	return GSLib::DBSystem::CDBCommonSystem::ICommonServer_initServerMsg(a_msgExecMgr);
+	return GSLib::DBSystem::CDBCommonSystem::ICommonSystem_initServerMsg(a_msgExecMgr);
 }
 
 bool CTaskSystemGM::_startSystem()
@@ -66,14 +66,14 @@ bool CTaskSystemGM::_startSystem()
 	return GSLib::DBSystem::CDBCommonSystem::_startSystem();
 }
 
-void CTaskSystemGM::ICommonServer_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)
+void CTaskSystemGM::ICommonSystem_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)
 {
-	GSLib::DBSystem::CDBCommonSystem::ICommonServer_cbServerEnter(a_serverID, a_key);
+	GSLib::DBSystem::CDBCommonSystem::ICommonSystem_cbServerEnter(a_serverID, a_key);
 }
 
-void CTaskSystemGM::ICommonServer_cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key)
+void CTaskSystemGM::ICommonSystem_cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key)
 {
-	GSLib::DBSystem::CDBCommonSystem::ICommonServer_cbServerLeave(a_serverID, a_key);
+	GSLib::DBSystem::CDBCommonSystem::ICommonSystem_cbServerLeave(a_serverID, a_key);
 }
 
 BSLib::uint64 CTaskSystemGM::getLastTaskSystemDataResetTime() const

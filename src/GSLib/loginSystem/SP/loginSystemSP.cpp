@@ -31,20 +31,20 @@ CLoginSystemSP::~CLoginSystemSP()
 
 bool CLoginSystemSP::_init()
 {
-	return GFLib::CommonServer::CCommonSystem::_init();
+	return GFLib::CommonServer::ICommonSystem::_init();
 }
 
 void CLoginSystemSP::_final()
 {
-	GFLib::CommonServer::CCommonSystem::_final();
+	GFLib::CommonServer::ICommonSystem::_final();
 }
 
-bool CLoginSystemSP::ICommonServer_loadGameConfig(const std::string& a_configPath)
+bool CLoginSystemSP::ICommonSystem_loadGameConfig(const std::string& a_configPath)
 {
-	return GFLib::CommonServer::CCommonSystem::ICommonServer_loadGameConfig(a_configPath);
+	return GFLib::CommonServer::ICommonSystem::ICommonSystem_loadGameConfig(a_configPath);
 }
 
-bool CLoginSystemSP::ICommonServer_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
+bool CLoginSystemSP::ICommonSystem_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
 {
 	BSLib::Framework::CMsgFactory::singleton().registerCreateCMsgFun(MsgIDLoginSystemLG2SPReqRegisterToken, &BSLib::Framework::CreateCMessage<CMsgLoginSystemLG2SPReqRegisterToken>);
 	GFLIB_ADDMSG_OBJEXEC(a_msgExecMgr, MsgIDLoginSystemLG2SPReqRegisterToken, &CLoginSystemSP::_onMsgLoginSystemLG2SPReqRegisterToken, this);
@@ -55,15 +55,15 @@ bool CLoginSystemSP::ICommonServer_initServerMsg(BSLib::Framework::CMsgExecMgr* 
 	BSLib::Framework::CMsgFactory::singleton().registerCreateCMsgFun(MsgIDLoginSystemAC2SPAckCheckToken, &BSLib::Framework::CreateCMessage<CMsgLoginSystemAC2SPAckCheckToken>);
 	GFLIB_ADDMSG_OBJEXEC(a_msgExecMgr, MsgIDLoginSystemAC2SPAckCheckToken, &CLoginSystemSP::_onMsgLoginSystemAC2SPAckCheckToken, this);
 
-	return GFLib::CommonServer::CCommonSystem::ICommonServer_initServerMsg(a_msgExecMgr);
+	return GFLib::CommonServer::ICommonSystem::ICommonSystem_initServerMsg(a_msgExecMgr);
 }
 
 bool CLoginSystemSP::_startSystem()
 {
-	return GFLib::CommonServer::CCommonSystem::_startSystem();
+	return GFLib::CommonServer::ICommonSystem::_startSystem();
 }
 
-void CLoginSystemSP::ICommonServer_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)
+void CLoginSystemSP::ICommonSystem_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)
 {
 	GFLib::ServerType serverType = a_serverID.ICommonServer_getServerType();
 	switch (serverType)
@@ -74,7 +74,7 @@ void CLoginSystemSP::ICommonServer_cbServerEnter(const GFLib::SServerID& a_serve
 	} 
 }
 
-void CLoginSystemSP::ICommonServer_cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key)
+void CLoginSystemSP::ICommonSystem_cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key)
 {
 	GFLib::ServerType serverType = a_serverID.ICommonServer_getServerType();
 	switch (serverType)

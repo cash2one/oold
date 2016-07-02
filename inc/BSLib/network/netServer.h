@@ -72,8 +72,6 @@ protected:
 	bool _addUdpAccpetor(CSockAddr& acceptorAddr, void* tempData = NULL);
 	bool _addUdpAccpetor(const std::string& acceptorIP, uint16 acceptPort, void* tempData = NULL);
 	
-	/// @brief
-	/// @return	bool
 	/// @param	uint32 maxStub 最多容纳NetStub数量
 	/// @param	uint32 minThread 最少启动线程数量
 	/// @param	uint32 maxStubPerThd 每个线程最多容纳NetStub数量

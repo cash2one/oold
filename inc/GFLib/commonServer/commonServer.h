@@ -82,7 +82,7 @@ protected:
 	bool _openNetServer();
 
 private:
-	void _onMsgSysChannelLC2LCReqServerInfor(BSLib::Framework::SMsgLabel* msgLabel,BSLib::Framework:: SMessage* msg);
+	void _onMsgSysChannelLC2LCReqServerInfo(BSLib::Framework::SMsgLabel* msgLabel,BSLib::Framework:: SMessage* msg);
 	void _onMsgSysChannelLC2LCNtfCommand(BSLib::Framework::SMsgLabel* msgLabel,BSLib::Framework:: SMessage* msg);
 	void _onMsgServerLocalLC2LCNtfServerEnter(BSLib::Framework::SMsgLabel* msgLabel,BSLib::Framework:: SMessage* msg);
 	void _onMsgServerLocalLC2LCNtfServerLeave(BSLib::Framework::SMsgLabel* msgLabel,BSLib::Framework:: SMessage* msg);

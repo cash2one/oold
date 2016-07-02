@@ -152,39 +152,39 @@ bool CDBSystemLG::_init()
 		return false;
 	}
 
-	return GFLib::CommonServer::CCommonSystem::_init();
+	return GFLib::CommonServer::ICommonSystem::_init();
 }
 
 void CDBSystemLG::_final()
 {
 	m_dbConnection.close();
 
-	GFLib::CommonServer::CCommonSystem::_final();
+	GFLib::CommonServer::ICommonSystem::_final();
 }
 
-bool CDBSystemLG::ICommonServer_loadGameConfig(const std::string& a_configPath)
+bool CDBSystemLG::ICommonSystem_loadGameConfig(const std::string& a_configPath)
 {
-	return GFLib::CommonServer::CCommonSystem::ICommonServer_loadGameConfig(a_configPath);
+	return GFLib::CommonServer::ICommonSystem::ICommonSystem_loadGameConfig(a_configPath);
 }
 
-bool CDBSystemLG::ICommonServer_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
+bool CDBSystemLG::ICommonSystem_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
 {
-	return GFLib::CommonServer::CCommonSystem::ICommonServer_initServerMsg(a_msgExecMgr);
+	return GFLib::CommonServer::ICommonSystem::ICommonSystem_initServerMsg(a_msgExecMgr);
 }
 
 bool CDBSystemLG::_startSystem()
 {
-	return GFLib::CommonServer::CCommonSystem::_startSystem();
+	return GFLib::CommonServer::ICommonSystem::_startSystem();
 }
 
-void CDBSystemLG::ICommonServer_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)
+void CDBSystemLG::ICommonSystem_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)
 {
-	return GFLib::CommonServer::CCommonSystem::ICommonServer_cbServerEnter(a_serverID, a_key);
+	return GFLib::CommonServer::ICommonSystem::ICommonSystem_cbServerEnter(a_serverID, a_key);
 }
 
-void CDBSystemLG::ICommonServer_cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key)
+void CDBSystemLG::ICommonSystem_cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key)
 {
-	return GFLib::CommonServer::CCommonSystem::ICommonServer_cbServerLeave(a_serverID, a_key);
+	return GFLib::CommonServer::ICommonSystem::ICommonSystem_cbServerLeave(a_serverID, a_key);
 }
 
 }//LG

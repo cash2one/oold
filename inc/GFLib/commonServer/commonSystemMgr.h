@@ -20,9 +20,9 @@ public:
 	BSLIB_SINGLETON_DECLARE(CCommonSystemMgr)
 
 public:
-	bool addSystem(CCommonSystem* a_commonSystem);
+	bool addSystem(ICommonSystem* a_commonSystem);
 
-	CCommonSystem* getSystem(BSLib::uint16 a_funType);
+	ICommonSystem* getSystem(BSLib::uint16 a_funType);
 
 
 	bool init(BSLib::Utility::CTimerServer* a_timerServer);
@@ -42,7 +42,7 @@ private:
 	bool _startSystem();
 	bool _postStartSystem();
 
-	BSLib::Utility::CHashMap<BSLib::uint16, CCommonSystem*> m_funSystemHashMap;
+	BSLib::Utility::CHashMap<BSLib::uint16, ICommonSystem*> m_funSystemHashMap;
 };
 
 }//CommonServer

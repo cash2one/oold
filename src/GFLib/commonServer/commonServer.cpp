@@ -267,7 +267,7 @@ bool ICommonServer::ICommonServer_loadGameConfig(const std::string& a_configPath
 
 void ICommonServer::ICommonServer_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
 {
-	GFLIB_ADDMSG_OBJEXEC(a_msgExecMgr, MsgIDSysChannelLC2LCReqServerInfo, &ICommonServer::_onMsgSysChannelLC2LCReqServerInfor, this);
+	GFLIB_ADDMSG_OBJEXEC(a_msgExecMgr, MsgIDSysChannelLC2LCReqServerInfo, &ICommonServer::_onMsgSysChannelLC2LCReqServerInfo, this);
 	GFLIB_ADDMSG_OBJEXEC(a_msgExecMgr, MsgIDSysChannelLC2LCNtfCommand, &ICommonServer::_onMsgSysChannelLC2LCNtfCommand, this);
 	GFLIB_ADDMSG_OBJEXEC(a_msgExecMgr, MsgIDServerLocalLC2LCNtfServerEnter, &ICommonServer::_onMsgServerLocalLC2LCNtfServerEnter, this);
 	GFLIB_ADDMSG_OBJEXEC(a_msgExecMgr, MsgIDServerLocalLC2LCNtfServerLeave, &ICommonServer::_onMsgServerLocalLC2LCNtfServerLeave, this);
@@ -635,7 +635,7 @@ bool ICommonServer::_openNetServer()
 	return true;
 }
 
-void ICommonServer::_onMsgSysChannelLC2LCReqServerInfor(BSLib::Framework::SMsgLabel* msgLabel,BSLib::Framework:: SMessage* msg)
+void ICommonServer::_onMsgSysChannelLC2LCReqServerInfo(BSLib::Framework::SMsgLabel* msgLabel,BSLib::Framework:: SMessage* msg)
 {
 	if (msgLabel->getLabelType() != BSLib::Framework::ELABELTYPE_SYS) {
 		return ;

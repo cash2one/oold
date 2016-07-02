@@ -34,14 +34,14 @@ void CSkillSystemDB::_final()
 	GSLib::DBSystem::CDBCommonSystem::_final();
 }
 
-bool CSkillSystemDB::ICommonServer_loadGameConfig(const std::string& a_configPath)
+bool CSkillSystemDB::ICommonSystem_loadGameConfig(const std::string& a_configPath)
 {
-	return GSLib::DBSystem::CDBCommonSystem::ICommonServer_loadGameConfig(a_configPath);
+	return GSLib::DBSystem::CDBCommonSystem::ICommonSystem_loadGameConfig(a_configPath);
 }
 
-bool CSkillSystemDB::ICommonServer_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
+bool CSkillSystemDB::ICommonSystem_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
 {
-	return GSLib::DBSystem::CDBCommonSystem::ICommonServer_initServerMsg(a_msgExecMgr);
+	return GSLib::DBSystem::CDBCommonSystem::ICommonSystem_initServerMsg(a_msgExecMgr);
 }
 
 bool CSkillSystemDB::_startSystem()
@@ -50,14 +50,14 @@ bool CSkillSystemDB::_startSystem()
 	return GSLib::DBSystem::CDBCommonSystem::_startSystem();
 }
 
-void CSkillSystemDB::ICommonServer_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)
+void CSkillSystemDB::ICommonSystem_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)
 {
-	GSLib::DBSystem::CDBCommonSystem::ICommonServer_cbServerEnter(a_serverID, a_key);
+	GSLib::DBSystem::CDBCommonSystem::ICommonSystem_cbServerEnter(a_serverID, a_key);
 }
 
-void CSkillSystemDB::ICommonServer_cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key)
+void CSkillSystemDB::ICommonSystem_cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key)
 {
-	GSLib::DBSystem::CDBCommonSystem::ICommonServer_cbServerLeave(a_serverID, a_key);
+	GSLib::DBSystem::CDBCommonSystem::ICommonSystem_cbServerLeave(a_serverID, a_key);
 }
 
 }//DB

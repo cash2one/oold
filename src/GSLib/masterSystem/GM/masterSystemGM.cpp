@@ -45,18 +45,18 @@ void CMasterSystemGM::_final()
 	GSLib::DBSystem::CDBCommonSystem::_final();
 }
 
-bool CMasterSystemGM::ICommonServer_loadGameConfig(const std::string& a_configPath)
+bool CMasterSystemGM::ICommonSystem_loadGameConfig(const std::string& a_configPath)
 {
-	return GSLib::DBSystem::CDBCommonSystem::ICommonServer_loadGameConfig(a_configPath);
+	return GSLib::DBSystem::CDBCommonSystem::ICommonSystem_loadGameConfig(a_configPath);
 }
 
-bool CMasterSystemGM::ICommonServer_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
+bool CMasterSystemGM::ICommonSystem_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
 {	
 	GSLIB_MSGFUN_REG(CMsgMasterSystemXX2XSReqAccountSearch, CMasterSystemGM);
 	GSLIB_MSGFUN_REG(CMsgMasterSystemXX2XSReqAccountPwd, CMasterSystemGM);
 	GSLIB_MSGFUN_REG(CMsgMasterSystemXX2XSReqAccountForbid, CMasterSystemGM);
 	GSLIB_MSGFUN_REG(CMsgMasterSystemXX2XSReqBroadcast, CMasterSystemGM);
-	return GSLib::DBSystem::CDBCommonSystem::ICommonServer_initServerMsg(a_msgExecMgr);
+	return GSLib::DBSystem::CDBCommonSystem::ICommonSystem_initServerMsg(a_msgExecMgr);
 }
 
 bool CMasterSystemGM::_startSystem()
@@ -64,22 +64,22 @@ bool CMasterSystemGM::_startSystem()
 	return GSLib::DBSystem::CDBCommonSystem::_startSystem();
 }
 
-void CMasterSystemGM::ICommonServer_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)
+void CMasterSystemGM::ICommonSystem_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)
 {	
 	if(a_serverID.m_type == GSLib::SRVTYPE_CENTERSERVER)
 	{
 		m_cnKey = a_key;
 	}
-	GSLib::DBSystem::CDBCommonSystem::ICommonServer_cbServerEnter(a_serverID, a_key);
+	GSLib::DBSystem::CDBCommonSystem::ICommonSystem_cbServerEnter(a_serverID, a_key);
 }
 
-void CMasterSystemGM::ICommonServer_cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key)
+void CMasterSystemGM::ICommonSystem_cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key)
 {	
 	if(a_serverID.m_type == GSLib::SRVTYPE_CENTERSERVER)
 	{
 		m_cnKey = "";
 	}
-	GSLib::DBSystem::CDBCommonSystem::ICommonServer_cbServerLeave(a_serverID, a_key);
+	GSLib::DBSystem::CDBCommonSystem::ICommonSystem_cbServerLeave(a_serverID, a_key);
 }
 
 void CMasterSystemGM::_onCMsgMasterSystemXX2XSReqBroadcast(BSLib::Framework::SMsgLabel* a_msgLabel,BSLib::Framework::SMessage* a_msg)

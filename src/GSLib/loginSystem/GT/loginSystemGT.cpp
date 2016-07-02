@@ -51,12 +51,12 @@ void CLoginSystemGT::_final()
 	GSLib::DBSystem::CDBCommonSystem::_final();
 }
 
-bool CLoginSystemGT::ICommonServer_loadGameConfig(const std::string& a_configPath)
+bool CLoginSystemGT::ICommonSystem_loadGameConfig(const std::string& a_configPath)
 {
-	return GSLib::DBSystem::CDBCommonSystem::ICommonServer_loadGameConfig(a_configPath);
+	return GSLib::DBSystem::CDBCommonSystem::ICommonSystem_loadGameConfig(a_configPath);
 }
 
-bool CLoginSystemGT::ICommonServer_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
+bool CLoginSystemGT::ICommonSystem_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
 {
 	//µÇÂ½×¢²á
 	BSLib::Framework::CMsgFactory::singleton().registerCreateCMsgFun(MsgIDLoginSystemCN2GTReqAccountLogin, &BSLib::Framework::CreateCMessage<CMsgLoginSystemCN2GTReqAccountLogin>);
@@ -92,7 +92,7 @@ bool CLoginSystemGT::ICommonServer_initServerMsg(BSLib::Framework::CMsgExecMgr* 
 	BSLib::Framework::CMsgFactory::singleton().registerCreateCMsgFun(MsgIDLoginSystemXS2GTNtfBroadcastMsg, &BSLib::Framework::CreateCMessage<CMsgLoginSystemXS2GTNtfBroadcastMsg>);
 	GFLIB_ADDMSG_OBJEXEC(a_msgExecMgr, MsgIDLoginSystemXS2GTNtfBroadcastMsg, &CLoginSystemGT::_onMsgLoginSystemXS2GTNtfBroadcastMsg, this);
 
-	return GSLib::DBSystem::CDBCommonSystem::ICommonServer_initServerMsg(a_msgExecMgr);
+	return GSLib::DBSystem::CDBCommonSystem::ICommonSystem_initServerMsg(a_msgExecMgr);
 }
 
 bool CLoginSystemGT::_startSystem()
@@ -100,12 +100,12 @@ bool CLoginSystemGT::_startSystem()
 	return GSLib::DBSystem::CDBCommonSystem::_startSystem();
 }
 
-void CLoginSystemGT::ICommonServer_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)
+void CLoginSystemGT::ICommonSystem_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)
 {
-	GSLib::DBSystem::CDBCommonSystem::ICommonServer_cbServerEnter(a_serverID, a_key);
+	GSLib::DBSystem::CDBCommonSystem::ICommonSystem_cbServerEnter(a_serverID, a_key);
 }
 
-void CLoginSystemGT::ICommonServer_cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key)
+void CLoginSystemGT::ICommonSystem_cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key)
 {
 	BSLib::Utility::CMutexFun fun(&m_mutex);
 	
@@ -119,7 +119,7 @@ void CLoginSystemGT::ICommonServer_cbServerLeave(const GFLib::SServerID& a_serve
 		CAccountLoginGTInforMgr::singleton().centerServerLeave(a_serverID);
 		return ;
 	}
-	GSLib::DBSystem::CDBCommonSystem::ICommonServer_cbServerLeave(a_serverID, a_key);
+	GSLib::DBSystem::CDBCommonSystem::ICommonSystem_cbServerLeave(a_serverID, a_key);
 }
 
 void CLoginSystemGT::_onMsgLoginSystemCN2GTReqAccountLogin(BSLib::Framework::SMsgLabel* a_msgLabel,BSLib::Framework::SMessage* a_msg)

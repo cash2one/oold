@@ -448,7 +448,7 @@ bool CDBCommonSystem::_init()
 {
 	relateDBTableIDBySDbColumn(*this);
 
-	return GFLib::CommonServer::CCommonSystem::_init();
+	return GFLib::CommonServer::ICommonSystem::_init();
 }
 
 void CDBCommonSystem::_final()
@@ -462,25 +462,25 @@ void CDBCommonSystem::_final()
 	}
 	m_tableColumnHashMap.clear();
 
-	return GFLib::CommonServer::CCommonSystem::_final();
+	return GFLib::CommonServer::ICommonSystem::_final();
 }
 
-void CDBCommonSystem::ICommonServer_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)
+void CDBCommonSystem::ICommonSystem_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)
 {
 	if (a_serverID.ICommonServer_getServerType() == SRVTYPE_DATASERVER){
 		m_dataServerID = a_serverID;
 		return ;
 	}
-	return GFLib::CommonServer::CCommonSystem::ICommonServer_cbServerEnter(a_serverID, a_key);
+	return GFLib::CommonServer::ICommonSystem::ICommonSystem_cbServerEnter(a_serverID, a_key);
 }
 
-void CDBCommonSystem::ICommonServer_cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key)
+void CDBCommonSystem::ICommonSystem_cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key)
 {
 	if (a_serverID.ICommonServer_getServerType() == SRVTYPE_DATASERVER){
 		m_dataServerID = GFLib::INVALID_SERVERID;
 		return ;
 	}
-	return GFLib::CommonServer::CCommonSystem::ICommonServer_cbServerLeave(a_serverID, a_key);
+	return GFLib::CommonServer::ICommonSystem::ICommonSystem_cbServerLeave(a_serverID, a_key);
 }
 
 bool CDBCommonSystem::_cbSelectKeyTableData(const GSLib::SRoleKey& a_roleKey, CKeyTablePtr& a_keyTable, EDBTableID a_tableID, EModuleType a_moduleType, BSLib::uint32 a_sessionID)

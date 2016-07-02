@@ -20,7 +20,7 @@ namespace DB
 class CDBSystemDB : public CDBCommonSystem
 {
 private:
-	struct SInitTableInfor
+	struct SInitTableInfo
 	{
 		EDBTableID m_tableID;
 		EModuleType m_moduleType;
@@ -63,12 +63,12 @@ public:
 protected:
 	virtual bool _init();
 	virtual void _final();
-	virtual bool ICommonServer_loadGameConfig(const std::string& a_configPath);
-	virtual bool ICommonServer_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr);
+	virtual bool ICommonSystem_loadGameConfig(const std::string& a_configPath);
+	virtual bool ICommonSystem_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr);
 	virtual bool _startSystem();
 	virtual bool _postStartSystem();
-	virtual void ICommonServer_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key);
-	virtual void ICommonServer_cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key);
+	virtual void ICommonSystem_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key);
+	virtual void ICommonSystem_cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key);
 
 	virtual bool _cbSelectKeyTableData(const GSLib::SRoleKey& a_roleKey, CKeyTablePtr& a_keyTable, EDBTableID a_tableID, EModuleType a_moduleType, BSLib::uint32 a_sessionID);
 	virtual bool _cbSelectKeyIndexTableData(const GSLib::SRoleKey& a_roleKey, CKeyIndexTablePtr& a_keyTable, EDBTableID a_tableID, EModuleType a_moduleType, BSLib::uint32 a_sessionID);
@@ -95,9 +95,9 @@ private:
 	void _onMsgDBSystemCH2DBNtfCharge(BSLib::Framework::SMsgLabel* a_msgLabel,BSLib::Framework::SMessage* a_msg);
 
 private:
-	std::list<SInitTableInfor> m_initTableByGlobal;
-	std::list<SInitTableInfor> m_initTableByPlayer;
-	std::list<SInitTableInfor> m_initTableByRole;
+	std::list<SInitTableInfo> m_initTableByGlobal;
+	std::list<SInitTableInfo> m_initTableByPlayer;
+	std::list<SInitTableInfo> m_initTableByRole;
 	BSLib::Utility::TimerHandle m_tick1000Handle;
 	EDBTableID m_currentTableID;
 };

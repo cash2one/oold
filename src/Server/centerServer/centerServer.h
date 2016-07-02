@@ -4,7 +4,8 @@
 #include <BSLib/utility/singleton.h>
 #include <GFLib/commonServer/commonServer.h>
 
-class CCenterServer : public GFLib::CommonServer::ICommonServer
+class CCenterServer 
+    : public GFLib::CommonServer::ICommonServer
 {
 public:
 	CCenterServer();

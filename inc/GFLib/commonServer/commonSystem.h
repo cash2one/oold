@@ -15,11 +15,11 @@ namespace GFLib
 namespace CommonServer
 {
 
-class GFLIB_COMMONSERVER_API CCommonSystem
+class GFLIB_COMMONSERVER_API ICommonSystem
 {
 public:
-	CCommonSystem();
-	virtual ~CCommonSystem();
+	ICommonSystem();
+	virtual ~ICommonSystem();
 
 public:
 	virtual BSLib::uint16 getFuncType() = 0;
@@ -27,7 +27,7 @@ public:
 protected:
 	///////////////////////////////////////////////////////////////////////////
 	// Method:    _init
-	// Qualifier: Server初始化完成后，开始初始化CCommonSystem::_init
+	// Qualifier: Server初始化完成后，开始初始化ICommonSystem::_init
 	// Returns:   bool 初始化System失败，返回false，Server将终止运行
 	///////////////////////////////////////////////////////////////////////////
 	virtual bool _init();
@@ -39,20 +39,20 @@ protected:
 	virtual void _final();
 
 	///////////////////////////////////////////////////////////////////////////
-	// Method:    ICommonServer_loadGameConfig
+	// Method:    ICommonSystem_loadGameConfig
 	// Qualifier: 加载系统配置文件
 	// Returns:   bool
 	// Parameter: const std::string & a_configPath
 	///////////////////////////////////////////////////////////////////////////
-	virtual bool ICommonServer_loadGameConfig(const std::string& a_configPath);
+	virtual bool ICommonSystem_loadGameConfig(const std::string& a_configPath);
 
 	///////////////////////////////////////////////////////////////////////////
-	// Method:    ICommonServer_initServerMsg
+	// Method:    ICommonSystem_initServerMsg
 	// Qualifier: 初始化系统消息
 	// Returns:   bool
 	// Parameter: BSLib::Framework::CMsgExecMgr * a_msgExecMgr
 	///////////////////////////////////////////////////////////////////////////
-	virtual bool ICommonServer_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr);
+	virtual bool ICommonSystem_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr);
 
 	///////////////////////////////////////////////////////////////////////////
 	// Method:    _initCommand
@@ -84,22 +84,22 @@ protected:
 	virtual bool _postStartSystem();
 
 	///////////////////////////////////////////////////////////////////////////
-	// Method:    ICommonServer_cbServerEnter
+	// Method:    ICommonSystem_cbServerEnter
 	// Qualifier:
 	// Returns:   void
 	// Parameter: SServerID & a_serverID
 	// Parameter: const std::string & a_key
 	///////////////////////////////////////////////////////////////////////////
-	virtual void ICommonServer_cbServerEnter(const SServerID& a_serverID, const std::string& a_key);
+	virtual void ICommonSystem_cbServerEnter(const SServerID& a_serverID, const std::string& a_key);
 
 	///////////////////////////////////////////////////////////////////////////
-	// Method:    ICommonServer_cbServerLeave
+	// Method:    ICommonSystem_cbServerLeave
 	// Qualifier:
 	// Returns:   void
 	// Parameter: SServerID & a_serverID
 	// Parameter: const std::string & a_key
 	///////////////////////////////////////////////////////////////////////////
-	virtual void ICommonServer_cbServerLeave(const SServerID& a_serverID, const std::string& a_key);
+	virtual void ICommonSystem_cbServerLeave(const SServerID& a_serverID, const std::string& a_key);
 	
 protected:
 	///////////////////////////////////////////////////////////////////////////
@@ -117,7 +117,7 @@ private:
 
 	friend class CCommonSystemMgr;
 };
-typedef BSLib::Utility::CPointer<CCommonSystem> CCommonSystemPtr;
+typedef BSLib::Utility::CPointer<ICommonSystem> CCommonSystemPtr;
 
 }//CommonServer
 

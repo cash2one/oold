@@ -56,7 +56,7 @@ void stringFormat(std::string& a_str, const char* a_format, va_list ap)
 //////////////////////////////////////////////////////////////////////////
 CTracer::CTracer()
 {
-	setLevel(ETT_ALL, ETL_INFOR);
+	setLevel(ETT_ALL, ETL_INFO);
 	setTypeON(ETT_ALL);
 }
 
@@ -88,7 +88,7 @@ void CTracer::setLevel(uint16 type, const std::string& level)
 {
 	BSLib::Utility::CStringA strLevel = level;
 	strLevel.toLower();
-	const char* levelName[] = {"debug", "trace", "warn", "infor", "error", "fatal"};
+	const char* levelName[] = {"debug", "trace", "warn", "info", "error", "fatal"};
 	for (int i = 0; i < ETL_MAX; i++){
 		if (strLevel == levelName[i]){
 			setLevel(type, (CTracer::ETracerLevel)i);
@@ -161,9 +161,9 @@ void CTracer::warn(uint16 type, const char* file, int line, const char* format, 
 	BSLIB_TRACER_OUTTRACE(type, ETL_WARN);
 }
 
-void CTracer::infor(uint16 type, const char* file, int line, const char* format, ...)
+void CTracer::info(uint16 type, const char* file, int line, const char* format, ...)
 {
-	BSLIB_TRACER_OUTTRACE(type, ETL_INFOR);
+	BSLIB_TRACER_OUTTRACE(type, ETL_INFO);
 }
 
 void CTracer::error(uint16 type, const char* file, int line, const char* format, ...)
@@ -247,7 +247,7 @@ void CTracer::sysWarn(uint16 type, const char* file, int line, const char* forma
 
 void CTracer::sysInfo(uint16 type, const char* file, int line, const char* format, ...)
 {
-	BSLIB_TRACER_OUTTRACE_STATIC(type, ETL_INFOR);
+	BSLIB_TRACER_OUTTRACE_STATIC(type, ETL_INFO);
 }
 
 void CTracer::sysError(uint16 type, const char* file, int line, const char* format, ...)

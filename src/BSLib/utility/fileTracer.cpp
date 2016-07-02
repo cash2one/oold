@@ -478,7 +478,7 @@ void CFileTracer::_outTrace(uint16 type, CTracer::ETracerLevel level, const char
 
 void CFileTracer::_outTrace(STracerItem* item)
 {
-	const char* levelName[] = {"DEBUG", "TRACE", "WARN", "INFOR", "ERROR", "FATAL"};
+	const char* levelName[] = {"DEBUG", "TRACE", "WARN", "INFO", "ERROR", "FATAL"};
 
 	CDateTime dateTime = CDateTime::getCurrentTime();
 	const std::string& typeName = CTracer::_getTypeName(item->m_type);

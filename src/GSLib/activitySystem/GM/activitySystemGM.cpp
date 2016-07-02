@@ -44,21 +44,21 @@ bool CActivitySystemGM::_init()
 
 void CActivitySystemGM::_final()
 {
-	GFLib::CommonServer::CCommonSystem::_final();
+	GFLib::CommonServer::ICommonSystem::_final();
 }
 
-bool CActivitySystemGM::ICommonServer_loadGameConfig(const std::string& a_configPath)
+bool CActivitySystemGM::ICommonSystem_loadGameConfig(const std::string& a_configPath)
 {
 	if (!CActivitySystemDataMgr::singleton().loadActivityConfig(a_configPath)) {
 		return false;
 	}
 
-	return GSLib::DBSystem::CDBCommonSystem::ICommonServer_loadGameConfig(a_configPath);
+	return GSLib::DBSystem::CDBCommonSystem::ICommonSystem_loadGameConfig(a_configPath);
 }
 
-bool CActivitySystemGM::ICommonServer_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
+bool CActivitySystemGM::ICommonSystem_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
 {	
-	return GSLib::DBSystem::CDBCommonSystem::ICommonServer_initServerMsg(a_msgExecMgr);
+	return GSLib::DBSystem::CDBCommonSystem::ICommonSystem_initServerMsg(a_msgExecMgr);
 }
 
 bool CActivitySystemGM::_startSystem()
@@ -67,14 +67,14 @@ bool CActivitySystemGM::_startSystem()
 	return GSLib::DBSystem::CDBCommonSystem::_startSystem();
 }
 
-void CActivitySystemGM::ICommonServer_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)
+void CActivitySystemGM::ICommonSystem_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)
 {
-	GFLib::CommonServer::CCommonSystem::ICommonServer_cbServerEnter(a_serverID, a_key);
+	GFLib::CommonServer::ICommonSystem::ICommonSystem_cbServerEnter(a_serverID, a_key);
 }
 
-void CActivitySystemGM::ICommonServer_cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key)
+void CActivitySystemGM::ICommonSystem_cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key)
 {
-	GFLib::CommonServer::CCommonSystem::ICommonServer_cbServerLeave(a_serverID, a_key);
+	GFLib::CommonServer::ICommonSystem::ICommonSystem_cbServerLeave(a_serverID, a_key);
 }
 
 BSLib::int32 CActivitySystemGM::getLastDailyFreeGoldDrawCardTimeTime() const

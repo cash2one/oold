@@ -61,7 +61,7 @@ public:
 		ETL_DEBUG = 0,	//调试, 测试日志
 		ETL_TRACE,		//跟踪, 逻辑跟踪日志，可以忽略
 		ETL_WARN,		//逻辑警告, 不会出现逻辑混乱
-		ETL_INFOR,		//日志, 必须备案，不可以忽略
+		ETL_INFO,		//日志, 必须备案，不可以忽略
 		ETL_ERROR,		//严重错误, 可能会产生逻辑混乱，但不会宕机
 		ETL_FATAL,		//致命错误, 可能会产生宕机
 		ETL_MAX
@@ -82,7 +82,7 @@ public:
 	void debug(uint16 type, const char* file, int line, const char* format, ...);
 	void trace(uint16 type, const char* file, int line, const char* format, ...);
 	void warn(uint16 type, const char* file, int line, const char* format, ...);
-	void infor(uint16 type, const char* file, int line, const char* format, ...);
+	void info(uint16 type, const char* file, int line, const char* format, ...);
 	void error(uint16 type, const char* file, int line, const char* format, ...);
 	void fatal(uint16 type, const char* file, int line, const char* format, ...);
 

@@ -16,7 +16,7 @@ namespace DBSystem
 namespace LG
 {
 
-class CDBSystemLG : public GFLib::CommonServer::CCommonSystem
+class CDBSystemLG : public GFLib::CommonServer::ICommonSystem
 {
 public:
 	CDBSystemLG();
@@ -42,11 +42,11 @@ public:
 protected:
 	virtual bool _init();
 	virtual void _final();
-	virtual bool ICommonServer_loadGameConfig(const std::string& a_configPath);
-	virtual bool ICommonServer_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr);
+	virtual bool ICommonSystem_loadGameConfig(const std::string& a_configPath);
+	virtual bool ICommonSystem_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr);
 	virtual bool _startSystem();
-	virtual void ICommonServer_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key);
-	virtual void ICommonServer_cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key);
+	virtual void ICommonSystem_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key);
+	virtual void ICommonSystem_cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key);
 
 private:
 	BSLib::Database::CDbConnection m_dbConnection;

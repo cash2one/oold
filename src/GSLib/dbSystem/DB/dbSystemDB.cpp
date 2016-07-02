@@ -37,14 +37,14 @@ bool CDBSystemDB::setInitTableByGlobal(GFLib::ServerType a_serverType, BSLib::ui
 	if (a_tableID & EDBTABLEID_COMMAND) {
 		return false;
 	}
-	SInitTableInfor infor;
+	SInitTableInfo infor;
 	infor.m_funcType = a_funcType;
 	infor.m_moduleType = a_moduleType;
 	infor.m_tableID = a_tableID;
 	infor.m_serverType = a_serverType;
     infor.m_strWhere = a_strWhere;
 
-	std::list<SInitTableInfor>::iterator it = m_initTableByGlobal.begin();
+	std::list<SInitTableInfo>::iterator it = m_initTableByGlobal.begin();
 	for (; it != m_initTableByGlobal.end(); ++it) {
 		if (it->m_tableID <= a_tableID) {
 			continue;
@@ -61,14 +61,14 @@ bool CDBSystemDB::setInitTableByPlayer(GFLib::ServerType a_serverType, BSLib::ui
 	if (a_tableID & EDBTABLEID_COMMAND) {
 		return false;
 	}
-	SInitTableInfor infor;
+	SInitTableInfo infor;
 	infor.m_funcType = a_funcType;
 	infor.m_moduleType = a_moduleType;
 	infor.m_tableID = a_tableID;
 	infor.m_serverType = a_serverType;
     infor.m_strWhere = a_strWhere;
 
-	std::list<SInitTableInfor>::iterator it = m_initTableByPlayer.begin();
+	std::list<SInitTableInfo>::iterator it = m_initTableByPlayer.begin();
 	for (; it != m_initTableByPlayer.end(); ++it) {
 		if (it->m_tableID <= a_tableID) {
 			continue;
@@ -85,14 +85,14 @@ bool CDBSystemDB::setInitTableByRole(GFLib::ServerType a_serverType, BSLib::uint
 	if (a_tableID & EDBTABLEID_COMMAND) {
 		return false;
 	}
-	SInitTableInfor infor;
+	SInitTableInfo infor;
 	infor.m_funcType = a_funcType;
 	infor.m_moduleType = a_moduleType;
 	infor.m_tableID = a_tableID;
 	infor.m_serverType = a_serverType;
     infor.m_strWhere = a_strWhere;
 
-	std::list<SInitTableInfor>::iterator it = m_initTableByRole.begin();
+	std::list<SInitTableInfo>::iterator it = m_initTableByRole.begin();
 	for (; it != m_initTableByRole.end(); ++it) {
 		if (it->m_tableID <= a_tableID) {
 			continue;
@@ -106,7 +106,7 @@ bool CDBSystemDB::setInitTableByRole(GFLib::ServerType a_serverType, BSLib::uint
 
 bool CDBSystemDB::loadInitTableByPlayer(const std::string& a_talbeKey, const std::string& a_tableIndex)
 {
-	std::list<SInitTableInfor>::iterator it = m_initTableByPlayer.begin();
+	std::list<SInitTableInfo>::iterator it = m_initTableByPlayer.begin();
 	for (; it != m_initTableByPlayer.end(); ++it) {
 		
 		BSLIB_LOG_DEBUG(ETT_GSLIB_DBSYSTEM, "加载玩家初始化数据[TableID=%d]", it->m_tableID);
@@ -121,7 +121,7 @@ bool CDBSystemDB::loadInitTableByPlayer(const std::string& a_talbeKey, const std
 
 bool CDBSystemDB::loadInitTableByRole(const std::string& a_sqlWhere)
 {
-	std::list<SInitTableInfor>::iterator it = m_initTableByRole.begin();
+	std::list<SInitTableInfo>::iterator it = m_initTableByRole.begin();
 	for (; it != m_initTableByRole.end(); ++it) {
         BSLib::Utility::CStringA sqlWhere = a_sqlWhere;
         if(sqlWhere.empty()){
@@ -158,7 +158,7 @@ bool CDBSystemDB::selectTableData(const GSLib::SRoleKey& a_roleKey, const std::s
 		cbSelectTableData(a_roleKey, a_moduleType, a_tableID, stream, a_sessionID);
 		return true;
 	}
-	GFLib::CommonServer::CCommonSystem* commonSystem = GFLib::CommonServer::CCommonSystemMgr::singleton().getSystem(a_funcType);
+	GFLib::CommonServer::ICommonSystem* commonSystem = GFLib::CommonServer::CCommonSystemMgr::singleton().getSystem(a_funcType);
 	if (commonSystem == NULL) {
 		BSLIB_LOG_ERROR(ETT_GSLIB_DBSYSTEM, "select返回数据失败,没有找到相应的功能模块[FuncType=%d][TableID=%d]", a_funcType, a_tableID);
 		return false;
@@ -202,7 +202,7 @@ bool CDBSystemDB::selectTableDatas(const GSLib::SRoleKey& a_srcRoleKey,EModuleTy
         ackTablesDataArray.push_back(data);
     }
 
-    GFLib::CommonServer::CCommonSystem* commonSystem = GFLib::CommonServer::CCommonSystemMgr::singleton().getSystem(GSLib::EFUNCTYPE_PLAYERSYSTEM);
+    GFLib::CommonServer::ICommonSystem* commonSystem = GFLib::CommonServer::CCommonSystemMgr::singleton().getSystem(GSLib::EFUNCTYPE_PLAYERSYSTEM);
     if (commonSystem == NULL) {
         //BSLIB_LOG_ERROR(ETT_GSLIB_DBSYSTEM, "select返回数据失败,没有找到相应的PlayerSystem系统[TableID=%d]", ackSelectData->m_tableID);
         return false;
@@ -346,12 +346,12 @@ void CDBSystemDB::_final()
 	CDBCommonSystem::_final();
 }
 
-bool CDBSystemDB::ICommonServer_loadGameConfig(const std::string& a_configPath)
+bool CDBSystemDB::ICommonSystem_loadGameConfig(const std::string& a_configPath)
 {
-	return CDBCommonSystem::ICommonServer_loadGameConfig(a_configPath);
+	return CDBCommonSystem::ICommonSystem_loadGameConfig(a_configPath);
 }
 
-bool CDBSystemDB::ICommonServer_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
+bool CDBSystemDB::ICommonSystem_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
 {
 	BSLib::Framework::CMsgFactory::singleton().registerCreateCMsgFun(MsgIDDBSystemXS2DBReqSelectTableData, &BSLib::Framework::CreateCMessage<CMsgLoginSystemXS2DBReqSelectTableData>);
 	GFLIB_ADDMSG_OBJEXEC(a_msgExecMgr, MsgIDDBSystemXS2DBReqSelectTableData, &CDBSystemDB::_onMsgDBSystemXS2DBReqSelectTableData, this);
@@ -377,7 +377,7 @@ bool CDBSystemDB::ICommonServer_initServerMsg(BSLib::Framework::CMsgExecMgr* a_m
 	BSLib::Framework::CMsgFactory::singleton().registerCreateCMsgFun(MsgIDDBSystemCH2DBNtfCharge, &BSLib::Framework::CreateCMessage<CMsgDBSystemCH2DBNtfCharge>);
 	GFLIB_ADDMSG_OBJEXEC(a_msgExecMgr, MsgIDDBSystemCH2DBNtfCharge, &CDBSystemDB::_onMsgDBSystemCH2DBNtfCharge, this);
 
-	return CDBCommonSystem::ICommonServer_initServerMsg(a_msgExecMgr);
+	return CDBCommonSystem::ICommonSystem_initServerMsg(a_msgExecMgr);
 }
 
 bool CDBSystemDB::_startSystem()
@@ -408,14 +408,14 @@ bool CDBSystemDB::_postStartSystem()
 	return CDBCommonSystem::_postStartSystem();
 }
 
-void CDBSystemDB::ICommonServer_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)
+void CDBSystemDB::ICommonSystem_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)
 {
-	return CDBCommonSystem::ICommonServer_cbServerEnter(a_serverID, a_key);
+	return CDBCommonSystem::ICommonSystem_cbServerEnter(a_serverID, a_key);
 }
 
-void CDBSystemDB::ICommonServer_cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key)
+void CDBSystemDB::ICommonSystem_cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key)
 {
-	return CDBCommonSystem::ICommonServer_cbServerLeave(a_serverID, a_key);
+	return CDBCommonSystem::ICommonSystem_cbServerLeave(a_serverID, a_key);
 }
 
 bool CDBSystemDB::_cbSelectKeyTableData(const GSLib::SRoleKey& a_roleKey, CKeyTablePtr& a_keyTable, EDBTableID a_tableID, EModuleType a_moduleType, BSLib::uint32 a_sessionID)
@@ -438,7 +438,7 @@ bool CDBSystemDB::_cbSelectKeyIndexTableData(const GSLib::SRoleKey& a_roleKey, C
 
 bool CDBSystemDB::_loadInitTableByGlobal()
 {
-	std::list<SInitTableInfor>::iterator it = m_initTableByGlobal.begin();
+	std::list<SInitTableInfo>::iterator it = m_initTableByGlobal.begin();
 	for (; it != m_initTableByGlobal.end(); ++it) {
 		
 		BSLIB_LOG_INFO(ETT_GSLIB_DBSYSTEM, "加载全局初始化数据[TableID=%d]", it->m_tableID);
@@ -453,7 +453,7 @@ bool CDBSystemDB::_loadInitTableByGlobal()
 
 bool CDBSystemDB::_loadInitTableByPlayer()
 {
-	std::list<SInitTableInfor>::iterator it = m_initTableByPlayer.begin();
+	std::list<SInitTableInfo>::iterator it = m_initTableByPlayer.begin();
 	for (; it != m_initTableByPlayer.end(); ++it) {
 
 		BSLIB_LOG_INFO(ETT_GSLIB_DBSYSTEM, "加载玩家初始化数据[TableID=%d]", it->m_tableID);
@@ -468,7 +468,7 @@ bool CDBSystemDB::_loadInitTableByPlayer()
 
 bool CDBSystemDB::_loadInitTableByRole()
 {
-	std::list<SInitTableInfor>::iterator it = m_initTableByRole.begin();
+	std::list<SInitTableInfo>::iterator it = m_initTableByRole.begin();
 	for (; it != m_initTableByRole.end(); ++it) {
 
 		BSLIB_LOG_INFO(ETT_GSLIB_DBSYSTEM, "加载角色初始化数据[TableID=%d]", it->m_tableID);
@@ -495,9 +495,9 @@ bool CDBSystemDB::_selectTableCommand(GFLib::SNetMsgLabel* a_msgLabel, CMsgLogin
 	{
 	case EDBTABLEID_COMMAND_INIT_PLAYER:
 		{
-			std::list<SInitTableInfor>::iterator it = m_initTableByPlayer.begin();
+			std::list<SInitTableInfo>::iterator it = m_initTableByPlayer.begin();
 			for (; it != m_initTableByPlayer.end(); ++it) {
-				SInitTableInfor& infor = *it;
+				SInitTableInfo& infor = *it;
 				if (infor.m_serverType == GFLib::SRVTYPE_NULL || infor.m_serverType == a_msgLabel->m_serverIDFrom.ICommonServer_getServerType()) {
 					ackSelectTableData.m_tableID = infor.m_tableID;
 					if (infor.m_moduleType != EMODULECTYPE_NULL) {
@@ -523,9 +523,9 @@ bool CDBSystemDB::_selectTableCommand(GFLib::SNetMsgLabel* a_msgLabel, CMsgLogin
 		}
 	case EDBTABLEID_COMMAND_INIT_ROLE:
 		{
-			std::list<SInitTableInfor>::iterator it = m_initTableByRole.begin();
+			std::list<SInitTableInfo>::iterator it = m_initTableByRole.begin();
 			for (; it != m_initTableByRole.end(); ++it) {
-				SInitTableInfor& infor = *it;
+				SInitTableInfo& infor = *it;
 				if (infor.m_serverType == GFLib::SRVTYPE_NULL || infor.m_serverType == a_msgLabel->m_serverIDFrom.ICommonServer_getServerType()) {
 					ackSelectTableData.m_tableID = infor.m_tableID;
 					if (infor.m_moduleType != EMODULECTYPE_NULL) {
@@ -567,9 +567,9 @@ bool CDBSystemDB::_selectTableCommand(GFLib::SNetMsgLabel* a_msgLabel, CMsgLogin
 		}
 	case EDBTABLEID_COMMAND_INIT_SERVER:
 		{
-			std::list<SInitTableInfor>::iterator it = m_initTableByGlobal.begin();
+			std::list<SInitTableInfo>::iterator it = m_initTableByGlobal.begin();
 			for (; it != m_initTableByGlobal.end(); ++it) {
-				SInitTableInfor& infor = *it;
+				SInitTableInfo& infor = *it;
 				if (infor.m_serverType == GFLib::SRVTYPE_NULL || infor.m_serverType == a_msgLabel->m_serverIDFrom.ICommonServer_getServerType()) {
 					ackSelectTableData.m_tableID = infor.m_tableID;
 					if (infor.m_moduleType != EMODULECTYPE_NULL) {

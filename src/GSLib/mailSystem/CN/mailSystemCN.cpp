@@ -64,14 +64,14 @@ void CMailSystemCN::_final()
 	GSLib::DBSystem::CDBCommonSystem::_final();
 }
 
-bool CMailSystemCN::ICommonServer_loadGameConfig(const std::string& a_configPath)
+bool CMailSystemCN::ICommonSystem_loadGameConfig(const std::string& a_configPath)
 {
-	return GSLib::DBSystem::CDBCommonSystem::ICommonServer_loadGameConfig(a_configPath);
+	return GSLib::DBSystem::CDBCommonSystem::ICommonSystem_loadGameConfig(a_configPath);
 }
 
-bool CMailSystemCN::ICommonServer_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
+bool CMailSystemCN::ICommonSystem_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
 {	
-	return GSLib::DBSystem::CDBCommonSystem::ICommonServer_initServerMsg(a_msgExecMgr);
+	return GSLib::DBSystem::CDBCommonSystem::ICommonSystem_initServerMsg(a_msgExecMgr);
 }
 
 
@@ -122,7 +122,7 @@ bool CMailSystemCN::_startSystem()
 	return GSLib::DBSystem::CDBCommonSystem::_startSystem();
 }
 
-void CMailSystemCN::ICommonServer_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)
+void CMailSystemCN::ICommonSystem_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)
 {	
 
 #ifdef  BIANJIANTEST
@@ -135,10 +135,10 @@ void CMailSystemCN::ICommonServer_cbServerEnter(const GFLib::SServerID& a_server
 	}
 #endif
 
-	return GSLib::DBSystem::CDBCommonSystem::ICommonServer_cbServerEnter(a_serverID, a_key);
+	return GSLib::DBSystem::CDBCommonSystem::ICommonSystem_cbServerEnter(a_serverID, a_key);
 }
 
-void CMailSystemCN::ICommonServer_cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key)
+void CMailSystemCN::ICommonSystem_cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key)
 {	
 
 #ifdef  BIANJIANTEST
@@ -151,7 +151,7 @@ void CMailSystemCN::ICommonServer_cbServerLeave(const GFLib::SServerID& a_server
 	}
 #endif
 
-	GSLib::DBSystem::CDBCommonSystem::ICommonServer_cbServerLeave(a_serverID, a_key);
+	GSLib::DBSystem::CDBCommonSystem::ICommonSystem_cbServerLeave(a_serverID, a_key);
 }
 
 

@@ -80,7 +80,7 @@ void CSceneSystemGM::_final()
 	GSLib::DBSystem::CDBCommonSystem::_final();
 }
 
-bool CSceneSystemGM::ICommonServer_loadGameConfig(const std::string& a_configPath)
+bool CSceneSystemGM::ICommonSystem_loadGameConfig(const std::string& a_configPath)
 {
 	if (!COriginalSceneMgr::singleton().loadGameConfig(a_configPath)) {
 		return false;
@@ -88,12 +88,12 @@ bool CSceneSystemGM::ICommonServer_loadGameConfig(const std::string& a_configPat
 	if (!CSceneSystemDataMgr::singleton().loadConfig(a_configPath)) {
 		return false;
 	}
-	return GSLib::DBSystem::CDBCommonSystem::ICommonServer_loadGameConfig(a_configPath);
+	return GSLib::DBSystem::CDBCommonSystem::ICommonSystem_loadGameConfig(a_configPath);
 }
 
-bool CSceneSystemGM::ICommonServer_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
+bool CSceneSystemGM::ICommonSystem_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
 {
-	return GSLib::DBSystem::CDBCommonSystem::ICommonServer_initServerMsg(a_msgExecMgr);
+	return GSLib::DBSystem::CDBCommonSystem::ICommonSystem_initServerMsg(a_msgExecMgr);
 }
 
 bool CSceneSystemGM::_startSystem()
@@ -105,14 +105,14 @@ bool CSceneSystemGM::_startSystem()
 	return GSLib::DBSystem::CDBCommonSystem::_startSystem();
 }
 
-void CSceneSystemGM::ICommonServer_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)
+void CSceneSystemGM::ICommonSystem_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)
 {
-	GSLib::DBSystem::CDBCommonSystem::ICommonServer_cbServerEnter(a_serverID, a_key);
+	GSLib::DBSystem::CDBCommonSystem::ICommonSystem_cbServerEnter(a_serverID, a_key);
 }
 
-void CSceneSystemGM::ICommonServer_cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key)
+void CSceneSystemGM::ICommonSystem_cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key)
 {
-	GSLib::DBSystem::CDBCommonSystem::ICommonServer_cbServerLeave(a_serverID, a_key);
+	GSLib::DBSystem::CDBCommonSystem::ICommonSystem_cbServerLeave(a_serverID, a_key);
 }
 
 BSLib::int32 CSceneSystemGM::getLastContinuousStageResetTime() const

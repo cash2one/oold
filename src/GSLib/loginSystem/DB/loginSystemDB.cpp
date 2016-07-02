@@ -38,12 +38,12 @@ void CLoginSystemDB::_final()
 	GSLib::DBSystem::CDBCommonSystem::_final();
 }
 
-bool CLoginSystemDB::ICommonServer_loadGameConfig(const std::string& a_configPath)
+bool CLoginSystemDB::ICommonSystem_loadGameConfig(const std::string& a_configPath)
 {
-	return GSLib::DBSystem::CDBCommonSystem::ICommonServer_loadGameConfig(a_configPath);
+	return GSLib::DBSystem::CDBCommonSystem::ICommonSystem_loadGameConfig(a_configPath);
 }
 
-bool CLoginSystemDB::ICommonServer_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
+bool CLoginSystemDB::ICommonSystem_initServerMsg(BSLib::Framework::CMsgExecMgr* a_msgExecMgr)
 {
 	//´´½¨Player
 	BSLib::Framework::CMsgFactory::singleton().registerCreateCMsgFun(MsgIDLoginSystemCN2DBReqCreatePlayer, &BSLib::Framework::CreateCMessage<CMsgLoginSystemCN2DBReqCreatePlayer>);
@@ -74,7 +74,7 @@ bool CLoginSystemDB::ICommonServer_initServerMsg(BSLib::Framework::CMsgExecMgr* 
 	BSLib::Framework::CMsgFactory::singleton().registerCreateCMsgFun(MsgIDLoginSystemCN2DBReqAccountFinal, &BSLib::Framework::CreateCMessage<CMsgLoginSystemCN2DBReqAccountFinal>);
 	GFLIB_ADDMSG_OBJEXEC(a_msgExecMgr, MsgIDLoginSystemCN2DBReqAccountFinal, &CLoginSystemDB::_onMsgLoginSystemCN2DBReqAccountFinal, this);
 
-	return GSLib::DBSystem::CDBCommonSystem::ICommonServer_initServerMsg(a_msgExecMgr);
+	return GSLib::DBSystem::CDBCommonSystem::ICommonSystem_initServerMsg(a_msgExecMgr);
 }
 
 bool CLoginSystemDB::_startSystem()
@@ -82,12 +82,12 @@ bool CLoginSystemDB::_startSystem()
 	return GSLib::DBSystem::CDBCommonSystem::_startSystem();
 }
 
-void CLoginSystemDB::ICommonServer_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)
+void CLoginSystemDB::ICommonSystem_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)
 {
-	GSLib::DBSystem::CDBCommonSystem::ICommonServer_cbServerEnter(a_serverID, a_key);
+	GSLib::DBSystem::CDBCommonSystem::ICommonSystem_cbServerEnter(a_serverID, a_key);
 }
 
-void CLoginSystemDB::ICommonServer_cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key)
+void CLoginSystemDB::ICommonSystem_cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key)
 {
 	if (a_serverID.ICommonServer_getServerType() == SRVTYPE_GATESERVER) {
 		CAccountLoginDBInforMgr::singleton().gateServerLeave(a_serverID);
@@ -99,7 +99,7 @@ void CLoginSystemDB::ICommonServer_cbServerLeave(const GFLib::SServerID& a_serve
 		CAccountLoginDBInforMgr::singleton().centerServerLeave(a_serverID);
 		return ;
 	}
-	GSLib::DBSystem::CDBCommonSystem::ICommonServer_cbServerLeave(a_serverID, a_key);
+	GSLib::DBSystem::CDBCommonSystem::ICommonSystem_cbServerLeave(a_serverID, a_key);
 }
 
 void CLoginSystemDB::_onMsgLoginSystemCN2DBReqCreatePlayer(BSLib::Framework::SMsgLabel* a_msgLabel,BSLib::Framework::SMessage* a_msg)
