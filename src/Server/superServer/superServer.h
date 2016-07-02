@@ -19,9 +19,9 @@ public:
 	static int main();
 
 protected:
-	virtual bool _init();
-	virtual bool _callback();
-	virtual int _final();
+	virtual bool _IThread_init();
+	virtual bool _IThread_callback();
+	virtual int _IThread_final();
 
 	virtual bool ICommonServer_initSystem(GFLib::CommonServer::CCommonSystemMgr* commanSystemMgr);
 
@@ -31,8 +31,8 @@ protected:
 	virtual void ICommonServer_cbServerEnter(GFLib::SServerID& a_serverID, const std::string& a_key);
 	virtual void ICommonServer_cbServerLeave(GFLib::SServerID& a_serverID, const std::string& a_key);
 
-	virtual GFLib::CommonServer::CCommonClientPtr _cbCreateClient(GFLib::SServerID& a_serverID, const std::string& a_serverKey);
-	virtual BSLib::Network::CNetStubPtr _cbNewTcpStub(BSLib::Network::CNetConnectionPtr& netConnPtr, void* tempData);
+	virtual GFLib::CommonServer::CCommonClientPtr _ICommonServer_cbCreateClient(GFLib::SServerID& a_serverID, const std::string& a_serverKey) override;
+	virtual BSLib::Network::CNetStubPtr _INetServer_cbNewTcpStub(BSLib::Network::CNetConnectionPtr& netConnPtr, void* tempData) override;
 
 public:
 	std::map<std::string, GFLib::SServerID> m_cnServers;

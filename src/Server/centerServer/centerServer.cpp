@@ -71,7 +71,7 @@ int CCenterServer::main()
 	return CCenterServer::singleton()._IThread_main();
 }
 
-int CCenterServer::_final()
+int CCenterServer::_IThread_final()
 {
 	return GFLib::CommonServer::ICommonServer::_IThread_final();
 }
@@ -113,7 +113,7 @@ void CCenterServer::ICommonServer_cbServerLeave(GFLib::SServerID& a_serverID, co
 	GFLib::CommonServer::ICommonServer::ICommonServer_cbServerLeave(a_serverID, a_key);
 }
 
-GFLib::CommonServer::CCommonClientPtr CCenterServer::_cbCreateClient(GFLib::SServerID& a_serverID, const std::string& a_serverKey)
+GFLib::CommonServer::CCommonClientPtr CCenterServer::_ICommonServer_cbCreateClient(GFLib::SServerID& a_serverID, const std::string& a_serverKey)
 {
 	switch (a_serverID.ICommonServer_getServerType())
 	{
@@ -138,10 +138,10 @@ GFLib::CommonServer::CCommonClientPtr CCenterServer::_cbCreateClient(GFLib::SSer
 		}
 	}
 
-	return GFLib::CommonServer::ICommonServer::_cbCreateClient(a_serverID, a_serverKey);
+	return GFLib::CommonServer::ICommonServer::_ICommonServer_cbCreateClient(a_serverID, a_serverKey);
 }
 
-BSLib::Network::CNetStubPtr CCenterServer::_cbNewTcpStub(BSLib::Network::CNetConnectionPtr& netConnPtr, void* tempData)
+BSLib::Network::CNetStubPtr CCenterServer::_INetServer_cbNewTcpStub(BSLib::Network::CNetConnectionPtr& netConnPtr, void* tempData)
 {
 
 	BSLib::int64 flag = (BSLib::int64)tempData;

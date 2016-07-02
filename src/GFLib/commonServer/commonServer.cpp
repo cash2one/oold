@@ -340,7 +340,7 @@ BSLib::Network::CNetStubPtr ICommonServer::_INetServer_cbNewUdpStub(BSLib::Netwo
 	return BSLib::Network::CNetStubPtr(NULL);
 }
 
-CCommonClientPtr ICommonServer::_cbCreateClient(SServerID& a_serverID, const std::string& a_serverKey)
+CCommonClientPtr ICommonServer::_ICommonServer_cbCreateClient(SServerID& a_serverID, const std::string& a_serverKey)
 {
 	return CCommonClientPtr(NULL);
 }
@@ -550,7 +550,7 @@ bool ICommonServer::_connectServer()
 			return false;
 		}
 		
-		CCommonClientPtr commonClientPtr = _cbCreateClient(serverID, connectServerKey);
+		CCommonClientPtr commonClientPtr = _ICommonServer_cbCreateClient(serverID, connectServerKey);
 		if (commonClientPtr == NULL) {
 			BSLIB_LOG_ERROR(ETT_GFLIB_COMMON, "ServerKey[%s]Á´½Ó[%s]Ê§°Ü", serverKey.c_str(), connectServerKey.c_str());
 			return false;

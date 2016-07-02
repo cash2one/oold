@@ -65,7 +65,7 @@ int CSuperServer::main()
 	return CSuperServer::singleton()._IThread_main();
 }
 
-bool CSuperServer::_init()
+bool CSuperServer::_IThread_init()
 {
 	if (!GFLib::CommonServer::ICommonServer::_IThread_init()) {
 		return false;
@@ -74,7 +74,7 @@ bool CSuperServer::_init()
 	return true;
 }
 
-bool CSuperServer::_callback()
+bool CSuperServer::_IThread_callback()
 {
 // 	BSLib::uint64 id_1 = GFLib::CommonServer::CUniqueIDMgr::singleton().getInt64ZoneUniqueID(1);
 // 	BSLib::uint64 id_2 = GFLib::CommonServer::CUniqueIDMgr::singleton().getInt64ZoneUniqueID(2);
@@ -82,7 +82,7 @@ bool CSuperServer::_callback()
 	return GFLib::CommonServer::ICommonServer::_IThread_callback();
 }
 
-int CSuperServer::_final()
+int CSuperServer::_IThread_final()
 {
 	return GFLib::CommonServer::ICommonServer::_IThread_final();
 }
@@ -129,7 +129,7 @@ void CSuperServer::ICommonServer_cbServerLeave(GFLib::SServerID& a_serverID, con
 	GFLib::CommonServer::ICommonServer::ICommonServer_cbServerLeave(a_serverID, a_key);
 }
 
-GFLib::CommonServer::CCommonClientPtr CSuperServer::_cbCreateClient(GFLib::SServerID& a_serverID, const std::string& a_serverKey)
+GFLib::CommonServer::CCommonClientPtr CSuperServer::_ICommonServer_cbCreateClient(GFLib::SServerID& a_serverID, const std::string& a_serverKey)
 {
 	switch (a_serverID.ICommonServer_getServerType())
 	{
@@ -143,10 +143,10 @@ GFLib::CommonServer::CCommonClientPtr CSuperServer::_cbCreateClient(GFLib::SServ
 			;
 		}
 	}
-	return GFLib::CommonServer::ICommonServer::_cbCreateClient(a_serverID, a_serverKey);
+	return GFLib::CommonServer::ICommonServer::_ICommonServer_cbCreateClient(a_serverID, a_serverKey);
 }
 
-BSLib::Network::CNetStubPtr CSuperServer::_cbNewTcpStub(BSLib::Network::CNetConnectionPtr& netConnPtr, void* tempData)
+BSLib::Network::CNetStubPtr CSuperServer::_INetServer_cbNewTcpStub(BSLib::Network::CNetConnectionPtr& netConnPtr, void* tempData)
 {
 	BSLib::int64 flag = (BSLib::int64)tempData;
 	BSLib::Network::CNetStubPtr netStubPtr = NULL;

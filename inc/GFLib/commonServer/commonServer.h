@@ -68,7 +68,7 @@ protected:
 	virtual BSLib::Network::CNetStubMgr* _INetServer_cbNetStubMgr();
 	virtual BSLib::Network::CNetStubPtr _INetServer_cbNewTcpStub(BSLib::Network::CNetConnectionPtr& netConnPtr, void* tempData);
 	virtual BSLib::Network::CNetStubPtr _INetServer_cbNewUdpStub(BSLib::Network::CNetConnectionPtr& netConnPtr, void* tempData);
-	virtual CCommonClientPtr _cbCreateClient(SServerID& a_serverID, const std::string& a_serverKey);
+	virtual CCommonClientPtr _ICommonServer_cbCreateClient(SServerID& a_serverID, const std::string& a_serverKey);
 
 protected:
 	bool _loadInitConfigFile();

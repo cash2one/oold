@@ -85,12 +85,12 @@ int CGameServer::main()
 	return CGameServer::singleton()._IThread_main();
 }
 
-bool CGameServer::_init()
+bool CGameServer::_IThread_init()
 {
 	return GFLib::CommonServer::ICommonServer::_IThread_init();
 }
 
-bool CGameServer::_callback()
+bool CGameServer::_IThread_callback()
 {
 	BSLib::int64 delayTimer = GFLib::CommonServer::ICommonServer::getDelayTimer();
 	
@@ -113,7 +113,7 @@ bool CGameServer::_callback()
 	return true;
 }
 
-int CGameServer::_final()
+int CGameServer::_IThread_final()
 {
 	return GFLib::CommonServer::ICommonServer::_IThread_final();
 }
@@ -165,7 +165,7 @@ void CGameServer::ICommonServer_cbServerLeave(GFLib::SServerID& a_serverID, cons
 	GFLib::CommonServer::ICommonServer::ICommonServer_cbServerLeave(a_serverID, a_key);
 }
 
-GFLib::CommonServer::CCommonClientPtr CGameServer::_cbCreateClient(GFLib::SServerID& a_serverID, const std::string& a_serverKey)
+GFLib::CommonServer::CCommonClientPtr CGameServer::_ICommonServer_cbCreateClient(GFLib::SServerID& a_serverID, const std::string& a_serverKey)
 {
 	switch (a_serverID.ICommonServer_getServerType())
 	{
@@ -185,10 +185,10 @@ GFLib::CommonServer::CCommonClientPtr CGameServer::_cbCreateClient(GFLib::SServe
 		}
 	}
 
-	return GFLib::CommonServer::ICommonServer::_cbCreateClient(a_serverID, a_serverKey);
+	return GFLib::CommonServer::ICommonServer::_ICommonServer_cbCreateClient(a_serverID, a_serverKey);
 }
 
-BSLib::Network::CNetStubPtr CGameServer::_cbNewTcpStub(BSLib::Network::CNetConnectionPtr& netConnPtr, void* tempData)
+BSLib::Network::CNetStubPtr CGameServer::_INetServer_cbNewTcpStub(BSLib::Network::CNetConnectionPtr& netConnPtr, void* tempData)
 {
 
 	BSLib::int64 flag = (BSLib::int64)tempData;

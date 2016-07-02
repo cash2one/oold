@@ -78,7 +78,7 @@ int CDataServer::main()
 	return CDataServer::singleton()._IThread_main();
 }
 
-int CDataServer::_final()
+int CDataServer::_IThread_final()
 {
 	return GFLib::CommonServer::ICommonServer::_IThread_final();
 }
@@ -116,7 +116,7 @@ void CDataServer::ICommonServer_initServerMsg(BSLib::Framework::CMsgExecMgr* a_m
 	GFLib::CommonServer::ICommonServer::ICommonServer_initServerMsg(a_msgExecMgr);
 }
 
-GFLib::CommonServer::CCommonClientPtr CDataServer::_cbCreateClient(GFLib::SServerID& a_serverID, const std::string& a_serverKey)
+GFLib::CommonServer::CCommonClientPtr CDataServer::_ICommonServer_cbCreateClient(GFLib::SServerID& a_serverID, const std::string& a_serverKey)
 {
 	switch (a_serverID.ICommonServer_getServerType())
 	{
@@ -130,10 +130,10 @@ GFLib::CommonServer::CCommonClientPtr CDataServer::_cbCreateClient(GFLib::SServe
 			;
 		}
 	}
-	return GFLib::CommonServer::ICommonServer::_cbCreateClient(a_serverID, a_serverKey);
+	return GFLib::CommonServer::ICommonServer::_ICommonServer_cbCreateClient(a_serverID, a_serverKey);
 }
 
-BSLib::Network::CNetStubPtr CDataServer::_cbNewTcpStub(BSLib::Network::CNetConnectionPtr& netConnPtr, void* tempData)
+BSLib::Network::CNetStubPtr CDataServer::_INetServer_cbNewTcpStub(BSLib::Network::CNetConnectionPtr& netConnPtr, void* tempData)
 {
 	BSLib::int64 flag = (BSLib::int64)tempData;
 	BSLib::Network::CNetStubPtr netStubPtr = NULL;

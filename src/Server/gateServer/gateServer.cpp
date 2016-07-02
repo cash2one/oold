@@ -66,7 +66,7 @@ int CGateServer::main()
 	return CGateServer::singleton()._IThread_main();
 }
 
-bool CGateServer::_callback()
+bool CGateServer::_IThread_callback()
 {
 	BSLib::Network::SNetInfo netInfor;
 	BSLib::Network::INetServer::getNetInfo(netInfor, *BSLib::Framework::CMainThread::getRealTime());
@@ -87,7 +87,7 @@ bool CGateServer::_callback()
 	return GFLib::CommonServer::ICommonServer::_IThread_callback();
 }
 
-int CGateServer::_final()
+int CGateServer::_IThread_final()
 {
 	return GFLib::CommonServer::ICommonServer::_IThread_final();
 }
@@ -123,7 +123,7 @@ void CGateServer::ICommonServer_cbServerLeave(GFLib::SServerID& a_serverID, cons
 	GFLib::CommonServer::ICommonServer::ICommonServer_cbServerLeave(a_serverID, a_key);
 }
 
-GFLib::CommonServer::CCommonClientPtr CGateServer::_cbCreateClient(GFLib::SServerID& a_serverID, const std::string& a_serverKey)
+GFLib::CommonServer::CCommonClientPtr CGateServer::_ICommonServer_cbCreateClient(GFLib::SServerID& a_serverID, const std::string& a_serverKey)
 {
 	switch (a_serverID.ICommonServer_getServerType())
 	{
@@ -153,10 +153,10 @@ GFLib::CommonServer::CCommonClientPtr CGateServer::_cbCreateClient(GFLib::SServe
 		}
 	}
 
-	return GFLib::CommonServer::ICommonServer::_cbCreateClient(a_serverID, a_serverKey);
+	return GFLib::CommonServer::ICommonServer::_ICommonServer_cbCreateClient(a_serverID, a_serverKey);
 }
 
-BSLib::Network::CNetStubPtr CGateServer::_cbNewTcpStub(BSLib::Network::CNetConnectionPtr& netConnPtr, void* tempData)
+BSLib::Network::CNetStubPtr CGateServer::_INetServer_cbNewTcpStub(BSLib::Network::CNetConnectionPtr& netConnPtr, void* tempData)
 {
 
 	BSLib::int64 flag = (BSLib::int64)tempData;
