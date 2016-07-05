@@ -116,9 +116,9 @@ void IStub::INetStub_cbTerminate()
 
 	BSLIB_LOG_INFO(ETT_GFLIB_COMMON, "Stub[%d] %s(%d.%d.%d) Key[%s] Terminate",
 		this->getStubID(),
-		GFLib::CommonServer::CServerTypeMgr::singleton().getTextServerType(IService::getServerID().ICommonServer_getServerType()).c_str(),
+		GFLib::CommonServer::CServerTypeMgr::singleton().getTextServerType(IService::getServerID().getServerType()).c_str(),
 		IService::getServerID().getZoneID(),
-		IService::getServerID().ICommonServer_getServerType(),
+		IService::getServerID().getServerType(),
 		IService::getServerID().getServerNumber(),
 		IService::getKey().c_str());
 }
@@ -184,9 +184,9 @@ void IStub::_onMsgServerLinkXX2XSReqServerType(BSLib::Framework::SMsgLabel* msgL
 
 	BSLIB_LOG_INFO(ETT_GFLIB_COMMON, "Stub[%d] %s(%d.%d.%d) Key[%s] OK",
 		this->getStubID(),
-		GFLib::CommonServer::CServerTypeMgr::singleton().getTextServerType(IService::getServerID().ICommonServer_getServerType()).c_str(),
+		GFLib::CommonServer::CServerTypeMgr::singleton().getTextServerType(IService::getServerID().getServerType()).c_str(),
 		IService::getServerID().getZoneID(),
-		IService::getServerID().ICommonServer_getServerType(),
+		IService::getServerID().getServerType(),
 		IService::getServerID().getServerNumber(),
 		IService::getKey().c_str());
 }

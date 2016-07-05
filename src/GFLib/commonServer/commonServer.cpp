@@ -236,16 +236,16 @@ bool ICommonServer::ICommonServer_initServer()
 		BSLIB_LOG_TRACE(ETT_GFLIB_COMMON, "ServerKey[%s]获取网络参数失败", serverKey.c_str());
 		return false;
 	}
-	if (ICommonServer_getServerType() != serverInfor->m_serverID.ICommonServer_getServerType()) {
+	if (ICommonServer_getServerType() != serverInfor->m_serverID.getServerType()) {
 		BSLIB_LOG_TRACE(ETT_GFLIB_COMMON, "ServerKey[%s]获取类型参数不一致", serverKey.c_str());
 		return false;
 	}
 	_setServerID(serverInfor->m_serverID);
 
 	BSLIB_LOG_INFO(ETT_GFLIB_COMMON, "设置本地服务 %s(%d.%d.%d) Key[%s]",
-		GFLib::CommonServer::CServerTypeMgr::singleton().getTextServerType(getServerID().ICommonServer_getServerType()).c_str(),
+		GFLib::CommonServer::CServerTypeMgr::singleton().getTextServerType(getServerID().getServerType()).c_str(),
 		getServerID().getZoneID(),
-		getServerID().ICommonServer_getServerType(),
+		getServerID().getServerType(),
 		getServerID().getServerNumber(),
 		getServerKey().c_str());
 
@@ -280,9 +280,9 @@ void ICommonServer::ICommonServer_initServerMsg(BSLib::Framework::CMsgExecMgr* a
 void ICommonServer::ICommonServer_cbServerEnter(SServerID& a_serverID, const std::string& a_key)
 {
 	BSLIB_LOG_TRACE(ETT_GFLIB_COMMON, "%s(%d.%d.%d)[%s]进入",
-		GFLib::CommonServer::CServerTypeMgr::singleton().getTextServerType(a_serverID.ICommonServer_getServerType()).c_str(),
+		GFLib::CommonServer::CServerTypeMgr::singleton().getTextServerType(a_serverID.getServerType()).c_str(),
 		a_serverID.getZoneID(),
-		a_serverID.ICommonServer_getServerType(),
+		a_serverID.getServerType(),
 		a_serverID.getServerNumber(),
 		a_key.c_str());
 
@@ -294,9 +294,9 @@ void ICommonServer::ICommonServer_cbServerLeave(SServerID& a_serverID, const std
 	CCommonSystemMgr::singleton().cbServerLeave(a_serverID, a_key);
 
 	BSLIB_LOG_TRACE(ETT_GFLIB_COMMON, "%s(%d.%d.%d)[%s]离开",
-		GFLib::CommonServer::CServerTypeMgr::singleton().getTextServerType(a_serverID.ICommonServer_getServerType()).c_str(),
+		GFLib::CommonServer::CServerTypeMgr::singleton().getTextServerType(a_serverID.getServerType()).c_str(),
 		a_serverID.getZoneID(),
-		a_serverID.ICommonServer_getServerType(),
+		a_serverID.getServerType(),
 		a_serverID.getServerNumber(),
 		a_key.c_str());
 }

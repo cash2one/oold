@@ -467,7 +467,7 @@ void CDBCommonSystem::_final()
 
 void CDBCommonSystem::ICommonSystem_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)
 {
-	if (a_serverID.ICommonServer_getServerType() == SRVTYPE_DATASERVER){
+	if (a_serverID.getServerType() == SRVTYPE_DATASERVER){
 		m_dataServerID = a_serverID;
 		return ;
 	}
@@ -476,7 +476,7 @@ void CDBCommonSystem::ICommonSystem_cbServerEnter(const GFLib::SServerID& a_serv
 
 void CDBCommonSystem::ICommonSystem_cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key)
 {
-	if (a_serverID.ICommonServer_getServerType() == SRVTYPE_DATASERVER){
+	if (a_serverID.getServerType() == SRVTYPE_DATASERVER){
 		m_dataServerID = GFLib::INVALID_SERVERID;
 		return ;
 	}

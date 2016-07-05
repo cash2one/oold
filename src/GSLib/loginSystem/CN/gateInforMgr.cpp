@@ -24,7 +24,7 @@ public:
 		if (serverID.getZoneID() == 0) {
 			return true;
 		}
-		if (serverID.ICommonServer_getServerType() != SRVTYPE_GATESERVER) {
+		if (serverID.getServerType() != SRVTYPE_GATESERVER) {
 			return true;
 		}
 

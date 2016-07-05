@@ -167,7 +167,7 @@ void CGameServer::ICommonServer_cbServerLeave(GFLib::SServerID& a_serverID, cons
 
 GFLib::CommonServer::CCommonClientPtr CGameServer::_ICommonServer_cbCreateClient(GFLib::SServerID& a_serverID, const std::string& a_serverKey)
 {
-	switch (a_serverID.ICommonServer_getServerType())
+	switch (a_serverID.getServerType())
 	{
 	case GSLib::SRVTYPE_CENTERSERVER:
 		{

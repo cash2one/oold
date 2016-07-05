@@ -147,9 +147,9 @@ bool CCommonClient::_INetClient_cbParseMsg(void* msgBuff, BSLib::uint32 msgSize)
 void CCommonClient::_INetClient_cbTerminate()
 {
 	BSLIB_LOG_TRACE(ETT_GFLIB_COMMON, "Client %s(%d.%d.%d) Key[%s] Terminate",
-		GFLib::CommonServer::CServerTypeMgr::singleton().getTextServerType(IService::getServerID().ICommonServer_getServerType()).c_str(),
+		GFLib::CommonServer::CServerTypeMgr::singleton().getTextServerType(IService::getServerID().getServerType()).c_str(),
 		IService::getServerID().getZoneID(),
-		IService::getServerID().ICommonServer_getServerType(),
+		IService::getServerID().getServerType(),
 		IService::getServerID().getServerNumber(),
 		IService::getKey().c_str());
 
@@ -170,9 +170,9 @@ int CCommonClient::_run(void* a_para)
 
 		if (!_connectServer()) {
 			BSLIB_LOG_TRACE(ETT_GFLIB_COMMON, "Client %s(%d.%d.%d) Key[%s] Thread Over",
-				GFLib::CommonServer::CServerTypeMgr::singleton().getTextServerType(IService::getServerID().ICommonServer_getServerType()).c_str(),
+				GFLib::CommonServer::CServerTypeMgr::singleton().getTextServerType(IService::getServerID().getServerType()).c_str(),
 				IService::getServerID().getZoneID(),
-				IService::getServerID().ICommonServer_getServerType(),
+				IService::getServerID().getServerType(),
 				IService::getServerID().getServerNumber(),
 				IService::getKey().c_str());
 
@@ -218,9 +218,9 @@ int CCommonClient::_run(void* a_para)
 		}
 
 		BSLIB_LOG_TRACE(ETT_GFLIB_COMMON, "Client %s(%d.%d.%d) Key[%s] Thread Over",
-			GFLib::CommonServer::CServerTypeMgr::singleton().getTextServerType(IService::getServerID().ICommonServer_getServerType()).c_str(),
+			GFLib::CommonServer::CServerTypeMgr::singleton().getTextServerType(IService::getServerID().getServerType()).c_str(),
 			IService::getServerID().getZoneID(),
-			IService::getServerID().ICommonServer_getServerType(),
+			IService::getServerID().getServerType(),
 			IService::getServerID().getServerNumber(),
 			IService::getKey().c_str());
 
@@ -247,9 +247,9 @@ bool CCommonClient::_connectServer()
 	BSLIB_LOG_INFO(ETT_GFLIB_COMMON, "链接服务器[%s:%d] %s(%d.%d.%d) Key[%s] ......", 
 		m_connectIP.c_str(), 
 		m_connectPort,
-		GFLib::CommonServer::CServerTypeMgr::singleton().getTextServerType(IService::getServerID().ICommonServer_getServerType()).c_str(),
+		GFLib::CommonServer::CServerTypeMgr::singleton().getTextServerType(IService::getServerID().getServerType()).c_str(),
 		IService::getServerID().getZoneID(),
-		IService::getServerID().ICommonServer_getServerType(),
+		IService::getServerID().getServerType(),
 		IService::getServerID().getServerNumber(),
 		IService::getKey().c_str());
 
@@ -259,9 +259,9 @@ bool CCommonClient::_connectServer()
 			BSLIB_LOG_INFO(ETT_GFLIB_COMMON, "链接服务器[%s:%d] %s(%d.%d.%d) Key[%s] 成功", 
 				m_connectIP.c_str(), 
 				m_connectPort,
-				GFLib::CommonServer::CServerTypeMgr::singleton().getTextServerType(IService::getServerID().ICommonServer_getServerType()).c_str(),
+				GFLib::CommonServer::CServerTypeMgr::singleton().getTextServerType(IService::getServerID().getServerType()).c_str(),
 				IService::getServerID().getZoneID(),
-				IService::getServerID().ICommonServer_getServerType(),
+				IService::getServerID().getServerType(),
 				IService::getServerID().getServerNumber(),
 				IService::getKey().c_str());
 
@@ -272,9 +272,9 @@ bool CCommonClient::_connectServer()
 		BSLIB_LOG_ERROR(ETT_GFLIB_COMMON, "链接服务器[%s:%d] %s(%d.%d.%d) Key[%s] ......", 
 			m_connectIP.c_str(), 
 			m_connectPort,
-			GFLib::CommonServer::CServerTypeMgr::singleton().getTextServerType(IService::getServerID().ICommonServer_getServerType()).c_str(),
+			GFLib::CommonServer::CServerTypeMgr::singleton().getTextServerType(IService::getServerID().getServerType()).c_str(),
 			IService::getServerID().getZoneID(),
-			IService::getServerID().ICommonServer_getServerType(),
+			IService::getServerID().getServerType(),
 			IService::getServerID().getServerNumber(),
 			IService::getKey().c_str());
 
@@ -312,9 +312,9 @@ void CCommonClient::_onMsgServerLinkXS2XXResServerID(BSLib::Framework::SMsgLabel
 
 	if (resServerType->m_serverID == 0) {
 		BSLIB_LOG_ERROR(ETT_GFLIB_COMMON, "Client %s(%d.%d.%d) Key[%s] ServerID不一致",
-			GFLib::CommonServer::CServerTypeMgr::singleton().getTextServerType(IService::getServerID().ICommonServer_getServerType()).c_str(),
+			GFLib::CommonServer::CServerTypeMgr::singleton().getTextServerType(IService::getServerID().getServerType()).c_str(),
 			IService::getServerID().getZoneID(),
-			IService::getServerID().ICommonServer_getServerType(),
+			IService::getServerID().getServerType(),
 			IService::getServerID().getServerNumber(),
 			IService::getKey().c_str());
 
@@ -324,9 +324,9 @@ void CCommonClient::_onMsgServerLinkXS2XXResServerID(BSLib::Framework::SMsgLabel
 	
 	if (resServerType->m_serverID != IService::getServerID()) {
 		BSLIB_LOG_ERROR(ETT_GFLIB_COMMON, "Client %s(%d.%d.%d) Key[%s] ServerID不一致",
-			GFLib::CommonServer::CServerTypeMgr::singleton().getTextServerType(IService::getServerID().ICommonServer_getServerType()).c_str(),
+			GFLib::CommonServer::CServerTypeMgr::singleton().getTextServerType(IService::getServerID().getServerType()).c_str(),
 			IService::getServerID().getZoneID(),
-			IService::getServerID().ICommonServer_getServerType(),
+			IService::getServerID().getServerType(),
 			IService::getServerID().getServerNumber(),
 			IService::getKey().c_str());
 
@@ -335,9 +335,9 @@ void CCommonClient::_onMsgServerLinkXS2XXResServerID(BSLib::Framework::SMsgLabel
 	}
 	if (IService::getKey() != resServerType->m_keyName) {
 		BSLIB_LOG_ERROR(ETT_GFLIB_COMMON, "Client %s(%d.%d.%d) Key[%s] ServerKey不一致",
-			GFLib::CommonServer::CServerTypeMgr::singleton().getTextServerType(IService::getServerID().ICommonServer_getServerType()).c_str(),
+			GFLib::CommonServer::CServerTypeMgr::singleton().getTextServerType(IService::getServerID().getServerType()).c_str(),
 			IService::getServerID().getZoneID(),
-			IService::getServerID().ICommonServer_getServerType(),
+			IService::getServerID().getServerType(),
 			IService::getServerID().getServerNumber(),
 			IService::getKey().c_str());
 		terminate();
@@ -357,9 +357,9 @@ void CCommonClient::_onMsgServerLinkXS2XXResServerID(BSLib::Framework::SMsgLabel
 	ICommonServer::getCommonServer()->sendMsg(&serverEnter, sizeof(serverEnter));
 
 	BSLIB_LOG_INFO(ETT_GFLIB_COMMON, "Client %s(%d.%d.%d) Key[%s] OK",
-		GFLib::CommonServer::CServerTypeMgr::singleton().getTextServerType(IService::getServerID().ICommonServer_getServerType()).c_str(),
+		GFLib::CommonServer::CServerTypeMgr::singleton().getTextServerType(IService::getServerID().getServerType()).c_str(),
 		IService::getServerID().getZoneID(),
-		IService::getServerID().ICommonServer_getServerType(),
+		IService::getServerID().getServerType(),
 		IService::getServerID().getServerNumber(),
 		IService::getKey().c_str());
 }

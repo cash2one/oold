@@ -89,13 +89,13 @@ void CLoginSystemDB::ICommonSystem_cbServerEnter(const GFLib::SServerID& a_serve
 
 void CLoginSystemDB::ICommonSystem_cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key)
 {
-	if (a_serverID.ICommonServer_getServerType() == SRVTYPE_GATESERVER) {
+	if (a_serverID.getServerType() == SRVTYPE_GATESERVER) {
 		CAccountLoginDBInforMgr::singleton().gateServerLeave(a_serverID);
 		return ;
-	} else if (a_serverID.ICommonServer_getServerType() == SRVTYPE_GAMESERVER){
+	} else if (a_serverID.getServerType() == SRVTYPE_GAMESERVER){
 		CAccountLoginDBInforMgr::singleton().gameServerLeave(a_serverID);
 		return ;
-	} else if (a_serverID.ICommonServer_getServerType() == SRVTYPE_CENTERSERVER){
+	} else if (a_serverID.getServerType() == SRVTYPE_CENTERSERVER){
 		CAccountLoginDBInforMgr::singleton().centerServerLeave(a_serverID);
 		return ;
 	}

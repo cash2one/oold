@@ -154,13 +154,13 @@ bool CLoginSystemCN::_ICommonSystem_startSystem()
 
 void CLoginSystemCN::ICommonSystem_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)
 {
-	if (a_serverID.ICommonServer_getServerType() == SRVTYPE_GATESERVER) {
+	if (a_serverID.getServerType() == SRVTYPE_GATESERVER) {
 		CGateInforMgr::singleton().gateServerEnter(a_serverID);
 		return ;
-	}else if (a_serverID.ICommonServer_getServerType() == SRVTYPE_GAMESERVER){
+	}else if (a_serverID.getServerType() == SRVTYPE_GAMESERVER){
 		CGameInforMgr::singleton().gameServerEnter(a_serverID);
 		return ;
-	} else if (a_serverID.ICommonServer_getServerType() == SRVTYPE_DATASERVER){
+	} else if (a_serverID.getServerType() == SRVTYPE_DATASERVER){
 		CAccountLoginCNInforMgr::singleton().setDataServerID(a_serverID);
 		return ;
 	}
@@ -170,15 +170,15 @@ void CLoginSystemCN::ICommonSystem_cbServerEnter(const GFLib::SServerID& a_serve
 
 void CLoginSystemCN::ICommonSystem_cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key)
 {
-	if (a_serverID.ICommonServer_getServerType() == SRVTYPE_GATESERVER) {
+	if (a_serverID.getServerType() == SRVTYPE_GATESERVER) {
 		CAccountLoginCNInforMgr::singleton().gateServerLeave(a_serverID);
 		CGateInforMgr::singleton().gateServerLeave(a_serverID);
 		return ;
-	} else if (a_serverID.ICommonServer_getServerType() == SRVTYPE_GAMESERVER){
+	} else if (a_serverID.getServerType() == SRVTYPE_GAMESERVER){
 		CAccountLoginCNInforMgr::singleton().gameServerLeave(a_serverID);
 		CGameInforMgr::singleton().gameServerLeave(a_serverID);
 		return ;
-	} else if (a_serverID.ICommonServer_getServerType() == SRVTYPE_DATASERVER){
+	} else if (a_serverID.getServerType() == SRVTYPE_DATASERVER){
 		CAccountLoginCNInforMgr::singleton().dataServerLeave(a_serverID);
 		CAccountLoginCNInforMgr::singleton().setDataServerID(GFLib::INVALID_SERVERID);
 		return ;

@@ -118,7 +118,7 @@ void CDataServer::ICommonServer_initServerMsg(BSLib::Framework::CMsgExecMgr* a_m
 
 GFLib::CommonServer::CCommonClientPtr CDataServer::_ICommonServer_cbCreateClient(GFLib::SServerID& a_serverID, const std::string& a_serverKey)
 {
-	switch (a_serverID.ICommonServer_getServerType())
+	switch (a_serverID.getServerType())
 	{
 	case GSLib::SRVTYPE_CHARGESERVER:
 		{

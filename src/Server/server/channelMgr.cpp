@@ -91,7 +91,7 @@ void CChannelMgr::showAllChannelInfo()
 		printf("\n\r通道[%d] Server(%d.%d.%d)[%s]已运行",
 			m_localServerInfo[i]->m_channelID.getLocalNumber(),
 			m_localServerInfo[i]->m_serverID.getZoneID(),
-			m_localServerInfo[i]->m_serverID.ICommonServer_getServerType(),
+			m_localServerInfo[i]->m_serverID.getServerType(),
 			m_localServerInfo[i]->m_serverID.getServerNumber(),
 			m_localServerInfo[i]->m_serverName.c_str());
 	}
@@ -142,7 +142,7 @@ void CChannelMgr::_parseSysMsg(BSLib::Framework::CChannelID& a_channelIDFrom, BS
 				printf("\n\r通道[%d] Server(%d.%d.%d)[%s]退出\n",
 					m_localServerInfo[localNumber]->m_channelID.getLocalNumber(),
 					m_localServerInfo[localNumber]->m_serverID.getZoneID(),
-					m_localServerInfo[localNumber]->m_serverID.ICommonServer_getServerType(),
+					m_localServerInfo[localNumber]->m_serverID.getServerType(),
 					m_localServerInfo[localNumber]->m_serverID.getServerNumber(),
 					m_localServerInfo[localNumber]->m_serverName.c_str());
 
@@ -199,7 +199,7 @@ void CChannelMgr::_onSysChannelLC2LCResServerInfo(BSLib::Framework::SMsgLabel* m
 	printf("\n\r通道[%d] Server(%d.%d.%d)[%s]已运行\n",
 		m_localServerInfo[localNumber]->m_channelID.getLocalNumber(),
 		m_localServerInfo[localNumber]->m_serverID.getZoneID(),
-		m_localServerInfo[localNumber]->m_serverID.ICommonServer_getServerType(),
+		m_localServerInfo[localNumber]->m_serverID.getServerType(),
 		m_localServerInfo[localNumber]->m_serverID.getServerNumber(),
 		m_localServerInfo[localNumber]->m_serverName.c_str());
 }

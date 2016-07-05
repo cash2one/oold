@@ -65,7 +65,7 @@ bool CLoginSystemSP::_ICommonSystem_startSystem()
 
 void CLoginSystemSP::ICommonSystem_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)
 {
-	GFLib::ServerType serverType = a_serverID.ICommonServer_getServerType();
+	GFLib::ServerType serverType = a_serverID.getServerType();
 	switch (serverType)
 	{
 	case SRVTYPE_AUTHCODESERVER:
@@ -76,7 +76,7 @@ void CLoginSystemSP::ICommonSystem_cbServerEnter(const GFLib::SServerID& a_serve
 
 void CLoginSystemSP::ICommonSystem_cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key)
 {
-	GFLib::ServerType serverType = a_serverID.ICommonServer_getServerType();
+	GFLib::ServerType serverType = a_serverID.getServerType();
 	switch (serverType)
 	{
 	case SRVTYPE_AUTHCODESERVER:

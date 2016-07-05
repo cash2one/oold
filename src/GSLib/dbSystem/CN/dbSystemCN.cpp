@@ -60,7 +60,7 @@ void CDBSystemCN::ICommonSystem_cbServerEnter(const GFLib::SServerID& a_serverID
 {
 	GSLib::DBSystem::CDBCommonSystem::ICommonSystem_cbServerEnter(a_serverID, a_key);
 
-	if (a_serverID.ICommonServer_getServerType() == GSLib::SRVTYPE_DATASERVER) {
+	if (a_serverID.getServerType() == GSLib::SRVTYPE_DATASERVER) {
         if (!selectTableData("", GSLib::EDBTABLEID_COMMAND_INIT_SERVER,EMODULECTYPE_NULL,GSLIB_SESSIONID_INIT_GLOBALDATA,GFLib::EFUNCTYPE_NULL)) {
 			BSLIB_LOG_ERROR(ETT_GSLIB_DBSYSTEM, "从DB获取Server数据失败");
 			return ;

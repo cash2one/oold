@@ -498,7 +498,7 @@ bool CDBSystemDB::_selectTableCommand(GFLib::SNetMsgLabel* a_msgLabel, CMsgLogin
 			std::list<SInitTableInfo>::iterator it = m_initTableByPlayer.begin();
 			for (; it != m_initTableByPlayer.end(); ++it) {
 				SInitTableInfo& infor = *it;
-				if (infor.m_serverType == GFLib::SRVTYPE_NULL || infor.m_serverType == a_msgLabel->m_serverIDFrom.ICommonServer_getServerType()) {
+				if (infor.m_serverType == GFLib::SRVTYPE_NULL || infor.m_serverType == a_msgLabel->m_serverIDFrom.getServerType()) {
 					ackSelectTableData.m_tableID = infor.m_tableID;
 					if (infor.m_moduleType != EMODULECTYPE_NULL) {
 						ackSelectTableData.m_moduleType = infor.m_moduleType;
@@ -526,7 +526,7 @@ bool CDBSystemDB::_selectTableCommand(GFLib::SNetMsgLabel* a_msgLabel, CMsgLogin
 			std::list<SInitTableInfo>::iterator it = m_initTableByRole.begin();
 			for (; it != m_initTableByRole.end(); ++it) {
 				SInitTableInfo& infor = *it;
-				if (infor.m_serverType == GFLib::SRVTYPE_NULL || infor.m_serverType == a_msgLabel->m_serverIDFrom.ICommonServer_getServerType()) {
+				if (infor.m_serverType == GFLib::SRVTYPE_NULL || infor.m_serverType == a_msgLabel->m_serverIDFrom.getServerType()) {
 					ackSelectTableData.m_tableID = infor.m_tableID;
 					if (infor.m_moduleType != EMODULECTYPE_NULL) {
 						ackSelectTableData.m_moduleType = infor.m_moduleType;
@@ -570,7 +570,7 @@ bool CDBSystemDB::_selectTableCommand(GFLib::SNetMsgLabel* a_msgLabel, CMsgLogin
 			std::list<SInitTableInfo>::iterator it = m_initTableByGlobal.begin();
 			for (; it != m_initTableByGlobal.end(); ++it) {
 				SInitTableInfo& infor = *it;
-				if (infor.m_serverType == GFLib::SRVTYPE_NULL || infor.m_serverType == a_msgLabel->m_serverIDFrom.ICommonServer_getServerType()) {
+				if (infor.m_serverType == GFLib::SRVTYPE_NULL || infor.m_serverType == a_msgLabel->m_serverIDFrom.getServerType()) {
 					ackSelectTableData.m_tableID = infor.m_tableID;
 					if (infor.m_moduleType != EMODULECTYPE_NULL) {
 						ackSelectTableData.m_moduleType = infor.m_moduleType;

@@ -115,7 +115,7 @@ void CCenterServer::ICommonServer_cbServerLeave(GFLib::SServerID& a_serverID, co
 
 GFLib::CommonServer::CCommonClientPtr CCenterServer::_ICommonServer_cbCreateClient(GFLib::SServerID& a_serverID, const std::string& a_serverKey)
 {
-	switch (a_serverID.ICommonServer_getServerType())
+	switch (a_serverID.getServerType())
 	{
 	case GSLib::SRVTYPE_DATASERVER:
 		{

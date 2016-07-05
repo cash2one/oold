@@ -763,7 +763,7 @@ bool CLoginSystemLG::_ICommonSystem_startSystem()
 
 void CLoginSystemLG::ICommonSystem_cbServerEnter(const GFLib::SServerID& a_serverID, const std::string& a_key)
 {
-	GFLib::ServerType serverType = a_serverID.ICommonServer_getServerType();
+	GFLib::ServerType serverType = a_serverID.getServerType();
 	switch (serverType)
 	{
 	case SRVTYPE_CENTERSERVER:
@@ -777,7 +777,7 @@ void CLoginSystemLG::ICommonSystem_cbServerEnter(const GFLib::SServerID& a_serve
 
 void CLoginSystemLG::ICommonSystem_cbServerLeave(const GFLib::SServerID& a_serverID, const std::string& a_key)
 {
-	GFLib::ServerType serverType = a_serverID.ICommonServer_getServerType();
+	GFLib::ServerType serverType = a_serverID.getServerType();
 	switch (serverType)
 	{
 	case SRVTYPE_CENTERSERVER:

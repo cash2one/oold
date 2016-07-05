@@ -109,13 +109,13 @@ void CLoginSystemGT::ICommonSystem_cbServerLeave(const GFLib::SServerID& a_serve
 {
 	BSLib::Utility::CMutexFun fun(&m_mutex);
 	
-	if (a_serverID.ICommonServer_getServerType() == SRVTYPE_GATESERVER) {
+	if (a_serverID.getServerType() == SRVTYPE_GATESERVER) {
 		CAccountLoginGTInforMgr::singleton().dataServerLeave(a_serverID);
 		return ;
-	} else if (a_serverID.ICommonServer_getServerType() == SRVTYPE_GAMESERVER){
+	} else if (a_serverID.getServerType() == SRVTYPE_GAMESERVER){
 		CAccountLoginGTInforMgr::singleton().gameServerLeave(a_serverID);
 		return ;
-	} else if (a_serverID.ICommonServer_getServerType() == SRVTYPE_CENTERSERVER){
+	} else if (a_serverID.getServerType() == SRVTYPE_CENTERSERVER){
 		CAccountLoginGTInforMgr::singleton().centerServerLeave(a_serverID);
 		return ;
 	}

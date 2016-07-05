@@ -53,7 +53,7 @@ public:
 		: m_serverID(a_serverID.m_serverID) {}
 
 	ZoneID getZoneID() const { return m_zoneID; }
-	ServerType ICommonServer_getServerType() const { return (ServerType)m_type; }
+	ServerType getServerType() const { return (ServerType)m_type; }
 	BSLib::uint8 getServerNumber() const { return m_number; }
 	ServerID getServerID() const { return m_serverID; }
 
