@@ -3,7 +3,7 @@
 
 #include <BSLib/utility/dateTime.h>
 #include <BSLib/utility/stream.h>
-#include "udmSocketInfor.h"
+#include "udmSocketInfo.h"
 #include "udpCtrlMsg.h"
 
 #define BSLIB_UDM_UDP_BUFF_MAX  (64*1024)
@@ -19,7 +19,7 @@ namespace UDM
 class CUdmSocket
 {
 public:
-	CUdmSocket(SUdmSocketInfor* udmSocketInfor);
+	CUdmSocket(SUdmSocketInfo* udmSocketInfor);
 	virtual ~CUdmSocket();
 
 	virtual EUdmSocketType getUdmSocketType() = 0;
@@ -43,7 +43,7 @@ public:
 
 	UDMSOCKET getUdmSocket() { return m_udmSocketInfor->m_udmID; }
 	EUdmStatus getState() { return m_udmSocketInfor->m_udmStatus; }
-	SUdmSocketInfor* getUdmSocketInfor() { return m_udmSocketInfor; }
+	SUdmSocketInfo* getUdmSocketInfor() { return m_udmSocketInfor; }
 	bool canRead();
 
 	void notifyRead();
@@ -54,7 +54,7 @@ protected:
 	
 
 private:
-	SUdmSocketInfor* m_udmSocketInfor;
+	SUdmSocketInfo* m_udmSocketInfor;
 	sockaddr_in m_peerAddr;
 
 	BSLib::Utility::CStream m_readStream;

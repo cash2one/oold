@@ -30,19 +30,19 @@ int CUdmEpoll::epollCreate()
 
 int CUdmEpoll::epollAddSock(const UDMSOCKET udmSocket, int udmEpollEvent, void* tempData)
 {
-	SUdmSocketInfor* udmSocketInfor = CUdmMgr::singleton().getUdmSocketInfor(udmSocket);
+	SUdmSocketInfo* udmSocketInfor = CUdmMgr::singleton().getUdmSocketInfor(udmSocket);
 	if (udmSocketInfor == NULL){
 		return BSLIB_UDM_ERROR;
 	}
-	SUdmEpollInfor* udmEpollInfor = udmSocketInfor->m_udmEpollInfor;
+	SUdmEpollInfo* udmEpollInfor = udmSocketInfor->m_udmEpollInfo;
 	if (udmEpollInfor == NULL) {
-		udmEpollInfor = new SUdmEpollInfor();
+		udmEpollInfor = new SUdmEpollInfo();
 		if (udmEpollInfor == NULL) {
 			return BSLIB_UDM_ERROR;
 		}
 		udmEpollInfor->m_epollTempData = tempData;
 		udmEpollInfor->m_epollEventType = 0;
-		udmSocketInfor->m_udmEpollInfor = udmEpollInfor;
+		udmSocketInfor->m_udmEpollInfo = udmEpollInfor;
 	} else {
 		if (tempData != NULL) {
 			udmEpollInfor->m_epollTempData = tempData;
@@ -81,11 +81,11 @@ int CUdmEpoll::epollAddSock(const UDMSOCKET udmSocket, int udmEpollEvent, void* 
 
 int CUdmEpoll::epollDelSock(const UDMSOCKET udmSocket, int udmEpollEvent)
 {
-	SUdmSocketInfor* udmSocketInfor = CUdmMgr::singleton().getUdmSocketInfor(udmSocket);
+	SUdmSocketInfo* udmSocketInfor = CUdmMgr::singleton().getUdmSocketInfor(udmSocket);
 	if (udmSocketInfor == NULL){
 		return BSLIB_UDM_ERROR;
 	}
-	SUdmEpollInfor* udmEpollInfor = udmSocketInfor->m_udmEpollInfor;
+	SUdmEpollInfo* udmEpollInfor = udmSocketInfor->m_udmEpollInfo;
 	if (udmEpollInfor == NULL) {
 		return BSLIB_UDM_OK;
 	}
@@ -129,11 +129,11 @@ int CUdmEpoll::_epollWait(SEpollEvent* epollList, int epollListCount)
 
 	m_mutex.lock();
 
-	SUdmSocketInfor* epollEvent = NULL;
+	SUdmSocketInfo* epollEvent = NULL;
 	m_selfEvents.pop(epollEvent);
 
 	while(epollEvent != NULL) {
-		SUdmEpollInfor* udmEpollInfor = epollEvent->m_udmEpollInfor;
+		SUdmEpollInfo* udmEpollInfor = epollEvent->m_udmEpollInfo;
 		if (udmEpollInfor != NULL) {
 			epollList[epoll_i].m_udmEpollEvent = 0;
 			if (udmEpollInfor->m_isBreak) {
@@ -162,16 +162,16 @@ int CUdmEpoll::_epollWait(SEpollEvent* epollList, int epollListCount)
 		m_selfEvents.pop(epollEvent);
 	}
 
-	BSLib::Utility::CHashMap<int, BSLib::Utility::CPtrQueue<SUdmSocketInfor*>*>::iterator it = m_waitUdmSockets.begin();
+	BSLib::Utility::CHashMap<int, BSLib::Utility::CPtrQueue<SUdmSocketInfo*>*>::iterator it = m_waitUdmSockets.begin();
 	for (; it != m_waitUdmSockets.end(); ++it){
-		BSLib::Utility::CPtrQueue<SUdmSocketInfor*>* ptrQueue = it->second;
+		BSLib::Utility::CPtrQueue<SUdmSocketInfo*>* ptrQueue = it->second;
 		if (ptrQueue == NULL){
 			continue;
 		}
-		SUdmSocketInfor* epollEvent = NULL;
+		SUdmSocketInfo* epollEvent = NULL;
 		ptrQueue->pop(epollEvent);
 		while(epollEvent != NULL) {
-			SUdmEpollInfor* udmEpollInfor = epollEvent->m_udmEpollInfor;
+			SUdmEpollInfo* udmEpollInfor = epollEvent->m_udmEpollInfo;
 			if (udmEpollInfor != NULL) {
 				epollList[epoll_i].m_udmEpollEvent = 0;
 				if (udmEpollInfor->m_isBreak) {
@@ -204,9 +204,9 @@ int CUdmEpoll::_epollWait(SEpollEvent* epollList, int epollListCount)
 	return epoll_i;
 }
 
-int CUdmEpoll::createEpollEventQueue(SUdmSocketInfor* udmSocketInfor)
+int CUdmEpoll::createEpollEventQueue(SUdmSocketInfo* udmSocketInfor)
 {
-	SUdmEpollInfor* udmEpollInfor = udmSocketInfor->m_udmEpollInfor;
+	SUdmEpollInfo* udmEpollInfor = udmSocketInfor->m_udmEpollInfo;
 	if (udmEpollInfor == NULL) {
 		return BSLIB_UDM_ERROR;
 	}
@@ -214,11 +214,11 @@ int CUdmEpoll::createEpollEventQueue(SUdmSocketInfor* udmSocketInfor)
 		return BSLIB_UDM_ERROR;
 	}
 	
-	BSLib::Utility::CPtrQueue<SUdmSocketInfor*>* udmEpollEventQueue = NULL;
+	BSLib::Utility::CPtrQueue<SUdmSocketInfo*>* udmEpollEventQueue = NULL;
 	m_mutex.lock();
-	BSLib::Utility::CHashMap<int, BSLib::Utility::CPtrQueue<SUdmSocketInfor*>*>::iterator it = m_waitUdmSockets.find(udmSocketInfor->m_udpThreadID);
+	BSLib::Utility::CHashMap<int, BSLib::Utility::CPtrQueue<SUdmSocketInfo*>*>::iterator it = m_waitUdmSockets.find(udmSocketInfor->m_udpThreadID);
 	if (it == m_waitUdmSockets.end()) {
-		udmEpollEventQueue = new BSLib::Utility::CPtrQueue<SUdmSocketInfor*>();
+		udmEpollEventQueue = new BSLib::Utility::CPtrQueue<SUdmSocketInfo*>();
 		if (udmEpollEventQueue == NULL) {
 			m_mutex.unlock();
 			return BSLIB_UDM_ERROR;

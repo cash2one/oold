@@ -8,7 +8,7 @@ namespace BSLib
 namespace UDM
 {
 
-CUdmAcceptor::CUdmAcceptor(SUdmSocketInfor* udmSocketInfor)
+CUdmAcceptor::CUdmAcceptor(SUdmSocketInfo* udmSocketInfor)
 : CUdmSocket(udmSocketInfor)
 , m_acceptEvent(NULL)
 {
@@ -22,7 +22,7 @@ CUdmAcceptor::~CUdmAcceptor()
 
 int CUdmAcceptor::listen()
 {
-	SUdmSocketInfor* udmSocketInfor = CUdmSocket::getUdmSocketInfor();
+	SUdmSocketInfo* udmSocketInfor = CUdmSocket::getUdmSocketInfor();
 	CUdpThread* udpThread = CUdpThreadMgr::singleton().getUdpThread(udmSocketInfor->m_udpThreadID);
 	if (udpThread == NULL){
 		return BSLIB_UDM_ERROR;
@@ -75,7 +75,7 @@ UDMSOCKET CUdmAcceptor::accept(struct sockaddr* addr, int* addrlen)
 
 int CUdmAcceptor::close()
 {
-	SUdmSocketInfor* udmSocketInfor = CUdmSocket::getUdmSocketInfor();
+	SUdmSocketInfo* udmSocketInfor = CUdmSocket::getUdmSocketInfor();
 	CUdpThread* udpThread = CUdpThreadMgr::singleton().getUdpThread(udmSocketInfor->m_udpThreadID);
 	if (udpThread == NULL){
 		return BSLIB_UDM_ERROR;

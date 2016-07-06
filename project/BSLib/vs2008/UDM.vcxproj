@@ -167,7 +167,7 @@
     <ClInclude Include="..\..\..\src\BSLib\udm\udmError.h" />
     <ClInclude Include="..\..\..\src\BSLib\udm\udmMgr.h" />
     <ClInclude Include="..\..\..\src\BSLib\udm\udmSocket.h" />
-    <ClInclude Include="..\..\..\src\BSLib\udm\udmSocketInfor.h" />
+    <ClInclude Include="..\..\..\src\BSLib\udm\udmSocketInfo.h" />
     <ClInclude Include="..\..\..\src\BSLib\udm\udmStub.h" />
     <ClInclude Include="..\..\..\src\BSLib\udm\udpCtrlMsg.h" />
     <ClInclude Include="..\..\..\src\BSLib\udm\udpThread.h" />

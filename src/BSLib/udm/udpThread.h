@@ -6,7 +6,7 @@
 #include <BSLib/utility/hashMap.h>
 #include <BSLib/utility/thread/thread.h>
 #include <BSLib/utility/dateTime.h>
-#include "udmSocketInfor.h"
+#include "udmSocketInfo.h"
 #include "udpCtrlMsg.h"
 #include "udmClient.h"
 #include "udmStub.h"

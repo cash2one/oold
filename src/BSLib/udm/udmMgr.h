@@ -3,7 +3,7 @@
 
 #include <BSLib/utility/singleton.h>
 #include <BSLib/utility/thread/mutex.h>
-#include "udmSocketInfor.h"
+#include "udmSocketInfo.h"
 
 #define BSLIB_UDM_SOCKET_MAX BSLIB_UINT16_MAX
 
@@ -22,7 +22,7 @@ public:
 	BSLIB_SINGLETON_DECLARE(CUdmMgr);
 
 	UDMSOCKET udmSocket();
-	UDMSOCKET udmSocket(SUdmSocketInfor* udmSocketInfor);
+	UDMSOCKET udmSocket(SUdmSocketInfo* udmSocketInfor);
 
 	int bind(UDMSOCKET udmID, const struct sockaddr* name, int namelen);
 	int bind(UDMSOCKET udmID, UDMSOCKET existUdmId);
@@ -44,14 +44,14 @@ public:
 	int sendTo(UDMSOCKET udmID, const char* buf, int len);
 	int recvFrom(UDMSOCKET udmID, char* buf, int len);
 
-	SUdmSocketInfor* getUdmSocketInfor(UDMSOCKET udmID);
+	SUdmSocketInfo* getUdmSocketInfor(UDMSOCKET udmID);
 
 private:
 	void _startUp();
 	void _cleanUp();
 
 private:
-	SUdmSocketInfor* m_udpSocketInfor[BSLIB_UDM_SOCKET_MAX];
+	SUdmSocketInfo* m_udpSocketInfor[BSLIB_UDM_SOCKET_MAX];
 	int m_currtUdmSocketInforPos;
 	BSLib::Utility::CMutex m_mutex;
 };

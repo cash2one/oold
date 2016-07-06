@@ -3,7 +3,7 @@
 
 #include <BSLib/utility/singleton.h>
 #include <BSLib/utility/thread/mutex.h>
-#include "udmSocketInfor.h"
+#include "udmSocketInfo.h"
 
 #define BSLIB_UDM_SOCKET_MAX BSLIB_UINT16_MAX
 

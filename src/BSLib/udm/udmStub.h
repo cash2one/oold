@@ -12,7 +12,7 @@ namespace UDM
 class CUdmStub : public CUdmSocket
 {
 public:
-	CUdmStub(SUdmSocketInfor* udmSocketInfor, BSLib::Utility::CRealTime& realTime);
+	CUdmStub(SUdmSocketInfo* udmSocketInfor, BSLib::Utility::CRealTime& realTime);
 	virtual ~CUdmStub();
 
 	virtual EUdmSocketType getUdmSocketType() { return UDM_SOCKTYPE_STUB; }

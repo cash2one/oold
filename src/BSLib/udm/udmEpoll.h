@@ -5,7 +5,7 @@
 #include <BSLib/utility/ptrQueue.h>
 #include <BSLib/utility/thread/event.h>
 #include <BSLib/utility/thread/mutex.h>
-#include "udmSocketInfor.h"
+#include "udmSocketInfo.h"
 
 namespace BSLib
 {
@@ -25,7 +25,7 @@ public:
 	int epollDelSock(const UDMSOCKET udmSocket, int udmEpollEvent);
 	int epollWait(SEpollEvent* epollList, int epollListCount, int msTimeOut);
 	int epollRelease();
-	int createEpollEventQueue(SUdmSocketInfor* udmSocketInfor);
+	int createEpollEventQueue(SUdmSocketInfo* udmSocketInfor);
 
 private:
 	int _epollWait(SEpollEvent* epollList, int epollListCount);
@@ -33,9 +33,9 @@ private:
 private:
 	bool m_isValid;
 	BSLib::Utility::CEvent m_epollEvent;
-	BSLib::Utility::CHashMap<int, BSLib::Utility::CPtrQueue<SUdmSocketInfor*>*> m_waitUdmSockets;
+	BSLib::Utility::CHashMap<int, BSLib::Utility::CPtrQueue<SUdmSocketInfo*>*> m_waitUdmSockets;
 
-	BSLib::Utility::CPtrQueue<SUdmSocketInfor*> m_selfEvents;
+	BSLib::Utility::CPtrQueue<SUdmSocketInfo*> m_selfEvents;
 	BSLib::Utility::CMutex m_mutex;
 };
 

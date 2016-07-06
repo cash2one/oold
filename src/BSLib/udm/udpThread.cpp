@@ -256,7 +256,7 @@ void CUdpThread::_tickUdpPeer(int group)
 	for (; it != m_groups[group].end();){
 		CUdmSocket* udmSocket = *it;
 		if (udmSocket != NULL) {
-			SUdmSocketInfor* udmSocketInfor = udmSocket->getUdmSocketInfor();
+			SUdmSocketInfo* udmSocketInfor = udmSocket->getUdmSocketInfor();
 			if (udmSocketInfor->m_udmStatus == UDM_STATE_NONEXIST) {
 				_delUdpSocket(udmSocket);
 				udmSocketInfor->m_udmStatus = UDM_STATE_DELETE1;
@@ -359,7 +359,7 @@ CUdmSocket* CUdpThread::_createUdpSocket(sockaddr* peerSockAddr)
 	if (!m_beginAccept){
 		return NULL;
 	}
-	SUdmSocketInfor* udmSocketInfor = new SUdmSocketInfor();
+	SUdmSocketInfo* udmSocketInfor = new SUdmSocketInfo();
 	if (udmSocketInfor == NULL)	{
 		return NULL;
 	}

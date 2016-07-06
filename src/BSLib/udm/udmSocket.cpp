@@ -9,7 +9,7 @@ namespace BSLib
 namespace UDM
 {
 
-CUdmSocket::CUdmSocket(SUdmSocketInfor* udmSocketInfor)
+CUdmSocket::CUdmSocket(SUdmSocketInfo* udmSocketInfor)
 : m_udmSocketInfor(udmSocketInfor)
 , m_deleteCount(0)
 {
@@ -36,7 +36,7 @@ int CUdmSocket::setPeerName(const struct sockaddr* name, int namelen)
 
 int CUdmSocket::getSockName(struct sockaddr* name, int* namelen)
 {
-	SUdmSocketInfor* udpSocketInfor = CUdmSocket::getUdmSocketInfor();
+	SUdmSocketInfo* udpSocketInfor = CUdmSocket::getUdmSocketInfor();
 	CUdpThread* udpThread = CUdpThreadMgr::singleton().getUdpThread(udpSocketInfor->m_udpThreadID);
 	if (udpThread == NULL){
 		return BSLIB_UDM_ERROR;
@@ -118,7 +118,7 @@ bool CUdmSocket::parseDataMsg(SUdpCtrlMsg* msg, int msgSize, BSLib::Utility::CRe
 
 void CUdmSocket::tickMsg(BSLib::Utility::CRealTime& realTime)
 {
-	SUdmSocketInfor* udpSocketInfor = CUdmSocket::getUdmSocketInfor();
+	SUdmSocketInfo* udpSocketInfor = CUdmSocket::getUdmSocketInfor();
 	if (udpSocketInfor->m_udmStatus == UDM_STATE_DELETE1) {
 		if (m_deleteCount > BSLIB_UDM_DELETE_TICK_MAX) {
 			udpSocketInfor->m_udmStatus = UDM_STATE_DELETE2;
@@ -135,7 +135,7 @@ bool CUdmSocket::canRead()
 
 void CUdmSocket::notifyRead()
 {
-	SUdmEpollInfor* udmEpollInfor = m_udmSocketInfor->m_udmEpollInfor;
+	SUdmEpollInfo* udmEpollInfor = m_udmSocketInfor->m_udmEpollInfo;
 	if (udmEpollInfor == NULL) {
 		return ;
 	}
@@ -156,7 +156,7 @@ void CUdmSocket::notifyRead()
 
 void CUdmSocket::notifyBreak()
 {
-	SUdmEpollInfor* udmEpollInfor = m_udmSocketInfor->m_udmEpollInfor;
+	SUdmEpollInfo* udmEpollInfor = m_udmSocketInfor->m_udmEpollInfo;
 	if (udmEpollInfor == NULL) {
 		return ;
 	}
@@ -177,7 +177,7 @@ void CUdmSocket::notifyBreak()
 
 bool CUdmSocket::_sendMsg(SUdpCtrlMsg* msg, int msgSize)
 {
-	SUdmSocketInfor* udpSocketInfor = CUdmSocket::getUdmSocketInfor();
+	SUdmSocketInfo* udpSocketInfor = CUdmSocket::getUdmSocketInfor();
 	CUdpThread* udpThread = CUdpThreadMgr::singleton().getUdpThread(udpSocketInfor->m_udpThreadID);
 	if (udpThread == NULL){
 		return false;

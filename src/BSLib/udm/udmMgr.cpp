@@ -28,8 +28,8 @@ CUdmMgr::~CUdmMgr()
 {
 	for (int i=0; i<BSLIB_UDM_SOCKET_MAX; ++i){
 		if (m_udpSocketInfor[i] != NULL) {
-			if (m_udpSocketInfor[i]->m_udmEpollInfor != NULL) {
-				BSLIB_SAFE_DELETE(m_udpSocketInfor[i]->m_udmEpollInfor);
+			if (m_udpSocketInfor[i]->m_udmEpollInfo != NULL) {
+				BSLIB_SAFE_DELETE(m_udpSocketInfor[i]->m_udmEpollInfo);
 			}
 			if (m_udpSocketInfor[i]->m_udmSocketPtr != NULL) {
 				BSLIB_SAFE_DELETE(m_udpSocketInfor[i]->m_udmSocketPtr);
@@ -43,12 +43,12 @@ CUdmMgr::~CUdmMgr()
 
 UDMSOCKET CUdmMgr::udmSocket()
 {
-	SUdmSocketInfor* udmSocketInfor = NULL;
+	SUdmSocketInfo* udmSocketInfor = NULL;
 
 	m_mutex.lock();
 	for (int i=0; i<BSLIB_UDM_SOCKET_MAX; ++i){
 		if (m_udpSocketInfor[m_currtUdmSocketInforPos] == NULL) {
-			udmSocketInfor = new SUdmSocketInfor();
+			udmSocketInfor = new SUdmSocketInfo();
 			if (udmSocketInfor == NULL) {
 				m_mutex.unlock();
 				setlasterror(UDM_ERROR_OUT_OF_MEMORY);
@@ -84,7 +84,7 @@ UDMSOCKET CUdmMgr::udmSocket()
 	return udmSocketInfor->m_udmID;
 }
 
-UDMSOCKET CUdmMgr::udmSocket(SUdmSocketInfor* udmSocketInfor)
+UDMSOCKET CUdmMgr::udmSocket(SUdmSocketInfo* udmSocketInfor)
 {
 	m_mutex.lock();
 	for (int i=0; i<BSLIB_UDM_SOCKET_MAX; ++i){
@@ -115,7 +115,7 @@ int CUdmMgr::bind(UDMSOCKET udmID, const struct sockaddr* name, int namelen)
 		return BSLIB_UDM_ERROR;
 	}
 	int udmPos = udmID - 1;
-	SUdmSocketInfor* udmSocketInfor = m_udpSocketInfor[udmPos];
+	SUdmSocketInfo* udmSocketInfor = m_udpSocketInfor[udmPos];
 	if (udmSocketInfor == NULL) {
 		setlasterror(UDM_ERROR_INVALID_UDMSOCK);
 		return BSLIB_UDM_ERROR;
@@ -143,7 +143,7 @@ int CUdmMgr::bind(UDMSOCKET udmID, UDMSOCKET existUdmId)
 		return BSLIB_UDM_ERROR;
 	}
 	int udmPos = udmID - 1;
-	SUdmSocketInfor* udmSocketInfor = m_udpSocketInfor[udmPos];
+	SUdmSocketInfo* udmSocketInfor = m_udpSocketInfor[udmPos];
 	if (udmSocketInfor == NULL) {
 		setlasterror(UDM_ERROR_INVALID_UDMSOCK);
 		return BSLIB_UDM_ERROR;
@@ -158,7 +158,7 @@ int CUdmMgr::bind(UDMSOCKET udmID, UDMSOCKET existUdmId)
 		return BSLIB_UDM_ERROR;
 	}
 	int existUdmPos = existUdmId - 1;
-	SUdmSocketInfor* existUdmSocketInfor = m_udpSocketInfor[existUdmPos];
+	SUdmSocketInfo* existUdmSocketInfor = m_udpSocketInfor[existUdmPos];
 	if (existUdmSocketInfor == NULL) {
 		setlasterror(UDM_ERROR_INVALID_UDMSOCK);
 		return BSLIB_UDM_ERROR;
@@ -179,7 +179,7 @@ int CUdmMgr::listen(UDMSOCKET udmID)
 		return BSLIB_UDM_ERROR;
 	}
 	int udmPos = udmID - 1;
-	SUdmSocketInfor* udmSocketInfor = m_udpSocketInfor[udmPos];
+	SUdmSocketInfo* udmSocketInfor = m_udpSocketInfor[udmPos];
 	if (udmSocketInfor == NULL) {
 		setlasterror(UDM_ERROR_INVALID_UDMSOCK);
 		return BSLIB_UDM_ERROR;
@@ -218,7 +218,7 @@ UDMSOCKET CUdmMgr::accept(UDMSOCKET udmID, struct sockaddr* addr, int* addrlen)
 		return BSLIB_UDM_ERROR;
 	}
 	int udmPos = udmID - 1;
-	SUdmSocketInfor* udmSocketInfor = m_udpSocketInfor[udmPos];
+	SUdmSocketInfo* udmSocketInfor = m_udpSocketInfor[udmPos];
 	if (udmSocketInfor == NULL) {
 		setlasterror(UDM_ERROR_INVALID_UDMSOCK);
 		return BSLIB_UDM_ERROR;
@@ -242,7 +242,7 @@ int CUdmMgr::connect(UDMSOCKET udmID, const struct sockaddr* name, int namelen)
 		return BSLIB_UDM_ERROR;
 	}
 	int udmPos = udmID - 1;
-	SUdmSocketInfor* udmSocketInfor = m_udpSocketInfor[udmPos];
+	SUdmSocketInfo* udmSocketInfor = m_udpSocketInfor[udmPos];
 	if (udmSocketInfor == NULL) {
 		setlasterror(UDM_ERROR_INVALID_UDMSOCK);
 		return BSLIB_UDM_ERROR;
@@ -282,7 +282,7 @@ int CUdmMgr::close(UDMSOCKET udmID)
 		return BSLIB_UDM_ERROR;
 	}
 	int udmPos = udmID - 1;
-	SUdmSocketInfor* udmSocketInfor = m_udpSocketInfor[udmPos];
+	SUdmSocketInfo* udmSocketInfor = m_udpSocketInfor[udmPos];
 	if (udmSocketInfor == NULL) {
 		setlasterror(UDM_ERROR_INVALID_UDMSOCK);
 		return BSLIB_UDM_ERROR;
@@ -309,7 +309,7 @@ int CUdmMgr::getPeerName(UDMSOCKET udmID, struct sockaddr* name, int* namelen)
 		return BSLIB_UDM_ERROR;
 	}
 	int udmPos = udmID - 1;
-	SUdmSocketInfor* udmSocketInfor = m_udpSocketInfor[udmPos];
+	SUdmSocketInfo* udmSocketInfor = m_udpSocketInfor[udmPos];
 	if (udmSocketInfor == NULL) {
 		setlasterror(UDM_ERROR_INVALID_UDMSOCK);
 		return BSLIB_UDM_ERROR;
@@ -336,7 +336,7 @@ int CUdmMgr::getSockName(UDMSOCKET udmID, struct sockaddr* name, int* namelen)
 		return BSLIB_UDM_ERROR;
 	}
 	int udmPos = udmID - 1;
-	SUdmSocketInfor* udmSocketInfor = m_udpSocketInfor[udmPos];
+	SUdmSocketInfo* udmSocketInfor = m_udpSocketInfor[udmPos];
 	if (udmSocketInfor == NULL) {
 		setlasterror(UDM_ERROR_INVALID_UDMSOCK);
 		return BSLIB_UDM_ERROR;
@@ -363,7 +363,7 @@ EUdmStatus CUdmMgr::getSockState(UDMSOCKET udmID)
 		return UDM_STATE_NONEXIST;
 	}
 	int udmPos = udmID - 1;
-	SUdmSocketInfor* udmSocketInfor = m_udpSocketInfor[udmPos];
+	SUdmSocketInfo* udmSocketInfor = m_udpSocketInfor[udmPos];
 	if (udmSocketInfor == NULL) {
 		setlasterror(UDM_ERROR_INVALID_UDMSOCK);
 		return UDM_STATE_NONEXIST;
@@ -395,7 +395,7 @@ int CUdmMgr::send(UDMSOCKET udmID, const char* buf, int len)
 		return BSLIB_UDM_ERROR;
 	}
 	int udmPos = udmID - 1;
-	SUdmSocketInfor* udmSocketInfor = m_udpSocketInfor[udmPos];
+	SUdmSocketInfo* udmSocketInfor = m_udpSocketInfor[udmPos];
 	if (udmSocketInfor == NULL) {
 		setlasterror(UDM_ERROR_INVALID_UDMSOCK);
 		return BSLIB_UDM_ERROR;
@@ -419,7 +419,7 @@ int CUdmMgr::recv(UDMSOCKET udmID, char* buf, int len)
 		return BSLIB_UDM_ERROR;
 	}
 	int udmPos = udmID - 1;
-	SUdmSocketInfor* udmSocketInfor = m_udpSocketInfor[udmPos];
+	SUdmSocketInfo* udmSocketInfor = m_udpSocketInfor[udmPos];
 	if (udmSocketInfor == NULL) {
 		setlasterror(UDM_ERROR_INVALID_UDMSOCK);
 		return BSLIB_UDM_ERROR;
@@ -446,7 +446,7 @@ int CUdmMgr::sendTo(UDMSOCKET udmID, const char* buf, int len)
 		return BSLIB_UDM_ERROR;
 	}
 	int udmPos = udmID - 1;
-	SUdmSocketInfor* udmSocketInfor = m_udpSocketInfor[udmPos];
+	SUdmSocketInfo* udmSocketInfor = m_udpSocketInfor[udmPos];
 	if (udmSocketInfor == NULL) {
 		setlasterror(UDM_ERROR_INVALID_UDMSOCK);
 		return BSLIB_UDM_ERROR;
@@ -470,7 +470,7 @@ int CUdmMgr::recvFrom(UDMSOCKET udmID, char* buf, int len)
 		return BSLIB_UDM_ERROR;
 	}
 	int udmPos = udmID - 1;
-	SUdmSocketInfor* udmSocketInfor = m_udpSocketInfor[udmPos];
+	SUdmSocketInfo* udmSocketInfor = m_udpSocketInfor[udmPos];
 	if (udmSocketInfor == NULL) {
 		setlasterror(UDM_ERROR_INVALID_UDMSOCK);
 		return BSLIB_UDM_ERROR;
@@ -495,7 +495,7 @@ int CUdmMgr::recvFrom(UDMSOCKET udmID, char* buf, int len)
 	return recvLen;
 }
 
-SUdmSocketInfor* CUdmMgr::getUdmSocketInfor(UDMSOCKET udmID)
+SUdmSocketInfo* CUdmMgr::getUdmSocketInfor(UDMSOCKET udmID)
 {
 	if (udmID <= 0 || udmID > BSLIB_UDM_SOCKET_MAX) {
 		return NULL;

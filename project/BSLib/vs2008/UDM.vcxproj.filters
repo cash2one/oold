@@ -42,9 +42,6 @@
     <ClInclude Include="..\..\..\src\BSLib\udm\udmSocket.h">
       <Filter>cpp</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\src\BSLib\udm\udmSocketInfor.h">
-      <Filter>cpp</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\src\BSLib\udm\udmStub.h">
       <Filter>cpp</Filter>
     </ClInclude>
@@ -62,6 +59,9 @@
     </ClInclude>
     <ClInclude Include="..\..\..\inc\BSLib\udm\udm.h">
       <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\BSLib\udm\udmSocketInfo.h">
+      <Filter>cpp</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

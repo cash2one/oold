@@ -13,7 +13,7 @@ namespace UDM
 class CUdmClient : public CUdmSocket
 {
 public:
-	CUdmClient(SUdmSocketInfor* udmSocketInfor);
+	CUdmClient(SUdmSocketInfo* udmSocketInfor);
 	virtual ~CUdmClient();
 
 	virtual EUdmSocketType getUdmSocketType() { return UDM_SOCKTYPE_CLIENT; }
