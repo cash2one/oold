@@ -30,74 +30,74 @@ int CUdmEpoll::epollCreate()
 
 int CUdmEpoll::epollAddSock(const UDMSOCKET udmSocket, int udmEpollEvent, void* tempData)
 {
-	SUdmSocketInfo* udmSocketInfor = CUdmMgr::singleton().getUdmSocketInfor(udmSocket);
-	if (udmSocketInfor == NULL){
+	SUdmSocketInfo* udmSocketInfo = CUdmMgr::singleton().getUdmSocketInfo(udmSocket);
+	if (udmSocketInfo == NULL){
 		return BSLIB_UDM_ERROR;
 	}
-	SUdmEpollInfo* udmEpollInfor = udmSocketInfor->m_udmEpollInfo;
-	if (udmEpollInfor == NULL) {
-		udmEpollInfor = new SUdmEpollInfo();
-		if (udmEpollInfor == NULL) {
+	SUdmEpollInfo* udmEpollInfo = udmSocketInfo->m_udmEpollInfo;
+	if (udmEpollInfo == NULL) {
+		udmEpollInfo = new SUdmEpollInfo();
+		if (udmEpollInfo == NULL) {
 			return BSLIB_UDM_ERROR;
 		}
-		udmEpollInfor->m_epollTempData = tempData;
-		udmEpollInfor->m_epollEventType = 0;
-		udmSocketInfor->m_udmEpollInfo = udmEpollInfor;
+		udmEpollInfo->m_epollTempData = tempData;
+		udmEpollInfo->m_epollEventType = 0;
+		udmSocketInfo->m_udmEpollInfo = udmEpollInfo;
 	} else {
 		if (tempData != NULL) {
-			udmEpollInfor->m_epollTempData = tempData;
+			udmEpollInfo->m_epollTempData = tempData;
 		}
 	}
-	if (udmSocketInfor->m_udpThreadID != -1) {
-		if (createEpollEventQueue(udmSocketInfor) == BSLIB_UDM_ERROR) {
+	if (udmSocketInfo->m_udpThreadID != -1) {
+		if (createEpollEventQueue(udmSocketInfo) == BSLIB_UDM_ERROR) {
 			return BSLIB_UDM_ERROR;
 		}
 	}
 	if (udmEpollEvent & UDM_EPOLL_WRITE) {
-		if (udmSocketInfor->m_udmStatus == UDM_STATE_OPEN) {
-			udmEpollInfor->m_canWrite = true;
+		if (udmSocketInfo->m_udmStatus == UDM_STATE_OPEN) {
+			udmEpollInfo->m_canWrite = true;
 		}
 	}
 	if (udmEpollEvent & UDM_EPOLL_READ) {
-		CUdmSocket* udmSocket = udmSocketInfor->m_udmSocketPtr;
+		CUdmSocket* udmSocket = udmSocketInfo->m_udmSocketPtr;
 		if (udmSocket != NULL && udmSocket->canRead()) {
-			udmEpollInfor->m_canRead = true;
+			udmEpollInfo->m_canRead = true;
 		}
 	}
 	if (udmEpollEvent & UDM_EPOLL_ERROR) {
-		if ((udmSocketInfor->m_udmStatus == UDM_STATE_BROKEN)) {
-			udmEpollInfor->m_isBreak = true;
+		if ((udmSocketInfo->m_udmStatus == UDM_STATE_BROKEN)) {
+			udmEpollInfo->m_isBreak = true;
 		}
 	}
-	udmEpollInfor->m_epollEventType |= udmEpollEvent;
-	if (udmEpollInfor->m_isBreak == false && udmEpollInfor->m_canRead == false && udmEpollInfor->m_canWrite == false) {
+	udmEpollInfo->m_epollEventType |= udmEpollEvent;
+	if (udmEpollInfo->m_isBreak == false && udmEpollInfo->m_canRead == false && udmEpollInfo->m_canWrite == false) {
 		return BSLIB_UDM_OK;
 	}
 	m_mutex.lock();
-	m_selfEvents.push(udmSocketInfor);
+	m_selfEvents.push(udmSocketInfo);
 	m_mutex.unlock();
 	return BSLIB_UDM_OK;
 }
 
 int CUdmEpoll::epollDelSock(const UDMSOCKET udmSocket, int udmEpollEvent)
 {
-	SUdmSocketInfo* udmSocketInfor = CUdmMgr::singleton().getUdmSocketInfor(udmSocket);
-	if (udmSocketInfor == NULL){
+	SUdmSocketInfo* udmSocketInfo = CUdmMgr::singleton().getUdmSocketInfo(udmSocket);
+	if (udmSocketInfo == NULL){
 		return BSLIB_UDM_ERROR;
 	}
-	SUdmEpollInfo* udmEpollInfor = udmSocketInfor->m_udmEpollInfo;
-	if (udmEpollInfor == NULL) {
+	SUdmEpollInfo* udmEpollInfo = udmSocketInfo->m_udmEpollInfo;
+	if (udmEpollInfo == NULL) {
 		return BSLIB_UDM_OK;
 	}
-	udmEpollInfor->m_epollEventType &= ~udmEpollEvent;
+	udmEpollInfo->m_epollEventType &= ~udmEpollEvent;
 	if (udmEpollEvent & UDM_EPOLL_WRITE) {
-		udmEpollInfor->m_canWrite = false;
+		udmEpollInfo->m_canWrite = false;
 	}
 	if (udmEpollEvent & UDM_EPOLL_READ) {
-		udmEpollInfor->m_canRead = false;
+		udmEpollInfo->m_canRead = false;
 	}
 	if (udmEpollEvent & UDM_EPOLL_ERROR) {
-		udmEpollInfor->m_isBreak = false;
+		udmEpollInfo->m_isBreak = false;
 	}
 	return BSLIB_UDM_OK;
 }
@@ -133,24 +133,24 @@ int CUdmEpoll::_epollWait(SEpollEvent* epollList, int epollListCount)
 	m_selfEvents.pop(epollEvent);
 
 	while(epollEvent != NULL) {
-		SUdmEpollInfo* udmEpollInfor = epollEvent->m_udmEpollInfo;
-		if (udmEpollInfor != NULL) {
+		SUdmEpollInfo* udmEpollInfo = epollEvent->m_udmEpollInfo;
+		if (udmEpollInfo != NULL) {
 			epollList[epoll_i].m_udmEpollEvent = 0;
-			if (udmEpollInfor->m_isBreak) {
+			if (udmEpollInfo->m_isBreak) {
 				epollList[epoll_i].m_udmEpollEvent |= UDM_EPOLL_ERROR;
-				//udmEpollInfor->m_isBreak = false;
+				//udmEpollInfo->m_isBreak = false;
 			}
-			if (udmEpollInfor->m_canRead) {
+			if (udmEpollInfo->m_canRead) {
 				epollList[epoll_i].m_udmEpollEvent |= UDM_EPOLL_READ;
-				udmEpollInfor->m_canRead = false;
+				udmEpollInfo->m_canRead = false;
 			}
-			if (udmEpollInfor->m_canWrite) {
+			if (udmEpollInfo->m_canWrite) {
 				epollList[epoll_i].m_udmEpollEvent |= UDM_EPOLL_WRITE;
-				udmEpollInfor->m_canWrite = false;
+				udmEpollInfo->m_canWrite = false;
 			}
 			if (epollList[epoll_i].m_udmEpollEvent != 0) {
 				epollList[epoll_i].m_udmSocket = epollEvent->m_udmID;
-				epollList[epoll_i].m_tempData = udmEpollInfor->m_epollTempData;
+				epollList[epoll_i].m_tempData = udmEpollInfo->m_epollTempData;
 				++epoll_i;
 				if (epoll_i >= epollListCount){
 					m_mutex.unlock();
@@ -171,24 +171,24 @@ int CUdmEpoll::_epollWait(SEpollEvent* epollList, int epollListCount)
 		SUdmSocketInfo* epollEvent = NULL;
 		ptrQueue->pop(epollEvent);
 		while(epollEvent != NULL) {
-			SUdmEpollInfo* udmEpollInfor = epollEvent->m_udmEpollInfo;
-			if (udmEpollInfor != NULL) {
+			SUdmEpollInfo* udmEpollInfo = epollEvent->m_udmEpollInfo;
+			if (udmEpollInfo != NULL) {
 				epollList[epoll_i].m_udmEpollEvent = 0;
-				if (udmEpollInfor->m_isBreak) {
+				if (udmEpollInfo->m_isBreak) {
 					epollList[epoll_i].m_udmEpollEvent |= UDM_EPOLL_ERROR;
-					//udmEpollInfor->m_isBreak = false;
+					//udmEpollInfo->m_isBreak = false;
 				}
-				if (udmEpollInfor->m_canRead) {
+				if (udmEpollInfo->m_canRead) {
 					epollList[epoll_i].m_udmEpollEvent |= UDM_EPOLL_READ;
-					udmEpollInfor->m_canRead = false;
+					udmEpollInfo->m_canRead = false;
 				}
-				if (udmEpollInfor->m_canWrite) {
+				if (udmEpollInfo->m_canWrite) {
 					epollList[epoll_i].m_udmEpollEvent |= UDM_EPOLL_WRITE;
-					udmEpollInfor->m_canWrite = false;
+					udmEpollInfo->m_canWrite = false;
 				}
 				if (epollList[epoll_i].m_udmEpollEvent != 0) {
 					epollList[epoll_i].m_udmSocket = epollEvent->m_udmID;
-					epollList[epoll_i].m_tempData = udmEpollInfor->m_epollTempData;
+					epollList[epoll_i].m_tempData = udmEpollInfo->m_epollTempData;
 					++epoll_i;
 					if (epoll_i >= epollListCount){
 						m_mutex.unlock();
@@ -204,26 +204,26 @@ int CUdmEpoll::_epollWait(SEpollEvent* epollList, int epollListCount)
 	return epoll_i;
 }
 
-int CUdmEpoll::createEpollEventQueue(SUdmSocketInfo* udmSocketInfor)
+int CUdmEpoll::createEpollEventQueue(SUdmSocketInfo* udmSocketInfo)
 {
-	SUdmEpollInfo* udmEpollInfor = udmSocketInfor->m_udmEpollInfo;
-	if (udmEpollInfor == NULL) {
+	SUdmEpollInfo* udmEpollInfo = udmSocketInfo->m_udmEpollInfo;
+	if (udmEpollInfo == NULL) {
 		return BSLIB_UDM_ERROR;
 	}
-	if (udmSocketInfor->m_udpThreadID == -1) {
+	if (udmSocketInfo->m_udpThreadID == -1) {
 		return BSLIB_UDM_ERROR;
 	}
 	
 	BSLib::Utility::CPtrQueue<SUdmSocketInfo*>* udmEpollEventQueue = NULL;
 	m_mutex.lock();
-	BSLib::Utility::CHashMap<int, BSLib::Utility::CPtrQueue<SUdmSocketInfo*>*>::iterator it = m_waitUdmSockets.find(udmSocketInfor->m_udpThreadID);
+	BSLib::Utility::CHashMap<int, BSLib::Utility::CPtrQueue<SUdmSocketInfo*>*>::iterator it = m_waitUdmSockets.find(udmSocketInfo->m_udpThreadID);
 	if (it == m_waitUdmSockets.end()) {
 		udmEpollEventQueue = new BSLib::Utility::CPtrQueue<SUdmSocketInfo*>();
 		if (udmEpollEventQueue == NULL) {
 			m_mutex.unlock();
 			return BSLIB_UDM_ERROR;
 		}
-		m_waitUdmSockets.setValue(udmSocketInfor->m_udpThreadID, udmEpollEventQueue);
+		m_waitUdmSockets.setValue(udmSocketInfo->m_udpThreadID, udmEpollEventQueue);
 	} else {
 		udmEpollEventQueue = it->second;
 		if (udmEpollEventQueue == NULL) {
@@ -232,8 +232,8 @@ int CUdmEpoll::createEpollEventQueue(SUdmSocketInfo* udmSocketInfor)
 		}
 	}
 	m_mutex.unlock();
-	udmEpollInfor->m_epollEventQueue = udmEpollEventQueue;
-	udmEpollInfor->m_epollEvent = &m_epollEvent;
+	udmEpollInfo->m_epollEventQueue = udmEpollEventQueue;
+	udmEpollInfo->m_epollEvent = &m_epollEvent;
 
 	return BSLIB_UDM_OK;
 }

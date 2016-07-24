@@ -9,8 +9,8 @@ namespace BSLib
 namespace UDM
 {
 
-CUdmClient::CUdmClient(SUdmSocketInfo* udmSocketInfor)
-: CUdmSocket(udmSocketInfor)
+CUdmClient::CUdmClient(SUdmSocketInfo* udmSocketInfo)
+: CUdmSocket(udmSocketInfo)
 , m_isWaiting(false)
 , m_pingTimeout(1000)
 , m_pingCount(0)
@@ -25,8 +25,8 @@ CUdmClient::~CUdmClient()
 
 int CUdmClient::connect(const struct sockaddr* name, int namelen)
 {
-	SUdmSocketInfo* udpSocketInfor = CUdmSocket::getUdmSocketInfor();
-	CUdpThread* udpThread = CUdpThreadMgr::singleton().getUdpThread(udpSocketInfor->m_udpThreadID);
+	SUdmSocketInfo* udpSocketInfo = CUdmSocket::getUdmSocketInfo();
+	CUdpThread* udpThread = CUdpThreadMgr::singleton().getUdpThread(udpSocketInfo->m_udpThreadID);
 	if (udpThread == NULL){
 		return BSLIB_UDM_ERROR;
 	}
@@ -34,14 +34,14 @@ int CUdmClient::connect(const struct sockaddr* name, int namelen)
 	CUdmSocket::setPeerName(name, namelen);
 	udpThread->addUdmClient(this);
 	
-	EUdmStatus udmStatus = udpSocketInfor->m_udmStatus;
-	udpSocketInfor->m_udmStatus = UDM_STATE_CONNECTING;
+	EUdmStatus udmStatus = udpSocketInfo->m_udmStatus;
+	udpSocketInfo->m_udmStatus = UDM_STATE_CONNECTING;
 
 	m_isWaiting = true;
 
 	SMsgPc2PsReqConnect reqConnectMsg;
 	if (udpThread->sendTo(&reqConnectMsg, sizeof(reqConnectMsg), name, namelen) == BSLIB_UDM_ERROR) {
-		udpSocketInfor->m_udmStatus = udmStatus;
+		udpSocketInfo->m_udmStatus = udmStatus;
 		return BSLIB_UDM_ERROR;
 	}
 
@@ -53,8 +53,8 @@ int CUdmClient::connect(const struct sockaddr* name, int namelen)
 
 	m_isWaiting = false;
 
-	if (CUdmSocket::getUdmSocketInfor()->m_udmStatus != UDM_STATE_OPEN) {
-		udpSocketInfor->m_udmStatus = udmStatus;
+	if (CUdmSocket::getUdmSocketInfo()->m_udmStatus != UDM_STATE_OPEN) {
+		udpSocketInfo->m_udmStatus = udmStatus;
 		m_connectEvent.reset();
 		return BSLIB_UDM_ERROR;
 	}
@@ -63,21 +63,21 @@ int CUdmClient::connect(const struct sockaddr* name, int namelen)
 
 int CUdmClient::close()
 { 
-	SUdmSocketInfo* udpSocketInfor = CUdmSocket::getUdmSocketInfor();
-	switch(udpSocketInfor->m_udmStatus)
+	SUdmSocketInfo* udpSocketInfo = CUdmSocket::getUdmSocketInfo();
+	switch(udpSocketInfo->m_udmStatus)
 	{
 	case UDM_STATE_INIT:
 	case UDM_STATE_BIND:
 	case UDM_STATE_BROKEN:
 		{
-			udpSocketInfor->m_udmStatus = UDM_STATE_NONEXIST;
+			udpSocketInfo->m_udmStatus = UDM_STATE_NONEXIST;
 			break;
 		}
 	case UDM_STATE_CONNECTING:
 	case UDM_STATE_CONNECTED:
 	case UDM_STATE_OPEN:
 		{
-			udpSocketInfor->m_udmStatus = UDM_STATE_CLOSING;
+			udpSocketInfo->m_udmStatus = UDM_STATE_CLOSING;
 			SMsgPc2PsReqClose reqCloseMsg;
 			CUdmSocket::_sendMsg(&reqCloseMsg, sizeof(reqCloseMsg));
 			break;
@@ -106,10 +106,10 @@ bool CUdmClient::parseCtrlMsg(SUdpCtrlMsg* msg, int msgSize, BSLib::Utility::CRe
 			SMsgPc2PsNtfConnect ntfConnectMsg;
 			CUdmSocket::_sendMsg(&ntfConnectMsg, sizeof(ntfConnectMsg));
 			
-			SUdmSocketInfo* udpSocketInfor = CUdmSocket::getUdmSocketInfor();
-			if (udpSocketInfor->m_udmStatus == UDM_STATE_CONNECTING) {
+			SUdmSocketInfo* udpSocketInfo = CUdmSocket::getUdmSocketInfo();
+			if (udpSocketInfo->m_udmStatus == UDM_STATE_CONNECTING) {
 				if (m_isWaiting) {
-					udpSocketInfor->m_udmStatus = UDM_STATE_OPEN;
+					udpSocketInfo->m_udmStatus = UDM_STATE_OPEN;
 					m_connectEvent.set();
 
 					m_pingTimeout.reset(BSLIB_UDM_PING_TIME, realTime);
@@ -124,8 +124,8 @@ bool CUdmClient::parseCtrlMsg(SUdpCtrlMsg* msg, int msgSize, BSLib::Utility::CRe
 		}
 	case EMID_PS2PC_REQ_PING:
 		{
-			SUdmSocketInfo* udpSocketInfor = CUdmSocket::getUdmSocketInfor();
-			if (udpSocketInfor->m_udmStatus == UDM_STATE_OPEN) {
+			SUdmSocketInfo* udpSocketInfo = CUdmSocket::getUdmSocketInfo();
+			if (udpSocketInfo->m_udmStatus == UDM_STATE_OPEN) {
 				SMsgPc2PsResPing resPing;
 				CUdmSocket::_sendMsg(&resPing, sizeof(resPing));
 			}
@@ -154,11 +154,11 @@ bool CUdmClient::parseCtrlMsg(SUdpCtrlMsg* msg, int msgSize, BSLib::Utility::CRe
 			SMsgPc2PsReqClose reqCloseMsg;
 			CUdmSocket::_sendMsg(&reqCloseMsg, sizeof(reqCloseMsg));
 
-			SUdmSocketInfo* udpSocketInfor = CUdmSocket::getUdmSocketInfor();
-			if (udpSocketInfor->m_udmStatus == UDM_STATE_CONNECTING || 
-				udpSocketInfor->m_udmStatus == UDM_STATE_CONNECTED ||
-				udpSocketInfor->m_udmStatus == UDM_STATE_OPEN) {
-					udpSocketInfor->m_udmStatus = UDM_STATE_CLOSING;
+			SUdmSocketInfo* udpSocketInfo = CUdmSocket::getUdmSocketInfo();
+			if (udpSocketInfo->m_udmStatus == UDM_STATE_CONNECTING || 
+				udpSocketInfo->m_udmStatus == UDM_STATE_CONNECTED ||
+				udpSocketInfo->m_udmStatus == UDM_STATE_OPEN) {
+					udpSocketInfo->m_udmStatus = UDM_STATE_CLOSING;
 					CUdmSocket::notifyBreak();
 			}
 			
@@ -169,9 +169,9 @@ bool CUdmClient::parseCtrlMsg(SUdpCtrlMsg* msg, int msgSize, BSLib::Utility::CRe
 			SMsgPc2PsNtfClose ntfCloseMsg;
 			CUdmSocket::_sendMsg(&ntfCloseMsg, sizeof(ntfCloseMsg));
 
-			SUdmSocketInfo* udpSocketInfor = CUdmSocket::getUdmSocketInfor();
-			if (udpSocketInfor->m_udmStatus == UDM_STATE_CLOSING) {
-				udpSocketInfor->m_udmStatus = UDM_STATE_NONEXIST;
+			SUdmSocketInfo* udpSocketInfo = CUdmSocket::getUdmSocketInfo();
+			if (udpSocketInfo->m_udmStatus == UDM_STATE_CLOSING) {
+				udpSocketInfo->m_udmStatus = UDM_STATE_NONEXIST;
 			}
 			break;
 		}
@@ -189,8 +189,8 @@ bool CUdmClient::parseCtrlMsg(SUdpCtrlMsg* msg, int msgSize, BSLib::Utility::CRe
 
 bool CUdmClient::parseDataMsg(SUdpCtrlMsg* msg, int msgSize, BSLib::Utility::CRealTime& realTime)
 {
-	SUdmSocketInfo* udpSocketInfor = CUdmSocket::getUdmSocketInfor();
-	if (udpSocketInfor->m_udmStatus == UDM_STATE_OPEN) {
+	SUdmSocketInfo* udpSocketInfo = CUdmSocket::getUdmSocketInfo();
+	if (udpSocketInfo->m_udmStatus == UDM_STATE_OPEN) {
 		m_pingTimeout.reset(BSLIB_UDM_PING_TIME, realTime);
 		m_pingCount = 0;
 	}
@@ -199,19 +199,19 @@ bool CUdmClient::parseDataMsg(SUdpCtrlMsg* msg, int msgSize, BSLib::Utility::CRe
 
 void CUdmClient::tickMsg(BSLib::Utility::CRealTime& realTime)
 {
-	SUdmSocketInfo* udpSocketInfor = CUdmSocket::getUdmSocketInfor();
-	if (udpSocketInfor->m_udmStatus == UDM_STATE_CONNECTING) {
+	SUdmSocketInfo* udpSocketInfo = CUdmSocket::getUdmSocketInfo();
+	if (udpSocketInfo->m_udmStatus == UDM_STATE_CONNECTING) {
 		SMsgPc2PsReqConnect reqConnectMsg;
 		CUdmSocket::_sendMsg(&reqConnectMsg, sizeof(reqConnectMsg));
 	}
-	if (udpSocketInfor->m_udmStatus == UDM_STATE_CLOSING) {
+	if (udpSocketInfo->m_udmStatus == UDM_STATE_CLOSING) {
 		SMsgPc2PsReqClose reqCloseMsg;
 		CUdmSocket::_sendMsg(&reqCloseMsg, sizeof(reqCloseMsg));
 	}
-	if (udpSocketInfor->m_udmStatus == UDM_STATE_OPEN) {
+	if (udpSocketInfo->m_udmStatus == UDM_STATE_OPEN) {
 		if (m_pingTimeout(realTime)) {
 			if (m_pingCount > BSLIB_UDM_PING_MAX) {
-				udpSocketInfor->m_udmStatus = UDM_STATE_BROKEN;
+				udpSocketInfo->m_udmStatus = UDM_STATE_BROKEN;
 				CUdmSocket::notifyBreak();
 				return ;
 			}

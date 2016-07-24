@@ -9,8 +9,8 @@ namespace BSLib
 namespace UDM
 {
 
-CUdmSocket::CUdmSocket(SUdmSocketInfo* udmSocketInfor)
-: m_udmSocketInfor(udmSocketInfor)
+CUdmSocket::CUdmSocket(SUdmSocketInfo* udmSocketInfo)
+: m_udmSocketInfo(udmSocketInfo)
 , m_deleteCount(0)
 {
 	;
@@ -36,8 +36,8 @@ int CUdmSocket::setPeerName(const struct sockaddr* name, int namelen)
 
 int CUdmSocket::getSockName(struct sockaddr* name, int* namelen)
 {
-	SUdmSocketInfo* udpSocketInfor = CUdmSocket::getUdmSocketInfor();
-	CUdpThread* udpThread = CUdpThreadMgr::singleton().getUdpThread(udpSocketInfor->m_udpThreadID);
+	SUdmSocketInfo* udpSocketInfo = CUdmSocket::getUdmSocketInfo();
+	CUdpThread* udpThread = CUdpThreadMgr::singleton().getUdpThread(udpSocketInfo->m_udpThreadID);
 	if (udpThread == NULL){
 		return BSLIB_UDM_ERROR;
 	}
@@ -79,7 +79,7 @@ int CUdmSocket::recvFrom(char* buff, int len)
 	uint32 size = m_readStream.readSize();
 	if (size <= 0) {
 		m_readMutex.unlock();
-		if (m_udmSocketInfor->m_udmStatus == UDM_STATE_BROKEN) {
+		if (m_udmSocketInfo->m_udmStatus == UDM_STATE_BROKEN) {
 			return BSLIB_UDM_ERROR;
 		}
 		return BSLIB_UDM_OK;
@@ -118,10 +118,10 @@ bool CUdmSocket::parseDataMsg(SUdpCtrlMsg* msg, int msgSize, BSLib::Utility::CRe
 
 void CUdmSocket::tickMsg(BSLib::Utility::CRealTime& realTime)
 {
-	SUdmSocketInfo* udpSocketInfor = CUdmSocket::getUdmSocketInfor();
-	if (udpSocketInfor->m_udmStatus == UDM_STATE_DELETE1) {
+	SUdmSocketInfo* udpSocketInfo = CUdmSocket::getUdmSocketInfo();
+	if (udpSocketInfo->m_udmStatus == UDM_STATE_DELETE1) {
 		if (m_deleteCount > BSLIB_UDM_DELETE_TICK_MAX) {
-			udpSocketInfor->m_udmStatus = UDM_STATE_DELETE2;
+			udpSocketInfo->m_udmStatus = UDM_STATE_DELETE2;
 			return ;
 		}
 		++m_deleteCount;
@@ -135,20 +135,20 @@ bool CUdmSocket::canRead()
 
 void CUdmSocket::notifyRead()
 {
-	SUdmEpollInfo* udmEpollInfor = m_udmSocketInfor->m_udmEpollInfo;
-	if (udmEpollInfor == NULL) {
+	SUdmEpollInfo* udmEpollInfo = m_udmSocketInfo->m_udmEpollInfo;
+	if (udmEpollInfo == NULL) {
 		return ;
 	}
-	if (udmEpollInfor->m_epollEventType & UDM_EPOLL_READ) {
-		if (udmEpollInfor->m_epollEventQueue != NULL && udmEpollInfor->m_epollEvent != NULL) {
+	if (udmEpollInfo->m_epollEventType & UDM_EPOLL_READ) {
+		if (udmEpollInfo->m_epollEventQueue != NULL && udmEpollInfo->m_epollEvent != NULL) {
 			bool canNotify = false;
-			if (udmEpollInfor->m_isBreak == false && udmEpollInfor->m_canRead == false && udmEpollInfor->m_canWrite == false) {
+			if (udmEpollInfo->m_isBreak == false && udmEpollInfo->m_canRead == false && udmEpollInfo->m_canWrite == false) {
 				canNotify = true;
 			}
-			udmEpollInfor->m_canRead = true;
+			udmEpollInfo->m_canRead = true;
 			if (canNotify) {
-				udmEpollInfor->m_epollEventQueue->push(m_udmSocketInfor);
-				udmEpollInfor->m_epollEvent->set();
+				udmEpollInfo->m_epollEventQueue->push(m_udmSocketInfo);
+				udmEpollInfo->m_epollEvent->set();
 			}
 		}
 	}
@@ -156,20 +156,20 @@ void CUdmSocket::notifyRead()
 
 void CUdmSocket::notifyBreak()
 {
-	SUdmEpollInfo* udmEpollInfor = m_udmSocketInfor->m_udmEpollInfo;
-	if (udmEpollInfor == NULL) {
+	SUdmEpollInfo* udmEpollInfo = m_udmSocketInfo->m_udmEpollInfo;
+	if (udmEpollInfo == NULL) {
 		return ;
 	}
-	if (udmEpollInfor->m_epollEventType & UDM_EPOLL_ERROR) {
-		if (udmEpollInfor->m_epollEventQueue != NULL && udmEpollInfor->m_epollEvent != NULL) {
+	if (udmEpollInfo->m_epollEventType & UDM_EPOLL_ERROR) {
+		if (udmEpollInfo->m_epollEventQueue != NULL && udmEpollInfo->m_epollEvent != NULL) {
 			bool canNotify = false;
-			if (udmEpollInfor->m_isBreak == false && udmEpollInfor->m_canRead == false && udmEpollInfor->m_canWrite == false) {
+			if (udmEpollInfo->m_isBreak == false && udmEpollInfo->m_canRead == false && udmEpollInfo->m_canWrite == false) {
 				canNotify = true;
 			}
-			udmEpollInfor->m_isBreak = true;
+			udmEpollInfo->m_isBreak = true;
 			if (canNotify) {
-				udmEpollInfor->m_epollEventQueue->push(m_udmSocketInfor);
-				udmEpollInfor->m_epollEvent->set();
+				udmEpollInfo->m_epollEventQueue->push(m_udmSocketInfo);
+				udmEpollInfo->m_epollEvent->set();
 			}
 		}
 	}
@@ -177,8 +177,8 @@ void CUdmSocket::notifyBreak()
 
 bool CUdmSocket::_sendMsg(SUdpCtrlMsg* msg, int msgSize)
 {
-	SUdmSocketInfo* udpSocketInfor = CUdmSocket::getUdmSocketInfor();
-	CUdpThread* udpThread = CUdpThreadMgr::singleton().getUdpThread(udpSocketInfor->m_udpThreadID);
+	SUdmSocketInfo* udpSocketInfo = CUdmSocket::getUdmSocketInfo();
+	CUdpThread* udpThread = CUdpThreadMgr::singleton().getUdpThread(udpSocketInfo->m_udpThreadID);
 	if (udpThread == NULL){
 		return false;
 	}

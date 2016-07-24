@@ -14,14 +14,14 @@ namespace BSLib
 namespace Network
 {
 
-struct SNetStubNetInfor
+struct SNetStubNetInfo
 {
 	BSLib::uint64 m_recvBytesCount;
 	BSLib::uint64 m_sendBytesCount;
 	BSLib::uint32 m_recvBytesPerMax;
 	BSLib::uint32 m_sendBytesPerMax;
 
-	SNetStubNetInfor()
+	SNetStubNetInfo()
 	{
 		m_recvBytesCount = 0;
 		m_sendBytesCount = 0;
@@ -113,38 +113,38 @@ public:
 		return m_stubPtr->_checkDeleteOvertime(realTimer);
 	}
 
-	void getNetInfo(BSLib::Utility::CRealTime& realTimer, SNetStubNetInfor& a_netStubNetInfor)
+	void getNetInfo(BSLib::Utility::CRealTime& realTimer, SNetStubNetInfo& a_netStubNetInfo)
 	{
 		CNetConnectionPtr netConnectionPtr = m_stubPtr->getNetConnectionPtr();
 		if (netConnectionPtr != NULL) {
-			SNetConnectionBytesInfo connectionInfor;
-			netConnectionPtr->getNetConnectionInfo(connectionInfor);
+			SNetConnectionBytesInfo connectionInfo;
+			netConnectionPtr->getNetConnectionInfo(connectionInfo);
 			if (m_seconds == 0) {
-				m_netConnectBytesInfor = connectionInfor;
+				m_netConnectBytesInfo = connectionInfo;
 				m_seconds = realTimer.seconds();
 
-				a_netStubNetInfor.m_recvBytesCount = m_netConnectBytesInfor.m_recvBytes;
-				a_netStubNetInfor.m_sendBytesCount = m_netConnectBytesInfor.m_sendBytes;
+				a_netStubNetInfo.m_recvBytesCount = m_netConnectBytesInfo.m_recvBytes;
+				a_netStubNetInfo.m_sendBytesCount = m_netConnectBytesInfo.m_sendBytes;
 				return;
 			}
 			BSLib::int64 seconds = realTimer.seconds();
 			if (m_seconds >= seconds) {
-				a_netStubNetInfor.m_recvBytesPerMax = (BSLib::uint32)(connectionInfor.m_recvBytes - m_netConnectBytesInfor.m_recvBytes);
-				a_netStubNetInfor.m_sendBytesPerMax = (BSLib::uint32)(connectionInfor.m_sendBytes - m_netConnectBytesInfor.m_sendBytes);
+				a_netStubNetInfo.m_recvBytesPerMax = (BSLib::uint32)(connectionInfo.m_recvBytes - m_netConnectBytesInfo.m_recvBytes);
+				a_netStubNetInfo.m_sendBytesPerMax = (BSLib::uint32)(connectionInfo.m_sendBytes - m_netConnectBytesInfo.m_sendBytes);
 
-				a_netStubNetInfor.m_recvBytesCount = m_netConnectBytesInfor.m_recvBytes;
-				a_netStubNetInfor.m_sendBytesCount = m_netConnectBytesInfor.m_sendBytes;
+				a_netStubNetInfo.m_recvBytesCount = m_netConnectBytesInfo.m_recvBytes;
+				a_netStubNetInfo.m_sendBytesCount = m_netConnectBytesInfo.m_sendBytes;
 				return;
 			}
 			BSLib::int64 t_seconds = seconds - m_seconds;
-			a_netStubNetInfor.m_recvBytesPerMax = (BSLib::uint32)((connectionInfor.m_recvBytes - m_netConnectBytesInfor.m_recvBytes)/t_seconds);
-			a_netStubNetInfor.m_sendBytesPerMax = (BSLib::uint32)((connectionInfor.m_sendBytes - m_netConnectBytesInfor.m_sendBytes)/t_seconds);
+			a_netStubNetInfo.m_recvBytesPerMax = (BSLib::uint32)((connectionInfo.m_recvBytes - m_netConnectBytesInfo.m_recvBytes)/t_seconds);
+			a_netStubNetInfo.m_sendBytesPerMax = (BSLib::uint32)((connectionInfo.m_sendBytes - m_netConnectBytesInfo.m_sendBytes)/t_seconds);
 
-			m_netConnectBytesInfor = connectionInfor;
+			m_netConnectBytesInfo = connectionInfo;
 			m_seconds = seconds;
 
-			a_netStubNetInfor.m_recvBytesCount = m_netConnectBytesInfor.m_recvBytes;
-			a_netStubNetInfor.m_sendBytesCount = m_netConnectBytesInfor.m_sendBytes;
+			a_netStubNetInfo.m_recvBytesCount = m_netConnectBytesInfo.m_recvBytes;
+			a_netStubNetInfo.m_sendBytesCount = m_netConnectBytesInfo.m_sendBytes;
 		}
 	}
 
@@ -187,7 +187,7 @@ public:
 private:
 	CNetStubPtr m_stubPtr;
 	BSLib::Utility::CStream m_stream;
-	SNetConnectionBytesInfo m_netConnectBytesInfor;
+	SNetConnectionBytesInfo m_netConnectBytesInfo;
 	BSLib::int64 m_seconds;
 };
 typedef BSLib::Utility::CPointer<CNetStubCb> CNetStubCbPtr;
@@ -208,7 +208,7 @@ public:
 	virtual uint32 getVerifyStubCount() { return (uint32)m_verifyList.size(); }
 	virtual uint32 getOkayStubCount() { return (uint32)m_okayList.size(); }
 
-	virtual void getFlowInfo(SNetFlowInfo& a_infor, BSLib::Utility::CRealTime& a_realTimer);
+	virtual void getFlowInfo(SNetFlowInfo& a_Info, BSLib::Utility::CRealTime& a_realTimer);
 
 	virtual void terminate();
 
@@ -227,7 +227,7 @@ protected:
 	void _recyclePeer();
 	void _deletePeer();
 
-	void _updateNetBytesInfor(BSLib::Utility::CRealTime& a_realTimer);
+	void _updateNetBytesInfo(BSLib::Utility::CRealTime& a_realTimer);
 
 private:
 	BSLib::Utility::CPtrQueue<CNetStubPtr> m_netStubQueue;

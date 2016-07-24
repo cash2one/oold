@@ -25,7 +25,7 @@ public:
 	int epollDelSock(const UDMSOCKET udmSocket, int udmEpollEvent);
 	int epollWait(SEpollEvent* epollList, int epollListCount, int msTimeOut);
 	int epollRelease();
-	int createEpollEventQueue(SUdmSocketInfo* udmSocketInfor);
+	int createEpollEventQueue(SUdmSocketInfo* udmSocketInfo);
 
 private:
 	int _epollWait(SEpollEvent* epollList, int epollListCount);

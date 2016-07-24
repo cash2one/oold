@@ -19,7 +19,7 @@ namespace UDM
 class CUdmSocket
 {
 public:
-	CUdmSocket(SUdmSocketInfo* udmSocketInfor);
+	CUdmSocket(SUdmSocketInfo* udmSocketInfo);
 	virtual ~CUdmSocket();
 
 	virtual EUdmSocketType getUdmSocketType() = 0;
@@ -41,9 +41,9 @@ public:
 	virtual bool parseDataMsg(SUdpCtrlMsg* msg, int msgSize, BSLib::Utility::CRealTime& realTime);
 	virtual void tickMsg(BSLib::Utility::CRealTime& realTime);
 
-	UDMSOCKET getUdmSocket() { return m_udmSocketInfor->m_udmID; }
-	EUdmStatus getState() { return m_udmSocketInfor->m_udmStatus; }
-	SUdmSocketInfo* getUdmSocketInfor() { return m_udmSocketInfor; }
+	UDMSOCKET getUdmSocket() { return m_udmSocketInfo->m_udmID; }
+	EUdmStatus getState() { return m_udmSocketInfo->m_udmStatus; }
+	SUdmSocketInfo* getUdmSocketInfo() { return m_udmSocketInfo; }
 	bool canRead();
 
 	void notifyRead();
@@ -54,7 +54,7 @@ protected:
 	
 
 private:
-	SUdmSocketInfo* m_udmSocketInfor;
+	SUdmSocketInfo* m_udmSocketInfo;
 	sockaddr_in m_peerAddr;
 
 	BSLib::Utility::CStream m_readStream;

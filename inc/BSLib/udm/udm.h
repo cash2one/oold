@@ -24,7 +24,7 @@ BSLIB_UDM_API EUdmStatus getsockstate(UDMSOCKET udmSocket);
 
 BSLIB_UDM_API int getlasterror();
 
-//可靠传输,  to do
+//可靠传输,  todo 未实现
 BSLIB_UDM_API int send(UDMSOCKET rudp, const char* buf, int len);
 BSLIB_UDM_API int recv(UDMSOCKET rudp, char* buf, int len);
 

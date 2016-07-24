@@ -40,7 +40,7 @@ public:
 	bool socket(const struct sockaddr* name, int namelen);
 	int sendTo(SUdpCtrlMsg* msg, int msgLen, const struct sockaddr* peerName, int peerNameLen);
 
-	void getAcceptInfor(BSLib::Utility::CEvent*& e, BSLib::Utility::CPtrQueue<CUdmSocket*>*& acceptList);
+	void getAcceptInfo(BSLib::Utility::CEvent*& e, BSLib::Utility::CPtrQueue<CUdmSocket*>*& acceptList);
 	void setAcceptor(bool beginNow) { m_beginAccept = beginNow; }
 	
 	void getLocalAddr(sockaddr* name, int* namelen);

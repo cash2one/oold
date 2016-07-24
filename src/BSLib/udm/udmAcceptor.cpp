@@ -8,8 +8,8 @@ namespace BSLib
 namespace UDM
 {
 
-CUdmAcceptor::CUdmAcceptor(SUdmSocketInfo* udmSocketInfor)
-: CUdmSocket(udmSocketInfor)
+CUdmAcceptor::CUdmAcceptor(SUdmSocketInfo* udmSocketInfo)
+: CUdmSocket(udmSocketInfo)
 , m_acceptEvent(NULL)
 {
 	;
@@ -22,19 +22,19 @@ CUdmAcceptor::~CUdmAcceptor()
 
 int CUdmAcceptor::listen()
 {
-	SUdmSocketInfo* udmSocketInfor = CUdmSocket::getUdmSocketInfor();
-	CUdpThread* udpThread = CUdpThreadMgr::singleton().getUdpThread(udmSocketInfor->m_udpThreadID);
+	SUdmSocketInfo* udmSocketInfo = CUdmSocket::getUdmSocketInfo();
+	CUdpThread* udpThread = CUdpThreadMgr::singleton().getUdpThread(udmSocketInfo->m_udpThreadID);
 	if (udpThread == NULL){
 		return BSLIB_UDM_ERROR;
 	}
 	
-	udpThread->getAcceptInfor(m_acceptEvent, m_acceptList);
+	udpThread->getAcceptInfo(m_acceptEvent, m_acceptList);
 	udpThread->addUdmAcceptor(this);
 	udpThread->setAcceptor(true);
 
 	if (udpThread->isRunning()) {
-		if (udmSocketInfor->m_udmStatus == UDM_STATE_BIND) {
-			udmSocketInfor->m_udmStatus = UDM_STATE_LISTEN;
+		if (udmSocketInfo->m_udmStatus == UDM_STATE_BIND) {
+			udmSocketInfo->m_udmStatus = UDM_STATE_LISTEN;
 			return BSLIB_UDM_OK;
 		}
 		return BSLIB_UDM_ERROR;
@@ -46,7 +46,7 @@ int CUdmAcceptor::listen()
 		udpThread->setAcceptor(false);
 		return BSLIB_UDM_ERROR;
 	}
-	udmSocketInfor->m_udmStatus = UDM_STATE_LISTEN;
+	udmSocketInfo->m_udmStatus = UDM_STATE_LISTEN;
 	return BSLIB_UDM_OK;
 }
 
@@ -66,7 +66,7 @@ UDMSOCKET CUdmAcceptor::accept(struct sockaddr* addr, int* addrlen)
 	if (udmSocket == NULL) {
 		return INVALID_UDMSOCK;
 	}
-	if (CUdmMgr::singleton().udmSocket(udmSocket->getUdmSocketInfor()) == INVALID_UDMSOCK) {
+	if (CUdmMgr::singleton().udmSocket(udmSocket->getUdmSocketInfo()) == INVALID_UDMSOCK) {
 		return INVALID_UDMSOCK;
 	}
 	udmSocket->getPeerName(addr, addrlen);
@@ -75,8 +75,8 @@ UDMSOCKET CUdmAcceptor::accept(struct sockaddr* addr, int* addrlen)
 
 int CUdmAcceptor::close()
 {
-	SUdmSocketInfo* udmSocketInfor = CUdmSocket::getUdmSocketInfor();
-	CUdpThread* udpThread = CUdpThreadMgr::singleton().getUdpThread(udmSocketInfor->m_udpThreadID);
+	SUdmSocketInfo* udmSocketInfo = CUdmSocket::getUdmSocketInfo();
+	CUdpThread* udpThread = CUdpThreadMgr::singleton().getUdpThread(udmSocketInfo->m_udpThreadID);
 	if (udpThread == NULL){
 		return BSLIB_UDM_ERROR;
 	}
@@ -84,7 +84,7 @@ int CUdmAcceptor::close()
 	m_acceptList = NULL;
 	m_acceptEvent = NULL;
 	
-	udmSocketInfor->m_udmStatus = UDM_STATE_NONEXIST;
+	udmSocketInfo->m_udmStatus = UDM_STATE_NONEXIST;
 	return BSLIB_UDM_OK;
 }
 

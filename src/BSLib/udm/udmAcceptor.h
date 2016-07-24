@@ -14,7 +14,7 @@ namespace UDM
 class CUdmAcceptor : public CUdmSocket
 {
 public:
-	CUdmAcceptor(SUdmSocketInfo* udmSocketInfor);
+	CUdmAcceptor(SUdmSocketInfo* udmSocketInfo);
 	virtual ~CUdmAcceptor();
 
 	virtual EUdmSocketType getUdmSocketType() { return UDM_SOCKTYPE_ACCEPTOR; }

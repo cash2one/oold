@@ -76,10 +76,10 @@ INetServer::~INetServer()
 void  INetServer::getNetInfo(SNetInfo& a_netInfo, BSLib::Utility::CRealTime& realTimer)
 {
 	if (m_tcpStubPool != NULL) {
-		m_tcpStubPool->getStubsInfo(a_netInfo.m_tcpStubsInfor);
-		m_tcpStubPool->getFlowInfo(a_netInfo.m_tcpFlowInfor, realTimer);
+		m_tcpStubPool->getStubsInfo(a_netInfo.m_tcpStubsInfo);
+		m_tcpStubPool->getFlowInfo(a_netInfo.m_tcpFlowInfo, realTimer);
 	}	
-	a_netInfo.m_tcpStubsInfor.m_connectTotal = m_tcpCollectCount.getValue();
+	a_netInfo.m_tcpStubsInfo.m_connectTotal = m_tcpCollectCount.getValue();
 }
 
 bool INetServer::_addTcpAccpetor(CSockAddr& acceptorAddr, void* tempData)

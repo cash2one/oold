@@ -52,8 +52,8 @@ struct SNetFlowInfo
 
 struct SNetInfo
 {
-	SNetStubsInfo m_tcpStubsInfor;
-	SNetFlowInfo m_tcpFlowInfor;
+	SNetStubsInfo m_tcpStubsInfo;
+	SNetFlowInfo m_tcpFlowInfo;
 };
 
 class  BSLIB_NETWORK_API INetServer

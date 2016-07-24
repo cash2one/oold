@@ -112,7 +112,7 @@ int CUdpThread::sendTo(SUdpCtrlMsg* msg, int msgLen, const struct sockaddr* peer
 	return UDM_EPOLL_ERROR;
 }
 
-void CUdpThread::getAcceptInfor(BSLib::Utility::CEvent*& e, BSLib::Utility::CPtrQueue<CUdmSocket*>*& acceptList)
+void CUdpThread::getAcceptInfo(BSLib::Utility::CEvent*& e, BSLib::Utility::CPtrQueue<CUdmSocket*>*& acceptList)
 {
 	e = &m_acceptEvent;
 	acceptList = &m_acceptList;
@@ -256,17 +256,17 @@ void CUdpThread::_tickUdpPeer(int group)
 	for (; it != m_groups[group].end();){
 		CUdmSocket* udmSocket = *it;
 		if (udmSocket != NULL) {
-			SUdmSocketInfo* udmSocketInfor = udmSocket->getUdmSocketInfor();
-			if (udmSocketInfor->m_udmStatus == UDM_STATE_NONEXIST) {
+			SUdmSocketInfo* udmSocketInfo = udmSocket->getUdmSocketInfo();
+			if (udmSocketInfo->m_udmStatus == UDM_STATE_NONEXIST) {
 				_delUdpSocket(udmSocket);
-				udmSocketInfor->m_udmStatus = UDM_STATE_DELETE1;
+				udmSocketInfo->m_udmStatus = UDM_STATE_DELETE1;
 			}
-			if (udmSocketInfor->m_udmStatus == UDM_STATE_DELETE2){	
+			if (udmSocketInfo->m_udmStatus == UDM_STATE_DELETE2){	
 				it = m_groups[group].erase(it);
-				udmSocketInfor->m_udmSocketPtr = NULL;
-				udmSocketInfor->m_udmStatus = UDM_STATE_NULL;
-				if (udmSocketInfor->m_udmID == INVALID_SOCKET) {
-					BSLIB_SAFE_DELETE(udmSocketInfor);
+				udmSocketInfo->m_udmSocketPtr = NULL;
+				udmSocketInfo->m_udmStatus = UDM_STATE_NULL;
+				if (udmSocketInfo->m_udmID == INVALID_SOCKET) {
+					BSLIB_SAFE_DELETE(udmSocketInfo);
 				}
 				BSLIB_SAFE_DELETE(udmSocket);
 				continue;
@@ -359,20 +359,20 @@ CUdmSocket* CUdpThread::_createUdpSocket(sockaddr* peerSockAddr)
 	if (!m_beginAccept){
 		return NULL;
 	}
-	SUdmSocketInfo* udmSocketInfor = new SUdmSocketInfo();
-	if (udmSocketInfor == NULL)	{
+	SUdmSocketInfo* udmSocketInfo = new SUdmSocketInfo();
+	if (udmSocketInfo == NULL)	{
 		return NULL;
 	}
-	udmSocketInfor->m_udmID = INVALID_UDMSOCK;
-	udmSocketInfor->m_udmStatus = UDM_STATE_INIT;
-	udmSocketInfor->m_udpThreadID = m_udpThreadID;
-	CUdmStub* udmStub = new CUdmStub(udmSocketInfor, m_realTime);
+	udmSocketInfo->m_udmID = INVALID_UDMSOCK;
+	udmSocketInfo->m_udmStatus = UDM_STATE_INIT;
+	udmSocketInfo->m_udpThreadID = m_udpThreadID;
+	CUdmStub* udmStub = new CUdmStub(udmSocketInfo, m_realTime);
 	if (udmStub == NULL){
-		BSLIB_SAFE_DELETE(udmSocketInfor);
+		BSLIB_SAFE_DELETE(udmSocketInfo);
 		return NULL;
 	}
 	udmStub->setPeerName(peerSockAddr, sizeof(sockaddr));
-	udmSocketInfor->m_udmSocketPtr = udmStub;
+	udmSocketInfo->m_udmSocketPtr = udmStub;
 
 	_addUdpSocket(udmStub);
 

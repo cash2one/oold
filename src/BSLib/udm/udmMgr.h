@@ -22,7 +22,7 @@ public:
 	BSLIB_SINGLETON_DECLARE(CUdmMgr);
 
 	UDMSOCKET udmSocket();
-	UDMSOCKET udmSocket(SUdmSocketInfo* udmSocketInfor);
+	UDMSOCKET udmSocket(SUdmSocketInfo* udmSocketInfo);
 
 	int bind(UDMSOCKET udmID, const struct sockaddr* name, int namelen);
 	int bind(UDMSOCKET udmID, UDMSOCKET existUdmId);
@@ -44,15 +44,15 @@ public:
 	int sendTo(UDMSOCKET udmID, const char* buf, int len);
 	int recvFrom(UDMSOCKET udmID, char* buf, int len);
 
-	SUdmSocketInfo* getUdmSocketInfor(UDMSOCKET udmID);
+	SUdmSocketInfo* getUdmSocketInfo(UDMSOCKET udmID);
 
 private:
 	void _startUp();
 	void _cleanUp();
 
 private:
-	SUdmSocketInfo* m_udpSocketInfor[BSLIB_UDM_SOCKET_MAX];
-	int m_currtUdmSocketInforPos;
+	SUdmSocketInfo* m_udpSocketInfo[BSLIB_UDM_SOCKET_MAX];
+	int m_currtUdmSocketInfoPos;
 	BSLib::Utility::CMutex m_mutex;
 };
 

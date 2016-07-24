@@ -33,12 +33,12 @@ void CNetStubThread::start()
 	BSLib::Utility::CThread::start();
 }
 
-void CNetStubThread::getFlowInfo(SNetFlowInfo& a_infor, BSLib::Utility::CRealTime& a_realTimer)
+void CNetStubThread::getFlowInfo(SNetFlowInfo& a_Info, BSLib::Utility::CRealTime& a_realTimer)
 {
-	a_infor.m_recvBytesCount = m_recvBytesCount;
-	a_infor.m_sendBytesCount = m_sendBytesCount;
-	a_infor.m_recvBytesPerStubMax = m_recvBytesPerSMax;
-	a_infor.m_sendBytesPerStubMax = m_sendBytesPerSMax;
+	a_Info.m_recvBytesCount = m_recvBytesCount;
+	a_Info.m_sendBytesCount = m_sendBytesCount;
+	a_Info.m_recvBytesPerStubMax = m_recvBytesPerSMax;
+	a_Info.m_sendBytesPerStubMax = m_sendBytesPerSMax;
 }
 
 void CNetStubThread::terminate()
@@ -63,7 +63,7 @@ void CNetStubThread::_run()
 			_recyclePeer();		
 		}
 		if (m_threeSecTimer(*m_timerServer.getRealTime())){
-			_updateNetBytesInfor(*m_timerServer.getRealTime());
+			_updateNetBytesInfo(*m_timerServer.getRealTime());
 			_deletePeer();
 		}
 		_wait();
@@ -284,7 +284,7 @@ void CNetStubThread::_deletePeer()
 	}
 }
 
-void CNetStubThread::_updateNetBytesInfor(BSLib::Utility::CRealTime& a_realTimer)
+void CNetStubThread::_updateNetBytesInfo(BSLib::Utility::CRealTime& a_realTimer)
 {
 	m_recvBytesCount = 0;
 	m_sendBytesCount = 0;
@@ -297,17 +297,17 @@ void CNetStubThread::_updateNetBytesInfor(BSLib::Utility::CRealTime& a_realTimer
 		if (netStubCbPtr == NULL) {
 			continue;
 		}
-		SNetStubNetInfor netStubNetInfor;
-		netStubCbPtr->getNetInfo(a_realTimer, netStubNetInfor);
+		SNetStubNetInfo netStubNetInfo;
+		netStubCbPtr->getNetInfo(a_realTimer, netStubNetInfo);
 
-		m_recvBytesCount += netStubNetInfor.m_recvBytesCount ;
-		m_sendBytesCount += netStubNetInfor.m_sendBytesCount ;
+		m_recvBytesCount += netStubNetInfo.m_recvBytesCount ;
+		m_sendBytesCount += netStubNetInfo.m_sendBytesCount ;
 
-		if (m_recvBytesPerSMax < netStubNetInfor.m_recvBytesPerMax) {
-			m_recvBytesPerSMax = netStubNetInfor.m_recvBytesPerMax;
+		if (m_recvBytesPerSMax < netStubNetInfo.m_recvBytesPerMax) {
+			m_recvBytesPerSMax = netStubNetInfo.m_recvBytesPerMax;
 		}
-		if (m_sendBytesPerSMax < netStubNetInfor.m_sendBytesPerMax) {
-			m_sendBytesPerSMax = netStubNetInfor.m_sendBytesPerMax;
+		if (m_sendBytesPerSMax < netStubNetInfo.m_sendBytesPerMax) {
+			m_sendBytesPerSMax = netStubNetInfo.m_sendBytesPerMax;
 		}
 	}
 	std::list<CNetStubCbPtr>::iterator it_recycle = m_recycleList.begin();
@@ -316,17 +316,17 @@ void CNetStubThread::_updateNetBytesInfor(BSLib::Utility::CRealTime& a_realTimer
 		if (netStubCbPtr == NULL) {
 			continue;
 		}
-		SNetStubNetInfor netStubNetInfor;
-		netStubCbPtr->getNetInfo(a_realTimer, netStubNetInfor);
+		SNetStubNetInfo netStubNetInfo;
+		netStubCbPtr->getNetInfo(a_realTimer, netStubNetInfo);
 
-		m_recvBytesCount += netStubNetInfor.m_recvBytesCount ;
-		m_sendBytesCount += netStubNetInfor.m_sendBytesCount ;
+		m_recvBytesCount += netStubNetInfo.m_recvBytesCount ;
+		m_sendBytesCount += netStubNetInfo.m_sendBytesCount ;
 
-		if (m_recvBytesPerSMax < netStubNetInfor.m_recvBytesPerMax) {
-			m_recvBytesPerSMax = netStubNetInfor.m_recvBytesPerMax;
+		if (m_recvBytesPerSMax < netStubNetInfo.m_recvBytesPerMax) {
+			m_recvBytesPerSMax = netStubNetInfo.m_recvBytesPerMax;
 		}
-		if (m_sendBytesPerSMax < netStubNetInfor.m_sendBytesPerMax) {
-			m_sendBytesPerSMax = netStubNetInfor.m_sendBytesPerMax;
+		if (m_sendBytesPerSMax < netStubNetInfo.m_sendBytesPerMax) {
+			m_sendBytesPerSMax = netStubNetInfo.m_sendBytesPerMax;
 		}
 	}
 	std::list<CNetStubCbPtr>::iterator it_verify =  m_verifyList.begin();
@@ -335,17 +335,17 @@ void CNetStubThread::_updateNetBytesInfor(BSLib::Utility::CRealTime& a_realTimer
 		if (netStubCbPtr == NULL) {
 			continue;
 		}
-		SNetStubNetInfor netStubNetInfor;
-		netStubCbPtr->getNetInfo(a_realTimer, netStubNetInfor);
+		SNetStubNetInfo netStubNetInfo;
+		netStubCbPtr->getNetInfo(a_realTimer, netStubNetInfo);
 
-		m_recvBytesCount += netStubNetInfor.m_recvBytesCount ;
-		m_sendBytesCount += netStubNetInfor.m_sendBytesCount ;
+		m_recvBytesCount += netStubNetInfo.m_recvBytesCount ;
+		m_sendBytesCount += netStubNetInfo.m_sendBytesCount ;
 
-		if (m_recvBytesPerSMax < netStubNetInfor.m_recvBytesPerMax) {
-			m_recvBytesPerSMax = netStubNetInfor.m_recvBytesPerMax;
+		if (m_recvBytesPerSMax < netStubNetInfo.m_recvBytesPerMax) {
+			m_recvBytesPerSMax = netStubNetInfo.m_recvBytesPerMax;
 		}
-		if (m_sendBytesPerSMax < netStubNetInfor.m_sendBytesPerMax) {
-			m_sendBytesPerSMax = netStubNetInfor.m_sendBytesPerMax;
+		if (m_sendBytesPerSMax < netStubNetInfo.m_sendBytesPerMax) {
+			m_sendBytesPerSMax = netStubNetInfo.m_sendBytesPerMax;
 		}
 	}
 	std::list<CNetStubCbPtr>::iterator it_sync =  m_syncList.begin();
@@ -354,17 +354,17 @@ void CNetStubThread::_updateNetBytesInfor(BSLib::Utility::CRealTime& a_realTimer
 		if (netStubCbPtr == NULL) {
 			continue;
 		}
-		SNetStubNetInfor netStubNetInfor;
-		netStubCbPtr->getNetInfo(a_realTimer, netStubNetInfor);
+		SNetStubNetInfo netStubNetInfo;
+		netStubCbPtr->getNetInfo(a_realTimer, netStubNetInfo);
 
-		m_recvBytesCount += netStubNetInfor.m_recvBytesCount ;
-		m_sendBytesCount += netStubNetInfor.m_sendBytesCount ;
+		m_recvBytesCount += netStubNetInfo.m_recvBytesCount ;
+		m_sendBytesCount += netStubNetInfo.m_sendBytesCount ;
 
-		if (m_recvBytesPerSMax < netStubNetInfor.m_recvBytesPerMax) {
-			m_recvBytesPerSMax = netStubNetInfor.m_recvBytesPerMax;
+		if (m_recvBytesPerSMax < netStubNetInfo.m_recvBytesPerMax) {
+			m_recvBytesPerSMax = netStubNetInfo.m_recvBytesPerMax;
 		}
-		if (m_sendBytesPerSMax < netStubNetInfor.m_sendBytesPerMax) {
-			m_sendBytesPerSMax = netStubNetInfor.m_sendBytesPerMax;
+		if (m_sendBytesPerSMax < netStubNetInfo.m_sendBytesPerMax) {
+			m_sendBytesPerSMax = netStubNetInfo.m_sendBytesPerMax;
 		}
 	}
 	std::list<CNetStubCbPtr>::iterator it_okay =  m_okayList.begin();
@@ -373,17 +373,17 @@ void CNetStubThread::_updateNetBytesInfor(BSLib::Utility::CRealTime& a_realTimer
 		if (netStubCbPtr == NULL) {
 			continue;
 		}
-		SNetStubNetInfor netStubNetInfor;
-		netStubCbPtr->getNetInfo(a_realTimer, netStubNetInfor);
+		SNetStubNetInfo netStubNetInfo;
+		netStubCbPtr->getNetInfo(a_realTimer, netStubNetInfo);
 
-		m_recvBytesCount += netStubNetInfor.m_recvBytesCount ;
-		m_sendBytesCount += netStubNetInfor.m_sendBytesCount ;
+		m_recvBytesCount += netStubNetInfo.m_recvBytesCount ;
+		m_sendBytesCount += netStubNetInfo.m_sendBytesCount ;
 
-		if (m_recvBytesPerSMax < netStubNetInfor.m_recvBytesPerMax) {
-			m_recvBytesPerSMax = netStubNetInfor.m_recvBytesPerMax;
+		if (m_recvBytesPerSMax < netStubNetInfo.m_recvBytesPerMax) {
+			m_recvBytesPerSMax = netStubNetInfo.m_recvBytesPerMax;
 		}
-		if (m_sendBytesPerSMax < netStubNetInfor.m_sendBytesPerMax) {
-			m_sendBytesPerSMax = netStubNetInfor.m_sendBytesPerMax;
+		if (m_sendBytesPerSMax < netStubNetInfo.m_sendBytesPerMax) {
+			m_sendBytesPerSMax = netStubNetInfo.m_sendBytesPerMax;
 		}
 	}
 }

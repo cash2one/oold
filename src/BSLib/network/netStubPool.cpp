@@ -91,64 +91,64 @@ uint32 CNetStubPool::getStubCount()
 	return count;
 }
 
-void CNetStubPool::getStubsInfo(SNetStubsInfo& a_infor)
+void CNetStubPool::getStubsInfo(SNetStubsInfo& a_Info)
 {
-	a_infor.m_stubCount = 0;
-	a_infor.m_stubOkayCount = 0;
-	a_infor.m_stubVerifyCount = 0;
+	a_Info.m_stubCount = 0;
+	a_Info.m_stubOkayCount = 0;
+	a_Info.m_stubVerifyCount = 0;
 	for (uint32 i=0;  i<m_threadArray.getSize(); ++i){
 		BSLib::Utility::CThreadPtr& netThreadPtr = m_threadArray[i];
 		CNetStubThread* netStubThread = (CNetStubThread*)netThreadPtr;
 		if (netStubThread != NULL) {
-			a_infor.m_stubCount += netStubThread->getStubCount();
-			a_infor.m_stubOkayCount += netStubThread->getOkayStubCount();
-			a_infor.m_stubVerifyCount += netStubThread->getVerifyStubCount();
+			a_Info.m_stubCount += netStubThread->getStubCount();
+			a_Info.m_stubOkayCount += netStubThread->getOkayStubCount();
+			a_Info.m_stubVerifyCount += netStubThread->getVerifyStubCount();
 		}
 	}
 }
 
-void CNetStubPool::getFlowInfo(SNetFlowInfo& a_infor, BSLib::Utility::CRealTime& realTimer)
+void CNetStubPool::getFlowInfo(SNetFlowInfo& a_Info, BSLib::Utility::CRealTime& realTimer)
 {
-	a_infor.m_recvBytesCount = 0;
-	a_infor.m_sendBytesCount = 0;
-	a_infor.m_recvBytesPerMax = 0;
-	a_infor.m_sendBytesPerMax = 0;
-	a_infor.m_recvBytesPerStubMax = 0;
-	a_infor.m_sendBytesPerStubMax = 0;
+	a_Info.m_recvBytesCount = 0;
+	a_Info.m_sendBytesCount = 0;
+	a_Info.m_recvBytesPerMax = 0;
+	a_Info.m_sendBytesPerMax = 0;
+	a_Info.m_recvBytesPerStubMax = 0;
+	a_Info.m_sendBytesPerStubMax = 0;
 
 	for (uint32 i=0;  i<m_threadArray.getSize(); ++i){
 		BSLib::Utility::CThreadPtr& netThreadPtr = m_threadArray[i];
 		CNetStubThread* netStubThread = (CNetStubThread*)netThreadPtr;
 		if (netStubThread != NULL) {
-			SNetFlowInfo infor;
-			netStubThread->getFlowInfo(infor, realTimer);
-			a_infor.m_recvBytesCount += infor.m_recvBytesCount;
-			a_infor.m_sendBytesCount += infor.m_sendBytesCount;
-			if (a_infor.m_recvBytesPerStubMax < infor.m_recvBytesPerStubMax) {
-				a_infor.m_recvBytesPerStubMax = infor.m_recvBytesPerStubMax;
+			SNetFlowInfo Info;
+			netStubThread->getFlowInfo(Info, realTimer);
+			a_Info.m_recvBytesCount += Info.m_recvBytesCount;
+			a_Info.m_sendBytesCount += Info.m_sendBytesCount;
+			if (a_Info.m_recvBytesPerStubMax < Info.m_recvBytesPerStubMax) {
+				a_Info.m_recvBytesPerStubMax = Info.m_recvBytesPerStubMax;
 			}
-			if (a_infor.m_sendBytesPerStubMax < infor.m_sendBytesPerStubMax) {
-				a_infor.m_sendBytesPerStubMax = infor.m_sendBytesPerStubMax;
+			if (a_Info.m_sendBytesPerStubMax < Info.m_sendBytesPerStubMax) {
+				a_Info.m_sendBytesPerStubMax = Info.m_sendBytesPerStubMax;
 			}
 		}
 	}
 	BSLib::int64 seconds = realTimer.seconds();
 	if (m_seconds <= 0) {
 		m_seconds = seconds;
-		m_recvBytesCount = a_infor.m_recvBytesCount;
-		m_sendBytesCount = a_infor.m_sendBytesCount;
+		m_recvBytesCount = a_Info.m_recvBytesCount;
+		m_sendBytesCount = a_Info.m_sendBytesCount;
 		return ;
 	}
 	if (m_seconds == seconds) {
-		a_infor.m_recvBytesPerMax = (uint32)(a_infor.m_recvBytesCount - m_recvBytesCount);
-		a_infor.m_sendBytesPerMax = (uint32)(a_infor.m_sendBytesCount - m_sendBytesCount);
+		a_Info.m_recvBytesPerMax = (uint32)(a_Info.m_recvBytesCount - m_recvBytesCount);
+		a_Info.m_sendBytesPerMax = (uint32)(a_Info.m_sendBytesCount - m_sendBytesCount);
 		return ;
 	}
 	m_seconds = seconds;
-	a_infor.m_recvBytesPerMax = (uint32)(a_infor.m_recvBytesCount - m_recvBytesCount);
-	a_infor.m_sendBytesPerMax = (uint32)(a_infor.m_sendBytesCount - m_sendBytesCount);
-	m_recvBytesCount = a_infor.m_recvBytesCount;
-	m_sendBytesCount = a_infor.m_sendBytesCount;
+	a_Info.m_recvBytesPerMax = (uint32)(a_Info.m_recvBytesCount - m_recvBytesCount);
+	a_Info.m_sendBytesPerMax = (uint32)(a_Info.m_sendBytesCount - m_sendBytesCount);
+	m_recvBytesCount = a_Info.m_recvBytesCount;
+	m_sendBytesCount = a_Info.m_sendBytesCount;
 }
 
 
