@@ -121,7 +121,7 @@ private:
 	BSLib::Utility::CFunction<void, BSLib::Utility::CScriptObject*>* m_enterState;
 	BSLib::Utility::CFunction<void, BSLib::Utility::CScriptObject*>* m_executeState;
 	BSLib::Utility::CFunction<void, BSLib::Utility::CScriptObject*>* m_leaveState;
-	SFSMPropertiesFunction* m_properties;
+	SFSMPropertiesFunction* m_properties; // multimap
 
 	std::vector<SFSMCondition*> m_jumpList;
 

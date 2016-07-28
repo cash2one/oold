@@ -637,10 +637,13 @@ IScriptFunctionPtr CScriptEnvironment::parseFunction(const std::string& a_textFu
 	if (a_textFunction.size() <= 0) {
 		return IScriptFunctionPtr(NULL);
 	}
+
 	IScriptFunctionPtr scriptFunctionPtr = NULL;
 	if (a_textFunction[0] == '$'){
+        // $变量
 		BSLib::uint32 index = 0;
 		std::string name = a_textFunction.substr(1, a_textFunction.size()-1);
+        // 查询变量名
 		if (!_getVariableIndex(name, &index)) {
 			return IScriptFunctionPtr(NULL);
 		}
@@ -651,8 +654,9 @@ IScriptFunctionPtr CScriptEnvironment::parseFunction(const std::string& a_textFu
 		scriptVariable->m_scriptVariableIndex = index;
 		scriptFunctionPtr = scriptVariable;
 		return scriptFunctionPtr;
-		//变量
+		
 	} else if (a_textFunction[0] == '"' || a_textFunction[0] == '\''){
+        // " 或者 ' 开头; 字符常量
 		size_t end = a_textFunction.size();
 		if (end <= 1 || a_textFunction[end-1] != a_textFunction[0]){
 			return IScriptFunctionPtr(NULL);
@@ -664,10 +668,10 @@ IScriptFunctionPtr CScriptEnvironment::parseFunction(const std::string& a_textFu
 		}
 		scriptConstant->m_scriptData.setString(strValue);
 		scriptFunctionPtr = scriptConstant;
-		return scriptFunctionPtr;
-		//字符常量
+		return scriptFunctionPtr; 
+		
 	} else if (a_textFunction[0] >= '0' && a_textFunction[0] <= '9'){
-		//数字常量
+        //数字常量
 		BSLib::int64 dataValue = BSLib::Utility::CConvert::toInt64(a_textFunction);
 		CScriptConstant* scriptConstant = new CScriptConstant();
 		if (scriptConstant == NULL)	{
@@ -675,7 +679,7 @@ IScriptFunctionPtr CScriptEnvironment::parseFunction(const std::string& a_textFu
 		}
 		scriptConstant->m_scriptData.setInt64(dataValue);
 		scriptFunctionPtr = scriptConstant;
-		return scriptFunctionPtr;
+		return scriptFunctionPtr;  
 	} 
 	//函数
 	BSLib::Utility::CStringA functionName;
@@ -690,6 +694,7 @@ IScriptFunctionPtr CScriptEnvironment::parseFunction(const std::string& a_textFu
 	}
 	functionName.trim();
 	BSLib::uint32 functionIndex = 0;
+    // 获取函数名
 	if (!_getFunctionIndex(functionName, &functionIndex)) {
 		return IScriptFunctionPtr(NULL);
 	}
@@ -734,7 +739,7 @@ IScriptFunctionPtr CScriptEnvironment::parseFunction(const std::string& a_textFu
 		return scriptFunctionPtr;
 	}
 	for (BSLib::uint32 i=0; i<parameterList.size(); ++i) {
-		IScriptFunctionPtr paramenterPtr = parseFunction(parameterList[i]);
+		IScriptFunctionPtr paramenterPtr = parseFunction(parameterList[i]); // 递归
 		if (paramenterPtr == NULL)	{
 			return IScriptFunctionPtr(NULL);
 		}
@@ -939,6 +944,7 @@ IScriptPtr CScriptEnvironment::_parseLogicText(const std::string& a_textExpressi
 	return scriptPtr;
 }
 
+// 解析关系表达式 XX R YY
 IScriptPtr CScriptEnvironment::_parseRelationText(const std::string& a_textExpression)
 {
 	std::vector<BSLib::Utility::CStringA> subExpressionList;
@@ -975,6 +981,7 @@ IScriptPtr CScriptEnvironment::_parseRelationText(const std::string& a_textExpre
 		return IScriptPtr(NULL);
 	}
 	
+    // XX R YY
 	IScriptFunctionPtr firstFunction = parseFunction(subExpressionList[0]);
 	IScriptFunctionPtr secondFunction = parseFunction(subExpressionList[2]);
 	if (firstFunction == NULL){
