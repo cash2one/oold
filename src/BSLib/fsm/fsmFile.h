@@ -16,7 +16,7 @@ namespace FSM
 
 //////////////////////////////////////////////////////////////////////////
 
-struct SFSMConditionInfor
+struct SFSMConditionInfo
 {
 	std::string m_fromStateName;
 	std::string m_toStateName;
@@ -24,7 +24,7 @@ struct SFSMConditionInfor
 	BSLib::Utility::CProperties m_properties;
 };
 
-struct SFSMStateInfor
+struct SFSMStateInfo
 {
 
 	std::string m_stateType;
@@ -33,18 +33,18 @@ struct SFSMStateInfor
 	BSLib::Utility::CProperties m_properties;
 };
 
-struct SFSMInfor
+struct SFSMInfo
 {
 	FSMTPID m_fsmTPID;
 	std::string m_fsmName;
-	std::vector<SFSMStateInfor*> m_states;
-	std::vector<SFSMConditionInfor*> m_conditions; 
+	std::vector<SFSMStateInfo*> m_states;
+	std::vector<SFSMConditionInfo*> m_conditions; 
 	BSLib::Utility::CProperties m_properties;
 
-	~SFSMInfor()
+	~SFSMInfo()
 	{
 		for (BSLib::uint32 i_state=0; i_state<m_states.size(); ++i_state) {
-			SFSMStateInfor* stateInfor = m_states[i_state];
+			SFSMStateInfo* stateInfor = m_states[i_state];
 			if (stateInfor == NULL) {
 				continue;
 			}
@@ -53,7 +53,7 @@ struct SFSMInfor
 		m_states.clear();
 
 		for (BSLib::uint32 i_condition=0; i_condition<m_conditions.size(); ++i_condition) {
-			SFSMConditionInfor* conditionInfor = m_conditions[i_condition];
+			SFSMConditionInfo* conditionInfor = m_conditions[i_condition];
 			if (conditionInfor == NULL) {
 				continue;
 			}
@@ -76,18 +76,18 @@ public:
 
 	void clear();
 
-	SFSMInfor* getFsmInfor(const std::string& a_fsmName);
-	SFSMInfor* getFsmInfor(FSMTPID& a_fsmTPID);
+	SFSMInfo* getFsmInfo(const std::string& a_fsmName);
+	SFSMInfo* getFsmInfo(FSMTPID& a_fsmTPID);
 
 	BSLib::Utility::CProperties* getFsmsProperties() { return &m_fsmsProperties; }
 
 private:
-	SFSMStateInfor* _readFSMStateNode(BSLib::Utility::CXmlFile* a_xmlFile, BSLib::Utility::HXmlNode& a_stateNode);
-	SFSMConditionInfor* _readFSMConditionNode(BSLib::Utility::CXmlFile* a_xmlFile, BSLib::Utility::HXmlNode& a_conditionNode);
+	SFSMStateInfo* _readFSMStateNode(BSLib::Utility::CXmlFile* a_xmlFile, BSLib::Utility::HXmlNode& a_stateNode);
+	SFSMConditionInfo* _readFSMConditionNode(BSLib::Utility::CXmlFile* a_xmlFile, BSLib::Utility::HXmlNode& a_conditionNode);
 
 private:
-	BSLib::Utility::CHashMap<std::string, SFSMInfor*> m_fsmInforsByName;
-	BSLib::Utility::CHashMap<FSMTPID, SFSMInfor*> m_fsmInforsByTPID;
+	BSLib::Utility::CHashMap<std::string, SFSMInfo*> m_fsmInforsByName;
+	BSLib::Utility::CHashMap<FSMTPID, SFSMInfo*> m_fsmInforsByTPID;
 
 	BSLib::Utility::CProperties m_fsmsProperties;
 };

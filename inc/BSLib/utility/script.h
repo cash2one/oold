@@ -104,10 +104,13 @@ typedef CPointer<IScriptFunctionList> IScriptFunctionListPtr;
 
 // IScript = 表达式
 // 表达式 = 关系表达式 | 逻辑表达式
+
 // 逻辑表达式 = [逻辑符号 表达式, 表达式, ……, 表达式]
 // 逻辑符号 = AND | OR | NOTAND | NOTOR
-// 关系表达式 = 参数 关系符号 参数
+
+// 关系表达式 = 参数 关系符号 参数  , 其结果为逻辑值 true or false
 // 关系符号 = G | L | E | GE | LE | NE
+
 // 参数 = 常量 | 变量 | 函数
 // 常量 = 数字 | "字符串"
 // 变量 = $变量名

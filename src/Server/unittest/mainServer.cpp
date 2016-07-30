@@ -47,6 +47,10 @@ int CMainServer::main()
     SceneScript srpt;
     CScriptData data;
     it->execute(&srpt, &data);
+
+    auto exp = env.parseExpression("$Player.exp G 1");
+    bool res = false;
+    exp->execute(&srpt, res);
 	return CMainServer::singleton()._IThread_main();
 }
 

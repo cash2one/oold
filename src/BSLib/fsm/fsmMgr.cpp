@@ -131,7 +131,7 @@ bool CFSMMgr::createFSM(const std::string& a_fsmName, BSLib::Utility::CScriptObj
 	if (m_fsmFile == NULL) {
 		return false;
 	}
-	SFSMInfor* fsmInfor = m_fsmFile->getFsmInfor(a_fsmName);
+	SFSMInfo* fsmInfor = m_fsmFile->getFsmInfo(a_fsmName);
 	if (fsmInfor == NULL) {
 		BSLIB_LOG_ERROR(ETT_BSLIB_FSM, "获取FSM失败[name=%s]", a_fsmName.c_str());
 		return false;
@@ -156,7 +156,7 @@ bool CFSMMgr::createFSM(FSMTPID a_fsmTPID, BSLib::Utility::CScriptObject* a_obje
 	if (m_fsmFile == NULL) {
 		return false;
 	}
-	SFSMInfor* fsmInfor = m_fsmFile->getFsmInfor(a_fsmTPID);
+	SFSMInfo* fsmInfor = m_fsmFile->getFsmInfo(a_fsmTPID);
 	if (fsmInfor == NULL) {
 		BSLIB_LOG_ERROR(ETT_BSLIB_FSM, "获取FSM失败[id=%d]", a_fsmTPID);
 		return false;
@@ -285,7 +285,7 @@ CFSM* CFSMMgr::_createFSM(BSLib::Utility::CScriptObject* a_object, const std::st
 	return fsm;
 }
 
-bool CFSMMgr::_createFSM(SFSMInfor* a_fsmInfor, BSLib::Utility::CScriptObject* a_object, CFSM** a_fsm)
+bool CFSMMgr::_createFSM(SFSMInfo* a_fsmInfor, BSLib::Utility::CScriptObject* a_object, CFSM** a_fsm)
 {
 	FSMID fsmID = m_uniqueID.allocateID();
 	if (fsmID == INVALID_FSMID) {
@@ -306,7 +306,7 @@ bool CFSMMgr::_createFSM(SFSMInfor* a_fsmInfor, BSLib::Utility::CScriptObject* a
 
 	//创建FSMState
 	for (BSLib::uint32 i_state=0; i_state < a_fsmInfor->m_states.size(); ++i_state) {
-		SFSMStateInfor* stateInfor = a_fsmInfor->m_states[i_state];
+		SFSMStateInfo* stateInfor = a_fsmInfor->m_states[i_state];
 		if (stateInfor == NULL) {
 			continue;
 		}
@@ -343,7 +343,7 @@ bool CFSMMgr::_createFSM(SFSMInfor* a_fsmInfor, BSLib::Utility::CScriptObject* a
 	}
 	//创建FSMCondition
 	for (BSLib::uint32 i_condition=0; i_condition<a_fsmInfor->m_conditions.size(); ++i_condition) {
-		SFSMConditionInfor* conditionInfor = a_fsmInfor->m_conditions[i_condition];
+		SFSMConditionInfo* conditionInfor = a_fsmInfor->m_conditions[i_condition];
 		if (conditionInfor == NULL) {
 			continue;
 		}

@@ -12,22 +12,28 @@ namespace FSM
 {
 
 class CFSMFile;
-struct SFSMInfor;
+struct SFSMInfo;
 
 template<typename T>
-SFSMState* createFSMState(BSLib::Utility::CScriptObject* a_object, const std::string& a_stateName, BSLib::Utility::CProperties& a_properties, CFSM* a_fsm)
+SFSMState* createFSMState(BSLib::Utility::CScriptObject* a_object, const std::string& a_stateName,
+    BSLib::Utility::CProperties& a_properties, CFSM* a_fsm)
 {
 	return new T();
 }
 
 template<typename T>
-SFSMCondition* createFSMCondition(BSLib::Utility::CScriptObject* a_object, const std::string& a_conditionName, BSLib::Utility::CProperties& a_properties, CFSM* a_fsm)
+SFSMCondition* createFSMCondition(BSLib::Utility::CScriptObject* a_object, const std::string& a_conditionName,
+    BSLib::Utility::CProperties& a_properties, CFSM* a_fsm)
 {
 	return new T();
 }
 
-typedef BSLib::Utility::CFunction<SFSMState*, BSLib::Utility::CScriptObject*, const std::string&, BSLib::Utility::CProperties&, CFSM*> FSMStateFunction;
-typedef BSLib::Utility::CFunction<SFSMCondition*, BSLib::Utility::CScriptObject*, const std::string&, BSLib::Utility::CProperties&, CFSM*> FSMConditionFunction;
+typedef BSLib::Utility::CFunction<SFSMState*, BSLib::Utility::CScriptObject*, const std::string&,
+    BSLib::Utility::CProperties&, CFSM*> FSMStateFunction;
+
+typedef BSLib::Utility::CFunction<SFSMCondition*, BSLib::Utility::CScriptObject*,
+    const std::string&, BSLib::Utility::CProperties&, CFSM*> FSMConditionFunction;
+
 typedef BSLib::Utility::CFunction<CFSM*, BSLib::Utility::CScriptObject*, const std::string&> FSMFunction;
 
 class CFSMBase : public CFSM
@@ -49,7 +55,8 @@ private:
 	std::vector<SFSMCondition*> m_fsmConditionList;
 };
 
-class CFSMMgr : public BSLib::Utility::CUniqueIDMgr<FSMID>
+class CFSMMgr 
+    : public BSLib::Utility::CUniqueIDMgr<FSMID>
 {
 public:
 	CFSMMgr();
@@ -73,26 +80,32 @@ public:
 	void removeFSM(CFSM** a_fsm);
 
 	// 设置创建FSM State函数
-	void registerCreateFSMStateFun(const std::string& a_name, SFSMState*(*a_fun)(BSLib::Utility::CScriptObject*, const std::string&, BSLib::Utility::CProperties&, CFSM*));
+	void registerCreateFSMStateFun(const std::string& a_name, 
+        SFSMState*(*a_fun)(BSLib::Utility::CScriptObject*, const std::string&, BSLib::Utility::CProperties&, CFSM*));
 
 	void registerCreateFSMStateFun(const std::string& a_name, FSMStateFunction& a_fun);
 
 	template<class NAME>
-	void registerCreateFSMStateFun(const std::string& a_name, SFSMState*(NAME::*a_fun)(BSLib::Utility::CScriptObject*, const std::string&, BSLib::Utility::CProperties&, CFSM*), NAME* a_object)
+	void registerCreateFSMStateFun(const std::string& a_name, 
+        SFSMState*(NAME::*a_fun)(BSLib::Utility::CScriptObject*, const std::string&, BSLib::Utility::CProperties&, CFSM*), NAME* a_object)
 	{
-		BSLib::Utility::CFunctionObject<SFSMState*, NAME, BSLib::Utility::CScriptObject*, const std::string&, BSLib::Utility::CProperties&, CFSM*> fun(a_fun, a_object);
+		BSLib::Utility::CFunctionObject<SFSMState*, NAME, BSLib::Utility::CScriptObject*,
+            const std::string&, BSLib::Utility::CProperties&, CFSM*> fun(a_fun, a_object);
 		registerCreateFSMStateFun(a_name, fun);
 	}
 
 	//设置FSM Condition函数
-	void registerCreateFSMConditionFun(const std::string& a_name, SFSMCondition*(*a_fun)(BSLib::Utility::CScriptObject*, const std::string&, BSLib::Utility::CProperties&, CFSM*));
+	void registerCreateFSMConditionFun(const std::string& a_name, SFSMCondition*(*a_fun)(BSLib::Utility::CScriptObject*,
+        const std::string&, BSLib::Utility::CProperties&, CFSM*));
 
 	void registerCreateFSMConditionFun(const std::string& a_name, FSMConditionFunction& a_fun);
 
 	template<class NAME>
-	void registerCreateFSMConditionFun(const std::string& a_name, SFSMCondition*(NAME::*a_fun)(BSLib::Utility::CScriptObject*, const std::string&, BSLib::Utility::CProperties&, CFSM*), NAME* a_object)
+	void registerCreateFSMConditionFun(const std::string& a_name, SFSMCondition*(NAME::*a_fun)(BSLib::Utility::CScriptObject*,
+        const std::string&, BSLib::Utility::CProperties&, CFSM*), NAME* a_object)
 	{
-		BSLib::Utility::CFunctionObject<SFSMCondition*, NAME, BSLib::Utility::CScriptObject*, const std::string&, BSLib::Utility::CProperties&, CFSM*> fun(a_fun, a_object);
+		BSLib::Utility::CFunctionObject<SFSMCondition*, NAME, BSLib::Utility::CScriptObject*, const std::string&,
+            BSLib::Utility::CProperties&, CFSM*> fun(a_fun, a_object);
 		registerCreateFSMConditionFun(a_name, fun);
 	}
 
@@ -115,7 +128,7 @@ protected:
 	virtual CFSM* _createFSM(BSLib::Utility::CScriptObject* a_object, const std::string& a_fsmName);
 
 private:
-	bool _createFSM(SFSMInfor* a_fsmInfor, BSLib::Utility::CScriptObject* a_object, CFSM** a_fsm);
+	bool _createFSM(SFSMInfo* a_fsmInfor, BSLib::Utility::CScriptObject* a_object, CFSM** a_fsm);
 	FSMStateFunction* _getFsmStateFun(const std::string& a_fsmStateName);
 
 	FSMConditionFunction* _getFsmConditionFun(const std::string& a_fsmConditionName);

@@ -91,7 +91,7 @@ bool CFSMFile::loadFSMFile(const std::string& a_fsmFile)
 
 bool CFSMFile::loadFSMNode(BSLib::Utility::CXmlFile* a_xmlFile, BSLib::Utility::HXmlNode& a_fsmNode)
 {
-	SFSMInfor* fsmInfor = new SFSMInfor();
+	SFSMInfo* fsmInfor = new SFSMInfo();
 	if (fsmInfor == NULL) {
 		return false;
 	}
@@ -152,7 +152,7 @@ bool CFSMFile::loadFSMNode(BSLib::Utility::CXmlFile* a_xmlFile, BSLib::Utility::
 			return NULL;
 		}
 		if (nodeName == "state") {
-			SFSMStateInfor* btNodeInfor = _readFSMStateNode(a_xmlFile, childreNode);
+			SFSMStateInfo* btNodeInfor = _readFSMStateNode(a_xmlFile, childreNode);
 			if (btNodeInfor == NULL) {
 				BSLIB_LOG_ERROR(ETT_BSLIB_BTREE, "获取fsm子节点state失败");
 				BSLIB_SAFE_DELETE(fsmInfor);
@@ -160,7 +160,7 @@ bool CFSMFile::loadFSMNode(BSLib::Utility::CXmlFile* a_xmlFile, BSLib::Utility::
 			}
 			fsmInfor->m_states.push_back(btNodeInfor);
 		} else if (nodeName == "jump") {
-			SFSMConditionInfor* btNodeInfor = _readFSMConditionNode(a_xmlFile, childreNode);
+			SFSMConditionInfo* btNodeInfor = _readFSMConditionNode(a_xmlFile, childreNode);
 			if (btNodeInfor == NULL) {
 				BSLIB_LOG_ERROR(ETT_BSLIB_BTREE, "获取fsm子节点jump失败");
 				BSLIB_SAFE_DELETE(fsmInfor);
@@ -177,9 +177,9 @@ bool CFSMFile::loadFSMNode(BSLib::Utility::CXmlFile* a_xmlFile, BSLib::Utility::
 
 void CFSMFile::clear()
 {
-	BSLib::Utility::CHashMap<std::string, SFSMInfor*>::iterator it_fsmInfor = m_fsmInforsByName.begin();
+	BSLib::Utility::CHashMap<std::string, SFSMInfo*>::iterator it_fsmInfor = m_fsmInforsByName.begin();
 	for (; it_fsmInfor != m_fsmInforsByName.end(); ++it_fsmInfor) {
-		SFSMInfor* fsmInfor = it_fsmInfor->second;
+		SFSMInfo* fsmInfor = it_fsmInfor->second;
 		if (fsmInfor != NULL) {
 			BSLIB_SAFE_DELETE(fsmInfor);
 		}
@@ -188,27 +188,27 @@ void CFSMFile::clear()
 	m_fsmInforsByTPID.clear();
 }
 
-SFSMInfor* CFSMFile::getFsmInfor(const std::string& a_fsmName)
+SFSMInfo* CFSMFile::getFsmInfo(const std::string& a_fsmName)
 {
-	BSLib::Utility::CHashMap<std::string, SFSMInfor*>::iterator it = m_fsmInforsByName.find(a_fsmName);
+	BSLib::Utility::CHashMap<std::string, SFSMInfo*>::iterator it = m_fsmInforsByName.find(a_fsmName);
 	if (it == m_fsmInforsByName.end()) {
 		return NULL;
 	}
 	return it->second;
 }
 
-SFSMInfor* CFSMFile::getFsmInfor(FSMTPID& a_fsmTPID)
+SFSMInfo* CFSMFile::getFsmInfo(FSMTPID& a_fsmTPID)
 {
-	BSLib::Utility::CHashMap<FSMTPID, SFSMInfor*>::iterator it = m_fsmInforsByTPID.find(a_fsmTPID);
+	BSLib::Utility::CHashMap<FSMTPID, SFSMInfo*>::iterator it = m_fsmInforsByTPID.find(a_fsmTPID);
 	if (it == m_fsmInforsByTPID.end()) {
 		return NULL;
 	}
 	return it->second;
 }
 
-SFSMStateInfor* CFSMFile::_readFSMStateNode(BSLib::Utility::CXmlFile* a_xmlFile, BSLib::Utility::HXmlNode& a_stateNode)
+SFSMStateInfo* CFSMFile::_readFSMStateNode(BSLib::Utility::CXmlFile* a_xmlFile, BSLib::Utility::HXmlNode& a_stateNode)
 {
-	SFSMStateInfor* stateInfor = new SFSMStateInfor();
+	SFSMStateInfo* stateInfor = new SFSMStateInfo();
 	if (stateInfor == NULL) {
 		return NULL;
 	}
@@ -254,9 +254,9 @@ SFSMStateInfor* CFSMFile::_readFSMStateNode(BSLib::Utility::CXmlFile* a_xmlFile,
 	return stateInfor;
 }
 
-SFSMConditionInfor* CFSMFile::_readFSMConditionNode(BSLib::Utility::CXmlFile* a_xmlFile, BSLib::Utility::HXmlNode& a_conditionNode)
+SFSMConditionInfo* CFSMFile::_readFSMConditionNode(BSLib::Utility::CXmlFile* a_xmlFile, BSLib::Utility::HXmlNode& a_conditionNode)
 {
-	SFSMConditionInfor* conditionInfor = new SFSMConditionInfor();
+	SFSMConditionInfo* conditionInfor = new SFSMConditionInfo();
 	if (conditionInfor == NULL) {
 		return NULL;
 	}
