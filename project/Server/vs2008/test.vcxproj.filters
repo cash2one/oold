@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Text Include="..\..\..\src\Server\test\ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\Server\test\stdafx.cpp" />
+    <ClCompile Include="..\..\..\src\Server\test\test.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\src\Server\test\stdafx.h" />
+    <ClInclude Include="..\..\..\src\Server\test\targetver.h" />
+    <ClInclude Include="..\..\..\src\Server\test\mesagebus\Any.hpp">
+      <Filter>messagebus</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Server\test\mesagebus\function_traits.hpp">
+      <Filter>messagebus</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Server\test\mesagebus\MessageBus.hpp">
+      <Filter>messagebus</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Server\test\mesagebus\NonCopyable.hpp">
+      <Filter>messagebus</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="messagebus">
+      <UniqueIdentifier>{aacf76d3-9194-49ad-95af-281b8c70a25c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -10,5 +10,25 @@
     <ClInclude Include="..\..\..\src\Server\unittest\mainCommand.h" />
     <ClInclude Include="..\..\..\src\Server\unittest\mainServer.h" />
     <ClInclude Include="..\..\..\src\Server\unittest\tracer.h" />
+    <ClInclude Include="..\..\..\src\Server\unittest\mesagebus\Any.hpp">
+      <Filter>messagebus</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Server\unittest\mesagebus\function_traits.hpp">
+      <Filter>messagebus</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Server\unittest\mesagebus\MessageBus.hpp">
+      <Filter>messagebus</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Server\unittest\mesagebus\NonCopyable.hpp">
+      <Filter>messagebus</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Server\unittest\mesagebus\testMsg.hpp">
+      <Filter>messagebus</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="messagebus">
+      <UniqueIdentifier>{62bfa97d-1915-46bf-b404-25fa805d489d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>

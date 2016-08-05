@@ -18,10 +18,25 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\..\src\Server\test\ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\Server\test\stdafx.cpp" />
+    <ClCompile Include="..\..\..\src\Server\test\test.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\src\Server\test\mesagebus\Any.hpp" />
+    <ClInclude Include="..\..\..\src\Server\test\mesagebus\function_traits.hpp" />
+    <ClInclude Include="..\..\..\src\Server\test\mesagebus\MessageBus.hpp" />
+    <ClInclude Include="..\..\..\src\Server\test\mesagebus\NonCopyable.hpp" />
+    <ClInclude Include="..\..\..\src\Server\test\stdafx.h" />
+    <ClInclude Include="..\..\..\src\Server\test\targetver.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{942D60A4-3B13-4431-BA8C-3D3623AD698A}</ProjectGuid>
+    <ProjectGuid>{14883107-C92B-4B37-9167-6B0B436BC4E0}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>unittest</RootNamespace>
+    <RootNamespace>test</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -71,8 +86,6 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>..\..\..\bin64\</OutDir>
-    <IntDir>$(TempOutDir)\ServerOut\$(Platform)\$(ProjectName)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -100,13 +113,10 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\..\..\src\Server\server;..\..\..\inc;..\..\..\inc\TDLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>..\..\..\lib\BSLib\$(Platform)\$(Configuration);..\..\..\lib\GFLib\$(Platform)\$(Configuration);..\..\..\lib\GSLib\$(Platform)\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>Utility.lib;UDM.lib;Network.lib;Framework.lib;Database.lib;CommonServer.lib;Dbghelp.lib;SceneSystem.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -135,7 +145,6 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\..\..\src\Server\server;..\..\..\inc;..\..\..\inc\TDLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -144,22 +153,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\..\src\Server\unittest\channelMgr.cpp" />
-    <ClCompile Include="..\..\..\src\Server\unittest\mainCommand.cpp" />
-    <ClCompile Include="..\..\..\src\Server\unittest\mainServer.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\..\src\Server\unittest\channelMgr.h" />
-    <ClInclude Include="..\..\..\src\Server\unittest\mainCommand.h" />
-    <ClInclude Include="..\..\..\src\Server\unittest\mainServer.h" />
-    <ClInclude Include="..\..\..\src\Server\unittest\mesagebus\Any.hpp" />
-    <ClInclude Include="..\..\..\src\Server\unittest\mesagebus\function_traits.hpp" />
-    <ClInclude Include="..\..\..\src\Server\unittest\mesagebus\MessageBus.hpp" />
-    <ClInclude Include="..\..\..\src\Server\unittest\mesagebus\NonCopyable.hpp" />
-    <ClInclude Include="..\..\..\src\Server\unittest\mesagebus\testMsg.hpp" />
-    <ClInclude Include="..\..\..\src\Server\unittest\tracer.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
