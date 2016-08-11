@@ -47,7 +47,7 @@ public:
 	template<typename R, typename... Args>
 	void Remove(const std::string& strTopic = "")
 	{
-		using function_type = std::function<R(Args...)>; //typename function_traits<void(CArgs)>::stl_function_type;
+		using function_type = std::function<R(Args...)>;
 
 		string strMsgType =strTopic +typeid(function_type).name();
 		int count = m_map.count(strMsgType);
