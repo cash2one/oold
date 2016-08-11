@@ -48,7 +48,7 @@ struct SBTNodeInforInFile
 
 struct SBTInforInFile
 {
-	SBTInfor m_btInfor;
+	SBTInfo m_btInfor;
 	std::vector<SBTNodeInforInFile*> m_subNodes;
 
 	SBTInforInFile() {}

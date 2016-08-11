@@ -207,18 +207,6 @@ bool CTcpConnection::isValid()
 int CTcpConnection::_send(const void* dataBuff, int buffSize)
 {
 #ifdef WIN32
-// 	char* buff = (char*)dataBuff;
-// 	int len = 0;
-// 	for (len=0; len<buffSize; ++len) {
-// 		int res = ::send(m_tcpSock, (char*)&buff[len], 1, 0);
-// 		if (res == SOCKET_ERROR) {
-// 			int error = WSAGetLastError();
-// 			if (error == WSAEWOULDBLOCK || error == ERROR_IO_PENDING || error == WSAENOBUFS) {
-// 				return 0;
-// 			}
-// 			return -1;
-// 		}
-// 	}
 
 	int len = ::send(m_tcpSock, (char*)dataBuff, buffSize, 0);
 
@@ -321,8 +309,6 @@ BSLib::uint64 CTcpConnection::_getRecvBytes()
 
 int CTcpConnection::_writeToBuff(const void* data, unsigned int len, unsigned int sign)
 {
-	//unsigned int dataSize = len;
-
 	m_sendMutex.lock();
 
 	if (_writeToBuff(data, len, sign, m_sendBuff) < 0) {

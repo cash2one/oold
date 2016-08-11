@@ -24,7 +24,7 @@ enum SBTStopProtocol
 	BTSTOPPROT_ACTIONS,		/*!< BT will stop in all the actions.  */
 	BTSTOPPROT_CONDITIONS,	/*!< BT will stop in all the conditions.  */
 };
-struct SBTInfor
+struct SBTInfo
 {
 	BTTPID m_btTPID;
 	std::string m_btName;
@@ -90,7 +90,7 @@ public:
 	BSLib::Utility::CScriptEnvironment* getBTEnvironment() { return m_btEnvironment; }
 
 
-	SBTInfor* getBTInfor() { return  m_btInfor; }
+	SBTInfo* getBTInfor() { return  m_btInfor; }
 
 	// SETTERS //
 	/**
@@ -105,7 +105,7 @@ public:
 	 */	
 	void setStopProtocol(SBTStopProtocol a_stopProtocol) { m_stopProtocol = a_stopProtocol;}
 
-	void setBTInfor(SBTInfor* btInfor) { m_btInfor = btInfor; }
+	void setBTInfor(SBTInfo* btInfor) { m_btInfor = btInfor; }
 
 	BSLib::Utility::CScriptObject* getScriptObject() { return m_scriptObject; }
 
@@ -123,7 +123,7 @@ private:
 	BSLib::Utility::CScriptEnvironment* m_btEnvironment;
 	BSLib::Utility::CScriptObject* m_scriptObject;
 
-	SBTInfor* m_btInfor;
+	SBTInfo* m_btInfor;
 };
 
 }// CBehaviorTree

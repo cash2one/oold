@@ -33,6 +33,7 @@ int _tmain(int argc, _TCHAR* argv[])
     bus.SendReq<void, int&>(i, "test");
     bus.SendReq<void, int&>(i, "test");
 
+    std::cout << typeid(i).name();
 	return 0;
 }
 
