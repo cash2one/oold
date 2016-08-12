@@ -29,7 +29,6 @@ struct Any
 	{
 		if (!Is<U>())
 		{
-			std::cout << "can not cast " << typeid(U).name() << " to " << m_tpIndex.name() << std::endl;
 			throw std::logic_error{"bad cast"};
 		}
 

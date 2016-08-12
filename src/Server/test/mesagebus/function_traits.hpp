@@ -17,16 +17,17 @@ template<typename Ret, typename... Args>
 struct function_traits<Ret(Args...)>
 {
 public:
-	enum { arity = sizeof...(Args) };
-	typedef Ret function_type(Args...);
+	enum { arity = sizeof...(Args) }; // arity 参数数量
+	typedef Ret func_type(Args...);
 	typedef Ret return_type;
-	using stl_function_type = std::function<function_type>;
+	using stl_func_type = std::function<func_type>;
 	typedef Ret(*pointer)(Args...);
 
 	template<size_t I>
 	struct args
 	{
 		static_assert(I < arity, "index is out of range, index must less than sizeof Args");
+        // Class designed to access the type of the Ith element in a tuple.
 		using type = typename std::tuple_element<I, std::tuple<Args...>>::type;
 	};
 };
@@ -54,15 +55,15 @@ template<typename Callable>
 struct function_traits : function_traits<decltype(&Callable::operator())>{};
 
 template <typename Function>
-typename function_traits<Function>::stl_function_type to_function(const Function& lambda)
+typename function_traits<Function>::stl_func_type to_function(const Function& lambda)
 {
-	return static_cast<typename function_traits<Function>::stl_function_type>(lambda);
+	return static_cast<typename function_traits<Function>::stl_func_type>(lambda);
 }
 
 template <typename Function>
-typename function_traits<Function>::stl_function_type to_function(Function&& lambda)
+typename function_traits<Function>::stl_func_type to_function(Function&& lambda)
 {
-	return static_cast<typename function_traits<Function>::stl_function_type>(std::forward<Function>(lambda));
+	return static_cast<typename function_traits<Function>::stl_func_type>(std::forward<Function>(lambda));
 }
 
 template <typename Function>

@@ -21,38 +21,10 @@ A& GetA()
     return temp;
 }
 
-
-template <typename... Args>
-struct Impl;
-
-template <typename First, typename... Args>
-struct Impl < First, Args... >
-{
-    static std::string name()
-    {
-        return std::string(typeid(First).name()) + " " + Impl<Args...>::name();
-    }
-};
-
-template <>
-struct Impl < >
-{
-    static std::string name()
-    {
-        return "";
-    }
-};
-
-template <typename... Args>
-std::string type_name()
-{
-    return Impl<Args...>::name();
-}
-
 using namespace std;
 struct AA
 {
-    void Test(int x) const { cout << x << endl; }
+    int Test(int x, const std::string& a){ cout << x << " " << a << endl; return 0;}
     void GTest()
     {
         cout << "it is a test" << endl;
@@ -75,17 +47,18 @@ int _tmain(int argc, _TCHAR* argv[])
     //A c = GetA();
     //std::cout << "===>" << std::endl;
 
-    MessageBus bus;
-    bus.Attach([](int &a) { std::cout << a++ << std::endl;}, "test");
+    MessageBus<int> bus;
+    bus.attach("test", [](int &a)->int{ std::cout << a++ << std::endl; return 0; });
     int i = 1;
-    bus.SendReq<void, int&>(i, "test");
-    bus.SendReq<void, int&>(i, "test");
+    bus.request("test", i);
+    bus.request("test",i);
 
     //std::cout << type_name<int , const A *>();
 
     AA a;
-    bus.Attach<void, int>(&AA::Test, &a, "test1");
-    bus.SendReq<void, int>(100, "test1");
+    bus.attach<int, const std::string&>("test1", &AA::Test, &a);
+    const std::string str("a");
+    bus.request("test1", 100, str);
 	return 0;
 }
 
