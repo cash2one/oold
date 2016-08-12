@@ -9,13 +9,37 @@
 class MessageBus: NonCopyable
 {
 public:
-    // 注册主题
+    // 注册主题, lambda
 	template<typename F>
 	void Attach(F&& f, const std::string& strTopic="")
 	{
 		auto func = to_function(std::forward<F>(f));
 		Add(strTopic, std::move(func));
 	}
+
+    // non-const member function 
+    template<typename R, class... Args, class C, class... DArgs, class P>
+    void Attach(R(C::*f)(DArgs...), P && p, std::string strKey)
+    {
+        std::function<R(Args...)> fn = [&, f](Args... args){return (*p.*f)(std::forward<Args>(args)...); };
+        Add(strKey, std::move(fn));
+    }
+
+    // const member function
+    template<typename R, class... Args, class C, class... DArgs, class P>
+    void Attach(R(C::*f)(DArgs...) const, P && p, std::string strKey)
+    {
+        std::function<R(Args...)> fn = [&, f](Args... args){return (*p.*f)(std::forward<Args>(args)...); };
+        Add(strKey, std::move(fn));
+    }
+
+//     template<typename R, class... Args, class F, class = typename std::enable_if<!std::is_member_function_pointer<F>::value>::type>
+//     void Attach(F && f, std::string strKey)
+//     {
+//         std::function<R(Args...)> fn = [&](Args... args){return f(std::forward<Args>(args)...); };
+//         Add(strKey, std::move(fn));
+//     }
+
     
     // 发送消息
 	template<typename R>
