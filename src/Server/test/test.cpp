@@ -51,7 +51,7 @@ int _tmain(int argc, _TCHAR* argv[])
     bus.attach("test", [](int &a)->int{ std::cout << a++ << std::endl; return 0; });
     int i = 1;
     bus.request("test", i);
-    bus.request("test",i);
+    bus.request("test", i);
 
     //std::cout << type_name<int , const A *>();
 
