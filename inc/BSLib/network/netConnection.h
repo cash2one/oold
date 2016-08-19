@@ -54,13 +54,13 @@ public:
 	int recv(BSLib::Utility::CStream& stream);
 	int recvBlock(BSLib::Utility::CStream& stream, int countMax = 0);
 
-	virtual bool connect(CSockAddr& addrServer, int connMax = 0) = 0;
-	virtual bool connect(CSockAddr& addrLocal, CSockAddr& addrServer, int connMax = 0) = 0;
+	virtual bool INetConnection_connect(CSockAddr& addrServer, int connMax = 0) = 0;
+	virtual bool INetConnection_connect(CSockAddr& addrLocal, CSockAddr& addrServer, int connMax = 0) = 0;
 	
-	virtual int getSockect() = 0;
-	virtual ENetType getSockectType() = 0;
-	virtual void close();
-	virtual bool isValid() = 0;
+	virtual int INetConnection_getSockect() = 0;
+	virtual ENetType INetConnection_getSockectType() = 0;
+	virtual void INetConnection_close();
+	virtual bool INetConnection_isValid() = 0;
 
 	const CSockAddr& getLocalAddr() { return m_localAddr; }
 	const CSockAddr& getPeerAddr() { return m_peerAddr; }
@@ -71,20 +71,20 @@ public:
 	void getNetConnectionInfo(SNetConnectionBytesInfo& a_connectionInfo);
 
 protected:
-	virtual int _send(const void* dataBuff, int buffSize) = 0;
-	virtual int _recv(void* dataBuff, int buffSize) = 0;
-	virtual void _waitForSend();
-	virtual void _waitForRecv();
-	virtual void _postSend() {}
+	virtual int _INetConnection_send(const void* dataBuff, int buffSize) = 0;
+	virtual int _INetConnection_recv(void* dataBuff, int buffSize) = 0;
+	virtual void _INetConnection_waitForSend();
+	virtual void _INetConnection_waitForRecv();
+	virtual void _INetConnection_postSend() {}
 
-	virtual BSLib::uint64 _getSendBytes() { return 0; }
-	virtual BSLib::uint64 _getRecvBytes() { return 0; }
+	virtual BSLib::uint64 _INetConnection_getSendBytes() { return 0; }
+	virtual BSLib::uint64 _INetConnection_getRecvBytes() { return 0; }
 
 	void _setLocalAddr(const CSockAddr& addr) { m_localAddr = addr; }
 	void _setPeerAddr(const CSockAddr& addr) { m_peerAddr = addr; }
 
-	virtual int _writeToBuff(const void* data, unsigned int len, unsigned int sign) = 0;
-	virtual int _sendToNet(const void* data, unsigned int len, unsigned int sign) = 0;
+	virtual int _INetConnection_writeToBuff(const void* data, unsigned int len, unsigned int sign) = 0;
+	virtual int _INetConnection_sendToNet(const void* data, unsigned int len, unsigned int sign) = 0;
 
 	int _encrypt(const char* inData, unsigned int inLen, Utility::CBufferInt8& outBuff);
 	int _decrypt(const char* inData, unsigned int inLen, Utility::CBufferInt8& outBuff);

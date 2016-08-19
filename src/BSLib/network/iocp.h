@@ -34,7 +34,7 @@ public:
 		return m_iocp != NULL;
 	}
 
-	bool close()
+	bool INetConnection_close()
 	{
 		BOOL res = ::CloseHandle(m_iocp);
 		m_iocp = NULL;

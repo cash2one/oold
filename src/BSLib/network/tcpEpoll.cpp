@@ -156,14 +156,14 @@ void CTcpEpoll::releaseEpoll()
 #ifdef WIN32
 
 	if (m_iocp != NULL){
-		m_iocp->close();
+		m_iocp->INetConnection_close();
 		BSLIB_SAFE_DELETE(m_iocp);
 	}
 	
 #else
 
 	if (m_epoll != NULL) {
-		m_epoll->close();
+		m_epoll->INetConnection_close();
 		BSLIB_SAFE_DELETE(m_epoll);
 	}
 

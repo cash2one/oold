@@ -38,7 +38,7 @@ INetStub::~INetStub()
 	if (m_netConnectionPtr == NULL){
 		return ;
 	}
-	m_netConnectionPtr->close();
+	m_netConnectionPtr->INetConnection_close();
 	m_netConnectionPtr = NULL;
 }
 
@@ -78,7 +78,7 @@ void INetStub::gotoNextState()
 int INetStub::send(BSLib::Utility::CStream& stream)
 {
 	if (m_stubState == ESS_VERIFY || m_stubState == ESS_OKAY){
-		if (m_netConnectionPtr != NULL && m_netConnectionPtr->isValid()) {
+		if (m_netConnectionPtr != NULL && m_netConnectionPtr->INetConnection_isValid()) {
 			return m_netConnectionPtr->send(stream, true);
 		}
 	}
@@ -88,7 +88,7 @@ int INetStub::send(BSLib::Utility::CStream& stream)
 int INetStub::send(const void* msgBuff, unsigned int buffSize)
 {
 	if (m_stubState == ESS_VERIFY || m_stubState == ESS_OKAY){
-		if (m_netConnectionPtr != NULL && m_netConnectionPtr->isValid()) {
+		if (m_netConnectionPtr != NULL && m_netConnectionPtr->INetConnection_isValid()) {
 			return m_netConnectionPtr->send(msgBuff, buffSize, true);
 		}
 	}

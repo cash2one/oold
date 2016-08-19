@@ -46,7 +46,7 @@ CTcpConnection::CTcpConnection(SOCKET sock, IEncrypt* ptrEncrypt, ICompress* ptr
 
 CTcpConnection::~CTcpConnection()
 {
-	//;close();
+	//;INetConnection_close();
 }
 
 bool CTcpConnection::INetConnection_sendToNetFromBuff()
@@ -54,12 +54,12 @@ bool CTcpConnection::INetConnection_sendToNetFromBuff()
 	Utility::CMutexFun mutexFun(&m_sendMutex);
 
 	while(m_sendBuff.readSize()){
-		int len = _send(m_sendBuff.readPtr(), m_sendBuff.readSize());
+		int len = _INetConnection_send(m_sendBuff.readPtr(), m_sendBuff.readSize());
 		if (len < 0){
 			return false;
 		}
 		if (len == 0){
-			_postSend();
+			_INetConnection_postSend();
 			return true;
 		}
 		m_sendBuff.readFlip(len);
@@ -72,7 +72,7 @@ bool CTcpConnection::INetConnection_isEmptyOfSendBuff()
 	return !m_sendBuff.readReady();
 }
 
-bool CTcpConnection::connect(CSockAddr& addrServer, int connMax)
+bool CTcpConnection::INetConnection_connect(CSockAddr& addrServer, int connMax)
 {
 	if (m_isValid){
 		return false;
@@ -127,7 +127,7 @@ bool CTcpConnection::connect(CSockAddr& addrServer, int connMax)
 	return true;
 }
 
-bool CTcpConnection::connect(CSockAddr& addrLocal, CSockAddr& addrServer, int connMax)
+bool CTcpConnection::INetConnection_connect(CSockAddr& addrLocal, CSockAddr& addrServer, int connMax)
 {
 	if (m_isValid){
 		return false;
@@ -188,23 +188,23 @@ bool CTcpConnection::connect(CSockAddr& addrLocal, CSockAddr& addrServer, int co
 	return true;
 }
 
-void CTcpConnection::close()
+void CTcpConnection::INetConnection_close()
 {
 	if (!m_isValid){
 		return ;
 	}
 	::closesocket(m_tcpSock);
 	m_isValid = false;
-	INetConnection::close();
+	INetConnection::INetConnection_close();
 }
 
-bool CTcpConnection::isValid()
+bool CTcpConnection::INetConnection_isValid()
 {
 	return m_isValid;
 }
 
 
-int CTcpConnection::_send(const void* dataBuff, int buffSize)
+int CTcpConnection::_INetConnection_send(const void* dataBuff, int buffSize)
 {
 #ifdef WIN32
 
@@ -244,7 +244,7 @@ int CTcpConnection::_send(const void* dataBuff, int buffSize)
 	return len;
 }
 
-int CTcpConnection::_recv(void* dataBuff, int buffSize)
+int CTcpConnection::_INetConnection_recv(void* dataBuff, int buffSize)
 {
 #ifdef WIN32
 
@@ -289,7 +289,7 @@ int CTcpConnection::_recv(void* dataBuff, int buffSize)
 	return len;
 }
 
-void CTcpConnection::_postSend() 
+void CTcpConnection::_INetConnection_postSend() 
 {
 	INetConnectionMgr* netConnMgr = getNetConnectionMgr();
 	if (netConnMgr != NULL){
@@ -297,36 +297,36 @@ void CTcpConnection::_postSend()
 	}
 }
 
-BSLib::uint64 CTcpConnection::_getSendBytes()
+BSLib::uint64 CTcpConnection::_INetConnection_getSendBytes()
 {
 	return m_recvBytes;
 }
 
-BSLib::uint64 CTcpConnection::_getRecvBytes()
+BSLib::uint64 CTcpConnection::_INetConnection_getRecvBytes()
 {
 	return m_sendBytes;
 }
 
-int CTcpConnection::_writeToBuff(const void* data, unsigned int len, unsigned int sign)
+int CTcpConnection::_INetConnection_writeToBuff(const void* data, unsigned int len, unsigned int sign)
 {
 	m_sendMutex.lock();
 
-	if (_writeToBuff(data, len, sign, m_sendBuff) < 0) {
+	if (_INetConnection_writeToBuff(data, len, sign, m_sendBuff) < 0) {
 		m_sendMutex.unlock();
 		return -1;
 	}
 	m_sendMutex.unlock();
 	
-	_postSend();
+	_INetConnection_postSend();
 
 	return len;
 }
 
-int CTcpConnection::_sendToNet(const void* data, unsigned int len, unsigned int sign)
+int CTcpConnection::_INetConnection_sendToNet(const void* data, unsigned int len, unsigned int sign)
 {
 	Utility::CBufferInt8 buffer;
 	
-	if (_writeToBuff(data, len, sign, buffer) < 0) {
+	if (_INetConnection_writeToBuff(data, len, sign, buffer) < 0) {
 		m_sendMutex.unlock();
 		return -1;
 	}
@@ -346,12 +346,12 @@ int CTcpConnection::_sendBlock(const void* dataBuff, int buffSize)
 	int offset = 0;
 
 	do {
-		int sendSize = _send(&sendData[offset], dataLen - offset);
+		int sendSize = _INetConnection_send(&sendData[offset], dataLen - offset);
 		if (sendSize < 0){
 			return -1;
 		}
 		if (sendSize == 0) {
-			_waitForSend();
+			_INetConnection_waitForSend();
 			continue;
 		}
 		offset += sendSize;
@@ -396,7 +396,7 @@ void CTcpConnection::_setConnectionAddr(int sock)
 	}
 }
 
-int CTcpConnection::_writeToBuff(const void* data, unsigned int len, unsigned int sign, Utility::CBufferInt8& sendBuff)
+int CTcpConnection::_INetConnection_writeToBuff(const void* data, unsigned int len, unsigned int sign, Utility::CBufferInt8& sendBuff)
 {
 	unsigned int dataSize = len;
 	char* dataBuff = (char*)data;

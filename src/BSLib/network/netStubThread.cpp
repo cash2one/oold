@@ -83,7 +83,7 @@ void CNetStubThread::_run()
 		netStubCbPtr->setState(ESS_DELELE);
 		_delStubToNetConnectionMgr(netStubCbPtr->getNetStub());
 		netStubCbPtr->terminate();
-		netStubCbPtr->getNetStub()->getNetConnectionPtr()->close();
+		netStubCbPtr->getNetStub()->getNetConnectionPtr()->INetConnection_close();
 		m_netServer->getNetStubMgr()->delStub(netStubCbPtr->getNetStub());
 		netStubCbPtr->finalStub();
 	}
@@ -102,7 +102,7 @@ void CNetStubThread::_run()
 		netStubCbPtr->setState(ESS_DELELE);
 		_delStubToNetConnectionMgr(netStubCbPtr->getNetStub());
 		netStubCbPtr->terminate();
-		netStubCbPtr->getNetStub()->getNetConnectionPtr()->close();
+		netStubCbPtr->getNetStub()->getNetConnectionPtr()->INetConnection_close();
 		m_netServer->getNetStubMgr()->delStub(netStubCbPtr->getNetStub());
 		netStubCbPtr->finalStub();
 	}
@@ -121,7 +121,7 @@ void CNetStubThread::_run()
 		netStubCbPtr->setState(ESS_DELELE);
 		_delStubToNetConnectionMgr(netStubCbPtr->getNetStub());
 		netStubCbPtr->terminate();
-		netStubCbPtr->getNetStub()->getNetConnectionPtr()->close();
+		netStubCbPtr->getNetStub()->getNetConnectionPtr()->INetConnection_close();
 		m_netServer->getNetStubMgr()->delStub(netStubCbPtr->getNetStub());
 	}
 	m_recycleList.clear();
@@ -256,7 +256,7 @@ void CNetStubThread::_recyclePeer()
 		netStubCbPtr->setState(ESS_DELELE);
 		_delStubToNetConnectionMgr(netStubCbPtr->getNetStub());
 		netStubCbPtr->terminate();
-		netStubCbPtr->getNetStub()->getNetConnectionPtr()->close();
+		netStubCbPtr->getNetStub()->getNetConnectionPtr()->INetConnection_close();
 
 		it = m_recycleList.erase(it);
 		m_deleteList.push_back(netStubCbPtr);

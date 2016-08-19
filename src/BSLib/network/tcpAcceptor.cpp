@@ -160,7 +160,7 @@ CTcpAcceptor::CTcpAcceptor()
 CTcpAcceptor::~CTcpAcceptor()
 {
 	if (m_epoll != NULL) {
-		m_epoll->close();
+		m_epoll->INetConnection_close();
 		BSLIB_SAFE_DELETE(m_epoll);
 	}
 }

@@ -76,11 +76,11 @@ public:
 
 	void setUdpConnectionMgr(BSLib::Network::CUdpConnectionMgr* udpConnectionMgr) { m_udpConnectionMgr = udpConnectionMgr; }
 
-	virtual bool INetClient_connect(const char* serverIP, uint16 serverPort);
+	virtual bool INetClient_connect(const char* serverIP, uint16 serverPort) override;
 
-	virtual void INetClient_close();
+	virtual void INetClient_close() override;
 
-	bool connect(CSockAddr& addrLocal, CSockAddr& addrServer);
+	bool INetConnection_connect(CSockAddr& addrLocal, CSockAddr& addrServer);
 
 private:
 	BSLib::Network::CUdpConnectionMgr* m_udpConnectionMgr;

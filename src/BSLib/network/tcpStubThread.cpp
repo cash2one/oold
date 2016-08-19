@@ -36,8 +36,8 @@ bool CTcpStubThread::_delStubToNetConnectionMgr(CNetStubPtr& stubPtr)
 	if (netConnect == NULL) {
 		return false;
 	}
-	int sock = netConnect->getSockect();
-	if (!netConnect->isValid()) {
+	int sock = netConnect->INetConnection_getSockect();
+	if (!netConnect->INetConnection_isValid()) {
 		return false;
 	}
 	CTcpConnectionMgr::_delConnection(sock);

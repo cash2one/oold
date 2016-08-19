@@ -26,7 +26,7 @@ public:
 	~CEPoll()
 	{
 		if(m_epollHnd != -1) {
-			::close(m_epollHnd);
+			::INetConnection_close(m_epollHnd);
 			m_epollHnd = -1;
 		}
 		if (m_epollEvents != NULL) {
@@ -41,9 +41,9 @@ public:
 		return m_epollHnd != -1;
 	}
 
-	void close()
+	void INetConnection_close()
 	{
-		::close(m_epollHnd);
+		::INetConnection_close(m_epollHnd);
 		m_epollHnd = -1;
 	}
 

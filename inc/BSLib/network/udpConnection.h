@@ -19,22 +19,22 @@ public:
 	virtual bool INetConnection_sendToNetFromBuff();
 	virtual bool INetConnection_isEmptyOfSendBuff();
 
-	virtual bool connect(CSockAddr& addrServer, int connMax = 0);
-	virtual bool connect(CSockAddr& addrLocal, CSockAddr& addrServer, int connMax = 0);
+	virtual bool INetConnection_connect(CSockAddr& addrServer, int connMax = 0);
+	virtual bool INetConnection_connect(CSockAddr& addrLocal, CSockAddr& addrServer, int connMax = 0);
 
-	virtual void close();
+	virtual void INetConnection_close();
 
-	virtual int getSockect() { return m_udmSock; }
-	virtual ENetType getSockectType() { return NETT_UDP; }
-	virtual bool isValid();
+	virtual int INetConnection_getSockect() { return m_udmSock; }
+	virtual ENetType INetConnection_getSockectType() { return NETT_UDP; }
+	virtual bool INetConnection_isValid();
 
 protected:
-	virtual int _send(const void* dataBuff, int buffSize);
-	virtual int _recv(void* dataBuff, int buffSize);
-	virtual void _postSend();
+	virtual int _INetConnection_send(const void* dataBuff, int buffSize);
+	virtual int _INetConnection_recv(void* dataBuff, int buffSize);
+	virtual void _INetConnection_postSend();
 
-	virtual int _writeToBuff(const void* data, unsigned int len, unsigned int sign);
-	virtual int _sendToNet(const void* data, unsigned int len, unsigned int sign);
+	virtual int _INetConnection_writeToBuff(const void* data, unsigned int len, unsigned int sign);
+	virtual int _INetConnection_sendToNet(const void* data, unsigned int len, unsigned int sign);
 	int _sendBlock(const void* dataBuff, int buffSize);
 
 private:

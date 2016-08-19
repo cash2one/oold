@@ -34,7 +34,7 @@ protected:
 	virtual BSLib::Network::CNetStubPtr _INetServer_cbNewTcpStub(BSLib::Network::CNetConnectionPtr& netConnPtr, void* tempData);
 
 private:
-	BSLib::Network::SNetStubsInfo m_tcpStubsInfor;
+	BSLib::Network::SNetStubsInfo m_tcpStubsInfo;
 };
 
 #endif//__SERVER_GATESERVER_GATESERVER_H__

@@ -58,7 +58,7 @@ INetClient::~INetClient()
 void INetClient::INetClient_close()
 {
 	if (m_netConnectionPtr != NULL){
-		m_netConnectionPtr->close();
+		m_netConnectionPtr->INetConnection_close();
 	}
 }
 
@@ -67,7 +67,7 @@ int INetClient::send(BSLib::Utility::CStream& stream, bool useBuff)
 	if (m_netConnectionPtr == NULL){
 		return -1;
 	}
-	if (!m_netConnectionPtr->isValid()) {
+	if (!m_netConnectionPtr->INetConnection_isValid()) {
 		return -1;
 	}
 	return m_netConnectionPtr->send(stream, useBuff);
@@ -78,7 +78,7 @@ int INetClient::send(const void* msgBuff, unsigned int buffSize, bool useBuff)
 	if (m_netConnectionPtr == NULL){
 		return -1;
 	}
-	if (!m_netConnectionPtr->isValid()) {
+	if (!m_netConnectionPtr->INetConnection_isValid()) {
 		return -1;
 	}
 	return m_netConnectionPtr->send(msgBuff, buffSize, useBuff);
@@ -126,7 +126,7 @@ bool CTcpClient::INetClient_connect(const char* serverIP, uint16 serverPort)
 			return false;
 		}
 	}
-	if (m_netConnectionPtr->isValid()){
+	if (m_netConnectionPtr->INetConnection_isValid()){
 		return false;
 	}
 	if (m_tcpClientCb == NULL) {
@@ -136,7 +136,7 @@ bool CTcpClient::INetClient_connect(const char* serverIP, uint16 serverPort)
 		}
 	}
 	BSLib::Network::CSockAddr sockServer(serverIP, serverPort);
-	if (!m_netConnectionPtr->connect(sockServer, 3)){
+	if (!m_netConnectionPtr->INetConnection_connect(sockServer, 3)){
 		return false;
 	}
 	if (!m_tcpConnectionMgr->INetConnectionMgr_addConnection(m_netConnectionPtr, m_tcpClientCb)) {
@@ -150,10 +150,10 @@ void CTcpClient::INetClient_close()
 	if (m_netConnectionPtr == NULL || m_tcpConnectionMgr == NULL) {
 		return ;
 	}
-	if (!m_netConnectionPtr->isValid()) {
+	if (!m_netConnectionPtr->INetConnection_isValid()) {
 		return ;
 	}
-	m_tcpConnectionMgr->INetConnectionMgr_delConnection(m_netConnectionPtr->getSockect());
+	m_tcpConnectionMgr->INetConnectionMgr_delConnection(m_netConnectionPtr->INetConnection_getSockect());
 	INetClient::INetClient_close();
 }
 
@@ -182,7 +182,7 @@ bool CUdpClient::INetClient_connect(const char* serverIP, uint16 serverPort)
 			return false;
 		}
 	}
-	if (m_netConnectionPtr->isValid()){
+	if (m_netConnectionPtr->INetConnection_isValid()){
 		return false;
 	}
 	if (m_udpClientCb == NULL) {
@@ -192,7 +192,7 @@ bool CUdpClient::INetClient_connect(const char* serverIP, uint16 serverPort)
 		}
 	}
 	BSLib::Network::CSockAddr sockServer(serverIP, serverPort);
-	if (!m_netConnectionPtr->connect(sockServer, 3)){
+	if (!m_netConnectionPtr->INetConnection_connect(sockServer, 3)){
 		return false;
 	}
 	if (!m_udpConnectionMgr->INetConnectionMgr_addConnection(m_netConnectionPtr, m_udpClientCb)) {
@@ -202,7 +202,7 @@ bool CUdpClient::INetClient_connect(const char* serverIP, uint16 serverPort)
 }
 
 
-bool CUdpClient::connect(CSockAddr& addrLocal, CSockAddr& addrServer)
+bool CUdpClient::INetConnection_connect(CSockAddr& addrLocal, CSockAddr& addrServer)
 {
 	if (m_udpConnectionMgr == NULL) {
 		return false;
@@ -213,7 +213,7 @@ bool CUdpClient::connect(CSockAddr& addrLocal, CSockAddr& addrServer)
 			return false;
 		}
 	}
-	if (m_netConnectionPtr->isValid()){
+	if (m_netConnectionPtr->INetConnection_isValid()){
 		return false;
 	}
 	if (m_udpClientCb == NULL) {
@@ -222,7 +222,7 @@ bool CUdpClient::connect(CSockAddr& addrLocal, CSockAddr& addrServer)
 			return false;
 		}
 	}
-	if (!m_netConnectionPtr->connect(addrLocal, addrServer, 3)){
+	if (!m_netConnectionPtr->INetConnection_connect(addrLocal, addrServer, 3)){
 		return false;
 	}
 	if (!m_udpConnectionMgr->INetConnectionMgr_addConnection(m_netConnectionPtr, m_udpClientCb)) {
@@ -236,10 +236,10 @@ void CUdpClient::INetClient_close()
 	if (m_netConnectionPtr == NULL || m_udpConnectionMgr == NULL) {
 		return ;
 	}
-	if (!m_netConnectionPtr->isValid()) {
+	if (!m_netConnectionPtr->INetConnection_isValid()) {
 		return ;
 	}
-	m_udpConnectionMgr->INetConnectionMgr_delConnection(m_netConnectionPtr->getSockect());
+	m_udpConnectionMgr->INetConnectionMgr_delConnection(m_netConnectionPtr->INetConnection_getSockect());
 	INetClient::INetClient_close();
 }
 

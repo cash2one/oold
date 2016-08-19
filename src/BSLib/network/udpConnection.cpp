@@ -25,7 +25,7 @@ CUdpConnection::CUdpConnection(int sock, IEncrypt* ptrEncrypt, ICompress* ptrCom
 CUdpConnection::~CUdpConnection()
 {
 	if (m_udmSock != -1) {
-		//BSLib::UDM::close(m_udmSock);
+		//BSLib::UDM::INetConnection_close(m_udmSock);
 		m_isValid = false;
 	}
 }
@@ -43,19 +43,19 @@ bool CUdpConnection::INetConnection_sendToNetFromBuff()
 			continue;
 		}
 		if (sendSize == 0){
-			_send(m_sendBuff.readPtr(), *it_size);
+			_INetConnection_send(m_sendBuff.readPtr(), *it_size);
 			m_sendBuff.readFlip(*it_size);
 			it_size = m_sendSizes.erase(it_size);
 			continue;
 		}
-		_send(m_sendBuff.readPtr(), sendSize);
+		_INetConnection_send(m_sendBuff.readPtr(), sendSize);
 		m_sendBuff.readFlip(sendSize);
 		
 		sendSize = *it_size;
 		it_size = m_sendSizes.erase(it_size);
 	}
 	if (sendSize > 0){
-		_send(m_sendBuff.readPtr(), sendSize);
+		_INetConnection_send(m_sendBuff.readPtr(), sendSize);
 		m_sendBuff.readFlip(sendSize);
 	}
 	return true;
@@ -66,7 +66,7 @@ bool CUdpConnection::INetConnection_isEmptyOfSendBuff()
 	return !m_sendBuff.readReady();
 }
 
-bool CUdpConnection::connect(CSockAddr& addrServer, int connMax)
+bool CUdpConnection::INetConnection_connect(CSockAddr& addrServer, int connMax)
 {
 	if (m_isValid){
 		return false;
@@ -90,7 +90,7 @@ bool CUdpConnection::connect(CSockAddr& addrServer, int connMax)
 	return true;
 }
 
-bool CUdpConnection::connect(CSockAddr& addrLocal, CSockAddr& addrServer, int connMax)
+bool CUdpConnection::INetConnection_connect(CSockAddr& addrLocal, CSockAddr& addrServer, int connMax)
 {
 	if (m_isValid){
 		return false;
@@ -120,17 +120,17 @@ bool CUdpConnection::connect(CSockAddr& addrLocal, CSockAddr& addrServer, int co
 	return true;
 }
 
-void CUdpConnection::close()
+void CUdpConnection::INetConnection_close()
 {
 	if (!m_isValid){
 		return ;
 	}
 	BSLib::UDM::close(m_udmSock);
 	m_isValid = false;
-	INetConnection::close();
+	INetConnection::INetConnection_close();
 }
 
-bool CUdpConnection::isValid()
+bool CUdpConnection::INetConnection_isValid()
 {
 	BSLib::UDM::EUdmStatus state = BSLib::UDM::getsockstate(m_udmSock);
 	if (state >= BSLib::UDM::UDM_STATE_BROKEN) {
@@ -139,7 +139,7 @@ bool CUdpConnection::isValid()
 	return m_isValid;
 }
 
-int CUdpConnection::_send(const void* dataBuff, int buffSize)
+int CUdpConnection::_INetConnection_send(const void* dataBuff, int buffSize)
 {
 	int len = BSLib::UDM::sendto(m_udmSock, (char*)dataBuff, buffSize);
 	if (len == BSLIB_UDM_ERROR) {
@@ -148,7 +148,7 @@ int CUdpConnection::_send(const void* dataBuff, int buffSize)
 	return len;
 }
 
-int CUdpConnection::_recv(void* dataBuff, int buffSize)
+int CUdpConnection::_INetConnection_recv(void* dataBuff, int buffSize)
 {
 	int len = BSLib::UDM::recvfrom(m_udmSock, (char*)dataBuff, buffSize);
 	if (len == BSLIB_UDM_ERROR) {
@@ -157,7 +157,7 @@ int CUdpConnection::_recv(void* dataBuff, int buffSize)
 	return len;
 }
 
-void CUdpConnection::_postSend()
+void CUdpConnection::_INetConnection_postSend()
 {
 	INetConnectionMgr* netConnMgr = getNetConnectionMgr();
 	if (netConnMgr != NULL){
@@ -165,7 +165,7 @@ void CUdpConnection::_postSend()
 	}
 }
 
-int CUdpConnection::_writeToBuff(const void* data, unsigned int len, unsigned int sign)
+int CUdpConnection::_INetConnection_writeToBuff(const void* data, unsigned int len, unsigned int sign)
 {
 	if (len > GNET_PACKET_LEN) {
 		return -1;
@@ -186,11 +186,11 @@ int CUdpConnection::_writeToBuff(const void* data, unsigned int len, unsigned in
 
 	m_sendMutex.unlock();
 
-	_postSend();
+	_INetConnection_postSend();
 	return len;
 }
 
-int CUdpConnection::_sendToNet(const void* data, unsigned int len, unsigned int sign)
+int CUdpConnection::_INetConnection_sendToNet(const void* data, unsigned int len, unsigned int sign)
 {
 	if (len > GNET_PACKET_LEN) {
 		return -1;
@@ -215,12 +215,12 @@ int CUdpConnection::_sendBlock(const void* dataBuff, int buffSize)
 	int offset = 0;
 
 	do {
-		int sendSize = _send(&sendData[offset], dataLen - offset);
+		int sendSize = _INetConnection_send(&sendData[offset], dataLen - offset);
 		if (sendSize < 0){
 			return -1;
 		}
 		if (sendSize == 0) {
-			_waitForSend();
+			_INetConnection_waitForSend();
 			continue;
 		}
 		offset += sendSize;

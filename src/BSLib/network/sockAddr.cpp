@@ -7,7 +7,7 @@
 void closesocket(SOCKET sock)
 {
 	::shutdown(sock, SHUT_RDWR);
-	::close(sock);
+	::INetConnection_close(sock);
 };
 
 #endif

@@ -38,13 +38,13 @@ bool CUdpConnectionMgr::_INetConnectionMgr_addConnToPoll(CConnectItemPtr& connIt
 	if (item == NULL || item->m_connect == NULL) {
 		return false;
 	}
-	if (!item->m_connect->isValid()){
+	if (!item->m_connect->INetConnection_isValid()){
 		return false;
 	}
-	if (item->m_connect->getSockectType() != NETT_UDP){
+	if (item->m_connect->INetConnection_getSockectType() != NETT_UDP){
 		return false;
 	}
-	return BSLib::UDM::epollAddSock(m_udmEpollID, item->m_connect->getSockect(), BSLib::UDM::UDM_EPOLL_READ | BSLib::UDM::UDM_EPOLL_WRITE | BSLib::UDM::UDM_EPOLL_ERROR, NULL) == BSLIB_UDM_OK;
+	return BSLib::UDM::epollAddSock(m_udmEpollID, item->m_connect->INetConnection_getSockect(), BSLib::UDM::UDM_EPOLL_READ | BSLib::UDM::UDM_EPOLL_WRITE | BSLib::UDM::UDM_EPOLL_ERROR, NULL) == BSLIB_UDM_OK;
 }
 
 void CUdpConnectionMgr::_INetConnectionMgr_delConnFromPoll(CConnectItemPtr& connItemPtr)
@@ -56,7 +56,7 @@ void CUdpConnectionMgr::_INetConnectionMgr_delConnFromPoll(CConnectItemPtr& conn
 	if (item == NULL || item->m_connect == NULL) {
 		return ;
 	}
-	BSLib::UDM::epollDelSock(m_udmEpollID, item->m_connect->getSockect(), BSLib::UDM::UDM_EPOLL_READ | BSLib::UDM::UDM_EPOLL_WRITE | BSLib::UDM::UDM_EPOLL_ERROR);
+	BSLib::UDM::epollDelSock(m_udmEpollID, item->m_connect->INetConnection_getSockect(), BSLib::UDM::UDM_EPOLL_READ | BSLib::UDM::UDM_EPOLL_WRITE | BSLib::UDM::UDM_EPOLL_ERROR);
 }
 
 bool CUdpConnectionMgr::_INetConnectionMgr_epoll(int msSec)
@@ -107,7 +107,7 @@ bool CUdpConnectionMgr::_readScoket(int& udmSocket, void* data)
 	if (item->m_connect == NULL || item->m_callback == NULL){
 		return false;
 	}
-	if (!item->m_connect->isValid()){
+	if (!item->m_connect->INetConnection_isValid()){
 		return false;
 	}
 	if (!item->m_connect->INetConnection_recvToBuffFromNet()){
@@ -125,7 +125,7 @@ bool CUdpConnectionMgr::_writeScoket(int& udmSocket, void* data)
 	if (item->m_connect == NULL || item->m_callback == NULL){
 		return false;
 	}
-	if (!item->m_connect->isValid()){
+	if (!item->m_connect->INetConnection_isValid()){
 		return false;
 	}
 	return item->m_connect->INetConnection_sendToNetFromBuff();
@@ -140,9 +140,9 @@ void CUdpConnectionMgr::_terminateScoket(int& udmSocket, void* data)
 	if (item->m_connect == NULL || item->m_callback == NULL){
 		return ;
 	}
-	//if (item->m_connect->isValid()){
+	//if (item->m_connect->INetConnection_isValid()){
 		item->m_callback->terminate(item->m_connect);
-		item->m_connect->close();
+		item->m_connect->INetConnection_close();
 	//}
 
 	INetConnectionMgr::_delConnection(udmSocket);

@@ -57,11 +57,11 @@ bool CTcpConnectionMgr::_INetConnectionMgr_addConnToPoll(CConnectItemPtr& connIt
 	if (item == NULL || item->m_connect == NULL) {
 		return false;
 	}
-	if (!item->m_connect->isValid()){
+	if (!item->m_connect->INetConnection_isValid()){
 		return false;
 	}
-	SOCKET socket = item->m_connect->getSockect();
-	if (item->m_connect->getSockectType() != NETT_TCP){
+	SOCKET socket = item->m_connect->INetConnection_getSockect();
+	if (item->m_connect->INetConnection_getSockectType() != NETT_TCP){
 		return false;
 	}
 
@@ -88,7 +88,7 @@ void CTcpConnectionMgr::_INetConnectionMgr_delConnFromPoll(CConnectItemPtr& conn
 	if (item == NULL || item->m_connect == NULL) {
 		return ;
 	}
-	m_tcpEpoll->delTcpFromEpoll(item->m_connect->getSockect());
+	m_tcpEpoll->delTcpFromEpoll(item->m_connect->INetConnection_getSockect());
 }
 
 bool CTcpConnectionMgr::_INetConnectionMgr_epoll(int msSec)
@@ -108,7 +108,7 @@ bool CTcpConnectionMgr::_readScoket(SOCKET& tcpSocket, void* data)
 	if (item->m_connect == NULL || item->m_callback == NULL){
 		return false;
 	}
-	if (!item->m_connect->isValid()){
+	if (!item->m_connect->INetConnection_isValid()){
 		return false;
 	}
 	if (!item->m_connect->INetConnection_recvToBuffFromNet()){
@@ -126,7 +126,7 @@ bool CTcpConnectionMgr::_writeScoket(SOCKET& tcpSocket, void* data)
 	if (item->m_connect == NULL || item->m_callback == NULL){
 		return false;
 	}
-	if (!item->m_connect->isValid()){
+	if (!item->m_connect->INetConnection_isValid()){
 		return false;
 	}
 	return item->m_connect->INetConnection_sendToNetFromBuff();
@@ -141,8 +141,8 @@ void CTcpConnectionMgr::_terminateScoket(SOCKET& tcpSocket, void* data)
 	if (item->m_connect == NULL || item->m_callback == NULL){
 		return ;
 	}
-	if (item->m_connect->isValid()){
-		item->m_connect->close();
+	if (item->m_connect->INetConnection_isValid()){
+		item->m_connect->INetConnection_close();
 		item->m_callback->terminate(item->m_connect);
 	}
 

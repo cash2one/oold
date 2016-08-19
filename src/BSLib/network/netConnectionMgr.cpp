@@ -95,7 +95,7 @@ void INetConnectionMgr::_checkAddConn()
 			continue;
 		}
 		_addConnection(connPtr);
-		this->INetConnectionMgr_postSend(connPtr->m_connect->getSockect());
+		this->INetConnectionMgr_postSend(connPtr->m_connect->INetConnection_getSockect());
 		addConnListTemp.pop();
 	}
 	m_connSize = m_connHashMap.size();
@@ -123,9 +123,9 @@ void INetConnectionMgr::_checkDelConn()
 
 bool INetConnectionMgr::_addConnection(CConnectItemPtr& connItemPtr)
 {
-	m_connHashMap.setValue(connItemPtr->m_connect->getSockect(), connItemPtr);
+	m_connHashMap.setValue(connItemPtr->m_connect->INetConnection_getSockect(), connItemPtr);
 	if (!_INetConnectionMgr_addConnToPoll(connItemPtr)){
-		m_connHashMap.remove(connItemPtr->m_connect->getSockect());
+		m_connHashMap.remove(connItemPtr->m_connect->INetConnection_getSockect());
 		return false;
 	}
 	connItemPtr->m_connect->setNetConnectionMgr(this);
