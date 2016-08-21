@@ -4,7 +4,8 @@
 #include <BSLib/utility/singleton.h>
 #include <GFLib/commonServer/commonServer.h>
 
-class CGateServer : public GFLib::CommonServer::ICommonServer
+class CGateServer 
+    : public GFLib::CommonServer::ICommonServer
 {
 public:
 	CGateServer();

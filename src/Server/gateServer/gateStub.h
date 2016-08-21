@@ -4,7 +4,9 @@
 #include <GFLib/commonServer/stub.h>
 #include <GSLib/loginSystem/GT/loginSystemGT.h>
 
-class CGateStub : public GFLib::CommonServer::IStub, public GSLib::LoginSystem::GT::CVerifyAccountLoginCallBack
+class CGateStub 
+    : public GFLib::CommonServer::IStub
+    , public GSLib::LoginSystem::GT::CVerifyAccountLoginCallBack
 {
 public:
 	CGateStub(BSLib::Network::CNetConnectionPtr& netConnection);

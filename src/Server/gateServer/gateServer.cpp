@@ -68,12 +68,12 @@ int CGateServer::main()
 
 bool CGateServer::_IThread_callback()
 {
-	BSLib::Network::SNetInfo netInfor;
-	BSLib::Network::INetServer::getNetInfo(netInfor, *BSLib::Framework::CMainThread::getRealTime());
-	if (netInfor.m_tcpStubsInfo.m_connectTotal != m_tcpStubsInfo.m_connectTotal ||
-		netInfor.m_tcpStubsInfo.m_stubCount != m_tcpStubsInfo.m_stubCount ||
-		netInfor.m_tcpStubsInfo.m_stubOkayCount != m_tcpStubsInfo.m_stubOkayCount || 
-		netInfor.m_tcpStubsInfo.m_stubVerifyCount != m_tcpStubsInfo.m_stubVerifyCount) {
+	BSLib::Network::SNetInfo netInfo;
+	BSLib::Network::INetServer::getNetInfo(netInfo, *BSLib::Framework::CMainThread::getRealTime());
+	if (netInfo.m_tcpStubsInfo.m_connectTotal != m_tcpStubsInfo.m_connectTotal ||
+		netInfo.m_tcpStubsInfo.m_stubCount != m_tcpStubsInfo.m_stubCount ||
+		netInfo.m_tcpStubsInfo.m_stubOkayCount != m_tcpStubsInfo.m_stubOkayCount || 
+		netInfo.m_tcpStubsInfo.m_stubVerifyCount != m_tcpStubsInfo.m_stubVerifyCount) {
 
 			BSLIB_LOG_TRACE(Server::ETT_SERVER_COMMON, "[ConnectCount=%d][StubCount=%d][OkeyStubCount=%d][VerifyStubCount=%d]"
 				,m_tcpStubsInfo.m_connectTotal
@@ -81,7 +81,7 @@ bool CGateServer::_IThread_callback()
 				,m_tcpStubsInfo.m_stubOkayCount
 				,m_tcpStubsInfo.m_stubVerifyCount);
 
-			m_tcpStubsInfo = netInfor.m_tcpStubsInfo;
+			m_tcpStubsInfo = netInfo.m_tcpStubsInfo;
 	}
 
 	return GFLib::CommonServer::ICommonServer::_IThread_callback();
