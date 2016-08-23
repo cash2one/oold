@@ -164,10 +164,10 @@
     <ClCompile Include="..\..\..\src\BSLib\framework\message\msgFactory.cpp" />
     <ClCompile Include="..\..\..\src\BSLib\framework\sysChannelMgr.cpp" />
     <ClCompile Include="..\..\..\src\BSLib\framework\sysConfig.cpp" />
-    <ClCompile Include="..\..\..\src\BSLib\framework\threadFrame.cpp" />
+    <ClCompile Include="..\..\..\src\BSLib\framework\ithread.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\inc\BSLib\framework\baseDef.h" />
+    <ClInclude Include="..\..\..\inc\BSLib\framework\channelID.h" />
     <ClInclude Include="..\..\..\inc\BSLib\framework\mainThread.h" />
     <ClInclude Include="..\..\..\inc\BSLib\framework\message\message.h" />
     <ClInclude Include="..\..\..\inc\BSLib\framework\message\msgDebug.h" />
@@ -180,7 +180,7 @@
     <ClInclude Include="..\..\..\inc\BSLib\framework\message\msgType.h" />
     <ClInclude Include="..\..\..\inc\BSLib\framework\sysChannelMgr.h" />
     <ClInclude Include="..\..\..\inc\BSLib\framework\sysConfig.h" />
-    <ClInclude Include="..\..\..\inc\BSLib\framework\threadFrame.h" />
+    <ClInclude Include="..\..\..\inc\BSLib\framework\ithread.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Utility.vcxproj">

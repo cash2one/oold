@@ -1,7 +1,7 @@
 #ifndef __GFLIB_COMMONSERVER_BASEDEF_H__
 #define __GFLIB_COMMONSERVER_BASEDEF_H__
 
-#include <BSLib/framework/baseDef.h>
+#include <BSLib/framework/channelID.h>
 #include <BSLib/network/netStub.h>
 #include <BSLib/framework/message/msgDebug.h>
 

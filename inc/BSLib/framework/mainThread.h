@@ -2,7 +2,7 @@
 #define __BSLIB_FRAMEWORK_MAINTHREAD_H__
 
 #include <BSLib/framework/sysConfig.h>
-#include <BSLib/framework/threadFrame.h>
+#include <BSLib/framework/ithread.h>
 #include <BSLib/framework/message/msgFactory.h>
 
 #ifdef _WINDOWS
@@ -29,14 +29,15 @@ namespace BSLib
 namespace Framework
 {
 
-class BSLIB_FRAMEWORK_API CMainThread : public IThread
+class BSLIB_FRAMEWORK_API CMainThread 
+                        : public IThread
 {
 public:
 	CMainThread();
 	virtual ~CMainThread();
 
 protected:
-	virtual bool _IThread_init();
+	virtual bool _IThread_init() override;
 
 public:
 	static CMainThread* getMainThread() { return m_mainThread; }

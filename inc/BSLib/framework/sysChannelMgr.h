@@ -4,7 +4,7 @@
 #include <BSLib/utility/thread/mutex.h>
 #include <BSLib/utility/memory/shareMemory.h>
 #include <BSLib/utility/thread/thread.h>
-#include <BSLib/framework/baseDef.h>
+#include <BSLib/framework/channelID.h>
 #include <BSLib/framework/message/message.h>
 #include <BSLib/framework/message/msgLabel.h>
 

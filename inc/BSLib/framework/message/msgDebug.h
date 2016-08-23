@@ -3,7 +3,7 @@
 
 #include <BSLib/utility/singleton.h>
 #include <BSLib/utility/hashMap.h>
-#include <BSLib/framework/baseDef.h>
+#include <BSLib/framework/channelID.h>
 #include <BSLib/framework/message/message.h>
 
 namespace BSLib

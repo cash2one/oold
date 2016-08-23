@@ -1,7 +1,7 @@
 #ifndef __BSLIB_FRAMEWORK_MESSAGE_MSGTYPE_H__
 #define __BSLIB_FRAMEWORK_MESSAGE_MSGTYPE_H__
 
-#include <BSLib/framework/baseDef.h>
+#include <BSLib/framework/channelID.h>
 
 namespace BSLib
 {

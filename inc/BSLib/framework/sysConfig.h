@@ -3,7 +3,7 @@
 
 #include <BSLib/utility/singleton.h>
 #include <BSLib/utility/file/iniFile.h>
-#include <BSLib/framework/baseDef.h>
+#include <BSLib/framework/channelID.h>
 
 namespace BSLib
 {
@@ -11,7 +11,8 @@ namespace BSLib
 namespace Framework
 {
 
-class BSLIB_FRAMEWORK_API CSysConfig : public Utility::CIniFile
+class BSLIB_FRAMEWORK_API CSysConfig 
+                : public Utility::CIniFile
 {
 public:
 	BSLIB_SINGLETON_DECLARE(CSysConfig);

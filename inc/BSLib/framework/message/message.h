@@ -2,7 +2,7 @@
 #define __BSLIB_FRAMEWORK_MESSAGE_MESSAGE_H__
 
 #include <BSLib/utility/stream.h>
-#include <BSLib/framework/baseDef.h>
+#include <BSLib/framework/channelID.h>
 
 namespace BSLib
 {

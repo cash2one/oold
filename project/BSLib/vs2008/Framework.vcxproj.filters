@@ -30,9 +30,6 @@
     <ClCompile Include="..\..\..\src\BSLib\framework\sysConfig.cpp">
       <Filter>cpp</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\src\BSLib\framework\threadFrame.cpp">
-      <Filter>cpp</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\src\BSLib\framework\message\message.cpp">
       <Filter>cpp\message</Filter>
     </ClCompile>
@@ -48,11 +45,11 @@
     <ClCompile Include="..\..\..\src\BSLib\framework\message\msgFactory.cpp">
       <Filter>cpp\message</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\src\BSLib\framework\ithread.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\inc\BSLib\framework\baseDef.h">
-      <Filter>inc</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\inc\BSLib\framework\mainThread.h">
       <Filter>inc</Filter>
     </ClInclude>
@@ -60,9 +57,6 @@
       <Filter>inc</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\inc\BSLib\framework\sysConfig.h">
-      <Filter>inc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\inc\BSLib\framework\threadFrame.h">
       <Filter>inc</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\inc\BSLib\framework\message\message.h">
@@ -91,6 +85,12 @@
     </ClInclude>
     <ClInclude Include="..\..\..\inc\BSLib\framework\message\msgType.h">
       <Filter>inc\message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\framework\ithread.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\BSLib\framework\channelID.h">
+      <Filter>inc</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
