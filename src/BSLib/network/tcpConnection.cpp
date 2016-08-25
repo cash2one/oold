@@ -25,8 +25,8 @@ namespace Network
 {
 const int g_tcpBufferSize = 256*1024;
 
-CTcpConnection::CTcpConnection(SOCKET sock, IEncrypt* ptrEncrypt, ICompress* ptrCompress)
-: INetConnection(ptrEncrypt, ptrCompress)
+CTcpConnection::CTcpConnection(SOCKET sock, IEncrypt* ptrEncrypt, ICompress* ptrCompress, ICodec* ptrCodec)
+: INetConnection(ptrEncrypt, ptrCompress, ptrCodec)
 , m_tcpSock(INVALID_SOCKET) 
 , m_isValid(false)
 , m_recvBytes(0)
@@ -311,7 +311,7 @@ int CTcpConnection::_INetConnection_writeToBuff(const void* data, unsigned int l
 {
 	m_sendMutex.lock();
 
-	if (_INetConnection_writeToBuff(data, len, sign, m_sendBuff) < 0) {
+	if (_writeToBuff(data, len, sign, m_sendBuff) < 0) {
 		m_sendMutex.unlock();
 		return -1;
 	}
@@ -326,7 +326,7 @@ int CTcpConnection::_INetConnection_sendToNet(const void* data, unsigned int len
 {
 	Utility::CBufferInt8 buffer;
 	
-	if (_INetConnection_writeToBuff(data, len, sign, buffer) < 0) {
+	if (_writeToBuff(data, len, sign, buffer) < 0) {
 		m_sendMutex.unlock();
 		return -1;
 	}
@@ -396,7 +396,7 @@ void CTcpConnection::_setConnectionAddr(int sock)
 	}
 }
 
-int CTcpConnection::_INetConnection_writeToBuff(const void* data, unsigned int len, unsigned int sign, Utility::CBufferInt8& sendBuff)
+int CTcpConnection::_writeToBuff(const void* data, unsigned int len, unsigned int sign, Utility::CBufferInt8& sendBuff)
 {
 	unsigned int dataSize = len;
 	char* dataBuff = (char*)data;

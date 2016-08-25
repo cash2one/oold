@@ -12,8 +12,8 @@ namespace BSLib
 namespace Network
 {
 
-CUdpConnection::CUdpConnection(int sock, IEncrypt* ptrEncrypt, ICompress* ptrCompress)
-: INetConnection(ptrEncrypt, ptrCompress)
+CUdpConnection::CUdpConnection(int sock, IEncrypt* ptrEncrypt, ICompress* ptrCompress, ICodec* ptrCodec)
+: INetConnection(ptrEncrypt, ptrCompress, ptrCodec)
 , m_udmSock(-1) 
 , m_isValid(false)
 {

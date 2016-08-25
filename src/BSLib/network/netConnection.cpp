@@ -22,9 +22,10 @@ namespace Network
 	//数据包长度
 #define GNET_PACKET_LEN			0X00FFFFFF
 
-INetConnection::INetConnection(IEncrypt* ptrEncrypt, ICompress* ptrCompress)
+INetConnection::INetConnection(IEncrypt* ptrEncrypt, ICompress* ptrCompress, ICodec* ptrCodec)
 : m_encrypt(ptrEncrypt)
 , m_compress(ptrCompress)
+,m_codec(ptrCodec)
 , m_netConnectMgr(NULL)
 {
 	;
@@ -77,10 +78,12 @@ int INetConnection::send(Utility::CStream& stream, bool useBuffer)
 	if (!INetConnection_isValid()){
 		return -1;
 	}
+
 	int sendSize = send(stream.readPtr(), stream.readSize(), useBuffer);
 	if (sendSize > 0) {
 		stream.readFlip(sendSize);
 	}
+
 	return sendSize;
 }
 
@@ -89,7 +92,10 @@ int INetConnection::send(const void* msgBuff, unsigned int buffSize, bool useBuf
 	if (!INetConnection_isValid()){
 		return -1;
 	}
+
 	unsigned int flag = GNET_PACKET_FLAG;
+
+    // 压缩
 	if (m_compress != NULL && buffSize >= 32) {
 		Utility::CBufferInt8 compressBuff;
 		if (_compress((char*)msgBuff, buffSize, compressBuff) < 0){
@@ -113,6 +119,8 @@ int INetConnection::send(const void* msgBuff, unsigned int buffSize, bool useBuf
 		}
 		return _INetConnection_sendToNet(compressBuff.readPtr(), compressBuff.readSize(), flag);
 	}
+
+    // 加密
 	if (m_encrypt != NULL) {
 		Utility::CBufferInt8 encryptBuff;
 		if (_encrypt((char*)msgBuff, buffSize, encryptBuff) < 0){
@@ -124,9 +132,13 @@ int INetConnection::send(const void* msgBuff, unsigned int buffSize, bool useBuf
 		}
 		return _INetConnection_sendToNet(encryptBuff.readPtr(), encryptBuff.readSize(), flag);
 	}
+
+    // 写入缓存
 	if (useBuffer){
 		return _INetConnection_writeToBuff(msgBuff, buffSize, flag);
 	}
+
+    // 发送
 	return _INetConnection_sendToNet(msgBuff, buffSize, flag);
 }
 
@@ -138,7 +150,7 @@ int INetConnection::recv(BSLib::Utility::CStream& stream)
 	}
 
 	Utility::CBufferInt8 recvBuff;
-	int res = _mergerPacket(m_recvBuff, recvBuff);
+	int res = _mergeRecvPacket(m_recvBuff, recvBuff);
 	if (res <= 0) {
 		return res;
 	}
@@ -148,18 +160,23 @@ int INetConnection::recv(BSLib::Utility::CStream& stream)
 	unsigned int flag = cmdFlag & GNET_PACKET_SIGN;
 	const char* buff = recvBuff.readPtr();
 	
-	if (!(flag & GNET_PACKET_FLAG)){
+	if ( !(flag & GNET_PACKET_FLAG) ){
 		return -1;
 	}
 	
+    // 1. decrypt, 2 uncompress
 	if (flag & GNET_PACKET_ENCRYPT) {
 		if (m_encrypt == NULL){
 			return -1;
 		}
+
+        // 解密
 		Utility::CBufferInt8 encryptBuff;
 		if (_decrypt(&buff[sizeof(unsigned int)], len, encryptBuff) < 0) {
 			return -1;
 		}
+
+        // 解压缩
 		if (m_compress != NULL && (flag & GNET_PACKET_COMPRESS)){
 			Utility::CBufferInt8 compressBuff;
 			if (_uncompress(encryptBuff.readPtr(), encryptBuff.readSize(), compressBuff) < 0) {
@@ -172,6 +189,7 @@ int INetConnection::recv(BSLib::Utility::CStream& stream)
 		return encryptBuff.readSize();
 	}
 
+    // only  uncompress
 	if (m_compress != NULL && (flag & GNET_PACKET_COMPRESS)){
 		Utility::CBufferInt8 compressBuff;
 		if (_uncompress(&buff[sizeof(unsigned int)], len, compressBuff) < 0) {
@@ -181,6 +199,7 @@ int INetConnection::recv(BSLib::Utility::CStream& stream)
 		return compressBuff.readSize();
 	}
 
+    // nothing, just copy
 	stream.push(&buff[sizeof(unsigned int)], len);
 	return len;
 }
@@ -299,7 +318,7 @@ int INetConnection::_uncompress(const char* inData, unsigned int inLen, Utility:
 	return resCompress;
 }
 
-unsigned int INetConnection::_mergerPacket(Utility::CBufferInt8& inBuff, Utility::CBufferInt8& outBuff)
+unsigned int INetConnection::_mergeRecvPacket(Utility::CBufferInt8& inBuff, Utility::CBufferInt8& outBuff)
 {
 	//验证数据包是否完成
 	unsigned int cmdFlag = *((unsigned int*)inBuff.readPtr());

@@ -165,6 +165,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\inc\BSLib\network\baseDef.h" />
+    <ClInclude Include="..\..\..\inc\BSLib\network\codec.hpp" />
     <ClInclude Include="..\..\..\inc\BSLib\network\netAcceptor.h" />
     <ClInclude Include="..\..\..\inc\BSLib\network\netClient.h" />
     <ClInclude Include="..\..\..\inc\BSLib\network\netConnection.h" />

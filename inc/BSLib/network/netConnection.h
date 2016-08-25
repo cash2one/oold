@@ -6,6 +6,7 @@
 #include <BSLib/utility/thread/mutex.h>
 #include <BSLib/utility/stream.h>
 #include <BSLib/network/sockAddr.h>
+#include <BSLib/network/codec.hpp>
 
 namespace BSLib
 {
@@ -38,7 +39,7 @@ class INetConnectionMgr;
 class BSLIB_NETWORK_API INetConnection
 {
 public:
-	INetConnection(IEncrypt* ptrEncrypt, ICompress* ptrCompress);
+	INetConnection(IEncrypt* ptrEncrypt, ICompress* ptrCompress, ICodec* ptrCodec);
 	virtual ~INetConnection();
 
 	virtual bool INetConnection_recvToBuffFromNet();
@@ -71,8 +72,8 @@ public:
 	void getNetConnectionInfo(SNetConnectionBytesInfo& a_connectionInfo);
 
 protected:
-	virtual int _INetConnection_send(const void* dataBuff, int buffSize) = 0;
-	virtual int _INetConnection_recv(void* dataBuff, int buffSize) = 0;
+	virtual int _INetConnection_send(const void* dataBuff, int buffSize) = 0; // 系统级调用 tcp udp api
+	virtual int _INetConnection_recv(void* dataBuff, int buffSize) = 0;       // 同上
 	virtual void _INetConnection_waitForSend();
 	virtual void _INetConnection_waitForRecv();
 	virtual void _INetConnection_postSend() {}
@@ -91,13 +92,14 @@ protected:
 	int _compress(const char* inData, unsigned int inLen, Utility::CBufferInt8& outBuff);
 	int _uncompress(const char* inData, unsigned int inLen, Utility::CBufferInt8& outBuff);
 
-	unsigned int _mergerPacket(Utility::CBufferInt8& inBuff, Utility::CBufferInt8& outBuff);
+	unsigned int _mergeRecvPacket(Utility::CBufferInt8& inBuff, Utility::CBufferInt8& outBuff);
 
 	void _clearBuff();
 
 private:
 	IEncrypt* m_encrypt;
 	ICompress* m_compress;
+    ICodec*    m_codec;
 	CSockAddr m_localAddr;
 	CSockAddr m_peerAddr;
 	Utility::CBufferInt8 m_recvBuff;
