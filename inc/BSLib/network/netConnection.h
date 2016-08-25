@@ -84,7 +84,8 @@ protected:
 	void _setLocalAddr(const CSockAddr& addr) { m_localAddr = addr; }
 	void _setPeerAddr(const CSockAddr& addr) { m_peerAddr = addr; }
 
-	virtual int _INetConnection_writeToBuff(const void* data, unsigned int len, unsigned int sign) = 0;
+    // 接口在这里...
+	virtual int _INetConnection_writeToBuff(const void* data, unsigned int len, unsigned int sign) = 0; 
 	virtual int _INetConnection_sendToNet(const void* data, unsigned int len, unsigned int sign) = 0;
 
 	int _encrypt(const char* inData, unsigned int inLen, Utility::CBufferInt8& outBuff);

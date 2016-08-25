@@ -8,10 +8,10 @@ namespace BSLib
 
 namespace Utility
 {
-//////////////////////////////////////////////////////////////////////////
-/// @brief 缓冲区，现在支持 typedef CBuffer< std::vector<char>, char> CBufferInt8;
-///  如果要支持其他类型的缓冲区，需要自行实现init、writeReserve 
-//////////////////////////////////////////////////////////////////////////
+
+//  缓冲区，现在支持 typedef CBuffer< std::vector<char>, char> CBufferInt8;
+//  如果要支持其他类型的缓冲区，需要自行实现init、writeReserve 
+
 template<typename BUFFTYPE, typename ITEMTYPE = unsigned char>
 class CBuffer
 {
@@ -23,19 +23,14 @@ public:
 	
 	virtual ~CBuffer() {}
 
-	/// @brief 初始化
-	/// @return void
+	// 初始化
 	inline void init();
 
-	/// @brief 申请空间
-	/// @return bool
-	/// @param size
+	// 申请空间
 	inline bool writeReserve(uint32 size);
 
-	/// @brief 写入数据
-	/// @return bool 写入是否成功
-	/// @param data 待写的数据
-	/// @param size
+	// 写入数据
+	// return 写入是否成功
 	bool push(const ITEMTYPE* data, uint32 size)
 	{
 		if (data == NULL) {
@@ -48,15 +43,12 @@ public:
 			return false;
 		}
 		memcpy(&m_buffer[m_writePosition], data, size);
-		//m_writePosition += size;
 		writeFlip(size);
 		return true;
 	}
 
-	/// @brief 读出所有的可读的数据
-	/// @return BSLib::uint32 实际读取的长度
-	/// @param buff 传出参数，保存结果数据
-	/// @param buffSize 准备读取的长度
+	// 读出所有的可读的数据
+	// return 实际读取的长度
 	uint32 pop(ITEMTYPE* buff, uint32 buffSize)
 	{
 		if (buff == NULL) {
@@ -74,8 +66,7 @@ public:
 		return size;
 	}
 
-	/// @brief 可写地址
-	/// @return ITEMTYPE*
+	// 可写地址
 	ITEMTYPE* writePtr()
 	{
 		uint32 tmp = m_writePosition - m_readPosition;
@@ -88,29 +79,25 @@ public:
 		return &m_buffer[m_writePosition];
 	}
 
-	/// @brief 可读地址
-	/// @return const ITEMTYPE*
+	// 可读地址
 	const ITEMTYPE* readPtr() const
 	{
 		return &m_buffer[m_readPosition];
 	}
 
-	/// @brief 是否可读
-	/// @return bool
+	// 是否可读
 	bool readReady() const
 	{
 		return m_writePosition - m_readPosition > 0;
 	}
 
-	/// @brief 可读空间大小
-	/// @return BSLib::uint32
+	// 可读空间大小
 	uint32 readSize() const
 	{
 		return m_writePosition - m_readPosition;
 	}
 
-	/// @brief 可写空间大小
-	/// @return BSLib::uint32
+	// 可写空间大小
 	uint32 writeSize() const
 	{
 		return m_bufferMaxSize - m_writePosition;
@@ -122,9 +109,6 @@ public:
 		m_writePosition = 0;
 	}
 
-	/// @brief 内部函数,对overlap读进行处理
-	/// @return void
-	/// @param size
 	void readFlip(uint32 size)
 	{
 		m_readPosition += size;
@@ -155,7 +139,6 @@ public:
 	uint32 getReadPosition() { return m_readPosition; }
 	uint32 getWritePosition() { return m_writePosition; }
 
-protected:
 private:
 	//缓冲区当前大小
 	uint32 m_bufferMaxSize;
