@@ -148,7 +148,7 @@ void CNetStubThread::_newTask()
 			m_netStubQueue.pop(stubPtr);
 			continue;
 		}
-		CNetConnectionCallbackPtr netConnectionCb = netStubCbPtr;
+		INetConnectionCallbackPtr netConnectionCb = netStubCbPtr;
 		if (netConnectionCb == NULL) {
 			m_netStubQueue.pop(stubPtr);
 			continue;

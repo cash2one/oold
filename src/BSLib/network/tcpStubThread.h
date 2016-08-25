@@ -17,7 +17,7 @@ public:
 	virtual ~CTcpStubThread();
 
 protected:
-	virtual bool _addStubToNetConnectionMgr(CNetStubPtr& stubPtr, CNetConnectionCallbackPtr& netConnectionCb);
+	virtual bool _addStubToNetConnectionMgr(CNetStubPtr& stubPtr, INetConnectionCallbackPtr& netConnectionCb);
 	virtual bool _delStubToNetConnectionMgr(CNetStubPtr& stubPtr);
 	virtual void _wait();
 	virtual void _enterRun();

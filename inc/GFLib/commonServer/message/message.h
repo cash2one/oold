@@ -14,7 +14,8 @@ namespace GFLib
 #endif
 
 
-struct GFLIB_COMMONSERVER_API SMessage :public BSLib::Framework::SMessage
+struct GFLIB_COMMONSERVER_API SMessage 
+                :public BSLib::Framework::SMessage
 {
 public:
 	SMessage(BSLib::uint32 a_msgID) : BSLib::Framework::SMessage(a_msgID){}
@@ -38,7 +39,8 @@ public:
 #pragma pack ()
 #endif
 
-class GFLIB_COMMONSERVER_API CMessage :public BSLib::Framework::CMessage
+class GFLIB_COMMONSERVER_API CMessage 
+                :public BSLib::Framework::CMessage
 {
 public:
 	CMessage(BSLib::uint32 msgID) : BSLib::Framework::CMessage(msgID){}

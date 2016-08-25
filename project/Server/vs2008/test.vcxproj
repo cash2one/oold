@@ -32,6 +32,7 @@
     <ClInclude Include="..\..\..\src\Server\test\mesagebus\NonCopyable.hpp" />
     <ClInclude Include="..\..\..\src\Server\test\stdafx.h" />
     <ClInclude Include="..\..\..\src\Server\test\targetver.h" />
+    <ClInclude Include="..\..\..\src\Server\test\testServer.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{14883107-C92B-4B37-9167-6B0B436BC4E0}</ProjectGuid>
@@ -113,10 +114,13 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\..\src\Server\server;..\..\..\inc;..\..\..\inc\TDLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\..\..\lib\BSLib\$(Platform)\$(Configuration);..\..\..\lib\GFLib\$(Platform)\$(Configuration);..\..\..\lib\GSLib\$(Platform)\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Utility.lib;UDM.lib;Network.lib;Framework.lib;Database.lib;CommonServer.lib;LoginSystem.lib;DBSystem.lib;PlayerSystem.lib;ChatSystem.lib;MailSystem.lib;FriendSystem.lib;Dbghelp.lib;RankSystem.lib;SceneSystem.lib;SkillSystem.lib;MasterSystem.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

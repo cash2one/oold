@@ -231,16 +231,16 @@ bool ICommonServer::ICommonServer_initServer()
 	//const std::string& serverName = getServerTypeName();
 
 	std::string serverKey = getServerKey();
-	const SServiceNetInfo* serverInfor = CServiceMgr::singleton().getServerNetInfor(serverKey);
-	if (serverInfor == NULL) {
+	const SServiceNetInfo* serverInfo = CServiceMgr::singleton().getServerNetInfor(serverKey);
+	if (serverInfo == NULL) {
 		BSLIB_LOG_TRACE(ETT_GFLIB_COMMON, "ServerKey[%s]获取网络参数失败", serverKey.c_str());
 		return false;
 	}
-	if (ICommonServer_getServerType() != serverInfor->m_serverID.getServerType()) {
+	if (ICommonServer_getServerType() != serverInfo->m_serverID.getServerType()) {
 		BSLIB_LOG_TRACE(ETT_GFLIB_COMMON, "ServerKey[%s]获取类型参数不一致", serverKey.c_str());
 		return false;
 	}
-	_setServerID(serverInfor->m_serverID);
+	_setServerID(serverInfo->m_serverID);
 
 	BSLIB_LOG_INFO(ETT_GFLIB_COMMON, "设置本地服务 %s(%d.%d.%d) Key[%s]",
 		GFLib::CommonServer::CServerTypeMgr::singleton().getTextServerType(getServerID().getServerType()).c_str(),
@@ -249,8 +249,8 @@ bool ICommonServer::ICommonServer_initServer()
 		getServerID().getServerNumber(),
 		getServerKey().c_str());
 
-	for (BSLib::uint32 i=0; i<serverInfor->m_listenerAddrList.size(); ++i) {
-		_addAcceptorIPAndPort(BSLib::Network::NETT_TCP, serverInfor->m_listenerAddrList[i].m_listenerAddr, (void*)serverInfor->m_listenerAddrList[i].m_flag);
+	for (BSLib::uint32 i=0; i<serverInfo->m_listenerAddrList.size(); ++i) {
+		_addAcceptorIPAndPort(BSLib::Network::NETT_TCP, serverInfo->m_listenerAddrList[i].m_listenerAddr, (void*)serverInfo->m_listenerAddrList[i].m_flag);
 	}
 	return true;
 }

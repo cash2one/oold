@@ -22,6 +22,7 @@
     <ClInclude Include="..\..\..\src\Server\test\mesagebus\NonCopyable.hpp">
       <Filter>messagebus</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\src\Server\test\testServer.hpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="messagebus">

@@ -16,6 +16,7 @@ namespace Framework
 #pragma pack (1)
 #endif
 
+// 只有消息 id 信息
 struct BSLIB_FRAMEWORK_API SMessage
 {
 public:
@@ -53,6 +54,7 @@ private:
 #pragma pack ()
 #endif
 
+// 包含了 序列化 ,反序列化 的接口
 class BSLIB_FRAMEWORK_API CMessage : public SMessage
 {
 public:

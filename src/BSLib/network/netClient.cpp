@@ -7,7 +7,8 @@ namespace Network
 {
 
 //////////////////////////////////////////////////////////////////////////
-class CNetClientCb : public BSLib::Network::CNetConnectionCallback
+class CNetClientCb 
+    : public BSLib::Network::INetConnectionCallback
 {
 public:
 	CNetClientCb(INetClient* netClient) : m_netClient(netClient)

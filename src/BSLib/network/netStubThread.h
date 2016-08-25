@@ -33,7 +33,8 @@ struct SNetStubNetInfo
 //////////////////////////////////////////////////////////////////////////
 // CNetStubCb
 //////////////////////////////////////////////////////////////////////////
-class CNetStubCb : public BSLib::Network::CNetConnectionCallback
+class CNetStubCb 
+    : public BSLib::Network::INetConnectionCallback
 {
 public:
 	CNetStubCb(CNetStubPtr& stubPtr) : m_stubPtr(stubPtr), m_seconds(0) {}
@@ -197,7 +198,8 @@ typedef BSLib::Utility::CPointer<CNetStubCb> CNetStubCbPtr;
 //////////////////////////////////////////////////////////////////////////
 class INetServer;
 
-class CNetStubThread : public BSLib::Utility::CThread
+class CNetStubThread 
+    : public BSLib::Utility::CThread
 {
 public:
 	CNetStubThread(INetServer* netServer);
@@ -215,7 +217,7 @@ public:
 	virtual bool addStub(CNetStubPtr& stubPtr);
 
 protected:
-	virtual bool _addStubToNetConnectionMgr(CNetStubPtr& stubPtr, CNetConnectionCallbackPtr& netConnectionCb) = 0;
+	virtual bool _addStubToNetConnectionMgr(CNetStubPtr& stubPtr, INetConnectionCallbackPtr& netConnectionCb) = 0;
 	virtual bool _delStubToNetConnectionMgr(CNetStubPtr& stubPtr) = 0;
 	virtual void _wait() = 0;
 	virtual void _run();

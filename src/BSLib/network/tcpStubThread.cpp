@@ -17,7 +17,7 @@ CTcpStubThread::~CTcpStubThread()
 	;
 }
 
-bool CTcpStubThread::_addStubToNetConnectionMgr(CNetStubPtr& stubPtr, CNetConnectionCallbackPtr& netConnectionCb)
+bool CTcpStubThread::_addStubToNetConnectionMgr(CNetStubPtr& stubPtr, INetConnectionCallbackPtr& netConnectionCb)
 {
 	CTcpConnectionMgr::CConnectItem* item = new CTcpConnectionMgr::CConnectItem();
 	if (item == NULL){

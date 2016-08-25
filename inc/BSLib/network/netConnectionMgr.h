@@ -20,7 +20,7 @@ protected:
 	{
 	public:
 		CNetConnectionPtr m_connect;
-		CNetConnectionCallbackPtr m_callback;
+		INetConnectionCallbackPtr m_callback;
 	};
 	typedef BSLib::Utility::CPointer<CConnectItem> CConnectItemPtr;
 
@@ -29,7 +29,7 @@ public:
 	virtual ~INetConnectionMgr();
 
 	//支持多线程添加
-	virtual bool INetConnectionMgr_addConnection(CNetConnectionPtr& connection, CNetConnectionCallbackPtr& netConnectionCb);
+	virtual bool INetConnectionMgr_addConnection(CNetConnectionPtr& connection, INetConnectionCallbackPtr& netConnectionCb);
 	//支持多线程删除
 	virtual bool INetConnectionMgr_delConnection(int sock);
 

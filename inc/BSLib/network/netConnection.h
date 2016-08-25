@@ -105,14 +105,14 @@ private:
 };
 typedef BSLib::Utility::CPointer<INetConnection> CNetConnectionPtr;
 
-class BSLIB_NETWORK_API CNetConnectionCallback
+class BSLIB_NETWORK_API INetConnectionCallback
 {
 public:
-	virtual ~CNetConnectionCallback(){}
+	virtual ~INetConnectionCallback(){}
 	virtual bool recvMsg(CNetConnectionPtr& connection) = 0;
 	virtual void terminate(CNetConnectionPtr& connection) = 0;
 };
-typedef BSLib::Utility::CPointer<CNetConnectionCallback> CNetConnectionCallbackPtr;
+typedef BSLib::Utility::CPointer<INetConnectionCallback> INetConnectionCallbackPtr;
 
 }//Network
 

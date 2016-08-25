@@ -47,7 +47,8 @@ typedef BSLib::Utility::CPointer<INetClient> CNetClientPtr;
 //////////////////////////////////////////////////////////////////////////
 // CTcpClient
 //////////////////////////////////////////////////////////////////////////
-class BSLIB_NETWORK_API CTcpClient : public INetClient
+class BSLIB_NETWORK_API CTcpClient 
+    : public INetClient
 {
 public:
 	CTcpClient();
@@ -60,7 +61,7 @@ public:
 
 private:
 	BSLib::Network::CTcpConnectionMgr* m_tcpConnectionMgr;
-	BSLib::Network::CNetConnectionCallbackPtr m_tcpClientCb;
+	BSLib::Network::INetConnectionCallbackPtr m_tcpClientCb;
 
 };
 typedef BSLib::Utility::CPointer<CTcpClient> CTcpClientPtr;
@@ -68,7 +69,8 @@ typedef BSLib::Utility::CPointer<CTcpClient> CTcpClientPtr;
 //////////////////////////////////////////////////////////////////////////
 // CUdpClient
 //////////////////////////////////////////////////////////////////////////
-class BSLIB_NETWORK_API CUdpClient : public INetClient
+class BSLIB_NETWORK_API CUdpClient 
+    : public INetClient
 {
 public:
 	CUdpClient();
@@ -84,7 +86,7 @@ public:
 
 private:
 	BSLib::Network::CUdpConnectionMgr* m_udpConnectionMgr;
-	BSLib::Network::CNetConnectionCallbackPtr m_udpClientCb;
+	BSLib::Network::INetConnectionCallbackPtr m_udpClientCb;
 
 };
 typedef BSLib::Utility::CPointer<CUdpClient> CUdpClientPtr;

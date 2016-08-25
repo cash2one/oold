@@ -20,7 +20,7 @@ INetConnectionMgr::~INetConnectionMgr()
 	;
 }
 
-bool INetConnectionMgr::INetConnectionMgr_addConnection(CNetConnectionPtr& connection, CNetConnectionCallbackPtr& netConnectionCb)
+bool INetConnectionMgr::INetConnectionMgr_addConnection(CNetConnectionPtr& connection, INetConnectionCallbackPtr& netConnectionCb)
 {
 	if (connection == NULL || netConnectionCb == NULL){
 		return false;

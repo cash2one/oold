@@ -38,16 +38,23 @@ bool IService::_parseMsg(GFLib::SMessage* msg, BSLib::uint32 msgSize)
 		msgID,
 		BSLib::Framework::CMsgDebug::singleton().getPrompt(msg).c_str());
 
-	if (!(msgServerType == (BSLib::uint8)SRVTYPE_ANY || msgServerType == (BSLib::uint8)SRVTYPE_ANYSERVER || msgServerType == localServerType)) {
+	if ( ! (msgServerType == (BSLib::uint8)SRVTYPE_ANY 
+        || msgServerType == (BSLib::uint8)SRVTYPE_ANYSERVER 
+        || msgServerType == localServerType) ) 
+    {
 		//非本地消息
 		if (_executeTransfer(msg, msgSize)) {
 			return true;
 		}
 		return false;
 	}
+
 	//本地消息
+
 	//转发消息
-	if (msgFunType == EFUNCTYPE_SERVER_LINK && msgID == EMSGNUMID_SERVERLINK_XX2XX_NTF_TRANSFER) {
+	if (msgFunType == EFUNCTYPE_SERVER_LINK
+        && msgID == EMSGNUMID_SERVERLINK_XX2XX_NTF_TRANSFER)
+    {
 		SMsgServerLinkXX2XXNtfTransfer* ntTransfer = (SMsgServerLinkXX2XXNtfTransfer*)msg;
 		GFLib::SMessage* subMsg = (GFLib::SMessage*)ntTransfer->m_msg;
 		BSLib::uint32 msgSizeSubMsg = ntTransfer->m_msgSize;
@@ -69,28 +76,41 @@ bool IService::_parseMsg(GFLib::SMessage* msg, BSLib::uint32 msgSize)
 			subMsgID,
 			BSLib::Framework::CMsgDebug::singleton().getPrompt(subMsg).c_str());
 
-		if (ntTransfer->m_serverIDTo == INVALID_SERVERID) {
-			if (subMsgServerType == (BSLib::uint8)SRVTYPE_ANY || subMsgServerType == (BSLib::uint8)SRVTYPE_ANYSERVER || subMsgServerType == localServerType) {
+		if (ntTransfer->m_serverIDTo == INVALID_SERVERID) 
+        {
+			if (subMsgServerType == (BSLib::uint8)SRVTYPE_ANY 
+                || subMsgServerType == (BSLib::uint8)SRVTYPE_ANYSERVER 
+                || subMsgServerType == localServerType) 
+            {
 				if (_executeMessage(&msgLable, subMsg)) {
 					return true;
 				}
 				return false;
 			}
+
 			if (_executeTransfer(msg, msgSize)) {
 				return true;
 			}
+
 			return false;
-		} else if (ntTransfer->m_serverIDTo == localServerID) {
-			if (_executeMessage(&msgLable, subMsg)) {
+		} 
+        else if (ntTransfer->m_serverIDTo == localServerID) 
+        {
+			if (_executeMessage(&msgLable, subMsg)) 
+            {
 				return true;
 			}
 			return false;
 		}
-		if (_executeTransfer(msg, msgSize)) {
+
+		if (_executeTransfer(msg, msgSize)) 
+        {
 			return true;
 		}
 		return false;
 	}
+
+
 	if (_executeMessage(&msgLable, msg)) {
 		return true;
 	}

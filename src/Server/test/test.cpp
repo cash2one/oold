@@ -40,6 +40,7 @@ void test()
     cout << "I m in test";
 }
 
+#include "testServer.hpp"
 int _tmain(int argc, _TCHAR* argv[])
 {   
     //A&& a = std::move(GetA());
@@ -59,6 +60,8 @@ int _tmain(int argc, _TCHAR* argv[])
     bus.attach<int, const std::string&>("test1", &AA::Test, &a);
     const std::string str("a");
     bus.request("test1", 100, str);
+
+    TestServer::run();
 	return 0;
 }
 

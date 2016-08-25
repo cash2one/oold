@@ -88,8 +88,8 @@ protected:
 private:	
 	bool _newTcpConnect(int sock, BSLib::Network::CSockAddr& addrLocal, BSLib::Network::CSockAddr& addrPeer, void* tempData);
 	bool _newUdpConnect(int sock, BSLib::Network::CSockAddr& addrLocal, BSLib::Network::CSockAddr& addrPeer, void* tempData);
-	int _tcpAcceptorThread(void* para);
-	int _udpAcceptorThread(void* para);
+	int _tcpAcceptorThread(void* para); // tcp 监听线程, only one
+	int _udpAcceptorThread(void* para); // udp 监听线程, only one
 
 private:
 	CNetStubMgr* m_netStubMgr;

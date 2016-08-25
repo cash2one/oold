@@ -26,7 +26,8 @@ enum EMsgLabelType
 struct BSLIB_FRAMEWORK_API SMsgLabel
 {
 public:
-	SMsgLabel(uint32 lableSize = sizeof(SMsgLabel)) : m_msgSize(0), m_labelSize(lableSize)
+	SMsgLabel(uint32 lableSize = sizeof(SMsgLabel)) 
+        : m_msgSize(0), m_labelSize(lableSize)
 	{
 		if (m_labelSize < sizeof(SMsgLabel))	{
 			m_labelSize = sizeof(SMsgLabel);
@@ -47,7 +48,8 @@ protected:
 };
 
 
-struct BSLIB_FRAMEWORK_API SSysMsgLabel : public SMsgLabel
+struct BSLIB_FRAMEWORK_API SSysMsgLabel 
+            : public SMsgLabel
 {
 public:
 	CChannelID m_sysMsgIDFrome;

@@ -12,7 +12,8 @@ namespace BSLib
 namespace Network
 {
 
-class BSLIB_NETWORK_API CNetStubMgr : public BSLib::Utility::CUniqueIDMgr<StubID>
+class BSLIB_NETWORK_API CNetStubMgr 
+    : public BSLib::Utility::CUniqueIDMgr<StubID>
 {
 public:
 	CNetStubMgr();

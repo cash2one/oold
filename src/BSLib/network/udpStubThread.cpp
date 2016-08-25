@@ -17,7 +17,7 @@ CUdpStubThread::~CUdpStubThread()
 	;
 }
 
-bool CUdpStubThread::_addStubToNetConnectionMgr(CNetStubPtr& stubPtr, CNetConnectionCallbackPtr& netConnectionCb)
+bool CUdpStubThread::_addStubToNetConnectionMgr(CNetStubPtr& stubPtr, INetConnectionCallbackPtr& netConnectionCb)
 {
 	CUdpConnectionMgr::CConnectItem* item = new CUdpConnectionMgr::CConnectItem();
 	if (item == NULL){
