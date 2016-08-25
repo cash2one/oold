@@ -402,26 +402,39 @@ int CTcpConnection::_writeToBuff(const void* data, unsigned int len, unsigned in
 	char* dataBuff = (char*)data;
 	unsigned int dataPos = 0;
 
-	while (dataSize > 0) {
+	while (dataSize > 0) 
+    {
 		unsigned int cmdFlag = sign;
 		unsigned int cmdLen = 0;
-		if (dataSize > GNET_PACKET_LEN) {
-			cmdFlag |= GNET_PACKET_NEXT;
+		if (dataSize > GNET_PACKET_LEN) 
+        {
+			cmdFlag |= GNET_PACKET_NEXT;    // ªπ”–
 			cmdLen = GNET_PACKET_LEN;
-		} else {
+		} 
+        else 
+        {
 			cmdLen = dataSize;
 		}
-		cmdFlag = (cmdFlag & GNET_PACKET_SIGN) | cmdLen;
 
-		if (!sendBuff.push((char*)&cmdFlag, sizeof(cmdFlag))){
+		cmdFlag = (cmdFlag & GNET_PACKET_SIGN)  // ¡Ù FF, ∆‰”‡ clear
+                  | cmdLen;
+
+        // push flag first
+		if (!sendBuff.push((char*)&cmdFlag, sizeof(cmdFlag)))
+        {
 			return -1;
 		}
-		if (!sendBuff.push((char*)&dataBuff[dataPos], cmdLen)){
+
+        // push data
+		if (!sendBuff.push((char*)&dataBuff[dataPos], cmdLen))
+        {
 			return -1;
 		}
+
 		dataSize -= cmdLen;
 		dataPos += cmdLen;
 	}
+
 	return len;
 }
 
