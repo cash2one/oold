@@ -145,65 +145,97 @@ int INetConnection::send(const void* msgBuff, unsigned int buffSize, bool useBuf
 }
 
 int INetConnection::recv(BSLib::Utility::CStream& stream)
-{
-	unsigned int buffLen = m_recvBuff.readSize();
-	if (buffLen < sizeof(unsigned int)){
-		return 0;
-	}
+{   
+    unsigned int buffLen = 0;
+    const char* buff = NULL;
+	do 
+	{
+        buffLen = m_recvBuff.readSize();
+        if (buffLen <= 0)
+            break;
 
-	Utility::CBufferInt8 recvBuff;
-	int res = _mergeRecvPacket(m_recvBuff, recvBuff);
-	if (res <= 0) {
-		return res;
-	}
+        buff = m_recvBuff.readPtr();
+        if (NULL == m_codec)
+        {
+            stream.push(buff, buffLen);
+            m_recvBuff.readFlip(buffLen);
+            break;
+        }
 
-	unsigned int cmdFlag = *((unsigned int*)recvBuff.readPtr());
-	unsigned int len = recvBuff.readSize() - sizeof(unsigned int);
-	unsigned int flag = cmdFlag & GNET_PACKET_SIGN;
-	const char* buff = recvBuff.readPtr();
+        int ret = m_codec->ICodec_decoder(this, stream);
+        if (ICodec::eOK != ret)
+        {
+            buffLen = 0;
+            break;
+        }
+
+        buffLen = stream.readSize();
+        buff = stream.readPtr();
+
+	} while (false);
 	
-	if ( !(flag & GNET_PACKET_FLAG) ){
-		return -1;
-	}
-	
-    // 1. decrypt, 2 uncompress
-	if (flag & GNET_PACKET_ENCRYPT) {
-		if (m_encrypt == NULL){
-			return -1;
-		}
+    return buffLen;
+
+    /*
+        unsigned int buffLen = m_recvBuff.readSize();
+        if (buffLen < sizeof(unsigned int)){
+        return 0;
+        }
+
+        Utility::CBufferInt8 recvBuff;
+        int res = _mergeRecvPacket(m_recvBuff, recvBuff);
+        if (res <= 0) {
+        return res;
+        }
+
+        unsigned int cmdFlag = *((unsigned int*)recvBuff.readPtr());
+        unsigned int len = recvBuff.readSize() - sizeof(unsigned int);
+        unsigned int flag = cmdFlag & GNET_PACKET_SIGN;
+        const char* buff = recvBuff.readPtr();
+
+        if ( !(flag & GNET_PACKET_FLAG) ){
+        return -1;
+        }
+
+        // 1. decrypt, 2 uncompress
+        if (flag & GNET_PACKET_ENCRYPT) {
+        if (m_encrypt == NULL){
+        return -1;
+        }
 
         // ½âÃÜ
-		Utility::CBufferInt8 encryptBuff;
-		if (_decrypt(&buff[sizeof(unsigned int)], len, encryptBuff) < 0) {
-			return -1;
-		}
+        Utility::CBufferInt8 encryptBuff;
+        if (_decrypt(&buff[sizeof(unsigned int)], len, encryptBuff) < 0) {
+        return -1;
+        }
 
         // ½âÑ¹Ëõ
-		if (m_compress != NULL && (flag & GNET_PACKET_COMPRESS)){
-			Utility::CBufferInt8 compressBuff;
-			if (_uncompress(encryptBuff.readPtr(), encryptBuff.readSize(), compressBuff) < 0) {
-				return -1;
-			}
-			stream.push(compressBuff.readPtr(), compressBuff.readSize());
-			return compressBuff.readSize();
-		}
-		stream.push(encryptBuff.readPtr(), encryptBuff.readSize());
-		return encryptBuff.readSize();
-	}
+        if (m_compress != NULL && (flag & GNET_PACKET_COMPRESS)){
+        Utility::CBufferInt8 compressBuff;
+        if (_uncompress(encryptBuff.readPtr(), encryptBuff.readSize(), compressBuff) < 0) {
+        return -1;
+        }
+        stream.push(compressBuff.readPtr(), compressBuff.readSize());
+        return compressBuff.readSize();
+        }
+        stream.push(encryptBuff.readPtr(), encryptBuff.readSize());
+        return encryptBuff.readSize();
+        }
 
-    // only  uncompress
-	if (m_compress != NULL && (flag & GNET_PACKET_COMPRESS)){
-		Utility::CBufferInt8 compressBuff;
-		if (_uncompress(&buff[sizeof(unsigned int)], len, compressBuff) < 0) {
-			return -1;
-		}
-		stream.push(compressBuff.readPtr(), compressBuff.readSize());
-		return compressBuff.readSize();
-	}
+        // only  uncompress
+        if (m_compress != NULL && (flag & GNET_PACKET_COMPRESS)){
+        Utility::CBufferInt8 compressBuff;
+        if (_uncompress(&buff[sizeof(unsigned int)], len, compressBuff) < 0) {
+        return -1;
+        }
+        stream.push(compressBuff.readPtr(), compressBuff.readSize());
+        return compressBuff.readSize();
+        }
 
-    // nothing, just copy
-	stream.push(&buff[sizeof(unsigned int)], len);
-	return len;
+        // nothing, just copy
+        stream.push(&buff[sizeof(unsigned int)], len);
+        return len;
+    */
 }
 
 int INetConnection::recvBlock(BSLib::Utility::CStream& stream, int countMax)
