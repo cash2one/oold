@@ -14,9 +14,6 @@ namespace Network
 
 class CNetClientCb;
 
-//////////////////////////////////////////////////////////////////////////
-// CNetClient
-//////////////////////////////////////////////////////////////////////////
 class  BSLIB_NETWORK_API INetClient
 {
 public:
@@ -44,9 +41,7 @@ protected:
 };
 typedef BSLib::Utility::CPointer<INetClient> CNetClientPtr;
 
-//////////////////////////////////////////////////////////////////////////
-// CTcpClient
-//////////////////////////////////////////////////////////////////////////
+
 class BSLIB_NETWORK_API CTcpClient 
     : public INetClient
 {
@@ -66,9 +61,7 @@ private:
 };
 typedef BSLib::Utility::CPointer<CTcpClient> CTcpClientPtr;
 
-//////////////////////////////////////////////////////////////////////////
-// CUdpClient
-//////////////////////////////////////////////////////////////////////////
+
 class BSLIB_NETWORK_API CUdpClient 
     : public INetClient
 {
@@ -79,7 +72,6 @@ public:
 	void setUdpConnectionMgr(BSLib::Network::CUdpConnectionMgr* udpConnectionMgr) { m_udpConnectionMgr = udpConnectionMgr; }
 
 	virtual bool INetClient_connect(const char* serverIP, uint16 serverPort) override;
-
 	virtual void INetClient_close() override;
 
 	bool INetConnection_connect(CSockAddr& addrLocal, CSockAddr& addrServer);

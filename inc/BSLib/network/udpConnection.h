@@ -17,8 +17,8 @@ public:
 	CUdpConnection(int sock = -1, IEncrypt* ptrEncrypt = NULL, ICompress* ptrCompress = NULL,ICodec* ptrCodec = NULL);
 	virtual ~CUdpConnection();
 
-	virtual bool INetConnection_sendToNetFromBuff() override;
-	virtual bool INetConnection_isEmptyOfSendBuff() override;
+	virtual bool INetConnection_sendBuff2Net() override;
+	virtual bool INetConnection_sendBuffIsEmpty() override;
 
 	virtual bool INetConnection_connect(CSockAddr& addrServer, int connMax = 0) override;
 	virtual bool INetConnection_connect(CSockAddr& addrLocal, CSockAddr& addrServer, int connMax = 0) override;
@@ -30,12 +30,12 @@ public:
 	virtual bool INetConnection_isValid()  override;
 
 protected:
-	virtual int _INetConnection_send(const void* dataBuff, int buffSize)  override;
-	virtual int _INetConnection_recv(void* dataBuff, int buffSize)  override;
+	virtual int _INetConnection_os_send(const void* dataBuff, int buffSize)  override;
+	virtual int _INetConnection_os_recv(void* dataBuff, int buffSize)  override;
 	virtual void _INetConnection_postSend()  override;
 
-	virtual int _INetConnection_writeToBuff(const void* data, unsigned int len, unsigned int sign)  override;
-	virtual int _INetConnection_sendToNet(const void* data, unsigned int len, unsigned int sign)  override;
+	virtual int _INetConnection_send2Buff(const void* data, unsigned int len, unsigned int sign)  override;
+	virtual int _INetConnection_send2Net(const void* data, unsigned int len, unsigned int sign)  override;
 	int _sendBlock(const void* dataBuff, int buffSize);
 
 private:

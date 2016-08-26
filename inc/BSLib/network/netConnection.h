@@ -42,16 +42,17 @@ public:
 	INetConnection(IEncrypt* ptrEncrypt, ICompress* ptrCompress, ICodec* ptrCodec);
 	virtual ~INetConnection();
 
-	virtual bool INetConnection_recvToBuffFromNet();
-	virtual bool INetConnection_sendToNetFromBuff() = 0;
+	bool recvNet2Buff();
 
-	virtual bool INetConnection_isEmptyOfSendBuff() = 0;
+	virtual bool INetConnection_sendBuff2Net() = 0;
+	virtual bool INetConnection_sendBuffIsEmpty() = 0;
 
 	void setEncrypt(IEncrypt* ptrEncrypt) { m_encrypt = ptrEncrypt; }
 	void setCompress(ICompress* ptrCompress) { m_compress = ptrCompress; }
 
 	int send(BSLib::Utility::CStream& stream, bool useBuffer = false);
 	int send(const void* msgBuff, unsigned int buffSize, bool useBuffer = false);
+
 	int recv(BSLib::Utility::CStream& stream);
 	int recvBlock(BSLib::Utility::CStream& stream, int countMax = 0);
 
@@ -63,30 +64,29 @@ public:
 	virtual void INetConnection_close();
 	virtual bool INetConnection_isValid() = 0;
 
+    virtual void INetConnection_getNetConnectionInfo(SNetConnectionBytesInfo& a_connectionInfo);
+
 	const CSockAddr& getLocalAddr() { return m_localAddr; }
 	const CSockAddr& getPeerAddr() { return m_peerAddr; }
 
 	void setNetConnectionMgr(INetConnectionMgr* connMgr) { m_netConnectMgr = connMgr; }
 	INetConnectionMgr* getNetConnectionMgr() { return m_netConnectMgr; }
 
-	void getNetConnectionInfo(SNetConnectionBytesInfo& a_connectionInfo);
-
 protected:
-	virtual int _INetConnection_send(const void* dataBuff, int buffSize) = 0; // 系统级调用 tcp udp api
-	virtual int _INetConnection_recv(void* dataBuff, int buffSize) = 0;       // 同上
-	virtual void _INetConnection_waitForSend();
-	virtual void _INetConnection_waitForRecv();
-	virtual void _INetConnection_postSend() {}
 
-	virtual BSLib::uint64 _INetConnection_getSendBytes() { return 0; }
-	virtual BSLib::uint64 _INetConnection_getRecvBytes() { return 0; }
+    virtual int _INetConnection_send2Buff(const void* data, unsigned int len, unsigned int sign) = 0;
+    virtual int _INetConnection_send2Net(const void* data, unsigned int len, unsigned int sign) = 0;
+
+	virtual int _INetConnection_os_send(const void* dataBuff, int buffSize) = 0;
+	virtual int _INetConnection_os_recv(void* dataBuff, int buffSize) = 0;
+
+    virtual void _INetConnection_postSend() =0;
+
+	void _waitForSend();
+	void _waitForRecv();
 
 	void _setLocalAddr(const CSockAddr& addr) { m_localAddr = addr; }
 	void _setPeerAddr(const CSockAddr& addr) { m_peerAddr = addr; }
-
-    // 接口在这里...
-	virtual int _INetConnection_writeToBuff(const void* data, unsigned int len, unsigned int sign) = 0; 
-	virtual int _INetConnection_sendToNet(const void* data, unsigned int len, unsigned int sign) = 0;
 
 	int _encrypt(const char* inData, unsigned int inLen, Utility::CBufferInt8& outBuff);
 	int _decrypt(const char* inData, unsigned int inLen, Utility::CBufferInt8& outBuff);
@@ -95,7 +95,7 @@ protected:
 
 	unsigned int _mergeRecvPacket(Utility::CBufferInt8& inBuff, Utility::CBufferInt8& outBuff);
 
-	void _clearBuff();
+	void _clearRecvBuff();
 
 private:
 	IEncrypt* m_encrypt;

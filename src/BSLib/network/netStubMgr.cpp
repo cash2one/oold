@@ -56,7 +56,7 @@ CNetStubPtr CNetStubMgr::getNetStubByStubID(StubID stubID)
 	return m_stubHashMap.getValue(stubID);
 }
 
-bool CNetStubMgr::_INetConnection_send(StubID stubID, BSLib::Utility::CStream& stream)
+bool CNetStubMgr::_INetConnection_os_send(StubID stubID, BSLib::Utility::CStream& stream)
 {
 	BSLib::Utility::CMutexFun fun(&m_mutex);
 	CNetStubPtr& stub = m_stubHashMap.getValue(stubID);
@@ -66,7 +66,7 @@ bool CNetStubMgr::_INetConnection_send(StubID stubID, BSLib::Utility::CStream& s
 	return stub->send(stream) > 0;
 }
 
-bool CNetStubMgr::_INetConnection_send(StubID stubID, const void* msgBuff, uint32 buffSize)
+bool CNetStubMgr::_INetConnection_os_send(StubID stubID, const void* msgBuff, uint32 buffSize)
 {
 	BSLib::Utility::CMutexFun fun(&m_mutex);
 	CNetStubPtr& stub = m_stubHashMap.getValue(stubID);

@@ -173,6 +173,7 @@
     <ClInclude Include="..\..\..\inc\BSLib\network\netServer.h" />
     <ClInclude Include="..\..\..\inc\BSLib\network\netStub.h" />
     <ClInclude Include="..\..\..\inc\BSLib\network\netStubMgr.h" />
+    <ClInclude Include="..\..\..\inc\BSLib\network\rawTcpConnection.hpp" />
     <ClInclude Include="..\..\..\inc\BSLib\network\sockAddr.h" />
     <ClInclude Include="..\..\..\inc\BSLib\network\tcpAcceptor.h" />
     <ClInclude Include="..\..\..\inc\BSLib\network\tcpConnection.h" />

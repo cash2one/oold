@@ -30,7 +30,7 @@ CUdpConnection::~CUdpConnection()
 	}
 }
 
-bool CUdpConnection::INetConnection_sendToNetFromBuff()
+bool CUdpConnection::INetConnection_sendBuff2Net()
 {
 	Utility::CMutexFun mutexFun(&m_sendMutex);
 
@@ -43,25 +43,25 @@ bool CUdpConnection::INetConnection_sendToNetFromBuff()
 			continue;
 		}
 		if (sendSize == 0){
-			_INetConnection_send(m_sendBuff.readPtr(), *it_size);
+			_INetConnection_os_send(m_sendBuff.readPtr(), *it_size);
 			m_sendBuff.readFlip(*it_size);
 			it_size = m_sendSizes.erase(it_size);
 			continue;
 		}
-		_INetConnection_send(m_sendBuff.readPtr(), sendSize);
+		_INetConnection_os_send(m_sendBuff.readPtr(), sendSize);
 		m_sendBuff.readFlip(sendSize);
 		
 		sendSize = *it_size;
 		it_size = m_sendSizes.erase(it_size);
 	}
 	if (sendSize > 0){
-		_INetConnection_send(m_sendBuff.readPtr(), sendSize);
+		_INetConnection_os_send(m_sendBuff.readPtr(), sendSize);
 		m_sendBuff.readFlip(sendSize);
 	}
 	return true;
 }
 
-bool CUdpConnection::INetConnection_isEmptyOfSendBuff()
+bool CUdpConnection::INetConnection_sendBuffIsEmpty()
 {
 	return !m_sendBuff.readReady();
 }
@@ -86,7 +86,7 @@ bool CUdpConnection::INetConnection_connect(CSockAddr& addrServer, int connMax)
 		BSLib::Utility::CThread::msleep(1000);
 	}
 	_setConnectionAddr(sock);
-	_clearBuff();
+	_clearRecvBuff();
 	return true;
 }
 
@@ -116,7 +116,7 @@ bool CUdpConnection::INetConnection_connect(CSockAddr& addrLocal, CSockAddr& add
 		BSLib::Utility::CThread::msleep(1000);
 	}
 	_setConnectionAddr(sock);
-	_clearBuff();
+	_clearRecvBuff();
 	return true;
 }
 
@@ -139,7 +139,7 @@ bool CUdpConnection::INetConnection_isValid()
 	return m_isValid;
 }
 
-int CUdpConnection::_INetConnection_send(const void* dataBuff, int buffSize)
+int CUdpConnection::_INetConnection_os_send(const void* dataBuff, int buffSize)
 {
 	int len = BSLib::UDM::sendto(m_udmSock, (char*)dataBuff, buffSize);
 	if (len == BSLIB_UDM_ERROR) {
@@ -148,7 +148,7 @@ int CUdpConnection::_INetConnection_send(const void* dataBuff, int buffSize)
 	return len;
 }
 
-int CUdpConnection::_INetConnection_recv(void* dataBuff, int buffSize)
+int CUdpConnection::_INetConnection_os_recv(void* dataBuff, int buffSize)
 {
 	int len = BSLib::UDM::recvfrom(m_udmSock, (char*)dataBuff, buffSize);
 	if (len == BSLIB_UDM_ERROR) {
@@ -165,7 +165,7 @@ void CUdpConnection::_INetConnection_postSend()
 	}
 }
 
-int CUdpConnection::_INetConnection_writeToBuff(const void* data, unsigned int len, unsigned int sign)
+int CUdpConnection::_INetConnection_send2Buff(const void* data, unsigned int len, unsigned int sign)
 {
 	if (len > GNET_PACKET_LEN) {
 		return -1;
@@ -190,7 +190,7 @@ int CUdpConnection::_INetConnection_writeToBuff(const void* data, unsigned int l
 	return len;
 }
 
-int CUdpConnection::_INetConnection_sendToNet(const void* data, unsigned int len, unsigned int sign)
+int CUdpConnection::_INetConnection_send2Net(const void* data, unsigned int len, unsigned int sign)
 {
 	if (len > GNET_PACKET_LEN) {
 		return -1;
@@ -215,12 +215,12 @@ int CUdpConnection::_sendBlock(const void* dataBuff, int buffSize)
 	int offset = 0;
 
 	do {
-		int sendSize = _INetConnection_send(&sendData[offset], dataLen - offset);
+		int sendSize = _INetConnection_os_send(&sendData[offset], dataLen - offset);
 		if (sendSize < 0){
 			return -1;
 		}
 		if (sendSize == 0) {
-			_INetConnection_waitForSend();
+			_waitForSend();
 			continue;
 		}
 		offset += sendSize;

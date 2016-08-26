@@ -36,7 +36,7 @@ INetConnection::~INetConnection()
 	;
 }
 
-bool INetConnection::INetConnection_recvToBuffFromNet()
+bool INetConnection::recvNet2Buff()
 {
  	int len = 0;
 	
@@ -44,7 +44,7 @@ bool INetConnection::INetConnection_recvToBuffFromNet()
 		if (!m_recvBuff.writeReserve(RECV_BUFF)){
 			return false;
 		}
-		len = _INetConnection_recv(m_recvBuff.writePtr(), RECV_BUFF);
+		len = _INetConnection_os_recv(m_recvBuff.writePtr(), RECV_BUFF);
 		if (len < 0) {
 			return false;
 		}
@@ -57,18 +57,18 @@ bool INetConnection::INetConnection_recvToBuffFromNet()
 	return true;
 }
 
-void INetConnection::getNetConnectionInfo(SNetConnectionBytesInfo& a_connectionInfo)
+void INetConnection::INetConnection_getNetConnectionInfo(SNetConnectionBytesInfo& a_connectionInfo)
 {
-	a_connectionInfo.m_recvBytes = _INetConnection_getRecvBytes();
-	a_connectionInfo.m_sendBytes = _INetConnection_getSendBytes();
+	a_connectionInfo.m_recvBytes = 0;
+	a_connectionInfo.m_sendBytes = 0;
 }
 
-void INetConnection::_INetConnection_waitForSend()
+void INetConnection::_waitForSend()
 {
 	Utility::CThread::msleep(100);
 }
 
-void INetConnection::_INetConnection_waitForRecv()
+void INetConnection::_waitForRecv()
 {
 	Utility::CThread::msleep(100);
 }
@@ -96,7 +96,8 @@ int INetConnection::send(const void* msgBuff, unsigned int buffSize, bool useBuf
 	unsigned int flag = GNET_PACKET_FLAG;
 
     // 压缩
-	if (m_compress != NULL && buffSize >= 32) {
+	if (m_compress != NULL && buffSize >= 32) 
+    {
 		Utility::CBufferInt8 compressBuff;
 		if (_compress((char*)msgBuff, buffSize, compressBuff) < 0){
 			return -1;
@@ -109,37 +110,38 @@ int INetConnection::send(const void* msgBuff, unsigned int buffSize, bool useBuf
 			}
 			flag |= GNET_PACKET_ENCRYPT;
 			if (useBuffer){
-				return _INetConnection_writeToBuff(encryptBuff.readPtr(), encryptBuff.readSize(), flag);
+				return _INetConnection_send2Buff(encryptBuff.readPtr(), encryptBuff.readSize(), flag);
 			}
-			return _INetConnection_sendToNet(encryptBuff.readPtr(), encryptBuff.readSize(), flag);
+			return _INetConnection_send2Net(encryptBuff.readPtr(), encryptBuff.readSize(), flag);
 		}
 
 		if (useBuffer){
-			return _INetConnection_writeToBuff(compressBuff.readPtr(), compressBuff.readSize(), flag);
+			return _INetConnection_send2Buff(compressBuff.readPtr(), compressBuff.readSize(), flag);
 		}
-		return _INetConnection_sendToNet(compressBuff.readPtr(), compressBuff.readSize(), flag);
+		return _INetConnection_send2Net(compressBuff.readPtr(), compressBuff.readSize(), flag);
 	}
 
     // 加密
-	if (m_encrypt != NULL) {
+	if (m_encrypt != NULL)
+    {
 		Utility::CBufferInt8 encryptBuff;
 		if (_encrypt((char*)msgBuff, buffSize, encryptBuff) < 0){
 			return -1;
 		}
 		flag |= GNET_PACKET_ENCRYPT;
 		if (useBuffer){
-			return _INetConnection_writeToBuff(encryptBuff.readPtr(), encryptBuff.readSize(), flag);
+			return _INetConnection_send2Buff(encryptBuff.readPtr(), encryptBuff.readSize(), flag);
 		}
-		return _INetConnection_sendToNet(encryptBuff.readPtr(), encryptBuff.readSize(), flag);
+		return _INetConnection_send2Net(encryptBuff.readPtr(), encryptBuff.readSize(), flag);
 	}
 
     // 写入缓存
 	if (useBuffer){
-		return _INetConnection_writeToBuff(msgBuff, buffSize, flag);
+		return _INetConnection_send2Buff(msgBuff, buffSize, flag);
 	}
 
     // 发送
-	return _INetConnection_sendToNet(msgBuff, buffSize, flag);
+	return _INetConnection_send2Net(msgBuff, buffSize, flag);
 }
 
 int INetConnection::recv(BSLib::Utility::CStream& stream)
@@ -210,7 +212,7 @@ int INetConnection::recvBlock(BSLib::Utility::CStream& stream, int countMax)
 	int count = 0;
 	do{
 		++count;
-		if(!INetConnection_recvToBuffFromNet()) {
+		if(!recvNet2Buff()) {
 			return -1;
 		}
 		if ((recvSize = recv(stream)) != 0){
@@ -219,14 +221,14 @@ int INetConnection::recvBlock(BSLib::Utility::CStream& stream, int countMax)
 		if (countMax != 0 && count >= countMax){
 			return -1;
 		}
-		_INetConnection_waitForRecv();
+		_waitForRecv();
 	} while (recvSize == 0);
 	return recvSize;
 }
 
 void INetConnection::INetConnection_close()
 {
-	_clearBuff();
+	_clearRecvBuff();
 }
 
 int INetConnection::_encrypt(const char* inData, unsigned int inLen, Utility::CBufferInt8& outBuff)
@@ -320,15 +322,17 @@ int INetConnection::_uncompress(const char* inData, unsigned int inLen, Utility:
 
 unsigned int INetConnection::_mergeRecvPacket(Utility::CBufferInt8& inBuff, Utility::CBufferInt8& outBuff)
 {
-	//验证数据包是否完成
+	// 验证数据包是否完成
 	unsigned int cmdFlag = *((unsigned int*)inBuff.readPtr());
 	unsigned int len = cmdFlag & GNET_PACKET_LEN;
 	unsigned int flag = cmdFlag & GNET_PACKET_SIGN;
 	const char* buff = inBuff.readPtr();
 	unsigned int dataSize = len + sizeof(unsigned int);
 	
-	while (flag & GNET_PACKET_NEXT) {
-		if (dataSize + sizeof(unsigned int) > inBuff.readSize()) {
+	while (flag & GNET_PACKET_NEXT) 
+    {
+		if (dataSize + sizeof(unsigned int) > inBuff.readSize()) 
+        {
 			return 0;
 		}
 
@@ -337,11 +341,13 @@ unsigned int INetConnection::_mergeRecvPacket(Utility::CBufferInt8& inBuff, Util
 		flag = cmdFlag & GNET_PACKET_SIGN;
 		dataSize += len + sizeof(unsigned int);
 	}
-	if (dataSize > inBuff.readSize()) {
+
+	if (dataSize > inBuff.readSize()) 
+    {
 		return 0;
 	}
 
-	//组装数据包
+	// 组装数据包
 	cmdFlag = *((unsigned int*)inBuff.readPtr());
 	len = cmdFlag & GNET_PACKET_LEN;
 	flag = cmdFlag & GNET_PACKET_SIGN;
@@ -351,7 +357,8 @@ unsigned int INetConnection::_mergeRecvPacket(Utility::CBufferInt8& inBuff, Util
 	outBuff.push((char*)&flag, sizeof(unsigned int));
 	unsigned int readPos = sizeof(unsigned int);
 
-	while (flag & GNET_PACKET_NEXT) {
+	while (flag & GNET_PACKET_NEXT) 
+    {
 		outBuff.push(&buff[readPos], len);
 		readPos += len;
 
@@ -361,13 +368,14 @@ unsigned int INetConnection::_mergeRecvPacket(Utility::CBufferInt8& inBuff, Util
 		dataSize += len + sizeof(unsigned int);
 		readPos += sizeof(unsigned int);
 	}
+
 	outBuff.push(&buff[readPos], len);
 	inBuff.readFlip(dataSize);
 
 	return outBuff.readSize();
 }
 
-void INetConnection::_clearBuff()
+void INetConnection::_clearRecvBuff()
 {
 	m_recvBuff.reset();
 }

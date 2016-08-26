@@ -110,7 +110,7 @@ bool CUdpConnectionMgr::_readScoket(int& udmSocket, void* data)
 	if (!item->m_connect->INetConnection_isValid()){
 		return false;
 	}
-	if (!item->m_connect->INetConnection_recvToBuffFromNet()){
+	if (!item->m_connect->recvNet2Buff()){
 		return false;
 	}
 	return item->m_callback->recvMsg(item->m_connect);
@@ -128,7 +128,7 @@ bool CUdpConnectionMgr::_writeScoket(int& udmSocket, void* data)
 	if (!item->m_connect->INetConnection_isValid()){
 		return false;
 	}
-	return item->m_connect->INetConnection_sendToNetFromBuff();
+	return item->m_connect->INetConnection_sendBuff2Net();
 }
 
 void CUdpConnectionMgr::_terminateScoket(int& udmSocket, void* data)

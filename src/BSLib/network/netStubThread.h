@@ -119,7 +119,7 @@ public:
 		CNetConnectionPtr netConnectionPtr = m_stubPtr->getNetConnectionPtr();
 		if (netConnectionPtr != NULL) {
 			SNetConnectionBytesInfo connectionInfo;
-			netConnectionPtr->getNetConnectionInfo(connectionInfo);
+			netConnectionPtr->INetConnection_getNetConnectionInfo(connectionInfo);
 			if (m_seconds == 0) {
 				m_netConnectBytesInfo = connectionInfo;
 				m_seconds = realTimer.seconds();
@@ -159,7 +159,7 @@ public:
 		m_stubPtr->INetStub_finalStub();
 	}
 
-	bool INetConnection_sendToNetFromBuff()
+	bool INetConnection_sendBuff2Net()
 	{
 		if (m_stubPtr == NULL) {
 			return false;
@@ -168,10 +168,10 @@ public:
 		if (connectPtr == NULL) {
 			return false;
 		}
-		return connectPtr->INetConnection_sendToNetFromBuff();
+		return connectPtr->INetConnection_sendBuff2Net();
 	}
 
-	bool INetConnection_isEmptyOfSendBuff()
+	bool INetConnection_sendBuffIsEmpty()
 	{
 		if (m_stubPtr == NULL) {
 			return true;
@@ -180,7 +180,7 @@ public:
 		if (connectPtr == NULL) {
 			return true;
 		}
-		return connectPtr->INetConnection_isEmptyOfSendBuff();
+		return connectPtr->INetConnection_sendBuffIsEmpty();
 	}
 
 	CNetStubPtr& getNetStub() { return m_stubPtr; }
