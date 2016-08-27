@@ -303,11 +303,11 @@ void CTcpConnection::_INetConnection_postSend()
 	}
 }
 
-int CTcpConnection::_INetConnection_send2Buff(const void* data, unsigned int len, unsigned int sign)
+int CTcpConnection::_INetConnection_send2Buff(const void* data, unsigned int len)
 {
 	m_sendMutex.lock();
 
-	if (_writeToBuff(data, len, sign, m_sendBuff) < 0) {
+	if (_writeToBuff(data, len, m_sendBuff) < 0) {
 		m_sendMutex.unlock();
 		return -1;
 	}
@@ -318,11 +318,11 @@ int CTcpConnection::_INetConnection_send2Buff(const void* data, unsigned int len
 	return len;
 }
 
-int CTcpConnection::_INetConnection_send2Net(const void* data, unsigned int len, unsigned int sign)
+int CTcpConnection::_INetConnection_send2Net(const void* data, unsigned int len)
 {
 	Utility::CBufferInt8 buffer;
 	
-	if (_writeToBuff(data, len, sign, buffer) < 0) {
+	if (_writeToBuff(data, len, buffer) < 0) {
 		m_sendMutex.unlock();
 		return -1;
 	}
@@ -392,46 +392,58 @@ void CTcpConnection::_setConnectionAddr(int sock)
 	}
 }
 
-int CTcpConnection::_writeToBuff(const void* data, unsigned int len, unsigned int sign, Utility::CBufferInt8& sendBuff)
+int CTcpConnection::_writeToBuff(const void* data, unsigned int len, Utility::CBufferInt8& sendBuff)
 {
-	unsigned int dataSize = len;
-	char* dataBuff = (char*)data;
-	unsigned int dataPos = 0;
-
-	while (dataSize > 0) 
+    unsigned int dataSize = len;
+    char* dataBuff = (char*)data;
+    
+    if (!sendBuff.push((char*)data, dataSize))
     {
-		unsigned int cmdFlag = sign;
-		unsigned int cmdLen = 0;
-		if (dataSize > GNET_PACKET_LEN) 
-        {
-			cmdFlag |= GNET_PACKET_NEXT;    // 还有
-			cmdLen = GNET_PACKET_LEN;
-		} 
-        else 
-        {
-			cmdLen = dataSize;
-		}
+        return -1;
+    }
 
-		cmdFlag = (cmdFlag & GNET_PACKET_SIGN)  // 留 FF, 其余 clear
-                  | cmdLen;
+    return len;
 
-        // push flag first
-		if (!sendBuff.push((char*)&cmdFlag, sizeof(cmdFlag)))
-        {
-			return -1;
-		}
+	/*
+    unsigned int dataSize = len;
+    char* dataBuff = (char*)data;
+    unsigned int dataPos = 0;
 
-        // push data
-		if (!sendBuff.push((char*)&dataBuff[dataPos], cmdLen))
-        {
-			return -1;
-		}
+    while (dataSize > 0)
+    {
+    unsigned int cmdFlag = sign;
+    unsigned int cmdLen = 0;
+    if (dataSize > GNET_PACKET_LEN)
+    {
+    cmdFlag |= GNET_PACKET_NEXT;    // 还有
+    cmdLen = GNET_PACKET_LEN;
+    }
+    else
+    {
+    cmdLen = dataSize;
+    }
 
-		dataSize -= cmdLen;
-		dataPos += cmdLen;
-	}
+    cmdFlag = (cmdFlag & GNET_PACKET_SIGN)  // 留 FF, 其余 clear
+    | cmdLen;
 
-	return len;
+    // push flag first
+    if (!sendBuff.push((char*)&cmdFlag, sizeof(cmdFlag)))
+    {
+    return -1;
+    }
+
+    // push data
+    if (!sendBuff.push((char*)&dataBuff[dataPos], cmdLen))
+    {
+    return -1;
+    }
+
+    dataSize -= cmdLen;
+    dataPos += cmdLen;
+    }
+
+    return len;
+    */
 }
 
 }//Network

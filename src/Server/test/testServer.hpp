@@ -26,7 +26,10 @@ public:
     }
 
     virtual bool INetStub_cbParseMsg(void* msgBuff, uint32_t msgSize) override
-    {
+    {   
+        
+        std::string buf((const char*)msgBuff, msgSize);
+        std::cout << buf << "\n";
         return true;
     }
 

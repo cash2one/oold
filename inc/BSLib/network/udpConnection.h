@@ -34,8 +34,8 @@ protected:
 	virtual int _INetConnection_os_recv(void* dataBuff, int buffSize)  override;
 	virtual void _INetConnection_postSend()  override;
 
-	virtual int _INetConnection_send2Buff(const void* data, unsigned int len, unsigned int sign)  override;
-	virtual int _INetConnection_send2Net(const void* data, unsigned int len, unsigned int sign)  override;
+	virtual int _INetConnection_send2Buff(const void* data, unsigned int len)  override;
+	virtual int _INetConnection_send2Net(const void* data, unsigned int len)  override;
 	int _sendBlock(const void* dataBuff, int buffSize);
 
 private:

@@ -40,14 +40,14 @@ protected:
 
 
     // override tcp send 需要改写的接口
-	virtual int _INetConnection_send2Buff(const void* data, unsigned int len, unsigned int sign) override;
-	virtual int _INetConnection_send2Net(const void* data, unsigned int len, unsigned int sign) override;
+	virtual int _INetConnection_send2Buff(const void* data, unsigned int len) override;
+	virtual int _INetConnection_send2Net(const void* data, unsigned int len) override;
 
 	int _sendBlock(const void* dataBuff, int buffSize);
 
 
     // split packet, 跟 _writeToBuff,  _sendToNet 相关
-    virtual int _writeToBuff(const void* data, unsigned int len, unsigned int sign, Utility::CBufferInt8& sendBuff);
+    virtual int _writeToBuff(const void* data, unsigned int len, Utility::CBufferInt8& sendBuff);
 
 private:
 	void _setConnectionAddr(int sock);

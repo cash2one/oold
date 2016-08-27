@@ -89,59 +89,87 @@ int INetConnection::send(Utility::CStream& stream, bool useBuffer)
 
 int INetConnection::send(const void* msgBuff, unsigned int buffSize, bool useBuffer)
 {
-	if (!INetConnection_isValid()){
-		return -1;
-	}
+    if (!INetConnection_isValid()){
+        return -1;
+    }
 
-	unsigned int flag = GNET_PACKET_FLAG;
-
-    // —πÀı
-	if (m_compress != NULL && buffSize >= 32) 
+     BSLib::Utility::CStream stream;
+    do 
     {
-		Utility::CBufferInt8 compressBuff;
-		if (_compress((char*)msgBuff, buffSize, compressBuff) < 0){
-			return -1;
-		}
-		flag |= GNET_PACKET_COMPRESS;
-		if (m_encrypt != NULL) {
-			Utility::CBufferInt8 encryptBuff;
-			if (_encrypt(compressBuff.readPtr(), compressBuff.readSize(), encryptBuff) < 0){
-				return -1;
-			}
-			flag |= GNET_PACKET_ENCRYPT;
-			if (useBuffer){
-				return _INetConnection_send2Buff(encryptBuff.readPtr(), encryptBuff.readSize(), flag);
-			}
-			return _INetConnection_send2Net(encryptBuff.readPtr(), encryptBuff.readSize(), flag);
-		}
+        if( NULL == m_codec)
+            break;
 
-		if (useBuffer){
-			return _INetConnection_send2Buff(compressBuff.readPtr(), compressBuff.readSize(), flag);
-		}
-		return _INetConnection_send2Net(compressBuff.readPtr(), compressBuff.readSize(), flag);
-	}
+        int ret = m_codec->ICodec_encoder(this, msgBuff, buffSize, stream);
+        if( ICodec::eOK != ret)
+            return -1;
 
-    // º”√‹
-	if (m_encrypt != NULL)
-    {
-		Utility::CBufferInt8 encryptBuff;
-		if (_encrypt((char*)msgBuff, buffSize, encryptBuff) < 0){
-			return -1;
-		}
-		flag |= GNET_PACKET_ENCRYPT;
-		if (useBuffer){
-			return _INetConnection_send2Buff(encryptBuff.readPtr(), encryptBuff.readSize(), flag);
-		}
-		return _INetConnection_send2Net(encryptBuff.readPtr(), encryptBuff.readSize(), flag);
-	}
+    } while (false);
+
+    const char* buff = stream.readPtr();
+    unsigned int len = stream.readSize();
 
     // –¥»Îª∫¥Ê
-	if (useBuffer){
-		return _INetConnection_send2Buff(msgBuff, buffSize, flag);
-	}
+    if (useBuffer)
+        return _INetConnection_send2Buff(buff, len);
 
     // ∑¢ÀÕ
-	return _INetConnection_send2Net(msgBuff, buffSize, flag);
+    return _INetConnection_send2Net(buff, len);
+
+    /*
+        if (!INetConnection_isValid()){
+        return -1;
+        }
+
+        unsigned int flag = GNET_PACKET_FLAG;
+
+        // —πÀı
+        if (m_compress != NULL && buffSize >= 32)
+        {
+        Utility::CBufferInt8 compressBuff;
+        if (_compress((char*)msgBuff, buffSize, compressBuff) < 0){
+        return -1;
+        }
+        flag |= GNET_PACKET_COMPRESS;
+        if (m_encrypt != NULL) {
+        Utility::CBufferInt8 encryptBuff;
+        if (_encrypt(compressBuff.readPtr(), compressBuff.readSize(), encryptBuff) < 0){
+        return -1;
+        }
+        flag |= GNET_PACKET_ENCRYPT;
+        if (useBuffer){
+        return _INetConnection_send2Buff(encryptBuff.readPtr(), encryptBuff.readSize(), flag);
+        }
+        return _INetConnection_send2Net(encryptBuff.readPtr(), encryptBuff.readSize(), flag);
+        }
+
+        if (useBuffer){
+        return _INetConnection_send2Buff(compressBuff.readPtr(), compressBuff.readSize(), flag);
+        }
+        return _INetConnection_send2Net(compressBuff.readPtr(), compressBuff.readSize(), flag);
+        }
+
+        // º”√‹
+        if (m_encrypt != NULL)
+        {
+        Utility::CBufferInt8 encryptBuff;
+        if (_encrypt((char*)msgBuff, buffSize, encryptBuff) < 0){
+        return -1;
+        }
+        flag |= GNET_PACKET_ENCRYPT;
+        if (useBuffer){
+        return _INetConnection_send2Buff(encryptBuff.readPtr(), encryptBuff.readSize(), flag);
+        }
+        return _INetConnection_send2Net(encryptBuff.readPtr(), encryptBuff.readSize(), flag);
+        }
+
+        // –¥»Îª∫¥Ê
+        if (useBuffer){
+        return _INetConnection_send2Buff(msgBuff, buffSize, flag);
+        }
+
+        // ∑¢ÀÕ
+        return _INetConnection_send2Net(msgBuff, buffSize, flag);
+    */
 }
 
 int INetConnection::recv(BSLib::Utility::CStream& stream)

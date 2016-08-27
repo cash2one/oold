@@ -165,8 +165,9 @@ void CUdpConnection::_INetConnection_postSend()
 	}
 }
 
-int CUdpConnection::_INetConnection_send2Buff(const void* data, unsigned int len, unsigned int sign)
-{
+int CUdpConnection::_INetConnection_send2Buff(const void* data, unsigned int len)
+{   
+    unsigned int sign;
 	if (len > GNET_PACKET_LEN) {
 		return -1;
 	}
@@ -190,8 +191,10 @@ int CUdpConnection::_INetConnection_send2Buff(const void* data, unsigned int len
 	return len;
 }
 
-int CUdpConnection::_INetConnection_send2Net(const void* data, unsigned int len, unsigned int sign)
-{
+int CUdpConnection::_INetConnection_send2Net(const void* data, unsigned int len)
+{   
+     unsigned int sign;
+
 	if (len > GNET_PACKET_LEN) {
 		return -1;
 	}

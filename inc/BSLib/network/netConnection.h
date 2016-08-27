@@ -74,8 +74,8 @@ public:
 
 protected:
 
-    virtual int _INetConnection_send2Buff(const void* data, unsigned int len, unsigned int sign) = 0;
-    virtual int _INetConnection_send2Net(const void* data, unsigned int len, unsigned int sign) = 0;
+    virtual int _INetConnection_send2Buff(const void* data, unsigned int len) = 0;
+    virtual int _INetConnection_send2Net(const void* data, unsigned int len) = 0;
 
 	virtual int _INetConnection_os_send(const void* dataBuff, int buffSize) = 0;
 	virtual int _INetConnection_os_recv(void* dataBuff, int buffSize) = 0;
