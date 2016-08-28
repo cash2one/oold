@@ -26,8 +26,8 @@ public:
 	CNetStubPtr getNetStubByStubID(StubID stubID);
 
 protected:
-	bool _INetConnection_os_send(StubID stubID, BSLib::Utility::CStream& stream);
-	bool _INetConnection_os_send(StubID stubID, const void* msgBuff, uint32 buffSize);
+	bool _send(StubID stubID, BSLib::Utility::CStream& stream);
+	bool _send(StubID stubID, const void* msgBuff, uint32 buffSize);
 
 private:
 	virtual bool checkUniqueID(StubID id) override;

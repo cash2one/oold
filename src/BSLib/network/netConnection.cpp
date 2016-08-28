@@ -380,6 +380,7 @@ int INetConnection::_uncompress(const char* inData, unsigned int inLen, Utility:
 	return resCompress;
 }
 
+/*
 unsigned int INetConnection::_mergeRecvPacket(Utility::CBufferInt8& inBuff, Utility::CBufferInt8& outBuff)
 {
 	// 验证数据包是否完成
@@ -434,11 +435,13 @@ unsigned int INetConnection::_mergeRecvPacket(Utility::CBufferInt8& inBuff, Util
 
 	return outBuff.readSize();
 }
+*/
 
 void INetConnection::_clearRecvBuff()
 {
 	m_recvBuff.reset();
 }
+
 
 }//Network
 

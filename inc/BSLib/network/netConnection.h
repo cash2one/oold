@@ -93,7 +93,7 @@ protected:
 	int _compress(const char* inData, unsigned int inLen, Utility::CBufferInt8& outBuff);
 	int _uncompress(const char* inData, unsigned int inLen, Utility::CBufferInt8& outBuff);
 
-	unsigned int _mergeRecvPacket(Utility::CBufferInt8& inBuff, Utility::CBufferInt8& outBuff);
+    //unsigned int _mergeRecvPacket(Utility::CBufferInt8& inBuff, Utility::CBufferInt8& outBuff);
 
 	void _clearRecvBuff();
 
