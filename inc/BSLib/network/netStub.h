@@ -47,8 +47,8 @@ public:
 	void setNeedPing(bool needPing) { m_needPing = needPing; }
 
 public:
-	static void setVerifyStateTimeoutMAX(uint32 verifyTimeoutMAX) { m_verifyTimeout = verifyTimeoutMAX; }
-	static void setOkeyStateTimeoutMAX(uint32 okeyTimeoutMAX, uint32 pingTime);
+	static void setVerifyStateTimeoutMax(uint32 verifyTimeoutMax) { m_verifyTimeout = verifyTimeoutMax; }
+	static void setOkStateTimeoutMax(uint32 okeyTimeoutMax, uint32 pingTime);
 
 protected:
 	virtual void INetStub_initStub() = 0;

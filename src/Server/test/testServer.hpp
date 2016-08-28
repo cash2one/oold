@@ -14,15 +14,19 @@ public:
     }
 
     virtual void INetStub_initStub() override
-    {
+    {   
+        setState(ESS_OKAY);
+        std::cout << __FUNCTION__ << " p: " << this << "\n";
     }
 
     virtual void INetStub_finalStub() override
     {
+       std::cout << __FUNCTION__ << " p: " << this << "\n";
     }
 
     virtual void INetStub_cbNotifyPing() override
     {
+        std::cout << __FUNCTION__ << " p: " << this << "\n";
     }
 
     virtual bool INetStub_cbParseMsg(void* msgBuff, uint32_t msgSize) override
@@ -35,7 +39,7 @@ public:
 
     virtual void INetStub_cbTerminate() override
     {
-
+        std::cout << __FUNCTION__ << " p: " << this << "\n";
     }
 };
 

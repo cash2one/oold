@@ -95,9 +95,9 @@ int INetStub::send(const void* msgBuff, unsigned int buffSize)
 	return -1;
 }
 
-void INetStub::setOkeyStateTimeoutMAX(uint32 okeyTimeoutMAX, uint32 pingTime) 
+void INetStub::setOkStateTimeoutMax(uint32 okeyTimeoutMax, uint32 pingTime) 
 { 
-	m_errorPingMax = (uint32)(okeyTimeoutMAX / pingTime);
+	m_errorPingMax = (uint32)(okeyTimeoutMax / pingTime);
 	if (m_errorPingMax <= 0){
 		m_errorPingMax = 1;
 	}
