@@ -1,7 +1,8 @@
 #pragma  once
 #include <BSLib/network/netServer.h>
 #include <BSLib/network/netStub.h>
-
+#include <iostream>
+#include <stdint.h>
 using namespace BSLib::Network;
 
 class MyStub
@@ -16,6 +17,7 @@ public:
     virtual void INetStub_initStub() override
     {   
         setState(ESS_OKAY);
+        setNeedPing(false);
         std::cout << __FUNCTION__ << " p: " << this << "\n";
     }
 
